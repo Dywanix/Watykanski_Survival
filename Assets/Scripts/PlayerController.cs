@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     // -- statystyki --
     public float maxHealth, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash, scrap;
     public int level, experience, experienceNeeded;
-    public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease;
+    public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
 
     void Start()
     {
@@ -136,6 +136,11 @@ public class PlayerController : MonoBehaviour
                     bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
                     firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
                     firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(); firedBullet.penetration = eq.guns[eq.equipped].penetration;
+                    if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
+                    {
+                        firedBullet.damage *= eq.guns[eq.equipped].critDamage;
+                        firedBullet.crit = true;
+                    }
                 }
             }
         }
@@ -147,6 +152,11 @@ public class PlayerController : MonoBehaviour
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(); firedBullet.penetration = eq.guns[eq.equipped].penetration;
+            if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
+            {
+                firedBullet.damage *= eq.guns[eq.equipped].critDamage;
+                firedBullet.crit = true;
+            }
         }
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
         if (!eq.guns[eq.equipped].infiniteMagazine)

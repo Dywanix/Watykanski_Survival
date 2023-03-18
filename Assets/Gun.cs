@@ -5,8 +5,11 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public string gunName;
-    // -- Gun Stats
-    public float damage, penetration, fireRate, reloadTime, accuracy, force, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
+    // -- Basic Gun Stats
+    public float damage, critChance, penetration, fireRate, reloadTime, accuracy, force, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
+
+    // -- Special Gun Stats
+    public float critDamage;
     public int magazineSize, bulletsLeft, ammo, bulletSpread, upgrades, upgradeCost, upgradeCostIncrease, upgradeCostIncreaseIncrease, roll;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
 
