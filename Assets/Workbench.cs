@@ -16,22 +16,26 @@ public class Workbench : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Player.transform.position) <= 4.2f)
         {
-            Glow.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E) && !active)
+            if (playerStats.day)
             {
-                UpdateInfo(playerStats.eq.equipped);
-                playerStats.free = false;
-                Hud.SetActive(true);
-                active = true;
+                Glow.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E) && !active)
+                {
+                    UpdateInfo(playerStats.eq.equipped);
+                    playerStats.free = false;
+                    Hud.SetActive(true);
+                    active = true;
+                }
             }
-            else if (Input.GetKeyDown(KeyCode.Escape) && active)
+            else Glow.SetActive(false);
+
+            if (Input.GetKeyDown(KeyCode.Escape) && active)
             {
                 playerStats.free = true;
                 Hud.SetActive(false);
                 active = false;
             }
         }
-        else Glow.SetActive(false);
     }
 
     public void UpdateInfo(int which)

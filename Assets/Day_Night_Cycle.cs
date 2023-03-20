@@ -57,6 +57,7 @@ public class Day_Night_Cycle : MonoBehaviour
 
     void StartNight()
     {
+        playerStats.day = false;
         CurrentState = TimeState.Night;
         maxTime = 230f;
         time = 0;
@@ -68,6 +69,7 @@ public class Day_Night_Cycle : MonoBehaviour
 
     void StartDay()
     {
+        playerStats.day = true;
         day++;
         CurrentState = TimeState.Day;
         maxTime = 144f;

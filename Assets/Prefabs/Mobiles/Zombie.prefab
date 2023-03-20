@@ -52,6 +52,7 @@ MonoBehaviour:
   CurrentState: 0
   Player: {fileID: 0}
   Scrap: {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
+  damageTook: {fileID: 4695042375447321633, guid: b72dee5f414d4d1408a77c17d349d58b, type: 3}
   playerStats: {fileID: 0}
   Body: {fileID: 4011205351099074794}
   playerBody: {fileID: 0}
@@ -63,7 +64,8 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   armor: 20
-  movementSpeed: 6
+  vulnerable: 0
+  movementSpeed: 5
   attackDamage: 20
   attackSpeed: 2
   attackRange: 2
@@ -565,7 +567,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

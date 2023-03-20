@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public Gunslinger gunslinger;
 
     public float xInput = 0, yInput = 0;
-    public bool mouseLeft, reloading, free = true;
+    public bool mouseLeft, reloading, free = true, day = true;
     Vector3 mousePos, mouseVector;
     CameraController Cam;
     public float task;
