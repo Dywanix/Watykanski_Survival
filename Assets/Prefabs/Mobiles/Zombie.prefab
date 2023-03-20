@@ -57,6 +57,7 @@ MonoBehaviour:
   playerBody: {fileID: 0}
   Dir: {fileID: 7665671244400256784}
   Sight: {fileID: 3680834460333502575}
+  weight: 3
   scrapDroppedRange: 0100000004000000
   hpBar: {fileID: 423194335037133325}
   maxHealth: 100

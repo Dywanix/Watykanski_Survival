@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private Bullet collidedBullet;
 
     // ----- enemy stats -----
+    public int weight;
     public int[] scrapDroppedRange;
     private int roll;
 

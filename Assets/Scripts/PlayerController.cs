@@ -279,6 +279,12 @@ public class PlayerController : MonoBehaviour
             GainScrap(1);
             Destroy(other.gameObject);
         }
+        else if (other.transform.tag == "Ammo")
+        {
+            PickedUpAmmo();
+            Destroy(other.gameObject);
+            DisplayAmmo();
+        }
     }
 
     void GainScrap(int amount)
@@ -291,5 +297,13 @@ public class PlayerController : MonoBehaviour
     {
         scrap -= amount;
         scrapInfo.text = scrap.ToString("0");
+    }
+
+    void PickedUpAmmo()
+    {
+        for (int i = 0; i < eq.guns.Length; i++)
+        {
+            eq.guns[i].AmmoPicked();
+        }
     }
 }

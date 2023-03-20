@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour
 
     // -- Special Gun Stats
     public float critDamage;
-    public int magazineSize, bulletsLeft, ammo, bulletSpread, upgrades, upgradeCost, upgradeCostIncrease, upgradeCostIncreaseIncrease, roll;
+    public int magazineSize, bulletsLeft, ammo, ammoFromPack, bulletSpread, upgrades, upgradeCost, upgradeCostIncrease, upgradeCostIncreaseIncrease, roll;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
 
     public GameObject bulletPrefab;
@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            roll = Random.Range(0,3);
+            roll = Random.Range(0,4);
             switch (roll)
             {
                 case 0:
@@ -42,6 +42,15 @@ public class Gun : MonoBehaviour
                     accuracy *= 0.98f;
                     force *= 1.02f;
                     break;
+                case 3:
+                    if (penetration < 1f)
+                        penetration += 0.01f;
+                    else
+                    {
+                        damage *= 1.01f;
+                        cameraShake *= 1.004f;
+                    }
+                    break;
             }
         }
 
@@ -49,5 +58,10 @@ public class Gun : MonoBehaviour
         {
             upgradeCostIncrease += upgradeCostIncreaseIncrease;
         }
+    }
+
+    public void AmmoPicked()
+    {
+        ammo += ammoFromPack;
     }
 }
