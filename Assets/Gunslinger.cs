@@ -12,6 +12,8 @@ public class Gunslinger : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Q))
+            BulletTime();
         if (playerStats.task <= 0)
         {
             Action();
@@ -30,9 +32,7 @@ public class Gunslinger : MonoBehaviour
 
     void Action()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            BulletTime();
-        else if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
             Unload();
     }
 
@@ -60,7 +60,7 @@ public class Gunslinger : MonoBehaviour
 
     void Unload()
     {
-        if (unloadCooldown <= 0)
+        if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
             unloadCooldown = 3f + 8 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             unloadMaxCooldown = unloadCooldown;

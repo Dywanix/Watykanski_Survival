@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     public int weight;
     public int[] scrapDroppedRange;
     private int roll;
-    private float temp;
+    private float temp, tick;
 
     // -- Health & Resistance
     public Bar hpBar;
@@ -65,8 +65,9 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        if (playerStats.day)
-            Burn();
+        tick += Time.deltaTime;
+        if (tick >= 0.3f)
+            Tick();
 
         if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
         {
@@ -111,6 +112,8 @@ public class Enemy : MonoBehaviour
         if (other.transform.tag == "PlayerProjectal")
         {
             collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
+            armor *= 1 - collidedBullet.armorShred;
+            vulnerable += collidedBullet.vulnerableApplied;
             TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
         }
     }
@@ -120,12 +123,12 @@ public class Enemy : MonoBehaviour
         health -= value;
         hpBar.SetValue(health);
 
-        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Body.rotation + Random.Range(-10f, 10f));
+        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Body.rotation + Random.Range(-12f, 12f));
         GameObject text = Instantiate(damageTook, Body.position, Sight.rotation);
         Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
         damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
         damageDisplay.SetText(value, crited);
-        text_body.AddForce(Sight.up * 3f, ForceMode2D.Impulse);
+        text_body.AddForce(Sight.up * 3.6f, ForceMode2D.Impulse);
 
         if (health <= 0)
             Death();
@@ -138,11 +141,18 @@ public class Enemy : MonoBehaviour
         return temp;
     }
 
+    void Tick()
+    {
+        tick -= 0.3f;
+        if (playerStats.day)
+            Burn();
+    }
+
     void Burn()
     {
-        vulnerable += 0.025f * Time.deltaTime;
-        temp = (7 + maxHealth * 0.03f) * Time.deltaTime;
-        TakeDamage(temp / DamageTakenMultiplyer(0.7f), false);
+        vulnerable += 0.01f;
+        temp = (1.8f + maxHealth * 0.006f);
+        TakeDamage(temp / DamageTakenMultiplyer(0.8f), false);
     }
 
     void Death()

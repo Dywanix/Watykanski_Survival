@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float duration = 3f, damage, penetration;
+    public float duration = 3f, damage, penetration, armorShred, vulnerableApplied;
     public bool crit;
 
     void Update()
