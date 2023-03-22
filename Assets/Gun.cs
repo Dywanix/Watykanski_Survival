@@ -9,10 +9,11 @@ public class Gun : MonoBehaviour
     public float damage, critChance, penetration, fireRate, reloadTime, accuracy, force, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
 
     // -- Special Gun Stats
-    public float critDamage, armorShred, vulnerableApplied;
-    public int magazineSize, bulletsLeft, ammo, ammoFromPack, bulletSpread, upgrades, upgradeCost, upgradeCostIncrease, upgradeCostIncreaseIncrease, roll;
+    public float critDamage, armorShred, vulnerableApplied, pierceDamage, DoT;
+    public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, pierce, upgrades, upgradeCost, upgradeCostIncrease, upgradeCostIncreaseIncrease, specialUpgrades, roll;
+    public int[] Slots;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
-    private float temp;
+    public float temp;
     private int tempi;
 
     public GameObject bulletPrefab;
@@ -29,7 +30,7 @@ public class Gun : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            roll = Random.Range(0,5);
+            roll = Random.Range(0, 9);
             switch (roll)
             {
                 case 0:
@@ -59,13 +60,29 @@ public class Gun : MonoBehaviour
                     else
                         critDamage += 0.01f;
                     break;
+                case 5:
+                    DoT += 0.01f + 0.05f * DoT;
+                    break;
+                case 6:
+                    roll = Random.Range(0, 4);
+                    Slots[roll]++;
+                    break;
+                case 7:
+                    damage *= 1.01f;
+                    cameraShake *= 1.004f;
+                    break;
+                case 8:
+                    fireRate *= 0.986f;
+                    reloadTime *= 0.996f;
+                    break;
             }
         }
 
+        if (upgrades % upgradeCostIncreaseIncrease == 0)
+            upgradeCostIncrease++;
+
         if (upgrades % 5 == 0)
-        {
-            upgradeCostIncrease += upgradeCostIncreaseIncrease;
-        }
+            specialUpgrades++;
     }
 
     public void SpecialUpgrade(int which)
@@ -108,11 +125,11 @@ public class Gun : MonoBehaviour
                 }
                 break;
             case 3:
-                armorShred += 0.02f * fireRate * (0.1f + 0.9f * bulletSpread);
+                armorShred += 0.03f * fireRate * (0.1f + 0.9f * bulletSpread);
                 fireRate *= 0.98f;
                 break;
             case 4:
-                vulnerableApplied += 0.01f * fireRate * (0.1f + 0.9f * bulletSpread);
+                vulnerableApplied += 0.02f * fireRate * (0.1f + 0.9f * bulletSpread);
                 accuracy *= 0.96f;
                 break;
             case 5:
@@ -124,10 +141,49 @@ public class Gun : MonoBehaviour
                 temp = 1.01f + 0.08f / bulletSpread;
                 accuracy *= temp; cameraShake *= temp; reloadTime *= temp;
 
-                temp = 0.08f + bulletSpread / (bulletSpread + 1);
+                temp = 0.08f + (1f * bulletSpread / (1f * bulletSpread + 1f));
                 damage *= temp; armorShred *= temp; vulnerableApplied *= temp;
 
                 bulletSpread++;
+                break;
+            case 7:
+                damage *= 0.96f;
+                DoT += 0.07f + 0.2f * DoT;
+                break;
+            case 8:
+                temp = (0.1f + reloadTime) / (0.2f + 1.2f * fireRate);
+                if (temp < 1f)
+                {
+                    overload++;
+                    reloadTime *= 1.5f - (0.5f * temp);
+                }
+                else
+                {
+                    tempi = 0;
+                    for (int i = 0; i < temp; i++)
+                    {
+                        overload++;
+                        tempi++;
+                    }
+                    temp = temp - tempi;
+                    reloadTime *= 1f - (1.1f * temp / tempi);
+                }
+                break;
+            case 9:
+                Slots[0]++;
+                damage *= 1.03f;
+                break;
+            case 10:
+                Slots[1]++;
+                accuracy *= 0.93f;
+                break;
+            case 11:
+                Slots[2]++;
+                reloadTime *= 0.94f;
+                break;
+            case 12:
+                Slots[3]++;
+                fireRate *= 0.96f;
                 break;
         }
     }

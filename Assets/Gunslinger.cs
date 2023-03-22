@@ -77,7 +77,7 @@ public class Gunslinger : MonoBehaviour
     void Fire()
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0 || playerStats.eq.guns[playerStats.eq.equipped].infiniteMagazine)
-            playerStats.Fire(8f);
+            playerStats.Shoot(8f);
         else
         {
             playerStats.task -= 0.16f;

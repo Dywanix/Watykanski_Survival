@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     // -- Health & Resistance
     public Bar hpBar;
-    public float maxHealth, health, armor, vulnerable;
+    public float maxHealth, health, armor, vulnerable, DoT;
 
     // -- Movement
     public float movementSpeed;
@@ -115,6 +115,8 @@ public class Enemy : MonoBehaviour
             armor *= 1 - collidedBullet.armorShred;
             vulnerable += collidedBullet.vulnerableApplied;
             TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
+            if (collidedBullet.DoT > 0)
+                GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
         }
     }
 
@@ -134,6 +136,11 @@ public class Enemy : MonoBehaviour
             Death();
     }
 
+    void GainDoT(float value)
+    {
+        DoT += value;
+    }
+
     float DamageTakenMultiplyer(float penetration)
     {
         temp = 1f + (armor * (1 - penetration) * 0.01f);
@@ -146,6 +153,8 @@ public class Enemy : MonoBehaviour
         tick -= 0.3f;
         if (playerStats.day)
             Burn();
+        if (DoT > 0)
+            DoTproc();
     }
 
     void Burn()
@@ -153,6 +162,13 @@ public class Enemy : MonoBehaviour
         vulnerable += 0.01f;
         temp = (1.8f + maxHealth * 0.006f);
         TakeDamage(temp / DamageTakenMultiplyer(0.8f), false);
+    }
+
+    void DoTproc()
+    {
+        temp = 1 + DoT * 0.2f;
+        TakeDamage(temp / DamageTakenMultiplyer(1f), false);
+        DoT -= temp;
     }
 
     void Death()
