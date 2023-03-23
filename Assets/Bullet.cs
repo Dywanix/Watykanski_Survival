@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float duration = 3f, damage, penetration, armorShred, vulnerableApplied, pierceDamage, DoT;
+    public float duration, damage, penetration, armorShred, vulnerableApplied, pierceDamage, DoT;
     public int pierce;
     public bool crit;
 
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.tag == "Enemy")
         {
@@ -24,5 +24,13 @@ public class Bullet : MonoBehaviour
             if (pierce <= 0)
                 Destroy(gameObject);
         }
+    }*/
+
+    public void Struck()
+    {
+        pierce--;
+        damage *= pierceDamage;
+        if (pierce <= 0)
+            Destroy(gameObject);
     }
 }

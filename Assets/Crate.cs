@@ -5,14 +5,16 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
     public GameObject Player, Scrap;
+    public GameObject[] Items;
     public PlayerController playerStats;
     private Bullet collidedBullet;
     public Rigidbody2D Dir;
     public Transform Sight;
 
     public int[] scrapDroppedRange;
-    private int roll;
-    public float health;
+    public int itemsCount;
+    int roll;
+    public float health, dropChance;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class Crate : MonoBehaviour
         {
             collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
             TakeDamage(collidedBullet.damage);
+            collidedBullet.Struck();
         }
     }
 
@@ -40,6 +43,11 @@ public class Crate : MonoBehaviour
     void Destroy()
     {
         DropScrap();
+        for (int i = 0; i < itemsCount; i++)
+        {
+            if (dropChance >= Random.Range(0f, 1f))
+                DropItem();
+        }
         Destroy(gameObject);
     }
 
@@ -53,5 +61,13 @@ public class Crate : MonoBehaviour
             Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
             scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
         }
+    }
+
+    void DropItem()
+    {
+        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+        GameObject scrap = Instantiate(Items[Random.Range(0, Items.Length)], Dir.position, Sight.rotation);
+        Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+        scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
     }
 }

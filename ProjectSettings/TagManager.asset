@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Scrap
   - Ammo
+  - Tools
+  - Scrap5
   layers:
   - Default
   - TransparentFX

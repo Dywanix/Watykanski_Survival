@@ -117,6 +117,7 @@ public class Enemy : MonoBehaviour
             TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
             if (collidedBullet.DoT > 0)
                 GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
+            collidedBullet.Struck();
         }
     }
 

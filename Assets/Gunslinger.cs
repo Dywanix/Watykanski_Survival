@@ -8,21 +8,25 @@ public class Gunslinger : MonoBehaviour
     public PlayerController playerStats;
     public Image Ability1, Ability2;
 
-    public float doubleShotChance, bulletTimeCooldown, bulletTimeFireRate, bulletTimeMovementSpeed, unloadCooldown, unloadMaxCooldown;
+    public float doubleShotChance, bulletTimeCooldown, bulletTimeFireRate, bulletTimeMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
+    
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
             BulletTime();
+
         if (playerStats.task <= 0)
         {
             Action();
         }
+
         if (bulletTimeCooldown > 0)
         {
             bulletTimeCooldown -= Time.deltaTime;
             Ability1.fillAmount = 1 - (bulletTimeCooldown / 32f);
         }
+
         if (unloadCooldown > 0)
         {
             unloadCooldown -= Time.deltaTime;
@@ -62,14 +66,15 @@ public class Gunslinger : MonoBehaviour
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadCooldown = 3f + 8 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadCooldown = 5f + 6 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             unloadMaxCooldown = unloadCooldown;
 
-            playerStats.task = 0.8f;
+            unloadGap = 0.1f + 0.05f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            playerStats.task = unloadGap * 5f;
 
             for (int i = 0; i < 4; i++)
             {
-                Invoke("Fire", 0.16f + i * 0.16f);
+                Invoke("Fire", (1 + i) * unloadGap);
             }
         }
     }
@@ -80,8 +85,8 @@ public class Gunslinger : MonoBehaviour
             playerStats.Shoot(8f);
         else
         {
-            playerStats.task -= 0.16f;
-            unloadCooldown -= 2 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            playerStats.task -= unloadGap;
+            unloadCooldown -= 1f + 1.5f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
         }
     }
 }

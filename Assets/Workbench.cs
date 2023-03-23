@@ -7,8 +7,11 @@ public class Workbench : MonoBehaviour
 {
     public GameObject Player, Glow, Hud, Upgrades;
     public PlayerController playerStats;
-    public TMPro.TextMeshProUGUI gunInfo, upgradeCost, upgradesTotal, specialUpgrades;
-    public Button wench, Gwench;
+    public TMPro.TextMeshProUGUI specialUpgrades;
+    public TMPro.TextMeshProUGUI[] Cost, Info;
+    public Button Gwench;
+    public Button[] Buttons;
+    public Image special;
     public Image[] images;
     public Sprite[] sprites;
     bool active, golden, viable;
@@ -39,6 +42,7 @@ public class Workbench : MonoBehaviour
                 active = false;
             }
         }
+        else Glow.SetActive(false);
     }
 
     public void UpdateInfo(int which)
@@ -47,41 +51,52 @@ public class Workbench : MonoBehaviour
 
         GunInfo(which);
 
-        upgradeCost.text = playerStats.eq.guns[which].upgradeCost.ToString("0");
-        upgradesTotal.text = playerStats.eq.guns[which].upgrades.ToString("0");
-        specialUpgrades.text = playerStats.eq.guns[which].specialUpgrades.ToString("0");
         if (!golden)
         {
-            if (playerStats.scrap >= playerStats.eq.guns[which].upgradeCost)
+            for (int i = 0; i < 4; i++)
             {
-                wench.interactable = true;
+                if (playerStats.scrap >= playerStats.eq.guns[which].Costs[i])
+                    Buttons[i].interactable = true;
+                else Buttons[i].interactable = false;
             }
-            else wench.interactable = false;
 
-            if (playerStats.eq.guns[which].specialUpgrades > 0)
-            {
+            if (playerStats.eq.guns[which].special >= 1f)
                 Gwench.interactable = true;
-            }
             else Gwench.interactable = false;
         }
         else
         {
-            wench.interactable = false;
+            for (int i = 0; i < 4; i++)
+            {
+                Buttons[i].interactable = false;
+            }
             Gwench.interactable = false;
         }
     }
 
     void GunInfo(int which)
     {
-        gunInfo.text = playerStats.eq.guns[which].gunName + "\n Damage: " + playerStats.eq.guns[which].damage.ToString("0.0") + "\n Fire Rate: " + playerStats.eq.guns[which].fireRate.ToString("0.000") +
-            "\n Reload Time: " + playerStats.eq.guns[which].reloadTime.ToString("0.000") + "\n Penetration: " + (playerStats.eq.guns[which].penetration * 100).ToString("0") + 
-            "% \n Accuracy: " + (100 - playerStats.eq.guns[which].accuracy).ToString("0.00") + "%";
+        for (int i = 0; i < 4; i++)
+        {
+            Cost[i].text = playerStats.eq.guns[which].Costs[i].ToString("0");
+        }
+        Info[0].text = playerStats.eq.guns[which].damage.ToString("0.0");
+        Info[1].text = playerStats.eq.guns[which].fireRate.ToString("0.000");
+        Info[2].text = (100 - playerStats.eq.guns[which].accuracy).ToString("0.00") + "%";
+        Info[3].text = (playerStats.eq.guns[which].penetration * 100).ToString("0") + "%";
+
+        specialUpgrades.text = playerStats.eq.guns[which].special.ToString("0");
+        special.fillAmount = playerStats.eq.guns[which].specialCharge;
     }
 
-    public void Upgrade()
+    public void Upgrade(int which)
     {
-        playerStats.SpendScrap(playerStats.eq.guns[current].upgradeCost);
-        playerStats.eq.guns[current].Upgrade();
+        playerStats.SpendScrap(playerStats.eq.guns[current].Costs[which]);
+        for (int i = 0; i < playerStats.eq.guns.Length; i++)
+        {
+            playerStats.eq.guns[i].GainSpecialCharge(0.02f + playerStats.eq.guns[current].Costs[which] * 0.00002f);
+        }
+        playerStats.eq.guns[current].Upgrade(which);
         UpdateInfo(current);
     }
 
@@ -92,10 +107,12 @@ public class Workbench : MonoBehaviour
             viable = false;
             while (viable == false)
             {
-                rolled[i] = Random.Range(0, 13);
+                rolled[i] = Random.Range(0, 15);
                 if (rolled[i] == 2 && playerStats.eq.guns[current].infiniteMagazine)
                     viable = false;
                 else if (rolled[i] == 5 && playerStats.eq.guns[current].infiniteAmmo)
+                    viable = false;
+                else if (rolled[i] == 14 && playerStats.eq.guns[current].pierce == 1)
                     viable = false;
                 else
                 {
@@ -123,7 +140,7 @@ public class Workbench : MonoBehaviour
 
     public void SpecialUpgrade(int which)
     {
-        playerStats.eq.guns[current].specialUpgrades--;
+        playerStats.eq.guns[current].special--;
         playerStats.eq.guns[current].SpecialUpgrade(rolled[which]);
 
         Upgrades.SetActive(false);

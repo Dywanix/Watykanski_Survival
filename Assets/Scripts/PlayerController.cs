@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class PlayerController : MonoBehaviour
     public GameObject reload_image;
     public Equipment eq;
     public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo;
+    public Image healthBar;
     private Bullet firedBullet;
     public Gunslinger gunslinger;
+    public Berserker berserker;
 
     public float xInput = 0, yInput = 0;
     public bool mouseLeft, reloading, free = true, day = true;
@@ -19,8 +22,8 @@ public class PlayerController : MonoBehaviour
     public float task;
 
     // -- statystyki --
-    public float maxHealth, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash, scrap;
-    public int level, experience, experienceNeeded;
+    public float maxHealth, health, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash, scrap;
+    public int level = 1;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
 
     void Start()
@@ -28,7 +31,9 @@ public class PlayerController : MonoBehaviour
         GetMouseInput();
         Cam = FindObjectOfType<CameraController>();
         DisplayAmmo();
-        experienceNeeded = 300 + level * 100 + level * level * 3;
+        health = maxHealth;
+        healthBar.fillAmount = health / maxHealth;
+        Invoke("Tick", 1f);
     }
 
     void Update()
@@ -59,6 +64,19 @@ public class PlayerController : MonoBehaviour
             dashCooldown -= Time.deltaTime;
     }
 
+    void Tick()
+    {
+        health += maxHealth * 0.0025f;
+
+        if (berserker == true)
+            health += (maxHealth - health) * 0.005f;
+
+        if (health > maxHealth)
+            health = maxHealth;
+
+        Invoke("Tick", 1f);
+    }
+
     void GetInput()
     {
         xInput = Input.GetAxis("Horizontal");
@@ -76,7 +94,6 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        // TUTAJ !!
         Vector3 tempPos = transform.position;
         tempPos += new Vector3(xInput, yInput, 0) * (movementSpeed + dash) * Time.deltaTime;
         transform.position = tempPos;
@@ -120,6 +137,8 @@ public class PlayerController : MonoBehaviour
             SwapGun(0);
         else if (Input.GetKeyDown(KeyCode.Alpha2))
             SwapGun(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            SwapGun(2);
     }
 
     public void Shoot(float accuracy_change)
@@ -150,8 +169,8 @@ public class PlayerController : MonoBehaviour
         GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab, Barrel.position, Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
+        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet; firedBullet.duration = eq.guns[eq.equipped].range;
+        firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred; firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
         firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
         if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
@@ -231,10 +250,18 @@ public class PlayerController : MonoBehaviour
 
     void DisplayAmmo()
     {
-        magazineInfo.text = (eq.guns[eq.equipped].bulletsLeft).ToString("") + "/" + eq.guns[eq.equipped].magazineSize;
-        if (eq.guns[eq.equipped].infiniteAmmo)
-            ammoInfo.text = "NaN";
-        else ammoInfo.text = (eq.guns[eq.equipped].ammo).ToString("");
+        if (!eq.guns[eq.equipped].infiniteMagazine)
+        {
+            magazineInfo.text = (eq.guns[eq.equipped].bulletsLeft).ToString("") + "/" + eq.guns[eq.equipped].magazineSize;
+            if (eq.guns[eq.equipped].infiniteAmmo)
+                ammoInfo.text = "NaN";
+            else ammoInfo.text = (eq.guns[eq.equipped].ammo).ToString("");
+        }
+        else
+        {
+            magazineInfo.text = "";
+            ammoInfo.text = "";
+        }
     }
 
     void SwapGun(int which)
@@ -245,7 +272,7 @@ public class PlayerController : MonoBehaviour
             eq.equipped = which;
             eq.gunSprite[eq.equipped].SetActive(true);
             DisplayAmmo();
-            task = 1.25f;
+            task = 1.1f;
         }
     }
 
@@ -260,12 +287,13 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float value)
     {
-        //bla bla
+        health -= value;
+        healthBar.fillAmount = health / maxHealth;
     }
 
-    float DamageDealtMultiplyer()
+    public float DamageDealtMultiplyer(float efficiency)
     {
-        return damageBonus;
+        return 1f + (damageBonus - 1f) * efficiency;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -275,12 +303,34 @@ public class PlayerController : MonoBehaviour
             GainScrap(1);
             Destroy(other.gameObject);
         }
+        else if (other.transform.tag == "Scrap5")
+        {
+            GainScrap(5);
+            Destroy(other.gameObject);
+        }
         else if (other.transform.tag == "Ammo")
         {
             PickedUpAmmo();
             Destroy(other.gameObject);
             DisplayAmmo();
         }
+        else if (other.transform.tag == "Tools")
+        {
+            for (int i = 0; i < eq.guns.Length; i++)
+            {
+                eq.guns[i].GainSpecialCharge(0.2f);
+            }
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void LevelUp()
+    {
+        level++;
+        maxHealth += healthIncrease;
+        damageBonus += damageIncrease;
+        fireRateBonus += fireRateIncrease;
+        movementSpeed += movementSpeedIncrease;
     }
 
     void GainScrap(int amount)

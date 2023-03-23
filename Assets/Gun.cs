@@ -6,15 +6,15 @@ public class Gun : MonoBehaviour
 {
     public string gunName;
     // -- Basic Gun Stats
-    public float damage, critChance, penetration, fireRate, reloadTime, accuracy, force, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
+    public float damage, critChance, penetration, fireRate, reloadTime, accuracy, force, range, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
 
     // -- Special Gun Stats
-    public float critDamage, armorShred, vulnerableApplied, pierceDamage, DoT;
-    public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, pierce, upgrades, upgradeCost, upgradeCostIncrease, upgradeCostIncreaseIncrease, specialUpgrades, roll;
-    public int[] Slots;
+    public float critDamage, armorShred, vulnerableApplied, pierceDamage, DoT, specialCharge;
+    public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, pierce, special;
+    public int[] Slots, Costs;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
-    public float temp;
-    private int tempi;
+    float temp;
+    int tempi;
 
     public GameObject bulletPrefab;
 
@@ -23,66 +23,46 @@ public class Gun : MonoBehaviour
         bulletsLeft = magazineSize;
     }
 
-    public void Upgrade()
+    public void Upgrade(int which)
     {
-        upgrades++;
-        upgradeCost += upgradeCostIncrease;
-
-        for (int i = 0; i < 3; i++)
+        switch (which)
         {
-            roll = Random.Range(0, 9);
-            switch (roll)
-            {
-                case 0:
-                    damage *= 1.01f;
-                    cameraShake *= 1.004f;
-                    break;
-                case 1:
-                    fireRate *= 0.986f;
-                    reloadTime *= 0.996f;
-                    break;
-                case 2:
-                    accuracy *= 0.98f;
-                    force *= 1.02f;
-                    break;
-                case 3:
-                    if (penetration < 1f)
-                        penetration += 0.01f;
-                    else
-                    {
-                        damage *= 1.01f;
-                        cameraShake *= 1.004f;
-                    }
-                    break;
-                case 4:
-                    if (critChance < 1f)
-                        critChance += 0.01f;
-                    else
-                        critDamage += 0.01f;
-                    break;
-                case 5:
-                    DoT += 0.01f + 0.05f * DoT;
-                    break;
-                case 6:
-                    roll = Random.Range(0, 4);
-                    Slots[roll]++;
-                    break;
-                case 7:
-                    damage *= 1.01f;
-                    cameraShake *= 1.004f;
-                    break;
-                case 8:
-                    fireRate *= 0.986f;
-                    reloadTime *= 0.996f;
-                    break;
-            }
+            case 0:
+                damage *= 1.01f;
+                cameraShake *= 1.004f;
+                break;
+            case 1:
+                fireRate *= 0.984f;
+                break;
+            case 2:
+                accuracy *= 0.98f;
+                range += 0.02f;
+                break;
+            case 3:
+                penetration += 0.01f;
+                if (penetration > 1f)
+                {
+                    temp = penetration - 1f;
+                    penetration = 1f;
+                    damage *= 1f + temp;
+                    cameraShake *= 1f + 0.4f * temp;
+                }
+                break;
         }
 
-        if (upgrades % upgradeCostIncreaseIncrease == 0)
-            upgradeCostIncrease++;
+        GainSpecialCharge(0.07f + Costs[which] * 0.00008f);
 
-        if (upgrades % 5 == 0)
-            specialUpgrades++;
+        Costs[which] += 5;
+    }
+
+    public void GainSpecialCharge(float amount)
+    {
+        specialCharge += amount;
+        if (specialCharge >= 1f)
+        {
+            specialCharge -= 1f;
+            special++;
+        }
     }
 
     public void SpecialUpgrade(int which)
@@ -92,16 +72,16 @@ public class Gun : MonoBehaviour
             case 0:
                 damage *= 1.02f;
                 cameraShake *= 1.008f;
-                fireRate *= 0.97f;
+                fireRate *= 0.96f;
                 reloadTime *= 0.99f;
                 break;
             case 1:
-                for (int i = 0; i < 2; i++)
+                critChance += 0.025f;
+                if (critChance > 1f)
                 {
-                    if (critChance < 1f)
-                        critChance += 0.01f;
-                    else
-                        critDamage += 0.01f;
+                    temp = critChance - 1f;
+                    critChance = 1f;
+                    critDamage *= 1f + temp;
                 }
                 critDamage += 0.02f * (1 + critDamage);
                 break;
@@ -110,7 +90,7 @@ public class Gun : MonoBehaviour
                 if (temp < 1f)
                 {
                     magazineSize++;
-                    reloadTime *= 2f - temp;
+                    reloadTime *= 1.9f - 0.9f * temp;
                 }
                 else
                 {
@@ -125,8 +105,10 @@ public class Gun : MonoBehaviour
                 }
                 break;
             case 3:
-                armorShred += 0.03f * fireRate * (0.1f + 0.9f * bulletSpread);
-                fireRate *= 0.98f;
+                temp = 0.03f * fireRate * (0.1f + 0.9f * bulletSpread);
+                temp *= 1 + 1.2f * penetration;
+                armorShred += temp;
+                fireRate *= 0.975f;
                 break;
             case 4:
                 vulnerableApplied += 0.02f * fireRate * (0.1f + 0.9f * bulletSpread);
@@ -135,23 +117,23 @@ public class Gun : MonoBehaviour
             case 5:
                 tempi = 2 + ammoFromPack / 5;
                 ammoFromPack += tempi;
-                ammo += 2 * ammoFromPack;
+                ammo += 3 + 2 * ammoFromPack;
                 break;
             case 6:
-                temp = 1.01f + 0.08f / bulletSpread;
+                temp = 1.01f + 0.07f / bulletSpread;
                 accuracy *= temp; cameraShake *= temp; reloadTime *= temp;
 
-                temp = 0.08f + (1f * bulletSpread / (1f * bulletSpread + 1f));
+                temp = 0.07f + (1f * bulletSpread / (1f * bulletSpread + 1f));
                 damage *= temp; armorShred *= temp; vulnerableApplied *= temp;
 
                 bulletSpread++;
                 break;
             case 7:
                 damage *= 0.96f;
-                DoT += 0.07f + 0.2f * DoT;
+                DoT += 0.1f + 0.1f * DoT;
                 break;
             case 8:
-                temp = (0.1f + reloadTime) / (0.2f + 1.2f * fireRate);
+                temp = (0.2f + reloadTime) / (0.3f + 1.2f * fireRate);
                 if (temp < 1f)
                 {
                     overload++;
@@ -171,19 +153,31 @@ public class Gun : MonoBehaviour
                 break;
             case 9:
                 Slots[0]++;
-                damage *= 1.03f;
+                damage *= 1.032f;
                 break;
             case 10:
                 Slots[1]++;
                 accuracy *= 0.93f;
+                range += 0.05f;
                 break;
             case 11:
                 Slots[2]++;
-                reloadTime *= 0.94f;
+                reloadTime *= 0.936f;
                 break;
             case 12:
                 Slots[3]++;
-                fireRate *= 0.96f;
+                fireRate *= 0.956f;
+                break;
+            case 13:
+                temp = (3f + 1f * pierce) / (4f + 1f * pierce);
+                pierceDamage *= temp;
+                armorShred *= temp;
+                vulnerableApplied *= temp;
+                pierce++;
+                break;
+            case 14:
+                temp = 1.02f + (0.07f / pierce);
+                pierceDamage *= temp;
                 break;
         }
     }

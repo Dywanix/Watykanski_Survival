@@ -6,6 +6,6 @@ public class Equipment : MonoBehaviour
 {
     public Gun[] guns;
     public GameObject[] gunSprite;
-    //Gun equipped;
+
     public int equipped;
 }
