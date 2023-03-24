@@ -15,6 +15,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public TimeState CurrentState = TimeState.Day;
     public Spawner[] spawners;
     private Spawner currentSpawner;
+    public GameObject Player, Gunslinger, Berserker;
     public GameObject[] mobs, bosses;
     public int[] mobWeights;
     public PlayerController playerStats;
@@ -25,6 +26,19 @@ public class Day_Night_Cycle : MonoBehaviour
 
     void Start()
     {
+        switch (PlayerPrefs.GetString("Class"))
+        {
+            case "Gunslinger":
+                Instantiate(Gunslinger);
+                break;
+            case "Berserker":
+                Instantiate(Berserker);
+                break;
+        }
+
+        Player = GameObject.FindGameObjectWithTag("Player");
+        playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+
         day = 1;
         maxTime = 100f;
         time = maxTime * 0.6f;
@@ -68,9 +82,9 @@ public class Day_Night_Cycle : MonoBehaviour
 
         if (day % 5 == 0)
         {
-            while (hordeSize > 10)
+            while (hordeSize > 12)
             {
-                hordeSize -= 10;
+                hordeSize -= 12;
                 SummonBoss();
             }
         }

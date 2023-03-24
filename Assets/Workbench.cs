@@ -20,6 +20,11 @@ public class Workbench : MonoBehaviour
 
     void Update()
     {
+        if (!Player)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player");
+            playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+        }
         if (Vector3.Distance(transform.position, Player.transform.position) <= 4.2f)
         {
             if (playerStats.day)
@@ -94,7 +99,7 @@ public class Workbench : MonoBehaviour
         playerStats.SpendScrap(playerStats.eq.guns[current].Costs[which]);
         for (int i = 0; i < playerStats.eq.guns.Length; i++)
         {
-            playerStats.eq.guns[i].GainSpecialCharge(0.02f + playerStats.eq.guns[current].Costs[which] * 0.00002f);
+            playerStats.eq.guns[i].GainSpecialCharge(0.025f + playerStats.eq.guns[current].Costs[which] * 0.00002f);
         }
         playerStats.eq.guns[current].Upgrade(which);
         UpdateInfo(current);

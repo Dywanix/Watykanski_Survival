@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+	public GameObject Player;
 	public PlayerController playerStats;
 	public Transform player;
 	Vector3 target, mousePos, refVel, shakeOffset;
@@ -16,12 +17,18 @@ public class CameraController : MonoBehaviour
 
 	void Start()
 	{
-		target = player.position; //set default target
 		zStart = transform.position.z; //capture current z position
 	}
 
 	void Update()
 	{
+		if (!Player)
+        {
+			Player = GameObject.FindGameObjectWithTag("Player");
+			playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+			player = Player.GetComponent(typeof(Transform)) as Transform;
+			target = player.position;//set default target
+		}
 		if (playerStats.free)
         {
 			mousePos = CaptureMousePos(); //find out where the mouse is

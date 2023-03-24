@@ -66,10 +66,10 @@ public class Gunslinger : MonoBehaviour
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadCooldown = 4f + 4 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadCooldown = 6f + 4 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             unloadMaxCooldown = unloadCooldown;
 
-            unloadGap = 0.06f + 0.11f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadGap = 0.06f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             playerStats.task = 0.8f;
 
             for (float i = 0; i < 0.8f; i += unloadGap)

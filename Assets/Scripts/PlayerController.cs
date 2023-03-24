@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         if (berserker == true)
         {
             RestoreHealth((maxHealth - health) * 0.006f);
-            berserker.GainCharge(1f + 0.03f * level);
+            berserker.GainCharge(1f + 0.04f * level);
         }
 
         Invoke("Tick", 1f);
@@ -293,7 +293,7 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
 
         if (berserker == true)
-            berserker.GainCharge(0.25f * value);
+            berserker.GainCharge(0.26f * value);
 
         if (health < 0f)
             Application.Quit();

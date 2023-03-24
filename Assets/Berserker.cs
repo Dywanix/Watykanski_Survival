@@ -14,7 +14,7 @@ public class Berserker : MonoBehaviour
 
     void Start()
     {
-        requiredCharge = 300f;
+        requiredCharge = 250f;
         survivorCharge = 0;
     }
     
@@ -52,12 +52,12 @@ public class Berserker : MonoBehaviour
         survivorCharge += amount;
         if (survivorCharge >= requiredCharge)
         {
-            playerStats.maxHealth++;
-            playerStats.health++;
+            playerStats.maxHealth += 1.2f;
+            playerStats.health += 1.2f;
             playerStats.damageBonus += 0.0002f;
             playerStats.healthBar.fillAmount = playerStats.health / playerStats.maxHealth;
             survivorCharge -= requiredCharge;
-            requiredCharge += 3;
+            requiredCharge += 5;
             survivorCount++;
         }
     }
@@ -75,7 +75,7 @@ public class Berserker : MonoBehaviour
             enrageDamageIncrease = 0.6f + enrageFireRateIncrease * 0.4f;
 
             playerStats.fireRateBonus *= enrageFireRateIncrease;
-            playerStats.damageIncrease *= enrageDamageIncrease;
+            playerStats.damageBonus *= enrageDamageIncrease;
 
             Invoke("EnrageEnd", 6f);
         }
@@ -86,7 +86,7 @@ public class Berserker : MonoBehaviour
         playerStats.RestoreHealth((playerStats.maxHealth - playerStats.health) * 0.05f);
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
-        playerStats.damageIncrease /= enrageDamageIncrease;
+        playerStats.damageBonus /= enrageDamageIncrease;
     }
 
     void SwipeCast()

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   Scrap: {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
+  damageTook: {fileID: 4695042375447321633, guid: b72dee5f414d4d1408a77c17d349d58b, type: 3}
   Items:
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 79473308468676264, guid: cea33aea125036440b5d3c1dc8b78569, type: 3}
@@ -109,10 +110,10 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   Dir: {fileID: 327920104148096441}
   Sight: {fileID: 327920104148096442}
-  scrapDroppedRange: 0500000006000000
+  scrapDroppedRange: 030000000a000000
   itemsCount: 1
-  health: 100
-  dropChance: 0.2861
+  health: 113
+  dropChance: 0.3233
 --- !u!50 &327920104148096441
 Rigidbody2D:
   serializedVersion: 4
