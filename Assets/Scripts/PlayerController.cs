@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo;
     public Image healthBar;
     private Bullet firedBullet;
+    private EnemyBullet collidedBullet;
     public Gunslinger gunslinger;
     public Berserker berserker;
 
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
         DisplayAmmo();
         health = maxHealth;
         healthBar.fillAmount = health / maxHealth;
-        Invoke("Tick", 1f);
+        Invoke("Tick", 0.8f);
     }
 
     void Update()
@@ -54,7 +55,7 @@ public class PlayerController : MonoBehaviour
                 {
                     reloading = false;
                     reload_image.SetActive(false);
-                    task = 0.12f;
+                    task = 0.1f;
                     Shoot(0f);
                     task += eq.guns[eq.equipped].fireRate;
                 }
@@ -66,13 +67,13 @@ public class PlayerController : MonoBehaviour
 
     void Tick()
     {
-        health += maxHealth * 0.0025f;
+        RestoreHealth(maxHealth * 0.0025f);
 
         if (berserker == true)
-            health += (maxHealth - health) * 0.005f;
-
-        if (health > maxHealth)
-            health = maxHealth;
+        {
+            RestoreHealth((maxHealth - health) * 0.006f);
+            berserker.GainCharge(1f + 0.03f * level);
+        }
 
         Invoke("Tick", 1f);
     }
@@ -146,15 +147,11 @@ public class PlayerController : MonoBehaviour
         if (gunslinger == true)
         {
             if (Random.Range(0f,1f) <= gunslinger.doubleShotChance)
-            {
-                for (int i = 0; i < eq.guns[eq.equipped].bulletSpread; i++)
-                    Fire(accuracy_change);
-            }
+                Fire(accuracy_change);
         }
-        for (int i = 0; i < eq.guns[eq.equipped].bulletSpread; i++)
-        {
-            Fire(accuracy_change);
-        }
+
+        Fire(accuracy_change);
+
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
         if (!eq.guns[eq.equipped].infiniteMagazine)
         {
@@ -165,18 +162,21 @@ public class PlayerController : MonoBehaviour
 
     void Fire(float accuracy_change)
     {
-        Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
-        GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab, Barrel.position, Barrel.rotation);
-        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet; firedBullet.duration = eq.guns[eq.equipped].range;
-        firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
-        firedBullet.armorShred = eq.guns[eq.equipped].armorShred; firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
-        firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
-        if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
+        for (int i = 0; i < eq.guns[eq.equipped].bulletSpread; i++)
         {
-            firedBullet.damage *= eq.guns[eq.equipped].critDamage;
-            firedBullet.crit = true;
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
+            GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab, Barrel.position, Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
+            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet; firedBullet.duration = eq.guns[eq.equipped].range;
+            firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
+            firedBullet.armorShred = eq.guns[eq.equipped].armorShred; firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
+            firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
+            if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
+            {
+                firedBullet.damage *= eq.guns[eq.equipped].critDamage;
+                firedBullet.crit = true;
+            }
         }
     }
 
@@ -200,6 +200,7 @@ public class PlayerController : MonoBehaviour
             if (eq.guns[eq.equipped].infiniteAmmo)
             {
                 eq.guns[eq.equipped].bulletsLeft++;
+                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].magazineSize)
                 {
                     reloading = false;
@@ -213,6 +214,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 eq.guns[eq.equipped].bulletsLeft++;
+                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 eq.guns[eq.equipped].ammo--;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].magazineSize || eq.guns[eq.equipped].ammo <= 0)
                 {
@@ -248,7 +250,7 @@ public class PlayerController : MonoBehaviour
         DisplayAmmo();
     }
 
-    void DisplayAmmo()
+    public void DisplayAmmo()
     {
         if (!eq.guns[eq.equipped].infiniteMagazine)
         {
@@ -289,6 +291,20 @@ public class PlayerController : MonoBehaviour
     {
         health -= value;
         healthBar.fillAmount = health / maxHealth;
+
+        if (berserker == true)
+            berserker.GainCharge(0.25f * value);
+
+        if (health < 0f)
+            Application.Quit();
+    }
+
+    public void RestoreHealth(float value)
+    {
+        health += value;
+        if (health > maxHealth)
+            health = maxHealth;
+        healthBar.fillAmount = health / maxHealth;
     }
 
     public float DamageDealtMultiplyer(float efficiency)
@@ -320,6 +336,12 @@ public class PlayerController : MonoBehaviour
             {
                 eq.guns[i].GainSpecialCharge(0.2f);
             }
+            Destroy(other.gameObject);
+        }
+        else if (other.transform.tag == "EnemyProjectal")
+        {
+            collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
+            TakeDamage(collidedBullet.damage);
             Destroy(other.gameObject);
         }
     }

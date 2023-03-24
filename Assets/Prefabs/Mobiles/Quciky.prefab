@@ -92,6 +92,10 @@ PrefabInstance:
       value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
+      propertyPath: dropChance
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackRange
       value: 1.8
       objectReference: {fileID: 0}

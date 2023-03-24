@@ -12,7 +12,8 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState CurrentState = EnemyState.Chase;
-    public GameObject Player, Scrap, damageTook;
+    public GameObject Player, Scrap, damageTook, Projectal;
+    public GameObject[] Items;
     public PlayerController playerStats;
     public Rigidbody2D Body, playerBody, Dir;
     public Transform Sight;
@@ -20,21 +21,26 @@ public class Enemy : MonoBehaviour
     private DamageTaken damageDisplay;
 
     // ----- enemy stats -----
-    public int weight;
+    public float dropChance;
+    public int weight, itemsCount;
     public int[] scrapDroppedRange;
     private int roll;
-    private float temp, tick;
+    private float temp;
 
     // -- Health & Resistance
     public Bar hpBar;
-    public float maxHealth, health, armor, vulnerable, DoT;
+    public float maxHealth, health, regen, armor, vulnerable, DoT;
 
     // -- Movement
     public float movementSpeed;
 
     // -- Damage & Attacks
-    public float attackDamage, attackSpeed, attackRange;
-    private bool attackTimer = false;
+    public float attackDamage, attackSpeed, attackRange, accuracy, force;
+    public bool attackTimer = false, ranged = false;
+
+    // -- Special Stats
+    public string[] enrageStats;
+    public float[] enrageValue;
 
     void Start()
     {
@@ -51,6 +57,8 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
         hpBar.SetMaxValue(maxHealth);
         hpBar.SetValue(health);
+
+        Invoke("Tick", 0.5f);
     }
 
     void Update()
@@ -64,10 +72,6 @@ public class Enemy : MonoBehaviour
                 Attack();
                 break;
         }
-
-        tick += Time.deltaTime;
-        if (tick >= 0.3f)
-            Tick();
 
         if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
         {
@@ -96,15 +100,28 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
-        playerStats.TakeDamage(attackDamage);
-        StartCoroutine(attackTime());
+        if (!attackTimer)
+        {
+            if (ranged)
+                Shoot();
+            else playerStats.TakeDamage(attackDamage);
+            StartCoroutine(attackTime());
+        }
     }
 
-    private IEnumerator attackTime()
+    public IEnumerator attackTime()
     {
         attackTimer = true;
         yield return new WaitForSeconds(attackSpeed);
         attackTimer = false;
+    }
+
+    void Shoot()
+    {
+        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(- accuracy, accuracy));
+        GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
+        Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+        scrap_body.AddForce(Sight.up * force * Random.Range(1f, 1.1f), ForceMode2D.Impulse);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -133,8 +150,32 @@ public class Enemy : MonoBehaviour
         damageDisplay.SetText(value, crited);
         text_body.AddForce(Sight.up * 3.6f, ForceMode2D.Impulse);
 
+        if (enrageStats.Length > 0)
+        {
+            for (int i = 0; i < enrageStats.Length; i++)
+            {
+                switch (enrageStats[i])
+                {
+                    case "movementSpeed":
+                        movementSpeed += value * enrageValue[i];
+                        break;
+                    case "attackDamage":
+                        attackDamage += value * enrageValue[i];
+                        break;
+                }
+            }
+        }
+
         if (health <= 0)
             Death();
+    }
+
+    void RestoreHealth(float value)
+    {
+        health += value;
+        if (health > maxHealth)
+            health = maxHealth;
+        hpBar.SetValue(health);
     }
 
     void GainDoT(float value)
@@ -151,23 +192,27 @@ public class Enemy : MonoBehaviour
 
     void Tick()
     {
-        tick -= 0.3f;
         if (playerStats.day)
             Burn();
+
         if (DoT > 0)
             DoTproc();
+
+        RestoreHealth(regen * 0.5f);
+
+        Invoke("Tick", 0.5f);
     }
 
     void Burn()
     {
-        vulnerable += 0.01f;
-        temp = (1.8f + maxHealth * 0.006f);
+        vulnerable += 0.055f * 0.5f;
+        temp = (5f + maxHealth * 0.015f) * 0.5f;
         TakeDamage(temp / DamageTakenMultiplyer(0.8f), false);
     }
 
     void DoTproc()
     {
-        temp = 1 + DoT * 0.2f;
+        temp = 1f + DoT * 0.35f;
         TakeDamage(temp / DamageTakenMultiplyer(1f), false);
         DoT -= temp;
     }
@@ -175,6 +220,11 @@ public class Enemy : MonoBehaviour
     void Death()
     {
         DropScrap();
+        for (int i = 0; i < itemsCount; i++)
+        {
+            if (dropChance >= Random.Range(0f, 1f))
+                DropItem();
+        }
         Destroy(gameObject);
     }
 
@@ -188,5 +238,13 @@ public class Enemy : MonoBehaviour
             Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
             scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
         }
+    }
+
+    void DropItem()
+    {
+        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+        GameObject scrap = Instantiate(Items[Random.Range(0, Items.Length)], Dir.position, Sight.rotation);
+        Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+        scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
     }
 }

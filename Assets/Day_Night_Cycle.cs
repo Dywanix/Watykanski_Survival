@@ -15,7 +15,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public TimeState CurrentState = TimeState.Day;
     public Spawner[] spawners;
     private Spawner currentSpawner;
-    public GameObject[] mobs;
+    public GameObject[] mobs, bosses;
     public int[] mobWeights;
     public PlayerController playerStats;
     public Image DayBar;
@@ -26,7 +26,7 @@ public class Day_Night_Cycle : MonoBehaviour
     void Start()
     {
         day = 1;
-        maxTime = 144f;
+        maxTime = 100f;
         time = maxTime * 0.6f;
     }
 
@@ -59,20 +59,31 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.day = false;
         CurrentState = TimeState.Night;
-        maxTime = 230f;
+        maxTime = 120f + 10f * day;
         time = 0;
-        hordeSize = 10 + day * 2;
-        spawnGap = 2.5f / (1 + 0.12f * day);
+
+        hordeSize = 9 + day * 3;
+        spawnGap = 2.4f / (1 + 0.12f * day);
         spawnTime = spawnGap * (2 + hordeSize * 0.5f);
+
+        if (day % 5 == 0)
+        {
+            while (hordeSize > 10)
+            {
+                hordeSize -= 10;
+                SummonBoss();
+            }
+        }
         SummonHorde();
     }
 
     void StartDay()
     {
+        playerStats.LevelUp();
         playerStats.day = true;
         day++;
         CurrentState = TimeState.Day;
-        maxTime = 144f;
+        maxTime = 80f + 8f * day;
         time = maxTime;
     }
 
@@ -97,5 +108,14 @@ public class Day_Night_Cycle : MonoBehaviour
         currentSpawner = spawners[Random.Range(0, spawners.Length)];
 
         currentSpawner.Spawn(mobs[roll]);
+    }
+
+    void SummonBoss()
+    {
+        roll = Random.Range(0, bosses.Length);
+
+        currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+        currentSpawner.Spawn(bosses[roll]);
     }
 }

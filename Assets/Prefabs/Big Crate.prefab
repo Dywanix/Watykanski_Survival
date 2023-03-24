@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: health
-      value: 152
+      value: 168
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: dropChance
-      value: 0.17
+      value: 0.2204
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: itemsCount
@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: scrapDroppedRange.Array.data[0]
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: scrapDroppedRange.Array.data[1]
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096442, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: m_RootOrder

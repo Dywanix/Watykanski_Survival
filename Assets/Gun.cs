@@ -52,7 +52,7 @@ public class Gun : MonoBehaviour
 
         GainSpecialCharge(0.07f + Costs[which] * 0.00008f);
 
-        Costs[which] += 5;
+        Costs[which] += 4;
     }
 
     public void GainSpecialCharge(float amount)
@@ -120,10 +120,10 @@ public class Gun : MonoBehaviour
                 ammo += 3 + 2 * ammoFromPack;
                 break;
             case 6:
-                temp = 1.01f + 0.07f / bulletSpread;
+                temp = 1.02f + 0.1f / (bulletSpread + 1f);
                 accuracy *= temp; cameraShake *= temp; reloadTime *= temp;
 
-                temp = 0.07f + (1f * bulletSpread / (1f * bulletSpread + 1f));
+                temp = 0.04f + ((1f * bulletSpread + 0.4f) / (1f * bulletSpread + 1.4f));
                 damage *= temp; armorShred *= temp; vulnerableApplied *= temp;
 
                 bulletSpread++;
@@ -133,22 +133,45 @@ public class Gun : MonoBehaviour
                 DoT += 0.1f + 0.1f * DoT;
                 break;
             case 8:
-                temp = (0.2f + reloadTime) / (0.3f + 1.2f * fireRate);
-                if (temp < 1f)
+                if (infiniteAmmo)
                 {
-                    overload++;
-                    reloadTime *= 1.5f - (0.5f * temp);
+                    temp = (0.3f + reloadTime) / (0.2f + 1.1f * fireRate);
+                    if (temp < 1f)
+                    {
+                        overload++;
+                        reloadTime *= 1.4f - (0.4f * temp);
+                    }
+                    else
+                    {
+                        tempi = 0;
+                        for (int i = 0; i < temp; i++)
+                        {
+                            overload++;
+                            tempi++;
+                        }
+                        temp = temp - tempi;
+                        reloadTime *= 1f - (1.25f * temp / tempi);
+                    }
                 }
                 else
                 {
-                    tempi = 0;
-                    for (int i = 0; i < temp; i++)
+                    temp = (0.2f + reloadTime) / (0.3f + 1.2f * fireRate);
+                    if (temp < 1f)
                     {
                         overload++;
-                        tempi++;
+                        reloadTime *= 1.5f - (0.5f * temp);
                     }
-                    temp = temp - tempi;
-                    reloadTime *= 1f - (1.1f * temp / tempi);
+                    else
+                    {
+                        tempi = 0;
+                        for (int i = 0; i < temp; i++)
+                        {
+                            overload++;
+                            tempi++;
+                        }
+                        temp = temp - tempi;
+                        reloadTime *= 1f - (1.1f * temp / tempi);
+                    }
                 }
                 break;
             case 9:
@@ -176,7 +199,7 @@ public class Gun : MonoBehaviour
                 pierce++;
                 break;
             case 14:
-                temp = 1.02f + (0.07f / pierce);
+                temp = 1.02f + (0.08f / pierce);
                 pierceDamage *= temp;
                 break;
         }

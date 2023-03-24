@@ -102,7 +102,7 @@ public class Workbench : MonoBehaviour
 
     public void GoldenWench()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             viable = false;
             while (viable == false)
@@ -111,6 +111,8 @@ public class Workbench : MonoBehaviour
                 if (rolled[i] == 2 && playerStats.eq.guns[current].infiniteMagazine)
                     viable = false;
                 else if (rolled[i] == 5 && playerStats.eq.guns[current].infiniteAmmo)
+                    viable = false;
+                else if (rolled[i] == 8 && playerStats.eq.guns[current].infiniteMagazine)
                     viable = false;
                 else if (rolled[i] == 14 && playerStats.eq.guns[current].pierce == 1)
                     viable = false;
@@ -123,9 +125,14 @@ public class Workbench : MonoBehaviour
                         if (rolled[i] != rolled[i-1])
                             viable = true;
                     }
-                    else
+                    else if (i == 2)
                     {
                         if (rolled[i] != rolled[i - 1] && rolled[i] != rolled[i - 2])
+                            viable = true;
+                    }
+                    else
+                    {
+                        if (rolled[i] != rolled[i - 1] && rolled[i] != rolled[i - 2] && rolled[i] != rolled[i - 3])
                             viable = true;
                     }
                 }
@@ -146,5 +153,6 @@ public class Workbench : MonoBehaviour
         Upgrades.SetActive(false);
         golden = false;
         UpdateInfo(current);
+        playerStats.DisplayAmmo();
     }
 }

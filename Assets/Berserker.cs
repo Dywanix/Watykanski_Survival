@@ -10,8 +10,14 @@ public class Berserker : MonoBehaviour
     public GameObject SwipeWave;
     private Bullet SwipeBullet;
 
-    public float enrageCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown;
+    public float survivorCharge, requiredCharge, survivorCount, enrageCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown;
 
+    void Start()
+    {
+        requiredCharge = 300f;
+        survivorCharge = 0;
+    }
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -38,9 +44,24 @@ public class Berserker : MonoBehaviour
     void Action()
     {
         if (Input.GetMouseButton(1))
-            Swipe();
+            SwipeCast();
     }
 
+    public void GainCharge(float amount)
+    {
+        survivorCharge += amount;
+        if (survivorCharge >= requiredCharge)
+        {
+            playerStats.maxHealth++;
+            playerStats.health++;
+            playerStats.damageBonus += 0.0002f;
+            playerStats.healthBar.fillAmount = playerStats.health / playerStats.maxHealth;
+            survivorCharge -= requiredCharge;
+            requiredCharge += 3;
+            survivorCount++;
+        }
+    }
+    
     void Enrage()
     {
         if (enrageCooldown <= 0)
@@ -62,24 +83,31 @@ public class Berserker : MonoBehaviour
 
     void EnrageEnd()
     {
+        playerStats.RestoreHealth((playerStats.maxHealth - playerStats.health) * 0.05f);
+
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageIncrease /= enrageDamageIncrease;
     }
 
-    void Swipe()
+    void SwipeCast()
     {
         if (swipeCooldown <= 0)
         {
             swipeCooldown = 12f;
 
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-3f, 3f));
-            GameObject bullet = Instantiate(SwipeWave, playerStats.Barrel.position, playerStats.Barrel.rotation);
-            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(playerStats.Barrel.up * 12f * playerStats.DamageDealtMultiplyer(0.4f), ForceMode2D.Impulse);
-            SwipeBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            SwipeBullet.damage = (32 + 3 * playerStats.level) * playerStats.DamageDealtMultiplyer(1.6f);
+            Invoke("Swipe", 0.5f);
 
-            playerStats.task = 0.8f;
+            playerStats.task = 1f;
         }
+    }
+
+    void Swipe()
+    {
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-3f, 3f));
+        GameObject bullet = Instantiate(SwipeWave, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * 10f * playerStats.DamageDealtMultiplyer(0.5f), ForceMode2D.Impulse);
+        SwipeBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        SwipeBullet.damage = (30 + 3 * playerStats.level + 0.05f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.6f);
     }
 }

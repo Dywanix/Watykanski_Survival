@@ -105,13 +105,14 @@ MonoBehaviour:
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 79473308468676264, guid: cea33aea125036440b5d3c1dc8b78569, type: 3}
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
+  - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   playerStats: {fileID: 0}
   Dir: {fileID: 327920104148096441}
   Sight: {fileID: 327920104148096442}
-  scrapDroppedRange: 0300000007000000
+  scrapDroppedRange: 0500000006000000
   itemsCount: 1
-  health: 88
-  dropChance: 0.22
+  health: 100
+  dropChance: 0.2861
 --- !u!50 &327920104148096441
 Rigidbody2D:
   serializedVersion: 4

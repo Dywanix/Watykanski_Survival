@@ -66,15 +66,15 @@ public class Gunslinger : MonoBehaviour
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadCooldown = 5f + 6 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadCooldown = 4f + 4 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             unloadMaxCooldown = unloadCooldown;
 
-            unloadGap = 0.1f + 0.05f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
-            playerStats.task = unloadGap * 5f;
+            unloadGap = 0.06f + 0.11f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            playerStats.task = 0.8f;
 
-            for (int i = 0; i < 4; i++)
+            for (float i = 0; i < 0.8f; i += unloadGap)
             {
-                Invoke("Fire", (1 + i) * unloadGap);
+                Invoke("Fire", i);
             }
         }
     }
@@ -82,11 +82,11 @@ public class Gunslinger : MonoBehaviour
     void Fire()
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0 || playerStats.eq.guns[playerStats.eq.equipped].infiniteMagazine)
-            playerStats.Shoot(8f);
+            playerStats.Shoot(7f);
         else
         {
             playerStats.task -= unloadGap;
-            unloadCooldown -= 1f + 1.5f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadCooldown -= unloadGap * 10f;
         }
     }
 }
