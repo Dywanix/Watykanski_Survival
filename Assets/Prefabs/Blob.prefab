@@ -95,7 +95,9 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.25026226
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
+    - {fileID: 5946344980233437452, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
 --- !u!1 &5306407701457883464 stripped
 GameObject:

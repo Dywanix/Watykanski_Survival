@@ -173,8 +173,8 @@ MonoBehaviour:
   Dir: {fileID: 2836216104138433170}
   form: {fileID: 4949778951044425418}
   delay: 1.75
-  bulletForce: 9.4
-  bulletsCount: 7
+  bulletForce: 9.2
+  bulletsCount: 8
 --- !u!114 &9001426375563854430
 MonoBehaviour:
   m_ObjectHideFlags: 0

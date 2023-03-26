@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: dropChance
-      value: 0.2203
+      value: 0.2225
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: itemsCount

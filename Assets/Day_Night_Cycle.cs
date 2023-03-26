@@ -16,9 +16,9 @@ public class Day_Night_Cycle : MonoBehaviour
     public Spawner[] spawners;
     private Spawner currentSpawner;
     public GameObject Player, Gunslinger, Berserker;
-    public GameObject[] mobs, bosses;
-    public GameObject[][] waves;
-    public int[] mobWeights;
+    public GameObject[] bosses;
+    public Wave[] waves;
+    public Enemy current;
     public PlayerController playerStats;
     public Image DayBar;
     public TMPro.TextMeshProUGUI dayCount;
@@ -43,8 +43,8 @@ public class Day_Night_Cycle : MonoBehaviour
 
         day = 1;
         dayCount.text = day.ToString("0");
-        maxTime = 100f;
-        time = maxTime * 0.6f;
+        maxTime = 50f;
+        time = maxTime * 0.8f;
     }
 
     void Update()
@@ -66,9 +66,9 @@ public class Day_Night_Cycle : MonoBehaviour
                 break;
         }
         if (Input.GetKeyDown(KeyCode.P))
-            time += 15f;
+            time += 16f;
         if (Input.GetKeyDown(KeyCode.M))
-            time -= 15f;
+            time -= 16f;
         DayBar.fillAmount = time / maxTime;
     }
 
@@ -76,7 +76,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.day = false;
         CurrentState = TimeState.Night;
-        maxTime = 120f + 10f * day;
+        maxTime = 90f + 8f * day;
         time = 0;
 
         hordeSize = 9 + day * 3;
@@ -101,31 +101,33 @@ public class Day_Night_Cycle : MonoBehaviour
         day++;
         dayCount.text = day.ToString("0");
         CurrentState = TimeState.Day;
-        maxTime = 80f + 8f * day;
+        maxTime = 60f + 5f * day;
         time = maxTime;
-    }
-
-    void SummonHorde()
-    {
-        roll = Random.Range(0, mobs.Length);
-
-        currentSpawner = spawners[Random.Range(0, spawners.Length)];
-
-        for (int i = 0; i < hordeSize; i += mobWeights[roll])
-        {
-            currentSpawner.Spawn(mobs[roll]);
-        }
     }
 
     void Summon()
     {
-        roll = Random.Range(0, mobs.Length);
-
-        spawnTime += spawnGap * mobWeights[roll];
+        roll = Random.Range(0, waves[day - 1].Mobs.Length);
 
         currentSpawner = spawners[Random.Range(0, spawners.Length)];
 
-        currentSpawner.Spawn(mobs[roll]);
+        for (int i = 0; i < day; i += waves[day - 1].weights[roll])
+        {
+            currentSpawner.Spawn(waves[day - 1].Mobs[roll]);
+            spawnTime += spawnGap * waves[day - 1].weights[roll];
+        }
+    }
+
+    void SummonHorde()
+    {
+        roll = Random.Range(0, waves[day - 1].Mobs.Length);
+
+        currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+        for (int i = 0; i < hordeSize; i += waves[day - 1].weights[roll])
+        {
+            currentSpawner.Spawn(waves[day - 1].Mobs[roll]);
+        }
     }
 
     void SummonBoss()
