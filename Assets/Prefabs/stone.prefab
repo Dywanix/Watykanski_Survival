@@ -1,27 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &798443928604153444
+--- !u!1001 &5848970473463252666
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2126952648274262439, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
-      propertyPath: duration
-      value: 2.2
-      objectReference: {fileID: 0}
     - target: {fileID: 2836216104138433170, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_Mass
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2836216104138433170, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.4
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4805482868368197420, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_Name
-      value: Blob
+      value: stone
       objectReference: {fileID: 0}
     - target: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_RootOrder
@@ -29,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77,49 +73,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: damage
-      value: 10
+      value: 17.3
       objectReference: {fileID: 0}
-    - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
-      propertyPath: poison
-      value: 5
+    - target: {fileID: 5946344980233437452, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
+      propertyPath: jump
+      value: 2.32
       objectReference: {fileID: 0}
-    - target: {fileID: 6614368799347785618, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
-      propertyPath: m_Color.b
-      value: 0.1549929
+    - target: {fileID: 5946344980233437452, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
+      propertyPath: duration
+      value: 1.33
       objectReference: {fileID: 0}
-    - target: {fileID: 6614368799347785618, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
-      propertyPath: m_Color.g
-      value: 0.4056604
-      objectReference: {fileID: 0}
-    - target: {fileID: 6614368799347785618, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
-      propertyPath: m_Color.r
-      value: 0.25026226
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
---- !u!1 &5306407701457883464 stripped
+--- !u!1 &1412782957185810838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4805482868368197420, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
-  m_PrefabInstance: {fileID: 798443928604153444}
+  m_PrefabInstance: {fileID: 5848970473463252666}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8066485238528380233
+--- !u!114 &4346974598149843143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5306407701457883464}
+  m_GameObject: {fileID: 1412782957185810838}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d09b16d86699f2940a65de91fdd3718a, type: 3}
+  m_Script: {fileID: 11500000, guid: 40ce7b5af7046ac4180808673202ed95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  form: {fileID: 5739135406867345582}
-  jump: 3
-  fall: 0
-  duration: 2.2
---- !u!4 &5739135406867345582 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
-  m_PrefabInstance: {fileID: 798443928604153444}
-  m_PrefabAsset: {fileID: 0}
+  duration: 1.4

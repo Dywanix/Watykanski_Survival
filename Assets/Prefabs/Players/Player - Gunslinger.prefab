@@ -681,7 +681,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 25
+  m_text: 35
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1903,19 +1903,19 @@ MonoBehaviour:
   free: 1
   day: 1
   task: 0
-  maxHealth: 75
-  health: 75
-  damageBonus: 1.05
-  fireRateBonus: 1.03
-  movementSpeed: 8.32
+  maxHealth: 73
+  health: 73
+  damageBonus: 1.046
+  fireRateBonus: 1.028
+  movementSpeed: 7.785
   dashCooldown: 0
   dash: 0
-  scrap: 25
+  scrap: 35
   level: 1
   healthIncrease: 1.2
   damageIncrease: 0.0024
   fireRateIncrease: 0.0012
-  movementSpeedIncrease: 0.0096
+  movementSpeedIncrease: 0.009
   additionalCritChance: 0
 --- !u!114 &6601758595229335008
 MonoBehaviour:
@@ -1979,10 +1979,10 @@ MonoBehaviour:
   playerStats: {fileID: 6601758595229335009}
   Ability1: {fileID: 6601758594973909899}
   Ability2: {fileID: 6601758594161724714}
-  doubleShotChance: 0.15
-  bulletTimeCooldown: 0
-  bulletTimeFireRate: 0
-  bulletTimeMovementSpeed: 0
+  doubleShotChance: 0.16
+  rapidFireCooldown: 0
+  rapidFireFireRate: 0
+  rapidFireMovementSpeed: 0
   unloadCooldown: 0
   unloadMaxCooldown: 0
   unloadGap: 0

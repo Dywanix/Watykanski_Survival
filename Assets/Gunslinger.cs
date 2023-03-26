@@ -8,8 +8,8 @@ public class Gunslinger : MonoBehaviour
     public PlayerController playerStats;
     public Image Ability1, Ability2;
 
-    public float doubleShotChance, bulletTimeCooldown, bulletTimeFireRate, bulletTimeMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
-    
+    public float doubleShotChance, rapidFireCooldown, rapidFireFireRate, rapidFireMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
+
 
     void Update()
     {
@@ -21,10 +21,10 @@ public class Gunslinger : MonoBehaviour
             Action();
         }
 
-        if (bulletTimeCooldown > 0)
+        if (rapidFireCooldown > 0)
         {
-            bulletTimeCooldown -= Time.deltaTime;
-            Ability1.fillAmount = 1 - (bulletTimeCooldown / 32f);
+            rapidFireCooldown -= Time.deltaTime;
+            Ability1.fillAmount = 1 - (rapidFireCooldown / 32f);
         }
 
         if (unloadCooldown > 0)
@@ -42,15 +42,15 @@ public class Gunslinger : MonoBehaviour
 
     void BulletTime()
     {
-        if (bulletTimeCooldown <= 0)
+        if (rapidFireCooldown <= 0)
         {
-            bulletTimeCooldown = 32f;
+            rapidFireCooldown = 32f;
 
-            bulletTimeFireRate = 1.22f + 0.005f * playerStats.level;
-            bulletTimeMovementSpeed = 0.5f + bulletTimeFireRate * 0.5f;
+            rapidFireFireRate = 1.22f + 0.006f * playerStats.level;
+            rapidFireMovementSpeed = 0.5f + rapidFireFireRate * 0.5f;
 
-            playerStats.fireRateBonus *= bulletTimeFireRate;
-            playerStats.movementSpeed *= bulletTimeMovementSpeed;
+            playerStats.fireRateBonus *= rapidFireFireRate;
+            playerStats.movementSpeed *= rapidFireMovementSpeed;
 
             Invoke("BulletTimeEnd", 5f);
         }
@@ -58,21 +58,21 @@ public class Gunslinger : MonoBehaviour
 
     void BulletTimeEnd()
     {
-        playerStats.fireRateBonus /= bulletTimeFireRate;
-        playerStats.movementSpeed /= bulletTimeMovementSpeed;
+        playerStats.fireRateBonus /= rapidFireFireRate;
+        playerStats.movementSpeed /= rapidFireMovementSpeed;
     }
 
     void Unload()
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadCooldown = 6f + 4 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadCooldown = 4.5f + 3 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             unloadMaxCooldown = unloadCooldown;
 
-            unloadGap = 0.06f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
-            playerStats.task = 0.8f;
+            unloadGap = 0.06f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.55f);
+            playerStats.task = 0.75f;
 
-            for (float i = 0; i < 0.8f; i += unloadGap)
+            for (float i = 0; i < 0.6f; i += unloadGap)
             {
                 Invoke("Fire", i);
             }

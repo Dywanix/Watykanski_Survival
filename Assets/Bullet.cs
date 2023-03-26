@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float duration, damage, penetration, armorShred, vulnerableApplied, pierceDamage, DoT;
+    public float duration, damage, penetration, armorShred, vulnerableApplied, pierceDamage, DoT, crateBonus;
     public int pierce;
     public bool crit;
 

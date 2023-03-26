@@ -17,9 +17,11 @@ public class Day_Night_Cycle : MonoBehaviour
     private Spawner currentSpawner;
     public GameObject Player, Gunslinger, Berserker;
     public GameObject[] mobs, bosses;
+    public GameObject[][] waves;
     public int[] mobWeights;
     public PlayerController playerStats;
     public Image DayBar;
+    public TMPro.TextMeshProUGUI dayCount;
 
     public int day, hordeSize, roll;
     public float time, maxTime, spawnGap, spawnTime;
@@ -40,6 +42,7 @@ public class Day_Night_Cycle : MonoBehaviour
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
 
         day = 1;
+        dayCount.text = day.ToString("0");
         maxTime = 100f;
         time = maxTime * 0.6f;
     }
@@ -96,6 +99,7 @@ public class Day_Night_Cycle : MonoBehaviour
         playerStats.LevelUp();
         playerStats.day = true;
         day++;
+        dayCount.text = day.ToString("0");
         CurrentState = TimeState.Day;
         maxTime = 80f + 8f * day;
         time = maxTime;

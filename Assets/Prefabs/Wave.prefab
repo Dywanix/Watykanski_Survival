@@ -106,6 +106,7 @@ MonoBehaviour:
   vulnerableApplied: 0
   pierceDamage: 0
   DoT: 0
+  crateBonus: 0.4
   pierce: 0
   crit: 0
 --- !u!50 &7985420360198333910

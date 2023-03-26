@@ -112,6 +112,10 @@ PrefabInstance:
       value: 54.51
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
+      propertyPath: attackPoison
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: movementSpeed
       value: 5.08
       objectReference: {fileID: 0}

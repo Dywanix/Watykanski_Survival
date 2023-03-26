@@ -11,7 +11,7 @@ public class Giant : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= 9.3f + 0.1F * enemy.attackDamage)
+        if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= 9.3f + 0.14F * enemy.attackDamage)
         {
             if (!enemy.attackTimer)
             {
@@ -46,6 +46,6 @@ public class Giant : MonoBehaviour
         enemy.Sight.rotation = Quaternion.Euler(enemy.Sight.rotation.x, enemy.Sight.rotation.y, enemy.Dir.rotation + Random.Range(-4.8f, 4.8f));
         GameObject boulder = Instantiate(Boulder, enemy.Dir.position, enemy.Sight.rotation);
         Rigidbody2D boulder_body = boulder.GetComponent<Rigidbody2D>();
-        boulder_body.AddForce(enemy.Sight.up * (20.1f + 0.15F * enemy.attackDamage), ForceMode2D.Impulse);
+        boulder_body.AddForce(enemy.Sight.up * (20.1f + 0.12F * enemy.attackDamage) * Random.Range(0.95f, 1.04f), ForceMode2D.Impulse);
     }
 }

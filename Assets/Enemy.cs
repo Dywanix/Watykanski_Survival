@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     public float movementSpeed;
 
     // -- Damage & Attacks
-    public float attackDamage, attackSpeed, attackRange, accuracy, force;
+    public float attackDamage, attackPoison, attackSpeed, attackRange, accuracy, force;
     public bool attackTimer = false, ranged = false;
 
     // -- Special Stats
@@ -54,6 +54,12 @@ public class Enemy : MonoBehaviour
         attackDamage *= Random.Range(0.92f, 1.08f);
         attackSpeed *= Random.Range(0.92f, 1.08f);
 
+        if (ranged)
+        {
+            attackRange *= Random.Range(0.95f, 1.05f);
+            force *= Random.Range(0.95f, 1.05f);
+        }
+
         health = maxHealth;
         hpBar.SetMaxValue(maxHealth);
         hpBar.SetValue(health);
@@ -63,6 +69,12 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (!Player)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player");
+            playerBody = Player.GetComponent<Rigidbody2D>();
+            playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+        }
         switch (CurrentState)
         {
             case (EnemyState.Chase):
@@ -104,7 +116,7 @@ public class Enemy : MonoBehaviour
         {
             if (ranged)
                 Shoot();
-            else playerStats.TakeDamage(attackDamage);
+            else Strike();
             StartCoroutine(attackTime());
         }
     }
@@ -114,6 +126,12 @@ public class Enemy : MonoBehaviour
         attackTimer = true;
         yield return new WaitForSeconds(attackSpeed);
         attackTimer = false;
+    }
+
+    void Strike()
+    {
+        playerStats.TakeDamage(attackDamage);
+        playerStats.GainPoison(attackPoison);
     }
 
     void Shoot()

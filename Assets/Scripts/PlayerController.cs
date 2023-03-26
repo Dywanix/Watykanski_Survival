@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public float task;
 
     // -- statystyki --
-    public float maxHealth, health, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash, scrap;
+    public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash, scrap;
     public int level = 1;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
 
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                task -= Time.deltaTime * fireRateBonus;
+                task -= Time.deltaTime * SpeedMultiplyer(1f);
                 if (mouseLeft && reloading && eq.guns[eq.equipped].bulletsLeft > 0)
                 {
                     reloading = false;
@@ -71,9 +71,14 @@ public class PlayerController : MonoBehaviour
 
         if (berserker == true)
         {
-            RestoreHealth((maxHealth - health) * 0.006f);
-            berserker.GainCharge(1f + 0.04f * level);
+            RestoreHealth((maxHealth - health) * 0.007f);
+            berserker.GainCharge(1f + 0.05f * level);
+            if (poison > 0)
+                poison -= 0.06f;
         }
+
+        if (poison > 0)
+            poison -= 0.2f;
 
         Invoke("Tick", 1f);
     }
@@ -174,7 +179,7 @@ public class PlayerController : MonoBehaviour
             firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
             if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
             {
-                firedBullet.damage *= eq.guns[eq.equipped].critDamage;
+                firedBullet.damage *= eq.guns[eq.equipped].critDamage; firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f; firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage;
                 firedBullet.crit = true;
             }
         }
@@ -293,10 +298,19 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
 
         if (berserker == true)
-            berserker.GainCharge(0.26f * value);
+            berserker.GainCharge(0.28f * value);
 
         if (health < 0f)
             Application.Quit();
+    }
+
+    public void GainPoison(float value)
+    {
+        poison += value;
+
+        if (poison >= value * 3f)
+            TakeDamage(value * 3f);
+        else TakeDamage(poison);
     }
 
     public void RestoreHealth(float value)
@@ -305,6 +319,11 @@ public class PlayerController : MonoBehaviour
         if (health > maxHealth)
             health = maxHealth;
         healthBar.fillAmount = health / maxHealth;
+    }
+
+    public float SpeedMultiplyer(float efficiency)
+    {
+        return 1f + (fireRateBonus - 1f) * efficiency;
     }
 
     public float DamageDealtMultiplyer(float efficiency)
@@ -342,6 +361,7 @@ public class PlayerController : MonoBehaviour
         {
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
             TakeDamage(collidedBullet.damage);
+            GainPoison(collidedBullet.poison);
             Destroy(other.gameObject);
         }
     }

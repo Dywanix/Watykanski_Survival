@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float damage;
+    public float damage, poison;
 }

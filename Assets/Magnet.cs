@@ -19,8 +19,8 @@ public class Magnet : MonoBehaviour
     {
         if (playerStats.day)
         {
-            if (Vector3.Distance(transform.position, Player.transform.position) <= 7f)
-                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, (14f / (Vector3.Distance(transform.position, Player.transform.position) + 0.2f) + chaseSpeed) * Time.deltaTime);
+            if (Vector3.Distance(transform.position, Player.transform.position) <= 5f + chaseSpeed)
+                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, (15f / (Vector3.Distance(transform.position, Player.transform.position) + 0.15f) + chaseSpeed) * Time.deltaTime);
             else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, chaseSpeed * Time.deltaTime);
             chaseSpeed += 0.2f * Time.deltaTime;
         }

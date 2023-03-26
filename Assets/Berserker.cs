@@ -83,7 +83,7 @@ public class Berserker : MonoBehaviour
 
     void EnrageEnd()
     {
-        playerStats.RestoreHealth((playerStats.maxHealth - playerStats.health) * 0.05f);
+        playerStats.RestoreHealth(healthSacrifice * 0.25f);
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageBonus /= enrageDamageIncrease;
@@ -95,9 +95,9 @@ public class Berserker : MonoBehaviour
         {
             swipeCooldown = 12f;
 
-            Invoke("Swipe", 0.5f);
+            Invoke("Swipe", 0.4f);
 
-            playerStats.task = 1f;
+            playerStats.task = 0.8f;
         }
     }
 
@@ -106,8 +106,8 @@ public class Berserker : MonoBehaviour
         playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-3f, 3f));
         GameObject bullet = Instantiate(SwipeWave, playerStats.Barrel.position, playerStats.Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(playerStats.Barrel.up * 10f * playerStats.DamageDealtMultiplyer(0.5f), ForceMode2D.Impulse);
+        bullet_body.AddForce(playerStats.Barrel.up * 16f * playerStats.DamageDealtMultiplyer(0.8f), ForceMode2D.Impulse);
         SwipeBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        SwipeBullet.damage = (30 + 3 * playerStats.level + 0.05f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.6f);
+        SwipeBullet.damage = (30 + 3f * playerStats.level + 0.06f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
     }
 }
