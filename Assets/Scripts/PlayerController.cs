@@ -176,10 +176,13 @@ public class PlayerController : MonoBehaviour
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet; firedBullet.duration = eq.guns[eq.equipped].range;
             firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
             firedBullet.armorShred = eq.guns[eq.equipped].armorShred; firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
+            firedBullet.stunChance = eq.guns[eq.equipped].stunChance; firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
             firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
             if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
             {
-                firedBullet.damage *= eq.guns[eq.equipped].critDamage; firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f; firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage;
+                firedBullet.damage *= eq.guns[eq.equipped].critDamage; 
+                firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f; firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
+                firedBullet.stunChance *= 0.4f + eq.guns[eq.equipped].critDamage * 0.6f; firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].stunDuration * 0.3f;
                 firedBullet.crit = true;
             }
         }
@@ -279,7 +282,7 @@ public class PlayerController : MonoBehaviour
             eq.equipped = which;
             eq.gunSprite[eq.equipped].SetActive(true);
             DisplayAmmo();
-            task = 1.1f;
+            task = 0.775f;
         }
     }
 

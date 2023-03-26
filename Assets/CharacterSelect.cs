@@ -16,4 +16,10 @@ public class CharacterSelect : MonoBehaviour
         PlayerPrefs.SetString("Class", "Berserker");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void SteamGolem()
+    {
+        PlayerPrefs.SetString("Class", "SteamGolem");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }

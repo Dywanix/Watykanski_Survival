@@ -1,0 +1,339 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8681904626230076617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6601758593906079312, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19607842
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758593906079312, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758593906079312, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: force
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: range
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: damage
+      value: 7.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: gunName
+      value: Gatling Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: accuracy
+      value: 12.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: fireRate
+      value: 0.252
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: armorShred
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: critChance
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: critDamage
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: reloadTime
+      value: 3.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: bulletsLeft
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: cameraShake
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: penetration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: magazineSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: shakeDuration
+      value: 0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594956177004, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_Name
+      value: Gatling Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793425, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_Name
+      value: Rail Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: ammo
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: range
+      value: 1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: damage
+      value: 37.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: gunName
+      value: Rail Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: accuracy
+      value: 3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: fireRate
+      value: 1.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: overload
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: critChance
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: critDamage
+      value: 1.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: reloadTime
+      value: 4.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: stunChance
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: bulletsLeft
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: cameraShake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: penetration
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: ammoFromPack
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 7974423976338264409, guid: e4ae18e87b03f6c40a75f5c6d64de43d, type: 3}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: magazineSize
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: stunDuration
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: shakeDuration
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: vulnerableApplied
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: ammo
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: force
+      value: 20.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: range
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: damage
+      value: 37.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: gunName
+      value: Grenade Launcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: accuracy
+      value: 7.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: fireRate
+      value: 1.889
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: critChance
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: critDamage
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: reloadTime
+      value: 1.483
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: bulletsLeft
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: cameraShake
+      value: 3.035
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: penetration
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: ammoFromPack
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 7946786931316408927, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: magazineSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: pierceDamage
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: shakeDuration
+      value: 0.077
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: individualReload
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944195, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_Name
+      value: Grenade Launcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: scrap
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: health
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: maxHealth
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: damageBonus
+      value: 1.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: fireRateBonus
+      value: 1.042
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: movementSpeed
+      value: 7.665
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: damageIncrease
+      value: 0.0022
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: healthIncrease
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: fireRateIncrease
+      value: 0.0016
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: movementSpeedIncrease
+      value: 0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335013, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_Name
+      value: Player - Steam Golem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335023, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}

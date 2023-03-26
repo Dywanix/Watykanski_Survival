@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float duration, damage, penetration, armorShred, vulnerableApplied, pierceDamage, DoT, crateBonus;
+    public GameObject ExplosionRadius;
+    Bullet Explosion;
+    public float duration, damage, penetration, armorShred, vulnerableApplied, stunChance, stunDuration, pierceDamage, DoT, crateBonus;
     public int pierce;
-    public bool crit;
+    public bool crit, AoE;
 
     void Update()
     {
@@ -28,6 +30,14 @@ public class Bullet : MonoBehaviour
 
     public void Struck()
     {
+        if (AoE)
+        {
+            GameObject bullet = Instantiate(ExplosionRadius, transform.position, transform.rotation);
+            Explosion = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            Explosion.damage = damage; Explosion.DoT = DoT; Explosion.penetration = penetration;
+            Explosion.armorShred = armorShred; Explosion.vulnerableApplied = vulnerableApplied;
+            Explosion.stunChance = stunChance; Explosion.stunDuration = stunDuration;
+        }
         pierce--;
         damage *= pierceDamage;
         if (pierce <= 0)

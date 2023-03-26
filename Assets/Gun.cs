@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     public float damage, critChance, penetration, fireRate, reloadTime, accuracy, force, range, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
 
     // -- Special Gun Stats
-    public float critDamage, armorShred, vulnerableApplied, pierceDamage, DoT, specialCharge;
+    public float critDamage, armorShred, vulnerableApplied, stunChance, stunDuration, pierceDamage, DoT, specialCharge;
     public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, pierce, special;
     public int[] Slots, Costs;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-        bulletsLeft = magazineSize;
+        bulletsLeft = magazineSize + overload;
     }
 
     public void Upgrade(int which)

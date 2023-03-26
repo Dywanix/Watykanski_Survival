@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     public float maxHealth, health, regen, armor, vulnerable, DoT;
 
     // -- Movement
-    public float movementSpeed;
+    public float movementSpeed, stun;
 
     // -- Damage & Attacks
     public float attackDamage, attackPoison, attackSpeed, attackRange, accuracy, force;
@@ -75,15 +75,19 @@ public class Enemy : MonoBehaviour
             playerBody = Player.GetComponent<Rigidbody2D>();
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        switch (CurrentState)
+        if (stun <= 0f)
         {
-            case (EnemyState.Chase):
-                Chase();
-                break;
-            case (EnemyState.Attack):
-                Attack();
-                break;
+            switch (CurrentState)
+            {
+                case (EnemyState.Chase):
+                    Chase();
+                    break;
+                case (EnemyState.Attack):
+                    Attack();
+                    break;
+            }
         }
+        else stun -= Time.deltaTime;
 
         if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
         {
@@ -149,6 +153,8 @@ public class Enemy : MonoBehaviour
             collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
             armor *= 1 - collidedBullet.armorShred;
             vulnerable += collidedBullet.vulnerableApplied;
+            if (collidedBullet.stunChance >= Random.Range(0f, 1f))
+                GainStun(collidedBullet.stunDuration);
             TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
             if (collidedBullet.DoT > 0)
                 GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
@@ -194,6 +200,11 @@ public class Enemy : MonoBehaviour
         if (health > maxHealth)
             health = maxHealth;
         hpBar.SetValue(health);
+    }
+
+    void GainStun(float duration)
+    {
+        stun += duration;
     }
 
     void GainDoT(float value)

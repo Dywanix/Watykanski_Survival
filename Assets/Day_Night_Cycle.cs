@@ -15,7 +15,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public TimeState CurrentState = TimeState.Day;
     public Spawner[] spawners;
     private Spawner currentSpawner;
-    public GameObject Player, Gunslinger, Berserker;
+    public GameObject Player, Gunslinger, Berserker, SteamGolem;
     public GameObject[] bosses;
     public Wave[] waves;
     public Enemy current;
@@ -35,6 +35,9 @@ public class Day_Night_Cycle : MonoBehaviour
                 break;
             case "Berserker":
                 Instantiate(Berserker);
+                break;
+            case "SteamGolem":
+                Instantiate(SteamGolem);
                 break;
         }
 
