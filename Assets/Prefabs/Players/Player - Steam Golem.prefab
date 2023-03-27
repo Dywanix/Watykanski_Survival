@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: force
-      value: 20.5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: range
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: damage
-      value: 37.64
+      value: 45.8
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: gunName
@@ -189,11 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: accuracy
-      value: 7.3
+      value: 7.63
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: fireRate
-      value: 1.889
+      value: 2.196
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: critChance
@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: reloadTime
-      value: 1.483
+      value: 1.747
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: bulletsLeft
@@ -213,11 +213,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: cameraShake
-      value: 3.035
+      value: 3.08
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: penetration
-      value: 0.16
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: ammoFromPack
@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: shakeDuration
-      value: 0.077
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: individualReload
@@ -258,6 +258,10 @@ PrefabInstance:
     - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: maxHealth
       value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: gunslinger
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: damageBonus
@@ -335,5 +339,68 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6601758595229335010, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+--- !u!114 &2585763502741186370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6601758594973909899, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+  m_PrefabInstance: {fileID: 8681904626230076617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2585763503004784936 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6601758595229335009, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+  m_PrefabInstance: {fileID: 8681904626230076617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585763503004784940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fd96c304246304481afb887b33494b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2585763503004784940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6601758595229335013, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+  m_PrefabInstance: {fileID: 8681904626230076617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &581479766187440083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585763503004784940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceae6cc0bd09eb340a4564ba0ef70b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 2585763503004784936}
+  Ability1: {fileID: 2585763502741186370}
+  Ability2: {fileID: 2585763504076614115}
+  ElectricProjectal: {fileID: 2540284202478483422, guid: e9956187fdfe76d4ba3e4affda225ee9, type: 3}
+  IncendiaryProjectal: {fileID: 4286141280913217741, guid: 1005c90becbd1934cab9c205e9929beb, type: 3}
+  overdriveCooldown: 0
+  overdriveMaxCooldown: 0
+  overdriveAccuracy: 0
+  temp: 0
+  direction: 0
+  volleyCount: 0
+  bulletsCount: 0
+--- !u!114 &2585763504076614115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6601758594161724714, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+  m_PrefabInstance: {fileID: 8681904626230076617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

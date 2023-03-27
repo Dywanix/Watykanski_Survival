@@ -38,7 +38,8 @@ public class Crate : MonoBehaviour
         if (other.transform.tag == "PlayerProjectal")
         {
             collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
-            TakeDamage(collidedBullet.damage * (1f + collidedBullet.crateBonus), collidedBullet.crit);
+            if (!collidedBullet.AoE)
+                TakeDamage(collidedBullet.damage * (1f + collidedBullet.crateBonus), collidedBullet.crit);
             collidedBullet.Struck();
         }
     }

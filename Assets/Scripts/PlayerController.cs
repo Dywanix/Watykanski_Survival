@@ -173,18 +173,37 @@ public class PlayerController : MonoBehaviour
             GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab, Barrel.position, Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
-            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet; firedBullet.duration = eq.guns[eq.equipped].range;
-            firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
-            firedBullet.armorShred = eq.guns[eq.equipped].armorShred; firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
-            firedBullet.stunChance = eq.guns[eq.equipped].stunChance; firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
-            firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
-            if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
-            {
-                firedBullet.damage *= eq.guns[eq.equipped].critDamage; 
-                firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f; firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
-                firedBullet.stunChance *= 0.4f + eq.guns[eq.equipped].critDamage * 0.6f; firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].stunDuration * 0.3f;
-                firedBullet.crit = true;
-            }
+            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            SetBullet();
+        }
+    }
+
+    public void FireDirection(float direction)
+    {
+        for (int i = 0; i < eq.guns[eq.equipped].bulletSpread; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + direction);
+            GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab, Barrel.position, Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
+            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            SetBullet();
+        }
+    }
+
+    void SetBullet()
+    {
+        firedBullet.duration = eq.guns[eq.equipped].range;
+        firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
+        firedBullet.armorShred = eq.guns[eq.equipped].armorShred; firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
+        firedBullet.stunChance = eq.guns[eq.equipped].stunChance; firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
+        firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
+        if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
+        {
+            firedBullet.damage *= eq.guns[eq.equipped].critDamage;
+            firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f; firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
+            firedBullet.stunChance *= 0.4f + eq.guns[eq.equipped].critDamage * 0.6f; firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].stunDuration * 0.3f;
+            firedBullet.crit = true;
         }
     }
 

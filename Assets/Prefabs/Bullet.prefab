@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.8396226, g: 0.60960484, b: 0, a: 1}
   m_FlipX: 0
@@ -99,9 +99,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e3f171d7732e246bff4937d06607c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExplosionRadius: {fileID: 0}
   duration: 3
   damage: 10
   penetration: 0
+  armorShred: 0
+  vulnerableApplied: 0
+  stunChance: 0
+  stunDuration: 0
+  pierceDamage: 0
+  DoT: 0
+  crateBonus: 0
+  pierce: 0
+  crit: 0
+  AoE: 0
 --- !u!50 &3343256739309205791
 Rigidbody2D:
   serializedVersion: 4

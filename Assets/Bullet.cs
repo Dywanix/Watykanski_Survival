@@ -5,8 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject ExplosionRadius;
-    Bullet Explosion;
-    public float duration, damage, penetration, armorShred, vulnerableApplied, stunChance, stunDuration, pierceDamage, DoT, crateBonus;
+    private Bullet Explosion;
+    public float duration, damage, penetration, armorShred, vulnerableApplied, stunChance, stunDuration, pierceDamage, DoT, incendiary, crateBonus;
     public int pierce;
     public bool crit, AoE;
 
@@ -37,6 +37,7 @@ public class Bullet : MonoBehaviour
             Explosion.damage = damage; Explosion.DoT = DoT; Explosion.penetration = penetration;
             Explosion.armorShred = armorShred; Explosion.vulnerableApplied = vulnerableApplied;
             Explosion.stunChance = stunChance; Explosion.stunDuration = stunDuration;
+            Explosion.incendiary = incendiary;
         }
         pierce--;
         damage *= pierceDamage;

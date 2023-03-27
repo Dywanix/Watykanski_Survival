@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     // -- Health & Resistance
     public Bar hpBar;
-    public float maxHealth, health, regen, armor, vulnerable, DoT;
+    public float maxHealth, health, regen, armor, vulnerable, DoT, burning;
 
     // -- Movement
     public float movementSpeed, stun;
@@ -151,13 +151,18 @@ public class Enemy : MonoBehaviour
         if (other.transform.tag == "PlayerProjectal")
         {
             collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
-            armor *= 1 - collidedBullet.armorShred;
-            vulnerable += collidedBullet.vulnerableApplied;
-            if (collidedBullet.stunChance >= Random.Range(0f, 1f))
-                GainStun(collidedBullet.stunDuration);
-            TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
-            if (collidedBullet.DoT > 0)
-                GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
+            if (!collidedBullet.AoE)
+            {
+                armor *= 1 - collidedBullet.armorShred;
+                vulnerable += collidedBullet.vulnerableApplied;
+                if (collidedBullet.stunChance >= Random.Range(0f, 1f))
+                    GainStun(collidedBullet.stunDuration);
+                TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
+                if (collidedBullet.DoT > 0)
+                    GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
+                if (collidedBullet.incendiary > 0)
+                    burning += collidedBullet.incendiary;
+            }
             collidedBullet.Struck();
         }
     }
@@ -223,6 +228,11 @@ public class Enemy : MonoBehaviour
     {
         if (playerStats.day)
             Burn();
+        else if (burning > 0f)
+        {
+            Burn();
+            burning -= 0.5f;
+        }
 
         if (DoT > 0)
             DoTproc();
