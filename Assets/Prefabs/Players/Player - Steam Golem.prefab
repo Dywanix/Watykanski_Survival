@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6601758593926617745, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: m_text
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: force
       value: 22
@@ -176,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: fireRate
-      value: 0.2377
+      value: 0.2139
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: armorShred
@@ -192,11 +196,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: reloadTime
-      value: 3.79
+      value: 3.656
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: bulletsLeft
-      value: 23
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: cameraShake
@@ -208,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: magazineSize
-      value: 23
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594956177002, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: shakeDuration
@@ -244,7 +248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: fireRate
-      value: 1.76
+      value: 1.725
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: overload
@@ -260,7 +264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: reloadTime
-      value: 4.04
+      value: 4.013
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: stunChance
@@ -299,8 +303,12 @@ PrefabInstance:
       value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: pierceEfficiency
+      value: 0.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758594972793439, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: vulnerableApplied
-      value: 0.08
+      value: 0.085
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: ammo
@@ -328,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: fireRate
-      value: 2.196
+      value: 2.167
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: critChance
@@ -340,11 +348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: reloadTime
-      value: 1.747
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: bulletsLeft
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: cameraShake
@@ -364,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 7946786931316408927, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: magazineSize
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: pierceDamage
@@ -377,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: individualReload
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6601758595222944192, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+      propertyPath: pierceEfficiency
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 6601758595222944195, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
       propertyPath: m_Name
@@ -533,12 +545,13 @@ MonoBehaviour:
   IncendiaryProjectal: {fileID: 4286141280913217741, guid: 1005c90becbd1934cab9c205e9929beb, type: 3}
   efficientReloadCooldown: 0
   efficientReloadMaxCooldown: 0
+  reloadedProcentage: 0
   overdriveCooldown: 0
   overdriveMaxCooldown: 0
   overdriveAccuracy: 0
   temp: 0
   direction: 0
-  clockworkMachine: 0
+  clockworkMachine: 30
   spareParts: 0
   volleyCount: 0
   bulletsCount: 0

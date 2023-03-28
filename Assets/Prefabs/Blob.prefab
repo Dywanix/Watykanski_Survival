@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: poison
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
+      propertyPath: duration
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6614368799347785618, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_Color.b
       value: 0.1549929

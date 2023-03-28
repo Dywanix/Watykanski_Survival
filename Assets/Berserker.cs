@@ -7,6 +7,7 @@ public class Berserker : MonoBehaviour
 {
     public PlayerController playerStats;
     public Image Ability1, Ability2;
+    public TMPro.TextMeshProUGUI SurvivorCount;
     public GameObject SwipeWave;
     private Bullet SwipeBullet;
 
@@ -14,7 +15,7 @@ public class Berserker : MonoBehaviour
 
     void Start()
     {
-        requiredCharge = 250f;
+        requiredCharge = 240f;
         survivorCharge = 0;
     }
     
@@ -59,6 +60,7 @@ public class Berserker : MonoBehaviour
             survivorCharge -= requiredCharge;
             requiredCharge += 5;
             survivorCount++;
+            SurvivorCount.text = survivorCount.ToString("0");
         }
     }
     
@@ -71,7 +73,7 @@ public class Berserker : MonoBehaviour
             healthSacrifice = playerStats.health * 0.25f;
             playerStats.TakeDamage(healthSacrifice);
 
-            enrageFireRateIncrease = 1.1f + 0.004f * playerStats.level + 0.0035f * healthSacrifice;
+            enrageFireRateIncrease = 1.102f + 0.004f * playerStats.level + 0.0035f * healthSacrifice;
             enrageDamageIncrease = 0.6f + enrageFireRateIncrease * 0.4f;
 
             playerStats.fireRateBonus *= enrageFireRateIncrease;

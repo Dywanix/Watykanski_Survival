@@ -198,6 +198,9 @@ public class Enemy : MonoBehaviour
                     case "attackDamage":
                         attackDamage += value * enrageValue[i];
                         break;
+                    case "accuracy":
+                        accuracy += value * enrageValue[i];
+                        break;
                 }
             }
         }

@@ -9,7 +9,7 @@ public class Gun : MonoBehaviour
     public float damage, critChance, penetration, fireRate, reloadTime, accuracy, force, range, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
 
     // -- Special Gun Stats
-    public float critDamage, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceDamage, DoT, specialCharge;
+    public float critDamage, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, specialCharge;
     public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, pierce, special;
     public int[] Slots, Costs;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
@@ -120,10 +120,14 @@ public class Gun : MonoBehaviour
                 ammo += 3 + 2 * ammoFromPack;
                 break;
             case 6:
-                temp = 1.02f + 0.1f / (bulletSpread + 1f);
+                temp = 0.002f + 0.08f / (bulletSpread * 1f + 1f);
                 accuracy *= temp; cameraShake *= temp; reloadTime *= temp;
 
-                temp = 0.04f + ((1f * bulletSpread + 0.4f) / (1f * bulletSpread + 1.4f));
+                temp = 1.012f - (0.12f / (bulletSpread * 1.5f));
+                fireRate *= temp;
+
+                temp = 0.002f + 0.08f / (bulletSpread * 1f + 1f);
+                temp = 0.065f - (0.38f / (bulletSpread * 2.25f + 1.2f)) + ((bulletSpread * 1.01f + 0.35f) / (bulletSpread + 1.14f));
                 damage *= temp; armorShred *= temp; vulnerableApplied *= temp;
 
                 bulletSpread++;
@@ -192,15 +196,13 @@ public class Gun : MonoBehaviour
                 fireRate *= 0.956f;
                 break;
             case 13:
-                temp = (3f + 1f * pierce) / (4f + 1f * pierce);
-                pierceDamage *= temp;
-                armorShred *= temp;
-                vulnerableApplied *= temp;
+                temp = (2f + 1f * pierce) / (3f + 1f * pierce);
+                pierceEfficiency *= temp;
                 pierce++;
                 break;
             case 14:
-                temp = 1.02f + (0.08f / pierce);
-                pierceDamage *= temp;
+                temp = 1.03f + (0.06f / pierce);
+                pierceEfficiency *= temp;
                 break;
         }
     }

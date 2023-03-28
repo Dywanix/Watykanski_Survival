@@ -1330,7 +1330,10 @@ MonoBehaviour:
   critDamage: 1.55
   armorShred: 0
   vulnerableApplied: 0
-  pierceDamage: 0.3
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  pierceEfficiency: 0.4
   DoT: 0
   specialCharge: 0
   magazineSize: 6
@@ -1402,17 +1405,20 @@ MonoBehaviour:
   range: 1.35
   cameraShake: 1.4
   shakeDuration: 0.04
-  critDamage: 1.5
+  critDamage: 1.55
   armorShred: 0
   vulnerableApplied: 0
-  pierceDamage: 0.3
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  pierceEfficiency: 0.4
   DoT: 0
   specialCharge: 0
   magazineSize: 19
   overload: 0
   bulletsLeft: 19
   ammo: 90
-  ammoFromPack: 13
+  ammoFromPack: 14
   bulletSpread: 1
   pierce: 1
   special: 0
@@ -1706,17 +1712,20 @@ MonoBehaviour:
   range: 1.35
   cameraShake: 1.4
   shakeDuration: 0.04
-  critDamage: 1.5
+  critDamage: 1.55
   armorShred: 0
   vulnerableApplied: 0
-  pierceDamage: 0.3
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  pierceEfficiency: 0.4
   DoT: 0
   specialCharge: 0
   magazineSize: 19
   overload: 0
   bulletsLeft: 19
   ammo: 90
-  ammoFromPack: 13
+  ammoFromPack: 14
   bulletSpread: 1
   pierce: 1
   special: 0
@@ -1896,6 +1905,7 @@ MonoBehaviour:
   healthBar: {fileID: 6601758594868617758}
   gunslinger: {fileID: 6601758595229335010}
   berserker: {fileID: 0}
+  steamGolem: {fileID: 0}
   xInput: 0
   yInput: 0
   mouseLeft: 0
@@ -1905,13 +1915,14 @@ MonoBehaviour:
   task: 0
   maxHealth: 73
   health: 73
+  poison: 0
   damageBonus: 1.046
   fireRateBonus: 1.028
   movementSpeed: 7.785
   dashCooldown: 0
   dash: 0
-  scrap: 35
   level: 1
+  scrap: 35
   healthIncrease: 1.2
   damageIncrease: 0.0024
   fireRateIncrease: 0.0012

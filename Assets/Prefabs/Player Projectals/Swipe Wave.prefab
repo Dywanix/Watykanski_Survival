@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: pierceDamage
       value: 0.85
       objectReference: {fileID: 0}
+    - target: {fileID: 322720237989216586, guid: 57eccbbfc3133ee4ca604b19040c7354, type: 3}
+      propertyPath: pierceEfficiency
+      value: 0.88
+      objectReference: {fileID: 0}
     - target: {fileID: 1682180477809089140, guid: 57eccbbfc3133ee4ca604b19040c7354, type: 3}
       propertyPath: m_Size.y
       value: 0.4

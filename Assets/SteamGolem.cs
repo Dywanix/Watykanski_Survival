@@ -11,7 +11,7 @@ public class SteamGolem : MonoBehaviour
     public GameObject ElectricProjectal, IncendiaryProjectal;
     private Bullet firedBullet;
 
-    public float efficientReloadCooldown, efficientReloadMaxCooldown, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
+    public float efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
     public int clockworkMachine, spareParts, volleyCount, bulletsCount;
 
     void Update()
@@ -71,16 +71,17 @@ public class SteamGolem : MonoBehaviour
                     playerStats.eq.guns[playerStats.eq.equipped].individualReload = false;
                     playerStats.reloading = true;
                     playerStats.reload_image.SetActive(true);
-                    playerStats.task = 0.1f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft);
-                    efficientReloadMaxCooldown = 1f + 4f * playerStats.eq.guns[0].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft);
-                    Invoke("SwapReload", 0.2f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft));
+                    playerStats.task = 0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft);
+                    efficientReloadMaxCooldown = 0.75f + 5f * playerStats.eq.guns[0].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft);
+                    Invoke("SwapReload", 0.15f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft));
                 }
                 else
                 {
                     playerStats.reloading = true;
                     playerStats.reload_image.SetActive(true);
-                    playerStats.task = 0.1f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime;
-                    efficientReloadMaxCooldown = 1f + 4f * playerStats.eq.guns[0].reloadTime;
+                    reloadedProcentage = 1f * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft) / (1f * playerStats.eq.guns[playerStats.eq.equipped].magazineSize);
+                    playerStats.task = 0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * reloadedProcentage;
+                    efficientReloadMaxCooldown = 0.75f + 5f * playerStats.eq.guns[0].reloadTime * reloadedProcentage;
                 }
             }
             efficientReloadCooldown = efficientReloadMaxCooldown;
@@ -101,7 +102,7 @@ public class SteamGolem : MonoBehaviour
                 case 0:
                     if (playerStats.eq.guns[0].bulletsLeft >= 2 + playerStats.eq.guns[0].bulletSpread)
                     {
-                        overdriveMaxCooldown = 3.7f + 50f * playerStats.eq.guns[0].fireRate / (1f + 0.01f * spareParts);
+                        overdriveMaxCooldown = 3.7f + 50f * playerStats.eq.guns[0].fireRate / (1f + 0.012f * spareParts);
 
                         for (int i = 0; i < 2 + playerStats.eq.guns[0].bulletSpread; i++)
                         {
@@ -138,7 +139,7 @@ public class SteamGolem : MonoBehaviour
         playerStats.eq.guns[0].bulletsLeft--;
         playerStats.DisplayAmmo();
 
-        bulletsCount = Mathf.FloorToInt((1f + 0.04f * volleyCount + (0.028f + 0.002f * volleyCount) * playerStats.eq.guns[0].magazineSize) / (0.25f + playerStats.eq.guns[0].fireRate) * playerStats.SpeedMultiplyer(0.75f));
+        bulletsCount = Mathf.FloorToInt((1f + 0.04f * volleyCount + (0.02f + 0.001f * volleyCount) * playerStats.eq.guns[0].magazineSize) / (0.25f + playerStats.eq.guns[0].fireRate) * playerStats.SpeedMultiplyer(0.8f));
         overdriveAccuracy = playerStats.eq.guns[0].accuracy * 0.35f / (0.9f + 0.1f * bulletsCount);
         direction = (-overdriveAccuracy) * (bulletsCount - 1);
         for (int i = 0; i < bulletsCount; i++)
@@ -153,35 +154,41 @@ public class SteamGolem : MonoBehaviour
 
     void ElectricGrenade()
     {
-        playerStats.eq.guns[1].bulletsLeft--;
-        playerStats.DisplayAmmo();
+        for (int i = 0; i < playerStats.eq.guns[1].bulletSpread; i++)
+        {
+            playerStats.eq.guns[1].bulletsLeft--;
+            playerStats.DisplayAmmo();
 
-        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-playerStats.eq.guns[1].accuracy, playerStats.eq.guns[1].accuracy));
-        GameObject bullet = Instantiate(ElectricProjectal, playerStats.Barrel.position, playerStats.Barrel.rotation);
-        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(playerStats.Barrel.up * playerStats.eq.guns[1].force * Random.Range(0.74f, 0.87f), ForceMode2D.Impulse);
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-playerStats.eq.guns[1].accuracy, playerStats.eq.guns[1].accuracy));
+            GameObject bullet = Instantiate(ElectricProjectal, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * playerStats.eq.guns[1].force * Random.Range(0.74f, 0.87f), ForceMode2D.Impulse);
+            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
-        SetBullet(1);
-        firedBullet.damage *= (1.06f + 0.005f * playerStats.level + 0.006f * spareParts);
-        firedBullet.stunChance = playerStats.eq.guns[1].stunChance * 3f + 0.09f + 0.01f * playerStats.level;
-        firedBullet.stunDuration = playerStats.eq.guns[1].stunDuration + 0.2f;
+            SetBullet(1);
+            firedBullet.damage *= (1.06f + 0.005f * playerStats.level + 0.007f * spareParts);
+            firedBullet.stunChance = playerStats.eq.guns[1].stunChance * 3f + 0.09f + 0.01f * playerStats.level;
+            firedBullet.stunDuration = playerStats.eq.guns[1].stunDuration + 0.2f;
+        }
     }
 
     void IncendiaryGrenade()
     {
-        playerStats.eq.guns[2].bulletsLeft--;
-        playerStats.DisplayAmmo();
+        for (int i = 0; i < playerStats.eq.guns[2].bulletSpread; i++)
+        {
+            playerStats.eq.guns[2].bulletsLeft--;
+            playerStats.DisplayAmmo();
 
-        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-playerStats.eq.guns[1].accuracy, playerStats.eq.guns[1].accuracy));
-        GameObject bullet = Instantiate(IncendiaryProjectal, playerStats.Barrel.position, playerStats.Barrel.rotation);
-        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(playerStats.Barrel.up * playerStats.eq.guns[1].force * Random.Range(0.95f, 1.11f), ForceMode2D.Impulse);
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-playerStats.eq.guns[1].accuracy, playerStats.eq.guns[1].accuracy));
+            GameObject bullet = Instantiate(IncendiaryProjectal, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * playerStats.eq.guns[1].force * Random.Range(0.95f, 1.11f), ForceMode2D.Impulse);
+            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
-        SetBullet(2);
-        firedBullet.slowDuration += 0.4f + 0.08f * spareParts;
-        firedBullet.incendiary = playerStats.eq.guns[2].damage * 0.07f;
+            SetBullet(2);
+            firedBullet.slowDuration += 0.36f + 0.09f * spareParts;
+            firedBullet.incendiary = playerStats.eq.guns[2].damage * 0.07f;
+        }
     }
 
     void SetBullet(int which)
@@ -196,12 +203,16 @@ public class SteamGolem : MonoBehaviour
         firedBullet.stunChance = playerStats.eq.guns[which].stunChance;
         firedBullet.stunDuration = playerStats.eq.guns[which].stunDuration;
         firedBullet.pierce = playerStats.eq.guns[which].pierce;
-        firedBullet.pierceDamage = playerStats.eq.guns[which].pierceDamage;
+        firedBullet.pierceEfficiency = playerStats.eq.guns[which].pierceEfficiency;
         if (playerStats.eq.guns[which].critChance + playerStats.additionalCritChance >= Random.Range(0f, 1f))
         {
             firedBullet.damage *= playerStats.eq.guns[1].critDamage;
-            firedBullet.armorShred *= 0.6f + playerStats.eq.guns[which].critDamage * 0.4f; firedBullet.vulnerableApplied *= 0.6f + playerStats.eq.guns[which].critDamage * 0.4f;
-            firedBullet.stunChance *= 0.4f + playerStats.eq.guns[which].critDamage * 0.6f; firedBullet.stunDuration *= 0.7f + playerStats.eq.guns[which].stunDuration * 0.3f;
+            firedBullet.armorShred *= 0.6f + playerStats.eq.guns[which].critDamage * 0.4f;
+            firedBullet.vulnerableApplied *= 0.6f + playerStats.eq.guns[which].critDamage * 0.4f;
+            firedBullet.slowDuration = 0.7f + playerStats.eq.guns[which].critDamage * 0.3f;
+            firedBullet.stunChance *= 0.4f + playerStats.eq.guns[which].critDamage * 0.6f;
+            firedBullet.stunDuration *= 0.7f + playerStats.eq.guns[which].stunDuration * 0.3f;
+            firedBullet.pierceEfficiency *= 1.1f;
             firedBullet.crit = true;
         }
     }
