@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour
     public Image healthBar;
     private Bullet firedBullet;
     private EnemyBullet collidedBullet;
+
     public Gunslinger gunslinger;
     public Berserker berserker;
+    public SteamGolem steamGolem;
 
     public float xInput = 0, yInput = 0;
     public bool mouseLeft, reloading, free = true, day = true;
@@ -23,8 +25,8 @@ public class PlayerController : MonoBehaviour
     public float task;
 
     // -- statystyki --
-    public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash, scrap;
-    public int level = 1;
+    public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
+    public int level = 1, scrap;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
 
     void Start()
@@ -194,15 +196,23 @@ public class PlayerController : MonoBehaviour
     void SetBullet()
     {
         firedBullet.duration = eq.guns[eq.equipped].range;
-        firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f); firedBullet.DoT = eq.guns[eq.equipped].DoT; firedBullet.penetration = eq.guns[eq.equipped].penetration;
-        firedBullet.armorShred = eq.guns[eq.equipped].armorShred; firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
-        firedBullet.stunChance = eq.guns[eq.equipped].stunChance; firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
-        firedBullet.pierce = eq.guns[eq.equipped].pierce; firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
+        firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f);
+        firedBullet.DoT = eq.guns[eq.equipped].DoT;
+        firedBullet.penetration = eq.guns[eq.equipped].penetration;
+        firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
+        firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
+        firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
+        firedBullet.stunChance = eq.guns[eq.equipped].stunChance;
+        firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
+        firedBullet.pierce = eq.guns[eq.equipped].pierce;
+        firedBullet.pierceDamage = eq.guns[eq.equipped].pierceDamage;
         if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
         {
             firedBullet.damage *= eq.guns[eq.equipped].critDamage;
-            firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f; firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
-            firedBullet.stunChance *= 0.4f + eq.guns[eq.equipped].critDamage * 0.6f; firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].stunDuration * 0.3f;
+            firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
+            firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
+            firedBullet.stunChance *= 0.4f + eq.guns[eq.equipped].critDamage * 0.6f;
+            firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].stunDuration * 0.3f;
             firedBullet.crit = true;
         }
     }
@@ -401,6 +411,9 @@ public class PlayerController : MonoBehaviour
     {
         scrap += amount;
         scrapInfo.text = scrap.ToString("0");
+
+        if (steamGolem == true)
+            steamGolem.ClockworkMachine(amount);
     }
 
     public void SpendScrap(int amount)

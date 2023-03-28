@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
     public float maxHealth, health, regen, armor, vulnerable, DoT, burning;
 
     // -- Movement
-    public float movementSpeed, stun;
+    public float movementSpeed, slow, stun;
 
     // -- Damage & Attacks
     public float attackDamage, attackPoison, attackSpeed, attackRange, accuracy, force;
@@ -110,7 +110,12 @@ public class Enemy : MonoBehaviour
     {
         if (!attackTimer)
         {
-            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * Time.deltaTime);
+            if (slow > 0f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * 0.6f * Time.deltaTime);
+                slow -= Time.deltaTime;
+            }
+            else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * Time.deltaTime);
         }
     }
 
@@ -155,6 +160,8 @@ public class Enemy : MonoBehaviour
             {
                 armor *= 1 - collidedBullet.armorShred;
                 vulnerable += collidedBullet.vulnerableApplied;
+                if (collidedBullet.slowDuration > 0)
+                    slow += collidedBullet.slowDuration;
                 if (collidedBullet.stunChance >= Random.Range(0f, 1f))
                     GainStun(collidedBullet.stunDuration);
                 TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
