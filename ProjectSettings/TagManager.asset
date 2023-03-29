@@ -11,6 +11,7 @@ TagManager:
   - Tools
   - Scrap5
   - EnemyProjectal
+  - Medkit
   layers:
   - Default
   - TransparentFX

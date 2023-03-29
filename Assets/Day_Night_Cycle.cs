@@ -79,18 +79,18 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.day = false;
         CurrentState = TimeState.Night;
-        maxTime = 90f + 8f * day;
+        maxTime = 88f + 8f * day;
         time = 0;
 
         hordeSize = 9 + day * 3;
-        spawnGap = 2.4f / (1 + 0.12f * day);
+        spawnGap = 2.4f / (0.995f + 0.125f * day);
         spawnTime = spawnGap * (2 + hordeSize * 0.5f);
 
         if (day % 5 == 0)
         {
-            while (hordeSize > 12)
+            while (hordeSize >= 13)
             {
-                hordeSize -= 12;
+                hordeSize -= 13;
                 SummonBoss();
             }
         }

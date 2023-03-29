@@ -7,8 +7,10 @@ public class Gunslinger : MonoBehaviour
 {
     public PlayerController playerStats;
     public Image Ability1, Ability2;
+    public TMPro.TextMeshProUGUI CurrentChance;
 
-    public float doubleShotChance, rapidFireCooldown, rapidFireFireRate, rapidFireMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
+    public float doubleShotChance, chanceBonus, rapidFireCooldown, rapidFireFireRate, rapidFireMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
+    int unloadCount;
 
 
     void Update()
@@ -40,6 +42,11 @@ public class Gunslinger : MonoBehaviour
             Unload();
     }
 
+    public void DisplayChance()
+    {
+        CurrentChance.text = ((doubleShotChance + chanceBonus) * 100f).ToString("0.0") + "%";
+    }
+
     void BulletTime()
     {
         if (rapidFireCooldown <= 0)
@@ -66,15 +73,17 @@ public class Gunslinger : MonoBehaviour
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadCooldown = 4.5f + 3 * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadCooldown = 4.25f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             unloadMaxCooldown = unloadCooldown;
 
             unloadGap = 0.06f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.55f);
-            playerStats.task = 0.75f;
+            playerStats.task = 0.6f;
 
-            for (float i = 0; i < 0.6f; i += unloadGap)
+            unloadCount = 0;
+            for (float i = 0; i < 0.5f; i += unloadGap)
             {
                 Invoke("Fire", i);
+                unloadCount++;
             }
         }
     }
@@ -82,11 +91,11 @@ public class Gunslinger : MonoBehaviour
     void Fire()
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0 || playerStats.eq.guns[playerStats.eq.equipped].infiniteMagazine)
-            playerStats.Shoot(7f);
+            playerStats.Shoot(6f);
         else
         {
             playerStats.task -= unloadGap;
-            unloadCooldown -= unloadGap * 10f;
+            unloadCooldown -= unloadMaxCooldown / (unloadCount * 1f + 1f);
         }
     }
 }

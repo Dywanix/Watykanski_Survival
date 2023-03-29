@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class Workbench : MonoBehaviour
 {
-    public GameObject Player, Glow, Hud, Upgrades;
+    public GameObject Player, Glow, Hud, Upgrades, Others;
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI specialUpgrades;
-    public TMPro.TextMeshProUGUI[] Cost, Info;
+    public TMPro.TextMeshProUGUI[] Cost, Info, OthersInfo;
     public Button Gwench;
     public Button[] Buttons;
     public Image special;
     public Image[] images;
     public Sprite[] sprites;
-    bool active, golden, viable;
+    bool active, golden, viable, others;
     public int[] rolled;
     int current;
 
@@ -55,6 +55,7 @@ public class Workbench : MonoBehaviour
         current = which;
 
         GunInfo(which);
+        GunOtherInfo(which);
 
         if (!golden)
         {
@@ -77,6 +78,37 @@ public class Workbench : MonoBehaviour
             }
             Gwench.interactable = false;
         }
+    }
+
+    public void OtherStats()
+    {
+        if (!others)
+        {
+            Others.SetActive(true);
+            GunOtherInfo(current);
+            others = true;
+        }
+        else
+        {
+            Others.SetActive(false);
+            others = false;
+        }
+    }
+
+    public void GunOtherInfo(int which)
+    {
+        OthersInfo[0].text = "Reload Time: " + playerStats.eq.guns[which].reloadTime.ToString("0.000") + "s";
+        OthersInfo[1].text = "Crit: " + (playerStats.eq.guns[which].critChance * 100f).ToString("0.0") + "% " + (playerStats.eq.guns[which].critDamage * 100f).ToString("0.0");
+        OthersInfo[2].text = "Armor Shred " + (playerStats.eq.guns[which].armorShred * 100f).ToString("0.00") + "%";
+        OthersInfo[3].text = "Vulnerable " + (playerStats.eq.guns[which].vulnerableApplied * 100f).ToString("0.00") + "%";
+        OthersInfo[4].text = "Magazine Size: " + playerStats.eq.guns[which].magazineSize.ToString("0");
+        OthersInfo[5].text = "Overload +" + playerStats.eq.guns[which].overload.ToString("0");
+        OthersInfo[6].text = "Ammo pack +" + playerStats.eq.guns[which].ammoFromPack.ToString("0");
+        OthersInfo[7].text = "Pierce:" + (playerStats.eq.guns[which].pierce - 1).ToString("0") + " - " + (playerStats.eq.guns[which].pierceEfficiency * 100f).ToString("0.0") + "%";
+        OthersInfo[8].text = "DoT " + (playerStats.eq.guns[which].DoT * 100f).ToString("0.00") + "%";
+        OthersInfo[9].text = "Slow " + playerStats.eq.guns[which].slowDuration.ToString("0.000") + "s";
+        OthersInfo[10].text = "Stun " + (playerStats.eq.guns[which].stunChance * 100f).ToString("0.0") + "% " + playerStats.eq.guns[which].stunDuration.ToString("0.00") + "s";
+        OthersInfo[11].text = "Slots: " + playerStats.eq.guns[which].Slots[0].ToString("0") + " - " + playerStats.eq.guns[which].Slots[1].ToString("0") + " - " + playerStats.eq.guns[which].Slots[2].ToString("0") + " - " + playerStats.eq.guns[which].Slots[3].ToString("0");
     }
 
     void GunInfo(int which)

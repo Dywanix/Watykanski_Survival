@@ -199,5 +199,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3592318507254518614}
   ToxicCloud: {fileID: 3716635103215899977, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
-  cloudTimer: 2.1
-  cloudCooldown: 1.9
+  cloudTimer: 2
+  cloudCooldown: 1.85

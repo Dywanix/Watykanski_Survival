@@ -86,22 +86,30 @@ public class Gun : MonoBehaviour
                 critDamage += 0.02f * (1 + critDamage);
                 break;
             case 2:
-                temp = 0.25f + 0.15f * magazineSize;
+                temp = 0.24f + 0.16f * magazineSize;
+                if (infiniteAmmo)
+                {
+                    temp *= 1.35f;
+                    reloadTime *= 0.965f;
+                }
+
                 if (temp < 1f)
                 {
                     magazineSize++;
-                    reloadTime *= 1.9f - 0.9f * temp;
+                    reloadTime *= 1.8f - 0.8f * temp;
                 }
                 else
                 {
                     tempi = 0;
-                    for (int i = 0; i < temp; i++)
+                    for (float i = 0.8f; i < temp; i++)
                     {
                         magazineSize++;
                         tempi++;
                     }
                     temp = temp - tempi;
-                    reloadTime *= 1f - (0.8f * temp / tempi);
+                    if (temp < 0f)
+                        reloadTime *= (1f + 0.8f * tempi / tempi);
+                    else reloadTime *= 1f - (0.7f * temp / tempi);
                 }
                 break;
             case 3:
@@ -148,7 +156,7 @@ public class Gun : MonoBehaviour
                     else
                     {
                         tempi = 0;
-                        for (int i = 0; i < temp; i++)
+                        for (float i = 0.85f; i < temp; i++)
                         {
                             overload++;
                             tempi++;

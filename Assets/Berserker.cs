@@ -70,7 +70,7 @@ public class Berserker : MonoBehaviour
         {
             enrageCooldown = 35f;
 
-            healthSacrifice = playerStats.health * 0.25f;
+            healthSacrifice = playerStats.health * 0.26f;
             playerStats.TakeDamage(healthSacrifice);
 
             enrageFireRateIncrease = 1.102f + 0.004f * playerStats.level + 0.0035f * healthSacrifice;
@@ -85,7 +85,7 @@ public class Berserker : MonoBehaviour
 
     void EnrageEnd()
     {
-        playerStats.RestoreHealth(healthSacrifice * 0.25f);
+        playerStats.RestoreHealth(healthSacrifice * 0.26f);
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageBonus /= enrageDamageIncrease;

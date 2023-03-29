@@ -104,6 +104,14 @@ PrefabInstance:
       value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
+      propertyPath: Items.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
+      propertyPath: Items.Array.data[1]
+      value: 
+      objectReference: {fileID: 5990516359670061885, guid: 3f836a31361b7584c979a701eec3184a, type: 3}
+    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: scrapDroppedRange.Array.data[0]
       value: 0
       objectReference: {fileID: 0}

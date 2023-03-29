@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191054326414800118, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5019305471796332467, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: damage
@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5019305471796332467, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: duration
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5306407701457883464, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: m_Name
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 3093506454371216887}
-  duration: 12
+  duration: 15
   startingFade: 0.624
   red: 0.6
   green: 0.773

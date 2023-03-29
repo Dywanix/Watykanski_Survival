@@ -151,10 +151,19 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(float accuracy_change)
     {
-        if (gunslinger == true)
+        if (gunslinger)
         {
-            if (Random.Range(0f,1f) <= gunslinger.doubleShotChance)
+            if (Random.Range(0f, 1f) <= gunslinger.doubleShotChance + gunslinger.chanceBonus)
+            {
                 Fire(accuracy_change);
+                gunslinger.chanceBonus = 0f;
+                gunslinger.DisplayChance();
+            }
+            else
+            {
+                gunslinger.chanceBonus += 0.013f;
+                gunslinger.DisplayChance();
+            }
         }
 
         Fire(accuracy_change);
@@ -392,6 +401,11 @@ public class PlayerController : MonoBehaviour
             }
             if (steamGolem == true)
                 steamGolem.ClockworkMachine(25 + level);
+            Destroy(other.gameObject);
+        }
+        else if (other.transform.tag == "Medkit")
+        {
+            RestoreHealth(10f + maxHealth * 0.16f);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "EnemyProjectal")

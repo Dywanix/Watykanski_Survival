@@ -29,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3142997083764001022, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.1
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 3142997083764001022, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.1
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 3142997083764001022, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77,23 +77,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: armor
-      value: 140.3
+      value: 145.4
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: health
-      value: 562
+      value: 580
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: weight
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: maxHealth
-      value: 562
+      value: 580
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: dropChance
-      value: 0.2225
+      value: 0.2326
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: itemsCount
@@ -105,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackSpeed
-      value: 2.556
+      value: 2.584
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackDamage
-      value: 54.51
+      value: 55.11
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackPoison
@@ -117,11 +117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: movementSpeed
-      value: 5.08
+      value: 5.136
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: Items.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: Items.Array.data[1]
@@ -140,12 +140,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
+      propertyPath: Items.Array.data[5]
+      value: 
+      objectReference: {fileID: 5990516359670061885, guid: 3f836a31361b7584c979a701eec3184a, type: 3}
+    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: scrapDroppedRange.Array.data[0]
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: scrapDroppedRange.Array.data[1]
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9147149673325853814, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_AnchorMax.x

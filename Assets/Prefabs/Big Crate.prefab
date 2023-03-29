@@ -28,6 +28,14 @@ PrefabInstance:
       value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
+      propertyPath: Items.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
+      propertyPath: Items.Array.data[4]
+      value: 
+      objectReference: {fileID: 5990516359670061885, guid: 3f836a31361b7584c979a701eec3184a, type: 3}
+    - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: scrapDroppedRange.Array.data[0]
       value: 7
       objectReference: {fileID: 0}
@@ -41,11 +49,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096442, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.9
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096442, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.6
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096442, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,6 +94,18 @@ PrefabInstance:
     - target: {fileID: 327920104148096442, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 327920104148096443, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 327920104148096443, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78431374
+      objectReference: {fileID: 0}
+    - target: {fileID: 327920104148096443, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.78431374
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096446, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: m_Name
