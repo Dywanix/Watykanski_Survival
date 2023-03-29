@@ -128,13 +128,12 @@ public class Gun : MonoBehaviour
                 ammo += 3 + 2 * ammoFromPack;
                 break;
             case 6:
-                temp = 0.002f + 0.08f / (bulletSpread * 1f + 1f);
+                temp = 1.002f + 0.08f / (bulletSpread * 1f + 1f);
                 accuracy *= temp; cameraShake *= temp; reloadTime *= temp;
 
                 temp = 1.012f - (0.12f / (bulletSpread * 1.5f));
                 fireRate *= temp;
 
-                temp = 0.002f + 0.08f / (bulletSpread * 1f + 1f);
                 temp = 0.065f - (0.38f / (bulletSpread * 2.25f + 1.2f)) + ((bulletSpread * 1.01f + 0.35f) / (bulletSpread + 1.14f));
                 damage *= temp; armorShred *= temp; vulnerableApplied *= temp;
 

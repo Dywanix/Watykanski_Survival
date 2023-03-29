@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Body, Gun;
     public GameObject reload_image;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo;
+    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo, electricityInfo;
     public Image healthBar;
     private Bullet firedBullet;
     private EnemyBullet collidedBullet;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     // -- statystyki --
     public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
-    public int level = 1, scrap;
+    public int level = 1, scrap, electricity;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
 
     void Start()
@@ -426,7 +426,7 @@ public class PlayerController : MonoBehaviour
         movementSpeed += movementSpeedIncrease;
     }
 
-    void GainScrap(int amount)
+    public void GainScrap(int amount)
     {
         scrap += amount;
         scrapInfo.text = scrap.ToString("0");
@@ -439,6 +439,18 @@ public class PlayerController : MonoBehaviour
     {
         scrap -= amount;
         scrapInfo.text = scrap.ToString("0");
+    }
+
+    public void GainElectricity(int amount)
+    {
+        electricity += amount;
+        electricityInfo.text = electricity.ToString("0");
+    }
+
+    public void SpendElectricity(int amount)
+    {
+        electricity -= amount;
+        electricityInfo.text = electricity.ToString("0");
     }
 
     void PickedUpAmmo()

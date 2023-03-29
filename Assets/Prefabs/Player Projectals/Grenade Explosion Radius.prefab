@@ -105,10 +105,12 @@ MonoBehaviour:
   penetration: 0
   armorShred: 0
   vulnerableApplied: 0
+  slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  pierceDamage: 1
+  pierceEfficiency: 1
   DoT: 0
+  incendiary: 0
   crateBonus: 0
   pierce: 100
   crit: 0
