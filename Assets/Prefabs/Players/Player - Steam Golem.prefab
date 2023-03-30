@@ -309,15 +309,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Gatling Gun
-  damage: 7.54
+  damage: 6.84
   critChance: 0.07
-  penetration: 0.1
-  fireRate: 0.2139
-  reloadTime: 3.656
-  accuracy: 12.2
+  penetration: 0.09
+  fireRate: 0.216
+  reloadTime: 3.73
+  accuracy: 12.6
   force: 22
   range: 1.25
-  cameraShake: 1.1
+  cameraShake: 0.9977
   shakeDuration: 0.022
   critDamage: 1.5
   armorShred: 0.002
@@ -328,9 +328,9 @@ MonoBehaviour:
   pierceEfficiency: 0.4
   DoT: 0
   specialCharge: 0
-  magazineSize: 20
+  magazineSize: 18
   overload: 0
-  bulletsLeft: 20
+  bulletsLeft: 18
   ammo: 0
   ammoFromPack: 0
   bulletSpread: 1
@@ -463,32 +463,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Rail Gun
-  damage: 41
+  damage: 32.8
   critChance: 0.17
   penetration: 0.17
-  fireRate: 1.725
-  reloadTime: 4.013
+  fireRate: 1.38
+  reloadTime: 3.15
   accuracy: 3.9
   force: 22
   range: 1.48
-  cameraShake: 1
+  cameraShake: 0.8
   shakeDuration: 0.03
   critDamage: 1.65
   armorShred: 0
-  vulnerableApplied: 0.085
+  vulnerableApplied: 0.07
   slowDuration: 0
   stunChance: 0.14
   stunDuration: 1.2
-  pierceEfficiency: 0.46
+  pierceEfficiency: 0.48
   DoT: 0
   specialCharge: 0
-  magazineSize: 4
+  magazineSize: 5
   overload: 1
-  bulletsLeft: 5
-  ammo: 14
-  ammoFromPack: 5
+  bulletsLeft: 6
+  ammo: 18
+  ammoFromPack: 6
   bulletSpread: 1
-  pierce: 1
+  pierce: 2
   special: 0
   Slots: 00000000000000000000000000000000
   Costs: 14000000140000001400000014000000
@@ -919,6 +919,7 @@ MonoBehaviour:
   overdriveAccuracy: 0
   temp: 0
   direction: 0
+  railGunCharges: 0
   clockworkMachine: 30
   spareParts: 0
   volleyCount: 0

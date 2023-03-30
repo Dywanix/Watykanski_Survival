@@ -12,6 +12,7 @@ TagManager:
   - Scrap5
   - EnemyProjectal
   - Medkit
+  - Battery
   layers:
   - Default
   - TransparentFX

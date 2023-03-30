@@ -17,6 +17,7 @@ public class Day_Night_Cycle : MonoBehaviour
     private Spawner currentSpawner;
     public GameObject Player, Gunslinger, Berserker, SteamGolem;
     public GameObject[] bosses;
+    public Wave endlessOne;
     public Wave[] waves;
     public Enemy current;
     public PlayerController playerStats;
@@ -110,26 +111,55 @@ public class Day_Night_Cycle : MonoBehaviour
 
     void Summon()
     {
-        roll = Random.Range(0, waves[day - 1].Mobs.Length);
-
-        currentSpawner = spawners[Random.Range(0, spawners.Length)];
-
-        for (int i = 0; i < day; i += waves[day - 1].weights[roll])
+        if (day > waves.Length)
         {
-            currentSpawner.Spawn(waves[day - 1].Mobs[roll]);
-            spawnTime += spawnGap * waves[day - 1].weights[roll];
+            roll = Random.Range(0, endlessOne.Mobs.Length);
+
+            currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+            for (int i = 0; i < day; i += endlessOne.weights[roll])
+            {
+                currentSpawner.Spawn(endlessOne.Mobs[roll]);
+                spawnTime += spawnGap * endlessOne.weights[roll];
+            }
+        }
+        else
+        {
+            roll = Random.Range(0, waves[day - 1].Mobs.Length);
+
+            currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+            for (int i = 0; i < day; i += waves[day - 1].weights[roll])
+            {
+                currentSpawner.Spawn(waves[day - 1].Mobs[roll]);
+                spawnTime += spawnGap * waves[day - 1].weights[roll];
+            }
         }
     }
 
     void SummonHorde()
     {
-        roll = Random.Range(0, waves[day - 1].Mobs.Length);
-
-        currentSpawner = spawners[Random.Range(0, spawners.Length)];
-
-        for (int i = 0; i < hordeSize; i += waves[day - 1].weights[roll])
+        if (day > waves.Length)
         {
-            currentSpawner.Spawn(waves[day - 1].Mobs[roll]);
+            roll = Random.Range(0, endlessOne.Mobs.Length);
+
+            currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+            for (int i = 0; i < hordeSize; i += endlessOne.weights[roll])
+            {
+                currentSpawner.Spawn(endlessOne.Mobs[roll]);
+            }
+        }
+        else
+        {
+            roll = Random.Range(0, waves[day - 1].Mobs.Length);
+
+            currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+            for (int i = 0; i < hordeSize; i += waves[day - 1].weights[roll])
+            {
+                currentSpawner.Spawn(waves[day - 1].Mobs[roll]);
+            }
         }
     }
 

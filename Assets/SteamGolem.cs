@@ -12,7 +12,7 @@ public class SteamGolem : MonoBehaviour
     private Bullet firedBullet;
 
     public float efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
-    public int clockworkMachine, spareParts, volleyCount, bulletsCount;
+    public int gatlingGunCharges, railGunCharges, clockworkMachine, spareParts, volleyCount, bulletsCount;
 
     void Update()
     {
@@ -40,6 +40,29 @@ public class SteamGolem : MonoBehaviour
             Overdrive(playerStats.eq.equipped);
         else if (Input.GetKeyDown(KeyCode.Q))
             EfficientReload();
+    }
+
+    public void PackedUp()
+    {
+        gatlingGunCharges++;
+        if (gatlingGunCharges >= 2)
+        {
+            gatlingGunCharges -= 2;
+            playerStats.eq.guns[0].magazineSize++;
+            playerStats.eq.guns[0].fireRate *= 0.992f;
+            playerStats.eq.guns[0].reloadTime *= 0.992f;
+        }
+    }
+
+    public void ChargedUp()
+    {
+        railGunCharges++;
+        if (railGunCharges >= 3)
+        {
+            railGunCharges -= 3;
+            playerStats.eq.guns[1].overload++;
+            playerStats.eq.guns[1].reloadTime *= 0.988f;
+        }
     }
 
     public void ClockworkMachine(int amount)

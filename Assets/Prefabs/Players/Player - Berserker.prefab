@@ -1283,18 +1283,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Shotgun
-  damage: 9.3
-  critChance: 0.02
+  damage: 10.6
+  critChance: 0.03
   penetration: 0.16
-  fireRate: 1.39
-  reloadTime: 0.669
-  accuracy: 13.04
+  fireRate: 1.172
+  reloadTime: 0.578
+  accuracy: 12.52
   force: 22
   range: 1.2
-  cameraShake: 2.44
+  cameraShake: 2.89
   shakeDuration: 0.06
   critDamage: 1.4
-  armorShred: 0.055
+  armorShred: 0.065
   vulnerableApplied: 0
   slowDuration: 0
   stunChance: 0
@@ -1302,9 +1302,9 @@ MonoBehaviour:
   pierceEfficiency: 0.4
   DoT: 0
   specialCharge: 0
-  magazineSize: 5
+  magazineSize: 6
   overload: 0
-  bulletsLeft: 5
+  bulletsLeft: 6
   ammo: 28
   ammoFromPack: 6
   bulletSpread: 4
@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Axe
-  damage: 24.7
+  damage: 24.2
   critChance: 0.02
   penetration: 0.12
   fireRate: 1.713

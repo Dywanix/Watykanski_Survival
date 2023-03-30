@@ -217,7 +217,5 @@ public class Gun : MonoBehaviour
     public void AmmoPicked()
     {
         ammo += ammoFromPack;
-        if (gunName == "Gatling Gun")
-            magazineSize++;
     }
 }

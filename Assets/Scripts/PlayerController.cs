@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
 
         if (berserker == true)
-            berserker.GainCharge(0.28f * value);
+            berserker.GainCharge(0.29f * value);
 
         if (health < 0f)
             Application.Quit();
@@ -408,6 +408,13 @@ public class PlayerController : MonoBehaviour
             RestoreHealth(10f + maxHealth * 0.16f);
             Destroy(other.gameObject);
         }
+        else if (other.transform.tag == "Battery")
+        {
+            GainElectricity(25);
+            if (steamGolem == true)
+                steamGolem.ChargedUp();
+            Destroy(other.gameObject);
+        }
         else if (other.transform.tag == "EnemyProjectal")
         {
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
@@ -453,11 +460,13 @@ public class PlayerController : MonoBehaviour
         electricityInfo.text = electricity.ToString("0");
     }
 
-    void PickedUpAmmo()
+    public void PickedUpAmmo()
     {
         for (int i = 0; i < eq.guns.Length; i++)
         {
             eq.guns[i].AmmoPicked();
         }
+        if (steamGolem == true)
+            steamGolem.PackedUp();
     }
 }

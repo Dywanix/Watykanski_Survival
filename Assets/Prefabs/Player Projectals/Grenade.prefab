@@ -107,10 +107,12 @@ MonoBehaviour:
   penetration: 0
   armorShred: 0
   vulnerableApplied: 0
+  slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  pierceDamage: 0
+  pierceEfficiency: 0
   DoT: 0
+  incendiary: 0
   crateBonus: 0
   pierce: 0
   crit: 0
@@ -165,9 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   form: {fileID: 4426012864177698320}
-  jump: 2.56
+  jump: 2.1
   fall: 0
-  duration: 1.2
+  duration: 1.14
 --- !u!114 &3956280678461293455
 MonoBehaviour:
   m_ObjectHideFlags: 0

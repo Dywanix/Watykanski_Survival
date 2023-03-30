@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7722378330716171811
+--- !u!1001 &5781592692914495638
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,19 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 561359032845120874, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_Name
-      value: Tanky
+      value: minion
       objectReference: {fileID: 0}
     - target: {fileID: 1302246055296262660, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_Color.b
-      value: 0.3492107
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1302246055296262660, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_Color.g
-      value: 0.3584906
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1302246055296262660, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_Color.r
-      value: 0.32297972
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3142997083764001022, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_RootOrder
@@ -29,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3142997083764001022, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 3142997083764001022, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 3142997083764001022, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77,71 +77,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: armor
-      value: 34
+      value: 8.25
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: health
-      value: 140
+      value: 39.2
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: weight
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: maxHealth
-      value: 140
+      value: 39.2
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: dropChance
-      value: 0.048
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
+      propertyPath: itemsCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackRange
-      value: 2.3
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackSpeed
-      value: 2.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackDamage
-      value: 23.8
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: attackPoison
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: movementSpeed
-      value: 4.2
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: Items.Array.size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
-      propertyPath: Items.Array.data[1]
+      propertyPath: Items.Array.data[0]
       value: 
-      objectReference: {fileID: 79473308468676264, guid: cea33aea125036440b5d3c1dc8b78569, type: 3}
-    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
-      propertyPath: Items.Array.data[2]
-      value: 
-      objectReference: {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
-    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
-      propertyPath: Items.Array.data[3]
-      value: 
-      objectReference: {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
-    - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
-      propertyPath: Items.Array.data[4]
-      value: 
-      objectReference: {fileID: 963248808608290928, guid: 5a90e49f55900a14a943aae6cd4812d2, type: 3}
+      objectReference: {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: scrapDroppedRange.Array.data[0]
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8574421178479943427, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
       propertyPath: scrapDroppedRange.Array.data[1]
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
