@@ -93,17 +93,15 @@ public class SteamGolem : MonoBehaviour
                 {
                     playerStats.eq.guns[playerStats.eq.equipped].individualReload = false;
                     playerStats.reloading = true;
-                    playerStats.reload_image.SetActive(true);
-                    playerStats.task = 0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft);
+                    playerStats.NewTask(0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft));
                     efficientReloadMaxCooldown = 0.75f + 5f * playerStats.eq.guns[0].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft);
                     Invoke("SwapReload", 0.15f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft));
                 }
                 else
                 {
                     playerStats.reloading = true;
-                    playerStats.reload_image.SetActive(true);
                     reloadedProcentage = 1f * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft) / (1f * playerStats.eq.guns[playerStats.eq.equipped].magazineSize);
-                    playerStats.task = 0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * reloadedProcentage;
+                    playerStats.NewTask(0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * reloadedProcentage);
                     efficientReloadMaxCooldown = 0.75f + 5f * playerStats.eq.guns[0].reloadTime * reloadedProcentage;
                 }
             }
@@ -131,7 +129,7 @@ public class SteamGolem : MonoBehaviour
                         {
                             Invoke("BulletVolley", 0.1f + i * (0.5f / (2f + playerStats.eq.guns[0].bulletSpread)));
                         }
-                        playerStats.task = 1f;
+                        playerStats.NewTask(1f);
                     }
                     break;
                 case 1:
@@ -140,7 +138,7 @@ public class SteamGolem : MonoBehaviour
                         overdriveMaxCooldown = 2.4f + 10f * playerStats.eq.guns[1].fireRate;
 
                         ElectricGrenade();
-                        playerStats.task = playerStats.eq.guns[1].fireRate;
+                        playerStats.NewTask(playerStats.eq.guns[1].fireRate);
                     }
                     break;
                 case 2:
@@ -149,7 +147,7 @@ public class SteamGolem : MonoBehaviour
                         overdriveMaxCooldown = 10f * playerStats.eq.guns[2].fireRate;
 
                         IncendiaryGrenade();
-                        playerStats.task = playerStats.eq.guns[2].fireRate;
+                        playerStats.NewTask(playerStats.eq.guns[2].fireRate);
                     }
                     break;
             }

@@ -5,7 +5,9 @@ using UnityEngine;
 public class Equipment : MonoBehaviour
 {
     public Gun[] guns;
+    public GameObject Caltrop;
     public GameObject[] gunSprite;
+    public int[] items;
 
-    public int equipped;
+    public int equipped, item;
 }

@@ -99,7 +99,7 @@ public class Berserker : MonoBehaviour
 
             Invoke("Swipe", 0.4f);
 
-            playerStats.task = 0.8f;
+            playerStats.NewTask(0.8f);
         }
     }
 

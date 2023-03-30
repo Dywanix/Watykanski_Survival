@@ -77,7 +77,7 @@ public class Gunslinger : MonoBehaviour
             unloadMaxCooldown = unloadCooldown;
 
             unloadGap = 0.06f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.55f);
-            playerStats.task = 0.6f;
+            playerStats.NewTask(0.6f);
 
             unloadCount = 0;
             for (float i = 0; i < 0.5f; i += unloadGap)

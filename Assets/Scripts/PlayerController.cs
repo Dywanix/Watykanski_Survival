@@ -7,10 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     public Transform Barrel, Hand;
     public Rigidbody2D Body, Gun;
-    public GameObject reload_image;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo, electricityInfo;
-    public Image healthBar;
+    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, itemInfo, scrapInfo, electricityInfo;
+    public Image healthBar, taskImage, dashImage;
     private Bullet firedBullet;
     private EnemyBullet collidedBullet;
 
@@ -22,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public bool mouseLeft, reloading, free = true, day = true;
     Vector3 mousePos, mouseVector;
     CameraController Cam;
-    public float task;
+    public float task, taskMax;
 
     // -- statystyki --
     public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
@@ -43,6 +42,9 @@ public class PlayerController : MonoBehaviour
     {
         if (free)
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+                Dash();
+
             GetInput();
             Movement();
             Aim();
@@ -53,18 +55,27 @@ public class PlayerController : MonoBehaviour
             else
             {
                 task -= Time.deltaTime * SpeedMultiplyer(1f);
+                taskImage.fillAmount = 1 - (task / taskMax);
                 if (mouseLeft && reloading && eq.guns[eq.equipped].bulletsLeft > 0)
                 {
                     reloading = false;
-                    reload_image.SetActive(false);
-                    task = 0.1f;
+                    NewTask(0.1f);
                     Shoot(0f);
                     task += eq.guns[eq.equipped].fireRate;
                 }
             }
         }
         if (dashCooldown > 0)
+        {
             dashCooldown -= Time.deltaTime;
+            dashImage.fillAmount = 1 - (dashCooldown / 8f);
+        }
+    }
+
+    public void NewTask(float duration)
+    {
+        taskMax = duration;
+        task += duration;
     }
 
     void Tick()
@@ -122,9 +133,6 @@ public class PlayerController : MonoBehaviour
 
     void Action()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Dash();
-
         if (reloading)
         {
             Reloaded();
@@ -135,7 +143,7 @@ public class PlayerController : MonoBehaviour
             if (eq.guns[eq.equipped].bulletsLeft > 0 || eq.guns[eq.equipped].infiniteMagazine)
             {
                 Shoot(0f);
-                task += eq.guns[eq.equipped].fireRate;
+                NewTask(eq.guns[eq.equipped].fireRate);
             }
             else Reload();
         }
@@ -147,6 +155,8 @@ public class PlayerController : MonoBehaviour
             SwapGun(1);
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             SwapGun(2);
+        else if (Input.GetKeyDown(KeyCode.Z))
+            UseItem();
     }
 
     public void Shoot(float accuracy_change)
@@ -236,8 +246,7 @@ public class PlayerController : MonoBehaviour
             if (eq.guns[eq.equipped].infiniteAmmo || eq.guns[eq.equipped].ammo > 0)
             {
                 reloading = true;
-                reload_image.SetActive(true);
-                task = eq.guns[eq.equipped].reloadTime;
+                NewTask(eq.guns[eq.equipped].reloadTime);
             }
         }
     }
@@ -251,13 +260,10 @@ public class PlayerController : MonoBehaviour
                 eq.guns[eq.equipped].bulletsLeft++;
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].magazineSize)
-                {
                     reloading = false;
-                    reload_image.SetActive(false);
-                }
                 else
                 {
-                    task = eq.guns[eq.equipped].reloadTime;
+                    NewTask(eq.guns[eq.equipped].reloadTime);
                 }
             }
             else
@@ -266,13 +272,10 @@ public class PlayerController : MonoBehaviour
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 eq.guns[eq.equipped].ammo--;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].magazineSize || eq.guns[eq.equipped].ammo <= 0)
-                {
                     reloading = false;
-                    reload_image.SetActive(false);
-                }
                 else
                 {
-                    task = eq.guns[eq.equipped].reloadTime;
+                    NewTask(eq.guns[eq.equipped].reloadTime);
                 }
             }
         }
@@ -294,7 +297,6 @@ public class PlayerController : MonoBehaviour
             }
             eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
             reloading = false;
-            reload_image.SetActive(false);
         }
         DisplayAmmo();
     }
@@ -323,7 +325,36 @@ public class PlayerController : MonoBehaviour
             eq.equipped = which;
             eq.gunSprite[eq.equipped].SetActive(true);
             DisplayAmmo();
-            task = 0.775f;
+            NewTask(0.775f);
+        }
+    }
+
+    void UseItem()
+    {
+        if (eq.items[eq.item] > 0)
+        {
+            switch (eq.item)
+            {
+                case 0:
+                    ThrowCaltrops();
+                    break;
+            }
+            eq.items[eq.item]--;
+            itemInfo.text = eq.items[eq.item].ToString("0");
+        }
+    }
+
+    void ThrowCaltrops()
+    {
+        NewTask(0.07f);
+        for (int i = 0; i < 4; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-20f, 20f));
+            GameObject caltrop = Instantiate(eq.Caltrop, Barrel.position, Barrel.rotation);
+            Rigidbody2D caltrop_body = caltrop.GetComponent<Rigidbody2D>();
+            caltrop_body.AddForce(Barrel.up * Random.Range(1.2f, 1.9f), ForceMode2D.Impulse);
+            firedBullet = caltrop.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = 10 * DamageDealtMultiplyer(1f);
         }
     }
 
