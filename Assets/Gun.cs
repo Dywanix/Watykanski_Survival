@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     // -- Special Gun Stats
     public float critDamage, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, specialCharge;
     public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, pierce, special;
-    public int[] Slots, Costs;
+    public int[] MaxSlots, TakenSlots, Costs, Accessories;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
     float temp;
     int tempi;
@@ -186,20 +186,20 @@ public class Gun : MonoBehaviour
                 }
                 break;
             case 9:
-                Slots[0]++;
+                MaxSlots[0]++;
                 damage *= 1.032f;
                 break;
             case 10:
-                Slots[1]++;
+                MaxSlots[1]++;
                 accuracy *= 0.93f;
                 range += 0.05f;
                 break;
             case 11:
-                Slots[2]++;
+                MaxSlots[2]++;
                 reloadTime *= 0.936f;
                 break;
             case 12:
-                Slots[3]++;
+                MaxSlots[3]++;
                 fireRate *= 0.956f;
                 break;
             case 13:

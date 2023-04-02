@@ -13,6 +13,7 @@ TagManager:
   - EnemyProjectal
   - Medkit
   - Battery
+  - Accessory
   layers:
   - Default
   - TransparentFX

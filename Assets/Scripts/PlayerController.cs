@@ -331,7 +331,7 @@ public class PlayerController : MonoBehaviour
 
     void UseItem()
     {
-        if (eq.items[eq.item] > 0)
+        if (eq.Items[eq.item] > 0)
         {
             switch (eq.item)
             {
@@ -339,8 +339,8 @@ public class PlayerController : MonoBehaviour
                     ThrowCaltrops();
                     break;
             }
-            eq.items[eq.item]--;
-            itemInfo.text = eq.items[eq.item].ToString("0");
+            eq.Items[eq.item]--;
+            itemInfo.text = eq.Items[eq.item].ToString("0");
         }
     }
 
@@ -373,7 +373,7 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
 
         if (berserker == true)
-            berserker.GainCharge(0.29f * value);
+            berserker.GainCharge(0.3f * value);
 
         if (health < 0f)
             Application.Quit();
@@ -444,6 +444,11 @@ public class PlayerController : MonoBehaviour
             GainElectricity(25);
             if (steamGolem == true)
                 steamGolem.ChargedUp();
+            Destroy(other.gameObject);
+        }
+        else if (other.transform.tag == "Accessory")
+        {
+            eq.Accessories[Random.Range(0, eq.Accessories.Length)]++;
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "EnemyProjectal")

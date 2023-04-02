@@ -7,7 +7,7 @@ public class Equipment : MonoBehaviour
     public Gun[] guns;
     public GameObject Caltrop;
     public GameObject[] gunSprite;
-    public int[] items;
+    public int[] Items, Accessories;
 
     public int equipped, item;
 }
