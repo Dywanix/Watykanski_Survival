@@ -492,8 +492,10 @@ MonoBehaviour:
   bulletSpread: 1
   pierce: 1
   special: 0
-  Slots: 00000000000000000000000000000000
+  MaxSlots: 00000000000000000000000000000000
+  TakenSlots: 00000000000000000000000000000000
   Costs: 14000000140000001400000014000000
+  Accessories: 
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
@@ -646,8 +648,10 @@ MonoBehaviour:
   bulletSpread: 1
   pierce: 2
   special: 0
-  Slots: 00000000000000000000000000000000
+  MaxSlots: 00000000000000000000000000000000
+  TakenSlots: 00000000000000000000000000000000
   Costs: 14000000140000001400000014000000
+  Accessories: 
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -801,8 +805,10 @@ MonoBehaviour:
   bulletSpread: 1
   pierce: 1
   special: 0
-  Slots: 00000000000000000000000000000000
+  MaxSlots: 00000000000000000000000000000000
+  TakenSlots: 00000000000000000000000000000000
   Costs: 14000000140000001400000014000000
+  Accessories: 
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 1
@@ -1026,7 +1032,8 @@ MonoBehaviour:
   - {fileID: 2585763502664162634}
   - {fileID: 2585763504064142085}
   - {fileID: 2585763503652434596}
-  items: 08000000
+  Items: 
+  Accessories: 
   equipped: 0
   item: 0
 --- !u!61 &2585763503004784938
