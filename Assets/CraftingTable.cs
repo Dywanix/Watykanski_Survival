@@ -11,6 +11,7 @@ public class CraftingTable : MonoBehaviour
     public Button[] EQButtons, FButtons, TButtons, BButtons, RButtons;
     public Sprite[] AccessorySprite;
     public int[] AEQValues, FValues, TValues, BValues, RValues, Weights;
+    public GameObject[] tooltips;
 
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI Front, Top, Bottom, Rear;
@@ -185,6 +186,52 @@ public class CraftingTable : MonoBehaviour
         Rear.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[3].ToString("0");
     }
 
+    public void TooltipOpen(string pack, int order)
+    {
+        switch (pack)
+        {
+            case "eq":
+                tempi = AEQValues[order];
+                break;
+            case "front":
+                tempi = FValues[order];
+                break;
+            case "top":
+                tempi = TValues[order];
+                break;
+            case "bottom":
+                tempi = BValues[order];
+                break;
+            case "rear":
+                tempi = RValues[order];
+                break;
+        }
+        tooltips[tempi].SetActive(true);
+    }
+
+    public void TooltipClose(string pack, int order)
+    {
+        switch (pack)
+        {
+            case "eq":
+                tempi = AEQValues[order];
+                break;
+            case "front":
+                tempi = FValues[order];
+                break;
+            case "top":
+                tempi = TValues[order];
+                break;
+            case "bottom":
+                tempi = BValues[order];
+                break;
+            case "rear":
+                tempi = RValues[order];
+                break;
+        }
+        tooltips[tempi].SetActive(false);
+    }
+
     public void Equip(int which)
     {
         playerStats.eq.Accessories[AEQValues[which]]--;
@@ -208,6 +255,7 @@ public class CraftingTable : MonoBehaviour
         }
 
         GainEffect(AEQValues[which]);
+        tooltips[AEQValues[which]].SetActive(false);
 
         UpdateInfo();
     }
@@ -220,6 +268,7 @@ public class CraftingTable : MonoBehaviour
         playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] -= Weights[FValues[which]];
 
         LoseEffect(FValues[which]);
+        tooltips[FValues[which]].SetActive(false);
 
         UpdateInfo();
     }
@@ -232,6 +281,7 @@ public class CraftingTable : MonoBehaviour
         playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] -= Weights[TValues[which]];
 
         LoseEffect(TValues[which]);
+        tooltips[TValues[which]].SetActive(false);
 
         UpdateInfo();
     }
@@ -244,6 +294,7 @@ public class CraftingTable : MonoBehaviour
         playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] -= Weights[BValues[which]];
 
         LoseEffect(BValues[which]);
+        tooltips[BValues[which]].SetActive(false);
 
         UpdateInfo();
     }
@@ -256,6 +307,7 @@ public class CraftingTable : MonoBehaviour
         playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3] -= Weights[RValues[which]];
 
         LoseEffect(RValues[which]);
+        tooltips[RValues[which]].SetActive(false);
 
         UpdateInfo();
     }
