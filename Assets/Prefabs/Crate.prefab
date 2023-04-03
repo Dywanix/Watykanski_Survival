@@ -109,6 +109,7 @@ MonoBehaviour:
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 963248808608290928, guid: 5a90e49f55900a14a943aae6cd4812d2, type: 3}
+  - {fileID: 2318759274309051530, guid: 1cd4bd986c5ecae4ebe307483af6d8b0, type: 3}
   playerStats: {fileID: 0}
   Dir: {fileID: 327920104148096441}
   Sight: {fileID: 4865812193980604539}
