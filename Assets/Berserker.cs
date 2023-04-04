@@ -11,7 +11,7 @@ public class Berserker : MonoBehaviour
     public GameObject SwipeWave;
     private Bullet SwipeBullet;
 
-    public float survivorCharge, requiredCharge, survivorCount, enrageCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown;
+    public float survivorCharge, requiredCharge, survivorCount, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
 
     void Start()
     {
@@ -32,13 +32,13 @@ public class Berserker : MonoBehaviour
         if (enrageCooldown > 0)
         {
             enrageCooldown -= Time.deltaTime;
-            Ability1.fillAmount = 1 - (enrageCooldown / 35f);
+            Ability1.fillAmount = 1 - (enrageCooldown / enrageMaxCooldown);
         }
 
         if (swipeCooldown > 0)
         {
             swipeCooldown -= Time.deltaTime;
-            Ability2.fillAmount = 1 - (swipeCooldown / 12f);
+            Ability2.fillAmount = 1 - (swipeCooldown / swipeMaxCooldown);
         }
     }
 
@@ -68,7 +68,15 @@ public class Berserker : MonoBehaviour
     {
         if (enrageCooldown <= 0)
         {
-            enrageCooldown = 35f;
+            enrageMaxCooldown = 35f;
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            {
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                {
+                    enrageMaxCooldown *= 0.925f;
+                }
+            }
+            enrageCooldown = enrageMaxCooldown;
 
             healthSacrifice = playerStats.health * 0.26f;
             playerStats.TakeDamage(healthSacrifice);
@@ -95,7 +103,15 @@ public class Berserker : MonoBehaviour
     {
         if (swipeCooldown <= 0)
         {
-            swipeCooldown = 12f;
+            swipeMaxCooldown = 12f;
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            {
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                {
+                    swipeMaxCooldown *= 0.925f;
+                }
+            }
+            swipeCooldown = swipeMaxCooldown;
 
             Invoke("Swipe", 0.4f);
 

@@ -105,6 +105,13 @@ public class SteamGolem : MonoBehaviour
                     efficientReloadMaxCooldown = 0.75f + 5f * playerStats.eq.guns[0].reloadTime * reloadedProcentage;
                 }
             }
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            {
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                {
+                    efficientReloadMaxCooldown *= 0.925f;
+                }
+            }
             efficientReloadCooldown = efficientReloadMaxCooldown;
         }
     }
@@ -150,6 +157,13 @@ public class SteamGolem : MonoBehaviour
                         playerStats.NewTask(playerStats.eq.guns[2].fireRate);
                     }
                     break;
+            }
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            {
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                {
+                    overdriveMaxCooldown *= 0.925f;
+                }
             }
             overdriveCooldown = overdriveMaxCooldown;
         }

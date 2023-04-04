@@ -317,44 +317,45 @@ public class CraftingTable : MonoBehaviour
         switch (which)
         {
             case 0:
-                playerStats.eq.guns[playerStats.eq.equipped].damage *= 1.04f;
+                playerStats.eq.guns[playerStats.eq.equipped].damage *= 1.05f;
                 break;
             case 1:
-                playerStats.eq.guns[playerStats.eq.equipped].DoT += 0.1f;
+                playerStats.eq.guns[playerStats.eq.equipped].DoT += 0.12f;
                 break;
             case 2:
                 playerStats.eq.guns[playerStats.eq.equipped].bulletSpread *= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].damage *= 0.7f;
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.18f;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.09f;
+                playerStats.eq.guns[playerStats.eq.equipped].damage *= 0.72f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.14f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.08f;
                 break;
             case 3:
-                // constant
+                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.02f;
+                // armor shred
                 break;
             case 4:
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 0.88f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 0.85f;
                 break;
             case 5:
-                // constant
+                // vulnerable applied
                 break;
             case 6:
                 playerStats.eq.guns[playerStats.eq.equipped].pierce += 1;
                 break;
             case 7:
-                // constant
+                // pierce efficiency
                 break;
             case 8:
-                tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 8;
+                tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 7;
                 playerStats.eq.guns[playerStats.eq.equipped].magazineSize += tempi; 
                 break;
             case 9:
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.92f;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.9f;
                 break;
             case 10:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.04f;
+                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.05f;
                 break;
             case 11:
-                // constant
+                // chance to not consume ammo
                 break;
             case 12:
                 for (int i = 0; i < 3; i++)
@@ -363,14 +364,14 @@ public class CraftingTable : MonoBehaviour
                 }
                 break;
             case 13:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.95f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.938f;
                 break;
             case 14:
-                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.06f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.07f;
+                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.08f;
+                playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.08f;
                 break;
             case 15:
-                // constant
+                // cooldowns
                 break;
         }
     }
@@ -380,44 +381,45 @@ public class CraftingTable : MonoBehaviour
         switch (which)
         {
             case 0:
-                playerStats.eq.guns[playerStats.eq.equipped].damage /= 1.04f;
+                playerStats.eq.guns[playerStats.eq.equipped].damage /= 1.05f;
                 break;
             case 1:
-                playerStats.eq.guns[playerStats.eq.equipped].DoT -= 0.1f;
+                playerStats.eq.guns[playerStats.eq.equipped].DoT -= 0.12f;
                 break;
             case 2:
                 playerStats.eq.guns[playerStats.eq.equipped].bulletSpread /= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].damage /= 0.7f;
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.18f;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.09f;
+                playerStats.eq.guns[playerStats.eq.equipped].damage /= 0.72f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.14f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.08f;
                 break;
             case 3:
-                // constant
+                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.02f;
+                // armor shred
                 break;
             case 4:
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 0.88f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 0.85f;
                 break;
             case 5:
-                // constant
+                // vulnerable applied
                 break;
             case 6:
                 playerStats.eq.guns[playerStats.eq.equipped].pierce -= 1;
                 break;
             case 7:
-                // constant
+                // pierce efficiency
                 break;
             case 8:
-                tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 9;
+                tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 8;
                 playerStats.eq.guns[playerStats.eq.equipped].magazineSize -= tempi;
                 break;
             case 9:
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.92f;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.9f;
                 break;
             case 10:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.04f;
+                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.05f;
                 break;
             case 11:
-                // constant
+                // chance to not consume ammo
                 break;
             case 12:
                 for (int i = 0; i < 3; i++)
@@ -426,14 +428,14 @@ public class CraftingTable : MonoBehaviour
                 }
                 break;
             case 13:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.95f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.938f;
                 break;
             case 14:
-                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.06f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.07f;
+                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.08f;
+                playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.08f;
                 break;
             case 15:
-                // constant
+                // cooldowns
                 break;
         }
     }

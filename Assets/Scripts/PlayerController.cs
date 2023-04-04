@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
     public int level = 1, scrap, electricity;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
+    float temp;
 
     void Start()
     {
@@ -181,7 +182,8 @@ public class PlayerController : MonoBehaviour
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
         if (!eq.guns[eq.equipped].infiniteMagazine)
         {
-            eq.guns[eq.equipped].bulletsLeft--;
+            if (eq.guns[eq.equipped].Accessories[11] * 0.22f < Random.Range(0f, 1f))
+                eq.guns[eq.equipped].bulletsLeft--;
             DisplayAmmo();
         }
     }
@@ -219,12 +221,28 @@ public class PlayerController : MonoBehaviour
         firedBullet.DoT = eq.guns[eq.equipped].DoT;
         firedBullet.penetration = eq.guns[eq.equipped].penetration;
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
+        if (eq.guns[eq.equipped].Accessories[3] > 0)
+        {
+            temp = 0.05f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
+            firedBullet.armorShred += temp * eq.guns[eq.equipped].Accessories[3];
+        }
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
+        if (eq.guns[eq.equipped].Accessories[5] > 0)
+        {
+            temp = 0.03f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
+            firedBullet.vulnerableApplied += temp * eq.guns[eq.equipped].Accessories[5];
+        }
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
         firedBullet.stunChance = eq.guns[eq.equipped].stunChance;
         firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
         firedBullet.pierce = eq.guns[eq.equipped].pierce;
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
+        if (eq.guns[eq.equipped].Accessories[7] > 0)
+        {
+            temp = 0.05f + 0.1f / (1f * eq.guns[eq.equipped].pierce);
+            firedBullet.pierceEfficiency += temp * eq.guns[eq.equipped].Accessories[7];
+        }
+
         if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
         {
             firedBullet.damage *= eq.guns[eq.equipped].critDamage;

@@ -9,14 +9,14 @@ public class Gunslinger : MonoBehaviour
     public Image Ability1, Ability2;
     public TMPro.TextMeshProUGUI CurrentChance;
 
-    public float doubleShotChance, chanceBonus, rapidFireCooldown, rapidFireFireRate, rapidFireMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
+    public float doubleShotChance, chanceBonus, rapidFireCooldown, rapidFireMaxCooldown, rapidFireFireRate, rapidFireMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
     int unloadCount;
 
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-            BulletTime();
+            RapidFire();
 
         if (playerStats.task <= 0)
         {
@@ -47,11 +47,19 @@ public class Gunslinger : MonoBehaviour
         CurrentChance.text = ((doubleShotChance + chanceBonus) * 100f).ToString("0.0") + "%";
     }
 
-    void BulletTime()
+    void RapidFire()
     {
         if (rapidFireCooldown <= 0)
         {
-            rapidFireCooldown = 32f;
+            rapidFireMaxCooldown = 32f;
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            {
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                {
+                    rapidFireMaxCooldown *= 0.925f;
+                }
+            }
+            rapidFireCooldown = rapidFireMaxCooldown;
 
             rapidFireFireRate = 1.22f + 0.006f * playerStats.level;
             rapidFireMovementSpeed = 0.5f + rapidFireFireRate * 0.5f;
@@ -59,11 +67,11 @@ public class Gunslinger : MonoBehaviour
             playerStats.fireRateBonus *= rapidFireFireRate;
             playerStats.movementSpeed *= rapidFireMovementSpeed;
 
-            Invoke("BulletTimeEnd", 5f);
+            Invoke("RapidFireEnd", 5f);
         }
     }
 
-    void BulletTimeEnd()
+    void RapidFireEnd()
     {
         playerStats.fireRateBonus /= rapidFireFireRate;
         playerStats.movementSpeed /= rapidFireMovementSpeed;
@@ -73,8 +81,15 @@ public class Gunslinger : MonoBehaviour
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadCooldown = 4.25f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
-            unloadMaxCooldown = unloadCooldown;
+            unloadMaxCooldown = 4.25f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            {
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                {
+                    unloadMaxCooldown *= 0.925f;
+                }
+            }
+            unloadCooldown = unloadMaxCooldown;
 
             unloadGap = 0.06f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.55f);
             playerStats.NewTask(0.6f);
