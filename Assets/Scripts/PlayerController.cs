@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform Barrel, Hand;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, itemInfo, scrapInfo, toolsInfo, electricityInfo;
+    public TMPro.TextMeshProUGUI magazineInfo, itemInfo, scrapInfo, toolsInfo, electricityInfo;
     public Image healthBar, taskImage, dashImage;
     private Bullet firedBullet;
     private EnemyBullet collidedBullet;
@@ -328,18 +328,7 @@ public class PlayerController : MonoBehaviour
 
     public void DisplayAmmo()
     {
-        if (!eq.guns[eq.equipped].infiniteMagazine)
-        {
-            magazineInfo.text = (eq.guns[eq.equipped].bulletsLeft).ToString("") + "/" + eq.guns[eq.equipped].magazineSize;
-            if (eq.guns[eq.equipped].infiniteAmmo)
-                ammoInfo.text = "NaN";
-            else ammoInfo.text = (eq.guns[eq.equipped].ammo).ToString("");
-        }
-        else
-        {
-            magazineInfo.text = "";
-            ammoInfo.text = "";
-        }
+        magazineInfo.text = (eq.guns[eq.equipped].bulletsLeft).ToString("") + "/" + eq.guns[eq.equipped].magazineSize; 
     }
 
     void SwapGun(int which)
