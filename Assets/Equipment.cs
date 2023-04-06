@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Equipment : MonoBehaviour
 {
     public Gun[] guns;
-    public GameObject Caltrop;
+    public GameObject Caltrop, Turret;
     public GameObject[] gunSprite;
-    public int[] Items, Accessories;
+    public int[] Items, MaxItems, Accessories;
+    public Image itemImage;
+    public Sprite[] itemSprites;
 
     public int equipped, item;
 }

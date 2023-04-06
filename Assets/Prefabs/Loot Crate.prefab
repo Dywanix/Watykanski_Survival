@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: dropChance
-      value: 0.0972
+      value: 0.1088
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: itemsCount
@@ -37,11 +37,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: Items.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: dropChanceIncrease
-      value: 0.0056
+      value: 0.0063
       objectReference: {fileID: 0}
     - target: {fileID: 327920104148096440, guid: fa9048a4f5ed1684ea38e426fb38ecfb, type: 3}
       propertyPath: Items.Array.data[5]

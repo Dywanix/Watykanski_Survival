@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform Barrel, Hand;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, itemInfo, scrapInfo, electricityInfo;
+    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, itemInfo, scrapInfo, toolsInfo, electricityInfo;
     public Image healthBar, taskImage, dashImage;
     private Bullet firedBullet;
     private EnemyBullet collidedBullet;
@@ -25,9 +25,12 @@ public class PlayerController : MonoBehaviour
 
     // -- statystyki --
     public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
-    public int level = 1, scrap, electricity;
+    public int level = 1;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     float temp;
+
+    // -- zasoby --
+    public int scrap, tools, electricity;
 
     void Start()
     {
@@ -150,14 +153,18 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.R))
             Reload();
+        else if (Input.GetKeyDown(KeyCode.Z))
+            UseItem();
         else if (Input.GetKeyDown(KeyCode.Alpha1))
+            SwapItem(0);
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            SwapItem(1);
+        /*else if (Input.GetKeyDown(KeyCode.Alpha1))
             SwapGun(0);
         else if (Input.GetKeyDown(KeyCode.Alpha2))
             SwapGun(1);
         else if (Input.GetKeyDown(KeyCode.Alpha3))
-            SwapGun(2);
-        else if (Input.GetKeyDown(KeyCode.Z))
-            UseItem();
+            SwapGun(2);*/
     }
 
     public void Shoot(float accuracy_change)
@@ -347,14 +354,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void SwapItem(int which)
+    {
+        if (which != eq.item)
+        {
+            eq.item = which;
+            eq.itemImage.sprite = eq.itemSprites[which];
+            itemInfo.text = eq.Items[eq.item].ToString("0");
+        }
+    }
+
     void UseItem()
     {
-        if (eq.Items[eq.item] > 0)
+        if (eq.Items[eq.item] > 0 && day)
         {
             switch (eq.item)
             {
                 case 0:
                     ThrowCaltrops();
+                    break;
+                case 1:
+                    PlaceTurret();
                     break;
             }
             eq.Items[eq.item]--;
@@ -374,6 +394,16 @@ public class PlayerController : MonoBehaviour
             firedBullet = caltrop.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = 10 * DamageDealtMultiplyer(1f);
         }
+    }
+
+    void PlaceTurret()
+    {
+        NewTask(0.11f);
+
+        Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation);
+        GameObject turret = Instantiate(eq.Turret, Barrel.position, Barrel.rotation);
+        Rigidbody2D turret_body = turret.GetComponent<Rigidbody2D>();
+        turret_body.AddForce(Barrel.up * Random.Range(0.6f, 0.7f), ForceMode2D.Impulse);
     }
 
     void Dash()
@@ -444,12 +474,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.transform.tag == "Tools")
         {
-            for (int i = 0; i < eq.guns.Length; i++)
-            {
-                eq.guns[i].GainSpecialCharge(0.2f);
-            }
+            GainTools(1);
             if (steamGolem == true)
-                steamGolem.ClockworkMachine(25 + level);
+                steamGolem.ClockworkMachine(10 + level);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Medkit")
@@ -478,6 +505,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void NewDay()
+    {
+        day = true;
+        for (int i = 0; i < eq.MaxItems.Length; i++)
+        {
+            eq.Items[i] = eq.MaxItems[i];
+        }
+        itemInfo.text = eq.Items[eq.item].ToString("0");
+        LevelUp();
+    }
+
     public void LevelUp()
     {
         level++;
@@ -500,6 +538,18 @@ public class PlayerController : MonoBehaviour
     {
         scrap -= amount;
         scrapInfo.text = scrap.ToString("0");
+    }
+
+    public void GainTools(int amount)
+    {
+        tools += amount;
+        toolsInfo.text = tools.ToString("0");
+    }
+
+    public void SpendTools(int amount)
+    {
+        tools -= amount;
+        toolsInfo.text = tools.ToString("0");
     }
 
     public void GainElectricity(int amount)

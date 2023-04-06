@@ -142,6 +142,7 @@ MonoBehaviour:
   - {fileID: 5990516359670061885, guid: 3f836a31361b7584c979a701eec3184a, type: 3}
   - {fileID: 963248808608290928, guid: 5a90e49f55900a14a943aae6cd4812d2, type: 3}
   - {fileID: 2318759274309051530, guid: 1cd4bd986c5ecae4ebe307483af6d8b0, type: 3}
+  - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   playerStats: {fileID: 0}
   Dir: {fileID: 8143966641130539315}
   Sight: {fileID: 3895325000520514801}
@@ -149,7 +150,7 @@ MonoBehaviour:
   itemsCount: 2
   maxHealth: 185
   health: 185
-  dropChance: 0.2427
+  dropChance: 0.2718
   scrapChance: 0.011
   healthIncrease: 0
   dropChanceIncrease: 0

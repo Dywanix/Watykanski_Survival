@@ -100,8 +100,8 @@ public class Day_Night_Cycle : MonoBehaviour
 
     void StartDay()
     {
-        playerStats.LevelUp();
-        playerStats.day = true;
+        playerStats.NewDay();
+
         day++;
         dayCount.text = day.ToString("0");
         CurrentState = TimeState.Day;
