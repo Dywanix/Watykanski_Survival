@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     // -- zasoby --
     public int scrap, tools, electricity;
 
+    // -- animacje --
+    public Animator animator;
+    public float moveSpeed = 5f;
+
     void Start()
     {
         GetMouseInput();
@@ -117,6 +121,27 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
+        if(Input.GetAxis("Horizontal") != 0)
+        {
+            animator.SetFloat("moveSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));
+        }
+        else if(Input.GetAxis("Vertical") != 0)
+        {
+            animator.SetFloat("moveSpeed", Mathf.Abs(Input.GetAxis("Vertical")));
+        }
+        else
+        {
+            animator.SetFloat("moveSpeed", 0f);
+        }
+        
+        if(Input.GetAxis("Horizontal") > 0.01f)
+        {
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+        }
+        else if (Input.GetAxis("Horizontal") < -0.01f)
+        {
+            transform.rotation = new Quaternion(0, 180, 0, 0);
+        }
         Vector3 tempPos = transform.position;
         tempPos += new Vector3(xInput, yInput, 0) * (movementSpeed + dash) * Time.deltaTime;
         transform.position = tempPos;
