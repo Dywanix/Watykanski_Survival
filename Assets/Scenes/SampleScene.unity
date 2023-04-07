@@ -21659,9 +21659,10 @@ MonoBehaviour:
   - {fileID: 77910349}
   - {fileID: 1026957223}
   Player: {fileID: 0}
-  Gunslinger: {fileID: 6601758595229335013, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
-  Berserker: {fileID: 221019378589204405, guid: 0483dc6cada6ea54797751316175f189, type: 3}
-  SteamGolem: {fileID: 2585763503004784940, guid: d4c0fb0751b544240b41e466effbee87, type: 3}
+  Players:
+  - {fileID: 6601758595229335013, guid: 25354f27e57c6cf45800021a25e7cccd, type: 3}
+  - {fileID: 221019378589204405, guid: 0483dc6cada6ea54797751316175f189, type: 3}
+  - {fileID: 2585763503004784940, guid: d4c0fb0751b544240b41e466effbee87, type: 3}
   bosses:
   - {fileID: 1033653788443382648, guid: ed31f7ebe5c142d468e6fbb9823d5543, type: 3}
   endlessOne: {fileID: 1029557328}

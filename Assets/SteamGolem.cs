@@ -81,6 +81,18 @@ public class SteamGolem : MonoBehaviour
         playerStats.health += 2;
         playerStats.damageBonus += 0.1f;
         playerStats.fireRateBonus += 0.1f;
+
+        switch (playerStats.eq.equipped)
+        {
+            case 0:
+                playerStats.eq.guns[playerStats.eq.equipped].magazineSize++;
+                playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft++;
+                break;
+            case 1:
+                playerStats.eq.guns[playerStats.eq.equipped].damage *= 1.007f;
+                playerStats.eq.guns[playerStats.eq.equipped].damage *= 0.996f;
+                break;
+        }
     }
 
     void EfficientReload()
@@ -130,7 +142,7 @@ public class SteamGolem : MonoBehaviour
                 case 0:
                     if (playerStats.eq.guns[0].bulletsLeft >= 2 + playerStats.eq.guns[0].bulletSpread)
                     {
-                        overdriveMaxCooldown = 3.7f + 50f * playerStats.eq.guns[0].fireRate / (1f + 0.012f * spareParts);
+                        overdriveMaxCooldown = 3.6f + 48f * playerStats.eq.guns[0].fireRate;
 
                         for (int i = 0; i < 2 + playerStats.eq.guns[0].bulletSpread; i++)
                         {
@@ -201,7 +213,7 @@ public class SteamGolem : MonoBehaviour
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
             SetBullet(1);
-            firedBullet.damage *= (1.06f + 0.005f * playerStats.level + 0.007f * spareParts);
+            firedBullet.damage *= (1.07f + 0.006f * playerStats.level);
             firedBullet.stunChance = playerStats.eq.guns[1].stunChance * 3f + 0.09f + 0.01f * playerStats.level;
             firedBullet.stunDuration = playerStats.eq.guns[1].stunDuration + 0.2f;
         }
@@ -221,7 +233,7 @@ public class SteamGolem : MonoBehaviour
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
             SetBullet(2);
-            firedBullet.slowDuration += 0.36f + 0.09f * spareParts;
+            firedBullet.slowDuration += 0.44f;
             firedBullet.incendiary = playerStats.eq.guns[2].damage * 0.07f;
         }
     }

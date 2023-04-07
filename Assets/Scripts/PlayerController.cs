@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform Barrel, Hand;
+    public Transform Barrel, Hand, Dude;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public TMPro.TextMeshProUGUI magazineInfo, itemInfo, scrapInfo, toolsInfo, electricityInfo;
@@ -136,11 +136,11 @@ public class PlayerController : MonoBehaviour
         
         if(Input.GetAxis("Horizontal") > 0.01f)
         {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+            Dude.rotation = new Quaternion(0, 0, 0, 0);
         }
         else if (Input.GetAxis("Horizontal") < -0.01f)
         {
-            transform.rotation = new Quaternion(0, 180, 0, 0);
+            Dude.rotation = new Quaternion(0, 180, 0, 0);
         }
         Vector3 tempPos = transform.position;
         tempPos += new Vector3(xInput, yInput, 0) * (movementSpeed + dash) * Time.deltaTime;
@@ -356,7 +356,7 @@ public class PlayerController : MonoBehaviour
         magazineInfo.text = (eq.guns[eq.equipped].bulletsLeft).ToString("") + "/" + eq.guns[eq.equipped].magazineSize; 
     }
 
-    void SwapGun(int which)
+    public void SwapGun(int which)
     {
         if (which != eq.equipped)
         {
@@ -489,8 +489,9 @@ public class PlayerController : MonoBehaviour
         else if (other.transform.tag == "Tools")
         {
             GainTools(1);
+
             if (steamGolem == true)
-                steamGolem.ClockworkMachine(10 + level);
+                steamGolem.ClockworkMachine(12 + level);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Medkit")

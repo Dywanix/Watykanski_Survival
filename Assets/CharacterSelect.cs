@@ -5,21 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public void Gunslinger()
+    public GameObject[] classInfo, gunInfo;
+    public int gunsPerClass;
+    int selectedClass, selectedGun;
+
+    public void SelectClass(int which)
     {
-        PlayerPrefs.SetString("Class", "Gunslinger");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        classInfo[selectedClass].SetActive(false);
+        selectedClass = which;
+        classInfo[selectedClass].SetActive(true);
     }
 
-    public void Berserker()
+    public void SelectGun(int which)
     {
-        PlayerPrefs.SetString("Class", "Berserker");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        for (int i = 0; i < gunInfo.Length; i++)
+        {
+            gunInfo[i].SetActive(false);
+        }
+        selectedGun = which;
+        gunInfo[selectedGun + selectedClass * gunsPerClass].SetActive(true);
     }
 
-    public void SteamGolem()
+    public void Proceed()
     {
-        PlayerPrefs.SetString("Class", "SteamGolem");
+        PlayerPrefs.SetInt("Class", selectedClass);
+        PlayerPrefs.SetInt("Gun", selectedGun);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

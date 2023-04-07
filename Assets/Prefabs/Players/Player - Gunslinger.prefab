@@ -2059,6 +2059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Barrel: {fileID: 6601758593997722913}
   Hand: {fileID: 6601758593855852963}
+  Dude: {fileID: 6601758593906079315}
   Body: {fileID: 6601758595229335022}
   Gun: {fileID: 6601758593855852965}
   eq: {fileID: 6601758595229335008}
