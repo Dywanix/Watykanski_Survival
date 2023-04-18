@@ -51,12 +51,12 @@ public class Gunslinger : MonoBehaviour
     {
         if (rapidFireCooldown <= 0)
         {
-            rapidFireMaxCooldown = 32f;
+            rapidFireMaxCooldown = 30f;
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
             {
                 for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
                 {
-                    rapidFireMaxCooldown *= 0.925f;
+                    rapidFireMaxCooldown *= 0.91f;
                 }
             }
             rapidFireCooldown = rapidFireMaxCooldown;
@@ -81,21 +81,21 @@ public class Gunslinger : MonoBehaviour
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadMaxCooldown = 4.25f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            unloadMaxCooldown = 4.2f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
             {
                 for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
                 {
-                    unloadMaxCooldown *= 0.925f;
+                    unloadMaxCooldown *= 0.91f;
                 }
             }
             unloadCooldown = unloadMaxCooldown;
 
-            unloadGap = 0.06f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.55f);
-            playerStats.NewTask(0.6f);
+            unloadGap = 0.05f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.6f);
+            playerStats.NewTask(0.7f);
 
             unloadCount = 0;
-            for (float i = 0; i < 0.5f; i += unloadGap)
+            for (float i = 0; i < 0.55f; i += unloadGap)
             {
                 Invoke("Fire", i);
                 unloadCount++;
@@ -106,7 +106,7 @@ public class Gunslinger : MonoBehaviour
     void Fire()
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0 || playerStats.eq.guns[playerStats.eq.equipped].infiniteMagazine)
-            playerStats.Shoot(6f);
+            playerStats.Shoot(5f);
         else
         {
             playerStats.task -= unloadGap;

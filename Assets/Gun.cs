@@ -28,24 +28,24 @@ public class Gun : MonoBehaviour
         switch (which)
         {
             case 0:
-                damage *= 1.01f;
+                damage *= 1.012f;
                 cameraShake *= 1.004f;
                 break;
             case 1:
-                fireRate *= 0.984f;
+                fireRate *= 0.982f;
                 break;
             case 2:
-                accuracy *= 0.98f;
-                range += 0.02f;
+                accuracy *= 0.975f;
+                range += 0.025f;
                 break;
             case 3:
-                penetration += 0.01f;
+                penetration += 0.012f;
                 if (penetration > 1f)
                 {
                     temp = penetration - 1f;
                     penetration = 1f;
                     damage *= 1f + temp;
-                    cameraShake *= 1f + 0.4f * temp;
+                    cameraShake *= 1f + 0.33f * temp;
                 }
                 break;
         }
@@ -70,23 +70,23 @@ public class Gun : MonoBehaviour
         switch (which)
         {
             case 0:
-                damage *= 1.02f;
+                damage *= 1.024f;
                 cameraShake *= 1.008f;
-                fireRate *= 0.96f;
-                reloadTime *= 0.99f;
+                fireRate *= 0.955f;
+                reloadTime *= 0.985f;
                 break;
             case 1:
-                critChance += 0.025f;
+                critChance += 0.03f;
                 if (critChance > 1f)
                 {
                     temp = critChance - 1f;
                     critChance = 1f;
                     critDamage *= 1f + temp;
                 }
-                critDamage += 0.02f * (1 + critDamage);
+                critDamage += 0.02f * (1.25f + critDamage);
                 break;
             case 2:
-                temp = 0.24f + 0.16f * magazineSize;
+                temp = 0.26f + 0.18f * magazineSize;
                 if (infiniteAmmo)
                 {
                     temp *= 1.35f;
@@ -141,7 +141,7 @@ public class Gun : MonoBehaviour
                 break;
             case 7:
                 damage *= 0.96f;
-                DoT += 0.1f + 0.1f * DoT;
+                DoT += 0.12f + 0.14f * DoT;
                 break;
             case 8:
                 if (infiniteAmmo)
@@ -187,28 +187,28 @@ public class Gun : MonoBehaviour
                 break;
             case 9:
                 MaxSlots[0]++;
-                damage *= 1.032f;
+                damage *= 1.038f;
                 break;
             case 10:
                 MaxSlots[1]++;
-                accuracy *= 0.93f;
-                range += 0.05f;
+                accuracy *= 0.92f;
+                range += 0.06f;
                 break;
             case 11:
                 MaxSlots[2]++;
-                reloadTime *= 0.936f;
+                reloadTime *= 0.928f;
                 break;
             case 12:
                 MaxSlots[3]++;
-                fireRate *= 0.956f;
+                fireRate *= 0.95f;
                 break;
             case 13:
-                temp = (2f + 1f * pierce) / (3f + 1f * pierce);
+                temp = (2.5f + 1f * pierce) / (3.5f + 1f * pierce);
                 pierceEfficiency *= temp;
                 pierce++;
                 break;
             case 14:
-                temp = 1.03f + (0.06f / pierce);
+                temp = 1.035f + (0.07f / pierce);
                 pierceEfficiency *= temp;
                 break;
         }

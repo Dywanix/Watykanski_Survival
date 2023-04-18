@@ -7,18 +7,17 @@ public class Berserker : MonoBehaviour
 {
     public PlayerController playerStats;
     public Image Ability1, Ability2;
-    public TMPro.TextMeshProUGUI SurvivorCount;
-    public GameObject SwipeWave;
-    private Bullet SwipeBullet;
+    public TMPro.TextMeshProUGUI AxeDamage;
+    public GameObject BoomerangAxe;
+    public Bullet Axe, AxeThrown;
 
-    public float survivorCharge, requiredCharge, survivorCount, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
+    public float axeDamageBonus, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
 
     void Start()
     {
-        requiredCharge = 240f;
-        survivorCharge = 0;
+        UpdateAxeDamage();
     }
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
@@ -48,32 +47,29 @@ public class Berserker : MonoBehaviour
             SwipeCast();
     }
 
-    public void GainCharge(float amount)
+    public void AxeDamageIncrease(float amount)
     {
-        survivorCharge += amount;
-        if (survivorCharge >= requiredCharge)
-        {
-            playerStats.maxHealth += 1.2f;
-            playerStats.health += 1.2f;
-            playerStats.damageBonus += 0.0002f;
-            playerStats.healthBar.fillAmount = playerStats.health / playerStats.maxHealth;
-            survivorCharge -= requiredCharge;
-            requiredCharge += 5;
-            survivorCount++;
-            SurvivorCount.text = survivorCount.ToString("0");
-        }
+        axeDamageBonus += amount / 400;
+        UpdateAxeDamage();
     }
-    
+
+    public void UpdateAxeDamage()
+    {
+        Axe.damage = 25 + playerStats.level + axeDamageBonus;
+        AxeDamage.text = (25 + playerStats.level + axeDamageBonus).ToString("0");
+    }
+
+
     void Enrage()
     {
         if (enrageCooldown <= 0)
         {
-            enrageMaxCooldown = 35f;
+            enrageMaxCooldown = 34f;
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
             {
                 for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
                 {
-                    enrageMaxCooldown *= 0.925f;
+                    enrageMaxCooldown *= 0.91f;
                 }
             }
             enrageCooldown = enrageMaxCooldown;
@@ -81,8 +77,8 @@ public class Berserker : MonoBehaviour
             healthSacrifice = playerStats.health * 0.27f;
             playerStats.TakeDamage(healthSacrifice);
 
-            enrageFireRateIncrease = 1.102f + 0.004f * playerStats.level + 0.0035f * healthSacrifice;
-            enrageDamageIncrease = 0.6f + enrageFireRateIncrease * 0.4f;
+            enrageFireRateIncrease = 1.108f + 0.004f * playerStats.level + 0.0036f * healthSacrifice;
+            enrageDamageIncrease = 0.58f + enrageFireRateIncrease * 0.42f;
 
             playerStats.fireRateBonus *= enrageFireRateIncrease;
             playerStats.damageBonus *= enrageDamageIncrease;
@@ -93,7 +89,7 @@ public class Berserker : MonoBehaviour
 
     void EnrageEnd()
     {
-        playerStats.RestoreHealth(healthSacrifice * 0.26f);
+        playerStats.RestoreHealth(healthSacrifice * 0.27f);
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageBonus /= enrageDamageIncrease;
@@ -108,24 +104,24 @@ public class Berserker : MonoBehaviour
             {
                 for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
                 {
-                    swipeMaxCooldown *= 0.925f;
+                    swipeMaxCooldown *= 0.91f;
                 }
             }
             swipeCooldown = swipeMaxCooldown;
 
-            Invoke("Swipe", 0.4f);
+            Invoke("Swipe", 0.2f);
 
-            playerStats.NewTask(0.8f);
+            playerStats.NewTask(0.7f);
         }
     }
 
     void Swipe()
     {
         playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-3f, 3f));
-        GameObject bullet = Instantiate(SwipeWave, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        GameObject bullet = Instantiate(BoomerangAxe, playerStats.Barrel.position, playerStats.Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(playerStats.Barrel.up * 16f * playerStats.DamageDealtMultiplyer(0.8f), ForceMode2D.Impulse);
-        SwipeBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        SwipeBullet.damage = (30 + 3f * playerStats.level + 0.06f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
+        bullet_body.AddForce(playerStats.Barrel.up * 14f * playerStats.DamageDealtMultiplyer(0.8f), ForceMode2D.Impulse);
+        AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        AxeThrown.damage = (33 + 3f * playerStats.level + 0.06f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
     }
 }

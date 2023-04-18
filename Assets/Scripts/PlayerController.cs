@@ -91,12 +91,7 @@ public class PlayerController : MonoBehaviour
         RestoreHealth(maxHealth * 0.0025f);
 
         if (berserker == true)
-        {
-            RestoreHealth((maxHealth - health) * 0.007f);
-            berserker.GainCharge(1f + 0.05f * level);
-            if (poison > 0)
-                poison -= 0.06f;
-        }
+            RestoreHealth((maxHealth * 3f - health * 2f) * 0.002f);
 
         if (poison > 0)
             poison -= 0.2f;
@@ -204,7 +199,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                gunslinger.chanceBonus += 0.013f;
+                gunslinger.chanceBonus += 0.012f;
                 gunslinger.DisplayChance();
             }
         }
@@ -214,7 +209,7 @@ public class PlayerController : MonoBehaviour
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
         if (!eq.guns[eq.equipped].infiniteMagazine)
         {
-            if (eq.guns[eq.equipped].Accessories[11] * 0.22f < Random.Range(0f, 1f))
+            if (eq.guns[eq.equipped].Accessories[11] * 0.25f < Random.Range(0f, 1f))
                 eq.guns[eq.equipped].bulletsLeft--;
             DisplayAmmo();
         }
@@ -255,13 +250,13 @@ public class PlayerController : MonoBehaviour
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
         if (eq.guns[eq.equipped].Accessories[3] > 0)
         {
-            temp = 0.05f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
+            temp = 0.07f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
             firedBullet.armorShred += temp * eq.guns[eq.equipped].Accessories[3];
         }
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
         if (eq.guns[eq.equipped].Accessories[5] > 0)
         {
-            temp = 0.03f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
+            temp = 0.045f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
             firedBullet.vulnerableApplied += temp * eq.guns[eq.equipped].Accessories[5];
         }
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
@@ -271,7 +266,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
         if (eq.guns[eq.equipped].Accessories[7] > 0)
         {
-            temp = 0.05f + 0.1f / (1f * eq.guns[eq.equipped].pierce);
+            temp = 0.06f + 0.12f / (1f * eq.guns[eq.equipped].pierce);
             firedBullet.pierceEfficiency += temp * eq.guns[eq.equipped].Accessories[7];
         }
 
@@ -435,7 +430,7 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = health / maxHealth;
 
         if (berserker == true)
-            berserker.GainCharge(0.3f * value);
+            berserker.AxeDamageIncrease(value);
 
         if (health < 0f)
             Application.Quit();
@@ -538,6 +533,8 @@ public class PlayerController : MonoBehaviour
         damageBonus += damageIncrease;
         fireRateBonus += fireRateIncrease;
         movementSpeed += movementSpeedIncrease;
+        if (berserker)
+            berserker.UpdateAxeDamage();
     }
 
     public void GainScrap(int amount)

@@ -12,7 +12,7 @@ public class SteamGolem : MonoBehaviour
     private Bullet firedBullet;
 
     public float efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
-    public int gatlingGunCharges, railGunCharges, clockworkMachine, spareParts, volleyCount, bulletsCount;
+    public int gatlingGunCharges, railGunCharges, efficientReloadOverload, clockworkMachine, spareParts, volleyCount, bulletsCount;
 
     void Update()
     {
@@ -68,13 +68,13 @@ public class SteamGolem : MonoBehaviour
     public void ClockworkMachine(int amount)
     {
         clockworkMachine += amount;
-        if (clockworkMachine >= 240)
+        if (clockworkMachine >= 200)
             PartGained();
     }
 
     void PartGained()
     {
-        clockworkMachine -= 240;
+        clockworkMachine -= 200;
         spareParts++;
         SparePartsCount.text = spareParts.ToString("0");
         playerStats.maxHealth += 2;
@@ -90,7 +90,7 @@ public class SteamGolem : MonoBehaviour
                 break;
             case 1:
                 playerStats.eq.guns[playerStats.eq.equipped].damage *= 1.007f;
-                playerStats.eq.guns[playerStats.eq.equipped].damage *= 0.996f;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.996f;
                 break;
         }
     }
@@ -99,29 +99,17 @@ public class SteamGolem : MonoBehaviour
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft < playerStats.eq.guns[playerStats.eq.equipped].magazineSize)
         {
-            if (playerStats.eq.guns[playerStats.eq.equipped].infiniteAmmo || playerStats.eq.guns[playerStats.eq.equipped].ammo > 0)
-            {
-                if (playerStats.eq.equipped == 2)
-                {
-                    playerStats.eq.guns[playerStats.eq.equipped].individualReload = false;
-                    playerStats.reloading = true;
-                    playerStats.NewTask(0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft));
-                    efficientReloadMaxCooldown = 0.75f + 5f * playerStats.eq.guns[0].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft);
-                    Invoke("SwapReload", 0.15f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft));
-                }
-                else
-                {
-                    playerStats.reloading = true;
-                    reloadedProcentage = 1f * (playerStats.eq.guns[playerStats.eq.equipped].magazineSize - playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft) / (1f * playerStats.eq.guns[playerStats.eq.equipped].magazineSize);
-                    playerStats.NewTask(0.075f + 0.125f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime * reloadedProcentage);
-                    efficientReloadMaxCooldown = 0.75f + 5f * playerStats.eq.guns[0].reloadTime * reloadedProcentage;
-                }
-            }
+            efficientReloadOverload = Mathf.RoundToInt(playerStats.eq.guns[playerStats.eq.equipped].magazineSize * (1.6f + 0.06f * playerStats.level));
+            playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft = efficientReloadOverload;
+            playerStats.DisplayAmmo();
+
+            efficientReloadMaxCooldown = 1f + 7.5f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime;
+            
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
             {
                 for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
                 {
-                    efficientReloadMaxCooldown *= 0.925f;
+                    efficientReloadMaxCooldown *= 0.91f;
                 }
             }
             efficientReloadCooldown = efficientReloadMaxCooldown;
@@ -142,7 +130,7 @@ public class SteamGolem : MonoBehaviour
                 case 0:
                     if (playerStats.eq.guns[0].bulletsLeft >= 2 + playerStats.eq.guns[0].bulletSpread)
                     {
-                        overdriveMaxCooldown = 3.6f + 48f * playerStats.eq.guns[0].fireRate;
+                        overdriveMaxCooldown = 3.3f + 44f * playerStats.eq.guns[0].fireRate;
 
                         for (int i = 0; i < 2 + playerStats.eq.guns[0].bulletSpread; i++)
                         {
@@ -174,7 +162,7 @@ public class SteamGolem : MonoBehaviour
             {
                 for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
                 {
-                    overdriveMaxCooldown *= 0.925f;
+                    overdriveMaxCooldown *= 0.91f;
                 }
             }
             overdriveCooldown = overdriveMaxCooldown;
@@ -187,7 +175,7 @@ public class SteamGolem : MonoBehaviour
         playerStats.DisplayAmmo();
 
         bulletsCount = Mathf.FloorToInt((1f + 0.04f * volleyCount + (0.02f + 0.001f * volleyCount) * playerStats.eq.guns[0].magazineSize) / (0.25f + playerStats.eq.guns[0].fireRate) * playerStats.SpeedMultiplyer(0.8f));
-        overdriveAccuracy = playerStats.eq.guns[0].accuracy * 0.35f / (0.9f + 0.1f * bulletsCount);
+        overdriveAccuracy = playerStats.eq.guns[0].accuracy * 0.35f / (0.9f + 0.01f * playerStats.level + 0.11f * bulletsCount);
         direction = (-overdriveAccuracy) * (bulletsCount - 1);
         for (int i = 0; i < bulletsCount; i++)
         {
@@ -213,7 +201,7 @@ public class SteamGolem : MonoBehaviour
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
             SetBullet(1);
-            firedBullet.damage *= (1.07f + 0.006f * playerStats.level);
+            firedBullet.damage *= (1.08f + 0.007f * playerStats.level);
             firedBullet.stunChance = playerStats.eq.guns[1].stunChance * 3f + 0.09f + 0.01f * playerStats.level;
             firedBullet.stunDuration = playerStats.eq.guns[1].stunDuration + 0.2f;
         }

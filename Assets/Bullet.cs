@@ -8,11 +8,12 @@ public class Bullet : MonoBehaviour
     private Bullet Explosion;
     public float duration, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, incendiary, crateBonus;
     public int pierce;
-    public bool crit, AoE;
+    public bool infinite, crit, AoE;
 
     void Update()
     {
-        duration -= Time.deltaTime;
+        if (!infinite)
+            duration -= Time.deltaTime;
         if (duration <= 0)
             Destroy(gameObject);
     }
@@ -43,7 +44,10 @@ public class Bullet : MonoBehaviour
             Explosion.stunDuration = stunDuration;
             Explosion.incendiary = incendiary;
         }
-        pierce--;
+
+        if (!infinite)
+            pierce--;
+
         {
             damage *= pierceEfficiency;
             armorShred *= 0.2f + 0.8f * pierceEfficiency;
