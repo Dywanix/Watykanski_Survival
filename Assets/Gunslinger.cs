@@ -26,7 +26,7 @@ public class Gunslinger : MonoBehaviour
         if (rapidFireCooldown > 0)
         {
             rapidFireCooldown -= Time.deltaTime;
-            Ability1.fillAmount = 1 - (rapidFireCooldown / 32f);
+            Ability1.fillAmount = 1 - (rapidFireCooldown / rapidFireMaxCooldown);
         }
 
         if (unloadCooldown > 0)

@@ -11,7 +11,7 @@ public class Berserker : MonoBehaviour
     public GameObject BoomerangAxe;
     public Bullet Axe, AxeThrown;
 
-    public float axeDamageBonus, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
+    public float axeDamage, damageTaken, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
 
     void Start()
     {
@@ -49,14 +49,16 @@ public class Berserker : MonoBehaviour
 
     public void AxeDamageIncrease(float amount)
     {
-        axeDamageBonus += amount / 400;
+        damageTaken += amount;
         UpdateAxeDamage();
     }
 
     public void UpdateAxeDamage()
     {
-        Axe.damage = 25 + playerStats.level + axeDamageBonus;
-        AxeDamage.text = (25 + playerStats.level + axeDamageBonus).ToString("0");
+        axeDamage = 22 + playerStats.level + damageTaken / 360f;
+        axeDamage *= playerStats.DamageDealtMultiplyer(1f);
+        Axe.damage = axeDamage;
+        AxeDamage.text = axeDamage.ToString("0");
     }
 
 
@@ -79,6 +81,7 @@ public class Berserker : MonoBehaviour
 
             enrageFireRateIncrease = 1.108f + 0.004f * playerStats.level + 0.0036f * healthSacrifice;
             enrageDamageIncrease = 0.58f + enrageFireRateIncrease * 0.42f;
+            UpdateAxeDamage();
 
             playerStats.fireRateBonus *= enrageFireRateIncrease;
             playerStats.damageBonus *= enrageDamageIncrease;
@@ -93,6 +96,7 @@ public class Berserker : MonoBehaviour
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageBonus /= enrageDamageIncrease;
+        UpdateAxeDamage();
     }
 
     void SwipeCast()

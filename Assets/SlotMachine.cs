@@ -75,11 +75,18 @@ public class SlotMachine : MonoBehaviour
             Collect.interactable = true;
             prize = rolled[0];
         }
-        else if ((rolled[0] == rolled[1]) || (rolled[0] == rolled[2]) || (rolled[1] == rolled[2]))
+        else if ((rolled[0] == rolled[1]) || (rolled[0] == rolled[2]))
         {
             Collect.interactable = true;
             prize = rolled[0] + 4;
         }
+        else if (rolled[1] == rolled[2])
+        {
+            Collect.interactable = true;
+            prize = rolled[1] + 4;
+        }
+
+        UpdateInfo();
     }
 
     public void CollectPrize()
@@ -119,5 +126,8 @@ public class SlotMachine : MonoBehaviour
                 playerStats.eq.Accessories[Random.Range(0, playerStats.eq.Accessories.Length)]++;
                 break;
         }
+
+        UpdateInfo();
     }
+
 }

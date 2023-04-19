@@ -358,6 +358,7 @@ public class PlayerController : MonoBehaviour
             eq.gunSprite[eq.equipped].SetActive(false);
             eq.equipped = which;
             eq.gunSprite[eq.equipped].SetActive(true);
+            eq.equippedGun.sprite = eq.guns[eq.equipped].gunSprite;
             DisplayAmmo();
             NewTask(0.775f);
         }

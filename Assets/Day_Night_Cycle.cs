@@ -73,18 +73,18 @@ public class Day_Night_Cycle : MonoBehaviour
         maxTime = 88f + 8f * day;
         time = 0;
 
-        hordeSize = 15 + day * 7;
-        spawnGap = 2.2f / (day * (day + 1) / 2 + 0.3f * day);
-        spawnTime = spawnGap * (2 + hordeSize * 0.5f);
+        hordeSize = 16 + day * 7;
+        spawnGap = 2f / (day * (day + 1) / 4 + 0.4f * day + 1f);
+        spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
 
-        if (day % 5 == 0)
+        /*if (day % 5 == 0)
         {
             while (hordeSize >= 13)
             {
                 hordeSize -= 13;
                 SummonBoss();
             }
-        }
+        }*/
         SummonHorde();
     }
 

@@ -7784,7 +7784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+12% DoT
+  m_text: '+15% DoT
 
     [-2-]'
   m_isRightToLeft: 0
@@ -8484,7 +8484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+ 1/7 Magazine Size
+  m_text: '+ 1/6 Magazine Size
 
     [-1-]'
   m_isRightToLeft: 0
@@ -9335,7 +9335,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9853,7 +9853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+ Armor Shred, +2% Penetration
+  m_text: '+ Armor Shred, +3% Penetration
 
     [-2-]'
   m_isRightToLeft: 0
@@ -11018,14 +11018,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631062495}
-        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
-        m_MethodName: Upgrade
+      - m_Target: {fileID: 872866547}
+        m_TargetAssemblyTypeName: PlanningTable, Assembly-CSharp
+        m_MethodName: Buy
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -13709,7 +13709,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-6% Cooldowns
+  m_text: '-9% Cooldowns
 
     [-1-]'
   m_isRightToLeft: 0
@@ -16358,7 +16358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+ 1 Pierce
+  m_text: '+ 1 Pierce % +3% Accuracy
 
     [-2-]'
   m_isRightToLeft: 0
@@ -18883,7 +18883,9 @@ MonoBehaviour:
   Mobs:
   - {fileID: 77037447411755718, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
   - {fileID: 1828038272612163582, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
-  weights: 0300000005000000
+  - {fileID: 4446251428023020016, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+  - {fileID: 5542485412330114055, guid: 8ff9f7e50947ba64e8cea8a5e43b68e2, type: 3}
+  weights: 03000000050000000300000004000000
 --- !u!1 &1040336304
 GameObject:
   m_ObjectHideFlags: 0
@@ -19110,7 +19112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+8% Crit Chance & +8% Crit Damage
+  m_text: '+10% Crit Chance & +9% Crit Damage
 
     [-1-]'
   m_isRightToLeft: 0
@@ -21451,7 +21453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+5% Penetration
+  m_text: '+6% Penetration
 
     [-1-]'
   m_isRightToLeft: 0
@@ -24763,9 +24765,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'x2 Bullets, - 28% damage,
+  m_text: 'x2 Bullets, - 24% damage,
 
-    -14% fire rate, -8% accuracy
+    -12% fire rate, -8% accuracy
 
     [-3-]'
   m_isRightToLeft: 0
@@ -26577,7 +26579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '22% Chance to not consume ammo
+  m_text: '25% Chance to not consume ammo
 
     [-2-]'
   m_isRightToLeft: 0
@@ -27766,7 +27768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+6,2% Fire Rate
+  m_text: '+7,5% Fire Rate
 
     [-1-]'
   m_isRightToLeft: 0
@@ -32329,7 +32331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-10% Reload Time
+  m_text: '-12% Reload Time
 
     [-1-]'
   m_isRightToLeft: 0
@@ -32763,7 +32765,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+15% Accuracy
+  m_text: '+18% Accuracy
 
     [-1-]'
   m_isRightToLeft: 0
@@ -34288,7 +34290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+5% Damage
+  m_text: '+6% Damage
 
     [-1-]'
   m_isRightToLeft: 0
@@ -37247,9 +37249,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1631062495}
-        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
-        m_MethodName: Upgrade
+      - m_Target: {fileID: 872866547}
+        m_TargetAssemblyTypeName: PlanningTable, Assembly-CSharp
+        m_MethodName: Buy
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39013,7 +39015,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+1 Slot for others
+  m_text: '+1 Slot for others % +4% Fire Rate
 
     [-2-]'
   m_isRightToLeft: 0

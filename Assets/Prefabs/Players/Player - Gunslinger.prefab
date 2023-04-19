@@ -1161,7 +1161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6601758593997722912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.244, y: 0.611, z: 0}
+  m_LocalPosition: {x: -0.41, y: 1.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1555,6 +1555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Revolver
+  gunSprite: {fileID: 21300000, guid: 425fc690ef5f65f40b7243361b333de2, type: 3}
   damage: 26.4
   critChance: 0.12
   penetration: 0.12
@@ -1635,6 +1636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: SMG
+  gunSprite: {fileID: 21300000, guid: de95e3fc3eca85b48bfb64f48aafc68b, type: 3}
   damage: 10.6
   critChance: 0.08
   penetration: 0.09
@@ -1924,8 +1926,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6601758595229100615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: -1}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalPosition: {x: 0.006, y: 0.371, z: -1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6601758593997722913}
@@ -1973,7 +1975,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ca38129ec236e1e43b51e6f1150aa527, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 425fc690ef5f65f40b7243361b333de2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2125,6 +2127,7 @@ MonoBehaviour:
   MaxItems: 030000000100000000000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 1488142722813227753}
+  equippedGun: {fileID: 6601758595229100613}
   itemSprites:
   - {fileID: 21300000, guid: abafd7d7201eda147a0cc22db4a68604, type: 3}
   - {fileID: 21300000, guid: ca38129ec236e1e43b51e6f1150aa527, type: 3}

@@ -10,6 +10,7 @@ public class Equipment : MonoBehaviour
     public GameObject[] gunSprite;
     public int[] Items, MaxItems, Accessories;
     public Image itemImage;
+    public SpriteRenderer equippedGun;
     public Sprite[] itemSprites;
 
     public int equipped, item;

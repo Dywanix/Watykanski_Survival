@@ -1090,12 +1090,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Survivor: Gain increased
+  m_text: 'Whirlwind: Gain increased
 
-    Health Regeneration
+    health regeneration
 
-    & Increase Max
-    HP with time'
+    & gain spinning
+    Axe.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3297,7 +3297,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Swipe: Swing an Axe firing Wave that deals Damage to 5 enemies.'
+  m_text: 'Axe Throw: Throw an Axe
+
+    that deals damage to 6 targets.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4584,10 +4586,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Enrage: Sacrifice % of current HP to gain Fire Rate & Damage for 6s.
+  m_text: 'Enrage: Sacrifice % of current HP to
 
-    After
-    ability ends restore part of sacrificed HP.'
+    gain Fire Rate & Damage for
+    6s.
+
+    After ability ends restore part of sacrificed HP.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

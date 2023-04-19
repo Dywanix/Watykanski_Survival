@@ -252,7 +252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221019377992242560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.25, z: -1}
+  m_LocalPosition: {x: 0.006, y: 0.458, z: -1}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -301,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ca38129ec236e1e43b51e6f1150aa527, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4f6629a6c74ecb24aae87fe1e9a9d8db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -556,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221019378362755177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.244, y: 0.611, z: 0}
+  m_LocalPosition: {x: -0.244, y: 1.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -934,6 +934,7 @@ MonoBehaviour:
   MaxItems: 0300000001000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 6932617133788238758}
+  equippedGun: {fileID: 221019377992242562}
   itemSprites:
   - {fileID: 21300000, guid: abafd7d7201eda147a0cc22db4a68604, type: 3}
   - {fileID: 21300000, guid: ca38129ec236e1e43b51e6f1150aa527, type: 3}
@@ -984,7 +985,8 @@ MonoBehaviour:
   BoomerangAxe: {fileID: 2240648045073124737, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
   Axe: {fileID: 7917560366427513333}
   AxeThrown: {fileID: 0}
-  axeDamageBonus: 0
+  axeDamage: 0
+  damageTaken: 0
   enrageCooldown: 0
   enrageMaxCooldown: 0
   healthSacrifice: 0
@@ -1037,6 +1039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Assault Rifle
+  gunSprite: {fileID: 21300000, guid: 4f6629a6c74ecb24aae87fe1e9a9d8db, type: 3}
   damage: 15
   critChance: 0.06
   penetration: 0.13
@@ -1117,6 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Shotgun
+  gunSprite: {fileID: 21300000, guid: 1dce1d0b66dcb4a409abb9f18a797732, type: 3}
   damage: 11.4
   critChance: 0.05
   penetration: 0.16
@@ -1807,6 +1811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Axe
+  gunSprite: {fileID: 0}
   damage: 24.2
   critChance: 0.02
   penetration: 0.12
@@ -2065,8 +2070,8 @@ GameObject:
   - component: {fileID: 2719236615755216094}
   - component: {fileID: 6068261006071319144}
   - component: {fileID: 6294033923892113152}
-  - component: {fileID: 6330671220925758728}
   - component: {fileID: 7917560366427513333}
+  - component: {fileID: 1429112563275754954}
   m_Layer: 0
   m_Name: Axe
   m_TagString: PlayerProjectal
@@ -2157,32 +2162,6 @@ MonoBehaviour:
   yAngle: 0
   zAngle: -1.6
   body: {fileID: 2719236615755216094}
---- !u!61 &6330671220925758728
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673015863708097143}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 3.2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3, y: 1.6}
-  m_EdgeRadius: 0
 --- !u!114 &7917560366427513333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2212,6 +2191,22 @@ MonoBehaviour:
   infinite: 1
   crit: 0
   AoE: 0
+--- !u!58 &1429112563275754954
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673015863708097143}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.2
 --- !u!1 &2703044239021556728
 GameObject:
   m_ObjectHideFlags: 0
