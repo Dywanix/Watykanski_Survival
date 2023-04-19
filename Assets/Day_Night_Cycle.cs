@@ -73,8 +73,8 @@ public class Day_Night_Cycle : MonoBehaviour
         maxTime = 88f + 8f * day;
         time = 0;
 
-        hordeSize = 9 + day * 3;
-        spawnGap = 2.4f / (0.995f + 0.125f * day);
+        hordeSize = 15 + day * 7;
+        spawnGap = 2.2f / (day * (day + 1) / 2 + 0.3f * day);
         spawnTime = spawnGap * (2 + hordeSize * 0.5f);
 
         if (day % 5 == 0)

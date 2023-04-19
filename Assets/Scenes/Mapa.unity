@@ -9335,7 +9335,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18881,16 +18881,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mobs:
-  - {fileID: 561359032845120874, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
-  - {fileID: 7707478579312227672, guid: b5de94bd9ad81d042ade22849e10d36c, type: 3}
-  - {fileID: 7845621560163588937, guid: 77964a02b35b5164ea4c50c4bbf63ae8, type: 3}
-  - {fileID: 4027084643655647744, guid: f576fbe619a01d54186d286d0872b993, type: 3}
-  - {fileID: 6010071630061152253, guid: 4c926b4d9a874594da80433fd0f81c3d, type: 3}
-  - {fileID: 5906038584764711152, guid: bb80cb6c30a371345ad9f14990e1b98f, type: 3}
-  - {fileID: 4490275023029342872, guid: 77bb83ad1cd87844aad0971829facdca, type: 3}
-  - {fileID: 4678770621250091327, guid: 156b3766053d3964aa63e78e6e9b72f6, type: 3}
-  - {fileID: 6736168370225218949, guid: 6135e69f3019a5b46b29bdbb434dee62, type: 3}
-  weights: 030000000200000004000000030000000300000004000000030000000500000006000000
+  - {fileID: 77037447411755718, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
+  - {fileID: 1828038272612163582, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
+  weights: 0300000005000000
 --- !u!1 &1040336304
 GameObject:
   m_ObjectHideFlags: 0
@@ -22271,12 +22264,7 @@ MonoBehaviour:
   bosses:
   - {fileID: 1033653788443382648, guid: ed31f7ebe5c142d468e6fbb9823d5543, type: 3}
   endlessOne: {fileID: 1029557328}
-  waves:
-  - {fileID: 739197829}
-  - {fileID: 1436124346}
-  - {fileID: 658732674}
-  - {fileID: 1442240878}
-  - {fileID: 138204021}
+  waves: []
   current: {fileID: 0}
   playerStats: {fileID: 0}
   DayBar: {fileID: 315258620}

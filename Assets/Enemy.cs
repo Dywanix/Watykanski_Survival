@@ -21,14 +21,12 @@ public class Enemy : MonoBehaviour
     private DamageTaken damageDisplay;
 
     // ----- enemy stats -----
-    public float dropChance;
-    public int weight, itemsCount;
-    public int[] scrapDroppedRange;
     private int roll;
     private float temp;
 
     // -- Health & Resistance
     public Bar hpBar;
+    public int weight;
     public float maxHealth, health, regen, armor, vulnerable, DoT, burning;
 
     // -- Movement
@@ -41,6 +39,10 @@ public class Enemy : MonoBehaviour
     // -- Special Stats
     public string[] enrageStats;
     public float[] enrageValue;
+
+    // -- Dropy --
+    public float scrapChance, itemChance;
+    public int scrapCount, itemCount;
 
     void Start()
     {
@@ -268,25 +270,27 @@ public class Enemy : MonoBehaviour
 
     void Death()
     {
-        DropScrap();
-        for (int i = 0; i < itemsCount; i++)
+        for (int i = 0; i < scrapCount; i++)
         {
-            if (dropChance >= Random.Range(0f, 1f))
+            if (scrapChance >= Random.Range(0f, 1f))
+                DropScrap();
+        }
+
+        for (int i = 0; i < itemCount; i++)
+        {
+            if (itemChance >= Random.Range(0f, 1f))
                 DropItem();
         }
+
         Destroy(gameObject);
     }
 
     void DropScrap()
     {
-        roll = Random.Range(scrapDroppedRange[0], scrapDroppedRange[1] + 1);
-        for (int i = 0; i < roll; i++)
-        {
-            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
-            GameObject scrap = Instantiate(Scrap, Body.position, Sight.rotation);
-            Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-            scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
-        }
+        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+        GameObject scrap = Instantiate(Scrap, Body.position, Sight.rotation);
+        Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+        scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
     }
 
     void DropItem()
