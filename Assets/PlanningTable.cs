@@ -50,7 +50,7 @@ public class PlanningTable : MonoBehaviour
         for (int i = 0; i < Count.Length; i++)
         {
             Cost[i].text = costs[i].ToString("0");
-            Count[i].text = playerStats.eq.MaxItems[i].ToString("0");
+            Count[i].text = playerStats.eq.Items[i].ToString("0");
             if (costs[i] > playerStats.tools)
                 BuyButtons[i].interactable = false;
             else BuyButtons[i].interactable = true;
@@ -59,10 +59,10 @@ public class PlanningTable : MonoBehaviour
 
     public void Buy(int which)
     {
-        playerStats.eq.MaxItems[which]++;
         playerStats.eq.Items[which]++;
-        playerStats.itemInfo.text = playerStats.eq.Items[playerStats.eq.item].ToString("0");
-        playerStats.tools -= costs[which];
+        playerStats.SpendTools(costs[which]);
         costs[which] += costsIncrease[which];
+
+        UpdateInfo();
     }
 }

@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class Equipment : MonoBehaviour
 {
     public PlayerController playerStats;
+    public Transform Barrel;
     public Gun[] guns;
-    public GameObject Caltrop, Turret;
     public GameObject[] gunSprite;
-    public int[] Items, MaxItems, Accessories;
+    public int[] Items, Accessories;
     public Image itemImage;
     public SpriteRenderer equippedGun;
-    public Sprite[] itemSprites;
+    private Bullet firedBullet;
 
     public int equipped, item;
+
+    // -- items
+    public GameObject Caltrop, Turret;
 
     // -- special bullets
     public GameObject Saw, Laser;
@@ -23,7 +26,33 @@ public class Equipment : MonoBehaviour
     void Start()
     {
         Invoke("AutoReload", 3f);
+        Invoke("ThrowCaltrops", 6f);
     }
+
+    void Update()
+    {
+
+    }
+
+    void ThrowCaltrops()
+    {
+        if (Items[0] > 0 && !playerStats.day)
+        {
+            for (int i = 0; i < 5 * Items[0]; i++)
+            {
+                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + i * 72f / Items[0]);
+                GameObject caltrop = Instantiate(Caltrop, Barrel.position, Barrel.rotation);
+                Rigidbody2D caltrop_body = caltrop.GetComponent<Rigidbody2D>();
+                caltrop_body.AddForce(Barrel.up * Random.Range(2.53f, 2.67f), ForceMode2D.Impulse);
+
+                firedBullet = caltrop.GetComponent(typeof(Bullet)) as Bullet;
+                firedBullet.damage = 15 * playerStats.DamageDealtMultiplyer(1f);
+            }
+        }
+
+        Invoke("ThrowCaltrops", 6f);
+    }
+
 
     void AutoReload()
     {

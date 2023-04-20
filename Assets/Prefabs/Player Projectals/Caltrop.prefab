@@ -8,16 +8,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: damage
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: pierce
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: duration
-      value: 100
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: penetration
-      value: 0.02
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: slowDuration
@@ -25,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: pierceEfficiency
-      value: 0.95
+      value: 0.975
       objectReference: {fileID: 0}
     - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: vulnerableApplied
-      value: 0.003
+      value: 0.008
       objectReference: {fileID: 0}
     - target: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: m_Name
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3343256739309205791, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: m_Mass
-      value: 0.6
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3343256739309205791, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: m_LinearDrag

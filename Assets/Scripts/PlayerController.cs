@@ -173,12 +173,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.R))
             Reload();
-        else if (Input.GetKeyDown(KeyCode.Z))
-            UseItem();
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-            SwapItem(0);
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            SwapItem(1);
         /*else if (Input.GetKeyDown(KeyCode.Alpha1))
             SwapGun(0);
         else if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -366,48 +360,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SwapItem(int which)
-    {
-        if (which != eq.item)
-        {
-            eq.item = which;
-            eq.itemImage.sprite = eq.itemSprites[which];
-            itemInfo.text = eq.Items[eq.item].ToString("0");
-        }
-    }
-
-    void UseItem()
-    {
-        if (eq.Items[eq.item] > 0 && day)
-        {
-            switch (eq.item)
-            {
-                case 0:
-                    ThrowCaltrops();
-                    break;
-                case 1:
-                    PlaceTurret();
-                    break;
-            }
-            eq.Items[eq.item]--;
-            itemInfo.text = eq.Items[eq.item].ToString("0");
-        }
-    }
-
-    void ThrowCaltrops()
-    {
-        NewTask(0.07f);
-        for (int i = 0; i < 4; i++)
-        {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-20f, 20f));
-            GameObject caltrop = Instantiate(eq.Caltrop, Barrel.position, Barrel.rotation);
-            Rigidbody2D caltrop_body = caltrop.GetComponent<Rigidbody2D>();
-            caltrop_body.AddForce(Barrel.up * Random.Range(1.2f, 1.9f), ForceMode2D.Impulse);
-            firedBullet = caltrop.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = 10 * DamageDealtMultiplyer(1f);
-        }
-    }
-
     void PlaceTurret()
     {
         NewTask(0.11f);
@@ -521,11 +473,6 @@ public class PlayerController : MonoBehaviour
     public void NewDay()
     {
         day = true;
-        for (int i = 0; i < eq.MaxItems.Length; i++)
-        {
-            eq.Items[i] = eq.MaxItems[i];
-        }
-        itemInfo.text = eq.Items[eq.item].ToString("0");
         LevelUp();
     }
 

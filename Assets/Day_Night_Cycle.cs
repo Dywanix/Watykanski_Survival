@@ -25,7 +25,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public TMPro.TextMeshProUGUI dayCount;
 
     public int day, hordeSize, roll;
-    public float time, maxTime, spawnGap, spawnTime;
+    public float time, maxTime, spawnGap, spawnTime, rareSpawnGap, rareSpawnTime;
 
     void Start()
     {
@@ -51,12 +51,18 @@ public class Day_Night_Cycle : MonoBehaviour
                     StartNight();
                 break;
             case (TimeState.Night):
+
                 time += Time.deltaTime;
                 if (time >= maxTime)
                     StartDay();
+
                 spawnTime -= Time.deltaTime;
                 if (spawnTime <= 0f)
                     Summon();
+
+                rareSpawnTime -= Time.deltaTime;
+                if (rareSpawnTime <= 0f)
+                    SummonRare();
                 break;
         }
         if (Input.GetKeyDown(KeyCode.P))
@@ -74,8 +80,12 @@ public class Day_Night_Cycle : MonoBehaviour
         time = 0;
 
         hordeSize = 16 + day * 7;
+
         spawnGap = 2f / (day * (day + 1) / 4 + 0.4f * day + 1f);
+        rareSpawnGap = 5f / (day * (day + 1) / 3 + 0.5f * day + 1f);
+
         spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
+        rareSpawnTime = rareSpawnGap * (1.4f + hordeSize * 0.2f);
 
         /*if (day % 5 == 0)
         {
@@ -123,6 +133,34 @@ public class Day_Night_Cycle : MonoBehaviour
             {
                 currentSpawner.Spawn(waves[day - 1].Mobs[roll]);
                 spawnTime += spawnGap * waves[day - 1].weights[roll];
+            }
+        }
+    }
+
+    void SummonRare()
+    {
+        if (day > waves.Length)
+        {
+            roll = Random.Range(0, endlessOne.RareMobs.Length);
+
+            currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+            for (int i = 0; i < day; i += endlessOne.rareWeights[roll])
+            {
+                currentSpawner.Spawn(endlessOne.RareMobs[roll]);
+                rareSpawnTime += rareSpawnGap * endlessOne.rareWeights[roll];
+            }
+        }
+        else
+        {
+            roll = Random.Range(0, waves[day - 1].RareMobs.Length);
+
+            currentSpawner = spawners[Random.Range(0, spawners.Length)];
+
+            for (int i = 0; i < day; i += waves[day - 1].rareWeights[roll])
+            {
+                currentSpawner.Spawn(waves[day - 1].RareMobs[roll]);
+                rareSpawnTime += rareSpawnGap * waves[day - 1].rareWeights[roll];
             }
         }
     }

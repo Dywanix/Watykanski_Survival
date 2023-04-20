@@ -8,6 +8,6 @@ public class Rotation : MonoBehaviour
     public Transform body;
     void Update()
     {
-        body.Rotate(xAngle, yAngle, zAngle, Space.Self);
+        body.Rotate(xAngle * Time.deltaTime * 360f, yAngle * Time.deltaTime * 360f, zAngle * Time.deltaTime * 360f, Space.Self);
     }
 }

@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xAngle: 0
   yAngle: 0
-  zAngle: -3.2
+  zAngle: -2.6
   body: {fileID: 9105280439881793243}
 --- !u!4 &9105280439881793243 stripped
 Transform:

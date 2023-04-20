@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-    public GameObject[] Mobs;
-    public int[] weights;
+    public GameObject[] Mobs, RareMobs;
+    public int[] weights, rareWeights;
 }

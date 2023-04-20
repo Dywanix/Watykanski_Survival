@@ -84,8 +84,8 @@ MonoBehaviour:
   ranged: 0
   enrageStats: []
   enrageValue: []
-  scrapChance: 0.086
-  itemChance: 0.0124
+  scrapChance: 0.097
+  itemChance: 0.0135
   scrapCount: 1
   itemCount: 1
 --- !u!50 &3562701576671450950
