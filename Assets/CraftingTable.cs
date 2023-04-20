@@ -16,7 +16,6 @@ public class CraftingTable : MonoBehaviour
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI Front, Top, Bottom, Rear;
 
-    public int numberPerSlot;
     int current, tempi;
     bool active;
 
@@ -79,19 +78,19 @@ public class CraftingTable : MonoBehaviour
                     AInEq[current].enabled = true;
                     AEQValues[current] = i;
 
-                    if (i < numberPerSlot)
+                    if (i < playerStats.accessoriesPerType)
                     {
                         if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[0] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0])
                             EQButtons[current].interactable = true;
                         else EQButtons[current].interactable = false;
                     }
-                    else if (i < numberPerSlot * 2)
+                    else if (i < playerStats.accessoriesPerType * 2)
                     {
                         if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[1] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1])
                             EQButtons[current].interactable = true;
                         else EQButtons[current].interactable = false;
                     }
-                    else if (i < numberPerSlot * 3)
+                    else if (i < playerStats.accessoriesPerType * 3)
                     {
                         if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[2] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2])
                             EQButtons[current].interactable = true;
@@ -111,7 +110,7 @@ public class CraftingTable : MonoBehaviour
         // --Gun--
         // Front
         current = 0;
-        for (int i = 0; i < numberPerSlot; i++)
+        for (int i = 0; i < playerStats.accessoriesPerType; i++)
         {
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
             {
@@ -128,7 +127,7 @@ public class CraftingTable : MonoBehaviour
 
         // Top
         current = 0;
-        for (int i = numberPerSlot; i < numberPerSlot * 2; i++)
+        for (int i = playerStats.accessoriesPerType; i < playerStats.accessoriesPerType * 2; i++)
         {
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
             {
@@ -145,7 +144,7 @@ public class CraftingTable : MonoBehaviour
 
         // Bottom
         current = 0;
-        for (int i = numberPerSlot * 2; i < numberPerSlot * 3; i++)
+        for (int i = playerStats.accessoriesPerType * 2; i < playerStats.accessoriesPerType * 3; i++)
         {
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
             {
@@ -162,7 +161,7 @@ public class CraftingTable : MonoBehaviour
 
         // Rear
         current = 0;
-        for (int i = numberPerSlot * 3; i < numberPerSlot * 4; i++)
+        for (int i = playerStats.accessoriesPerType * 3; i < playerStats.accessoriesPerType * 4; i++)
         {
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
             {
@@ -172,7 +171,7 @@ public class CraftingTable : MonoBehaviour
                     ARear[current].enabled = true;
                     RValues[current] = i;
 
-                    if (i == numberPerSlot * 3)
+                    if (i == playerStats.accessoriesPerType * 3)
                     {
                         if (playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[0] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] > 0 && playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[1] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] > 0 && playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[2] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] > 0)
                             EQButtons[RValues[current]].interactable = true;
@@ -237,15 +236,15 @@ public class CraftingTable : MonoBehaviour
         playerStats.eq.Accessories[AEQValues[which]]--;
         playerStats.eq.guns[playerStats.eq.equipped].Accessories[AEQValues[which]]++;
 
-        if (AEQValues[which] < numberPerSlot)
+        if (AEQValues[which] < playerStats.accessoriesPerType)
         {
             playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] += Weights[AEQValues[which]];
         }
-        else if (AEQValues[which] < numberPerSlot * 2)
+        else if (AEQValues[which] < playerStats.accessoriesPerType * 2)
         {
             playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] += Weights[AEQValues[which]];
         }
-        else if (AEQValues[which] < numberPerSlot * 3)
+        else if (AEQValues[which] < playerStats.accessoriesPerType * 3)
         {
             playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] += Weights[AEQValues[which]];
         }
@@ -314,132 +313,218 @@ public class CraftingTable : MonoBehaviour
 
     void GainEffect(int which)
     {
-        switch (which)
+        tempi = 0;
+        while (which >= playerStats.accessoriesPerType)
         {
+            which -= playerStats.accessoriesPerType;
+            tempi++;
+        }
+
+        switch (tempi)
+        {
+            // front --
             case 0:
-                playerStats.eq.guns[playerStats.eq.equipped].damage *= 1.06f;
-                break;
-            case 1:
-                playerStats.eq.guns[playerStats.eq.equipped].DoT += 0.15f;
-                break;
-            case 2:
-                playerStats.eq.guns[playerStats.eq.equipped].bulletSpread *= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].damage *= 0.76f;
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.12f;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.08f;
-                break;
-            case 3:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.03f;
-                // armor shred
-                break;
-            case 4:
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 0.82f;
-                break;
-            case 5:
-                // vulnerable applied
-                break;
-            case 6:
-                playerStats.eq.guns[playerStats.eq.equipped].pierce += 1;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 0.97f;
-                break;
-            case 7:
-                // pierce efficiency
-                break;
-            case 8:
-                tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 6;
-                playerStats.eq.guns[playerStats.eq.equipped].magazineSize += tempi; 
-                break;
-            case 9:
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.88f;
-                break;
-            case 10:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.06f;
-                break;
-            case 11:
-                // chance to not consume ammo
-                break;
-            case 12:
-                for (int i = 0; i < 3; i++)
+                switch (which)
                 {
-                    playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[i]++;
+                    case 0:
+                        playerStats.eq.guns[playerStats.eq.equipped].damage *= 1.06f;
+                        break;
+                    case 1:
+                        playerStats.eq.guns[playerStats.eq.equipped].DoT += 0.15f;
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].bulletSpread *= 2;
+                        playerStats.eq.guns[playerStats.eq.equipped].damage *= 0.76f;
+                        playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.12f;
+                        playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.08f;
+                        break;
+                    case 3:
+                        playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.03f;
+                        // armor shred
+                        break;
+                    case 4:
+                        // Saw
+                        break;
                 }
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.96f;
                 break;
-            case 13:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.925f;
+            // top --
+            case 1:
+                switch (which)
+                {
+                    case 0:
+                        playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 0.82f;
+                        break;
+                    case 1:
+                        // vulnerable applied
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].pierce += 1;
+                        playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 0.97f;
+                        break;
+                    case 3:
+                        // pierce efficiency
+                        break;
+                    case 4:
+                        // Laser
+                        break;
+                }
                 break;
-            case 14:
-                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.1f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.09f;
+            // bottom --
+            case 2:
+                switch (which)
+                {
+                    case 0:
+                        tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 6;
+                        playerStats.eq.guns[playerStats.eq.equipped].magazineSize += tempi;
+                        break;
+                    case 1:
+                        playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.88f;
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.06f;
+                        break;
+                    case 3:
+                        // chance to not consume ammo
+                        break;
+                    case 4:
+                        // Auto-Reload
+                        break;
+                }
                 break;
-            case 15:
-                // cooldowns
+            // rear --
+            case 3:
+                switch (which)
+                {
+                    case 0:
+                        for (int i = 0; i < 3; i++)
+                        {
+                            playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[i]++;
+                        }
+                        playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.96f;
+                        break;
+                    case 1:
+                        playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.925f;
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.1f;
+                        playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.09f;
+                        break;
+                    case 3:
+                        // Cooldowns
+                        break;
+                    case 4:
+                        // On-shot effects rate
+                        break;
+                }
                 break;
         }
     }
 
     void LoseEffect(int which)
     {
-        switch (which)
+        tempi = 0;
+        while (which >= playerStats.accessoriesPerType)
         {
+            which -= playerStats.accessoriesPerType;
+            tempi++;
+        }
+
+        switch (tempi)
+        {
+            // front --
             case 0:
-                playerStats.eq.guns[playerStats.eq.equipped].damage /= 1.06f;
-                break;
-            case 1:
-                playerStats.eq.guns[playerStats.eq.equipped].DoT -= 0.15f;
-                break;
-            case 2:
-                playerStats.eq.guns[playerStats.eq.equipped].bulletSpread /= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].damage /= 0.76f;
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.12f;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.08f;
-                break;
-            case 3:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.03f;
-                // armor shred
-                break;
-            case 4:
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 0.82f;
-                break;
-            case 5:
-                // vulnerable applied
-                break;
-            case 6:
-                playerStats.eq.guns[playerStats.eq.equipped].pierce -= 1;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 0.97f;
-                break;
-            case 7:
-                // pierce efficiency
-                break;
-            case 8:
-                tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 7;
-                playerStats.eq.guns[playerStats.eq.equipped].magazineSize -= tempi;
-                break;
-            case 9:
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.88f;
-                break;
-            case 10:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.06f;
-                break;
-            case 11:
-                // chance to not consume ammo
-                break;
-            case 12:
-                for (int i = 0; i < 3; i++)
+                switch (which)
                 {
-                    playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[i]--;
+                    case 0:
+                        playerStats.eq.guns[playerStats.eq.equipped].damage /= 1.06f;
+                        break;
+                    case 1:
+                        playerStats.eq.guns[playerStats.eq.equipped].DoT -= 0.15f;
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].bulletSpread /= 2;
+                        playerStats.eq.guns[playerStats.eq.equipped].damage /= 0.76f;
+                        playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.12f;
+                        playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.08f;
+                        break;
+                    case 3:
+                        playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.03f;
+                        // armor shred
+                        break;
+                    case 4:
+                        // Saw
+                        break;
                 }
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.96f;
                 break;
-            case 13:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.925f;
+            // top --
+            case 1:
+                switch (which)
+                {
+                    case 0:
+                        playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 0.82f;
+                        break;
+                    case 1:
+                        // vulnerable applied
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].pierce -= 1;
+                        playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 0.97f;
+                        break;
+                    case 3:
+                        // pierce efficiency
+                        break;
+                    case 4:
+                        // Laser
+                        break;
+                }
                 break;
-            case 14:
-                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.1f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.09f;
+            // bottom --
+            case 2:
+                switch (which)
+                {
+                    case 0:
+                        tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 7;
+                        playerStats.eq.guns[playerStats.eq.equipped].magazineSize -= tempi;
+                        break;
+                    case 1:
+                        playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.88f;
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.06f;
+                        break;
+                    case 3:
+                        // chance to not consume ammo
+                        break;
+                    case 4:
+                        // Auto-Reload
+                        break;
+                }
                 break;
-            case 15:
-                // cooldowns
+            // rear --
+            case 3:
+                switch (which)
+                {
+                    case 0:
+                        for (int i = 0; i < 3; i++)
+                        {
+                            playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[i]--;
+                        }
+                        playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.96f;
+                        break;
+                    case 1:
+                        playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.925f;
+                        break;
+                    case 2:
+                        playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.1f;
+                        playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.09f;
+                        break;
+                    case 3:
+                        // cooldowns
+                        break;
+                    case 4:
+                        // On-shot Effects rate
+                        break;
+                }
                 break;
         }
     }

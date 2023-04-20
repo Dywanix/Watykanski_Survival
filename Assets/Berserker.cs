@@ -67,9 +67,9 @@ public class Berserker : MonoBehaviour
         if (enrageCooldown <= 0)
         {
             enrageMaxCooldown = 34f;
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType] > 0)
             {
-                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType]; i++)
                 {
                     enrageMaxCooldown *= 0.91f;
                 }
@@ -104,9 +104,9 @@ public class Berserker : MonoBehaviour
         if (swipeCooldown <= 0)
         {
             swipeMaxCooldown = 12f;
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType] > 0)
             {
-                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType]; i++)
                 {
                     swipeMaxCooldown *= 0.91f;
                 }

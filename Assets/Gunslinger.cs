@@ -52,9 +52,9 @@ public class Gunslinger : MonoBehaviour
         if (rapidFireCooldown <= 0)
         {
             rapidFireMaxCooldown = 30f;
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType] > 0)
             {
-                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType]; i++)
                 {
                     rapidFireMaxCooldown *= 0.91f;
                 }
@@ -82,9 +82,9 @@ public class Gunslinger : MonoBehaviour
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
             unloadMaxCooldown = 4.2f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[15] > 0)
+            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType] > 0)
             {
-                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[15]; i++)
+                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType]; i++)
                 {
                     unloadMaxCooldown *= 0.91f;
                 }

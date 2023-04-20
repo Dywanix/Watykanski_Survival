@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Equipment eq;
     public TMPro.TextMeshProUGUI magazineInfo, itemInfo, scrapInfo, toolsInfo, electricityInfo;
     public Image healthBar, taskImage, dashImage;
-    private Bullet firedBullet;
+    public Bullet firedBullet;
     private EnemyBullet collidedBullet;
 
     public Gunslinger gunslinger;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     // -- statystyki --
     public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
-    public int level = 1;
+    public int level = 1, accessoriesPerType;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     float temp;
 
@@ -209,7 +209,7 @@ public class PlayerController : MonoBehaviour
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
         if (!eq.guns[eq.equipped].infiniteMagazine)
         {
-            if (eq.guns[eq.equipped].Accessories[11] * 0.25f < Random.Range(0f, 1f))
+            if (eq.guns[eq.equipped].Accessories[3 + accessoriesPerType * 2] * 0.25f < Random.Range(0f, 1f))
                 eq.guns[eq.equipped].bulletsLeft--;
             DisplayAmmo();
         }
@@ -226,6 +226,8 @@ public class PlayerController : MonoBehaviour
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
         }
+
+        eq.SpecialCharges();
     }
 
     public void FireDirection(float direction)
@@ -241,7 +243,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SetBullet()
+    public void SetBullet()
     {
         firedBullet.duration = eq.guns[eq.equipped].range;
         firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f);
@@ -254,20 +256,20 @@ public class PlayerController : MonoBehaviour
             firedBullet.armorShred += temp * eq.guns[eq.equipped].Accessories[3];
         }
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
-        if (eq.guns[eq.equipped].Accessories[5] > 0)
+        if (eq.guns[eq.equipped].Accessories[1 + accessoriesPerType] > 0)
         {
             temp = 0.045f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
-            firedBullet.vulnerableApplied += temp * eq.guns[eq.equipped].Accessories[5];
+            firedBullet.vulnerableApplied += temp * eq.guns[eq.equipped].Accessories[1 + accessoriesPerType];
         }
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
         firedBullet.stunChance = eq.guns[eq.equipped].stunChance;
         firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
         firedBullet.pierce = eq.guns[eq.equipped].pierce;
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
-        if (eq.guns[eq.equipped].Accessories[7] > 0)
+        if (eq.guns[eq.equipped].Accessories[3 + accessoriesPerType] > 0)
         {
             temp = 0.06f + 0.12f / (1f * eq.guns[eq.equipped].pierce);
-            firedBullet.pierceEfficiency += temp * eq.guns[eq.equipped].Accessories[7];
+            firedBullet.pierceEfficiency += temp * eq.guns[eq.equipped].Accessories[3 + accessoriesPerType];
         }
 
         if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
