@@ -19,6 +19,8 @@ public class SteamGolem : MonoBehaviour
         {
             Action();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+            EfficientReload();
 
         if (efficientReloadCooldown > 0)
         {
@@ -37,8 +39,6 @@ public class SteamGolem : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
             Overdrive(playerStats.eq.equipped);
-        else if (Input.GetKeyDown(KeyCode.Q))
-            EfficientReload();
     }
 
     public void PackedUp()
@@ -98,11 +98,11 @@ public class SteamGolem : MonoBehaviour
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft < playerStats.eq.guns[playerStats.eq.equipped].magazineSize)
         {
-            efficientReloadOverload = Mathf.RoundToInt(playerStats.eq.guns[playerStats.eq.equipped].magazineSize * (1.6f + 0.06f * playerStats.level));
-            playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft = efficientReloadOverload;
+            efficientReloadOverload = Mathf.RoundToInt(playerStats.eq.guns[playerStats.eq.equipped].magazineSize * (0.5f + 0.05f * playerStats.level));
+            playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft += efficientReloadOverload;
             playerStats.DisplayAmmo();
 
-            efficientReloadMaxCooldown = 1f + 7.5f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime;
+            efficientReloadMaxCooldown = 0.8f + 6.8f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime;
             
             if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType] > 0)
             {
@@ -124,6 +124,7 @@ public class SteamGolem : MonoBehaviour
     {
         if (overdriveCooldown <= 0)
         {
+            overdriveMaxCooldown = 0.02f;
             switch (gun)
             {
                 case 0:

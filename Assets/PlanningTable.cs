@@ -7,11 +7,15 @@ public class PlanningTable : MonoBehaviour
 {
     public GameObject Player, Glow, Hud;
     public PlayerController playerStats;
-    public TMPro.TextMeshProUGUI[] Cost, Count;
-    public Button[] BuyButtons;
+    public Button Buy;
+    public Button[] Picks;
 
-    public int[] costs, costsIncrease;
-    bool active;
+    public Image[] images;
+    public Sprite[] sprites;
+    public TMPro.TextMeshProUGUI[] Count;
+
+    public int[] rolled;
+    bool active, viable;
 
     void Update()
     {
@@ -47,22 +51,61 @@ public class PlanningTable : MonoBehaviour
 
     void UpdateInfo()
     {
-        for (int i = 0; i < Count.Length; i++)
+        if (playerStats.tools >= 5)
+            Buy.interactable = true;
+        else Buy.interactable = false;
+    }
+
+    public void Roll()
+    {
+        playerStats.SpendTools(5);
+        UpdateInfo();
+
+        for (int i = 0; i < 2; i++)
         {
-            Cost[i].text = costs[i].ToString("0");
-            Count[i].text = playerStats.eq.Items[i].ToString("0");
-            if (costs[i] > playerStats.tools)
-                BuyButtons[i].interactable = false;
-            else BuyButtons[i].interactable = true;
+            viable = false;
+            do
+            {
+                rolled[i] = Random.Range(0, sprites.Length);
+                if (playerStats.eq.Items[rolled[i]] < 5)
+                {
+                    if (i > 0)
+                    {
+                        if (i > 1)
+                        {
+                            if (rolled[i] != rolled[0] && rolled[i] != rolled[1]) viable = true;
+                        }
+                        else
+                        {
+                            if (rolled[i] != rolled[0]) viable = true;
+                        }
+                    }
+                    else viable = true;
+                }
+            } while (viable == false);
+
+            images[i].sprite = sprites[rolled[i]];
+            Count[i].text = playerStats.eq.Items[rolled[i]].ToString("0") + "/5";
+            Picks[i].interactable = true;
         }
     }
 
-    public void Buy(int which)
+    public void Pick(int which)
     {
-        playerStats.eq.Items[which]++;
-        playerStats.SpendTools(costs[which]);
-        costs[which] += costsIncrease[which];
-
+        playerStats.eq.Items[rolled[which]]++;
+        Count[which].text = playerStats.eq.Items[rolled[which]].ToString("0") + "/5";
         UpdateInfo();
+
+        for (int i = 0; i < 2; i++)
+        {
+            Picks[i].interactable = false;
+        }
+
+        switch (which)
+        {
+            case 3:
+                playerStats.eq.itemsActivationRate *= 1.22f;
+                break;
+        }
     }
 }

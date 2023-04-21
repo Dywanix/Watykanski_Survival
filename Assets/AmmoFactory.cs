@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AmmoFactory : MonoBehaviour
-{
+{/*
     public GameObject Player, Glow, Hud;
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI Production, ToCollect, UpgradeCost;
@@ -84,5 +84,5 @@ public class AmmoFactory : MonoBehaviour
         upgradeCost += 24;
         level++;
         UpdateInfo();
-    }
+    }*/
 }

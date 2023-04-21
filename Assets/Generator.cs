@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
-{
+{/*
     public GameObject Player, Glow, Hud;
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI Production, UpgradeCost;
@@ -71,5 +71,5 @@ public class Generator : MonoBehaviour
         upgradeCost += 20;
         level++;
         UpdateInfo();
-    }
+    }*/
 }

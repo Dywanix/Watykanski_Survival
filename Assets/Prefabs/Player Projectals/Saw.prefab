@@ -175,6 +175,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: DoT
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: damage
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: pierce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: duration
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: penetration
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: pierceEfficiency
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: m_Name
       value: Saw

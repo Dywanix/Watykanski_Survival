@@ -43,9 +43,7 @@ public class CraftingTable : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape) && active)
             {
-                playerStats.free = true;
-                Hud.SetActive(false);
-                active = false;
+                Quit();
             }
         }
         else Glow.SetActive(false);
@@ -526,6 +524,18 @@ public class CraftingTable : MonoBehaviour
                         break;
                 }
                 break;
+        }
+    }
+
+    void Quit()
+    {
+        playerStats.free = true;
+        Hud.SetActive(false);
+        active = false;
+
+        for (int i = 0; i < tooltips.Length; i++)
+        {
+            tooltips[i].SetActive(false);
         }
     }
 }

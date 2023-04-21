@@ -51,7 +51,7 @@ public class Gun : MonoBehaviour
                 break;
         }
 
-        GainSpecialCharge(0.06f + Costs[which] * 0.00008f);
+        GainSpecialCharge(0.08f + Costs[which] * 0.0001f);
 
         Costs[which] += 4;
     }

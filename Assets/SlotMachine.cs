@@ -50,14 +50,14 @@ public class SlotMachine : MonoBehaviour
 
     void UpdateInfo()
     {
-        if (playerStats.scrap >= 10)
+        if (playerStats.tokens >= 1)
             Lever.interactable = true;
         else Lever.interactable = false;
     }
 
     public void Roll()
     {
-        playerStats.SpendScrap(10);
+        playerStats.SpendTokens(1);
 
         for (int i = 0; i < 3; i++)
         {
@@ -96,19 +96,19 @@ public class SlotMachine : MonoBehaviour
         switch (prize)
         {
             case 0:
-                playerStats.GainScrap(36);
+                playerStats.GainScrap(50);
                 break;
             case 1:
-                playerStats.GainTools(3);
+                playerStats.GainTools(4);
                 break;
             case 2:
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     playerStats.LevelUp();
                 }
                 break;
             case 3:
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     playerStats.eq.Accessories[Random.Range(0, playerStats.eq.Accessories.Length)]++;
                 }

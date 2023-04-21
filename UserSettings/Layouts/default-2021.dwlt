@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 76
+  controlID: 77
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 320
     height: 619
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 423
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -318,22 +318,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\Unity\GitHub\Watykanski_Survival
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a740000
-    m_LastClickedID: 29722
-    m_ExpandedIDs: 000000000a7400001a74000020740000
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 26740000
+    m_LastClickedID: 29734
+    m_ExpandedIDs: 0000000026740000367400003c740000908a0000008e00007a910000da9100004a960000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a740000
+    m_ExpandedIDs: 0000000026740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000044610000
+    m_ExpandedInstanceIDs: c62300004461000066730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -449,9 +449,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: ec190000
       m_LastClickedID: 0
-      m_ExpandedIDs: 06a0ffff40a5ffff88acffffdcacffff24b0ffff34b0ffff3cb9ffff80b9ffffc0bcffffd0bcffffecd8ffff40e5ffffe8e5ffff2ee6ffff56e9ffff6ae9ffffe6ebffff2cecffff9aedffffa8edffffc8f4ffff0ef5ffff32f8ffff42f8ffff2cfbffff08f4010092f50100b2f501007cf701000efa010098fc0100
+      m_ExpandedIDs: d4c9faffbecafaffc2fffdff0603feff923efeff2056fefff468feff0e69feff2069feff3669feff8c6afeff766bfeffde73feff0674feff1693feff2893feff3e93feff28f8ffff2cfbffff9e5e0000505f0000da600000c4620000aedb000098e4000026e50000c2e50000bee6000032e700004ce700006ce7000032e8000000ef000060ef0000c0ef0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -723,9 +723,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -19.922575, y: 6.6147747, z: -0.20504722}
+    m_Target: {x: -0.41447487, y: -0.802109, z: -0.023751978}
     speed: 2
-    m_Value: {x: -0.66479737, y: 0.004172609, z: -0.015921995}
+    m_Value: {x: -0.41447487, y: -0.802109, z: -0.023751978}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -776,9 +776,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 30.504593
+    m_Target: 12.375032
     speed: 2
-    m_Value: 2.569747
+    m_Value: 12.375032
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -871,10 +871,9 @@ MonoBehaviour:
   Gun: {fileID: 221019377957225675}
   eq: {fileID: 221019378589204401}
   magazineInfo: {fileID: 221019379726973339}
-  itemInfo: {fileID: 0}
   scrapInfo: {fileID: 221019379837776163}
   toolsInfo: {fileID: 5563003537845535524}
-  electricityInfo: {fileID: 2683157045014057074}
+  tokensInfo: {fileID: 2683157045014057074}
   healthBar: {fileID: 221019378452447140}
   taskImage: {fileID: 2646244158406871219}
   dashImage: {fileID: 677853250472578643}
@@ -907,7 +906,7 @@ MonoBehaviour:
   additionalCritChance: 0
   scrap: 35
   tools: 3
-  electricity: 0
+  tokens: 0
   animator: {fileID: 7977171312871803651}
   moveSpeed: 5
 --- !u!114 &221019378589204401
@@ -931,14 +930,15 @@ MonoBehaviour:
   - {fileID: 221019378529759564}
   - {fileID: 221019377946957093}
   - {fileID: 221019378431087535}
-  Items: 0100000000000000
+  Items: 00000000000000000000000000000000
   Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 0}
   equippedGun: {fileID: 221019377992242562}
   equipped: 0
   item: 0
   Caltrop: {fileID: 8623896585513593077, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
-  Turret: {fileID: 696691024789752279, guid: 642b6e8176541fd4986ebbdef9089b14, type: 3}
+  Knife: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
+  itemsActivationRate: 1
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
   Laser: {fileID: 1191445889087333895, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
   sawCharges: 0
@@ -2590,7 +2590,7 @@ GameObject:
   - component: {fileID: 5899639723796317925}
   - component: {fileID: 2683157045014057074}
   m_Layer: 5
-  m_Name: Electricity Count
+  m_Name: Tokens Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2655,8 +2655,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285560832
-  m_fontColor: {r: 0, g: 0.47058824, b: 0.4392157, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

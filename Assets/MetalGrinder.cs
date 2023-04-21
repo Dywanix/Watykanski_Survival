@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MetalGrinder : MonoBehaviour
-{
+{/*
     public GameObject Player, Glow, Hud;
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI Production, ToCollect, UpgradeCost;
@@ -83,5 +83,5 @@ public class MetalGrinder : MonoBehaviour
         upgradeCost += 25;
         level++;
         UpdateInfo();
-    }
+    }*/
 }

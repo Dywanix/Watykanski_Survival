@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1191445888351011943}
-  duration: 1.44
+  duration: 0.48
   startingFade: 1
   red: 0.518
   green: 0.157
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionRadius: {fileID: 0}
-  duration: 1.2
+  duration: 0.4
   damage: 10
   penetration: 0
   armorShred: 0

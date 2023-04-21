@@ -17,7 +17,8 @@ public class Equipment : MonoBehaviour
     public int equipped, item;
 
     // -- items
-    public GameObject Caltrop, Turret;
+    public GameObject Caltrop, Knife;
+    public float itemsActivationRate = 1f;
 
     // -- special bullets
     public GameObject Saw, Laser;
@@ -26,7 +27,9 @@ public class Equipment : MonoBehaviour
     void Start()
     {
         Invoke("AutoReload", 3f);
-        Invoke("ThrowCaltrops", 6f);
+        Invoke("ThrowCaltrops", 8f);
+        Invoke("KnifeThrow", 3f);
+        Invoke("ThrowSaw", 3.6f);
     }
 
     void Update()
@@ -40,19 +43,54 @@ public class Equipment : MonoBehaviour
         {
             for (int i = 0; i < 5 * Items[0]; i++)
             {
-                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + i * 72f / Items[0]);
+                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + (Random.Range(-4f, 4f) + i * 72f) / Items[0]);
                 GameObject caltrop = Instantiate(Caltrop, Barrel.position, Barrel.rotation);
                 Rigidbody2D caltrop_body = caltrop.GetComponent<Rigidbody2D>();
-                caltrop_body.AddForce(Barrel.up * Random.Range(2.53f, 2.67f), ForceMode2D.Impulse);
+                caltrop_body.AddForce(Barrel.up * Random.Range(2.45f, 2.79f), ForceMode2D.Impulse);
 
                 firedBullet = caltrop.GetComponent(typeof(Bullet)) as Bullet;
-                firedBullet.damage = 15 * playerStats.DamageDealtMultiplyer(1f);
+                firedBullet.damage *= playerStats.DamageDealtMultiplyer(1f);
             }
         }
 
-        Invoke("ThrowCaltrops", 6f);
+        Invoke("ThrowCaltrops", 8f / itemsActivationRate);
     }
 
+    void KnifeThrow()
+    {
+        if (Items[1] > 0 && !playerStats.day)
+        {
+            for (int i = 0; i < 2 * Items[1]; i++)
+            {
+                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 6f - 4f * Items[1] + (4f + 6f / Items[1]) * i);
+                GameObject knife = Instantiate(Knife, Barrel.position, Barrel.rotation);
+                Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
+                knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
+
+                firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
+                firedBullet.damage *= playerStats.DamageDealtMultiplyer(1f);
+            }
+        }
+
+        Invoke("KnifeThrow", (3f / (1f + playerStats.SpeedMultiplyer(0.44f))) / itemsActivationRate);
+    }
+
+    void ThrowSaw()
+    {
+        if (Items[2] > 0 && !playerStats.day)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(0f, 360f));
+            GameObject saw = Instantiate(Saw, Barrel.position, Barrel.rotation);
+            Rigidbody2D saw_body = saw.GetComponent<Rigidbody2D>();
+            saw_body.AddForce(Barrel.up * Random.Range(18.2f, 19.7f), ForceMode2D.Impulse);
+
+            firedBullet = saw.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage *= playerStats.DamageDealtMultiplyer(1.08f);
+        }
+
+        if (Items[2] > 1) Invoke("ThrowSaw", (3.6f / Items[2]) / itemsActivationRate);
+        else Invoke("ThrowSaw", 3.6f / itemsActivationRate);
+    }
 
     void AutoReload()
     {
@@ -67,7 +105,7 @@ public class Equipment : MonoBehaviour
             }
             else Invoke("AutoReload", (0.75f + 10f * guns[equipped].reloadTime / (2 + guns[equipped].magazineSize)));
         }
-        else Invoke("AutoReload", 0.75f);
+        else Invoke("AutoReload", 2f);
     }
 
     public void SpecialCharges()
@@ -117,7 +155,7 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             playerStats.SetBullet();
 
-            playerStats.firedBullet.damage *= 0.4f;
+            playerStats.firedBullet.damage *= 0.44f;
             playerStats.firedBullet.penetration *= 0.8f; playerStats.firedBullet.penetration += 0.05f;
             playerStats.firedBullet.vulnerableApplied += 0.05f + 0.15f * guns[equipped].fireRate;
             playerStats.firedBullet.pierce = 50;

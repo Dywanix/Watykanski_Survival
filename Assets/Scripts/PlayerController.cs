@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public Transform Barrel, Hand, Dude;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI magazineInfo, itemInfo, scrapInfo, toolsInfo, electricityInfo;
+    public TMPro.TextMeshProUGUI magazineInfo, scrapInfo, toolsInfo, tokensInfo;
     public Image healthBar, taskImage, dashImage;
     public Bullet firedBullet;
     private EnemyBullet collidedBullet;
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     float temp;
 
     // -- zasoby --
-    public int scrap, tools, electricity;
+    public int scrap, tools, tokens;
 
     // -- animacje --
     public Animator animator;
@@ -360,16 +361,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void PlaceTurret()
-    {
-        NewTask(0.11f);
-
-        Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation);
-        GameObject turret = Instantiate(eq.Turret, Barrel.position, Barrel.rotation);
-        Rigidbody2D turret_body = turret.GetComponent<Rigidbody2D>();
-        turret_body.AddForce(Barrel.up * Random.Range(0.6f, 0.7f), ForceMode2D.Impulse);
-    }
-
     void Dash()
     {
         if (dashCooldown <= 0)
@@ -388,7 +379,8 @@ public class PlayerController : MonoBehaviour
             berserker.AxeDamageIncrease(value);
 
         if (health < 0f)
-            Application.Quit();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        //Application.Quit();
     }
 
     public void GainPoison(float value)
@@ -430,12 +422,6 @@ public class PlayerController : MonoBehaviour
             GainScrap(5);
             Destroy(other.gameObject);
         }
-        else if (other.transform.tag == "Ammo")
-        {
-            PickedUpAmmo();
-            Destroy(other.gameObject);
-            DisplayAmmo();
-        }
         else if (other.transform.tag == "Tools")
         {
             GainTools(1);
@@ -444,16 +430,14 @@ public class PlayerController : MonoBehaviour
                 steamGolem.ClockworkMachine(12 + level);
             Destroy(other.gameObject);
         }
+        if (other.transform.tag == "Token")
+        {
+            GainTokens(1);
+            Destroy(other.gameObject);
+        }
         else if (other.transform.tag == "Medkit")
         {
             RestoreHealth(10f + maxHealth * 0.16f);
-            Destroy(other.gameObject);
-        }
-        else if (other.transform.tag == "Battery")
-        {
-            GainElectricity(25);
-            if (steamGolem == true)
-                steamGolem.ChargedUp();
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Accessory")
@@ -473,6 +457,7 @@ public class PlayerController : MonoBehaviour
     public void NewDay()
     {
         day = true;
+        GainTokens(1);
         LevelUp();
     }
 
@@ -514,16 +499,16 @@ public class PlayerController : MonoBehaviour
         toolsInfo.text = tools.ToString("0");
     }
 
-    public void GainElectricity(int amount)
+    public void GainTokens(int amount)
     {
-        electricity += amount;
-        electricityInfo.text = electricity.ToString("0");
+        tokens += amount;
+        tokensInfo.text = tokens.ToString("0");
     }
 
-    public void SpendElectricity(int amount)
+    public void SpendTokens(int amount)
     {
-        electricity -= amount;
-        electricityInfo.text = electricity.ToString("0");
+        tokens -= amount;
+        tokensInfo.text = tokens.ToString("0");
     }
 
     public void PickedUpAmmo()
