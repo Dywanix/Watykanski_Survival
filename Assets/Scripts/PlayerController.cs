@@ -510,14 +510,4 @@ public class PlayerController : MonoBehaviour
         tokens -= amount;
         tokensInfo.text = tokens.ToString("0");
     }
-
-    public void PickedUpAmmo()
-    {
-        for (int i = 0; i < eq.guns.Length; i++)
-        {
-            eq.guns[i].AmmoPicked();
-        }
-        if (steamGolem == true)
-            steamGolem.PackedUp();
-    }
 }

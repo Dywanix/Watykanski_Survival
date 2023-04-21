@@ -48,12 +48,13 @@ public class Gun : MonoBehaviour
                     damage *= 1f + temp;
                     cameraShake *= 1f + 0.33f * temp;
                 }
+                armorShred *= 1.06f;
                 break;
         }
 
-        GainSpecialCharge(0.08f + Costs[which] * 0.0001f);
+        GainSpecialCharge(0.1f + Costs[which] * 0.000125f);
 
-        Costs[which] += 4;
+        Costs[which] += 3;
     }
 
     public void GainSpecialCharge(float amount)
@@ -71,23 +72,39 @@ public class Gun : MonoBehaviour
         switch (which)
         {
             case 0:
-                damage *= 1.024f;
-                cameraShake *= 1.008f;
-                fireRate *= 0.955f;
-                reloadTime *= 0.985f;
+                damage *= 1.06f;
+                cameraShake *= 1.02f;
                 break;
             case 1:
-                critChance += 0.03f;
+                fireRate *= 0.91f;
+                break;
+            case 2:
+                accuracy *= 0.87f;
+                range += 0.13f;
+                break;
+            case 3:
+                penetration += 0.06f;
+                if (penetration > 1f)
+                {
+                    temp = penetration - 1f;
+                    penetration = 1f;
+                    damage *= 1f + temp;
+                    cameraShake *= 1f + 0.33f * temp;
+                }
+                armorShred *= 1.3f;
+                break;
+            case 4:
+                critChance += 0.04f;
                 if (critChance > 1f)
                 {
                     temp = critChance - 1f;
                     critChance = 1f;
                     critDamage *= 1f + temp;
                 }
-                critDamage += 0.02f * (1.25f + critDamage);
+                critDamage += 0.03f + 0.025f * critDamage;
                 break;
-            case 2:
-                temp = 0.26f + 0.18f * magazineSize;
+            case 5:
+                temp = 0.3f + 0.2f * magazineSize;
                 if (infiniteAmmo)
                 {
                     temp *= 1.35f;
@@ -97,7 +114,7 @@ public class Gun : MonoBehaviour
                 if (temp < 1f)
                 {
                     magazineSize++;
-                    reloadTime *= 1.8f - 0.8f * temp;
+                    reloadTime *= 1.75f - 0.75f * temp;
                 }
                 else
                 {
@@ -109,26 +126,19 @@ public class Gun : MonoBehaviour
                     }
                     temp = temp - tempi;
                     if (temp < 0f)
-                        reloadTime *= (1f + 0.8f * tempi / tempi);
-                    else reloadTime *= 1f - (0.7f * temp / tempi);
+                        reloadTime *= (1f + 0.75f * tempi / tempi);
+                    else reloadTime *= 1f - (0.65f * temp / tempi);
                 }
                 break;
-            case 3:
-                temp = 0.03f * fireRate * (0.1f + 0.9f * bulletSpread);
+            case 6:
+                temp = 0.05f * fireRate * (0.2f + 0.8f * bulletSpread);
                 temp *= 1 + 1.2f * penetration;
                 armorShred += temp;
-                fireRate *= 0.975f;
                 break;
-            case 4:
-                vulnerableApplied += 0.02f * fireRate * (0.1f + 0.9f * bulletSpread);
-                accuracy *= 0.96f;
+            case 7:
+                vulnerableApplied += 0.035f * fireRate * (0.2f + 0.8f * bulletSpread);
                 break;
-            case 5:
-                tempi = 2 + ammoFromPack / 5;
-                ammoFromPack += tempi;
-                ammo += 3 + 2 * ammoFromPack;
-                break;
-            case 6:
+            case 8:
                 temp = 1.002f + 0.08f / (bulletSpread * 1f + 1f);
                 accuracy *= temp; cameraShake *= temp; reloadTime *= temp;
 
@@ -140,76 +150,17 @@ public class Gun : MonoBehaviour
 
                 bulletSpread++;
                 break;
-            case 7:
-                damage *= 0.96f;
-                DoT += 0.12f + 0.14f * DoT;
-                break;
-            case 8:
-                if (infiniteAmmo)
-                {
-                    temp = (0.3f + reloadTime) / (0.2f + 1.1f * fireRate);
-                    if (temp < 1f)
-                    {
-                        overload++;
-                        reloadTime *= 1.4f - (0.4f * temp);
-                    }
-                    else
-                    {
-                        tempi = 0;
-                        for (float i = 0.85f; i < temp; i++)
-                        {
-                            overload++;
-                            tempi++;
-                        }
-                        temp = temp - tempi;
-                        reloadTime *= 1f - (1.25f * temp / tempi);
-                    }
-                }
-                else
-                {
-                    temp = (0.2f + reloadTime) / (0.3f + 1.2f * fireRate);
-                    if (temp < 1f)
-                    {
-                        overload++;
-                        reloadTime *= 1.5f - (0.5f * temp);
-                    }
-                    else
-                    {
-                        tempi = 0;
-                        for (int i = 0; i < temp; i++)
-                        {
-                            overload++;
-                            tempi++;
-                        }
-                        temp = temp - tempi;
-                        reloadTime *= 1f - (1.1f * temp / tempi);
-                    }
-                }
-                break;
             case 9:
-                MaxSlots[0]++;
-                damage *= 1.038f;
+                damage *= 0.964f;
+                DoT += 0.135f + 0.18f * DoT;
                 break;
             case 10:
-                MaxSlots[1]++;
-                accuracy *= 0.92f;
-                range += 0.06f;
-                break;
-            case 11:
-                MaxSlots[2]++;
-                reloadTime *= 0.928f;
-                break;
-            case 12:
-                MaxSlots[3]++;
-                fireRate *= 0.95f;
-                break;
-            case 13:
-                temp = (2.5f + 1f * pierce) / (3.5f + 1f * pierce);
+                temp = (2f + 1f * pierce) / (2.8f + 1f * pierce);
                 pierceEfficiency *= temp;
                 pierce++;
                 break;
-            case 14:
-                temp = 1.035f + (0.07f / pierce);
+            case 11:
+                temp = 1.04f + (0.08f / pierce);
                 pierceEfficiency *= temp;
                 break;
         }

@@ -11,7 +11,7 @@ public class SteamGolem : MonoBehaviour
     public GameObject ElectricProjectal, IncendiaryProjectal;
 
     public float efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
-    public int gatlingGunCharges, railGunCharges, efficientReloadOverload, clockworkMachine, spareParts, volleyCount, bulletsCount;
+    public int gatlingGunCharges, railGunCharges, efficientReloadOverload, clockworkMachine, requiredParts, spareParts, volleyCount, bulletsCount;
 
     void Update()
     {
@@ -41,39 +41,17 @@ public class SteamGolem : MonoBehaviour
             Overdrive(playerStats.eq.equipped);
     }
 
-    public void PackedUp()
-    {
-        gatlingGunCharges++;
-        if (gatlingGunCharges >= 2)
-        {
-            gatlingGunCharges -= 2;
-            playerStats.eq.guns[0].magazineSize++;
-            playerStats.eq.guns[0].fireRate *= 0.992f;
-            playerStats.eq.guns[0].reloadTime *= 0.992f;
-        }
-    }
-
-    public void ChargedUp()
-    {
-        railGunCharges++;
-        if (railGunCharges >= 3)
-        {
-            railGunCharges -= 3;
-            playerStats.eq.guns[1].overload++;
-            playerStats.eq.guns[1].reloadTime *= 0.988f;
-        }
-    }
-
     public void ClockworkMachine(int amount)
     {
         clockworkMachine += amount;
-        if (clockworkMachine >= 200)
+        if (clockworkMachine >= requiredParts)
             PartGained();
     }
 
     void PartGained()
     {
-        clockworkMachine -= 200;
+        clockworkMachine -= requiredParts;
+        requiredParts += 10;
         spareParts++;
         SparePartsCount.text = spareParts.ToString("0");
         playerStats.maxHealth += 2;

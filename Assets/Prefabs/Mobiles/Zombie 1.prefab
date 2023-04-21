@@ -64,14 +64,14 @@ MonoBehaviour:
   Sight: {fileID: 3877347791959240643}
   hpBar: {fileID: 217462749461564833}
   weight: 3
-  maxHealth: 40
-  health: 40
+  maxHealth: 36
+  health: 36
   regen: 0
-  armor: 16.4
+  armor: 16.1
   vulnerable: 0
   DoT: 0
   burning: 0
-  movementSpeed: 2.64
+  movementSpeed: 2.9
   slow: 0
   stun: 0
   attackDamage: 8.2
@@ -85,7 +85,7 @@ MonoBehaviour:
   enrageStats: []
   enrageValue: []
   scrapChance: 0.097
-  itemChance: 0.0135
+  itemChance: 0.014
   scrapCount: 1
   itemCount: 1
 --- !u!50 &3562701576671450950

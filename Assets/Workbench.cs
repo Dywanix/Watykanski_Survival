@@ -130,10 +130,6 @@ public class Workbench : MonoBehaviour
     public void Upgrade(int which)
     {
         playerStats.SpendScrap(playerStats.eq.guns[current].Costs[which]);
-        for (int i = 0; i < playerStats.eq.guns.Length; i++)
-        {
-            playerStats.eq.guns[i].GainSpecialCharge(0.025f + playerStats.eq.guns[current].Costs[which] * 0.00002f);
-        }
         playerStats.eq.guns[current].Upgrade(which);
         UpdateInfo(current);
     }
@@ -145,7 +141,7 @@ public class Workbench : MonoBehaviour
             viable = false;
             while (viable == false)
             {
-                rolled[i] = Random.Range(0, 15);
+                rolled[i] = Random.Range(0, 12);
                 if (rolled[i] == 2 && playerStats.eq.guns[current].infiniteMagazine)
                     viable = false;
                 else if (rolled[i] == 5 && playerStats.eq.guns[current].infiniteAmmo)
@@ -187,7 +183,7 @@ public class Workbench : MonoBehaviour
     {
         playerStats.eq.guns[current].special--;
         playerStats.eq.guns[current].SpecialUpgrade(rolled[which]);
-
+        playerStats.eq.guns[current].MaxSlots[which]++;
         Upgrades.SetActive(false);
         golden = false;
         UpdateInfo(current);
