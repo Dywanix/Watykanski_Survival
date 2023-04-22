@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     // ----- enemy stats -----
     private int roll;
     private float temp;
+    public bool rare;
 
     // -- Health & Resistance
     public Bar hpBar;
@@ -55,6 +56,12 @@ public class Enemy : MonoBehaviour
         movementSpeed *= Random.Range(0.95f, 1.05f);
         attackDamage *= Random.Range(0.92f, 1.08f);
         attackSpeed *= Random.Range(0.92f, 1.08f);
+
+        if (rare)
+        {
+            maxHealth *= 0.994f + 0.006f * playerStats.dayCount;
+            movementSpeed *= 0.988f + 0.012f * playerStats.dayCount;
+        }
 
         if (ranged)
         {
@@ -153,27 +160,24 @@ public class Enemy : MonoBehaviour
         scrap_body.AddForce(Sight.up * force * Random.Range(1f, 1.1f), ForceMode2D.Impulse);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Struck(Collider2D other)
     {
-        if (other.transform.tag == "PlayerProjectal")
+        collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
+        if (!collidedBullet.AoE)
         {
-            collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
-            if (!collidedBullet.AoE)
-            {
-                armor *= 1 - collidedBullet.armorShred;
-                vulnerable += collidedBullet.vulnerableApplied;
-                if (collidedBullet.slowDuration > 0)
-                    slow += collidedBullet.slowDuration;
-                if (collidedBullet.stunChance >= Random.Range(0f, 1f))
-                    GainStun(collidedBullet.stunDuration);
-                TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit, true);
-                if (collidedBullet.DoT > 0)
-                    GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
-                if (collidedBullet.incendiary > 0)
-                    burning += collidedBullet.incendiary;
-            }
-            collidedBullet.Struck();
+            armor *= 1 - collidedBullet.armorShred;
+            vulnerable += collidedBullet.vulnerableApplied;
+            if (collidedBullet.slowDuration > 0)
+                slow += collidedBullet.slowDuration;
+            if (collidedBullet.stunChance >= Random.Range(0f, 1f))
+                GainStun(collidedBullet.stunDuration);
+            TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit, true);
+            if (collidedBullet.DoT > 0)
+                GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
+            if (collidedBullet.incendiary > 0)
+                burning += collidedBullet.incendiary;
         }
+        collidedBullet.Struck();
     }
 
     void TakeDamage(float value, bool crited, bool display)
@@ -197,6 +201,9 @@ public class Enemy : MonoBehaviour
             {
                 switch (enrageStats[i])
                 {
+                    case "armor":
+                        armor += value * enrageValue[i];
+                        break;
                     case "movementSpeed":
                         movementSpeed += value * enrageValue[i];
                         break;

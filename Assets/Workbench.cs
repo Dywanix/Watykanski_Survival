@@ -142,13 +142,7 @@ public class Workbench : MonoBehaviour
             while (viable == false)
             {
                 rolled[i] = Random.Range(0, 12);
-                if (rolled[i] == 2 && playerStats.eq.guns[current].infiniteMagazine)
-                    viable = false;
-                else if (rolled[i] == 5 && playerStats.eq.guns[current].infiniteAmmo)
-                    viable = false;
-                else if ((rolled[i] == 8 && playerStats.eq.guns[current].infiniteMagazine) || (rolled[i] == 8 && playerStats.eq.guns[current].infiniteAmmo))
-                    viable = false;
-                else if (rolled[i] == 14 && playerStats.eq.guns[current].pierce == 1)
+                if (rolled[i] == 11 && playerStats.eq.guns[current].pierce == 1)
                     viable = false;
                 else
                 {

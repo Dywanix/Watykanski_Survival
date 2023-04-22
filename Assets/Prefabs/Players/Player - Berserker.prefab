@@ -867,6 +867,7 @@ MonoBehaviour:
   Barrel: {fileID: 221019378362755178}
   Hand: {fileID: 221019377957225673}
   Dude: {fileID: 221019378226931272}
+  GunRot: {fileID: 221019377992242561}
   Body: {fileID: 221019378589204403}
   Gun: {fileID: 221019377957225675}
   eq: {fileID: 221019378589204401}
@@ -898,6 +899,7 @@ MonoBehaviour:
   dashCooldown: 0
   dash: 0
   level: 1
+  dayCount: 1
   accessoriesPerType: 5
   healthIncrease: 1.6
   damageIncrease: 0.0025

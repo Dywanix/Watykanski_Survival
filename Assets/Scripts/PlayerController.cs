@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform Barrel, Hand, Dude;
+    public Transform Barrel, Hand, Dude, GunRot;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public TMPro.TextMeshProUGUI magazineInfo, scrapInfo, toolsInfo, tokensInfo;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     // -- statystyki --
     public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
-    public int level = 1, accessoriesPerType;
+    public int level = 1, dayCount = 1, accessoriesPerType;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     float temp;
 
@@ -149,11 +149,9 @@ public class PlayerController : MonoBehaviour
     {
         float gunAngle = Mathf.Atan2(mouseVector.y, mouseVector.x) * Mathf.Rad2Deg;
         Gun.rotation = gunAngle - 90f;
-        /*gunRend.sortingOrder = playerSortingOrder - 1; //put the gun sprite bellow the player sprite
-        if (gunAngle > 0)
-        { //put the gun on top of player if it's at the correct angle
-            gunRend.sortingOrder = playerSortingOrder + 1;
-        }*/
+        GunRot.localScale = new Vector3(0.5f, 0.5f, 1f);
+        if (Gun.rotation > 0f || Gun.rotation < -180f)
+            GunRot.localScale = new Vector3(-0.5f, 0.5f, 1f);
     }
 
     void Action()
@@ -457,6 +455,7 @@ public class PlayerController : MonoBehaviour
     public void NewDay()
     {
         day = true;
+        dayCount++;
         GainTokens(1);
         LevelUp();
     }

@@ -1789,7 +1789,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6601758595229100615}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.006, y: 0.371, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1926,6 +1926,7 @@ MonoBehaviour:
   Barrel: {fileID: 6601758593997722913}
   Hand: {fileID: 6601758593855852963}
   Dude: {fileID: 6601758593906079315}
+  GunRot: {fileID: 6601758595229100612}
   Body: {fileID: 6601758595229335022}
   Gun: {fileID: 6601758593855852965}
   eq: {fileID: 6601758595229335008}
@@ -1957,6 +1958,7 @@ MonoBehaviour:
   dashCooldown: 0
   dash: 0
   level: 1
+  dayCount: 1
   accessoriesPerType: 5
   healthIncrease: 1.2
   damageIncrease: 0.0024

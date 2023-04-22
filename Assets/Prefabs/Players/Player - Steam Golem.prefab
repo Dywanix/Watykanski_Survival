@@ -1113,6 +1113,7 @@ MonoBehaviour:
   Barrel: {fileID: 2585763503920804328}
   Hand: {fileID: 2585763503644783978}
   Dude: {fileID: 2585763503828947610}
+  GunRot: {fileID: 2585763503004487309}
   Body: {fileID: 2585763503004784935}
   Gun: {fileID: 2585763503644783980}
   eq: {fileID: 2585763503004784937}
@@ -1144,6 +1145,7 @@ MonoBehaviour:
   dashCooldown: 0
   dash: 0
   level: 1
+  dayCount: 1
   accessoriesPerType: 5
   healthIncrease: 1.5
   damageIncrease: 0.0022
@@ -1241,8 +1243,6 @@ MonoBehaviour:
   overdriveAccuracy: 0
   temp: 0
   direction: 0
-  gatlingGunCharges: 0
-  railGunCharges: 0
   efficientReloadOverload: 0
   clockworkMachine: 30
   requiredParts: 150
