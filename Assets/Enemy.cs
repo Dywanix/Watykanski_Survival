@@ -166,7 +166,7 @@ public class Enemy : MonoBehaviour
                     slow += collidedBullet.slowDuration;
                 if (collidedBullet.stunChance >= Random.Range(0f, 1f))
                     GainStun(collidedBullet.stunDuration);
-                TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit);
+                TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit, true);
                 if (collidedBullet.DoT > 0)
                     GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
                 if (collidedBullet.incendiary > 0)
@@ -176,17 +176,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void TakeDamage(float value, bool crited)
+    void TakeDamage(float value, bool crited, bool display)
     {
         health -= value;
         hpBar.SetValue(health);
 
-        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Body.rotation + Random.Range(-12f, 12f));
-        GameObject text = Instantiate(damageTook, Body.position, Sight.rotation);
-        Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
-        damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
-        damageDisplay.SetText(value, crited);
-        text_body.AddForce(Sight.up * 3.6f, ForceMode2D.Impulse);
+        if (display)
+        {
+            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Body.rotation + Random.Range(-12f, 12f));
+            GameObject text = Instantiate(damageTook, Body.position, Sight.rotation);
+            Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
+            damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
+            damageDisplay.SetText(value, crited);
+            text_body.AddForce(Sight.up * 3.6f, ForceMode2D.Impulse);
+        }
 
         if (enrageStats.Length > 0)
         {
@@ -259,15 +262,15 @@ public class Enemy : MonoBehaviour
 
     void Burn()
     {
-        vulnerable += 0.055f * 0.5f;
-        temp = (5f + maxHealth * 0.015f) * 0.5f;
-        TakeDamage(temp / DamageTakenMultiplyer(0.8f), false);
+        vulnerable += 0.08f * 0.5f;
+        temp = (3f + maxHealth * 0.01f) * 0.5f;
+        TakeDamage(temp / DamageTakenMultiplyer(0.8f), false, false);
     }
 
     void DoTproc()
     {
         temp = 1f + DoT * 0.35f;
-        TakeDamage(temp / DamageTakenMultiplyer(1f), false);
+        TakeDamage(temp / DamageTakenMultiplyer(1f), false, true);
         DoT -= temp;
     }
 

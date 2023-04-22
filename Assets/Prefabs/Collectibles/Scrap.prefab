@@ -149,3 +149,4 @@ MonoBehaviour:
   Player: {fileID: 0}
   playerStats: {fileID: 0}
   chaseSpeed: 4
+  chaseRange: 5

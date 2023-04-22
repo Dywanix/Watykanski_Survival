@@ -1245,6 +1245,7 @@ MonoBehaviour:
   railGunCharges: 0
   efficientReloadOverload: 0
   clockworkMachine: 30
+  requiredParts: 150
   spareParts: 0
   volleyCount: 0
   bulletsCount: 0

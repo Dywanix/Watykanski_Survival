@@ -110,7 +110,7 @@ public class Equipment : MonoBehaviour
 
     public void SpecialCharges()
     {
-        sawCharges += guns[equipped].Accessories[4] * (1f + 0.15f * guns[equipped].Accessories[4 + playerStats.accessoriesPerType * 3]);
+        sawCharges += guns[equipped].Accessories[4] * guns[equipped].bulletSpread * (1f + 0.15f * guns[equipped].Accessories[4 + playerStats.accessoriesPerType * 3]);
         if (sawCharges >= 12f)
         {
             FireSaw();
@@ -127,22 +127,19 @@ public class Equipment : MonoBehaviour
 
     public void FireSaw()
     {
-        for (int i = 0; i < guns[equipped].bulletSpread; i++)
-        {
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-(3f + 1.1f * guns[equipped].accuracy), (3f + 1.1f * guns[equipped].accuracy)));
-            GameObject bullet = Instantiate(Saw, playerStats.Barrel.position, playerStats.Barrel.rotation);
-            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(playerStats.Barrel.up * guns[equipped].force * 1.22f * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-(3f + 1.1f * guns[equipped].accuracy), (3f + 1.1f * guns[equipped].accuracy)));
+        GameObject bullet = Instantiate(Saw, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * guns[equipped].force * 1.19f * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
 
-            playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            playerStats.SetBullet();
+        playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        playerStats.SetBullet();
 
-            playerStats.firedBullet.damage *= 1.2f;
-            playerStats.firedBullet.penetration += 0.12f;
-            playerStats.firedBullet.DoT += 0.25f;
-            playerStats.firedBullet.pierce += 3;
-            playerStats.firedBullet.pierceEfficiency *= 0.6f; playerStats.firedBullet.pierceEfficiency += 0.6f;
-        }
+        playerStats.firedBullet.damage *= 1.2f;
+        playerStats.firedBullet.penetration += 0.12f;
+        playerStats.firedBullet.DoT += 0.25f + 0.06f * playerStats.firedBullet.DoT;
+        playerStats.firedBullet.pierce += 3;
+        playerStats.firedBullet.pierceEfficiency *= 0.6f; playerStats.firedBullet.pierceEfficiency += 0.6f;
     }
 
     public void FireLaser()

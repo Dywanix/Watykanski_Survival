@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1345848265138812681}
   - component: {fileID: 1345848265138812682}
   - component: {fileID: 1345848265138812683}
+  - component: {fileID: 586580117107319546}
   m_Layer: 0
   m_Name: Tools
   m_TagString: Tools
@@ -133,3 +134,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &586580117107319546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345848265138812684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c283f38a58bff4295f9b0772e030b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  playerStats: {fileID: 0}
+  chaseSpeed: 2
+  chaseRange: 4

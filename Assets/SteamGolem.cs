@@ -11,7 +11,7 @@ public class SteamGolem : MonoBehaviour
     public GameObject ElectricProjectal, IncendiaryProjectal;
 
     public float efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
-    public int gatlingGunCharges, railGunCharges, efficientReloadOverload, clockworkMachine, requiredParts, spareParts, volleyCount, bulletsCount;
+    public int efficientReloadOverload, clockworkMachine, requiredParts, spareParts, volleyCount, bulletsCount;
 
     void Update()
     {
