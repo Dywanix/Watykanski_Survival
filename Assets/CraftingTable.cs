@@ -7,17 +7,20 @@ public class CraftingTable : MonoBehaviour
 {
     public GameObject Player, Glow, Hud;
     // accessory shit
-    public Image[] AInEq, AFront, ATop, ABottom, ARear;
-    public Button[] EQButtons, FButtons, TButtons, BButtons, RButtons;
+    public Image[] AInEq, AEquipped;
+    public Image ThrashCan;
+    public Button[] EQButtons, OnButtons, SelectionButtons;
     public Sprite[] AccessorySprite;
+    public Sprite BCan, RCan;
     public int[] AEQValues, FValues, TValues, BValues, RValues, Weights;
     public GameObject[] tooltips;
 
     public PlayerController playerStats;
-    public TMPro.TextMeshProUGUI Front, Top, Bottom, Rear;
+    public TMPro.TextMeshProUGUI EqippedSlots;
 
+    public int selected;
     int current, tempi;
-    bool active;
+    bool active, delition;
 
     void Update()
     {
@@ -49,24 +52,49 @@ public class CraftingTable : MonoBehaviour
         else Glow.SetActive(false);
     }
 
+    public void ChangeSlot(int which)
+    {
+        selected = which;
+        UpdateInfo();
+    }
+
+    public void Thrash()
+    {
+        if (!delition)
+        {
+            delition = true;
+            ThrashCan.sprite = RCan;
+        }
+        else
+        {
+            delition = false;
+            ThrashCan.sprite = BCan;
+        }
+        UpdateInfo();
+    }
+
     void UpdateInfo()
     {
+        // selection buttons
+        for (int i = 0; i < 4; i++)
+        {
+            SelectionButtons[i].interactable = true;
+        }
+        SelectionButtons[selected].interactable = false;
         // Eq
         for (int i = 0; i < AInEq.Length; i++)
         {
             AInEq[i].enabled = false;
         }
-        for (int i = 0; i < AFront.Length; i++)
+        // Equipped
+        for (int i = 0; i < AEquipped.Length; i++)
         {
-            AFront[i].enabled = false;
-            ATop[i].enabled = false;
-            ABottom[i].enabled = false;
-            ARear[i].enabled = false;
+            AEquipped[i].enabled = false;
         }
 
         // --Eq--
         current = 0;
-        for (int i = 0; i < playerStats.eq.Accessories.Length; i++)
+        for (int i = playerStats.accessoriesPerType * selected; i < playerStats.accessoriesPerType * (selected + 1); i++)
         {
             if (playerStats.eq.Accessories[i] > 0)
             {
@@ -76,27 +104,13 @@ public class CraftingTable : MonoBehaviour
                     AInEq[current].enabled = true;
                     AEQValues[current] = i;
 
-                    if (i < playerStats.accessoriesPerType)
+                    if (delition)
                     {
-                        if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[0] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0])
-                            EQButtons[current].interactable = true;
-                        else EQButtons[current].interactable = false;
-                    }
-                    else if (i < playerStats.accessoriesPerType * 2)
-                    {
-                        if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[1] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1])
-                            EQButtons[current].interactable = true;
-                        else EQButtons[current].interactable = false;
-                    }
-                    else if (i < playerStats.accessoriesPerType * 3)
-                    {
-                        if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[2] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2])
-                            EQButtons[current].interactable = true;
-                        else EQButtons[current].interactable = false;
+                        EQButtons[current].interactable = true;
                     }
                     else
                     {
-                        if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[3] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3])
+                        if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[selected] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[selected])
                             EQButtons[current].interactable = true;
                         else EQButtons[current].interactable = false;
                     }
@@ -105,82 +119,84 @@ public class CraftingTable : MonoBehaviour
                 }
             }
         }
+
         // --Gun--
-        // Front
         current = 0;
-        for (int i = 0; i < playerStats.accessoriesPerType; i++)
+        switch (selected)
         {
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
-            {
-                for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
+            case 0:
+                for (int i = 0; i < playerStats.accessoriesPerType; i++)
                 {
-                    AFront[current].sprite = AccessorySprite[i];
-                    AFront[current].enabled = true;
-                    FValues[current] = i;
-                    current++;
-                }
-            }
-        }
-        Front.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[0].ToString("0");
-
-        // Top
-        current = 0;
-        for (int i = playerStats.accessoriesPerType; i < playerStats.accessoriesPerType * 2; i++)
-        {
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
-            {
-                for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
-                {
-                    ATop[current].sprite = AccessorySprite[i];
-                    ATop[current].enabled = true;
-                    TValues[current] = i;
-                    current++;
-                }
-            }
-        }
-        Top.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[1].ToString("0");
-
-        // Bottom
-        current = 0;
-        for (int i = playerStats.accessoriesPerType * 2; i < playerStats.accessoriesPerType * 3; i++)
-        {
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
-            {
-                for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
-                {
-                    ABottom[current].sprite = AccessorySprite[i];
-                    ABottom[current].enabled = true;
-                    BValues[current] = i;
-                    current++;
-                }
-            }
-        }
-        Bottom.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[2].ToString("0");
-
-        // Rear
-        current = 0;
-        for (int i = playerStats.accessoriesPerType * 3; i < playerStats.accessoriesPerType * 4; i++)
-        {
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
-            {
-                for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
-                {
-                    ARear[current].sprite = AccessorySprite[i];
-                    ARear[current].enabled = true;
-                    RValues[current] = i;
-
-                    if (i == playerStats.accessoriesPerType * 3)
+                    if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
                     {
-                        if (playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[0] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] > 0 && playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[1] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] > 0 && playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[2] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] > 0)
-                            EQButtons[RValues[current]].interactable = true;
-                        else EQButtons[RValues[current]].interactable = false;
+                        for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
+                        {
+                            AEquipped[current].sprite = AccessorySprite[i];
+                            AEquipped[current].enabled = true;
+                            FValues[current] = i;
+                            current++;
+                        }
                     }
-
-                    current++;
                 }
-            }
+                EqippedSlots.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[0].ToString("0");
+                break;
+            case 1:
+                for (int i = playerStats.accessoriesPerType; i < playerStats.accessoriesPerType * 2; i++)
+                {
+                    if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
+                    {
+                        for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
+                        {
+                            AEquipped[current].sprite = AccessorySprite[i];
+                            AEquipped[current].enabled = true;
+                            TValues[current] = i;
+                            current++;
+                        }
+                    }
+                }
+                EqippedSlots.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[1].ToString("0");
+                break;
+            case 2:
+                for (int i = playerStats.accessoriesPerType * 2; i < playerStats.accessoriesPerType * 3; i++)
+                {
+                    if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
+                    {
+                        for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
+                        {
+                            AEquipped[current].sprite = AccessorySprite[i];
+                            AEquipped[current].enabled = true;
+                            BValues[current] = i;
+                            current++;
+                        }
+                    }
+                }
+                EqippedSlots.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[2].ToString("0");
+                break;
+            case 3:
+                for (int i = playerStats.accessoriesPerType * 3; i < playerStats.accessoriesPerType * 4; i++)
+                {
+                    if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[i] > 0)
+                    {
+                        for (int j = 0; j < playerStats.eq.guns[playerStats.eq.equipped].Accessories[i]; j++)
+                        {
+                            AEquipped[current].sprite = AccessorySprite[i];
+                            AEquipped[current].enabled = true;
+                            RValues[current] = i;
+
+                            if (i == playerStats.accessoriesPerType * 3)
+                            {
+                                if (playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[0] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] > 0 && playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[1] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] > 0 && playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[2] - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] > 0)
+                                    EQButtons[RValues[current]].interactable = true;
+                                else EQButtons[RValues[current]].interactable = false;
+                            }
+
+                            current++;
+                        }
+                    }
+                }
+                EqippedSlots.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[3].ToString("0");
+                break;
         }
-        Rear.text = playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3].ToString("0") + "/" + playerStats.eq.guns[playerStats.eq.equipped].MaxSlots[3].ToString("0");
     }
 
     public void TooltipOpen(string pack, int order)
@@ -190,17 +206,22 @@ public class CraftingTable : MonoBehaviour
             case "eq":
                 tempi = AEQValues[order];
                 break;
-            case "front":
-                tempi = FValues[order];
-                break;
-            case "top":
-                tempi = TValues[order];
-                break;
-            case "bottom":
-                tempi = BValues[order];
-                break;
-            case "rear":
-                tempi = RValues[order];
+            case "equipped":
+                switch (selected)
+                {
+                    case 0:
+                        tempi = FValues[order];
+                        break;
+                    case 1:
+                        tempi = TValues[order];
+                        break;
+                    case 2:
+                        tempi = BValues[order];
+                        break;
+                    case 3:
+                        tempi = RValues[order];
+                        break;
+                }
                 break;
         }
         tooltips[tempi].SetActive(true);
@@ -213,17 +234,22 @@ public class CraftingTable : MonoBehaviour
             case "eq":
                 tempi = AEQValues[order];
                 break;
-            case "front":
-                tempi = FValues[order];
-                break;
-            case "top":
-                tempi = TValues[order];
-                break;
-            case "bottom":
-                tempi = BValues[order];
-                break;
-            case "rear":
-                tempi = RValues[order];
+            case "equipped":
+                switch (selected)
+                {
+                    case 0:
+                        tempi = FValues[order];
+                        break;
+                    case 1:
+                        tempi = TValues[order];
+                        break;
+                    case 2:
+                        tempi = BValues[order];
+                        break;
+                    case 3:
+                        tempi = RValues[order];
+                        break;
+                }
                 break;
         }
         tooltips[tempi].SetActive(false);
@@ -231,82 +257,89 @@ public class CraftingTable : MonoBehaviour
 
     public void Equip(int which)
     {
-        playerStats.eq.Accessories[AEQValues[which]]--;
-        playerStats.eq.guns[playerStats.eq.equipped].Accessories[AEQValues[which]]++;
+        if (!delition)
+        {
+            playerStats.eq.Accessories[AEQValues[which]]--;
+            playerStats.eq.guns[playerStats.eq.equipped].Accessories[AEQValues[which]]++;
 
-        if (AEQValues[which] < playerStats.accessoriesPerType)
-        {
-            playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] += Weights[AEQValues[which]];
-        }
-        else if (AEQValues[which] < playerStats.accessoriesPerType * 2)
-        {
-            playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] += Weights[AEQValues[which]];
-        }
-        else if (AEQValues[which] < playerStats.accessoriesPerType * 3)
-        {
-            playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] += Weights[AEQValues[which]];
+            if (AEQValues[which] < playerStats.accessoriesPerType)
+            {
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] += Weights[AEQValues[which]];
+            }
+            else if (AEQValues[which] < playerStats.accessoriesPerType * 2)
+            {
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] += Weights[AEQValues[which]];
+            }
+            else if (AEQValues[which] < playerStats.accessoriesPerType * 3)
+            {
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] += Weights[AEQValues[which]];
+            }
+            else
+            {
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3] += Weights[AEQValues[which]];
+            }
+
+            GainEffect(AEQValues[which]);
+            tooltips[AEQValues[which]].SetActive(false);
         }
         else
         {
-            playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3] += Weights[AEQValues[which]];
+            playerStats.eq.Accessories[AEQValues[which]]--;
+            playerStats.GainScrap(8);
         }
 
-        GainEffect(AEQValues[which]);
-        tooltips[AEQValues[which]].SetActive(false);
-
         UpdateInfo();
     }
 
-    public void UnEquipF(int which)
+    public void UnEquip(int which)
     {
-        playerStats.eq.Accessories[FValues[which]]++;
-        playerStats.eq.guns[playerStats.eq.equipped].Accessories[FValues[which]]--;
+        switch (selected)
+        {
+            case 0:
+                playerStats.eq.Accessories[FValues[which]]++;
+                playerStats.eq.guns[playerStats.eq.equipped].Accessories[FValues[which]]--;
 
-        playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] -= Weights[FValues[which]];
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[0] -= Weights[FValues[which]];
 
-        LoseEffect(FValues[which]);
-        tooltips[FValues[which]].SetActive(false);
+                LoseEffect(FValues[which]);
+                tooltips[FValues[which]].SetActive(false);
 
-        UpdateInfo();
-    }
+                UpdateInfo();
+                break;
+            case 1:
+                playerStats.eq.Accessories[TValues[which]]++;
+                playerStats.eq.guns[playerStats.eq.equipped].Accessories[TValues[which]]--;
 
-    public void UnEquipT(int which)
-    {
-        playerStats.eq.Accessories[TValues[which]]++;
-        playerStats.eq.guns[playerStats.eq.equipped].Accessories[TValues[which]]--;
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] -= Weights[TValues[which]];
 
-        playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[1] -= Weights[TValues[which]];
+                LoseEffect(TValues[which]);
+                tooltips[TValues[which]].SetActive(false);
 
-        LoseEffect(TValues[which]);
-        tooltips[TValues[which]].SetActive(false);
+                UpdateInfo();
+                break;
+            case 2:
+                playerStats.eq.Accessories[BValues[which]]++;
+                playerStats.eq.guns[playerStats.eq.equipped].Accessories[BValues[which]]--;
 
-        UpdateInfo();
-    }
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] -= Weights[BValues[which]];
 
-    public void UnEquipB(int which)
-    {
-        playerStats.eq.Accessories[BValues[which]]++;
-        playerStats.eq.guns[playerStats.eq.equipped].Accessories[BValues[which]]--;
+                LoseEffect(BValues[which]);
+                tooltips[BValues[which]].SetActive(false);
 
-        playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[2] -= Weights[BValues[which]];
+                UpdateInfo();
+                break;
+            case 3:
+                playerStats.eq.Accessories[RValues[which]]++;
+                playerStats.eq.guns[playerStats.eq.equipped].Accessories[RValues[which]]--;
 
-        LoseEffect(BValues[which]);
-        tooltips[BValues[which]].SetActive(false);
+                playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3] -= Weights[RValues[which]];
 
-        UpdateInfo();
-    }
+                LoseEffect(RValues[which]);
+                tooltips[RValues[which]].SetActive(false);
 
-    public void UnEquipR(int which)
-    {
-        playerStats.eq.Accessories[RValues[which]]++;
-        playerStats.eq.guns[playerStats.eq.equipped].Accessories[RValues[which]]--;
-
-        playerStats.eq.guns[playerStats.eq.equipped].TakenSlots[3] -= Weights[RValues[which]];
-
-        LoseEffect(RValues[which]);
-        tooltips[RValues[which]].SetActive(false);
-
-        UpdateInfo();
+                UpdateInfo();
+                break;
+        }
     }
 
     void GainEffect(int which)
