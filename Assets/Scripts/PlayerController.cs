@@ -468,7 +468,10 @@ public class PlayerController : MonoBehaviour
         fireRateBonus += fireRateIncrease;
         movementSpeed += movementSpeedIncrease;
         if (berserker)
+        {
             berserker.UpdateAxeDamage();
+            berserker.axeMaxCharges++;
+        }
     }
 
     public void GainScrap(int amount)

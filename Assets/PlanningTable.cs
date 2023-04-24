@@ -15,6 +15,7 @@ public class PlanningTable : MonoBehaviour
     public TMPro.TextMeshProUGUI[] Count;
 
     public int[] rolled;
+    public int itemCost, bought;
     bool active, viable;
 
     void Update()
@@ -51,14 +52,14 @@ public class PlanningTable : MonoBehaviour
 
     void UpdateInfo()
     {
-        if (playerStats.tools >= 5)
+        if (playerStats.tools >= itemCost)
             Buy.interactable = true;
         else Buy.interactable = false;
     }
 
     public void Roll()
     {
-        playerStats.SpendTools(5);
+        playerStats.SpendTools(itemCost);
         UpdateInfo();
 
         for (int i = 0; i < 2; i++)
@@ -88,6 +89,10 @@ public class PlanningTable : MonoBehaviour
             Count[i].text = playerStats.eq.Items[rolled[i]].ToString("0") + "/5";
             Picks[i].interactable = true;
         }
+
+        bought++;
+        if (bought % 3 == 0)
+            itemCost++;
     }
 
     public void Pick(int which)

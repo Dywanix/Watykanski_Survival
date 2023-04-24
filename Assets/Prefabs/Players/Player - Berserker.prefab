@@ -986,11 +986,12 @@ MonoBehaviour:
   playerStats: {fileID: 221019378589204402}
   Ability1: {fileID: 221019379204872623}
   Ability2: {fileID: 221019379566919824}
-  AxeDamage: {fileID: 5102501570890134935}
+  ChargesCount: {fileID: 5102501570890134935}
   BoomerangAxe: {fileID: 2240648045073124737, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
   Axe: {fileID: 7917560366427513333}
   AxeThrown: {fileID: 0}
   axeDamage: 0
+  axeCharging: 0
   damageTaken: 0
   enrageCooldown: 0
   enrageMaxCooldown: 0
@@ -999,6 +1000,8 @@ MonoBehaviour:
   enrageDamageIncrease: 0
   swipeCooldown: 0
   swipeMaxCooldown: 0
+  axeCharges: 5
+  axeMaxCharges: 9
 --- !u!1 &221019378724568890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,8 +2184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionRadius: {fileID: 0}
-  duration: 10
-  damage: 26
+  duration: 100
+  damage: 14.5
   penetration: 0.22
   armorShred: 0
   vulnerableApplied: 0
@@ -2197,6 +2200,7 @@ MonoBehaviour:
   infinite: 1
   crit: 0
   AoE: 0
+  axe: {fileID: 221019378589204364}
 --- !u!58 &1429112563275754954
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2332,7 +2336,7 @@ GameObject:
   - component: {fileID: 1517985007696370302}
   - component: {fileID: 5102501570890134935}
   m_Layer: 5
-  m_Name: Axe Damage
+  m_Name: Axe Charges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2502,7 +2506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xAngle: 0
   yAngle: 0
-  zAngle: -0.3
+  zAngle: -0.48
   body: {fileID: 5420829613344129175}
 --- !u!1 &5051115478765496968
 GameObject:

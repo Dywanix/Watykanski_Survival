@@ -16958,6 +16958,8 @@ MonoBehaviour:
   - {fileID: 718000193}
   - {fileID: 317708071}
   rolled: 000000000000000000000000
+  itemCost: 4
+  bought: 0
 --- !u!61 &872866548
 BoxCollider2D:
   m_ObjectHideFlags: 0

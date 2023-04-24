@@ -7,11 +7,12 @@ public class Berserker : MonoBehaviour
 {
     public PlayerController playerStats;
     public Image Ability1, Ability2;
-    public TMPro.TextMeshProUGUI AxeDamage;
+    public TMPro.TextMeshProUGUI ChargesCount;
     public GameObject BoomerangAxe;
     public Bullet Axe, AxeThrown;
 
-    public float axeDamage, damageTaken, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
+    public float axeDamage, axeCharging, damageTaken, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
+    public int axeCharges, axeMaxCharges;
 
     void Start()
     {
@@ -28,6 +29,16 @@ public class Berserker : MonoBehaviour
             Action();
         }
 
+        if (axeCharges < axeMaxCharges)
+        {
+            axeCharging += (0.83f + 0.11f * playerStats.level) * Time.deltaTime;
+            if (axeCharging >= 1f)
+            {
+                axeCharging -= 1f;
+                AxeGainCharge();
+            }
+        }
+
         if (enrageCooldown > 0)
         {
             enrageCooldown -= Time.deltaTime;
@@ -39,6 +50,21 @@ public class Berserker : MonoBehaviour
             swipeCooldown -= Time.deltaTime;
             Ability2.fillAmount = 1 - (swipeCooldown / swipeMaxCooldown);
         }
+    }
+
+    void AxeGainCharge()
+    {
+        axeCharges++;
+        ChargesCount.text = axeCharges.ToString("0");
+        UpdateAxeDamage();
+    }
+
+    public void AxeStuck()
+    {
+        if (axeCharges > 0)
+            axeCharges--;
+        ChargesCount.text = axeCharges.ToString("0");
+        UpdateAxeDamage();
     }
 
     void Action()
@@ -55,10 +81,13 @@ public class Berserker : MonoBehaviour
 
     public void UpdateAxeDamage()
     {
-        axeDamage = 22 + playerStats.level + damageTaken / 360f;
+        axeDamage = 15.02f + 0.574f * playerStats.level + damageTaken / 420f;
         axeDamage *= playerStats.DamageDealtMultiplyer(1f);
+        if (axeCharges > 0)
+        {
+            axeDamage *= 1.92f;
+        }
         Axe.damage = axeDamage;
-        AxeDamage.text = axeDamage.ToString("0");
     }
 
 
