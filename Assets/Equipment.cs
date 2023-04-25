@@ -28,7 +28,7 @@ public class Equipment : MonoBehaviour
     {
         Invoke("AutoReload", 3f);
         Invoke("ThrowCaltrops", 8f);
-        Invoke("KnifeThrow", 3f);
+        Invoke("KnifeThrow", 2.85f);
         Invoke("ThrowSaw", 3.6f);
     }
 
@@ -62,7 +62,7 @@ public class Equipment : MonoBehaviour
         {
             for (int i = 0; i < 2 * Items[1]; i++)
             {
-                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 6f - 4f * Items[1] + (4f + 6f / Items[1]) * i);
+                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 6f - 3f * Items[1] + (3f + 6f / Items[1]) * i);
                 GameObject knife = Instantiate(Knife, Barrel.position, Barrel.rotation);
                 Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
                 knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
@@ -72,7 +72,7 @@ public class Equipment : MonoBehaviour
             }
         }
 
-        Invoke("KnifeThrow", (3f / (1f + playerStats.SpeedMultiplyer(0.44f))) / itemsActivationRate);
+        Invoke("KnifeThrow", (2.85f / (1f + playerStats.SpeedMultiplyer(0.5f))) / itemsActivationRate);
     }
 
     void ThrowSaw()
@@ -85,7 +85,7 @@ public class Equipment : MonoBehaviour
             saw_body.AddForce(Barrel.up * Random.Range(18.2f, 19.7f), ForceMode2D.Impulse);
 
             firedBullet = saw.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage *= playerStats.DamageDealtMultiplyer(1.08f);
+            firedBullet.damage *= playerStats.DamageDealtMultiplyer(1.12f);
         }
 
         if (Items[2] > 1) Invoke("ThrowSaw", (3.6f / Items[2]) / itemsActivationRate);

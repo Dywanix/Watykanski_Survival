@@ -16,7 +16,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public Spawner[] spawners;
     private Spawner currentSpawner;
     public GameObject Player;
-    public GameObject[] Players, bosses;
+    public GameObject[] Players, epics, bosses;
     public Wave endlessOne;
     public Wave[] waves;
     public Enemy current;
@@ -24,7 +24,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public Image DayBar;
     public TMPro.TextMeshProUGUI dayCount;
 
-    public int day, hordeSize, roll;
+    public int day, hordeSize, roll, epicCharges;
     public float time, maxTime, spawnGap, spawnTime, rareSpawnGap, rareSpawnTime;
 
     void Start()
@@ -141,7 +141,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         if (day > waves.Length)
         {
-            roll = Random.Range(0, endlessOne.RareMobs.Length);
+            roll = Random.Range(0, endlessOne.RareMobs.Length );
 
             currentSpawner = spawners[Random.Range(0, spawners.Length)];
 
@@ -149,11 +149,12 @@ public class Day_Night_Cycle : MonoBehaviour
             {
                 currentSpawner.Spawn(endlessOne.RareMobs[roll]);
                 rareSpawnTime += rareSpawnGap * endlessOne.rareWeights[roll];
+                GainEpicCharge(endlessOne.rareWeights[roll]);
             }
         }
         else
         {
-            roll = Random.Range(0, waves[day - 1].RareMobs.Length);
+            roll = Random.Range(0, waves[day - 1].RareMobs.Length + 1);
 
             currentSpawner = spawners[Random.Range(0, spawners.Length)];
 
@@ -161,7 +162,21 @@ public class Day_Night_Cycle : MonoBehaviour
             {
                 currentSpawner.Spawn(waves[day - 1].RareMobs[roll]);
                 rareSpawnTime += rareSpawnGap * waves[day - 1].rareWeights[roll];
+                GainEpicCharge(waves[day - 1].rareWeights[roll]);
             }
+        }
+    }
+
+    void GainEpicCharge(int value)
+    {
+        epicCharges += value;
+        epicCharges += day / 3;
+
+        if (epicCharges >= 100)
+        {
+            currentSpawner = spawners[Random.Range(0, spawners.Length)];
+            currentSpawner.Spawn(epics[Random.Range(0, epics.Length)]);
+            epicCharges -= 100;
         }
     }
 

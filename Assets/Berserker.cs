@@ -62,7 +62,11 @@ public class Berserker : MonoBehaviour
     public void AxeStuck()
     {
         if (axeCharges > 0)
-            axeCharges--;
+        {
+            if (axeCharges >= 8)
+                axeCharges -= 2;
+            else axeCharges--;
+        }
         ChargesCount.text = axeCharges.ToString("0");
         UpdateAxeDamage();
     }
@@ -86,6 +90,8 @@ public class Berserker : MonoBehaviour
         if (axeCharges > 0)
         {
             axeDamage *= 1.92f;
+            if (axeCharges >= 8)
+                axeDamage *= 1.23f;
         }
         Axe.damage = axeDamage;
     }
