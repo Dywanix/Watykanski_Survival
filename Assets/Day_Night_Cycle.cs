@@ -26,6 +26,7 @@ public class Day_Night_Cycle : MonoBehaviour
 
     public int day, hordeSize, roll, epicCharges;
     public float time, maxTime, spawnGap, spawnTime, rareSpawnGap, rareSpawnTime;
+    public bool bossNight;
 
     void Start()
     {
@@ -51,18 +52,20 @@ public class Day_Night_Cycle : MonoBehaviour
                     StartNight();
                 break;
             case (TimeState.Night):
+                if (bossNight == false)
+                {
+                    time += Time.deltaTime;
+                    if (time >= maxTime)
+                        StartDay();
 
-                time += Time.deltaTime;
-                if (time >= maxTime)
-                    StartDay();
+                    spawnTime -= Time.deltaTime;
+                    if (spawnTime <= 0f)
+                        Summon();
 
-                spawnTime -= Time.deltaTime;
-                if (spawnTime <= 0f)
-                    Summon();
-
-                rareSpawnTime -= Time.deltaTime;
-                if (rareSpawnTime <= 0f)
-                    SummonRare();
+                    rareSpawnTime -= Time.deltaTime;
+                    if (rareSpawnTime <= 0f)
+                        SummonRare();
+                }
                 break;
         }
         if (Input.GetKeyDown(KeyCode.P))
@@ -79,23 +82,25 @@ public class Day_Night_Cycle : MonoBehaviour
         maxTime = 88f + 8f * day;
         time = 0;
 
-        hordeSize = 16 + day * 7;
-
-        spawnGap = 1.6f / (day * (day + 1) / 4 + 0.6f * day + 1f);
-        rareSpawnGap = 4.5f / (day * (day + 1) / 3.2f + 0.75f * day + 1f);
-
-        spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
-        rareSpawnTime = rareSpawnGap * (1.4f + hordeSize * 0.2f);
-
-        /*if (day % 5 == 0)
+        if (day % 3 == 0)
         {
-            while (hordeSize >= 13)
-            {
-                hordeSize -= 13;
-                SummonBoss();
-            }
-        }*/
-        SummonHorde();
+            SummonBoss();
+            bossNight = true;
+        }
+        else
+        {
+            bossNight = false;
+
+            hordeSize = 16 + day * 7;
+
+            spawnGap = 1.6f / (day * (day + 1) / 4 + 0.6f * day + 1f);
+            rareSpawnGap = 4.5f / (day * (day + 1) / 3.2f + 0.75f * day + 1f);
+
+            spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
+            rareSpawnTime = rareSpawnGap * (1.4f + hordeSize * 0.2f);
+
+            SummonHorde();
+        }
     }
 
     void StartDay()

@@ -96,6 +96,10 @@ PrefabInstance:
       value: 1.92
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
+      propertyPath: rare
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: armor
       value: 52.7
       objectReference: {fileID: 0}

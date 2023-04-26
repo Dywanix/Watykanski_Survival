@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject ExplosionRadius;
     private Bullet Explosion;
-    public float duration, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, incendiary, crateBonus;
+    public float duration, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, incendiary;
     public int pierce;
     public bool infinite, crit, AoE;
 

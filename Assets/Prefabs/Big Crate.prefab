@@ -146,12 +146,12 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   Dir: {fileID: 8143966641130539315}
   Sight: {fileID: 3895325000520514801}
-  scrapDroppedRange: 070000000b000000
+  scrapDroppedRange: 060000000d000000
   itemsCount: 2
-  maxHealth: 185
-  health: 185
-  dropChance: 0.2718
-  scrapChance: 0.011
+  maxHealth: 200
+  health: 200
+  dropChance: 0.2938
+  scrapChance: 0.0111
   healthIncrease: 0
   dropChanceIncrease: 0
   endless: 0

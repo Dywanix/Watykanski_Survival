@@ -23377,7 +23377,7 @@ MonoBehaviour:
   epics:
   - {fileID: 2230373966677284076, guid: 44684d7bdc8c6ab4da444ee0c7bc9a5b, type: 3}
   bosses:
-  - {fileID: 1033653788443382648, guid: ed31f7ebe5c142d468e6fbb9823d5543, type: 3}
+  - {fileID: 2757717323102108387, guid: 8a9ae97510b36cd4a9557e06202b7a0a, type: 3}
   endlessOne: {fileID: 1029557328}
   waves: []
   current: {fileID: 0}
@@ -23394,6 +23394,7 @@ MonoBehaviour:
   spawnTime: 0
   rareSpawnGap: 0
   rareSpawnTime: 0
+  bossNight: 0
 --- !u!1 &1184726119
 GameObject:
   m_ObjectHideFlags: 0

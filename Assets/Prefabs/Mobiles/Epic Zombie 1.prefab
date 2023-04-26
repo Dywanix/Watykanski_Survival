@@ -84,6 +84,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
+      propertyPath: rare
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: armor
       value: 57.7
       objectReference: {fileID: 0}

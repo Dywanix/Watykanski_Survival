@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     // ----- enemy stats -----
     private int roll;
     private float temp;
-    public bool rare;
+    public bool rare, boss;
 
     // -- Health & Resistance
     public Bar hpBar;
@@ -293,6 +293,11 @@ public class Enemy : MonoBehaviour
         {
             if (itemChance >= Random.Range(0f, 1f))
                 DropItem();
+        }
+
+        if (boss)
+        {
+            // coœ, jeszcze nie wiem jak zrobic
         }
 
         Destroy(gameObject);

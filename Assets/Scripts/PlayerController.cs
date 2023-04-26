@@ -408,7 +408,7 @@ public class PlayerController : MonoBehaviour
         return 1f + (damageBonus - 1f) * efficiency;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Collided(Collider2D other)
     {
         if (other.transform.tag == "Scrap")
         {
@@ -448,7 +448,7 @@ public class PlayerController : MonoBehaviour
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
             TakeDamage(collidedBullet.damage);
             GainPoison(collidedBullet.poison);
-            //Destroy(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
