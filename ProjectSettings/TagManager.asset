@@ -15,6 +15,7 @@ TagManager:
   - Battery
   - Accessory
   - Token
+  - Cycle
   layers:
   - Default
   - TransparentFX

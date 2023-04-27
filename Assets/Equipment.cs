@@ -15,9 +15,10 @@ public class Equipment : MonoBehaviour
     private Bullet firedBullet;
 
     public int equipped, item;
+    float temp;
 
     // -- items
-    public GameObject Caltrop, Knife;
+    public GameObject Caltrop, Knife, Cleaver;
     public float itemsActivationRate = 1f;
 
     // -- special bullets
@@ -29,7 +30,8 @@ public class Equipment : MonoBehaviour
         Invoke("AutoReload", 3f);
         Invoke("ThrowCaltrops", 8f);
         Invoke("KnifeThrow", 2.85f);
-        Invoke("ThrowSaw", 3.6f);
+        Invoke("ThrowSaw", 3.5f);
+        Invoke("ThrowCleaver", 4f);
     }
 
     void Update()
@@ -72,7 +74,8 @@ public class Equipment : MonoBehaviour
             }
         }
 
-        Invoke("KnifeThrow", (2.85f / (1f + playerStats.SpeedMultiplyer(0.5f))) / itemsActivationRate);
+        temp = (2.85f / (1f + playerStats.SpeedMultiplyer(0.5f))) / itemsActivationRate;
+        Invoke("KnifeThrow", temp);
     }
 
     void ThrowSaw()
@@ -82,14 +85,38 @@ public class Equipment : MonoBehaviour
             Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(0f, 360f));
             GameObject saw = Instantiate(Saw, Barrel.position, Barrel.rotation);
             Rigidbody2D saw_body = saw.GetComponent<Rigidbody2D>();
-            saw_body.AddForce(Barrel.up * Random.Range(18.2f, 19.7f), ForceMode2D.Impulse);
+            saw_body.AddForce(Barrel.up * Random.Range(17.3f, 18.65f), ForceMode2D.Impulse);
 
             firedBullet = saw.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage *= playerStats.DamageDealtMultiplyer(1.12f);
         }
 
-        if (Items[2] > 1) Invoke("ThrowSaw", (3.6f / Items[2]) / itemsActivationRate);
-        else Invoke("ThrowSaw", 3.6f / itemsActivationRate);
+        temp = 3.5f / itemsActivationRate;
+
+        temp /= 0.1f + 0.9f * Items[2];
+
+        Invoke("ThrowSaw", temp);
+    }
+
+    void ThrowCleaver()
+    {
+        if (Items[10] > 0 && !playerStats.day)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-(12 + 2 * Items[10]), (12 + 2 * Items[10])));
+            GameObject cleaver = Instantiate(Cleaver, Barrel.position, Barrel.rotation);
+            Rigidbody2D cleaver_body = cleaver.GetComponent<Rigidbody2D>();
+            cleaver_body.AddForce(Barrel.up * Random.Range(16.25f, 17.55f), ForceMode2D.Impulse);
+
+            firedBullet = cleaver.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = 40 + 0.05f * playerStats.maxHealth + 9 * Items[10];
+            firedBullet.damage *= playerStats.DamageDealtMultiplyer(1f);
+        }
+
+        temp = (4f / (1f + playerStats.SpeedMultiplyer(0.6f))) / itemsActivationRate;
+
+        temp /= 0.25f + 0.75f * Items[10];
+
+        Invoke("ThrowCleaver", temp);
     }
 
     void AutoReload()

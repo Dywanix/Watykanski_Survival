@@ -28,10 +28,12 @@ public class PlayerController : MonoBehaviour
     public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
     public int level = 1, dayCount = 1, accessoriesPerType;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
+    int tempi;
     float temp;
 
     // -- zasoby --
-    public int scrap, tools, tokens;
+    public int tools, tokens;
+    public float scrap;
 
     // -- animacje --
     public Animator animator;
@@ -90,6 +92,7 @@ public class PlayerController : MonoBehaviour
     void Tick()
     {
         RestoreHealth(maxHealth * 0.0025f);
+        RestoreHealth(maxHealth * 0.001f * eq.Items[5]);
 
         if (berserker == true)
             RestoreHealth((maxHealth * 3f - health * 2f) * 0.002f);
@@ -365,6 +368,21 @@ public class PlayerController : MonoBehaviour
         {
             dash = 36f + movementSpeed * 0.5f;
             dashCooldown = 8f;
+
+            tempi = eq.guns[eq.equipped].magazineSize * eq.Items[7] / 5;
+            if (eq.guns[eq.equipped].bulletsLeft > eq.guns[eq.equipped].magazineSize)
+            {
+                // nothing
+            }
+            else if (eq.guns[eq.equipped].magazineSize - eq.guns[eq.equipped].bulletsLeft < tempi)
+            {
+                eq.guns[eq.equipped].bulletsLeft = eq.guns[eq.equipped].magazineSize;
+            }
+            else
+            {
+                eq.guns[eq.equipped].bulletsLeft += tempi;
+            }
+            DisplayAmmo();
         }
     }
 
@@ -463,7 +481,7 @@ public class PlayerController : MonoBehaviour
     public void LevelUp()
     {
         level++;
-        maxHealth += healthIncrease;
+        GainHP(healthIncrease);
         damageBonus += damageIncrease;
         fireRateBonus += fireRateIncrease;
         movementSpeed += movementSpeedIncrease;
@@ -474,8 +492,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void GainScrap(int amount)
+    public void GainHP(float value)
     {
+        maxHealth += value;
+        health += value;
+        if (eq.Items[8] > 0)
+        {
+            damageBonus += 0.0004f * (maxHealth - 50f) * eq.Items[8];
+        }
+    }
+
+    public void GainScrap(float amount)
+    {
+        amount *= 1f + 0.2f * eq.Items[5];
+
         scrap += amount;
         scrapInfo.text = scrap.ToString("0");
 
@@ -483,7 +513,7 @@ public class PlayerController : MonoBehaviour
             steamGolem.ClockworkMachine(amount);
     }
 
-    public void SpendScrap(int amount)
+    public void SpendScrap(float amount)
     {
         scrap -= amount;
         scrapInfo.text = scrap.ToString("0");

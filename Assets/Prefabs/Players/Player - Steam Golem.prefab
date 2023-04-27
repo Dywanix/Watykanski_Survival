@@ -1151,9 +1151,9 @@ MonoBehaviour:
   fireRateIncrease: 0.0016
   movementSpeedIncrease: 0.006
   additionalCritChance: 0
-  scrap: 65
   tools: 3
   tokens: 0
+  scrap: 65
   animator: {fileID: 1580280855743408777}
   moveSpeed: 5
 --- !u!114 &2585763503004784937
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   - {fileID: 2585763502664162634}
   - {fileID: 2585763504064142085}
   - {fileID: 2585763503652434596}
-  Items: 00000000000000000000000000000000
+  Items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 0}
   equippedGun: {fileID: 2585763503004487308}
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   item: 0
   Caltrop: {fileID: 8623896585513593077, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
   Knife: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
+  Cleaver: {fileID: 3420914829355466476, guid: 3164997be77450344b880a82dcd4ee35, type: 3}
   itemsActivationRate: 1
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
   Laser: {fileID: 1191445889087333895, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
@@ -1208,6 +1209,7 @@ MonoBehaviour:
   SparePartsCount: {fileID: 2155828842643591227}
   ElectricProjectal: {fileID: 2540284202478483422, guid: e9956187fdfe76d4ba3e4affda225ee9, type: 3}
   IncendiaryProjectal: {fileID: 4286141280913217741, guid: 1005c90becbd1934cab9c205e9929beb, type: 3}
+  clockworkMachine: 30
   efficientReloadCooldown: 0
   efficientReloadMaxCooldown: 0
   reloadedProcentage: 0
@@ -1217,7 +1219,6 @@ MonoBehaviour:
   temp: 0
   direction: 0
   efficientReloadOverload: 0
-  clockworkMachine: 30
   requiredParts: 150
   spareParts: 0
   volleyCount: 0

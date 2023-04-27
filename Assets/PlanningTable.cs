@@ -15,7 +15,7 @@ public class PlanningTable : MonoBehaviour
     public TMPro.TextMeshProUGUI[] Count;
 
     public int[] rolled;
-    public int itemCost, bought;
+    public int itemCost, bought, tempi;
     bool active, viable;
 
     void Update()
@@ -62,7 +62,7 @@ public class PlanningTable : MonoBehaviour
         playerStats.SpendTools(itemCost);
         UpdateInfo();
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             viable = false;
             do
@@ -101,7 +101,7 @@ public class PlanningTable : MonoBehaviour
         Count[which].text = playerStats.eq.Items[rolled[which]].ToString("0") + "/5";
         UpdateInfo();
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             Picks[i].interactable = false;
         }
@@ -110,6 +110,22 @@ public class PlanningTable : MonoBehaviour
         {
             case 3:
                 playerStats.eq.itemsActivationRate *= 1.22f;
+                break;
+            case 4:
+                playerStats.GainHP(13 + 1.5f * playerStats.level);
+                playerStats.healthIncrease += 1.5f;
+                break;
+            case 6:
+                playerStats.damageBonus += 1.6f + 0.15f * playerStats.level;
+                playerStats.damageIncrease += 0.15f;
+                break;
+            case 7:
+                tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 5;
+                playerStats.eq.guns[playerStats.eq.equipped].magazineSize += tempi;
+                playerStats.DisplayAmmo();
+                break;
+            case 8:
+                playerStats.damageBonus += 0.0004f * (playerStats.maxHealth - 50f);
                 break;
         }
     }

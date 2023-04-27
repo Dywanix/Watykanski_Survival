@@ -85,7 +85,7 @@ public class Berserker : MonoBehaviour
 
     public void UpdateAxeDamage()
     {
-        axeDamage = 15.02f + 0.574f * playerStats.level + damageTaken / 420f;
+        axeDamage = 12f + 0.5f * playerStats.level + damageTaken / 316f;
         axeDamage *= playerStats.DamageDealtMultiplyer(1f);
         if (axeCharges > 0)
         {

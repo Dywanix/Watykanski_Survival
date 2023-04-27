@@ -37,6 +37,7 @@ public class Giant : MonoBehaviour
         enemy.movementSpeed += 0.06f;
         enemy.attackSpeed *= 0.96f;
         enemy.attackDamage += 0.44f;
+        enemy.vulnerable *= 1.006f;
         enemy.vulnerable += 0.012f;
 
         enemy.StartCoroutine(enemy.attackTime());
@@ -80,13 +81,13 @@ public class Giant : MonoBehaviour
                 }
             }
 
-            additionalStone += 0.028f + enemy.attackDamage * 0.014f;
+            additionalStone += 0.03f + enemy.attackDamage * 0.015f;
         }
         else
         {
-            additionalStone += 0.07f + enemy.attackDamage * 0.028f;
+            additionalStone += 0.075f + enemy.attackDamage * 0.03f;
         }
 
-        Invoke("Throw", 3f + 0.4f * enemy.attackSpeed);
+        Invoke("Throw", 2.4f + 0.5f * enemy.attackSpeed);
     }
 }

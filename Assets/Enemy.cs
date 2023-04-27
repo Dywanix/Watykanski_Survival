@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public Transform Sight;
     private Bullet collidedBullet;
     private DamageTaken damageDisplay;
+    public Day_Night_Cycle day_night;
 
     // ----- enemy stats -----
     private int roll;
@@ -63,11 +64,21 @@ public class Enemy : MonoBehaviour
             movementSpeed *= 0.988f + 0.012f * playerStats.dayCount;
         }
 
+        if (boss)
+        {
+            maxHealth *= 0.988f + 0.012f * playerStats.dayCount;
+            attackDamage *= 0.982f + 0.018f * playerStats.dayCount;
+            day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
+        }
+
         if (ranged)
         {
             attackRange *= Random.Range(0.95f, 1.05f);
             force *= Random.Range(0.95f, 1.05f);
         }
+
+        scrapChance *= 1f + 0.15f * playerStats.eq.Items[9];
+        itemChance *= 1f + 0.08f * playerStats.eq.Items[9];
 
         health = maxHealth;
         hpBar.SetMaxValue(maxHealth);
@@ -297,7 +308,7 @@ public class Enemy : MonoBehaviour
 
         if (boss)
         {
-            // coœ, jeszcze nie wiem jak zrobic
+            day_night.StartDay();
         }
 
         Destroy(gameObject);

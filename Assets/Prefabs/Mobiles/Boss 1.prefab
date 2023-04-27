@@ -224,8 +224,8 @@ MonoBehaviour:
   boss: 1
   hpBar: {fileID: 2616667639582891396}
   weight: 100
-  maxHealth: 3300
-  health: 3300
+  maxHealth: 3312
+  health: 3312
   regen: 8
   armor: 84
   vulnerable: 0
@@ -245,9 +245,9 @@ MonoBehaviour:
   enrageStats:
   - attackDamage
   enrageValue:
-  - 0.0033
-  scrapChance: 0.275
-  itemChance: 0.1615
+  - 0.0034
+  scrapChance: 0.283
+  itemChance: 0.1695
   scrapCount: 2
   itemCount: 1
 --- !u!50 &1595842549948974947

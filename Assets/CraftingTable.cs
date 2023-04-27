@@ -285,7 +285,7 @@ public class CraftingTable : MonoBehaviour
         else
         {
             playerStats.eq.Accessories[AEQValues[which]]--;
-            playerStats.GainScrap(8);
+            playerStats.GainScrap(12);
         }
 
         UpdateInfo();
@@ -407,6 +407,7 @@ public class CraftingTable : MonoBehaviour
                     case 0:
                         tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 6;
                         playerStats.eq.guns[playerStats.eq.equipped].magazineSize += tempi;
+                        playerStats.DisplayAmmo();
                         break;
                     case 1:
                         playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.88f;
@@ -516,6 +517,7 @@ public class CraftingTable : MonoBehaviour
                     case 0:
                         tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 7;
                         playerStats.eq.guns[playerStats.eq.equipped].magazineSize -= tempi;
+                        playerStats.DisplayAmmo();
                         break;
                     case 1:
                         playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.88f;

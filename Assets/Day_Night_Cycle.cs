@@ -24,7 +24,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public Image DayBar;
     public TMPro.TextMeshProUGUI dayCount;
 
-    public int day, hordeSize, roll, epicCharges;
+    public int day, bossFrequency, hordeSize, roll, epicCharges;
     public float time, maxTime, spawnGap, spawnTime, rareSpawnGap, rareSpawnTime;
     public bool bossNight;
 
@@ -82,7 +82,7 @@ public class Day_Night_Cycle : MonoBehaviour
         maxTime = 88f + 8f * day;
         time = 0;
 
-        if (day % 3 == 0)
+        if (day % bossFrequency == 0)
         {
             SummonBoss();
             bossNight = true;
@@ -103,7 +103,7 @@ public class Day_Night_Cycle : MonoBehaviour
         }
     }
 
-    void StartDay()
+    public void StartDay()
     {
         playerStats.NewDay();
 

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1191445888351011940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.4, z: -0.005273858}
-  m_LocalScale: {x: 0.5, y: 10.8, z: 1}
+  m_LocalScale: {x: 0.4, y: 12.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1191445889087333914}
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1191445888351011943}
-  duration: 0.48
-  startingFade: 1
+  duration: 0.4
+  startingFade: 0.9
   red: 0.518
   green: 0.157
   blue: 1
@@ -129,7 +129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191445889087333895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8318126, y: 3.8703973, z: 0.005273858}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -161,11 +161,11 @@ MonoBehaviour:
   pierceEfficiency: 1
   DoT: 0
   incendiary: 0
-  crateBonus: 0
   pierce: 50
   infinite: 0
   crit: 0
   AoE: 0
+  axe: {fileID: 0}
 --- !u!61 &1191445889087333912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,5 +190,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 10.8}
+  m_Size: {x: 0.4, y: 12.6}
   m_EdgeRadius: 0

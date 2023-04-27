@@ -10,8 +10,8 @@ public class SteamGolem : MonoBehaviour
     public TMPro.TextMeshProUGUI SparePartsCount;
     public GameObject ElectricProjectal, IncendiaryProjectal;
 
-    public float efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
-    public int efficientReloadOverload, clockworkMachine, requiredParts, spareParts, volleyCount, bulletsCount;
+    public float clockworkMachine, efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
+    public int efficientReloadOverload, requiredParts, spareParts, volleyCount, bulletsCount;
 
     void Update()
     {
@@ -41,7 +41,7 @@ public class SteamGolem : MonoBehaviour
             Overdrive(playerStats.eq.equipped);
     }
 
-    public void ClockworkMachine(int amount)
+    public void ClockworkMachine(float amount)
     {
         clockworkMachine += amount;
         if (clockworkMachine >= requiredParts)
@@ -54,8 +54,7 @@ public class SteamGolem : MonoBehaviour
         requiredParts += 10;
         spareParts++;
         SparePartsCount.text = spareParts.ToString("0");
-        playerStats.maxHealth += 2;
-        playerStats.health += 2;
+        playerStats.GainHP(2);
         playerStats.damageBonus += 0.1f;
         playerStats.fireRateBonus += 0.1f;
 
