@@ -14466,7 +14466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-9% Cooldowns
+  m_text: '-10% Cooldowns
 
     [-1-]'
   m_isRightToLeft: 0
@@ -16952,7 +16952,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: abafd7d7201eda147a0cc22db4a68604, type: 3}
   - {fileID: 21300000, guid: 3ba417f4d72748942b4f47636a4797b4, type: 3}
   - {fileID: 21300000, guid: bc62d36858ba8df479654420cb4ff5fe, type: 3}
-  - {fileID: 21300000, guid: 95bff650c27b13943bbc75c4308722c8, type: 3}
+  - {fileID: 21300000, guid: 528cb9cf34560ce4a99fd31e671f9baf, type: 3}
   - {fileID: 21300000, guid: 39c91268bf37f2549a4ca13cfb630a84, type: 3}
   - {fileID: 21300000, guid: 49dd0d5a33de9a8438a93e6bf3c606c3, type: 3}
   - {fileID: 21300000, guid: 6e45598ad5bfd9b4e81c2d51f4d4c1ef, type: 3}

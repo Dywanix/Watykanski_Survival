@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public float task, taskMax;
 
     // -- statystyki --
-    public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, dashCooldown, dash;
+    public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
     public int level = 1, dayCount = 1, accessoriesPerType;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     int tempi;
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         if (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
-            dashImage.fillAmount = 1 - (dashCooldown / 8f);
+            dashImage.fillAmount = 1 - (dashCooldown / maxDashCooldown);
         }
     }
 
@@ -367,7 +367,9 @@ public class PlayerController : MonoBehaviour
         if (dashCooldown <= 0)
         {
             dash = 36f + movementSpeed * 0.5f;
-            dashCooldown = 8f;
+
+            maxDashCooldown = 8f / cooldownReduction;
+            dashCooldown = maxDashCooldown;
 
             tempi = eq.guns[eq.equipped].magazineSize * eq.Items[7] / 5;
             if (eq.guns[eq.equipped].bulletsLeft > eq.guns[eq.equipped].magazineSize)

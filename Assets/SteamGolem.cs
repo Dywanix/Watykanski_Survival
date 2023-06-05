@@ -80,14 +80,7 @@ public class SteamGolem : MonoBehaviour
             playerStats.DisplayAmmo();
 
             efficientReloadMaxCooldown = 0.8f + 6.8f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime;
-            
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType] > 0)
-            {
-                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType]; i++)
-                {
-                    efficientReloadMaxCooldown *= 0.91f;
-                }
-            }
+            efficientReloadMaxCooldown /= playerStats.cooldownReduction;
             efficientReloadCooldown = efficientReloadMaxCooldown;
         }
     }
@@ -135,13 +128,7 @@ public class SteamGolem : MonoBehaviour
                     }
                     break;
             }
-            if (playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType] > 0)
-            {
-                for (int i = 0; i < playerStats.eq.guns[playerStats.eq.equipped].Accessories[3 + playerStats.accessoriesPerType]; i++)
-                {
-                    overdriveMaxCooldown *= 0.91f;
-                }
-            }
+            overdriveMaxCooldown /= playerStats.cooldownReduction;
             overdriveCooldown = overdriveMaxCooldown;
         }
     }

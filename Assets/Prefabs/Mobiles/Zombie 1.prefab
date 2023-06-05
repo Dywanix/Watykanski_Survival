@@ -63,6 +63,7 @@ MonoBehaviour:
   playerBody: {fileID: 0}
   Dir: {fileID: 7834582573487929532}
   Sight: {fileID: 3877347791959240643}
+  day_night: {fileID: 0}
   rare: 0
   boss: 0
   hpBar: {fileID: 217462749461564833}

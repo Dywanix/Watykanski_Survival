@@ -442,7 +442,7 @@ public class CraftingTable : MonoBehaviour
                         playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.09f;
                         break;
                     case 3:
-                        // Cooldowns
+                        playerStats.cooldownReduction *= 1.1f;
                         break;
                     case 4:
                         // On-shot effects rate
@@ -552,7 +552,7 @@ public class CraftingTable : MonoBehaviour
                         playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.09f;
                         break;
                     case 3:
-                        // cooldowns
+                        playerStats.cooldownReduction /= 1.1f;
                         break;
                     case 4:
                         // On-shot Effects rate
