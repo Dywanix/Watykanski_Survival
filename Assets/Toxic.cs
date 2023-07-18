@@ -21,11 +21,11 @@ public class Toxic : MonoBehaviour
 
     void Fard()
     {
-        cloudTimer += cloudCooldown / (1f + enemy.accuracy * 0.02f);
+        cloudTimer += cloudCooldown * Random.Range(0.8f, 1.2f);
 
         enemy.Sight.rotation = Quaternion.Euler(enemy.Sight.rotation.x, enemy.Sight.rotation.y, enemy.Dir.rotation + Random.Range(0, 360f));
         GameObject cloud = Instantiate(ToxicCloud, enemy.Dir.position, enemy.Sight.rotation);
         Rigidbody2D cloud_body = cloud.GetComponent<Rigidbody2D>();
-        cloud_body.AddForce(enemy.Sight.up * (0.3f + enemy.accuracy * 0.003f) * Random.Range(0.85f, 1.15f), ForceMode2D.Impulse);
+        cloud_body.AddForce(enemy.Sight.up * (0.3f + enemy.accuracy * 0.003f) * Random.Range(0.85f, 1.15f) * 0f, ForceMode2D.Impulse);
     }
 }

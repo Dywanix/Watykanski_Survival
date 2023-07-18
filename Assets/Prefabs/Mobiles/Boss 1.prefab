@@ -220,6 +220,7 @@ MonoBehaviour:
   playerBody: {fileID: 0}
   Dir: {fileID: 5471547243375290521}
   Sight: {fileID: 1340888700681224166}
+  day_night: {fileID: 0}
   rare: 0
   boss: 1
   hpBar: {fileID: 2616667639582891396}
@@ -246,8 +247,8 @@ MonoBehaviour:
   - attackDamage
   enrageValue:
   - 0.0034
-  scrapChance: 0.283
-  itemChance: 0.1695
+  scrapChance: 0.285
+  itemChance: 0.17
   scrapCount: 2
   itemCount: 1
 --- !u!50 &1595842549948974947

@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: itemChance
-      value: 0.038
+      value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: scrapCount
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: scrapChance
-      value: 0.0995
+      value: 0.101
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: attackDamage

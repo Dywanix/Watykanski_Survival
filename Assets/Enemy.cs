@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
 
         maxHealth *= Random.Range(0.96f, 1.04f);
+        maxHealth *= 1f + 0.012f * playerStats.dayCount;
         armor *= Random.Range(0.98f, 1.02f);
         movementSpeed *= Random.Range(0.95f, 1.05f);
         attackDamage *= Random.Range(0.92f, 1.08f);
@@ -60,7 +61,7 @@ public class Enemy : MonoBehaviour
 
         if (rare)
         {
-            maxHealth *= 0.994f + 0.006f * playerStats.dayCount;
+            maxHealth *= 0.992f + 0.008f * playerStats.dayCount;
             movementSpeed *= 0.988f + 0.012f * playerStats.dayCount;
         }
 

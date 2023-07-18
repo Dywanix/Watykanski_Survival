@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: itemChance
-      value: 0.0185
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: attackRange
@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: scrapChance
-      value: 0.0835
+      value: 0.0855
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: attackDamage
