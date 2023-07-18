@@ -1518,6 +1518,7 @@ MonoBehaviour:
   ammo: 0
   ammoFromPack: 0
   bulletSpread: 1
+  spreadMultiplyer: 1
   pierce: 1
   special: 0
   MaxSlots: 03000000020000000200000002000000
@@ -1599,6 +1600,7 @@ MonoBehaviour:
   ammo: 0
   ammoFromPack: 0
   bulletSpread: 1
+  spreadMultiplyer: 1
   pierce: 1
   special: 0
   MaxSlots: 02000000020000000300000002000000
@@ -2027,6 +2029,8 @@ MonoBehaviour:
   damageBonus: 1.046
   fireRateBonus: 1.028
   movementSpeed: 7.785
+  cooldownReduction: 1
+  maxDashCooldown: 0
   dashCooldown: 0
   dash: 0
   level: 1

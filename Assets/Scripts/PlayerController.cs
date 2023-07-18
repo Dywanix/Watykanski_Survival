@@ -213,7 +213,7 @@ public class PlayerController : MonoBehaviour
 
     void Fire(float accuracy_change)
     {
-        for (int i = 0; i < eq.guns[eq.equipped].bulletSpread; i++)
+        for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
         {
             Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
             GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab, Barrel.position, Barrel.rotation);
@@ -228,7 +228,7 @@ public class PlayerController : MonoBehaviour
 
     public void FireDirection(float direction)
     {
-        for (int i = 0; i < eq.guns[eq.equipped].bulletSpread; i++)
+        for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
         {
             Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + direction);
             GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab, Barrel.position, Barrel.rotation);
@@ -248,13 +248,13 @@ public class PlayerController : MonoBehaviour
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
         if (eq.guns[eq.equipped].Accessories[3] > 0)
         {
-            temp = 0.07f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
+            temp = 0.07f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].BulletsFired());
             firedBullet.armorShred += temp * eq.guns[eq.equipped].Accessories[3];
         }
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
         if (eq.guns[eq.equipped].Accessories[1 + accessoriesPerType] > 0)
         {
-            temp = 0.045f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].bulletSpread);
+            temp = 0.045f * eq.guns[eq.equipped].fireRate / (0.2f + 0.8f * eq.guns[eq.equipped].BulletsFired());
             firedBullet.vulnerableApplied += temp * eq.guns[eq.equipped].Accessories[1 + accessoriesPerType];
         }
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;

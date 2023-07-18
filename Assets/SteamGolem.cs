@@ -98,13 +98,13 @@ public class SteamGolem : MonoBehaviour
             switch (gun)
             {
                 case 0:
-                    if (playerStats.eq.guns[0].bulletsLeft >= 2 + playerStats.eq.guns[0].bulletSpread)
+                    if (playerStats.eq.guns[0].bulletsLeft >= 2 + playerStats.eq.guns[0].BulletsFired())
                     {
                         overdriveMaxCooldown = 3.3f + 44f * playerStats.eq.guns[0].fireRate;
 
-                        for (int i = 0; i < 2 + playerStats.eq.guns[0].bulletSpread; i++)
+                        for (int i = 0; i < 2 + playerStats.eq.guns[0].BulletsFired(); i++)
                         {
-                            Invoke("BulletVolley", 0.1f + i * (0.5f / (2f + playerStats.eq.guns[0].bulletSpread)));
+                            Invoke("BulletVolley", 0.1f + i * (0.5f / (2f + playerStats.eq.guns[0].BulletsFired())));
                         }
                         playerStats.NewTask(1f);
                     }
@@ -147,13 +147,13 @@ public class SteamGolem : MonoBehaviour
         }
 
         volleyCount++;
-        if (volleyCount == 2 + playerStats.eq.guns[0].bulletSpread)
+        if (volleyCount == 2 + playerStats.eq.guns[0].BulletsFired())
             volleyCount = 0;
     }
 
     void ElectricGrenade()
     {
-        for (int i = 0; i < playerStats.eq.guns[1].bulletSpread; i++)
+        for (int i = 0; i < playerStats.eq.guns[1].BulletsFired(); i++)
         {
             playerStats.eq.guns[1].bulletsLeft--;
             playerStats.DisplayAmmo();
@@ -173,7 +173,7 @@ public class SteamGolem : MonoBehaviour
 
     void IncendiaryGrenade()
     {
-        for (int i = 0; i < playerStats.eq.guns[2].bulletSpread; i++)
+        for (int i = 0; i < playerStats.eq.guns[2].BulletsFired(); i++)
         {
             playerStats.eq.guns[2].bulletsLeft--;
             playerStats.DisplayAmmo();

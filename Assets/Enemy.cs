@@ -45,6 +45,7 @@ public class Enemy : MonoBehaviour
     // -- Dropy --
     public float scrapChance, itemChance;
     public int scrapCount, itemCount;
+    public LeftOver DeathDrop;
 
     void Start()
     {
@@ -306,6 +307,9 @@ public class Enemy : MonoBehaviour
             if (itemChance >= Random.Range(0f, 1f))
                 DropItem();
         }
+
+        if (DeathDrop)
+            DeathDrop.Trigger();
 
         if (boss)
         {

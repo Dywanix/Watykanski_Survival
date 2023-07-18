@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4582449885625533362, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: duration
-      value: 0.46
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 5000375774040920567, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: red
@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5000375774040920567, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: duration
-      value: 0.62
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 5000375774040920567, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: startingFade

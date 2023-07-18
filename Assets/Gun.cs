@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
 
     // -- Special Gun Stats
     public float critDamage, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, specialCharge;
-    public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, pierce, special;
+    public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, spreadMultiplyer, pierce, special;
     public int[] MaxSlots, TakenSlots, Costs, Accessories;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
     float temp;
@@ -169,5 +169,10 @@ public class Gun : MonoBehaviour
     public void AmmoPicked()
     {
         ammo += ammoFromPack;
+    }
+
+    public int BulletsFired()
+    {
+        return bulletSpread * spreadMultiplyer;
     }
 }

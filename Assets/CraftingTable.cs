@@ -364,7 +364,7 @@ public class CraftingTable : MonoBehaviour
                         playerStats.eq.guns[playerStats.eq.equipped].DoT += 0.15f;
                         break;
                     case 2:
-                        playerStats.eq.guns[playerStats.eq.equipped].bulletSpread *= 2;
+                        playerStats.eq.guns[playerStats.eq.equipped].spreadMultiplyer *= 2;
                         playerStats.eq.guns[playerStats.eq.equipped].damage *= 0.76f;
                         playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.12f;
                         playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.08f;
@@ -474,7 +474,7 @@ public class CraftingTable : MonoBehaviour
                         playerStats.eq.guns[playerStats.eq.equipped].DoT -= 0.15f;
                         break;
                     case 2:
-                        playerStats.eq.guns[playerStats.eq.equipped].bulletSpread /= 2;
+                        playerStats.eq.guns[playerStats.eq.equipped].spreadMultiplyer /= 2;
                         playerStats.eq.guns[playerStats.eq.equipped].damage /= 0.76f;
                         playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.12f;
                         playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.08f;
