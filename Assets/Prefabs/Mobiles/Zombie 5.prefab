@@ -147,11 +147,6 @@ MonoBehaviour:
   cloudTimer: 2.25
   cloudCooldown: 2
   range: 18
---- !u!4 &4894007977375269111 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9198804277404727282, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
-  m_PrefabInstance: {fileID: 4342514111539377925}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5505134894392489898 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
@@ -163,27 +158,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68d8ccb6b05ec88409f2eb446f00fbed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6774540527641498813 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7081828105972868024, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
-  m_PrefabInstance: {fileID: 4342514111539377925}
-  m_PrefabAsset: {fileID: 0}
---- !u!1818360608 &7730874971731436897
-PositionConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6774540527641498813}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 0, y: 0, z: 0}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_IsContraintActive: 1
-  m_IsLocked: 0
-  m_Sources:
-  - sourceTransform: {fileID: 4894007977375269111}
-    weight: 1

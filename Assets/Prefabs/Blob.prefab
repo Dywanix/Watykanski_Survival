@@ -77,11 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: damage
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: poison
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: duration
@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   form: {fileID: 5739135406867345582}
-  jump: 3
+  jump: 2.5
   fall: 0
-  duration: 2.2
+  duration: 2
 --- !u!4 &5739135406867345582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}

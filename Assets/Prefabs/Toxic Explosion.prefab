@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3861141106692781231, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 3861141106692781231, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 3861141106692781231, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -81,11 +81,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4582449885625533362, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: damage
-      value: 22
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4582449885625533362, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: poison
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4582449885625533362, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: persist
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4582449885625533362, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: duration
-      value: 0.42
+      value: 0.38
       objectReference: {fileID: 0}
     - target: {fileID: 5000375774040920567, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: red
@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5000375774040920567, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: duration
-      value: 0.52
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 5000375774040920567, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
       propertyPath: startingFade

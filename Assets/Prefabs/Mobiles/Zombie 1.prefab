@@ -92,6 +92,7 @@ MonoBehaviour:
   itemChance: 0.0145
   scrapCount: 1
   itemCount: 1
+  DeathDrop: {fileID: 0}
 --- !u!50 &3562701576671450950
 Rigidbody2D:
   serializedVersion: 4
@@ -474,6 +475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3877347791959240643}
   - component: {fileID: 7834582573487929532}
+  - component: {fileID: 6197134970796266486}
   m_Layer: 0
   m_Name: Sight
   m_TagString: Untagged
@@ -517,6 +519,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1818360608 &6197134970796266486
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081828105972868024}
+  m_Enabled: 1
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_IsContraintActive: 1
+  m_IsLocked: 0
+  m_Sources:
+  - sourceTransform: {fileID: 3262227929270474578}
+    weight: 1
 --- !u!1 &7973599276027663518
 GameObject:
   m_ObjectHideFlags: 0

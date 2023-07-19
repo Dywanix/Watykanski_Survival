@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5946344980233437452, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: duration
-      value: 1.5
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 6614368799347785618, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_Color.b
@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: delay
-      value: 1.35
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: Bullet
