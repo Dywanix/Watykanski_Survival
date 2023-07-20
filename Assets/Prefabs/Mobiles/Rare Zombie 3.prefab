@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: health
-      value: 135
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: weight
@@ -77,11 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 5577881684985754927}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: maxHealth
-      value: 135
+      value: 122
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: itemChance
-      value: 0.059
+      value: 0.063
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: attackSpeed
@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: scrapChance
-      value: 0.1535
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: attackDamage
@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: movementSpeed
-      value: 3.03
+      value: 3.28
       objectReference: {fileID: 0}
     - target: {fileID: 7765668550756820868, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: m_LocalPosition.x
@@ -139,9 +139,9 @@ MonoBehaviour:
   - {fileID: 7718715213765199556, guid: 7e7b5e52935984949b873a26cea5bf01, type: 3}
   Count: 02000000
   ForceMin:
-  - 1.47
+  - 1.85
   ForceMax:
-  - 2.62
+  - 3.08
 --- !u!114 &6884023544026220343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,9 +157,9 @@ MonoBehaviour:
   enemy: {fileID: 7079525956581294193}
   DeathDrop: {fileID: 5577881684985754927}
   ExplosiveBottle: {fileID: 7718715213765199556, guid: 7e7b5e52935984949b873a26cea5bf01, type: 3}
-  bottleTossCooldown: 7.4
-  range: 21.1
-  additionalBottleChance: 0.15
+  bottleTossCooldown: 6.16
+  range: 22.2
+  additionalBottleChance: 0.18
 --- !u!114 &7079525956581294193 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}

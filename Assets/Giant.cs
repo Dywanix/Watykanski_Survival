@@ -18,7 +18,7 @@ public class Giant : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= 8.4f + 1F * enemy.attackDamage)
         {
-            if (!enemy.attackTimer)
+            if (!enemy.attackTimer && enemy.stun <= 0f)
             {
                 boulderTossCooldown -= Time.deltaTime * (1f + 0.01f * enemy.attackDamage);
                 if (boulderTossCooldown <= 0f)

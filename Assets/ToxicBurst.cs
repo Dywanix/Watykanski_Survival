@@ -22,11 +22,14 @@ public class ToxicBurst : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= toxic.range)
         {
-            if (!enemy.attackTimer)
+            if (!enemy.attackTimer && enemy.stun <= 0f)
             {
                 cloudCooldown -= Time.deltaTime;
                 if (cloudCooldown <= 0f)
-                    Fard();
+                {
+                    enemy.GainStun(0.4f);
+                    Invoke("Fard", 0.32f);
+                }
             }
         }
         else
@@ -39,9 +42,9 @@ public class ToxicBurst : MonoBehaviour
     void Fard()
     {
         cloudCooldown = cloudCooldownMax * Random.Range(0.9f, 1.1f);
-        toxic.cloudTimer += 0.2f + cloudsCount * 0.02f;
+        toxic.cloudTimer += 0.25f + cloudsCount * 0.025f;
 
-        countIncrease += 0.3f + 1.2f / cloudsCount;
+        countIncrease += Random.Range(0.28f, 0.33f) + 1.31f / cloudsCount;
         if (countIncrease >= 1f)
         {
             countIncrease -= 1f;
@@ -53,7 +56,7 @@ public class ToxicBurst : MonoBehaviour
             enemy.Sight.rotation = Quaternion.Euler(enemy.Sight.rotation.x, enemy.Sight.rotation.y, enemy.Dir.rotation + Random.Range(-6f, 6f) + i * 360f / cloudsCount);
             GameObject cloud = Instantiate(ToxicCloud, enemy.Dir.position, enemy.Sight.rotation);
             Rigidbody2D cloud_body = cloud.GetComponent<Rigidbody2D>();
-            cloud_body.AddForce(enemy.Sight.up * (0.25f + 0.03f * cloudsCount) * Random.Range(0.88f, 1.12f), ForceMode2D.Impulse);
+            cloud_body.AddForce(enemy.Sight.up * (0.27f + 0.04f * cloudsCount) * Random.Range(0.88f, 1.12f), ForceMode2D.Impulse);
         }
     }
 }

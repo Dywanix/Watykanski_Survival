@@ -106,7 +106,7 @@ public class PlanningTable : MonoBehaviour
             Picks[i].interactable = false;
         }
 
-        switch (which)
+        switch (rolled[which])
         {
             case 3:
                 playerStats.eq.itemsActivationRate *= 1.22f;

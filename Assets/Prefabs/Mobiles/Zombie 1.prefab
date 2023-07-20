@@ -68,14 +68,14 @@ MonoBehaviour:
   boss: 0
   hpBar: {fileID: 217462749461564833}
   weight: 3
-  maxHealth: 36
-  health: 36
+  maxHealth: 33
+  health: 33
   regen: 0
   armor: 14.4
   vulnerable: 0
   DoT: 0
   burning: 0
-  movementSpeed: 2.98
+  movementSpeed: 3.21
   slow: 0
   stun: 0
   attackDamage: 8.2
@@ -88,8 +88,8 @@ MonoBehaviour:
   ranged: 0
   enrageStats: []
   enrageValue: []
-  scrapChance: 0.102
-  itemChance: 0.0145
+  scrapChance: 0.104
+  itemChance: 0.015
   scrapCount: 1
   itemCount: 1
   DeathDrop: {fileID: 0}

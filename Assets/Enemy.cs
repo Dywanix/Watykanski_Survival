@@ -54,9 +54,10 @@ public class Enemy : MonoBehaviour
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
 
         maxHealth *= Random.Range(0.96f, 1.04f);
-        maxHealth *= 1f + 0.012f * playerStats.dayCount;
+        maxHealth *= 1f + 0.014f * playerStats.dayCount;
         armor *= Random.Range(0.98f, 1.02f);
         movementSpeed *= Random.Range(0.95f, 1.05f);
+        movementSpeed *= 1f + 0.004f * playerStats.dayCount;
         attackDamage *= Random.Range(0.92f, 1.08f);
         attackSpeed *= Random.Range(0.92f, 1.08f);
 
@@ -245,7 +246,7 @@ public class Enemy : MonoBehaviour
         hpBar.SetValue(health);
     }
 
-    void GainStun(float duration)
+    public void GainStun(float duration)
     {
         stun += duration;
     }
@@ -264,9 +265,9 @@ public class Enemy : MonoBehaviour
 
     void Tick()
     {
-        if (playerStats.day)
-            Burn();
-        else if (burning > 0f)
+        //if (playerStats.day)
+            //Burn();
+        if (burning > 0f)
         {
             Burn();
             burning -= 0.5f;

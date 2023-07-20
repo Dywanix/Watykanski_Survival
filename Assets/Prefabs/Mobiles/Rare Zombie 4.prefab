@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: armor
-      value: 52.8
+      value: 50.7
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: regen
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: health
-      value: 194
+      value: 181
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: weight
@@ -77,15 +77,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: maxHealth
-      value: 194
+      value: 181
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: itemChance
-      value: 0.0445
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: scrapChance
-      value: 0.115
+      value: 0.117
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: attackDamage
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: movementSpeed
-      value: 2.56
+      value: 2.78
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: enrageStats.Array.size
@@ -133,8 +133,8 @@ MonoBehaviour:
   enemy: {fileID: 8374036020193433014}
   toxic: {fileID: 7376622442087527718}
   ToxicCloud: {fileID: 3716635103215899977, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
-  cloudCooldown: 6.2
-  cloudsCount: 6
+  cloudCooldown: 6
+  cloudsCount: 7
 --- !u!114 &7376622442087527718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,9 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8374036020193433014}
   ToxicCloud: {fileID: 3716635103215899977, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
-  cloudTimer: 1.44
-  cloudCooldown: 1.28
-  range: 26.4
+  cloudTimer: 1.305
+  cloudCooldown: 1.16
+  range: 26.6
 --- !u!114 &8374036020193433014 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}

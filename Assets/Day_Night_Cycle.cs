@@ -15,7 +15,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public TimeState CurrentState = TimeState.Day;
     public Spawner[] spawners;
     private Spawner currentSpawner;
-    public GameObject Player;
+    public GameObject Player, LootCrate;
     public GameObject[] Players, epics, bosses;
     public Wave endlessOne;
     public Wave[] waves;
@@ -38,8 +38,7 @@ public class Day_Night_Cycle : MonoBehaviour
 
         day = 1;
         dayCount.text = day.ToString("0");
-        maxTime = 50f;
-        time = maxTime * 0.8f;
+        maxTime = 1f;
     }
 
     void Update()
@@ -47,8 +46,7 @@ public class Day_Night_Cycle : MonoBehaviour
         switch (CurrentState)
         {
             case (TimeState.Day):
-                time -= Time.deltaTime;
-                if (time <= 0f)
+                if (Input.GetKeyDown(KeyCode.H))
                     StartNight();
                 break;
             case (TimeState.Night):
@@ -79,7 +77,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.day = false;
         CurrentState = TimeState.Night;
-        maxTime = 88f + 8f * day;
+        maxTime = 77f + 7f * day;
         time = 0;
 
         if (day % bossFrequency == 0)
@@ -91,10 +89,10 @@ public class Day_Night_Cycle : MonoBehaviour
         {
             bossNight = false;
 
-            hordeSize = 16 + day * 7;
+            hordeSize = 17 + day * 8;
 
-            spawnGap = 1.6f / (day * (day + 1) / 5 + 0.5f * day + 1f);
-            rareSpawnGap = 4.6f / (day * (day + 1) / 4f + 0.7f * day + 1f);
+            spawnGap = 1.5f / (day * (day + 1) / 5f + 0.5f * day + 1f);
+            rareSpawnGap = 4.3f / (day * (day + 1) / 4f + 0.7f * day + 1f);
 
             spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
             rareSpawnTime = rareSpawnGap * (1.4f + hordeSize * 0.2f);
@@ -107,11 +105,12 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.NewDay();
 
+        Instantiate(LootCrate);
+
         day++;
+
         dayCount.text = day.ToString("0");
         CurrentState = TimeState.Day;
-        maxTime = 60f + 5f * day;
-        time = maxTime;
     }
 
     void Summon()

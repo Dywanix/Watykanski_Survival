@@ -476,7 +476,6 @@ public class PlayerController : MonoBehaviour
     {
         day = true;
         dayCount++;
-        GainTokens(1);
         LevelUp();
     }
 
@@ -525,6 +524,8 @@ public class PlayerController : MonoBehaviour
     {
         tools += amount;
         toolsInfo.text = tools.ToString("0");
+
+        eq.guns[eq.equipped].GainSpecialCharge(0.06f * amount);
     }
 
     public void SpendTools(int amount)

@@ -29,32 +29,32 @@ public class Gun : MonoBehaviour
         switch (which)
         {
             case 0:
-                damage *= 1.012f;
-                cameraShake *= 1.004f;
+                damage *= 1.014f;
+                cameraShake *= 1.0042f;
                 break;
             case 1:
-                fireRate *= 0.982f;
+                fireRate *= 0.979f;
                 break;
             case 2:
-                accuracy *= 0.975f;
-                range += 0.025f;
+                accuracy *= 0.973f;
+                range += 0.027f;
                 break;
             case 3:
-                penetration += 0.012f;
+                penetration += 0.014f;
                 if (penetration > 1f)
                 {
                     temp = penetration - 1f;
                     penetration = 1f;
                     damage *= 1f + temp;
-                    cameraShake *= 1f + 0.33f * temp;
+                    cameraShake *= 1f + 0.3f * temp;
                 }
-                armorShred *= 1.06f;
+                armorShred *= 1.07f;
                 break;
         }
 
         GainSpecialCharge(0.1f + Costs[which] * 0.000125f);
 
-        Costs[which] += 3;
+        Costs[which] += 2;
     }
 
     public void GainSpecialCharge(float amount)

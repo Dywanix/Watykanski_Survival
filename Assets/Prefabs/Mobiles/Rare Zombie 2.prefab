@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: health
-      value: 173
+      value: 157
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: weight
@@ -117,11 +117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: maxHealth
-      value: 173
+      value: 157
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: itemChance
-      value: 0.039
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: scrapCount
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: scrapChance
-      value: 0.101
+      value: 0.102
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: attackDamage
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: movementSpeed
-      value: 2.82
+      value: 3.07
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: enrageStats.Array.size
@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: enrageValue.Array.data[0]
-      value: 0.1
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 7877842328715477700, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: m_SizeDelta.x

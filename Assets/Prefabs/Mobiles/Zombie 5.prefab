@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: health
-      value: 78
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: weight
@@ -89,7 +89,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: maxHealth
-      value: 78
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
+      propertyPath: itemChance
+      value: 0.032
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
+      propertyPath: scrapCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: attackRange
@@ -100,12 +108,16 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
+      propertyPath: scrapChance
+      value: 0.108
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: attackDamage
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: movementSpeed
-      value: 2.22
+      value: 2.42
       objectReference: {fileID: 0}
     - target: {fileID: 8438753814062036988, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}
       propertyPath: m_SizeDelta.x
@@ -144,9 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5505134894392489898}
   ToxicCloud: {fileID: 3716635103215899977, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
-  cloudTimer: 2.16
-  cloudCooldown: 1.92
-  range: 19.8
+  cloudTimer: 2.07
+  cloudCooldown: 1.84
+  range: 20
 --- !u!114 &5505134894392489898 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}

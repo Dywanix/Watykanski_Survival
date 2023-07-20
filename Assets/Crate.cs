@@ -15,8 +15,7 @@ public class Crate : MonoBehaviour
     public int[] scrapDroppedRange;
     public int itemsCount;
     int roll;
-    public float maxHealth, health, dropChance, scrapChance, healthIncrease, dropChanceIncrease;
-    public bool endless;
+    public float maxHealth, health, dropChance, scrapChance;
     float temp;
 
     void Start()
@@ -30,6 +29,7 @@ public class Crate : MonoBehaviour
         {
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+            health += playerStats.dayCount * 12; scrapDroppedRange[1] += playerStats.dayCount; dropChance += 0.001f * playerStats.dayCount;
         }
     }
 
@@ -71,20 +71,18 @@ public class Crate : MonoBehaviour
     void Destroy()
     {
         DropScrap(scrapDroppedRange[0], scrapDroppedRange[1]);
+
+        DropItem(3);
+        DropItem(5);
+        DropItem(6);
+
         for (int i = 0; i < itemsCount; i++)
         {
             if (dropChance >= Random.Range(0f, 1f))
-                DropItem();
+                DropItem(Random.Range(0, Items.Length));
         }
-        if  (!endless)
-            Destroy(gameObject);
-        else
-        {
-            maxHealth += healthIncrease;
-            health = maxHealth;
-            dropChance += dropChanceIncrease;
-            scrapDroppedRange[1]++;
-        }
+
+        Destroy(gameObject);
     }
 
     void DropScrap(int min, int max)
@@ -99,10 +97,10 @@ public class Crate : MonoBehaviour
         }
     }
 
-    void DropItem()
+    void DropItem(int which)
     {
         Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
-        GameObject scrap = Instantiate(Items[Random.Range(0, Items.Length)], Dir.position, Sight.rotation);
+        GameObject scrap = Instantiate(Items[which], Dir.position, Sight.rotation);
         Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
         scrap_body.AddForce(Sight.up * Random.Range(1.2f, 4.4f), ForceMode2D.Impulse);
     }
