@@ -24,6 +24,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5019305471796332467, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
+      propertyPath: persist
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5019305471796332467, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: duration
       value: 12
       objectReference: {fileID: 0}
