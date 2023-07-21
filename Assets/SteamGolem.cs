@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SteamGolem : MonoBehaviour
 {
     public PlayerController playerStats;
-    public Image Ability1, Ability2;
+    public Image Passive, Ability1, Ability2;
     public TMPro.TextMeshProUGUI SparePartsCount;
     public GameObject ElectricProjectal, IncendiaryProjectal;
 
@@ -44,6 +44,7 @@ public class SteamGolem : MonoBehaviour
     public void ClockworkMachine(float amount)
     {
         clockworkMachine += amount;
+        Passive.fillAmount = clockworkMachine / requiredParts;
         if (clockworkMachine >= requiredParts)
             PartGained();
     }
@@ -52,11 +53,12 @@ public class SteamGolem : MonoBehaviour
     {
         clockworkMachine -= requiredParts;
         requiredParts += 10;
+        Passive.fillAmount = clockworkMachine / requiredParts;
         spareParts++;
         SparePartsCount.text = spareParts.ToString("0");
         playerStats.GainHP(2);
-        playerStats.damageBonus += 0.1f;
-        playerStats.fireRateBonus += 0.1f;
+        playerStats.damageBonus += 0.001f;
+        playerStats.fireRateBonus += 0.0011f;
 
         switch (playerStats.eq.equipped)
         {

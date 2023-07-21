@@ -51,7 +51,7 @@ public class Gunslinger : MonoBehaviour
     {
         if (rapidFireCooldown <= 0)
         {
-            rapidFireMaxCooldown = 30f / playerStats.cooldownReduction; ;
+            rapidFireMaxCooldown = 29f / playerStats.cooldownReduction; ;
             rapidFireCooldown = rapidFireMaxCooldown;
 
             rapidFireFireRate = 1.22f + 0.01f * playerStats.level;

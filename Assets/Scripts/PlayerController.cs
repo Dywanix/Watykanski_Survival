@@ -393,8 +393,8 @@ public class PlayerController : MonoBehaviour
         health -= value;
         healthBar.fillAmount = health / maxHealth;
 
-        if (berserker == true)
-            berserker.AxeDamageIncrease(value);
+        if (berserker == true && !day)
+            berserker.GainWrath(value);
 
         if (health < 0f)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -425,7 +425,11 @@ public class PlayerController : MonoBehaviour
 
     public float DamageDealtMultiplyer(float efficiency)
     {
-        return 1f + (damageBonus - 1f) * efficiency;
+        temp = 1f + (damageBonus - 1f);
+        if (berserker)
+            temp *= 1f + berserker.wrath;
+        temp *= efficiency;
+        return temp;
     }
 
     public void Collided(Collider2D other)
@@ -476,6 +480,13 @@ public class PlayerController : MonoBehaviour
     {
         day = true;
         dayCount++;
+        RestoreHealth(40 + maxHealth * 0.5f);
+        if (berserker)
+        {
+            berserker.wrath = 0;
+            berserker.GainWrath(0);
+            GainHP(1.2f + 1f * dayCount);
+        }
         LevelUp();
     }
 
@@ -486,11 +497,6 @@ public class PlayerController : MonoBehaviour
         damageBonus += damageIncrease;
         fireRateBonus += fireRateIncrease;
         movementSpeed += movementSpeedIncrease;
-        if (berserker)
-        {
-            berserker.UpdateAxeDamage();
-            berserker.axeMaxCharges++;
-        }
     }
 
     public void GainHP(float value)

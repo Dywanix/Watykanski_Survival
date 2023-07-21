@@ -116,8 +116,8 @@ public class PlanningTable : MonoBehaviour
                 playerStats.healthIncrease += 1.5f;
                 break;
             case 6:
-                playerStats.damageBonus += 1.6f + 0.15f * playerStats.level;
-                playerStats.damageIncrease += 0.15f;
+                playerStats.damageBonus += 0.016f + 0.0015f * playerStats.level;
+                playerStats.damageIncrease += 0.0015f;
                 break;
             case 7:
                 tempi = playerStats.eq.guns[playerStats.eq.equipped].magazineSize / 5;

@@ -7,7 +7,9 @@ public enum TimeState
 {
     Day,
 
-    Night
+    Night,
+
+    Dawn
 };
 
 public class Day_Night_Cycle : MonoBehaviour
@@ -54,7 +56,7 @@ public class Day_Night_Cycle : MonoBehaviour
                 {
                     time += Time.deltaTime;
                     if (time >= maxTime)
-                        StartDay();
+                        StartDawn();
 
                     spawnTime -= Time.deltaTime;
                     if (spawnTime <= 0f)
@@ -99,6 +101,18 @@ public class Day_Night_Cycle : MonoBehaviour
 
             SummonHorde();
         }
+    }
+
+    public void StartDawn()
+    {
+        CurrentState = TimeState.Dawn;
+
+        Invoke("Check", 0.5f);
+    }
+
+    public void Check()
+    {
+        //Check for enemies if Y -> Invoke again, else StartDay();
     }
 
     public void StartDay()

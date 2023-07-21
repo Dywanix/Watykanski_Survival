@@ -7,16 +7,14 @@ public class Berserker : MonoBehaviour
 {
     public PlayerController playerStats;
     public Image Ability1, Ability2;
-    public TMPro.TextMeshProUGUI ChargesCount;
+    public TMPro.TextMeshProUGUI WrathCount;
     public GameObject BoomerangAxe;
-    public Bullet Axe, AxeThrown;
+    public Bullet AxeThrown;
 
-    public float axeDamage, axeCharging, damageTaken, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
-    public int axeCharges, axeMaxCharges;
+    public float wrath, wrathToDmg, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
 
     void Start()
     {
-        UpdateAxeDamage();
     }
 
     void Update()
@@ -27,16 +25,6 @@ public class Berserker : MonoBehaviour
         if (playerStats.task <= 0)
         {
             Action();
-        }
-
-        if (axeCharges < axeMaxCharges)
-        {
-            axeCharging += (0.83f + 0.11f * playerStats.level) * Time.deltaTime;
-            if (axeCharging >= 1f)
-            {
-                axeCharging -= 1f;
-                AxeGainCharge();
-            }
         }
 
         if (enrageCooldown > 0)
@@ -52,56 +40,23 @@ public class Berserker : MonoBehaviour
         }
     }
 
-    void AxeGainCharge()
-    {
-        axeCharges++;
-        ChargesCount.text = axeCharges.ToString("0");
-        UpdateAxeDamage();
-    }
-
-    public void AxeStuck()
-    {
-        if (axeCharges > 0)
-        {
-            if (axeCharges >= 8)
-                axeCharges -= 2;
-            else axeCharges--;
-        }
-        ChargesCount.text = axeCharges.ToString("0");
-        UpdateAxeDamage();
-    }
-
     void Action()
     {
         if (Input.GetMouseButton(1))
             SwipeCast();
     }
 
-    public void AxeDamageIncrease(float amount)
+    public void GainWrath(float value)
     {
-        damageTaken += amount;
-        UpdateAxeDamage();
+        wrath += value * wrathToDmg;
+        WrathCount.text = (wrath * 100).ToString("0.0") + "%";
     }
-
-    public void UpdateAxeDamage()
-    {
-        axeDamage = 12f + 0.5f * playerStats.level + damageTaken / 316f;
-        axeDamage *= playerStats.DamageDealtMultiplyer(1f);
-        if (axeCharges > 0)
-        {
-            axeDamage *= 1.92f;
-            if (axeCharges >= 8)
-                axeDamage *= 1.23f;
-        }
-        Axe.damage = axeDamage;
-    }
-
 
     void Enrage()
     {
         if (enrageCooldown <= 0)
         {
-            enrageMaxCooldown = 34f / playerStats.cooldownReduction; ;
+            enrageMaxCooldown = 33f / playerStats.cooldownReduction; ;
             enrageCooldown = enrageMaxCooldown;
 
             healthSacrifice = playerStats.health * 0.27f;
@@ -109,7 +64,6 @@ public class Berserker : MonoBehaviour
 
             enrageFireRateIncrease = 1.108f + 0.004f * playerStats.level + 0.0036f * healthSacrifice;
             enrageDamageIncrease = 0.58f + enrageFireRateIncrease * 0.42f;
-            UpdateAxeDamage();
 
             playerStats.fireRateBonus *= enrageFireRateIncrease;
             playerStats.damageBonus *= enrageDamageIncrease;
@@ -124,7 +78,6 @@ public class Berserker : MonoBehaviour
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageBonus /= enrageDamageIncrease;
-        UpdateAxeDamage();
     }
 
     void SwipeCast()
@@ -147,6 +100,6 @@ public class Berserker : MonoBehaviour
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         bullet_body.AddForce(playerStats.Barrel.up * 14f * playerStats.DamageDealtMultiplyer(0.8f), ForceMode2D.Impulse);
         AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        AxeThrown.damage = (33 + 3f * playerStats.level + 0.06f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
+        AxeThrown.damage = (29 + 2f * playerStats.level + 0.04f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
     }
 }

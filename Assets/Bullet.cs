@@ -10,9 +10,6 @@ public class Bullet : MonoBehaviour
     public int pierce;
     public bool infinite, crit, AoE;
 
-    // special
-    public Berserker axe;
-
     void Update()
     {
         if (!infinite)
@@ -59,10 +56,5 @@ public class Bullet : MonoBehaviour
         }
         if (pierce <= 0)
             Destroy(gameObject);
-
-        if (axe)
-        {
-            axe.AxeStuck();
-        }
     }
 }

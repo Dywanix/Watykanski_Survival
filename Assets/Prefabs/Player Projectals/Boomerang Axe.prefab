@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1772244572827249863, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2569233919193328487, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: m_Name
@@ -73,11 +73,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 905a853f4767af340983079d3677ca03, type: 3}
     - target: {fileID: 6994618767336018789, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: m_Color.b
-      value: 0.78431374
+      value: 0.9198113
       objectReference: {fileID: 0}
     - target: {fileID: 6994618767336018789, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: m_Color.g
-      value: 0.78431374
+      value: 0.9198113
       objectReference: {fileID: 0}
     - target: {fileID: 6994618767336018789, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: m_Color.r
