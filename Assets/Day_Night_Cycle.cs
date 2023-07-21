@@ -67,6 +67,10 @@ public class Day_Night_Cycle : MonoBehaviour
                         SummonRare();
                 }
                 break;
+            case (TimeState.Dawn):
+                if (Input.GetKeyDown(KeyCode.H))
+                    StartDay();
+                break;
         }
         if (Input.GetKeyDown(KeyCode.P))
             time += 16f;
@@ -93,8 +97,8 @@ public class Day_Night_Cycle : MonoBehaviour
 
             hordeSize = 17 + day * 8;
 
-            spawnGap = 1.5f / (day * (day + 1) / 5f + 0.5f * day + 1f);
-            rareSpawnGap = 4.3f / (day * (day + 1) / 4f + 0.7f * day + 1f);
+            spawnGap = 1.8f / (day * (day + 1) / 5f + 0.5f * day + 1f);
+            rareSpawnGap = 4.8f / (day * (day + 1) / 4f + 0.7f * day + 1f);
 
             spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
             rareSpawnTime = rareSpawnGap * (1.4f + hordeSize * 0.2f);

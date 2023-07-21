@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: armor
-      value: 51.2
+      value: 51.1
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: health
@@ -121,11 +121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: itemChance
-      value: 0.04
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: scrapCount
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: attackRange
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: scrapChance
-      value: 0.102
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: attackDamage
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: movementSpeed
-      value: 3.07
+      value: 3.12
       objectReference: {fileID: 0}
     - target: {fileID: 7523914838466065815, guid: a23bd434648b17144bacfb58b76efbd3, type: 3}
       propertyPath: enrageStats.Array.size
