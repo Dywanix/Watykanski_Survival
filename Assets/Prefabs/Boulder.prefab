@@ -175,6 +175,7 @@ MonoBehaviour:
   Dir: {fileID: 2836216104138433170}
   form: {fileID: 4949778951044425418}
   delay: 1.75
+  delayMultiplyer: 0.04
   bulletForce: 8.57
   bulletsCount: 9
 --- !u!114 &9001426375563854430

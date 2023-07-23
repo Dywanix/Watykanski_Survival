@@ -145,7 +145,7 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   Dir: {fileID: 6884977038708695281}
   Sight: {fileID: 6884977038543306323}
-  scrapDroppedRange: 060000000e000000
+  scrapDroppedRange: 060000000b000000
   itemsCount: 5
   maxHealth: 130
   health: 130

@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: scrapChance
-      value: 0.16
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}
       propertyPath: attackDamage

@@ -225,17 +225,17 @@ MonoBehaviour:
   boss: 1
   hpBar: {fileID: 2616667639582891396}
   weight: 100
-  maxHealth: 3312
-  health: 3312
+  maxHealth: 3393
+  health: 3393
   regen: 8
-  armor: 84
+  armor: 86.4
   vulnerable: 0
   DoT: 0
   burning: 0
-  movementSpeed: 2.8
+  movementSpeed: 3.06
   slow: 0
   stun: 0
-  attackDamage: 12.85
+  attackDamage: 13.17
   attackPoison: 0
   attackSpeed: 2.2
   attackRange: 4
@@ -247,10 +247,11 @@ MonoBehaviour:
   - attackDamage
   enrageValue:
   - 0.0034
-  scrapChance: 0.285
-  itemChance: 0.17
-  scrapCount: 2
-  itemCount: 1
+  scrapChance: 0.375
+  itemChance: 0.25
+  scrapCount: 8
+  itemCount: 4
+  DeathDrop: {fileID: 0}
 --- !u!50 &1595842549948974947
 Rigidbody2D:
   serializedVersion: 4

@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1191445888351011940}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5.4, z: -0.005273858}
-  m_LocalScale: {x: 0.4, y: 12.6, z: 1}
+  m_LocalScale: {x: 0.375, y: 14.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1191445889087333914}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1191445888351011943}
-  duration: 0.4
+  duration: 0.35
   startingFade: 0.9
   red: 0.518
   green: 0.157
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionRadius: {fileID: 0}
-  duration: 0.4
+  duration: 0.306
   damage: 10
   penetration: 0
   armorShred: 0
@@ -165,7 +165,6 @@ MonoBehaviour:
   infinite: 0
   crit: 0
   AoE: 0
-  axe: {fileID: 0}
 --- !u!61 &1191445889087333912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -190,5 +189,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 12.6}
+  m_Size: {x: 0.4, y: 14.4}
   m_EdgeRadius: 0

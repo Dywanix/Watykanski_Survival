@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7802112221130661718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 225355291538799162, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288082541215323236, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912873407693749918, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912873407693749918, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4446251428023020016, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_Name
+      value: Zombie 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831593821727798468, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831593821727798468, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940219161549267180, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4940219161549267180, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312429902356559050, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: armor
+      value: 21.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: health
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: weight
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: maxHealth
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: itemChance
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: scrapCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: attackRange
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: attackDamage
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+      propertyPath: movementSpeed
+      value: 6.67
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+--- !u!114 &2361792854986726607 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5512526532971594649, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+  m_PrefabInstance: {fileID: 7802112221130661718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905038967511234214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d8ccb6b05ec88409f2eb446f00fbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5905038967511234214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4446251428023020016, guid: 51c5f0894f33c614ab76ff343e9a093f, type: 3}
+  m_PrefabInstance: {fileID: 7802112221130661718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2100184619975239991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905038967511234214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673e75860f688cf45bafab4310e6979a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2361792854986726607}
+  chargeEfficiency: 0.7
+  chargeDuration: 2.6
+  chargeCooldown: 7
+  chargeMaxCooldown: 7
+  chargeStun: 1

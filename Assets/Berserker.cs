@@ -11,7 +11,7 @@ public class Berserker : MonoBehaviour
     public GameObject BoomerangAxe;
     public Bullet AxeThrown;
 
-    public float wrath, wrathToDmg, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
+    public float wrath, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
 
     void Start()
     {
@@ -48,7 +48,7 @@ public class Berserker : MonoBehaviour
 
     public void GainWrath(float value)
     {
-        wrath += value * wrathToDmg;
+        wrath += value * (0.024f + 0.001f * playerStats.level) / 100f;
         WrathCount.text = (wrath * 100).ToString("0.0") + "%";
     }
 

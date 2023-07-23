@@ -7,8 +7,13 @@ public class BulletExplosion : MonoBehaviour
     public GameObject Bullet;
     public Rigidbody2D Dir;
     public Transform form;
-    public float delay, bulletForce;
+    public float delay, delayMultiplyer, bulletForce;
     public int bulletsCount;
+
+    void Start()
+    {
+        delay = delay * Random.Range(1f, 1f + delayMultiplyer);
+    }
 
     void Update()
     {

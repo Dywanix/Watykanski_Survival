@@ -150,6 +150,6 @@ MonoBehaviour:
   - {fileID: 7718715213765199556, guid: 7e7b5e52935984949b873a26cea5bf01, type: 3}
   Count: 01000000
   ForceMin:
-  - 2.07
+  - 2.22
   ForceMax:
-  - 3.64
+  - 3.86

@@ -54,23 +54,23 @@ public class Enemy : MonoBehaviour
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
 
         maxHealth *= Random.Range(0.96f, 1.04f);
-        maxHealth *= 1f + 0.014f * playerStats.dayCount;
+        maxHealth *= 1f + 0.016f * playerStats.dayCount;
         armor *= Random.Range(0.98f, 1.02f);
         movementSpeed *= Random.Range(0.95f, 1.05f);
-        movementSpeed *= 1f + 0.004f * playerStats.dayCount;
+        movementSpeed *= 1f + 0.005f * playerStats.dayCount;
         attackDamage *= Random.Range(0.92f, 1.08f);
         attackSpeed *= Random.Range(0.92f, 1.08f);
 
         if (rare)
         {
-            maxHealth *= 0.992f + 0.008f * playerStats.dayCount;
-            movementSpeed *= 0.988f + 0.012f * playerStats.dayCount;
+            maxHealth *= 0.99f + 0.01f * playerStats.dayCount;
+            movementSpeed *= 0.986f + 0.014f * playerStats.dayCount;
         }
 
         if (boss)
         {
-            maxHealth *= 0.988f + 0.012f * playerStats.dayCount;
-            attackDamage *= 0.982f + 0.018f * playerStats.dayCount;
+            maxHealth *= 0.985f + 0.015f * playerStats.dayCount;
+            attackDamage *= 0.98f + 0.02f * playerStats.dayCount;
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
         }
 
@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
         hpBar.SetMaxValue(maxHealth);
         hpBar.SetValue(health);
 
-        Invoke("Tick", 0.5f);
+        Invoke("Tick", 0.6f);
     }
 
     void Update()
@@ -179,12 +179,12 @@ public class Enemy : MonoBehaviour
         collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
         if (!collidedBullet.AoE)
         {
-            armor *= 1 - collidedBullet.armorShred;
-            vulnerable += collidedBullet.vulnerableApplied;
+            armor *= 1 - (collidedBullet.armorShred * 1.6f / (1f + 0.03f * weight));
+            vulnerable += collidedBullet.vulnerableApplied * 1.6f / (1f + 0.03f * weight);
             if (collidedBullet.slowDuration > 0)
-                slow += collidedBullet.slowDuration;
+                slow += collidedBullet.slowDuration * 1.6f / (1f + 0.03f * weight);
             if (collidedBullet.stunChance >= Random.Range(0f, 1f))
-                GainStun(collidedBullet.stunDuration);
+                GainStun(collidedBullet.stunDuration * 1.6f / (1f + 0.03f * weight));
             TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit, true);
             if (collidedBullet.DoT > 0)
                 GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));

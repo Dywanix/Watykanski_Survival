@@ -966,7 +966,6 @@ MonoBehaviour:
   BoomerangAxe: {fileID: 2240648045073124737, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
   AxeThrown: {fileID: 0}
   wrath: 0
-  wrathToDmg: 0.00028
   enrageCooldown: 0
   enrageMaxCooldown: 0
   healthSacrifice: 0
@@ -2315,8 +2314,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

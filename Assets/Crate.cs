@@ -29,7 +29,7 @@ public class Crate : MonoBehaviour
         {
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-            health += playerStats.dayCount * 12; scrapDroppedRange[1] += playerStats.dayCount; dropChance += 0.001f * playerStats.dayCount;
+            health += playerStats.dayCount * 12; scrapDroppedRange[1] += playerStats.dayCount * 2; dropChance += 0.001f * playerStats.dayCount;
         }
     }
 

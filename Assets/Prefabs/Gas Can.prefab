@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: delay
-      value: 1.2
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: Bullet
@@ -102,6 +102,10 @@ PrefabInstance:
     - target: {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: bulletsCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
+      propertyPath: delayMultiplyer
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 9001426375563854430, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: zAngle

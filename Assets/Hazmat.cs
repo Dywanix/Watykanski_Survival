@@ -45,8 +45,8 @@ public class Hazmat : MonoBehaviour
         {
             additionalBottleChance -= 1f;
             DeathDrop.Count[0]++;
-            DeathDrop.ForceMin[0] += 0.23f;
-            DeathDrop.ForceMax[0] += 0.4f;
+            DeathDrop.ForceMin[0] += 0.25f;
+            DeathDrop.ForceMax[0] += 0.42f;
         }
 
         bottleTossCooldown = bottleTossCooldownMax * Random.Range(0.92f, 1.08f);

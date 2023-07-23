@@ -10,7 +10,7 @@ public class SteamGolem : MonoBehaviour
     public TMPro.TextMeshProUGUI SparePartsCount;
     public GameObject ElectricProjectal, IncendiaryProjectal;
 
-    public float clockworkMachine, efficientReloadCooldown, efficientReloadMaxCooldown, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
+    public float clockworkMachine, efficientReloadCooldown, efficientReloadMaxCooldown, efficientReloadFireRate, efficientReloadFireRateDuration, reloadedProcentage, overdriveCooldown, overdriveMaxCooldown, overdriveAccuracy, temp, direction;
     public int efficientReloadOverload, requiredParts, spareParts, volleyCount, bulletsCount;
 
     void Update()
@@ -77,14 +77,24 @@ public class SteamGolem : MonoBehaviour
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft < playerStats.eq.guns[playerStats.eq.equipped].magazineSize)
         {
-            efficientReloadOverload = Mathf.RoundToInt(playerStats.eq.guns[playerStats.eq.equipped].magazineSize * (0.5f + 0.05f * playerStats.level));
+            efficientReloadOverload = Mathf.RoundToInt(playerStats.eq.guns[playerStats.eq.equipped].magazineSize * (0.42f + 0.04f * playerStats.level));
             playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft += efficientReloadOverload;
             playerStats.DisplayAmmo();
+
+            efficientReloadFireRate = 1.133f + 0.01f * playerStats.level;
+            playerStats.fireRateBonus *= efficientReloadFireRate;
+            efficientReloadFireRateDuration = 0.3f + 2f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime;
+            Invoke("FireRateEnd", efficientReloadFireRateDuration);
 
             efficientReloadMaxCooldown = 0.8f + 6.8f * playerStats.eq.guns[playerStats.eq.equipped].reloadTime;
             efficientReloadMaxCooldown /= playerStats.cooldownReduction;
             efficientReloadCooldown = efficientReloadMaxCooldown;
         }
+    }
+
+    void FireRateEnd()
+    {
+        playerStats.fireRateBonus /= efficientReloadFireRate;
     }
 
     void SwapReload()
@@ -102,7 +112,7 @@ public class SteamGolem : MonoBehaviour
                 case 0:
                     if (playerStats.eq.guns[0].bulletsLeft >= 2 + playerStats.eq.guns[0].BulletsFired())
                     {
-                        overdriveMaxCooldown = 3.3f + 44f * playerStats.eq.guns[0].fireRate;
+                        overdriveMaxCooldown = 3.2f + 42.4f * playerStats.eq.guns[0].fireRate;
 
                         for (int i = 0; i < 2 + playerStats.eq.guns[0].BulletsFired(); i++)
                         {
@@ -167,7 +177,7 @@ public class SteamGolem : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
             playerStats.SetBullet();
-            playerStats.firedBullet.damage *= (1.08f + 0.007f * playerStats.level);
+            playerStats.firedBullet.damage *= (1.1f + 0.01f * playerStats.level);
             playerStats.firedBullet.stunChance = playerStats.eq.guns[1].stunChance * 3f + 0.09f + 0.01f * playerStats.level;
             playerStats.firedBullet.stunDuration = playerStats.eq.guns[1].stunDuration + 0.2f;
         }

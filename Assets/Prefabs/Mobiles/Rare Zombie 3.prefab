@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: scrapChance
-      value: 0.16
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 7226055497855979737, guid: 9b84cd7eae487f44cb83208000266049, type: 3}
       propertyPath: attackDamage
@@ -147,9 +147,9 @@ MonoBehaviour:
   - {fileID: 7718715213765199556, guid: 7e7b5e52935984949b873a26cea5bf01, type: 3}
   Count: 02000000
   ForceMin:
-  - 1.88
+  - 2.02
   ForceMax:
-  - 3.13
+  - 3.28
 --- !u!114 &6884023544026220343
 MonoBehaviour:
   m_ObjectHideFlags: 0
