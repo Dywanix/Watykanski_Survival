@@ -13115,12 +13115,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mobs:
-  - {fileID: 561359032845120874, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
-  - {fileID: 561359032845120874, guid: 6b71401636037a14592ddf22e509b6de, type: 3}
-  - {fileID: 7707478579312227672, guid: b5de94bd9ad81d042ade22849e10d36c, type: 3}
-  RareMobs: []
-  weights: 030000000300000002000000
-  rareWeights: 
+  - {fileID: 6682603402611466972, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
+  - {fileID: 9204329828382703306, guid: 642874db7690d6942837a4b66af43f2b, type: 3}
+  - {fileID: 2488263264943899549, guid: 9009d6c41d343624cb576f5e1e7304e0, type: 3}
+  RareMobs:
+  - {fileID: 1372376226890328600, guid: 2ab3d5d4f2fe72647a0927a51cce2384, type: 3}
+  weights: 070000000d0000000d000000
+  rareWeights: 19000000
 --- !u!4 &739197830
 Transform:
   m_ObjectHideFlags: 0
@@ -22744,7 +22745,7 @@ GameObject:
   - component: {fileID: 1179076937}
   - component: {fileID: 1179076938}
   m_Layer: 0
-  m_Name: Pillar
+  m_Name: Day & NIght
   m_TagString: Cycle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22807,7 +22808,8 @@ MonoBehaviour:
   bosses:
   - {fileID: 2757717323102108387, guid: 8a9ae97510b36cd4a9557e06202b7a0a, type: 3}
   endlessOne: {fileID: 1029557328}
-  waves: []
+  waves:
+  - {fileID: 739197829}
   current: {fileID: 0}
   playerStats: {fileID: 0}
   DayBar: {fileID: 315258620}

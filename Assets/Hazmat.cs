@@ -26,8 +26,8 @@ public class Hazmat : MonoBehaviour
                 bottleTossCooldown -= Time.deltaTime;
                 if (bottleTossCooldown <= 0f)
                 {
-                    enemy.GainStun(0.72f);
-                    Invoke("TossBottle", 0.36f);
+                    enemy.GainStun(0.8f);
+                    Invoke("TossBottle", 0.4f);
                 }
             }
         }

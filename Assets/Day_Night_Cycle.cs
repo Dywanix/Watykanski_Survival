@@ -163,7 +163,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         if (day > waves.Length)
         {
-            roll = Random.Range(0, endlessOne.RareMobs.Length );
+            roll = Random.Range(0, endlessOne.RareMobs.Length);
 
             currentSpawner = spawners[Random.Range(0, spawners.Length)];
 
@@ -176,7 +176,7 @@ public class Day_Night_Cycle : MonoBehaviour
         }
         else
         {
-            roll = Random.Range(0, waves[day - 1].RareMobs.Length + 1);
+            roll = Random.Range(0, waves[day - 1].RareMobs.Length);
 
             currentSpawner = spawners[Random.Range(0, spawners.Length)];
 
