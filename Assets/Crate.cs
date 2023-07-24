@@ -17,6 +17,7 @@ public class Crate : MonoBehaviour
     int roll;
     public float maxHealth, health, dropChance, scrapChance;
     float temp;
+    bool destroyed;
 
     void Start()
     {
@@ -70,16 +71,21 @@ public class Crate : MonoBehaviour
 
     void Destroy()
     {
-        DropScrap(scrapDroppedRange[0], scrapDroppedRange[1]);
-
-        DropItem(3);
-        DropItem(5);
-        DropItem(6);
-
-        for (int i = 0; i < itemsCount; i++)
+        if (!destroyed)
         {
-            if (dropChance >= Random.Range(0f, 1f))
-                DropItem(Random.Range(0, Items.Length));
+            destroyed = true;
+
+            DropScrap(scrapDroppedRange[0], scrapDroppedRange[1]);
+
+            DropItem(3);
+            DropItem(5);
+            DropItem(6);
+
+            for (int i = 0; i < itemsCount; i++)
+            {
+                if (dropChance >= Random.Range(0f, 1f))
+                    DropItem(Random.Range(0, Items.Length));
+            }
         }
 
         Destroy(gameObject);

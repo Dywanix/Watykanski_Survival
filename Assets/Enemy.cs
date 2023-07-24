@@ -24,28 +24,34 @@ public class Enemy : MonoBehaviour
     // ----- enemy stats -----
     private int roll;
     private float temp;
-    public bool rare, boss;
+    public bool rare, boss, dead;
 
-    // -- Health & Resistance
+    [Header("Health & Resistance")]
     public Bar hpBar;
     public int weight;
     public float maxHealth, health, regen, armor, vulnerable, DoT, burning;
 
-    // -- Movement
+    [Header("Movement")]
     public float movementSpeed, slow, stun;
 
-    // -- Damage & Attacks
-    public float attackDamage, attackPoison, attackSpeed, attackRange, accuracy, force;
-    public bool attackTimer = false, ranged = false;
+    [Header("Damage & Attacks")]
+    public bool attackTimer = false;
+    public float attackDamage, attackPoison, attackSpeed, attackRange;
 
-    // -- Special Stats
+    [Header("Ranged Stuff")]
+    public bool ranged = false;
+    public int bulletCount, bulletBurst;
+    public float bulletSpread, burstDelay, accuracy, force;
+    float recoil, currentForce;
+
+    [Header("Specials")]
     public string[] enrageStats;
     public float[] enrageValue;
 
-    // -- Dropy --
+    [Header("Dropy")]
+    public LeftOver DeathDrop;
     public float scrapChance, itemChance;
     public int scrapCount, itemCount;
-    public LeftOver DeathDrop;
 
     void Start()
     {
@@ -147,7 +153,7 @@ public class Enemy : MonoBehaviour
         if (!attackTimer)
         {
             if (ranged)
-                Shoot();
+                Fire();
             else Strike();
             StartCoroutine(attackTime());
         }
@@ -166,12 +172,39 @@ public class Enemy : MonoBehaviour
         playerStats.GainPoison(attackPoison);
     }
 
+    void Fire()
+    {
+        if (bulletBurst != 1)
+        {
+            for (int i = 0; i < bulletBurst; i++)
+            {
+                Invoke("Shoot", i * burstDelay);
+            }
+        }
+        else Shoot();
+    }
+
     void Shoot()
     {
-        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(- accuracy, accuracy));
-        GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
-        Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-        scrap_body.AddForce(Sight.up * force * Random.Range(1f, 1.1f), ForceMode2D.Impulse);
+        if (bulletCount != 1)
+        {
+            recoil = Random.Range(-accuracy, accuracy);
+            currentForce = Random.Range(1f, 1.1f);
+            for (int i = 0; i < bulletCount; i++)
+            {
+                Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + recoil + (i * 2 - 1) * bulletSpread / 2);
+                GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
+                Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+                scrap_body.AddForce(Sight.up * force * currentForce, ForceMode2D.Impulse);
+            }
+        }
+        else
+        {
+            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(-accuracy, accuracy));
+            GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
+            Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+            scrap_body.AddForce(Sight.up * force * Random.Range(1f, 1.1f), ForceMode2D.Impulse);
+        }
     }
 
     public void Struck(Collider2D other)
@@ -297,24 +330,29 @@ public class Enemy : MonoBehaviour
 
     void Death()
     {
-        for (int i = 0; i < scrapCount; i++)
+        if (!dead)
         {
-            if (scrapChance >= Random.Range(0f, 1f))
-                DropScrap();
-        }
+            dead = true;
 
-        for (int i = 0; i < itemCount; i++)
-        {
-            if (itemChance >= Random.Range(0f, 1f))
-                DropItem();
-        }
+            for (int i = 0; i < scrapCount; i++)
+            {
+                if (scrapChance >= Random.Range(0f, 1f))
+                    DropScrap();
+            }
 
-        if (DeathDrop)
-            DeathDrop.Trigger();
+            for (int i = 0; i < itemCount; i++)
+            {
+                if (itemChance >= Random.Range(0f, 1f))
+                    DropItem();
+            }
 
-        if (boss)
-        {
-            day_night.StartDay();
+            if (DeathDrop)
+                DeathDrop.Trigger();
+
+            if (boss)
+            {
+                day_night.StartDay();
+            }
         }
 
         Destroy(gameObject);

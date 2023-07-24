@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: delayMultiplyer
-      value: 0.14
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 9001426375563854430, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: zAngle
