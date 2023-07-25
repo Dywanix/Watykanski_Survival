@@ -156,9 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5505134894392489898}
   ToxicCloud: {fileID: 3716635103215899977, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
-  cloudTimer: 1.84
-  cloudCooldown: 1.64
-  range: 20
+  cloudTimer: 1.53
+  cloudCooldown: 1.36
+  range: 21
 --- !u!114 &5505134894392489898 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8081039479754965167, guid: 1f720c6d99a69fe4cb1f7713522a39d4, type: 3}

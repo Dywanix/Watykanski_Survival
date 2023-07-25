@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1547678176469767488}
   m_Layer: 0
   m_Name: ColliderRange
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2105,8 +2105,8 @@ MonoBehaviour:
   health: 63
   maxShield: 20
   shield: 20
-  shieldChargeRate: 2.5
-  shieldChargeDelay: 4.5
+  shieldChargeRate: 2
+  shieldChargeDelay: 5
   rechargeTimer: 0
   poison: 0
   damageBonus: 1.046

@@ -133,7 +133,7 @@ MonoBehaviour:
   enemy: {fileID: 8374036020193433014}
   toxic: {fileID: 7376622442087527718}
   ToxicCloud: {fileID: 3716635103215899977, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
-  cloudCooldown: 5.94
+  cloudCooldown: 5.4
   cloudsCount: 7
 --- !u!114 &7376622442087527718
 MonoBehaviour:
@@ -149,9 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 8374036020193433014}
   ToxicCloud: {fileID: 3716635103215899977, guid: 9bc9a424ad9573544a8599d2d392306b, type: 3}
-  cloudTimer: 1.28
-  cloudCooldown: 1.14
-  range: 26.6
+  cloudTimer: 1.06
+  cloudCooldown: 0.95
+  range: 28
 --- !u!114 &8374036020193433014 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7109436417582403305, guid: 2eea0bfa269c5944c870a16520f9bbab, type: 3}

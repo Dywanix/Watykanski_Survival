@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: armor
-      value: 12.6
+      value: 12.85
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: health
-      value: 49
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: weight
@@ -21,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: accuracy
-      value: 10.6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: maxHealth
-      value: 49
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: burstDelay
-      value: 0.22
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: itemChance
@@ -41,11 +41,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: attackRange
-      value: 18.7
+      value: 18.4
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: attackSpeed
-      value: 3.66
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 3281241569070123189, guid: 02ba6282862a0da49be0bfea6fa8d249, type: 3}
       propertyPath: bulletBurst

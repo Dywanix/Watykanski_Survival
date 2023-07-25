@@ -510,7 +510,7 @@ public class PlayerController : MonoBehaviour
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
             TakeDamage(collidedBullet.damage, false);
             GainPoison(collidedBullet.poison);
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
         }
     }
 

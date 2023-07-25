@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4234c1332cd7840970caab6f57381c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1.8
+  duration: 2
   damage: 52
   poison: 0
   persist: 0

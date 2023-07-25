@@ -29,6 +29,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public int day, bossFrequency, hordeSize, roll, epicCharges;
     public float time, maxTime, spawnGap, spawnTime, rareSpawnGap, rareSpawnTime;
     public bool bossNight;
+    float temp;
 
     void Start()
     {
@@ -83,7 +84,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.day = false;
         CurrentState = TimeState.Night;
-        maxTime = 77f + 7f * day;
+        maxTime = 76f + 5f * day;
         time = 0;
 
         if (day % bossFrequency == 0)
@@ -95,10 +96,13 @@ public class Day_Night_Cycle : MonoBehaviour
         {
             bossNight = false;
 
-            hordeSize = 17 + day * 8;
+            hordeSize = 16 + day * 8;
 
-            spawnGap = 1.8f / (day * (day + 1) / 5f + 0.5f * day + 1f);
-            rareSpawnGap = 4.8f / (day * (day + 1) / 4f + 0.7f * day + 1f);
+            temp = (day * (day + 1) * 0.8f + 3f * day + 5f) * 10f;
+            spawnGap = maxTime / temp;
+
+            temp = (day * (day + 1) * 1f + 4.2f * day + 5f) * 3.75f;
+            rareSpawnGap = maxTime / temp;
 
             spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
             rareSpawnTime = rareSpawnGap * (1.4f + hordeSize * 0.2f);

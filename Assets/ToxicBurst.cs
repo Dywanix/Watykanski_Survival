@@ -56,7 +56,7 @@ public class ToxicBurst : MonoBehaviour
             enemy.Sight.rotation = Quaternion.Euler(enemy.Sight.rotation.x, enemy.Sight.rotation.y, enemy.Dir.rotation + Random.Range(-6f, 6f) + i * 360f / cloudsCount);
             GameObject cloud = Instantiate(ToxicCloud, enemy.Dir.position, enemy.Sight.rotation);
             Rigidbody2D cloud_body = cloud.GetComponent<Rigidbody2D>();
-            cloud_body.AddForce(enemy.Sight.up * (0.27f + 0.04f * cloudsCount) * Random.Range(0.88f, 1.12f), ForceMode2D.Impulse);
+            cloud_body.AddForce(enemy.Sight.up * (0.31f + 0.05f * cloudsCount) * Random.Range(0.88f, 1.12f), ForceMode2D.Impulse);
         }
     }
 }

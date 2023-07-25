@@ -26,6 +26,6 @@ public class Toxic : MonoBehaviour
         enemy.Sight.rotation = Quaternion.Euler(enemy.Sight.rotation.x, enemy.Sight.rotation.y, enemy.Dir.rotation + Random.Range(0, 360f));
         GameObject cloud = Instantiate(ToxicCloud, enemy.Dir.position, enemy.Sight.rotation);
         Rigidbody2D cloud_body = cloud.GetComponent<Rigidbody2D>();
-        cloud_body.AddForce(enemy.Sight.up * 0.22f * Random.Range(0.85f, 1.15f), ForceMode2D.Impulse);
+        cloud_body.AddForce(enemy.Sight.up * 0.32f * Random.Range(0.85f, 1.15f), ForceMode2D.Impulse);
     }
 }
