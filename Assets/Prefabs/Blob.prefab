@@ -29,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4949778951044425418, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: damage
-      value: 12.7
+      value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 5673553934503694807, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
       propertyPath: poison

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public TMPro.TextMeshProUGUI magazineInfo, scrapInfo, toolsInfo, tokensInfo;
-    public Image healthBar, taskImage, dashImage;
+    public Image healthBar, shieldBar, taskImage, dashImage;
     public Bullet firedBullet;
     private EnemyBullet collidedBullet;
 
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public float task, taskMax;
 
     // -- statystyki --
-    public float maxHealth, health, poison, damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
+    public float maxHealth, health, maxShield, shield, shieldChargeRate, shieldChargeDelay, rechargeTimer, poison, damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
     public int level = 1, dayCount = 1, accessoriesPerType;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     int tempi;
@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         DisplayAmmo();
         health = maxHealth;
         healthBar.fillAmount = health / maxHealth;
+        shieldBar.fillAmount = shield / maxShield;
         Invoke("Tick", 0.8f);
     }
 
@@ -76,10 +77,19 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
         if (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
             dashImage.fillAmount = 1 - (dashCooldown / maxDashCooldown);
+        }
+
+        if (shield < maxShield)
+        {
+            if (rechargeTimer > 0)
+                rechargeTimer -= Time.deltaTime;
+            else
+                GainShield(shieldChargeRate * Time.deltaTime);
         }
     }
 
@@ -95,7 +105,7 @@ public class PlayerController : MonoBehaviour
         RestoreHealth(maxHealth * 0.001f * eq.Items[5]);
 
         if (berserker == true)
-            RestoreHealth((maxHealth * 3f - health * 2f) * 0.002f);
+            RestoreHealth((maxHealth * 2f - health) * 0.003f);
 
         if (poison > 0)
             poison -= 0.2f;
@@ -388,13 +398,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float value)
+    public void TakeDamage(float value, bool pierce)
     {
-        health -= value;
-        healthBar.fillAmount = health / maxHealth;
+        if (pierce)
+        {
+            health -= value;
+            healthBar.fillAmount = health / maxHealth;
 
-        if (berserker == true && !day)
-            berserker.GainWrath(value);
+            if (berserker == true && !day)
+                berserker.GainWrath(value);
+        }
+        else
+        {
+            shield -= value;
+            rechargeTimer = shieldChargeDelay;
+
+            if (shield < 0)
+            {
+                value = shield * (-1f);
+                shield = 0;
+                health -= value;
+                healthBar.fillAmount = health / maxHealth;
+
+                if (berserker == true && !day)
+                    berserker.GainWrath(value);
+            }
+            shieldBar.fillAmount = shield / maxShield;
+        }
 
         if (health < 0f)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -406,8 +436,8 @@ public class PlayerController : MonoBehaviour
         poison += value;
 
         if (poison >= value * 3f)
-            TakeDamage(value * 3f);
-        else TakeDamage(poison);
+            TakeDamage(value * 3f, true);
+        else TakeDamage(poison, true);
     }
 
     public void RestoreHealth(float value)
@@ -416,6 +446,14 @@ public class PlayerController : MonoBehaviour
         if (health > maxHealth)
             health = maxHealth;
         healthBar.fillAmount = health / maxHealth;
+    }
+
+    public void GainShield(float value)
+    {
+        shield += value;
+        if (shield > maxShield)
+            shield = maxShield;
+        shieldBar.fillAmount = shield / maxShield;
     }
 
     public float SpeedMultiplyer(float efficiency)
@@ -470,7 +508,7 @@ public class PlayerController : MonoBehaviour
         else if (other.transform.tag == "EnemyProjectal")
         {
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
-            TakeDamage(collidedBullet.damage);
+            TakeDamage(collidedBullet.damage, false);
             GainPoison(collidedBullet.poison);
             Destroy(other.gameObject);
         }

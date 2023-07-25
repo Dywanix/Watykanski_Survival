@@ -48,7 +48,7 @@ public class Berserker : MonoBehaviour
 
     public void GainWrath(float value)
     {
-        wrath += value * (0.024f + 0.001f * playerStats.level) / 100f;
+        wrath += value * (0.028f + 0.001f * playerStats.level) / 100f;
         WrathCount.text = (wrath * 100).ToString("0.0") + "%";
     }
 
@@ -59,8 +59,8 @@ public class Berserker : MonoBehaviour
             enrageMaxCooldown = 33f / playerStats.cooldownReduction; ;
             enrageCooldown = enrageMaxCooldown;
 
-            healthSacrifice = playerStats.health * 0.27f;
-            playerStats.TakeDamage(healthSacrifice);
+            healthSacrifice = playerStats.health * 0.3f;
+            playerStats.TakeDamage(healthSacrifice, true);
 
             enrageFireRateIncrease = 1.108f + 0.004f * playerStats.level + 0.0036f * healthSacrifice;
             enrageDamageIncrease = 0.58f + enrageFireRateIncrease * 0.42f;
@@ -74,7 +74,7 @@ public class Berserker : MonoBehaviour
 
     void EnrageEnd()
     {
-        playerStats.RestoreHealth(healthSacrifice * 0.27f);
+        playerStats.RestoreHealth(healthSacrifice * 0.31f);
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageBonus /= enrageDamageIncrease;
@@ -100,6 +100,6 @@ public class Berserker : MonoBehaviour
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         bullet_body.AddForce(playerStats.Barrel.up * 14f * playerStats.DamageDealtMultiplyer(0.8f), ForceMode2D.Impulse);
         AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        AxeThrown.damage = (29 + 2f * playerStats.level + 0.04f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
+        AxeThrown.damage = (29 + 2f * playerStats.level + 0.045f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
     }
 }
