@@ -1175,7 +1175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6601758593997722912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.41, y: 1.11, z: 0}
+  m_LocalPosition: {x: -0.41, y: 1.1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1606,6 +1606,11 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  Barrel: {fileID: 6601758593997722913}
+  GunBody: {fileID: 6601758593855852965}
+  flashCount: 4
+  flashSpread: 52
 --- !u!1 &6601758594972793425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +1693,11 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  Barrel: {fileID: 6601758593997722913}
+  GunBody: {fileID: 6601758593855852965}
+  flashCount: 3
+  flashSpread: 39
 --- !u!1 &6601758594973909900
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,11 @@ public class Gun : MonoBehaviour
     float temp;
     int tempi;
 
-    public GameObject bulletPrefab;
+    public GameObject bulletPrefab, flashPrefab;
+    public Transform Barrel;
+    public Rigidbody2D GunBody;
+    public int flashCount;
+    public float flashSpread;
 
     void Start()
     {
@@ -174,5 +178,14 @@ public class Gun : MonoBehaviour
     public int BulletsFired()
     {
         return bulletSpread * spreadMultiplyer;
+    }
+
+    public void Flash()
+    {
+        for (int i = 0; i < flashCount; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, GunBody.rotation + Random.Range(-flashSpread * 0.6f, flashSpread * 0.6f) + ((i - flashCount * 0.5f) * flashSpread / flashCount));
+            Instantiate(flashPrefab, Barrel.position, Barrel.rotation);
+        }
     }
 }

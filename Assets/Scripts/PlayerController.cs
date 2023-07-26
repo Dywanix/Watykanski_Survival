@@ -231,6 +231,7 @@ public class PlayerController : MonoBehaviour
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
+            eq.guns[eq.equipped].Flash();
         }
 
         eq.SpecialCharges();

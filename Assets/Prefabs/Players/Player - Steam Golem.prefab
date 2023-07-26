@@ -792,6 +792,11 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  Barrel: {fileID: 2585763503920804328}
+  GunBody: {fileID: 2585763503644783980}
+  flashCount: 2
+  flashSpread: 28
 --- !u!1 &2585763502741186373
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +955,11 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   bulletPrefab: {fileID: 7974423976338264409, guid: e4ae18e87b03f6c40a75f5c6d64de43d, type: 3}
+  flashPrefab: {fileID: 1682428277475712359, guid: efc8e605e8c289842a29674f485db673, type: 3}
+  Barrel: {fileID: 2585763503920804328}
+  GunBody: {fileID: 2585763503644783980}
+  flashCount: 1
+  flashSpread: 0
 --- !u!1 &2585763502906173108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1119,11 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   bulletPrefab: {fileID: 7946786931316408927, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  flashPrefab: {fileID: 0}
+  Barrel: {fileID: 0}
+  GunBody: {fileID: 0}
+  flashCount: 0
+  flashSpread: 0
 --- !u!1 &2585763503004487310
 GameObject:
   m_ObjectHideFlags: 0
