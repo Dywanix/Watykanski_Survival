@@ -82,7 +82,7 @@ public class Gunslinger : MonoBehaviour
             playerStats.NewTask(0.7f);
 
             unloadCount = 0;
-            for (float i = 0; i < 0.56f; i += unloadGap)
+            for (float i = 0; i < 0.55f; i += unloadGap)
             {
                 Invoke("Fire", i);
                 unloadCount++;
@@ -93,11 +93,11 @@ public class Gunslinger : MonoBehaviour
     void Fire()
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0 || playerStats.eq.guns[playerStats.eq.equipped].infiniteMagazine)
-            playerStats.Shoot(5f);
+            playerStats.Shoot(4.5f);
         else
         {
             playerStats.task -= unloadGap;
-            unloadCooldown -= unloadMaxCooldown / (unloadCount * 1f + 1f);
+            unloadCooldown -= unloadMaxCooldown / (unloadCount * 1f + 0.9f);
         }
     }
 }

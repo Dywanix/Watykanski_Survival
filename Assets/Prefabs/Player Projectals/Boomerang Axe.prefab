@@ -101,7 +101,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228963646556670043, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: pierce
-      value: 6
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228963646556670043, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
+      propertyPath: duration
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228963646556670043, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
+      propertyPath: pierceEfficiency
+      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
