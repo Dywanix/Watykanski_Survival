@@ -137,7 +137,7 @@ public class Equipment : MonoBehaviour
 
     public void SpecialCharges()
     {
-        sawCharges += guns[equipped].Accessories[4] * guns[equipped].bulletSpread * (1f + 0.15f * guns[equipped].Accessories[4 + playerStats.accessoriesPerType * 3]);
+        sawCharges += guns[equipped].Accessories[4] * guns[equipped].BulletsFired() * (1f + 0.15f * guns[equipped].Accessories[4 + playerStats.accessoriesPerType * 3]);
         if (sawCharges >= 12f)
         {
             FireSaw();
@@ -171,7 +171,7 @@ public class Equipment : MonoBehaviour
 
     public void FireLaser()
     {
-        for (int i = 0; i < guns[equipped].bulletSpread; i++)
+        for (int i = 0; i < guns[equipped].BulletsFired(); i++)
         {
             playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-(1f + 0.7f * guns[equipped].accuracy), (1f + .7f * guns[equipped].accuracy)));
             GameObject bullet = Instantiate(Laser, playerStats.Barrel.position, playerStats.Barrel.rotation);

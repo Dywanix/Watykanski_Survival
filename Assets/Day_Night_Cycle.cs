@@ -84,7 +84,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.day = false;
         CurrentState = TimeState.Night;
-        maxTime = 76f + 5f * day;
+        maxTime = 75f + 5f * day;
         time = 0;
 
         if (day % bossFrequency == 0)
