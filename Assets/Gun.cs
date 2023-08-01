@@ -6,20 +6,44 @@ public class Gun : MonoBehaviour
 {
     public string gunName;
     public Sprite gunSprite;
-    // -- Basic Gun Stats
-    public float damage, critChance, penetration, fireRate, reloadTime, accuracy, force, range, cameraShake, shakeDuration; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
 
-    // -- Special Gun Stats
-    public float critDamage, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, specialCharge;
-    public int magazineSize, overload, bulletsLeft, ammo, ammoFromPack, bulletSpread, spreadMultiplyer, pierce, special;
+    [Header("Basic Staty")]
+    public float damage;
+    public float fireRate;
+    public float accuracy;
+    public float penetration;
+    public float critChance;
+    public float reloadTime;
+    public float range;
+    public float force; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
+    public int magazineSize;
+    public int ammo;
+
+    [Header("Special Staty")]
+    public float critDamage;
+    public float armorShred;
+    public float vulnerableApplied;
+    public int bulletSpread;
+    public int pierce;
+    public float pierceEfficiency;
+    public float DoT;
+    public int overload;
+    public float slowDuration;
+    public float stunChance;
+    public float stunDuration;
+
+    [Header("Inne Staty")]
+    public float specialCharge;
+    public float cameraShake, shakeDuration;
+    public int bulletsLeft, ammoFromPack, spreadMultiplyer, special;
     public int[] MaxSlots, TakenSlots, Costs, Accessories;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
     float temp;
     int tempi;
 
-    public GameObject bulletPrefab, flashPrefab;
-    public Transform Barrel;
-    public Rigidbody2D GunBody;
+    [Header("Graficzne Staty")]
+    public GameObject bulletPrefab;
+    public GameObject flashPrefab;
     public int flashCount;
     public float flashSpread;
 
@@ -178,14 +202,5 @@ public class Gun : MonoBehaviour
     public int BulletsFired()
     {
         return bulletSpread * spreadMultiplyer;
-    }
-
-    public void Flash()
-    {
-        for (int i = 0; i < flashCount; i++)
-        {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, GunBody.rotation + Random.Range(-flashSpread * 0.6f, flashSpread * 0.6f) + ((i - flashCount * 0.5f) * flashSpread / flashCount));
-            Instantiate(flashPrefab, Barrel.position, Barrel.rotation);
-        }
     }
 }

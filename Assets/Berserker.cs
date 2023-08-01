@@ -98,7 +98,7 @@ public class Berserker : MonoBehaviour
         playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-3f, 3f));
         GameObject bullet = Instantiate(BoomerangAxe, playerStats.Barrel.position, playerStats.Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(playerStats.Barrel.up * 14f * playerStats.DamageDealtMultiplyer(0.8f), ForceMode2D.Impulse);
+        bullet_body.AddForce(playerStats.Barrel.up * 14.4f * playerStats.DamageDealtMultiplyer(0.83f), ForceMode2D.Impulse);
         AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
         AxeThrown.damage = (29 + 2f * playerStats.level + 0.045f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
     }

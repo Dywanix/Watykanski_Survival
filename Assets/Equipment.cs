@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Equipment : MonoBehaviour
 {
     public PlayerController playerStats;
+    public GunsLibrary Library;
     public Transform Barrel;
     public Gun[] guns;
     public GameObject[] gunSprite;
@@ -14,6 +15,7 @@ public class Equipment : MonoBehaviour
     public SpriteRenderer equippedGun;
     private Bullet firedBullet;
 
+    public bool[] slotFilled;
     public int equipped, item;
     float temp;
 
@@ -32,6 +34,15 @@ public class Equipment : MonoBehaviour
         Invoke("KnifeThrow", 2.85f);
         Invoke("ThrowSaw", 3.5f);
         Invoke("ThrowCleaver", 4f);
+    }
+
+    public void Flash()
+    {
+        for (int i = 0; i < guns[equipped].flashCount; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-guns[equipped].flashSpread * 0.6f, guns[equipped].flashSpread * 0.6f) + ((i * 2 + 1 - guns[equipped].flashCount) * guns[equipped].flashSpread / guns[equipped].flashCount));
+            Instantiate(guns[equipped].flashPrefab, Barrel.position, Barrel.rotation);
+        }
     }
 
     void Update()

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2762192905530955741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3002683828362963522}
+  m_Layer: 0
+  m_Name: Fragmentation Form
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3002683828362963522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762192905530955741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5739135406867345582}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &798443928604153444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,11 +134,36 @@ PrefabInstance:
     - {fileID: 7411343261988739601, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
     - {fileID: 5946344980233437452, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
+--- !u!50 &3191054326414800118 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2836216104138433170, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
+  m_PrefabInstance: {fileID: 798443928604153444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5306407701457883464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4805482868368197420, guid: 91e9d3be51aabf946a2a46fe4e25eb9c, type: 3}
   m_PrefabInstance: {fileID: 798443928604153444}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4247014703229147205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306407701457883464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce9f80f10eb2e14c92569e4f26b8792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Particle: {fileID: 1158470912100568508, guid: 7d2a191f6f2085944a86a32c3506fe42, type: 3}
+  Dir: {fileID: 3191054326414800118}
+  FragForm: {fileID: 3002683828362963522}
+  frequency: 0.2
+  frequencyGain: 1.05
+  delay: 0.24
+  particleForce: 0.8
+  particleRange: 8
 --- !u!114 &8066485238528380233
 MonoBehaviour:
   m_ObjectHideFlags: 0

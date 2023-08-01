@@ -33,11 +33,13 @@ public class Day_Night_Cycle : MonoBehaviour
 
     void Start()
     {
-        Instantiate(Players[PlayerPrefs.GetInt("Class")]);
+        //Instantiate(Players[PlayerPrefs.GetInt("Class")]);
+        Instantiate(Players[0]);
 
         Player = GameObject.FindGameObjectWithTag("Player");
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-        playerStats.SwapGun(PlayerPrefs.GetInt("Gun"));
+        //playerStats.SwapGun(PlayerPrefs.GetInt("Gun"));
+        playerStats.SwapGun(0);
 
         day = 1;
         dayCount.text = day.ToString("0");

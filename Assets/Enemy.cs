@@ -53,6 +53,9 @@ public class Enemy : MonoBehaviour
     public float scrapChance, itemChance;
     public int scrapCount, itemCount;
 
+    [Header("Graficzne")]
+    public GameObject Blood;
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -192,7 +195,7 @@ public class Enemy : MonoBehaviour
             currentForce = Random.Range(1f, 1.1f);
             for (int i = 0; i < bulletCount; i++)
             {
-                Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + recoil + (i * 2 - 1) * bulletSpread / 2);
+                Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + recoil + (i * 2 - bulletCount + 1) * bulletSpread / 2);
                 GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
                 Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
                 scrap_body.AddForce(Sight.up * force * currentForce, ForceMode2D.Impulse);

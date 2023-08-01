@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Transform Barrel, Hand, Dude, GunRot;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI magazineInfo, scrapInfo, toolsInfo, tokensInfo;
+    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo, toolsInfo, tokensInfo;
     public Image healthBar, shieldBar, taskImage, dashImage;
     public Bullet firedBullet;
     private EnemyBullet collidedBullet;
@@ -185,12 +185,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.R))
             Reload();
-        /*else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
             SwapGun(0);
         else if (Input.GetKeyDown(KeyCode.Alpha2))
             SwapGun(1);
         else if (Input.GetKeyDown(KeyCode.Alpha3))
-            SwapGun(2);*/
+            SwapGun(2);
     }
 
     public void Shoot(float accuracy_change)
@@ -231,7 +231,7 @@ public class PlayerController : MonoBehaviour
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
-            eq.guns[eq.equipped].Flash();
+            eq.Flash();
         }
 
         eq.SpecialCharges();
@@ -357,12 +357,13 @@ public class PlayerController : MonoBehaviour
 
     public void DisplayAmmo()
     {
-        magazineInfo.text = (eq.guns[eq.equipped].bulletsLeft).ToString("") + "/" + eq.guns[eq.equipped].magazineSize; 
+        magazineInfo.text = (eq.guns[eq.equipped].bulletsLeft).ToString("") + "/" + eq.guns[eq.equipped].magazineSize;
+        ammoInfo.text = (eq.guns[eq.equipped].ammo).ToString("");
     }
 
     public void SwapGun(int which)
     {
-        if (which != eq.equipped)
+        if (which != eq.equipped && eq.slotFilled[which])
         {
             eq.gunSprite[eq.equipped].SetActive(false);
             eq.equipped = which;
@@ -370,6 +371,20 @@ public class PlayerController : MonoBehaviour
             eq.equippedGun.sprite = eq.guns[eq.equipped].gunSprite;
             DisplayAmmo();
             NewTask(0.775f);
+        }
+    }
+
+    public void PickUpGun(int which)
+    {
+        if (!eq.slotFilled[1])
+        {
+            eq.guns[1] = eq.Library.guns[which];
+            eq.slotFilled[1] = true;
+        }
+        else if (!eq.slotFilled[2])
+        {
+            eq.guns[2] = eq.Library.guns[which];
+            eq.slotFilled[2] = true;
         }
     }
 

@@ -1,0 +1,458 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5518898055452544451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5518898055452544453}
+  - component: {fileID: 5518898055452544452}
+  m_Layer: 0
+  m_Name: Guns Library
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5518898055452544453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898055452544451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11756181, y: -0.09006099, z: 0.07631992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5518898055514371839}
+  - {fileID: 5518898057136511716}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5518898055452544452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898055452544451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037a1dde6e4efbe48bf210841a022a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns:
+  - {fileID: 5518898057456536057}
+  - {fileID: 5518898056057515682}
+  - {fileID: 5518898056424690037}
+--- !u!1 &5518898055514371838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5518898055514371839}
+  m_Layer: 0
+  m_Name: Bazowe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5518898055514371839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898055514371838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5518898056319036725}
+  m_Father: {fileID: 5518898055452544453}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5518898056057515680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5518898056057515681}
+  - component: {fileID: 5518898056057515682}
+  m_Layer: 0
+  m_Name: Basic SR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5518898056057515681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898056057515680}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5518898056057515682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898056057515680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic SR
+  gunSprite: {fileID: 21300000, guid: dc971bd7e998dfd4491d853afff53324, type: 3}
+  damage: 56.5
+  fireRate: 1.43
+  accuracy: 3.1
+  penetration: 0.33
+  critChance: 0.14
+  reloadTime: 1.866
+  range: 1.13
+  force: 21.1
+  magazineSize: 3
+  ammo: 18
+  critDamage: 1.7
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 2
+  pierceEfficiency: 0.65
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  specialCharge: 0
+  cameraShake: 5.73
+  shakeDuration: 0.087
+  bulletsLeft: 3
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 03000000030000000300000003000000
+  TakenSlots: 00000000000000000000000000000000
+  Costs: 18000000180000001800000018000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  bulletPrefab: {fileID: 6320131366731747711, guid: e4e199fb6abc014448a7b83bf8c9da40, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 5
+  flashSpread: 16
+--- !u!1 &5518898056319036724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5518898056319036725}
+  - component: {fileID: 5518898056319036726}
+  m_Layer: 0
+  m_Name: Handgun1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5518898056319036725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898056319036724}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898055514371839}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5518898056319036726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898056319036724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Handgun1
+  gunSprite: {fileID: 21300000, guid: 425fc690ef5f65f40b7243361b333de2, type: 3}
+  damage: 26.8
+  fireRate: 0.961
+  accuracy: 6.84
+  penetration: 0.14
+  critChance: 0.15
+  reloadTime: 1.761
+  range: 1.13
+  force: 18.9
+  magazineSize: 7
+  ammo: 0
+  critDamage: 1.65
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  specialCharge: 0
+  cameraShake: 2.68
+  shakeDuration: 0.052
+  bulletsLeft: 7
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 03000000020000000200000002000000
+  TakenSlots: 00000000000000000000000000000000
+  Costs: 18000000180000001800000018000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  infiniteMagazine: 0
+  infiniteAmmo: 1
+  individualReload: 0
+  bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 4
+  flashSpread: 52
+--- !u!1 &5518898056424690035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5518898056424690036}
+  - component: {fileID: 5518898056424690037}
+  m_Layer: 0
+  m_Name: Blob Shotgun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5518898056424690036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898056424690035}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5518898056424690037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898056424690035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Blob Shotgun
+  gunSprite: {fileID: 21300000, guid: e590f60fbd15cca41b0586ac8bc4f892, type: 3}
+  damage: 32.8
+  fireRate: 1.048
+  accuracy: 9.5
+  penetration: 0.24
+  critChance: 0.07
+  reloadTime: 1.521
+  range: 1.16
+  force: 16.8
+  magazineSize: 5
+  ammo: 27
+  critDamage: 1.42
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 2
+  pierceEfficiency: 0.8
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  specialCharge: 0
+  cameraShake: 3.34
+  shakeDuration: 0.081
+  bulletsLeft: 5
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 03000000030000000300000003000000
+  TakenSlots: 00000000000000000000000000000000
+  Costs: 18000000180000001800000018000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  bulletPrefab: {fileID: 5478519011124509284, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 6
+  flashSpread: 36
+--- !u!1 &5518898057136511715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5518898057136511716}
+  m_Layer: 0
+  m_Name: Specialne
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5518898057136511716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898057136511715}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5518898057456536056}
+  - {fileID: 5518898056057515681}
+  - {fileID: 5518898056424690036}
+  m_Father: {fileID: 5518898055452544453}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5518898057456536055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5518898057456536056}
+  - component: {fileID: 5518898057456536057}
+  m_Layer: 0
+  m_Name: Basic AR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5518898057456536056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898057456536055}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5518898057456536057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5518898057456536055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic AR
+  gunSprite: {fileID: 21300000, guid: 4f6629a6c74ecb24aae87fe1e9a9d8db, type: 3}
+  damage: 22.4
+  fireRate: 0.478
+  accuracy: 9.22
+  penetration: 0.22
+  critChance: 0.1
+  reloadTime: 1.84
+  range: 1.1
+  force: 19.9
+  magazineSize: 24
+  ammo: 108
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  specialCharge: 0
+  cameraShake: 1.22
+  shakeDuration: 0.0295
+  bulletsLeft: 24
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 03000000030000000300000003000000
+  TakenSlots: 00000000000000000000000000000000
+  Costs: 18000000180000001800000018000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 3
+  flashSpread: 26
