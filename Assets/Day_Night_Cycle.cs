@@ -75,16 +75,16 @@ public class Day_Night_Cycle : MonoBehaviour
                     StartDay();
                 break;
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        /*if (Input.GetKeyDown(KeyCode.P))
             time += 16f;
         if (Input.GetKeyDown(KeyCode.M))
-            time -= 16f;
+            time -= 16f;*/
         DayBar.fillAmount = time / maxTime;
     }
 
     void StartNight()
     {
-        playerStats.day = false;
+        playerStats.Nightfall();
         CurrentState = TimeState.Night;
         maxTime = 75f + 5f * day;
         time = 0;

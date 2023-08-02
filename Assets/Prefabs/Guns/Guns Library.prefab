@@ -138,6 +138,7 @@ MonoBehaviour:
   force: 21.1
   magazineSize: 3
   ammo: 18
+  maxAmmo: 21
   critDamage: 1.7
   armorShred: 0
   vulnerableApplied: 0
@@ -223,6 +224,7 @@ MonoBehaviour:
   force: 18.9
   magazineSize: 7
   ammo: 0
+  maxAmmo: 0
   critDamage: 1.65
   armorShred: 0
   vulnerableApplied: 0
@@ -308,6 +310,7 @@ MonoBehaviour:
   force: 16.8
   magazineSize: 5
   ammo: 27
+  maxAmmo: 32
   critDamage: 1.42
   armorShred: 0
   vulnerableApplied: 0
@@ -427,6 +430,7 @@ MonoBehaviour:
   force: 19.9
   magazineSize: 24
   ammo: 108
+  maxAmmo: 132
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0

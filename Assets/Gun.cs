@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
     public float force; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
     public int magazineSize;
     public int ammo;
+    public int maxAmmo;
 
     [Header("Special Staty")]
     public float critDamage;
