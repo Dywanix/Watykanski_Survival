@@ -115,6 +115,7 @@ MonoBehaviour:
   form: {fileID: 1078982027941204765}
   delay: 1.25
   delayMultiplyer: 0.656
+  accuracy: 7
   bulletForce: 0.37
   bulletsCount: 7
 --- !u!4 &1078982027941204765 stripped

@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4247014703229147205, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
+      propertyPath: delay
+      value: 0.264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247014703229147205, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
+      propertyPath: frequency
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247014703229147205, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
+      propertyPath: particleForce
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247014703229147205, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
+      propertyPath: particleRange
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5019305471796332467, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: damage
       value: 12

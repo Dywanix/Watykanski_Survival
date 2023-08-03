@@ -176,6 +176,7 @@ MonoBehaviour:
   form: {fileID: 4949778951044425418}
   delay: 1.75
   delayMultiplyer: 0.04
+  accuracy: 6
   bulletForce: 8.57
   bulletsCount: 9
 --- !u!114 &9001426375563854430
