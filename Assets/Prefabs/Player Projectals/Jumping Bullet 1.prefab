@@ -135,6 +135,6 @@ MonoBehaviour:
   bulletForce: 16
   forceRange: 0.04
   bonusDuration: 0.03
-  damageEfficiency: 1.089
+  damageEfficiency: 1.065
   bulletsCount: 1
   pierceCount: 1

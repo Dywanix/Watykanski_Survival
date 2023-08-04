@@ -13,11 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
       propertyPath: spread
-      value: 16
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
       propertyPath: accuracy
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
       propertyPath: delayRange
@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
       propertyPath: damageEfficiency
-      value: 0.559
+      value: 0.5472
       objectReference: {fileID: 0}
     - target: {fileID: 1051437965181869324, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
       propertyPath: m_Color.b

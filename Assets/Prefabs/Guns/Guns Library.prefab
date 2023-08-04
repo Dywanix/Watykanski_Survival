@@ -315,6 +315,8 @@ MonoBehaviour:
   - {fileID: 5974149374854409488}
   - {fileID: 7352936915088989079}
   - {fileID: 2305258803099737152}
+  - {fileID: 8145539831211771687}
+  - {fileID: 6032819139656934672}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +644,8 @@ Transform:
   - {fileID: 6117760998403461391}
   - {fileID: 5403475435169380279}
   - {fileID: 6202056126562500248}
+  - {fileID: 2297455644036735213}
+  - {fileID: 6625855369861730883}
   m_Father: {fileID: 5518898055452544453}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -732,3 +736,177 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
+--- !u!1 &8722000444462337091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2297455644036735213}
+  - component: {fileID: 8145539831211771687}
+  m_Layer: 0
+  m_Name: Jumping SMG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2297455644036735213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722000444462337091}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8145539831211771687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722000444462337091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic SMG
+  gunSprite: {fileID: 21300000, guid: b6e72f78f8008fb4099f038183d2ac56, type: 3}
+  damage: 15.4
+  fireRate: 0.229
+  accuracy: 10.52
+  penetration: 0.13
+  critChance: 0.14
+  reloadTime: 0.866
+  range: 0.99
+  force: 21.1
+  magazineSize: 30
+  ammo: 125
+  maxAmmo: 155
+  critDamage: 1.55
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  specialCharge: 0
+  cameraShake: 0.61
+  shakeDuration: 0.015
+  bulletsLeft: 27
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 03000000030000000300000003000000
+  TakenSlots: 00000000000000000000000000000000
+  Costs: 18000000180000001800000018000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  bulletPrefab:
+  - {fileID: 4048924461088704379, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 3
+  flashSpread: 26
+--- !u!1 &8734146860638946593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6625855369861730883}
+  - component: {fileID: 6032819139656934672}
+  m_Layer: 0
+  m_Name: Splitting Handgun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6625855369861730883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8734146860638946593}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6032819139656934672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8734146860638946593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Handgun1
+  gunSprite: {fileID: 21300000, guid: 3614bb889bef7af458b088c91a665e87, type: 3}
+  damage: 29.5
+  fireRate: 0.865
+  accuracy: 6.16
+  penetration: 0.23
+  critChance: 0.09
+  reloadTime: 1.595
+  range: 1.42
+  force: 15
+  magazineSize: 6
+  ammo: 30
+  maxAmmo: 36
+  critDamage: 1.6
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  specialCharge: 0
+  cameraShake: 3.21
+  shakeDuration: 0.055
+  bulletsLeft: 6
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 03000000020000000200000002000000
+  TakenSlots: 00000000000000000000000000000000
+  Costs: 18000000180000001800000018000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  bulletPrefab:
+  - {fileID: 3172954806413337685, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 4
+  flashSpread: 52
