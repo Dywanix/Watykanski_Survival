@@ -145,6 +145,7 @@ MonoBehaviour:
   pierceEfficiency: 0
   DoT: 0
   incendiary: 0
+  damageGain: 0
   pierce: 0
   infinite: 0
   crit: 0
@@ -228,7 +229,11 @@ MonoBehaviour:
   spread: 15
   accuracy: 8
   bulletForce: 15
+  forceRange: 0
   bonusDuration: 0.05
   damageEfficiency: 0.8
   bulletsCount: 3
   pierceCount: 1
+  remain: 0
+  retainDuration: 1
+  retainPierce: 0

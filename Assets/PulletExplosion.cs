@@ -11,6 +11,7 @@ public class PulletExplosion : MonoBehaviour
     public float[] bulletForce, damageEfficiency;
     public float delay, delayRange, accuracy;
     public int[] bulletsCount, pierceCount;
+    public bool[] retainPierce;
 
     void Start()
     {
@@ -51,7 +52,9 @@ public class PulletExplosion : MonoBehaviour
         BulletsShards.slowDuration = ThisBullet.slowDuration;
         BulletsShards.stunChance = ThisBullet.stunChance;
         BulletsShards.stunDuration = ThisBullet.stunDuration;
-        BulletsShards.pierce = pierceCount[which];
+        if (retainPierce[which])
+            BulletsShards.pierce = ThisBullet.pierce + pierceCount[which];
+        else BulletsShards.pierce = pierceCount[which];
         BulletsShards.crit = ThisBullet.crit;
     }
 }

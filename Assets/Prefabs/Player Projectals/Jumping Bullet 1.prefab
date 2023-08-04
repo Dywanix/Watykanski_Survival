@@ -138,3 +138,6 @@ MonoBehaviour:
   damageEfficiency: 1.065
   bulletsCount: 1
   pierceCount: 1
+  remain: 0
+  retainDuration: 1
+  retainPierce: 0

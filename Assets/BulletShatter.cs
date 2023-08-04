@@ -10,6 +10,7 @@ public class BulletShatter : MonoBehaviour
     public Transform Form;
     public float delay, delayRange, spread, accuracy, bulletForce, forceRange, bonusDuration, damageEfficiency;
     public int bulletsCount, pierceCount;
+    public bool remain, retainPierce;
 
     void Start()
     {
@@ -34,7 +35,8 @@ public class BulletShatter : MonoBehaviour
             BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
         }
-        Destroy(gameObject);
+        if (!remain)
+            Destroy(gameObject);
     }
 
     void SetBullet()
@@ -48,7 +50,9 @@ public class BulletShatter : MonoBehaviour
         BulletsShards.slowDuration = ThisBullet.slowDuration;
         BulletsShards.stunChance = ThisBullet.stunChance;
         BulletsShards.stunDuration = ThisBullet.stunDuration;
-        BulletsShards.pierce = pierceCount;
+        if (retainPierce)
+            BulletsShards.pierce = ThisBullet.pierce + pierceCount;
+        else BulletsShards.pierce = pierceCount;
         BulletsShards.pierceEfficiency = ThisBullet.pierceEfficiency;
         BulletsShards.crit = ThisBullet.crit;
     }

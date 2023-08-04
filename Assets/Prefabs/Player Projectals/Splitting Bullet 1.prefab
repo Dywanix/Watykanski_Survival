@@ -36,8 +36,16 @@ PrefabInstance:
       value: 14.95
       objectReference: {fileID: 0}
     - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
+      propertyPath: pierceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
       propertyPath: bulletsCount
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
+      propertyPath: retainPierce
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3761493365913467489, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
       propertyPath: bonusDuration
