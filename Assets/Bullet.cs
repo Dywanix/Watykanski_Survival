@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject ExplosionRadius;
     private Bullet Explosion;
-    public float duration, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, incendiary;
+    public float duration, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, incendiary, damageGain;
     public int pierce;
     public bool infinite, crit, AoE;
 
@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour
     {
         if (!infinite)
             duration -= Time.deltaTime;
+        damage *= 1f + damageGain * Time.deltaTime;
         if (duration <= 0)
             Destroy(gameObject);
     }

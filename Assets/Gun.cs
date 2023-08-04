@@ -43,7 +43,7 @@ public class Gun : MonoBehaviour
     int tempi;
 
     [Header("Graficzne Staty")]
-    public GameObject bulletPrefab;
+    public GameObject[] bulletPrefab;
     public GameObject flashPrefab;
     public int flashCount;
     public float flashSpread;

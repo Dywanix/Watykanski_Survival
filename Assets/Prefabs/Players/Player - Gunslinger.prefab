@@ -1582,6 +1582,7 @@ MonoBehaviour:
   force: 18.9
   magazineSize: 7
   ammo: 999
+  maxAmmo: 0
   critDamage: 1.65
   armorShred: 0
   vulnerableApplied: 0
@@ -1607,7 +1608,8 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
-  bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  bulletPrefab:
+  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
@@ -1667,6 +1669,7 @@ MonoBehaviour:
   force: 22.5
   magazineSize: 21
   ammo: 0
+  maxAmmo: 0
   critDamage: 1.55
   armorShred: 0
   vulnerableApplied: 0.01
@@ -1692,7 +1695,10 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
-  bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  bulletPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 39

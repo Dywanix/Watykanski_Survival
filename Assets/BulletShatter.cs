@@ -8,7 +8,7 @@ public class BulletShatter : MonoBehaviour
     public GameObject BulletShard;
     public Rigidbody2D Dir;
     public Transform Form;
-    public float delay, delayRange, spread, accuracy, bulletForce, bonusDuration, damageEfficiency;
+    public float delay, delayRange, spread, accuracy, bulletForce, forceRange, bonusDuration, damageEfficiency;
     public int bulletsCount, pierceCount;
 
     void Start()
@@ -30,7 +30,7 @@ public class BulletShatter : MonoBehaviour
             Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + Random.Range(-accuracy, accuracy) + (i * 2 - bulletsCount + 1) * spread / 2);
             GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(Form.up * bulletForce, ForceMode2D.Impulse);
+            bullet_body.AddForce(Form.up * bulletForce * Random.Range(1f, 1f + forceRange), ForceMode2D.Impulse);
             BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
         }
