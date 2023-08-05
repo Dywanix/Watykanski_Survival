@@ -280,7 +280,7 @@ MonoBehaviour:
   frequencyRange: 0.04
   damageEfficiency: 0.6
   bulletsCount: 1
---- !u!114 &3651984518436272857
+--- !u!114 &1402349568319012825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,19 +289,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 832351620062877871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbd343fec2e6faa4e93a911522d475f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 163b3172c62b4c24ea8db3a4115fcd49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ThisBullet: {fileID: 1742844762204987931}
   BulletsShards: {fileID: 0}
-  BulletTick: {fileID: 3848813885767969323, guid: da55bb84f8a49c743aefa93053e1090d, type: 3}
+  BulletFire: {fileID: 7974423976338264409, guid: e4ae18e87b03f6c40a75f5c6d64de43d, type: 3}
   Dir: {fileID: 3583375853366215164}
   Form: {fileID: 4503184950010014646}
   frequency: 0.12
   delay: 0.143
   frequencyRange: 0.13
-  damageEfficiency: 0.2
+  spread: 0
+  accuracy: 180
+  bulletForce: 5
+  forceRange: 1.2
+  bulletDuration: 0.75
+  damageEfficiency: 0.467
   bulletsCount: 1
+  pierceCount: 3
+  retainPierce: 0
 --- !u!114 &1742844762204987931 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 572171570899802872, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}

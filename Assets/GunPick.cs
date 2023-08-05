@@ -14,6 +14,22 @@ public class GunPick : MonoBehaviour
 
     void Start()
     {
+        Roll();
+    }
+
+    void Update()
+    {
+        if (!Player)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player");
+            playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+            Roll();
+    }
+
+    void Roll()
+    {
         rolls[0] = Random.Range(0, Library.guns.Length);
 
         viable = false;
@@ -33,15 +49,6 @@ public class GunPick : MonoBehaviour
         } while (!viable);
 
         Set();
-    }
-
-    void Update()
-    {
-        if (!Player)
-        {
-            Player = GameObject.FindGameObjectWithTag("Player");
-            playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-        }
     }
 
     void Set()
