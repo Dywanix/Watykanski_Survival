@@ -872,6 +872,7 @@ MonoBehaviour:
   Gun: {fileID: 221019377957225675}
   eq: {fileID: 221019378589204401}
   magazineInfo: {fileID: 221019379726973339}
+  ammoInfo: {fileID: 0}
   scrapInfo: {fileID: 221019379837776163}
   toolsInfo: {fileID: 5563003537845535524}
   tokensInfo: {fileID: 2683157045014057074}
@@ -932,6 +933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 221019378589204402}
+  Library: {fileID: 0}
   Barrel: {fileID: 7690489245074071479}
   guns:
   - {fileID: 221019378724568884}
@@ -944,6 +946,7 @@ MonoBehaviour:
   Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 0}
   equippedGun: {fileID: 221019377992242562}
+  slotFilled: 
   equipped: 0
   item: 0
   Caltrop: {fileID: 8623896585513593077, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
@@ -1027,32 +1030,33 @@ MonoBehaviour:
   gunName: Assault Rifle
   gunSprite: {fileID: 21300000, guid: 4f6629a6c74ecb24aae87fe1e9a9d8db, type: 3}
   damage: 15
-  critChance: 0.06
-  penetration: 0.13
   fireRate: 0.597
-  reloadTime: 3.075
   accuracy: 10.4
-  force: 22
+  penetration: 0.13
+  critChance: 0.06
+  reloadTime: 3.075
   range: 1.209091
-  cameraShake: 1.95
-  shakeDuration: 0.05
+  force: 22
+  magazineSize: 26
+  ammo: 0
+  maxAmmo: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.4
+  DoT: 0
+  overload: 0
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  pierceEfficiency: 0.4
-  DoT: 0
   specialCharge: 0
-  magazineSize: 26
-  overload: 0
+  cameraShake: 1.95
+  shakeDuration: 0.05
   bulletsLeft: 26
-  ammo: 0
   ammoFromPack: 0
-  bulletSpread: 1
   spreadMultiplyer: 1
-  pierce: 1
   special: 0
   MaxSlots: 02000000020000000200000003000000
   TakenSlots: 00000000000000000000000000000000
@@ -1061,10 +1065,11 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
-  bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  bulletPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  Barrel: {fileID: 221019378362755178}
-  GunBody: {fileID: 221019377957225675}
   flashCount: 3
   flashSpread: 42
 --- !u!1 &221019379031017595
@@ -1112,34 +1117,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Shotgun
-  gunSprite: {fileID: 21300000, guid: 1dce1d0b66dcb4a409abb9f18a797732, type: 3}
+  gunSprite: {fileID: 21300000, guid: 136e28c7b39a240408d16ad26bb619b7, type: 3}
   damage: 11.4
-  critChance: 0.05
-  penetration: 0.16
   fireRate: 1.096
-  reloadTime: 0.537
   accuracy: 12.5
-  force: 22
+  penetration: 0.16
+  critChance: 0.05
+  reloadTime: 0.537
   range: 1.0727273
-  cameraShake: 2.89
-  shakeDuration: 0.06
+  force: 22
+  magazineSize: 8
+  ammo: 0
+  maxAmmo: 0
   critDamage: 1.4
   armorShred: 0.04
   vulnerableApplied: 0
+  bulletSpread: 3
+  pierce: 1
+  pierceEfficiency: 0.4
+  DoT: 0
+  overload: 0
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  pierceEfficiency: 0.4
-  DoT: 0
   specialCharge: 0
-  magazineSize: 8
-  overload: 0
+  cameraShake: 2.89
+  shakeDuration: 0.06
   bulletsLeft: 8
-  ammo: 0
   ammoFromPack: 0
-  bulletSpread: 3
   spreadMultiplyer: 1
-  pierce: 1
   special: 0
   MaxSlots: 03000000020000000200000002000000
   TakenSlots: 00000000000000000000000000000000
@@ -1148,10 +1154,11 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 1
-  bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  bulletPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  Barrel: {fileID: 221019378362755178}
-  GunBody: {fileID: 221019377957225675}
   flashCount: 5
   flashSpread: 67
 --- !u!1 &221019379204872621
@@ -1812,32 +1819,33 @@ MonoBehaviour:
   gunName: Axe
   gunSprite: {fileID: 0}
   damage: 24.2
-  critChance: 0.02
-  penetration: 0.12
   fireRate: 1.713
-  reloadTime: 0
   accuracy: 8.4
-  force: 12
+  penetration: 0.12
+  critChance: 0.02
+  reloadTime: 0
   range: 0.7
-  cameraShake: 0.2
-  shakeDuration: 0.02
+  force: 12
+  magazineSize: 0
+  ammo: 0
+  maxAmmo: 0
   critDamage: 1.4
   armorShred: 0
   vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 3
+  pierceEfficiency: 0.64
+  DoT: 0.1
+  overload: 0
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  pierceEfficiency: 0.64
-  DoT: 0.1
   specialCharge: 0
-  magazineSize: 0
-  overload: 0
+  cameraShake: 0.2
+  shakeDuration: 0.02
   bulletsLeft: 0
-  ammo: 0
   ammoFromPack: 0
-  bulletSpread: 1
   spreadMultiplyer: 1
-  pierce: 3
   special: 0
   MaxSlots: 02000000010000000100000002000000
   TakenSlots: 00000000000000000000000000000000
@@ -1846,10 +1854,11 @@ MonoBehaviour:
   infiniteMagazine: 1
   infiniteAmmo: 1
   individualReload: 0
-  bulletPrefab: {fileID: 6192007680720593526, guid: 57eccbbfc3133ee4ca604b19040c7354, type: 3}
+  bulletPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   flashPrefab: {fileID: 0}
-  Barrel: {fileID: 0}
-  GunBody: {fileID: 0}
   flashCount: 0
   flashSpread: 0
 --- !u!1 &353683527189200653

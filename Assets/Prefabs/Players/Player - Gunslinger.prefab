@@ -1571,7 +1571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Handgun1
-  gunSprite: {fileID: 21300000, guid: 425fc690ef5f65f40b7243361b333de2, type: 3}
+  gunSprite: {fileID: 21300000, guid: d7790b2cd89493b4684d14d100ce14e4, type: 3}
   damage: 26.8
   fireRate: 0.961
   accuracy: 6.84
@@ -2005,7 +2005,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 425fc690ef5f65f40b7243361b333de2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7790b2cd89493b4684d14d100ce14e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

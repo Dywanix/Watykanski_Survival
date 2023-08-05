@@ -32,7 +32,8 @@ public class Enemy : MonoBehaviour
     public float maxHealth, health, regen, armor, vulnerable, DoT, burning;
 
     [Header("Movement")]
-    public float movementSpeed, slow, stun;
+    public float movementSpeed;
+    public float aimingMovement, slow, stun;
 
     [Header("Damage & Attacks")]
     public bool attackTimer = false;
@@ -41,7 +42,7 @@ public class Enemy : MonoBehaviour
     [Header("Ranged Stuff")]
     public bool ranged = false;
     public int bulletCount, bulletBurst;
-    public float bulletSpread, burstDelay, accuracy, force;
+    public float bulletSpread, burstDelay, accuracy, force, minRange;
     float recoil, currentForce;
 
     [Header("Specials")]
@@ -109,7 +110,11 @@ public class Enemy : MonoBehaviour
         }
         if (stun <= 0f)
         {
-            switch (CurrentState)
+            if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
+                Attack();
+            if (Vector3.Distance(transform.position, Player.transform.position) >= minRange)
+                Chase();
+            /*switch (CurrentState)
             {
                 case (EnemyState.Chase):
                     Chase();
@@ -117,18 +122,18 @@ public class Enemy : MonoBehaviour
                 case (EnemyState.Attack):
                     Attack();
                     break;
-            }
+            }*/
         }
         else stun -= Time.deltaTime;
 
-        if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
+        /*if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
         {
             CurrentState = EnemyState.Attack;
         }
         else
         {
             CurrentState = EnemyState.Chase;
-        }
+        }*/
     }
 
     void FixedUpdate()
@@ -148,6 +153,15 @@ public class Enemy : MonoBehaviour
                 slow -= Time.deltaTime;
             }
             else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * Time.deltaTime);
+        }
+        else
+        {
+            if (slow > 0f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * 0.6f * aimingMovement * Time.deltaTime);
+                slow -= Time.deltaTime;
+            }
+            else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * aimingMovement * Time.deltaTime);
         }
     }
 

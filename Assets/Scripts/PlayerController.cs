@@ -533,6 +533,14 @@ public class PlayerController : MonoBehaviour
     public void NewDay()
     {
         day = true;
+        for (int i = 1; i < 3; i++)
+        {
+            if (eq.slotFilled[i])
+            {
+                eq.guns[i].ammo = eq.guns[i].maxAmmo - eq.guns[i].bulletsLeft;
+            }
+        }
+        DisplayAmmo();
         dayCount++;
         RestoreHealth(40 + maxHealth * 0.5f);
         if (berserker)

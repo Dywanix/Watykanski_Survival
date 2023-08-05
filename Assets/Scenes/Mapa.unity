@@ -41096,11 +41096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6884977038708695280, guid: f8c4fe9c2bc88554790644c3fec5b423, type: 3}
       propertyPath: health
-      value: 1300
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6884977038708695280, guid: f8c4fe9c2bc88554790644c3fec5b423, type: 3}
       propertyPath: maxHealth
-      value: 1300
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 6884977038708695282, guid: f8c4fe9c2bc88554790644c3fec5b423, type: 3}
       propertyPath: m_RootOrder

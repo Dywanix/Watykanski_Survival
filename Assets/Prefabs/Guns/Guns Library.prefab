@@ -88,6 +88,93 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
+--- !u!1 &1198900680301854574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105717031627600903}
+  - component: {fileID: 1060765509938700522}
+  m_Layer: 0
+  m_Name: Shotgun1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &105717031627600903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198900680301854574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898055514371839}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060765509938700522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198900680301854574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Handgun1
+  gunSprite: {fileID: 21300000, guid: 136e28c7b39a240408d16ad26bb619b7, type: 3}
+  damage: 26.8
+  fireRate: 0.961
+  accuracy: 6.84
+  penetration: 0.14
+  critChance: 0.15
+  reloadTime: 1.761
+  range: 1.13
+  force: 18.9
+  magazineSize: 7
+  ammo: 0
+  maxAmmo: 0
+  critDamage: 1.65
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  specialCharge: 0
+  cameraShake: 2.68
+  shakeDuration: 0.052
+  bulletsLeft: 7
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 03000000020000000200000002000000
+  TakenSlots: 00000000000000000000000000000000
+  Costs: 18000000180000001800000018000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  infiniteMagazine: 0
+  infiniteAmmo: 1
+  individualReload: 0
+  bulletPrefab:
+  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 4
+  flashSpread: 52
 --- !u!1 &2962044608577098084
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic SMG
-  gunSprite: {fileID: 21300000, guid: de95e3fc3eca85b48bfb64f48aafc68b, type: 3}
+  gunSprite: {fileID: 21300000, guid: 5c710ba4855069b41ac50bf44f652dee, type: 3}
   damage: 15.4
   fireRate: 0.254
   accuracy: 10.52
@@ -435,6 +522,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5518898056319036725}
+  - {fileID: 105717031627600903}
   m_Father: {fileID: 5518898055452544453}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -483,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic SR
-  gunSprite: {fileID: 21300000, guid: dc971bd7e998dfd4491d853afff53324, type: 3}
+  gunSprite: {fileID: 21300000, guid: d51aa76ae37380844b82e77d0c6ace02, type: 3}
   damage: 56.5
   fireRate: 1.43
   accuracy: 2.9
@@ -570,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Handgun1
-  gunSprite: {fileID: 21300000, guid: 425fc690ef5f65f40b7243361b333de2, type: 3}
+  gunSprite: {fileID: 21300000, guid: d7790b2cd89493b4684d14d100ce14e4, type: 3}
   damage: 26.8
   fireRate: 0.961
   accuracy: 6.84
@@ -785,7 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 4f6629a6c74ecb24aae87fe1e9a9d8db, type: 3}
+  gunSprite: {fileID: 21300000, guid: 64aec4ef9ab94b044b69b8e56f00aef0, type: 3}
   damage: 22.4
   fireRate: 0.478
   accuracy: 9.22
@@ -969,8 +1057,8 @@ MonoBehaviour:
   range: 1.42
   force: 15
   magazineSize: 6
-  ammo: 30
-  maxAmmo: 36
+  ammo: 34
+  maxAmmo: 40
   critDamage: 1.6
   armorShred: 0
   vulnerableApplied: 0
