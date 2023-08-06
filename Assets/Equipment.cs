@@ -25,15 +25,15 @@ public class Equipment : MonoBehaviour
 
     // -- special bullets
     public GameObject Saw, Laser;
-    public float sawCharges, laserCharges;
+    //public float sawCharges, laserCharges;
 
     void Start()
     {
-        Invoke("AutoReload", 3f);
-        Invoke("ThrowCaltrops", 8f);
-        Invoke("KnifeThrow", 2.85f);
-        Invoke("ThrowSaw", 3.5f);
-        Invoke("ThrowCleaver", 4f);
+        //Invoke("AutoReload", 3f);
+        //Invoke("ThrowCaltrops", 8f);
+        //Invoke("KnifeThrow", 2.85f);
+        //Invoke("ThrowSaw", 3.5f);
+        //Invoke("ThrowCleaver", 4f);
     }
 
     public void Flash()
@@ -130,7 +130,7 @@ public class Equipment : MonoBehaviour
         Invoke("ThrowCleaver", temp);
     }
 
-    void AutoReload()
+    /*void AutoReload()
     {
         if (guns[equipped].bulletsLeft < guns[equipped].magazineSize)
         {
@@ -144,9 +144,9 @@ public class Equipment : MonoBehaviour
             else Invoke("AutoReload", (0.75f + 10f * guns[equipped].reloadTime / (2 + guns[equipped].magazineSize)));
         }
         else Invoke("AutoReload", 2f);
-    }
+    }*/
 
-    public void SpecialCharges()
+    /*public void SpecialCharges()
     {
         sawCharges += guns[equipped].Accessories[4] * guns[equipped].BulletsFired() * (1f + 0.15f * guns[equipped].Accessories[4 + playerStats.accessoriesPerType * 3]);
         if (sawCharges >= 12f)
@@ -161,7 +161,7 @@ public class Equipment : MonoBehaviour
             FireLaser();
             laserCharges -= 7f;
         }
-    }
+    }*/
 
     public void FireSaw()
     {

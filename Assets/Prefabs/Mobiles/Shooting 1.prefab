@@ -68,11 +68,11 @@ MonoBehaviour:
   boss: 0
   dead: 0
   hpBar: {fileID: 381832870102724009}
-  weight: 4
-  maxHealth: 40
-  health: 40
+  weight: 5
+  maxHealth: 50
+  health: 50
   regen: 0
-  armor: 12
+  armor: 12.4
   vulnerable: 0
   DoT: 0
   burning: 0

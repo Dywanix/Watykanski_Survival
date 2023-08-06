@@ -37,10 +37,16 @@ public class Gun : MonoBehaviour
     public float specialCharge;
     public float cameraShake, shakeDuration;
     public int bulletsLeft, ammoFromPack, spreadMultiplyer, special;
-    public int[] MaxSlots, TakenSlots, Costs, Accessories;
+    public int MaxSlots, TakenSlots;
+    public int[] Costs, Accessories;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
     float temp;
     int tempi;
+
+    [Header("Multiplikatory Stat")]
+    public float damageMultiplier;
+    public int magazineMultiplier = 1;
+    //public float fireRateMultiplier;
 
     [Header("Graficzne Staty")]
     public GameObject[] bulletPrefab;
@@ -81,7 +87,7 @@ public class Gun : MonoBehaviour
                 break;
         }
 
-        GainSpecialCharge(0.1f + Costs[which] * 0.000125f);
+        GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
 
         Costs[which] += 2;
     }
@@ -133,7 +139,7 @@ public class Gun : MonoBehaviour
                 critDamage += 0.03f + 0.025f * critDamage;
                 break;
             case 5:
-                temp = 0.3f + 0.2f * magazineSize;
+                temp = 0.3f + 0.2f * MagazineTotalSize();
                 if (infiniteAmmo)
                 {
                     temp *= 1.35f;
@@ -203,5 +209,15 @@ public class Gun : MonoBehaviour
     public int BulletsFired()
     {
         return bulletSpread * spreadMultiplyer;
+    }
+
+    public float Damage()
+    {
+        return damage * damageMultiplier;
+    }
+
+    public int MagazineTotalSize()
+    {
+        return magazineSize * magazineMultiplier;
     }
 }

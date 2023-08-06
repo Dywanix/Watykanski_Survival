@@ -100,10 +100,10 @@ public class Day_Night_Cycle : MonoBehaviour
 
             hordeSize = 16 + day * 8;
 
-            temp = (day * (day + 1) * 0.8f + 3f * day + 5f) * 10f;
+            temp = (day * (day + 1) * 0.75f + 3f * day + 5f) * 10f;
             spawnGap = maxTime / temp;
 
-            temp = (day * (day + 1) * 1f + 4.2f * day + 5f) * 3.75f;
+            temp = (day * (day + 1) * 0.9f + 4.2f * day + 5f) * 3.75f;
             rareSpawnGap = maxTime / temp;
 
             spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);

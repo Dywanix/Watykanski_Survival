@@ -75,9 +75,9 @@ public class SteamGolem : MonoBehaviour
 
     void EfficientReload()
     {
-        if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft < playerStats.eq.guns[playerStats.eq.equipped].magazineSize)
+        if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft < playerStats.eq.guns[playerStats.eq.equipped].MagazineTotalSize())
         {
-            efficientReloadOverload = Mathf.RoundToInt(playerStats.eq.guns[playerStats.eq.equipped].magazineSize * (0.42f + 0.04f * playerStats.level));
+            efficientReloadOverload = Mathf.RoundToInt(playerStats.eq.guns[playerStats.eq.equipped].MagazineTotalSize() * (0.42f + 0.04f * playerStats.level));
             playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft += efficientReloadOverload;
             playerStats.DisplayAmmo();
 
@@ -150,7 +150,7 @@ public class SteamGolem : MonoBehaviour
         playerStats.eq.guns[0].bulletsLeft--;
         playerStats.DisplayAmmo();
 
-        bulletsCount = Mathf.FloorToInt((1f + 0.04f * volleyCount + (0.02f + 0.001f * volleyCount) * playerStats.eq.guns[0].magazineSize) / (0.25f + playerStats.eq.guns[0].fireRate) * playerStats.SpeedMultiplyer(0.8f));
+        bulletsCount = Mathf.FloorToInt((1f + 0.04f * volleyCount + (0.02f + 0.001f * volleyCount) * playerStats.eq.guns[0].MagazineTotalSize()) / (0.25f + playerStats.eq.guns[0].fireRate) * playerStats.SpeedMultiplyer(0.8f));
         overdriveAccuracy = playerStats.eq.guns[0].accuracy * 0.35f / (0.9f + 0.01f * playerStats.level + 0.11f * bulletsCount);
         direction = (-overdriveAccuracy) * (bulletsCount - 1);
         for (int i = 0; i < bulletsCount; i++)

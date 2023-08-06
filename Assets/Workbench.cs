@@ -109,7 +109,7 @@ public class Workbench : MonoBehaviour
         OthersInfo[8].text = "DoT " + (playerStats.eq.guns[which].DoT * 100f).ToString("0.00") + "%";
         OthersInfo[9].text = "Slow " + playerStats.eq.guns[which].slowDuration.ToString("0.000") + "s";
         OthersInfo[10].text = "Stun " + (playerStats.eq.guns[which].stunChance * 100f).ToString("0.0") + "% " + playerStats.eq.guns[which].stunDuration.ToString("0.00") + "s";
-        OthersInfo[11].text = "Slots: " + playerStats.eq.guns[which].MaxSlots[0].ToString("0") + " - " + playerStats.eq.guns[which].MaxSlots[1].ToString("0") + " - " + playerStats.eq.guns[which].MaxSlots[2].ToString("0") + " - " + playerStats.eq.guns[which].MaxSlots[3].ToString("0");
+        OthersInfo[11].text = "Slots: " + playerStats.eq.guns[which].MaxSlots.ToString("0");
     }
 
     void GunInfo(int which)
@@ -177,7 +177,7 @@ public class Workbench : MonoBehaviour
     {
         playerStats.eq.guns[current].special--;
         playerStats.eq.guns[current].SpecialUpgrade(rolled[which]);
-        playerStats.eq.guns[current].MaxSlots[which]++;
+        playerStats.eq.guns[current].MaxSlots++;
         Upgrades.SetActive(false);
         golden = false;
         UpdateInfo(current);

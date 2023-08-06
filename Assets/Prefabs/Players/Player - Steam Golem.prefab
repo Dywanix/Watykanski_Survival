@@ -757,44 +757,48 @@ MonoBehaviour:
   gunName: Gatling Gun
   gunSprite: {fileID: 21300000, guid: 68d701fa4e7f3bd43b3feaca2710e439, type: 3}
   damage: 8.2
-  critChance: 0.07
-  penetration: 0.09
   fireRate: 0.2358
-  reloadTime: 3.7
   accuracy: 12.6
-  force: 22
+  penetration: 0.09
+  critChance: 0.07
+  reloadTime: 3.7
   range: 1.1363636
-  cameraShake: 1
-  shakeDuration: 0.022
+  force: 22
+  magazineSize: 18
+  ammo: 0
+  maxAmmo: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.4
+  DoT: 0
+  overload: 0
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  pierceEfficiency: 0.4
-  DoT: 0
   specialCharge: 0
-  magazineSize: 18
-  overload: 0
+  cameraShake: 1
+  shakeDuration: 0.022
   bulletsLeft: 18
-  ammo: 0
   ammoFromPack: 0
-  bulletSpread: 1
   spreadMultiplyer: 1
-  pierce: 1
   special: 0
-  MaxSlots: 02000000020000000300000002000000
-  TakenSlots: 00000000000000000000000000000000
+  MaxSlots: 5
+  TakenSlots: 0
   Costs: 18000000180000001800000018000000
-  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
-  bulletPrefab: {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  damageMultiplier: 0
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  Barrel: {fileID: 2585763503920804328}
-  GunBody: {fileID: 2585763503644783980}
   flashCount: 2
   flashSpread: 28
 --- !u!1 &2585763502741186373
@@ -920,44 +924,48 @@ MonoBehaviour:
   gunName: Rail Gun
   gunSprite: {fileID: 21300000, guid: 68d701fa4e7f3bd43b3feaca2710e439, type: 3}
   damage: 28
-  critChance: 0.17
-  penetration: 0.17
   fireRate: 1.52
-  reloadTime: 3.124
   accuracy: 3.9
-  force: 24
+  penetration: 0.17
+  critChance: 0.17
+  reloadTime: 3.124
   range: 1.2
-  cameraShake: 0.8
-  shakeDuration: 0.03
+  force: 24
+  magazineSize: 7
+  ammo: 0
+  maxAmmo: 0
   critDamage: 1.6
   armorShred: 0
   vulnerableApplied: 0.07
+  bulletSpread: 1
+  pierce: 2
+  pierceEfficiency: 0.48
+  DoT: 0
+  overload: 0
   slowDuration: 0
   stunChance: 0.12
   stunDuration: 1.2
-  pierceEfficiency: 0.48
-  DoT: 0
   specialCharge: 0
-  magazineSize: 7
-  overload: 0
+  cameraShake: 0.8
+  shakeDuration: 0.03
   bulletsLeft: 7
-  ammo: 0
   ammoFromPack: 0
-  bulletSpread: 1
   spreadMultiplyer: 1
-  pierce: 2
   special: 0
-  MaxSlots: 02000000030000000200000002000000
-  TakenSlots: 00000000000000000000000000000000
+  MaxSlots: 5
+  TakenSlots: 0
   Costs: 18000000180000001800000018000000
-  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
-  bulletPrefab: {fileID: 7974423976338264409, guid: e4ae18e87b03f6c40a75f5c6d64de43d, type: 3}
+  damageMultiplier: 0
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   flashPrefab: {fileID: 1682428277475712359, guid: efc8e605e8c289842a29674f485db673, type: 3}
-  Barrel: {fileID: 2585763503920804328}
-  GunBody: {fileID: 2585763503644783980}
   flashCount: 1
   flashSpread: 0
 --- !u!1 &2585763502906173108
@@ -1084,44 +1092,48 @@ MonoBehaviour:
   gunName: Grenade Launcher
   gunSprite: {fileID: 0}
   damage: 45.8
-  critChance: 0.06
-  penetration: 0.19
   fireRate: 2.167
-  reloadTime: 1.74
   accuracy: 7.63
-  force: 20
+  penetration: 0.19
+  critChance: 0.06
+  reloadTime: 1.74
   range: 1.2
-  cameraShake: 3.08
-  shakeDuration: 0.08
+  force: 20
+  magazineSize: 4
+  ammo: 12
+  maxAmmo: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.56
+  DoT: 0
+  overload: 0
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  pierceEfficiency: 0.56
-  DoT: 0
   specialCharge: 0
-  magazineSize: 4
-  overload: 0
+  cameraShake: 3.08
+  shakeDuration: 0.08
   bulletsLeft: 4
-  ammo: 12
   ammoFromPack: 3
-  bulletSpread: 1
   spreadMultiplyer: 1
-  pierce: 1
   special: 0
-  MaxSlots: 01000000020000000200000001000000
-  TakenSlots: 00000000000000000000000000000000
+  MaxSlots: -981220800
+  TakenSlots: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 1
-  bulletPrefab: {fileID: 7946786931316408927, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  damageMultiplier: 0
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   flashPrefab: {fileID: 0}
-  Barrel: {fileID: 0}
-  GunBody: {fileID: 0}
   flashCount: 0
   flashSpread: 0
 --- !u!1 &2585763503004487310
@@ -1289,6 +1301,7 @@ MonoBehaviour:
   Gun: {fileID: 2585763503644783980}
   eq: {fileID: 2585763503004784937}
   magazineInfo: {fileID: 2585763503212768227}
+  ammoInfo: {fileID: 0}
   scrapInfo: {fileID: 2585763503841443416}
   toolsInfo: {fileID: 7204353404975142909}
   tokensInfo: {fileID: 4594091590407103612}
@@ -1325,7 +1338,6 @@ MonoBehaviour:
   dash: 0
   level: 1
   dayCount: 1
-  accessoriesPerType: 5
   healthIncrease: 1.5
   damageIncrease: 0.0022
   fireRateIncrease: 0.0016
@@ -1349,6 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 2585763503004784936}
+  Library: {fileID: 0}
   Barrel: {fileID: 8986512550144081766}
   guns:
   - {fileID: 2585763502731627171}
@@ -1358,9 +1371,10 @@ MonoBehaviour:
   - {fileID: 2585763504064142085}
   - {fileID: 2585763503652434596}
   Items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 0}
   equippedGun: {fileID: 2585763503004487308}
+  slotFilled: 
   equipped: 0
   item: 0
   Caltrop: {fileID: 8623896585513593077, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
@@ -1369,8 +1383,6 @@ MonoBehaviour:
   itemsActivationRate: 1
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
   Laser: {fileID: 1191445889087333895, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
-  sawCharges: 0
-  laserCharges: 0
 --- !u!114 &8101279216939455258
 MonoBehaviour:
   m_ObjectHideFlags: 0
