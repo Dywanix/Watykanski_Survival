@@ -162,9 +162,9 @@ public class PlayerController : MonoBehaviour
     {
         float gunAngle = Mathf.Atan2(mouseVector.y, mouseVector.x) * Mathf.Rad2Deg;
         Gun.rotation = gunAngle - 90f;
-        GunRot.localScale = new Vector3(0.5f, 0.5f, 1f);
+        GunRot.localScale = new Vector3(1f, 1f, 1f);
         if (Gun.rotation > 0f || Gun.rotation < -180f)
-            GunRot.localScale = new Vector3(-0.5f, 0.5f, 1f);
+            GunRot.localScale = new Vector3(-1f, 1f, 1f);
     }
 
     void Action()
@@ -230,7 +230,7 @@ public class PlayerController : MonoBehaviour
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            SetBullet();
+            SetBullet(1f);
             eq.Flash();
         }
 
@@ -246,11 +246,11 @@ public class PlayerController : MonoBehaviour
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            SetBullet();
+            SetBullet(1f);
         }
     }
 
-    public void SetBullet()
+    public void SetBullet(float efficiency)
     {
         firedBullet.duration = eq.guns[eq.equipped].range;
         firedBullet.damage = eq.guns[eq.equipped].damage * DamageDealtMultiplyer(1f);

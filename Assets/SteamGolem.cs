@@ -176,7 +176,7 @@ public class SteamGolem : MonoBehaviour
             bullet_body.AddForce(playerStats.Barrel.up * playerStats.eq.guns[1].force * Random.Range(0.74f, 0.87f), ForceMode2D.Impulse);
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
-            playerStats.SetBullet();
+            playerStats.SetBullet(1f);
             playerStats.firedBullet.damage *= (1.1f + 0.01f * playerStats.level);
             playerStats.firedBullet.stunChance = playerStats.eq.guns[1].stunChance * 3f + 0.09f + 0.01f * playerStats.level;
             playerStats.firedBullet.stunDuration = playerStats.eq.guns[1].stunDuration + 0.2f;
@@ -196,7 +196,7 @@ public class SteamGolem : MonoBehaviour
             bullet_body.AddForce(playerStats.Barrel.up * playerStats.eq.guns[1].force * Random.Range(0.95f, 1.11f), ForceMode2D.Impulse);
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
 
-            playerStats.SetBullet();
+            playerStats.SetBullet(1f);
             playerStats.firedBullet.slowDuration += 0.44f;
             playerStats.firedBullet.incendiary = playerStats.eq.guns[2].damage * 0.07f;
         }

@@ -171,7 +171,7 @@ public class Equipment : MonoBehaviour
         bullet_body.AddForce(playerStats.Barrel.up * guns[equipped].force * 1.19f * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
 
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        playerStats.SetBullet();
+        playerStats.SetBullet(1f);
 
         playerStats.firedBullet.damage *= 1.2f;
         playerStats.firedBullet.penetration += 0.12f;
@@ -188,7 +188,7 @@ public class Equipment : MonoBehaviour
             GameObject bullet = Instantiate(Laser, playerStats.Barrel.position, playerStats.Barrel.rotation);
 
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            playerStats.SetBullet();
+            playerStats.SetBullet(1f);
 
             playerStats.firedBullet.damage *= 0.44f;
             playerStats.firedBullet.penetration *= 0.8f; playerStats.firedBullet.penetration += 0.05f;
