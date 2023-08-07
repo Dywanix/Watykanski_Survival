@@ -9358,7 +9358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Overload 1/9 Magazine & -4% Reload Time
+  m_text: 'Overload 1/8 Magazine
 
     [-1-]'
   m_isRightToLeft: 0
