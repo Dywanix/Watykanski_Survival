@@ -46,18 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Basic Laser
   gunSprite: {fileID: 21300000, guid: b9adeac958bdb1a4081da64929945e81, type: 3}
-  damage: 27.7
-  fireRate: 0.77
-  accuracy: 7.77
+  damage: 17.7
+  fireRate: 0.737
+  accuracy: 3.77
   penetration: 0.07
-  critChance: 0.17
+  critChance: 0.07
   reloadTime: 2.77
-  range: 0.2
+  range: 0.18
   force: 0
   magazineSize: 11
   ammo: 66
   maxAmmo: 77
-  critDamage: 1.77
+  critDamage: 1.7
   armorShred: 0
   vulnerableApplied: 0
   bulletSpread: 1
@@ -68,17 +68,33 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 1
   shakeDuration: 0.02
-  bulletsLeft: 11
+  bulletsLeft: 7
   ammoFromPack: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  Costs: 18000000180000001800000018000000
+  LevelCost: 30
+  Costs: 0b000000060000000f0000000e000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.5
+  - 0.89
+  - 0.04
+  - 2
+  UpgradeType:
+  - damage
+  - reloadTime
+  - CritChance
+  - overload
+  UpgradeInfo:
+  - +1,5 Damage
+  - -11% Reload Time
+  - +4% Crit Chance
+  - +2 Overload
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -158,7 +174,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 2.68
   shakeDuration: 0.052
   bulletsLeft: 7
@@ -167,8 +183,24 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  Costs: 18000000180000001800000018000000
+  LevelCost: 30
+  Costs: 090000000a0000002000000021000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1
+  - 0.88
+  - 1
+  - 1
+  UpgradeType:
+  - damage
+  - fireRate
+  - bulletSpread
+  - overload
+  UpgradeInfo:
+  - +1 Damage
+  - +12% Fire Rate
+  - +1 Bullet Spread
+  - +1 Overload
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
@@ -247,7 +279,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 1.22
   shakeDuration: 0.0295
   bulletsLeft: 24
@@ -256,8 +288,12 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -318,14 +354,14 @@ MonoBehaviour:
   fireRate: 0.254
   accuracy: 10.52
   penetration: 0.13
-  critChance: 0.14
+  critChance: 0.2
   reloadTime: 0.866
   range: 0.99
-  force: 21.1
+  force: 21
   magazineSize: 27
   ammo: 113
   maxAmmo: 140
-  critDamage: 1.55
+  critDamage: 1.4
   armorShred: 0
   vulnerableApplied: 0
   bulletSpread: 1
@@ -336,7 +372,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 0.61
   shakeDuration: 0.015
   bulletsLeft: 27
@@ -345,8 +381,24 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  Costs: 18000000180000001800000018000000
+  LevelCost: 30
+  Costs: 0d000000090000000d00000006000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.85
+  - 0.03
+  - 4
+  - 0.05
+  UpgradeType:
+  - fireRate
+  - penetration
+  - magazineSize
+  - critDamage
+  UpgradeInfo:
+  - +15% Fire Rate
+  - +3% Penetration
+  - +4 Magazine Size
+  - +5% Crit Damage
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -425,7 +477,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 1.22
   shakeDuration: 0.0295
   bulletsLeft: 17
@@ -434,8 +486,12 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -498,11 +554,6 @@ MonoBehaviour:
   - {fileID: 5518898056424690037}
   - {fileID: 5974149374854409488}
   - {fileID: 7352936915088989079}
-  - {fileID: 2305258803099737152}
-  - {fileID: 8145539831211771687}
-  - {fileID: 6032819139656934672}
-  - {fileID: 1959943114771508542}
-  - {fileID: 2480623888799790039}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,11 +634,11 @@ MonoBehaviour:
   gunName: Basic SR
   gunSprite: {fileID: 21300000, guid: d51aa76ae37380844b82e77d0c6ace02, type: 3}
   damage: 56.5
-  fireRate: 1.43
+  fireRate: 1.363
   accuracy: 2.9
   penetration: 0.34
   critChance: 0.14
-  reloadTime: 1.866
+  reloadTime: 2.06
   range: 1.13
   force: 21.1
   magazineSize: 3
@@ -604,7 +655,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 5.73
   shakeDuration: 0.087
   bulletsLeft: 3
@@ -613,8 +664,24 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  Costs: 18000000180000001800000018000000
+  LevelCost: 30
+  Costs: 0900000007000000090000001e000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 3.9
+  - 0.08
+  - 1
+  - 1
+  UpgradeType:
+  - damage
+  - range
+  - magazineSize
+  - pierce
+  UpgradeInfo:
+  - +3,9 Damage
+  - +8 Range
+  - +1 Magazine Size
+  - +1 Pierce
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -693,7 +760,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 2.68
   shakeDuration: 0.052
   bulletsLeft: 7
@@ -702,8 +769,24 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  Costs: 18000000180000001800000018000000
+  LevelCost: 30
+  Costs: 070000000e0000000900000005000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.8
+  - 0.05
+  - 0.04
+  - 0.9
+  UpgradeType:
+  - damage
+  - penetration
+  - critChance
+  - reloadTime
+  UpgradeInfo:
+  - +1,8 Damage
+  - +5% Penetration
+  - +4% Crit Chance
+  - -10% Reload Time
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
@@ -782,17 +865,33 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 3.34
   shakeDuration: 0.081
   bulletsLeft: 5
   ammoFromPack: 0
   spreadMultiplyer: 1
-  special: 0
+  special: 3
   MaxSlots: 5
   TakenSlots: 0
-  Costs: 18000000180000001800000018000000
+  LevelCost: 30
+  Costs: 0b000000080000000e00000012000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 2.8
+  - 0.09
+  - 5
+  - 1
+  UpgradeType:
+  - damage
+  - range
+  - maxAmmo
+  - special
+  UpgradeInfo:
+  - +2,8 Damage
+  - +9 Range
+  - +5 Max Ammo
+  - +1 Bullet on Explosion
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -912,7 +1011,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 1.22
   shakeDuration: 0.0295
   bulletsLeft: 24
@@ -921,8 +1020,24 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  Costs: 18000000180000001800000018000000
+  LevelCost: 30
+  Costs: 070000000a000000060000000b000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.2
+  - 0.78
+  - 0.87
+  - 23
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +1,2 Damage
+  - +22% Accuracy
+  - -13% Reload Time
+  - +23 Max Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -1001,7 +1116,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 0.61
   shakeDuration: 0.015
   bulletsLeft: 27
@@ -1010,8 +1125,12 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -1090,7 +1209,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 3.21
   shakeDuration: 0.055
   bulletsLeft: 6
@@ -1099,8 +1218,12 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -1179,7 +1302,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0.1
   stunDuration: 0.25
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 1
   shakeDuration: 0.02
   bulletsLeft: 7
@@ -1188,8 +1311,12 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0

@@ -10,11 +10,13 @@ public class BulletShatter : MonoBehaviour
     public Transform Form;
     public float delay, delayRange, spread, accuracy, bulletForce, forceRange, bonusDuration, damageEfficiency;
     public int bulletsCount, pierceCount;
-    public bool remain, retainPierce;
+    public bool remain, retainPierce, countBasedOnGun;
 
     void Start()
     {
         delay *= Random.Range(1f, delayRange);
+        if (countBasedOnGun)
+            bulletsCount = ThisBullet.special;
     }
 
     void Update()

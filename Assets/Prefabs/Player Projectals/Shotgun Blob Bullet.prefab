@@ -147,6 +147,7 @@ MonoBehaviour:
   incendiary: 0
   damageGain: 0
   pierce: 0
+  special: 0
   infinite: 0
   crit: 0
   AoE: 0
@@ -226,8 +227,8 @@ MonoBehaviour:
   Form: {fileID: 3293238779451486418}
   delay: 0.46
   delayRange: 1.18
-  spread: 15
-  accuracy: 8
+  spread: 10
+  accuracy: 10
   bulletForce: 15
   forceRange: 0
   bonusDuration: 0.05
@@ -235,5 +236,5 @@ MonoBehaviour:
   bulletsCount: 3
   pierceCount: 1
   remain: 0
-  retainDuration: 1
   retainPierce: 0
+  countBasedOnGun: 1

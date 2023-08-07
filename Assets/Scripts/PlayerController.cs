@@ -288,6 +288,7 @@ public class PlayerController : MonoBehaviour
             temp = 0.06f + 0.12f / (1f * eq.guns[eq.equipped].pierce);
             firedBullet.pierceEfficiency += temp * eq.guns[eq.equipped].Accessories[9];
         }
+        firedBullet.special = eq.guns[eq.equipped].special;
 
         if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
         {
@@ -622,7 +623,7 @@ public class PlayerController : MonoBehaviour
         tools += amount;
         toolsInfo.text = tools.ToString("0");
 
-        eq.guns[eq.equipped].GainSpecialCharge(0.06f * amount);
+        //eq.guns[eq.equipped].GainSpecialCharge(0.06f * amount);
     }
 
     public void SpendTools(int amount)

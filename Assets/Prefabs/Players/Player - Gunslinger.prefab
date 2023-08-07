@@ -148,6 +148,111 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 6601758595229335009}
+--- !u!1 &1609143696706595228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2490911966031282658}
+  - component: {fileID: 7415670509327468993}
+  m_Layer: 0
+  m_Name: Handgun1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2490911966031282658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609143696706595228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.11756181, y: -0.09006099, z: 0.07631992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6601758593767030009}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7415670509327468993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609143696706595228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Handgun1
+  gunSprite: {fileID: 21300000, guid: d7790b2cd89493b4684d14d100ce14e4, type: 3}
+  damage: 26.8
+  fireRate: 0.961
+  accuracy: 6.84
+  penetration: 0.14
+  critChance: 0.15
+  reloadTime: 1.761
+  range: 1.13
+  force: 18.9
+  magazineSize: 7
+  ammo: 0
+  maxAmmo: 0
+  critDamage: 1.65
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  LevelCostCharge: 0
+  cameraShake: 2.68
+  shakeDuration: 0.052
+  bulletsLeft: 7
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 5
+  TakenSlots: 0
+  LevelCost: 0
+  Costs: 070000000e0000000900000005000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.8
+  - 0.05
+  - 0.04
+  - 0.9
+  UpgradeType:
+  - damage
+  - penetration
+  - critChance
+  - reloadTime
+  UpgradeInfo:
+  - +1,8 Damage
+  - +5% Penetration
+  - +4% Crit Chance
+  - -10% Reload Time
+  infiniteMagazine: 0
+  infiniteAmmo: 1
+  individualReload: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 4
+  flashSpread: 52
 --- !u!1 &3823963672135520095
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +781,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6601758594956177005}
+  - {fileID: 2490911966031282658}
   - {fileID: 6601758594972793438}
   - {fileID: 3504709923321877712}
   - {fileID: 6936869394900410655}
@@ -1526,95 +1631,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &6601758594956177004
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6601758594956177005}
-  - component: {fileID: 6601758594956177002}
-  m_Layer: 0
-  m_Name: Handgun1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6601758594956177005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6601758594956177004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6601758593767030009}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6601758594956177002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6601758594956177004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunName: Handgun1
-  gunSprite: {fileID: 21300000, guid: d7790b2cd89493b4684d14d100ce14e4, type: 3}
-  damage: 26.8
-  fireRate: 0.961
-  accuracy: 6.84
-  penetration: 0.14
-  critChance: 0.15
-  reloadTime: 1.761
-  range: 1.13
-  force: 18.9
-  magazineSize: 7
-  ammo: 999
-  maxAmmo: 0
-  critDamage: 1.65
-  armorShred: 0
-  vulnerableApplied: 0
-  bulletSpread: 1
-  pierce: 1
-  pierceEfficiency: 0.5
-  DoT: 0
-  overload: 0
-  slowDuration: 0
-  stunChance: 0
-  stunDuration: 0
-  specialCharge: 0
-  cameraShake: 2.68
-  shakeDuration: 0.052
-  bulletsLeft: 7
-  ammoFromPack: 0
-  spreadMultiplyer: 1
-  special: 0
-  MaxSlots: 5
-  TakenSlots: 0
-  Costs: 18000000180000001800000018000000
-  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  infiniteMagazine: 0
-  infiniteAmmo: 1
-  individualReload: 0
-  damageMultiplier: 1
-  magazineMultiplier: 1
-  bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &6601758594972793425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1699,7 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 1.5
   shakeDuration: 0.032
   bulletsLeft: 21
@@ -1692,8 +1708,12 @@ MonoBehaviour:
   special: 0
   MaxSlots: 369968256
   TakenSlots: 0
+  LevelCost: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
@@ -2163,7 +2183,7 @@ MonoBehaviour:
   Library: {fileID: 6936869394900410654}
   Barrel: {fileID: 3504709923321877712}
   guns:
-  - {fileID: 6601758594956177002}
+  - {fileID: 7415670509327468993}
   - {fileID: 0}
   - {fileID: 0}
   gunSprite:

@@ -34,11 +34,13 @@ public class Gun : MonoBehaviour
     public float stunDuration;
 
     [Header("Inne Staty")]
-    public float specialCharge;
+    public float LevelCostCharge;
     public float cameraShake, shakeDuration;
     public int bulletsLeft, ammoFromPack, spreadMultiplyer, special;
-    public int MaxSlots, TakenSlots;
+    public int MaxSlots, TakenSlots, LevelCost = 30;
     public int[] Costs, Accessories;
+    public float[] Values;
+    public string[] UpgradeType, UpgradeInfo;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
     float temp;
     int tempi;
@@ -61,7 +63,53 @@ public class Gun : MonoBehaviour
 
     public void Upgrade(int which)
     {
-        switch (which)
+        switch (UpgradeType[which])
+        {
+            case "damage":
+                damage += Values[which];
+                break;
+            case "fireRate":
+                fireRate *= Values[which];
+                break;
+            case "accuracy":
+                accuracy *= Values[which];
+                break;
+            case "penetration":
+                penetration += Values[which];
+                break;
+            case "critChance":
+                critChance += Values[which];
+                break;
+            case "reloadTime":
+                reloadTime *= Values[which];
+                break;
+            case "range":
+                range += Values[which];
+                break;
+            case "magazineSize":
+                magazineSize += Mathf.RoundToInt(Values[which]);
+                break;
+            case "maxAmmo":
+                ammo += Mathf.RoundToInt(Values[which]);
+                maxAmmo += Mathf.RoundToInt(Values[which]);
+                break;
+            case "critDamage":
+                critDamage += Values[which];
+                break;
+            case "bulletSpread":
+                bulletSpread++;
+                break;
+            case "pierce":
+                pierce++;
+                break;
+            case "overload":
+                overload += Mathf.RoundToInt(Values[which]);
+                break;
+            case "special":
+                special++;
+                break;
+        }
+        /*switch (which)
         {
             case 0:
                 damage *= 1.014f;
@@ -85,14 +133,25 @@ public class Gun : MonoBehaviour
                 }
                 armorShred *= 1.07f;
                 break;
+        }*/
+
+        LevelCostCharge += Costs[which] * 0.15f;
+        while (LevelCostCharge >= 1f)
+        {
+            LevelCostCharge -= 1f;
+            LevelCost--;
+            if (LevelCost < 0)
+                LevelCost = 0;
         }
-
-        GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
-
-        Costs[which] += 2;
+        //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 
-    public void GainSpecialCharge(float amount)
+    public void LevelUp()
+    {
+        MaxSlots++;
+    }
+
+    /*public void GainSpecialCharge(float amount)
     {
         specialCharge += amount;
         if (specialCharge >= 1f)
@@ -100,9 +159,9 @@ public class Gun : MonoBehaviour
             specialCharge -= 1f;
             special++;
         }
-    }
+    }*/
 
-    public void SpecialUpgrade(int which)
+    /*public void SpecialUpgrade(int which)
     {
         switch (which)
         {
@@ -199,7 +258,7 @@ public class Gun : MonoBehaviour
                 pierceEfficiency *= temp;
                 break;
         }
-    }
+    }*/
 
     public void AmmoPicked()
     {

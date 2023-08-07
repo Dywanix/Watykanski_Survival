@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   form: {fileID: 1776967414326373204}
-  jump: 3.4
+  jump: 3.3
   fall: 0
-  duration: 1.8
+  duration: 1.2
 --- !u!114 &-6453456993202942366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
   Bullet: {fileID: 3582208000087308208, guid: 951f16eefe7cb174a9e1072e5f7883d0, type: 3}
   Dir: {fileID: 8882339044340707084}
   form: {fileID: 1776967414326373204}
-  delay: 1.5
-  delayMultiplyer: 0.267
-  accuracy: 6
-  bulletForce: 8.5
+  delay: 1.08
+  delayMultiplyer: 0.193
+  accuracy: 7
+  bulletForce: 8.8
   bulletsCount: 6

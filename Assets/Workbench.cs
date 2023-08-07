@@ -7,11 +7,9 @@ public class Workbench : MonoBehaviour
 {
     public GameObject Player, Glow, Hud, Upgrades, Others;
     public PlayerController playerStats;
-    public TMPro.TextMeshProUGUI specialUpgrades;
-    public TMPro.TextMeshProUGUI[] Cost, Info, OthersInfo;
-    public Button Gwench;
+    public TMPro.TextMeshProUGUI specialUpgrades, Tooltip;
+    public TMPro.TextMeshProUGUI[] Cost, Info;
     public Button[] Buttons;
-    public Image special;
     public Image[] images;
     public Sprite[] sprites;
 
@@ -56,8 +54,6 @@ public class Workbench : MonoBehaviour
         current = which;
 
         GunInfo(which);
-        GunOtherInfo(which);
-
         if (!golden)
         {
             for (int i = 0; i < 4; i++)
@@ -67,64 +63,43 @@ public class Workbench : MonoBehaviour
                 else Buttons[i].interactable = false;
             }
 
-            if (playerStats.eq.guns[which].special >= 1f)
-                Gwench.interactable = true;
-            else Gwench.interactable = false;
+            if (playerStats.scrap >= playerStats.eq.guns[which].LevelCost)
+                Buttons[4].interactable = true;
+            else Buttons[4].interactable = false;
         }
         else
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Buttons[i].interactable = false;
             }
-            Gwench.interactable = false;
         }
     }
 
-    public void OtherStats()
-    {
-        if (!others)
-        {
-            Others.SetActive(true);
-            GunOtherInfo(current);
-            others = true;
-        }
-        else
-        {
-            Others.SetActive(false);
-            others = false;
-        }
-    }
-
-    public void GunOtherInfo(int which)
-    {
-        OthersInfo[0].text = "Reload Time: " + playerStats.eq.guns[which].reloadTime.ToString("0.000") + "s";
-        OthersInfo[1].text = "Crit: " + (playerStats.eq.guns[which].critChance * 100f).ToString("0.0") + "% " + (playerStats.eq.guns[which].critDamage * 100f).ToString("0.0");
-        OthersInfo[2].text = "Armor Shred " + (playerStats.eq.guns[which].armorShred * 100f).ToString("0.00") + "%";
-        OthersInfo[3].text = "Vulnerable " + (playerStats.eq.guns[which].vulnerableApplied * 100f).ToString("0.00") + "%";
-        OthersInfo[4].text = "Magazine Size: " + playerStats.eq.guns[which].magazineSize.ToString("0");
-        OthersInfo[5].text = "Overload +" + playerStats.eq.guns[which].overload.ToString("0");
-        OthersInfo[6].text = "Ammo pack +" + playerStats.eq.guns[which].ammoFromPack.ToString("0");
-        OthersInfo[7].text = "Pierce:" + (playerStats.eq.guns[which].pierce - 1).ToString("0") + " - " + (playerStats.eq.guns[which].pierceEfficiency * 100f).ToString("0.0") + "%";
-        OthersInfo[8].text = "DoT " + (playerStats.eq.guns[which].DoT * 100f).ToString("0.00") + "%";
-        OthersInfo[9].text = "Slow " + playerStats.eq.guns[which].slowDuration.ToString("0.000") + "s";
-        OthersInfo[10].text = "Stun " + (playerStats.eq.guns[which].stunChance * 100f).ToString("0.0") + "% " + playerStats.eq.guns[which].stunDuration.ToString("0.00") + "s";
-        OthersInfo[11].text = "Slots: " + playerStats.eq.guns[which].MaxSlots.ToString("0");
-    }
-
-    void GunInfo(int which)
+    public void GunInfo(int which)
     {
         for (int i = 0; i < 4; i++)
         {
             Cost[i].text = playerStats.eq.guns[which].Costs[i].ToString("0");
         }
-        Info[0].text = playerStats.eq.guns[which].damage.ToString("0.0") + " x " + playerStats.eq.guns[which].BulletsFired().ToString("0");
+        Cost[4].text = playerStats.eq.guns[which].LevelCost.ToString("0");
+        Info[0].text = playerStats.eq.guns[which].Damage().ToString("0.0");
         Info[1].text = (1 / playerStats.eq.guns[which].fireRate).ToString("0.00") + "/s";
         Info[2].text = (100 - playerStats.eq.guns[which].accuracy).ToString("0.00") + "%";
         Info[3].text = (playerStats.eq.guns[which].penetration * 100).ToString("0") + "%";
+        Info[4].text = (playerStats.eq.guns[which].critChance * 100).ToString("0") + "%";
+        Info[5].text = playerStats.eq.guns[which].reloadTime.ToString("0.00") + "s";
+        Info[6].text = (playerStats.eq.guns[which].range * 100).ToString("0");
+        Info[7].text = playerStats.eq.guns[which].force.ToString("0");
+        Info[8].text = playerStats.eq.guns[which].MagazineTotalSize().ToString("0");
+        Info[9].text = playerStats.eq.guns[which].maxAmmo.ToString("0");
 
-        specialUpgrades.text = playerStats.eq.guns[which].special.ToString("0");
-        special.fillAmount = playerStats.eq.guns[which].specialCharge;
+        Info[10].text = (playerStats.eq.guns[which].critDamage * 100).ToString("0") + "%";
+        Info[11].text = playerStats.eq.guns[which].BulletsFired().ToString("0");
+        Info[12].text = playerStats.eq.guns[which].pierce.ToString("0");
+        Info[13].text = (playerStats.eq.guns[which].pierceEfficiency * 100).ToString("0") + "%";
+        Info[14].text = playerStats.eq.guns[which].overload.ToString("0");
+        Info[15].text = playerStats.eq.guns[which].MaxSlots.ToString("0");
     }
 
     public void Upgrade(int which)
@@ -132,6 +107,15 @@ public class Workbench : MonoBehaviour
         playerStats.SpendScrap(playerStats.eq.guns[current].Costs[which]);
         playerStats.eq.guns[current].Upgrade(which);
         UpdateInfo(current);
+        playerStats.DisplayAmmo();
+    }
+
+    public void LevelUp()
+    {
+        playerStats.SpendScrap(playerStats.eq.guns[current].LevelCost);
+        playerStats.eq.guns[current].LevelUp();
+        UpdateInfo(current);
+        playerStats.DisplayAmmo();
     }
 
     public void GoldenWench()
@@ -176,11 +160,21 @@ public class Workbench : MonoBehaviour
     public void SpecialUpgrade(int which)
     {
         playerStats.eq.guns[current].special--;
-        playerStats.eq.guns[current].SpecialUpgrade(rolled[which]);
+        //playerStats.eq.guns[current].SpecialUpgrade(rolled[which]);
         playerStats.eq.guns[current].MaxSlots++;
         Upgrades.SetActive(false);
         golden = false;
         UpdateInfo(current);
         playerStats.DisplayAmmo();
+    }
+
+    public void TooltipOpen(int order)
+    {
+        Tooltip.text = playerStats.eq.guns[current].UpgradeInfo[order];
+    }
+
+    public void TooltipClose()
+    {
+        Tooltip.text = "";
     }
 }

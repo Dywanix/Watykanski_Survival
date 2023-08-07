@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Ranged Stuff")]
     public bool ranged = false;
+    public bool throws = false;
     public int bulletCount, bulletBurst;
     public float bulletSpread, burstDelay, accuracy, force, minRange;
     float recoil, currentForce;
@@ -203,16 +204,18 @@ public class Enemy : MonoBehaviour
 
     void Shoot()
     {
+        currentForce = force * Random.Range(1f, 1.1f);
+        if (throws)
+            currentForce *= 0.25f + 0.75f * Vector3.Distance(transform.position, Player.transform.position) / attackRange;
         if (bulletCount != 1)
         {
             recoil = Random.Range(-accuracy, accuracy);
-            currentForce = Random.Range(1f, 1.1f);
             for (int i = 0; i < bulletCount; i++)
             {
                 Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + recoil + (i * 2 - bulletCount + 1) * bulletSpread / 2);
                 GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
                 Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-                scrap_body.AddForce(Sight.up * force * currentForce, ForceMode2D.Impulse);
+                scrap_body.AddForce(Sight.up * currentForce, ForceMode2D.Impulse);
             }
         }
         else
@@ -220,7 +223,7 @@ public class Enemy : MonoBehaviour
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(-accuracy, accuracy));
             GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
             Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-            scrap_body.AddForce(Sight.up * force * Random.Range(1f, 1.1f), ForceMode2D.Impulse);
+            scrap_body.AddForce(Sight.up * currentForce, ForceMode2D.Impulse);
         }
     }
 
