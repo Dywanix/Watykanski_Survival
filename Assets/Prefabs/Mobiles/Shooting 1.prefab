@@ -56,7 +56,6 @@ MonoBehaviour:
   damageTook: {fileID: 4695042375447321633, guid: b72dee5f414d4d1408a77c17d349d58b, type: 3}
   Projectal: {fileID: 5306407701457883464, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
   Items:
-  - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   playerStats: {fileID: 0}
   Body: {fileID: 3979315075050305358}
@@ -86,6 +85,7 @@ MonoBehaviour:
   attackSpeed: 3.03
   attackRange: 14.4
   ranged: 1
+  throws: 0
   bulletCount: 1
   bulletBurst: 1
   bulletSpread: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   enrageStats: []
   enrageValue: []
   DeathDrop: {fileID: 0}
-  scrapChance: 0.12
-  itemChance: 0.04
+  scrapChance: 0.15
+  itemChance: 0.05
   scrapCount: 1
   itemCount: 1
   Blood: {fileID: 0}

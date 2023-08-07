@@ -128,16 +128,16 @@ MonoBehaviour:
   BulletShard: {fileID: 5260478580955649306, guid: 220a2eab76ee1ca4c990b77c93bba5d7, type: 3}
   Dir: {fileID: 146091429081357864}
   Form: {fileID: 991696684905919586}
-  delay: 0.2
+  delay: 0.16
   delayRange: 1.02
   spread: 0
-  accuracy: 10
+  accuracy: 8
   bulletForce: 16
   forceRange: 0.04
-  bonusDuration: 0.03
-  damageEfficiency: 1.065
+  bonusDuration: 0.024
+  damageEfficiency: 1.05
   bulletsCount: 1
-  pierceCount: 1
+  pierceCount: 0
   remain: 0
-  retainDuration: 1
-  retainPierce: 0
+  retainPierce: 1
+  countBasedOnGun: 0

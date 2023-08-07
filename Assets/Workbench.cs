@@ -58,12 +58,12 @@ public class Workbench : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                if (playerStats.scrap >= playerStats.eq.guns[which].Costs[i])
+                if (playerStats.tools >= playerStats.eq.guns[which].Costs[i])
                     Buttons[i].interactable = true;
                 else Buttons[i].interactable = false;
             }
 
-            if (playerStats.scrap >= playerStats.eq.guns[which].LevelCost)
+            if (playerStats.tools >= playerStats.eq.guns[which].LevelCost)
                 Buttons[4].interactable = true;
             else Buttons[4].interactable = false;
         }
@@ -104,7 +104,7 @@ public class Workbench : MonoBehaviour
 
     public void Upgrade(int which)
     {
-        playerStats.SpendScrap(playerStats.eq.guns[current].Costs[which]);
+        playerStats.SpendTools(playerStats.eq.guns[current].Costs[which]);
         playerStats.eq.guns[current].Upgrade(which);
         UpdateInfo(current);
         playerStats.DisplayAmmo();
@@ -112,7 +112,7 @@ public class Workbench : MonoBehaviour
 
     public void LevelUp()
     {
-        playerStats.SpendScrap(playerStats.eq.guns[current].LevelCost);
+        playerStats.SpendTools(playerStats.eq.guns[current].LevelCost);
         playerStats.eq.guns[current].LevelUp();
         UpdateInfo(current);
         playerStats.DisplayAmmo();

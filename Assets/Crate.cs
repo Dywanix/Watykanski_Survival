@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
-    public GameObject Player, Scrap, damageTook;
+    public GameObject Player, Scrap, Tools, damageTook;
     public GameObject[] Items;
     public PlayerController playerStats;
     private Bullet collidedBullet;
@@ -12,7 +12,7 @@ public class Crate : MonoBehaviour
     public Transform Sight;
     private DamageTaken damageDisplay;
 
-    public int[] scrapDroppedRange;
+    public int[] scrapDroppedRange, toolsDroppedRange;
     public int itemsCount;
     int roll;
     public float maxHealth, health, dropChance, scrapChance;
@@ -30,7 +30,7 @@ public class Crate : MonoBehaviour
         {
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-            health += playerStats.dayCount * 12; scrapDroppedRange[1] += playerStats.dayCount * 2; dropChance += 0.001f * playerStats.dayCount;
+            health += playerStats.dayCount * 12; scrapDroppedRange[1] += playerStats.dayCount * 2; toolsDroppedRange[1] += playerStats.dayCount; dropChance += 0.001f * playerStats.dayCount;
         }
     }
 
@@ -76,10 +76,10 @@ public class Crate : MonoBehaviour
             destroyed = true;
 
             DropScrap(scrapDroppedRange[0], scrapDroppedRange[1]);
+            DropTools(toolsDroppedRange[0], toolsDroppedRange[1]);
 
             DropItem(3);
-            DropItem(5);
-            DropItem(6);
+            DropItem(4);
 
             for (int i = 0; i < itemsCount; i++)
             {
@@ -98,6 +98,18 @@ public class Crate : MonoBehaviour
         {
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject scrap = Instantiate(Scrap, Dir.position, Sight.rotation);
+            Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+            scrap_body.AddForce(Sight.up * Random.Range(1.3f, 5.0f), ForceMode2D.Impulse);
+        }
+    }
+
+    void DropTools(int min, int max)
+    {
+        roll = Random.Range(min, max + 1);
+        for (int i = 0; i < roll; i++)
+        {
+            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+            GameObject scrap = Instantiate(Tools, Dir.position, Sight.rotation);
             Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
             scrap_body.AddForce(Sight.up * Random.Range(1.3f, 5.0f), ForceMode2D.Impulse);
         }

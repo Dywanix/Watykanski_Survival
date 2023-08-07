@@ -135,7 +135,7 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        LevelCostCharge += Costs[which] * 0.2f;
+        LevelCostCharge += Costs[which] * 0.22f;
         while (LevelCostCharge >= 1f)
         {
             LevelCostCharge -= 1f;
