@@ -99,7 +99,7 @@ public class SlotMachine : MonoBehaviour
                 playerStats.GainScrap(50);
                 break;
             case 1:
-                playerStats.GainTools(4);
+                playerStats.GainTools(12);
                 break;
             case 2:
                 for (int i = 0; i < 4; i++)
@@ -117,7 +117,7 @@ public class SlotMachine : MonoBehaviour
                 playerStats.GainScrap(12);
                 break;
             case 5:
-                playerStats.GainTools(1);
+                playerStats.GainTools(3);
                 break;
             case 6:
                 playerStats.LevelUp();

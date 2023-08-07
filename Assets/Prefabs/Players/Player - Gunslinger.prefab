@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 6601758595229335009}
---- !u!1 &1609143696706595228
+--- !u!1 &3822159430310777036
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,8 +156,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2490911966031282658}
-  - component: {fileID: 7415670509327468993}
+  - component: {fileID: 514996440978412420}
+  - component: {fileID: 4049727748741312788}
   m_Layer: 0
   m_Name: Handgun1
   m_TagString: Untagged
@@ -165,13 +165,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2490911966031282658
+--- !u!4 &514996440978412420
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609143696706595228}
+  m_GameObject: {fileID: 3822159430310777036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.11756181, y: -0.09006099, z: 0.07631992}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -180,13 +180,13 @@ Transform:
   m_Father: {fileID: 6601758593767030009}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7415670509327468993
+--- !u!114 &4049727748741312788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609143696706595228}
+  m_GameObject: {fileID: 3822159430310777036}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
@@ -223,9 +223,10 @@ MonoBehaviour:
   ammoFromPack: 0
   spreadMultiplyer: 1
   special: 0
-  MaxSlots: 5
+  MaxSlots: 4
   TakenSlots: 0
-  LevelCost: 0
+  LevelCost: 80
+  StoredCostReduction: 0
   Costs: 070000000e0000000900000005000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -233,6 +234,24 @@ MonoBehaviour:
   - 0.05
   - 0.04
   - 0.9
+  LevelUpBonuses:
+  - 0.5
+  - 0.94
+  - 0.95
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - damage
   - penetration
@@ -781,7 +800,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2490911966031282658}
+  - {fileID: 514996440978412420}
+  - {fileID: 6479542949987136451}
   - {fileID: 6601758594972793438}
   - {fileID: 3504709923321877712}
   - {fileID: 6936869394900410655}
@@ -1661,7 +1681,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6601758593767030009}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6601758594972793439
 MonoBehaviour:
@@ -1709,9 +1729,11 @@ MonoBehaviour:
   MaxSlots: 369968256
   TakenSlots: 0
   LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values: []
+  LevelUpBonuses: []
   UpgradeType: []
   UpgradeInfo: []
   infiniteMagazine: 0
@@ -2183,7 +2205,7 @@ MonoBehaviour:
   Library: {fileID: 6936869394900410654}
   Barrel: {fileID: 3504709923321877712}
   guns:
-  - {fileID: 7415670509327468993}
+  - {fileID: 2480144055760538672}
   - {fileID: 0}
   - {fileID: 0}
   gunSprite:
@@ -2544,8 +2566,132 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6601758593767030009}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8529652660084867930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6479542949987136451}
+  - component: {fileID: 3297741481677152598}
+  m_Layer: 0
+  m_Name: Shotgun1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6479542949987136451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8529652660084867930}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.11756181, y: -0.09006099, z: 0.07631992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6601758593767030009}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3297741481677152598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8529652660084867930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Handgun1
+  gunSprite: {fileID: 21300000, guid: 136e28c7b39a240408d16ad26bb619b7, type: 3}
+  damage: 26.8
+  fireRate: 0.961
+  accuracy: 6.84
+  penetration: 0.14
+  critChance: 0.15
+  reloadTime: 1.761
+  range: 1.13
+  force: 18.9
+  magazineSize: 7
+  ammo: 0
+  maxAmmo: 0
+  critDamage: 1.65
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  LevelCostCharge: 0
+  cameraShake: 2.68
+  shakeDuration: 0.052
+  bulletsLeft: 7
+  ammoFromPack: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 80
+  StoredCostReduction: 0
+  Costs: 090000000a0000002000000021000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1
+  - 0.88
+  - 1
+  - 1
+  LevelUpBonuses:
+  - 0.3
+  - 1
+  - 0.924
+  - 0.04
+  - 0
+  - 0.95
+  - 0.04
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - fireRate
+  - bulletSpread
+  - overload
+  UpgradeInfo:
+  - +1 Damage
+  - +12% Fire Rate
+  - +1 Bullet Spread
+  - +1 Overload
+  infiniteMagazine: 0
+  infiniteAmmo: 1
+  individualReload: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 4
+  flashSpread: 52
 --- !u!1 &8750404148426104790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2908,7 +3054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2952,6 +3098,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+--- !u!114 &2480144055760538672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1060765509938700522, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+  m_PrefabInstance: {fileID: 3230107312610258138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6936869394900410654 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5518898055452544452, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
