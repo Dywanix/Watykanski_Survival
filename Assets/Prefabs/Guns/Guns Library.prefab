@@ -77,7 +77,8 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  LevelCost: 30
+  LevelCost: 80
+  StoredCostReduction: 0
   Costs: 0b000000060000000f0000000e000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -85,6 +86,24 @@ MonoBehaviour:
   - 0.89
   - 0.04
   - 2
+  LevelUpBonuses:
+  - 0.4
+  - 0.94
+  - 0.934
+  - 0.03
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 13
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - damage
   - reloadTime
@@ -183,7 +202,8 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  LevelCost: 30
+  LevelCost: 80
+  StoredCostReduction: 0
   Costs: 090000000a0000002000000021000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -191,6 +211,24 @@ MonoBehaviour:
   - 0.88
   - 1
   - 1
+  LevelUpBonuses:
+  - 0.3
+  - 1
+  - 0.924
+  - 0.04
+  - 0
+  - 0.95
+  - 0.04
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - damage
   - fireRate
@@ -289,9 +327,11 @@ MonoBehaviour:
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values: []
+  LevelUpBonuses: []
   UpgradeType: []
   UpgradeInfo: []
   infiniteMagazine: 0
@@ -381,7 +421,8 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  LevelCost: 30
+  LevelCost: 80
+  StoredCostReduction: 0
   Costs: 0d000000090000000d00000006000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -389,6 +430,24 @@ MonoBehaviour:
   - 0.03
   - 4
   - 0.05
+  LevelUpBonuses:
+  - 0.7
+  - 1
+  - 0.92
+  - 0
+  - 0.05
+  - 0.99
+  - 0.03
+  - 0
+  - 0
+  - 5
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - fireRate
   - penetration
@@ -487,9 +546,11 @@ MonoBehaviour:
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values: []
+  LevelUpBonuses: []
   UpgradeType: []
   UpgradeInfo: []
   infiniteMagazine: 0
@@ -664,7 +725,8 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  LevelCost: 30
+  LevelCost: 80
+  StoredCostReduction: 0
   Costs: 0900000007000000090000001e000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -672,6 +734,24 @@ MonoBehaviour:
   - 0.08
   - 1
   - 1
+  LevelUpBonuses:
+  - 0
+  - 0.96
+  - 0.93
+  - 0.03
+  - 0.02
+  - 0.94
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - damage
   - range
@@ -769,7 +849,8 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  LevelCost: 30
+  LevelCost: 100
+  StoredCostReduction: 0
   Costs: 070000000e0000000900000005000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -777,6 +858,24 @@ MonoBehaviour:
   - 0.05
   - 0.04
   - 0.9
+  LevelUpBonuses:
+  - 0.5
+  - 0.94
+  - 0.95
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - damage
   - penetration
@@ -874,7 +973,8 @@ MonoBehaviour:
   special: 3
   MaxSlots: 5
   TakenSlots: 0
-  LevelCost: 30
+  LevelCost: 80
+  StoredCostReduction: 0
   Costs: 0b000000080000000e00000012000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -882,6 +982,24 @@ MonoBehaviour:
   - 0.09
   - 5
   - 1
+  LevelUpBonuses:
+  - 0
+  - 0.95
+  - 0.93
+  - 0.02
+  - 0
+  - 0.96
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - damage
   - range
@@ -1020,7 +1138,8 @@ MonoBehaviour:
   special: 0
   MaxSlots: 5
   TakenSlots: 0
-  LevelCost: 30
+  LevelCost: 80
+  StoredCostReduction: 0
   Costs: 070000000a000000060000000b000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
@@ -1028,6 +1147,24 @@ MonoBehaviour:
   - 0.78
   - 0.87
   - 23
+  LevelUpBonuses:
+  - 0.7
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 0.99
+  - 0.05
+  - 0
+  - 2
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   UpgradeType:
   - damage
   - accuracy
@@ -1126,9 +1263,11 @@ MonoBehaviour:
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values: []
+  LevelUpBonuses: []
   UpgradeType: []
   UpgradeInfo: []
   infiniteMagazine: 0
@@ -1219,9 +1358,11 @@ MonoBehaviour:
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values: []
+  LevelUpBonuses: []
   UpgradeType: []
   UpgradeInfo: []
   infiniteMagazine: 0
@@ -1312,9 +1453,11 @@ MonoBehaviour:
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values: []
+  LevelUpBonuses: []
   UpgradeType: []
   UpgradeInfo: []
   infiniteMagazine: 0

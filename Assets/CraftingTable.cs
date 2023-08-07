@@ -390,7 +390,6 @@ public class CraftingTable : MonoBehaviour
                 break;
                 case 10:
                 // overload
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.96f;
                 break;
                 case 11:
                 playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.04f;

@@ -9,13 +9,13 @@ public class Gun : MonoBehaviour
 
     [Header("Basic Staty")]
     public float damage;
-    public float fireRate;
+    public float fireRate; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
     public float accuracy;
     public float penetration;
     public float critChance;
     public float reloadTime;
     public float range;
-    public float force; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
+    public float force;
     public int magazineSize;
     public int ammo;
     public int maxAmmo;
@@ -37,9 +37,9 @@ public class Gun : MonoBehaviour
     public float LevelCostCharge;
     public float cameraShake, shakeDuration;
     public int bulletsLeft, ammoFromPack, spreadMultiplyer, special;
-    public int MaxSlots, TakenSlots, LevelCost = 30;
+    public int MaxSlots, TakenSlots, LevelCost, StoredCostReduction;
     public int[] Costs, Accessories;
-    public float[] Values;
+    public float[] Values, LevelUpBonuses;
     public string[] UpgradeType, UpgradeInfo;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
     float temp;
@@ -135,20 +135,46 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        LevelCostCharge += Costs[which] * 0.15f;
+        LevelCostCharge += Costs[which] * 0.2f;
         while (LevelCostCharge >= 1f)
         {
             LevelCostCharge -= 1f;
-            LevelCost--;
-            if (LevelCost < 0)
-                LevelCost = 0;
+            if (LevelCost > 0)
+                LevelCost--;
+            else StoredCostReduction++;
         }
         //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 
     public void LevelUp()
     {
+        damage += LevelUpBonuses[0];
+        fireRate *= LevelUpBonuses[1];
+        accuracy *= LevelUpBonuses[2];
+        penetration += LevelUpBonuses[3];
+        critChance += LevelUpBonuses[4];
+        reloadTime *= LevelUpBonuses[5];
+        range += LevelUpBonuses[6];
+        force += LevelUpBonuses[7];
+        magazineSize += Mathf.RoundToInt(LevelUpBonuses[8]);
+        maxAmmo += Mathf.RoundToInt(LevelUpBonuses[9]);
+        critDamage += LevelUpBonuses[10];
+        bulletSpread += Mathf.RoundToInt(LevelUpBonuses[11]);
+        pierce += Mathf.RoundToInt(LevelUpBonuses[12]);
+        pierceEfficiency += LevelUpBonuses[13];
+        DoT += LevelUpBonuses[14];
+        overload += Mathf.RoundToInt(LevelUpBonuses[15]);
+        special += Mathf.RoundToInt(LevelUpBonuses[16]);
+
         MaxSlots++;
+
+        LevelCost = 80 - StoredCostReduction;
+        StoredCostReduction = 0;
+        if (LevelCost < 0)
+        {
+            StoredCostReduction = LevelCost * -1;
+            LevelCost = 0;
+        }
     }
 
     /*public void GainSpecialCharge(float amount)
