@@ -220,7 +220,7 @@ MonoBehaviour:
   cameraShake: 2.68
   shakeDuration: 0.052
   bulletsLeft: 7
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -1132,7 +1132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 35
+  m_text: 25
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1723,7 +1723,7 @@ MonoBehaviour:
   cameraShake: 1.5
   shakeDuration: 0.032
   bulletsLeft: 21
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 369968256
@@ -2164,10 +2164,10 @@ MonoBehaviour:
   taskMax: 0
   maxHealth: 63
   health: 63
-  maxShield: 20
-  shield: 20
-  shieldChargeRate: 2
-  shieldChargeDelay: 5
+  maxShield: 80
+  shield: 0
+  shieldChargeRate: 0
+  shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
   damageBonus: 1.046
@@ -2184,9 +2184,9 @@ MonoBehaviour:
   fireRateIncrease: 0.0012
   movementSpeedIncrease: 0.009
   additionalCritChance: 0
-  tools: 3
+  tools: 6
   tokens: 0
-  scrap: 35
+  scrap: 25
   animator: {fileID: 3325442803176177398}
   moveSpeed: 5
 --- !u!114 &6601758595229335008
@@ -2205,7 +2205,7 @@ MonoBehaviour:
   Library: {fileID: 6936869394900410654}
   Barrel: {fileID: 3504709923321877712}
   guns:
-  - {fileID: 2480144055760538672}
+  - {fileID: 4049727748741312788}
   - {fileID: 0}
   - {fileID: 0}
   gunSprite:
@@ -2315,7 +2315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2640,7 +2640,7 @@ MonoBehaviour:
   cameraShake: 2.68
   shakeDuration: 0.052
   bulletsLeft: 7
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -3098,17 +3098,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
---- !u!114 &2480144055760538672 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1060765509938700522, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
-  m_PrefabInstance: {fileID: 3230107312610258138}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6936869394900410654 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5518898055452544452, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}

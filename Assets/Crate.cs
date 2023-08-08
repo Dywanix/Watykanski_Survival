@@ -65,7 +65,7 @@ public class Crate : MonoBehaviour
         if (temp >= Random.Range(0f, 1f))
             DropScrap(1, 1);
 
-        temp = value * scrapChance * 0.3f;
+        temp = value * scrapChance * 0.34f;
         if (temp >= Random.Range(0f, 1f))
             DropTools(1, 1);
 

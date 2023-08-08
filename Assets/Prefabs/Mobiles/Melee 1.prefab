@@ -510,19 +510,19 @@ MonoBehaviour:
   weight: 5
   maxHealth: 67
   health: 67
-  regen: 0
-  armor: 22.4
+  regen: 1
+  armor: 25
   vulnerable: 0
   DoT: 0
   burning: 0
-  movementSpeed: 3.82
+  movementSpeed: 3.92
   aimingMovement: 0
   slow: 0
   stun: 0
   attackTimer: 0
   attackDamage: 20
   attackPoison: 0
-  attackSpeed: 2.73
+  attackSpeed: 2.67
   attackRange: 1.75
   ranged: 0
   throws: 0
@@ -537,7 +537,7 @@ MonoBehaviour:
   enrageValue: []
   DeathDrop: {fileID: 0}
   scrapChance: 0.15
-  itemChance: 0.05
+  itemChance: 0.06
   scrapCount: 1
   itemCount: 1
   Blood: {fileID: 0}

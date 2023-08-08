@@ -147,10 +147,10 @@ MonoBehaviour:
   scrapDroppedRange: 060000000b000000
   toolsDroppedRange: 0300000004000000
   itemsCount: 3
-  maxHealth: 130
-  health: 130
+  maxHealth: 120
+  health: 120
   dropChance: 0.09
-  scrapChance: 0.045
+  scrapChance: 0.05
 --- !u!50 &6884977038708695281
 Rigidbody2D:
   serializedVersion: 4

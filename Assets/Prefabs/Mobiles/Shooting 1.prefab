@@ -68,22 +68,22 @@ MonoBehaviour:
   dead: 0
   hpBar: {fileID: 381832870102724009}
   weight: 5
-  maxHealth: 50
-  health: 50
+  maxHealth: 54
+  health: 54
   regen: 0
-  armor: 12.4
+  armor: 13.6
   vulnerable: 0
   DoT: 0
   burning: 0
-  movementSpeed: 3.12
-  aimingMovement: 0.65
+  movementSpeed: 3.22
+  aimingMovement: 0.66
   slow: 0
   stun: 0
   attackTimer: 0
   attackDamage: 16
   attackPoison: 0
-  attackSpeed: 3.03
-  attackRange: 14.4
+  attackSpeed: 2.98
+  attackRange: 15
   ranged: 1
   throws: 0
   bulletCount: 1
@@ -92,12 +92,12 @@ MonoBehaviour:
   burstDelay: 0
   accuracy: 9.4
   force: 13.8
-  minRange: 4.8
+  minRange: 5
   enrageStats: []
   enrageValue: []
   DeathDrop: {fileID: 0}
   scrapChance: 0.15
-  itemChance: 0.05
+  itemChance: 0.06
   scrapCount: 1
   itemCount: 1
   Blood: {fileID: 0}

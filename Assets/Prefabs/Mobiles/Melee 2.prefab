@@ -9,15 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: armor
-      value: 8.8
+      value: 9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
+      propertyPath: regen
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: health
-      value: 41
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: maxHealth
-      value: 41
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: attackRange
@@ -25,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: attackSpeed
-      value: 1.64
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: attackDamage
@@ -33,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376259635588849317, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: movementSpeed
-      value: 5.47
+      value: 5.61
       objectReference: {fileID: 0}
     - target: {fileID: 3420205584968968696, guid: c280301c8ee246c479180d18829d323f, type: 3}
       propertyPath: m_LocalPosition.x

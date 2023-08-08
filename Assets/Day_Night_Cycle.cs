@@ -25,6 +25,7 @@ public class Day_Night_Cycle : MonoBehaviour
     public PlayerController playerStats;
     public Image DayBar;
     public TMPro.TextMeshProUGUI dayCount;
+    public Merchant shop;
 
     public int day, bossFrequency, hordeSize, roll, epicCharges;
     public float time, maxTime, spawnGap, spawnTime, rareSpawnGap, rareSpawnTime;
@@ -86,7 +87,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.Nightfall();
         CurrentState = TimeState.Night;
-        maxTime = 70f + 5f * day;
+        maxTime = 68f + 5f * day;
         time = 0;
 
         if (day % bossFrequency == 0)
@@ -98,12 +99,12 @@ public class Day_Night_Cycle : MonoBehaviour
         {
             bossNight = false;
 
-            hordeSize = 16 + day * 8;
+            hordeSize = 15 + day * 8;
 
-            temp = (day * (day + 1) * 0.75f + 3f * day + 5f) * 10f;
+            temp = (day * (day + 1) * 0.75f + 2.95f * day + 5f) * 10f;
             spawnGap = maxTime / temp;
 
-            temp = (day * (day + 1) * 0.9f + 4.2f * day + 5f) * 3.75f;
+            temp = (day * (day + 1) * 0.9f + 4.1f * day + 5f) * 3.75f;
             rareSpawnGap = maxTime / temp;
 
             spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
@@ -111,6 +112,7 @@ public class Day_Night_Cycle : MonoBehaviour
 
             SummonHorde();
         }
+        shop.Close();
     }
 
     public void StartDawn()
@@ -135,6 +137,7 @@ public class Day_Night_Cycle : MonoBehaviour
 
         dayCount.text = day.ToString("0");
         CurrentState = TimeState.Day;
+        shop.Open();
     }
 
     void Summon()

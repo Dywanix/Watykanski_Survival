@@ -101,11 +101,11 @@ public class PlayerController : MonoBehaviour
 
     void Tick()
     {
-        RestoreHealth(maxHealth * 0.0025f);
-        RestoreHealth(maxHealth * 0.001f * eq.Items[5]);
+        //RestoreHealth(maxHealth * 0.0025f);
+        //RestoreHealth(maxHealth * 0.001f * eq.Items[5]);
 
-        if (berserker == true)
-            RestoreHealth((maxHealth * 2f - health) * 0.003f);
+        //if (berserker == true)
+            //RestoreHealth((maxHealth * 2f - health) * 0.003f);
 
         if (poison > 0)
             poison -= 0.2f;
@@ -559,7 +559,7 @@ public class PlayerController : MonoBehaviour
         }
         DisplayAmmo();
         dayCount++;
-        RestoreHealth(40 + maxHealth * 0.5f);
+        //RestoreHealth(40 + maxHealth * 0.5f);
         if (berserker)
         {
             berserker.wrath = 0;
@@ -576,7 +576,8 @@ public class PlayerController : MonoBehaviour
         {
             if (eq.slotFilled[i])
             {
-                eq.guns[i].ammo = eq.guns[i].maxAmmo - eq.guns[i].bulletsLeft;
+                eq.guns[i].ammo = eq.guns[i].maxAmmo + eq.guns[i].bonusAmmo - eq.guns[i].bulletsLeft;
+                eq.guns[i].bonusAmmo = 0;
             }
         }
         DisplayAmmo();
@@ -642,5 +643,17 @@ public class PlayerController : MonoBehaviour
     {
         tokens -= amount;
         tokensInfo.text = tokens.ToString("0");
+    }
+
+    public void AmmoPack()
+    {
+        for (int i = 1; i < 3; i++)
+        {
+            if (eq.slotFilled[i])
+            {
+                eq.guns[i].bonusAmmo += eq.guns[i].maxAmmo / 3;
+                eq.guns[i].ammo += eq.guns[i].maxAmmo / 3;
+            }
+        }
     }
 }
