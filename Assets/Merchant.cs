@@ -150,6 +150,9 @@ public class Merchant : MonoBehaviour
                 case 7:
                     playerStats.AmmoPack();
                     break;
+                case 9:
+                    playerStats.LevelUp();
+                    break;
             }
         }
         Items[what].SetActive(false);

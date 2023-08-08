@@ -8,10 +8,12 @@ public class Berserker : MonoBehaviour
     public PlayerController playerStats;
     public Image Ability1, Ability2;
     public TMPro.TextMeshProUGUI WrathCount;
-    public GameObject BoomerangAxe;
+    public GameObject Wave, BoomerangAxe;
     public Bullet AxeThrown;
 
-    public float wrath, enrageCooldown, enrageMaxCooldown, healthSacrifice, enrageFireRateIncrease, enrageDamageIncrease, swipeCooldown, swipeMaxCooldown;
+    public float wrath, burstCooldown, burstMaxCooldown, swipeCooldown, swipeMaxCooldown;
+    int wavesCount;
+    float waveDirection;
 
     void Start()
     {
@@ -20,17 +22,17 @@ public class Berserker : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
-            Enrage();
+            BurstCast();
 
         if (playerStats.task <= 0)
         {
             Action();
         }
 
-        if (enrageCooldown > 0)
+        if (burstCooldown > 0)
         {
-            enrageCooldown -= Time.deltaTime;
-            Ability1.fillAmount = 1 - (enrageCooldown / enrageMaxCooldown);
+            burstCooldown -= Time.deltaTime;
+            Ability1.fillAmount = 1 - (burstCooldown / burstMaxCooldown);
         }
 
         if (swipeCooldown > 0)
@@ -48,11 +50,44 @@ public class Berserker : MonoBehaviour
 
     public void GainWrath(float value)
     {
-        wrath += value * (0.028f + 0.001f * playerStats.level) / 100f;
+        wrath += value * 0.06f / 100f;
         WrathCount.text = (wrath * 100).ToString("0.0") + "%";
     }
 
-    void Enrage()
+    void BurstCast()
+    {
+        if (burstCooldown <= 0)
+        {
+            burstMaxCooldown = 11f / playerStats.cooldownReduction;
+            burstCooldown = burstMaxCooldown;
+
+            Burst();
+        }
+        else if (playerStats.health > 5f)
+        {
+            playerStats.TakeDamage(5f, true);
+            Burst();
+        }
+    }
+
+    void Burst()
+    {
+        GainWrath(2f);
+        wavesCount = 5 + playerStats.level / 2;
+
+        waveDirection = Random.Range(-12f, 12f);
+        for (int i = 0; i < wavesCount; i++)
+        {
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + waveDirection + i * (360f / wavesCount));
+            GameObject bullet = Instantiate(Wave, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * 12.4f * playerStats.DamageDealtMultiplyer(0.18f), ForceMode2D.Impulse);
+            AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            AxeThrown.damage = (17.6f + 1.6f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+        }
+    }
+
+    /*void Enrage()
     {
         if (enrageCooldown <= 0)
         {
@@ -78,7 +113,7 @@ public class Berserker : MonoBehaviour
 
         playerStats.fireRateBonus /= enrageFireRateIncrease;
         playerStats.damageBonus /= enrageDamageIncrease;
-    }
+    }*/
 
     void SwipeCast()
     {

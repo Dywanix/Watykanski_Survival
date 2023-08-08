@@ -564,7 +564,8 @@ public class PlayerController : MonoBehaviour
         {
             berserker.wrath = 0;
             berserker.GainWrath(0);
-            GainHP(1.2f + 1f * dayCount);
+            GainHP(2f);
+            RestoreHealth(maxHealth * 0.08f);
         }
         LevelUp();
     }

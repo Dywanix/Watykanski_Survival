@@ -8131,7 +8131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453206722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30597,6 +30597,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e5ae8023a2e260d468dd1a79058bf12b, type: 3}
   - {fileID: 21300000, guid: f8653f641d78da245910a8721a81f2f2, type: 3}
   - {fileID: 21300000, guid: 885e9d381af94c6448f19a01c335a0a4, type: 3}
+  - {fileID: 21300000, guid: 0561692ced4b6cf428fb3c3a62080ef3, type: 3}
   accessorySprites:
   - {fileID: 21300000, guid: 12f717ae812fb684d93923d137e82413, type: 3}
   - {fileID: 21300000, guid: 506b685f6c5637f43bee169f29c10c6b, type: 3}
@@ -30616,8 +30617,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 51dc3ffd13496cb468ea5cba7a3bf4aa, type: 3}
   playerStats: {fileID: 0}
   Costs: 00000000000000000000000000000000
-  MinCosts: 10000000170000001700000017000000170000000c000000140000000e000000
-  MaxCosts: 140000001b0000001b0000001b0000001b0000000e0000001800000012000000
+  MinCosts: 10000000170000001700000017000000170000000c000000140000000e0000001b000000
+  MaxCosts: 140000001b0000001b0000001b0000001b0000000e000000180000001200000021000000
   Rolls: 00000000000000000000000000000000
   Accessory: 00000000000000000000000000000000
   accessoryChance: 5

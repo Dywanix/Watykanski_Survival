@@ -301,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4f6629a6c74ecb24aae87fe1e9a9d8db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 136e28c7b39a240408d16ad26bb619b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -557,7 +557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221019378362755177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.244, y: 1.99, z: 0}
+  m_LocalPosition: {x: 0.07, y: 1.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -872,7 +872,7 @@ MonoBehaviour:
   Gun: {fileID: 221019377957225675}
   eq: {fileID: 221019378589204401}
   magazineInfo: {fileID: 221019379726973339}
-  ammoInfo: {fileID: 0}
+  ammoInfo: {fileID: 3343179306081454748}
   scrapInfo: {fileID: 221019379837776163}
   toolsInfo: {fileID: 5563003537845535524}
   tokensInfo: {fileID: 2683157045014057074}
@@ -894,10 +894,10 @@ MonoBehaviour:
   taskMax: 0
   maxHealth: 72
   health: 72
-  maxShield: 20
-  shield: 20
-  shieldChargeRate: 2
-  shieldChargeDelay: 5
+  maxShield: 80
+  shield: 0
+  shieldChargeRate: 0
+  shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
   damageBonus: 1.052
@@ -914,9 +914,9 @@ MonoBehaviour:
   fireRateIncrease: 0.0011
   movementSpeedIncrease: 0.00525
   additionalCritChance: 0
-  tools: 3
+  tools: 6
   tokens: 0
-  scrap: 35
+  scrap: 25
   animator: {fileID: 7977171312871803651}
   moveSpeed: 5
 --- !u!114 &221019378589204401
@@ -932,11 +932,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 221019378589204402}
-  Library: {fileID: 0}
+  Library: {fileID: 8520060014848344384}
   Barrel: {fileID: 7690489245074071479}
   guns:
-  - {fileID: 221019378724568884}
-  - {fileID: 221019379031017589}
+  - {fileID: 3752304877380676718}
+  - {fileID: 0}
+  - {fileID: 0}
   gunSprite:
   - {fileID: 221019378529759564}
   - {fileID: 221019377946957093}
@@ -945,7 +946,7 @@ MonoBehaviour:
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 0}
   equippedGun: {fileID: 221019377992242562}
-  slotFilled: 
+  slotFilled: 010000
   equipped: 0
   item: 0
   Caltrop: {fileID: 8623896585513593077, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
@@ -970,14 +971,12 @@ MonoBehaviour:
   Ability1: {fileID: 221019379204872623}
   Ability2: {fileID: 221019379566919824}
   WrathCount: {fileID: 5102501570890134935}
+  Wave: {fileID: 6192007680720593526, guid: 57eccbbfc3133ee4ca604b19040c7354, type: 3}
   BoomerangAxe: {fileID: 2240648045073124737, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
   AxeThrown: {fileID: 0}
   wrath: 0
-  enrageCooldown: 0
-  enrageMaxCooldown: 0
-  healthSacrifice: 0
-  enrageFireRateIncrease: 0
-  enrageDamageIncrease: 0
+  burstCooldown: 0
+  burstMaxCooldown: 0
   swipeCooldown: 0
   swipeMaxCooldown: 0
 --- !u!1 &221019378724568890
@@ -1048,17 +1047,23 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 1.95
   shakeDuration: 0.05
   bulletsLeft: 26
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  LevelUpBonuses: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
@@ -1139,17 +1144,23 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 2.89
   shakeDuration: 0.06
   bulletsLeft: 8
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  LevelUpBonuses: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 1
@@ -1270,6 +1281,7 @@ Transform:
   - {fileID: 221019378724568891}
   - {fileID: 221019379031017588}
   - {fileID: 7690489245074071479}
+  - {fileID: 8520060014848344385}
   m_Father: {fileID: 221019378589204406}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1532,7 +1544,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6251833860790309969}
   m_Father: {fileID: 221019378028021586}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1841,17 +1854,23 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  LevelCostCharge: 0
   cameraShake: 0.2
   shakeDuration: 0.02
   bulletsLeft: 0
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 1121502336
   TakenSlots: 0
+  LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  LevelUpBonuses: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 1
   infiniteAmmo: 1
   individualReload: 0
@@ -2756,6 +2775,141 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6718777347010034489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6251833860790309969}
+  - component: {fileID: 7027449983639526204}
+  - component: {fileID: 3343179306081454748}
+  m_Layer: 5
+  m_Name: Current Ammo Information
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6251833860790309969
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718777347010034489}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 221019379726973338}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 5.000038, y: -9.999995}
+  m_SizeDelta: {x: 80, y: 40}
+  m_Pivot: {x: 1, y: 0}
+--- !u!222 &7027449983639526204
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718777347010034489}
+  m_CullTransparentMesh: 1
+--- !u!114 &3343179306081454748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718777347010034489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: ---
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4290032820
+  m_fontColor: {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22
+  m_fontSizeBase: 22
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8010584973278885419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,3 +2987,87 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &4227268147681184900
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 221019379240148038}
+    m_Modifications:
+    - target: {fileID: 5518898055452544451, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_Name
+      value: Guns Library
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.11756181
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09006099
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.07631992
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+--- !u!114 &3752304877380676718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1060765509938700522, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+  m_PrefabInstance: {fileID: 4227268147681184900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8520060014848344384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5518898055452544452, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+  m_PrefabInstance: {fileID: 4227268147681184900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037a1dde6e4efbe48bf210841a022a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8520060014848344385 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
+  m_PrefabInstance: {fileID: 4227268147681184900}
+  m_PrefabAsset: {fileID: 0}
