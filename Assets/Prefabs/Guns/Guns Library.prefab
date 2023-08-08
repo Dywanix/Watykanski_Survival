@@ -72,7 +72,7 @@ MonoBehaviour:
   cameraShake: 1
   shakeDuration: 0.02
   bulletsLeft: 7
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -197,7 +197,7 @@ MonoBehaviour:
   cameraShake: 3.96
   shakeDuration: 0.055
   bulletsLeft: 9
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -279,7 +279,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -321,7 +321,7 @@ MonoBehaviour:
   cameraShake: 1.22
   shakeDuration: 0.0295
   bulletsLeft: 24
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -416,7 +416,7 @@ MonoBehaviour:
   cameraShake: 0.61
   shakeDuration: 0.015
   bulletsLeft: 27
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -540,7 +540,7 @@ MonoBehaviour:
   cameraShake: 1.22
   shakeDuration: 0.0295
   bulletsLeft: 17
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 5
@@ -616,6 +616,7 @@ MonoBehaviour:
   - {fileID: 5974149374854409488}
   - {fileID: 7352936915088989079}
   - {fileID: 8145539831211771687}
+  - {fileID: 6032819139656934672}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +722,7 @@ MonoBehaviour:
   cameraShake: 5.73
   shakeDuration: 0.087
   bulletsLeft: 3
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -845,7 +846,7 @@ MonoBehaviour:
   cameraShake: 2.68
   shakeDuration: 0.052
   bulletsLeft: 7
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -969,7 +970,7 @@ MonoBehaviour:
   cameraShake: 3.34
   shakeDuration: 0.081
   bulletsLeft: 5
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 3
   MaxSlots: 4
@@ -1055,8 +1056,8 @@ Transform:
   - {fileID: 6117760998403461391}
   - {fileID: 5403475435169380279}
   - {fileID: 2297455644036735213}
-  - {fileID: 6202056126562500248}
   - {fileID: 6625855369861730883}
+  - {fileID: 6202056126562500248}
   - {fileID: 3567463198370990815}
   - {fileID: 8263234665365224026}
   m_Father: {fileID: 5518898055452544453}
@@ -1134,7 +1135,7 @@ MonoBehaviour:
   cameraShake: 1.22
   shakeDuration: 0.0295
   bulletsLeft: 24
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -1258,7 +1259,7 @@ MonoBehaviour:
   cameraShake: 0.82
   shakeDuration: 0.02
   bulletsLeft: 18
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 4
@@ -1321,7 +1322,7 @@ GameObject:
   - component: {fileID: 6625855369861730883}
   - component: {fileID: 6032819139656934672}
   m_Layer: 0
-  m_Name: Splitting Handgun
+  m_Name: Splitting Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1340,7 +1341,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6032819139656934672
 MonoBehaviour:
@@ -1354,20 +1355,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Splitting Handgun
+  gunName: Splitting Gun
   gunSprite: {fileID: 21300000, guid: 3614bb889bef7af458b088c91a665e87, type: 3}
-  damage: 29.5
-  fireRate: 0.865
-  accuracy: 6.16
-  penetration: 0.23
-  critChance: 0.09
-  reloadTime: 1.595
+  damage: 38
+  fireRate: 0.658
+  accuracy: 5.37
+  penetration: 0.28
+  critChance: 0.11
+  reloadTime: 1.57
   range: 1.42
   force: 15
-  magazineSize: 6
-  ammo: 34
-  maxAmmo: 40
-  critDamage: 1.6
+  magazineSize: 8
+  ammo: 52
+  maxAmmo: 60
+  critDamage: 1.62
   armorShred: 0
   vulnerableApplied: 0
   bulletSpread: 1
@@ -1375,26 +1376,55 @@ MonoBehaviour:
   pierceEfficiency: 0.5
   DoT: 0
   overload: 0
-  slowDuration: 0
+  slowDuration: 0.03
   stunChance: 0
   stunDuration: 0
   LevelCostCharge: 0
   cameraShake: 3.21
   shakeDuration: 0.055
-  bulletsLeft: 6
-  ammoFromPack: 0
+  bulletsLeft: 8
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
-  MaxSlots: 0
+  MaxSlots: 4
   TakenSlots: 0
-  LevelCost: 0
+  LevelCost: 80
   StoredCostReduction: 0
-  Costs: 18000000180000001800000018000000
+  Costs: 0a00000007000000080000000d000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  Values: []
-  LevelUpBonuses: []
-  UpgradeType: []
-  UpgradeInfo: []
+  Values:
+  - 0.88
+  - 0.03
+  - 0.11
+  - 16
+  LevelUpBonuses:
+  - 2.3
+  - 1
+  - 1
+  - 0
+  - 0.03
+  - 0.96
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - fireRate
+  - penetration
+  - range
+  - maxAmmo
+  UpgradeInfo:
+  - +12% Fire Rate
+  - +3% Penetration
+  - +11 Range
+  - +16 Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -1402,6 +1432,7 @@ MonoBehaviour:
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 3172954806413337685, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
+  - {fileID: 7905669060386059108, guid: ace0f9d271f1efe4b857b3a3a6d2daa6, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
@@ -1477,7 +1508,7 @@ MonoBehaviour:
   cameraShake: 1
   shakeDuration: 0.02
   bulletsLeft: 7
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 5

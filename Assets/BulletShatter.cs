@@ -47,10 +47,10 @@ public class BulletShatter : MonoBehaviour
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;
         BulletsShards.DoT = ThisBullet.DoT;
         BulletsShards.penetration = ThisBullet.penetration;
-        BulletsShards.armorShred = ThisBullet.armorShred;
-        BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied;
-        BulletsShards.slowDuration = ThisBullet.slowDuration;
-        BulletsShards.stunChance = ThisBullet.stunChance;
+        BulletsShards.armorShred = ThisBullet.armorShred * damageEfficiency;
+        BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied * damageEfficiency;
+        BulletsShards.slowDuration = ThisBullet.slowDuration * damageEfficiency;
+        BulletsShards.stunChance = ThisBullet.stunChance * damageEfficiency;
         BulletsShards.stunDuration = ThisBullet.stunDuration;
         if (retainPierce)
             BulletsShards.pierce = ThisBullet.pierce + pierceCount;
