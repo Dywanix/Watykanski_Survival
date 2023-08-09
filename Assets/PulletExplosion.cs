@@ -22,10 +22,13 @@ public class PulletExplosion : MonoBehaviour
     {
         delay -= Time.deltaTime;
         if (delay <= 0)
+        {
             Shatter();
+            Destroy(gameObject);
+        }
     }
 
-    void Shatter()
+    public void Shatter()
     {
         for (int j = 0; j < BulletShard.Length; j++)
         {
@@ -39,7 +42,7 @@ public class PulletExplosion : MonoBehaviour
                 SetBullet(j);
             }
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     void SetBullet(int which)

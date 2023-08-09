@@ -111,8 +111,10 @@ MonoBehaviour:
   pierceEfficiency: 1
   DoT: 0
   incendiary: 0
-  crateBonus: 0
+  damageGain: 0
   pierce: 100
+  special: 0
+  infinite: 0
   crit: 0
   AoE: 0
 --- !u!58 &2021625336800310793

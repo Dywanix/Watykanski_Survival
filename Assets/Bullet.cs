@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject ExplosionRadius;
     private Bullet Explosion;
+    public PulletExplosion ShardExplosion;
     public float duration, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, incendiary, damageGain;
     public int pierce, special;
     public bool infinite, crit, AoE;
@@ -16,7 +17,10 @@ public class Bullet : MonoBehaviour
             duration -= Time.deltaTime;
         damage *= 1f + damageGain * Time.deltaTime;
         if (duration <= 0)
+        {
+            Explosions();
             Destroy(gameObject);
+        }
     }
 
     /*private void OnTriggerEnter2D(Collider2D other)
@@ -32,6 +36,23 @@ public class Bullet : MonoBehaviour
 
     public void Struck()
     {
+        Explosions();
+
+        if (!infinite)
+        {
+            pierce--;
+            damage *= pierceEfficiency;
+            armorShred *= 0.2f + 0.8f * pierceEfficiency;
+            vulnerableApplied *= 0.2f + 0.8f * pierceEfficiency;
+            slowDuration *= 0.4f + 0.6f * pierceEfficiency;
+            stunDuration *= 0.4f + 0.6f * pierceEfficiency;
+        }
+        if (pierce <= 0)
+            Destroy(gameObject);
+    }
+
+    void Explosions()
+    {
         if (AoE)
         {
             GameObject bullet = Instantiate(ExplosionRadius, transform.position, transform.rotation);
@@ -45,17 +66,8 @@ public class Bullet : MonoBehaviour
             Explosion.stunDuration = stunDuration;
             Explosion.incendiary = incendiary;
         }
+        if (ShardExplosion)
+            ShardExplosion.Shatter();
 
-        if (!infinite)
-        {
-            pierce--;
-            damage *= pierceEfficiency;
-            armorShred *= 0.2f + 0.8f * pierceEfficiency;
-            vulnerableApplied *= 0.2f + 0.8f * pierceEfficiency;
-            slowDuration *= 0.4f + 0.6f * pierceEfficiency;
-            stunDuration *= 0.4f + 0.6f * pierceEfficiency;
-        }
-        if (pierce <= 0)
-            Destroy(gameObject);
     }
 }

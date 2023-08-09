@@ -403,7 +403,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -622,7 +622,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2480623888799790039
 MonoBehaviour:
@@ -687,6 +687,130 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
+--- !u!1 &5086013156797040371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2971924155989730239}
+  - component: {fileID: 5647800462568369657}
+  m_Layer: 0
+  m_Name: Blaze
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2971924155989730239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086013156797040371}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5647800462568369657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086013156797040371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Blaze
+  gunSprite: {fileID: 21300000, guid: ebb5056c49b899d4db4e9d9a3452c04c, type: 3}
+  damage: 28
+  fireRate: 0.637
+  accuracy: 9.22
+  penetration: 0.22
+  critChance: 0.1
+  reloadTime: 1.84
+  range: 1.41
+  force: 16
+  magazineSize: 24
+  ammo: 108
+  maxAmmo: 132
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  LevelCostCharge: 0
+  cameraShake: 1.22
+  shakeDuration: 0.0295
+  bulletsLeft: 24
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 80
+  StoredCostReduction: 0
+  Costs: 070000000a000000060000000a000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.2
+  - 0.78
+  - 0.87
+  - 21
+  LevelUpBonuses:
+  - 0.7
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 0.99
+  - 0.05
+  - 0
+  - 2
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +1,2 Damage
+  - +22% Accuracy
+  - -13% Reload Time
+  - +23 Max Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 1649544961230825972, guid: 9e624e420449e254d85951ec2a708af6, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 3
+  flashSpread: 26
 --- !u!1 &5518898055452544451
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +866,7 @@ MonoBehaviour:
   - {fileID: 8145539831211771687}
   - {fileID: 6032819139656934672}
   - {fileID: 4277811958705481222}
+  - {fileID: 5647800462568369657}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1308,7 @@ Transform:
   - {fileID: 2297455644036735213}
   - {fileID: 6625855369861730883}
   - {fileID: 5583108929284866987}
+  - {fileID: 2971924155989730239}
   - {fileID: 6202056126562500248}
   - {fileID: 3567463198370990815}
   - {fileID: 8263234665365224026}
@@ -1592,7 +1718,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959943114771508542
 MonoBehaviour:
