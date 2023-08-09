@@ -284,6 +284,7 @@ public class CraftingTable : MonoBehaviour
         {
             playerStats.eq.Accessories[AEQValues[which]]--;
             playerStats.GainScrap(14);
+            playerStats.GainTools(4);
         }
 
         UpdateInfo();

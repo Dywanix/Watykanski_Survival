@@ -23695,6 +23695,7 @@ MonoBehaviour:
   rareSpawnGap: 0
   rareSpawnTime: 0
   bossNight: 0
+  chosenClas: 1
 --- !u!1 &1182535554
 GameObject:
   m_ObjectHideFlags: 0
@@ -41276,7 +41277,7 @@ MonoBehaviour:
   sprites:
   - {fileID: 21300000, guid: e1879b47ce032ae4c9dd5f92fa3930d0, type: 3}
   - {fileID: 21300000, guid: e144c9d6c1f2a3a46b739ca12342f396, type: 3}
-  - {fileID: 21300000, guid: 204c3b94c12d5194a9f21d70d1729652, type: 3}
+  - {fileID: 21300000, guid: 0561692ced4b6cf428fb3c3a62080ef3, type: 3}
   - {fileID: 21300000, guid: 8fb7c0047f8cfd04cb609fd497c5c0ba, type: 3}
   rolled: 000000000000000000000000
   locked: 000000

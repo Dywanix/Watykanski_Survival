@@ -892,8 +892,8 @@ MonoBehaviour:
   day: 1
   task: 0
   taskMax: 0
-  maxHealth: 72
-  health: 72
+  maxHealth: 84
+  health: 84
   maxShield: 80
   shield: 0
   shieldChargeRate: 0
@@ -972,7 +972,8 @@ MonoBehaviour:
   Ability2: {fileID: 221019379566919824}
   WrathCount: {fileID: 5102501570890134935}
   Wave: {fileID: 6192007680720593526, guid: 57eccbbfc3133ee4ca604b19040c7354, type: 3}
-  BoomerangAxe: {fileID: 2240648045073124737, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
+  Axe: {fileID: 2240648045073124737, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
+  BoomerangAxe: {fileID: 8439197816819152736, guid: 1996d360eab5a25408f206d8e21a0d20, type: 3}
   AxeThrown: {fileID: 0}
   wrath: 0
   burstCooldown: 0
@@ -2658,7 +2659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 65.00001, y: 9.999989}
+  m_AnchoredPosition: {x: 65, y: 10}
   m_SizeDelta: {x: 48, y: 96}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2361712182953509869

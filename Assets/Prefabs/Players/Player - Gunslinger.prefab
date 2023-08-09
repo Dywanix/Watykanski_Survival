@@ -2162,8 +2162,8 @@ MonoBehaviour:
   day: 1
   task: 0
   taskMax: 0
-  maxHealth: 63
-  health: 63
+  maxHealth: 75
+  health: 75
   maxShield: 80
   shield: 0
   shieldChargeRate: 0

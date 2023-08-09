@@ -106,7 +106,7 @@ MonoBehaviour:
   penetration: 0.55
   armorShred: 0
   vulnerableApplied: 0
-  slowDuration: 0.85
+  slowDuration: 0.9
   stunChance: 0
   stunDuration: 0
   pierceEfficiency: 0.85

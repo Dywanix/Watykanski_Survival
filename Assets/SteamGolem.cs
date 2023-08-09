@@ -155,7 +155,7 @@ public class SteamGolem : MonoBehaviour
         direction = (-overdriveAccuracy) * (bulletsCount - 1);
         for (int i = 0; i < bulletsCount; i++)
         {
-            playerStats.FireDirection(direction + overdriveAccuracy * 2 * i);
+            playerStats.FireDirection(direction + overdriveAccuracy * 2 * i, 0f);
         }
 
         volleyCount++;

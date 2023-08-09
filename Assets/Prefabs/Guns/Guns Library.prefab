@@ -47,7 +47,7 @@ MonoBehaviour:
   gunName: Basic Laser
   gunSprite: {fileID: 21300000, guid: b9adeac958bdb1a4081da64929945e81, type: 3}
   damage: 17.7
-  fireRate: 0.737
+  fireRate: 0.7
   accuracy: 3.77
   penetration: 0.07
   critChance: 0.07
@@ -55,8 +55,8 @@ MonoBehaviour:
   range: 0.18
   force: 0
   magazineSize: 11
-  ammo: 66
-  maxAmmo: 77
+  ammo: 59
+  maxAmmo: 70
   critDamage: 1.7
   armorShred: 0
   vulnerableApplied: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   LevelCostCharge: 0
   cameraShake: 1
   shakeDuration: 0.02
-  bulletsLeft: 7
+  bulletsLeft: 11
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -249,6 +249,130 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
+--- !u!1 &2598830977068030122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5583108929284866987}
+  - component: {fileID: 4277811958705481222}
+  m_Layer: 0
+  m_Name: Stronger Shotgun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5583108929284866987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598830977068030122}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4277811958705481222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598830977068030122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Stronger Shotgun
+  gunSprite: {fileID: 21300000, guid: 86bc91541fc244e489b374344847bbdb, type: 3}
+  damage: 14.4
+  fireRate: 0.832
+  accuracy: 11.4
+  penetration: 0.22
+  critChance: 0.07
+  reloadTime: 2.02
+  range: 1.16
+  force: 19.3
+  magazineSize: 6
+  ammo: 32
+  maxAmmo: 38
+  critDamage: 1.52
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 4
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  LevelCostCharge: 0
+  cameraShake: 6.34
+  shakeDuration: 0.05
+  bulletsLeft: 6
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 80
+  StoredCostReduction: 0
+  Costs: 07000000090000000600000018000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.03
+  - 1
+  - 5
+  - 1
+  LevelUpBonuses:
+  - 1.1
+  - 0.94
+  - 1
+  - 0
+  - 0.02
+  - 0.98
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - penetration
+  - magazineSize
+  - maxAmmo
+  - bulletSpread
+  UpgradeInfo:
+  - +3% Penetration
+  - +1 Magazine Size
+  - +5 Ammo
+  - +1 Bullet Spread
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 4
+  flashSpread: 52
 --- !u!1 &2962044608577098084
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +403,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -498,7 +622,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2480623888799790039
 MonoBehaviour:
@@ -617,6 +741,7 @@ MonoBehaviour:
   - {fileID: 7352936915088989079}
   - {fileID: 8145539831211771687}
   - {fileID: 6032819139656934672}
+  - {fileID: 4277811958705481222}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,6 +1182,7 @@ Transform:
   - {fileID: 5403475435169380279}
   - {fileID: 2297455644036735213}
   - {fileID: 6625855369861730883}
+  - {fileID: 5583108929284866987}
   - {fileID: 6202056126562500248}
   - {fileID: 3567463198370990815}
   - {fileID: 8263234665365224026}
@@ -1466,7 +1592,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959943114771508542
 MonoBehaviour:

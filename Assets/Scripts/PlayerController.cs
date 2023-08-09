@@ -202,8 +202,8 @@ public class PlayerController : MonoBehaviour
                 Fire(accuracy_change);
                 if (eq.guns[eq.equipped].Accessories[15] * 0.22f >= Random.Range(0f, 1f))
                 {
-                    FireDirection(-40f);
-                    FireDirection(40f);
+                    FireDirection(-40f, accuracy_change);
+                    FireDirection(40f, accuracy_change);
                 }
                 gunslinger.chanceBonus = 0f;
                 gunslinger.DisplayChance();
@@ -218,8 +218,8 @@ public class PlayerController : MonoBehaviour
         Fire(accuracy_change);
         if (eq.guns[eq.equipped].Accessories[15] * 0.22f >= Random.Range(0f, 1f))
         {
-            FireDirection(-40f);
-            FireDirection(40f);
+            FireDirection(-40f, accuracy_change);
+            FireDirection(40f, accuracy_change);
         }
 
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
@@ -247,11 +247,11 @@ public class PlayerController : MonoBehaviour
         //eq.SpecialCharges();
     }
 
-    public void FireDirection(float direction)
+    public void FireDirection(float direction, float accuracy_change)
     {
         for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
         {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + direction);
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + direction + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
             GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
@@ -496,10 +496,10 @@ public class PlayerController : MonoBehaviour
 
     public float DamageDealtMultiplyer(float efficiency)
     {
-        temp = 1f + (damageBonus - 1f);
+        temp = damageBonus;
         if (berserker)
             temp *= 1f + berserker.wrath;
-        temp *= efficiency;
+        temp *= 1f + (temp - 1f) * efficiency;
         return temp;
     }
 

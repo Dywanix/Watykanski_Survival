@@ -31,11 +31,12 @@ public class Day_Night_Cycle : MonoBehaviour
     public float time, maxTime, spawnGap, spawnTime, rareSpawnGap, rareSpawnTime;
     public bool bossNight;
     float temp;
+    public int chosenClas;
 
     void Start()
     {
         //Instantiate(Players[PlayerPrefs.GetInt("Class")]);
-        Instantiate(Players[1]);
+        Instantiate(Players[chosenClas]); // 0 - Gunslinger, 1 - Berserker
 
         Player = GameObject.FindGameObjectWithTag("Player");
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
@@ -87,7 +88,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.Nightfall();
         CurrentState = TimeState.Night;
-        maxTime = 68f + 5f * day;
+        maxTime = 62f + 5f * day;
         time = 0;
 
         if (day % bossFrequency == 0)
@@ -99,12 +100,12 @@ public class Day_Night_Cycle : MonoBehaviour
         {
             bossNight = false;
 
-            hordeSize = 15 + day * 8;
+            hordeSize = 18 + day * 7;
 
-            temp = (day * (day + 1) * 0.75f + 2.95f * day + 5f) * 10f;
+            temp = (day * (day + 1) * 0.7f + 2.75f * day + 4.56f) * 10f;
             spawnGap = maxTime / temp;
 
-            temp = (day * (day + 1) * 0.9f + 4.1f * day + 5f) * 3.75f;
+            temp = (day * (day + 1) * 0.87f + 3.97f * day + 4.75f) * 3.6f;
             rareSpawnGap = maxTime / temp;
 
             spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);
