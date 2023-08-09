@@ -162,9 +162,9 @@ public class PlayerController : MonoBehaviour
     {
         float gunAngle = Mathf.Atan2(mouseVector.y, mouseVector.x) * Mathf.Rad2Deg;
         Gun.rotation = gunAngle - 90f;
-        GunRot.localScale = new Vector3(1f, 1f, 1f);
+        GunRot.localScale = new Vector3(0.25f, 0.25f, 1f);
         if (Gun.rotation > 0f || Gun.rotation < -180f)
-            GunRot.localScale = new Vector3(-1f, 1f, 1f);
+            GunRot.localScale = new Vector3(-0.25f, 0.25f, 1f);
     }
 
     void Action()
