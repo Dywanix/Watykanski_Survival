@@ -902,7 +902,7 @@ MonoBehaviour:
   poison: 0
   damageBonus: 1.052
   fireRateBonus: 1.026
-  movementSpeed: 7.635
+  movementSpeed: 8.112
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
@@ -912,7 +912,7 @@ MonoBehaviour:
   healthIncrease: 1.6
   damageIncrease: 0.0025
   fireRateIncrease: 0.0011
-  movementSpeedIncrease: 0.00525
+  movementSpeedIncrease: 0.0064
   additionalCritChance: 0
   tools: 6
   tokens: 0
@@ -1050,6 +1050,8 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
+  burst: 0
+  burstDelay: 0
   LevelCostCharge: 0
   cameraShake: 1.95
   shakeDuration: 0.05
@@ -1147,6 +1149,8 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
+  burst: 0
+  burstDelay: 0
   LevelCostCharge: 0
   cameraShake: 2.89
   shakeDuration: 0.06
@@ -1857,6 +1861,8 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
+  burst: 0
+  burstDelay: 0
   LevelCostCharge: 0
   cameraShake: 0.2
   shakeDuration: 0.02

@@ -88,7 +88,7 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         playerStats.Nightfall();
         CurrentState = TimeState.Night;
-        maxTime = 62f + 5f * day;
+        maxTime = 61f + 5f * day;
         time = 0;
 
         if (day % bossFrequency == 0)
@@ -102,10 +102,10 @@ public class Day_Night_Cycle : MonoBehaviour
 
             hordeSize = 18 + day * 7;
 
-            temp = (day * (day + 1) * 0.7f + 2.75f * day + 4.56f) * 10f;
+            temp = (day * (day + 1) * 0.7f + 2.75f * day + 4.56f) * 9.88f;
             spawnGap = maxTime / temp;
 
-            temp = (day * (day + 1) * 0.87f + 3.97f * day + 4.75f) * 3.6f;
+            temp = (day * (day + 1) * 0.87f + 3.97f * day + 4.75f) * 3.54f;
             rareSpawnGap = maxTime / temp;
 
             spawnTime = spawnGap * (1.5f + hordeSize * 0.5f);

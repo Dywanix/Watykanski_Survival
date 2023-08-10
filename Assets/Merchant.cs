@@ -118,7 +118,7 @@ public class Merchant : MonoBehaviour
     void Bought(int what)
     {
         playerStats.SpendScrap(Costs[what]);
-        if (Rolls[what] > sprites.Length)
+        if (Rolls[what] >= sprites.Length)
         {
             playerStats.eq.Accessories[Accessory[what]]++;
         }
