@@ -376,6 +376,8 @@ public class CraftingTable : MonoBehaviour
                 break;
                 case 6:
                 playerStats.eq.guns[playerStats.eq.equipped].magazineMultiplier *= 2;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 1.2f;
+                playerStats.DisplayAmmo();
                 break;
                 case 7:
                 playerStats.eq.guns[playerStats.eq.equipped].spreadMultiplyer *= 2;
@@ -548,6 +550,8 @@ public class CraftingTable : MonoBehaviour
                 break;
                 case 6:
                 playerStats.eq.guns[playerStats.eq.equipped].magazineMultiplier /= 2;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 1.2f;
+                playerStats.DisplayAmmo();
                 break;
                 case 7:
                 playerStats.eq.guns[playerStats.eq.equipped].spreadMultiplyer /= 2;

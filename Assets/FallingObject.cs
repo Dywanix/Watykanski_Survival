@@ -9,6 +9,7 @@ public class FallingObject : MonoBehaviour
 
     void Start()
     {
+        jump *= Random.Range(0.95f, 1.05f);
         fall = jump * 2 / duration;
     }
 

@@ -32,6 +32,8 @@ public class Gun : MonoBehaviour
     public float slowDuration;
     public float stunChance;
     public float stunDuration;
+    public int burst;
+    public float burstDelay;
 
     [Header("Inne Staty")]
     public float LevelCostCharge;
@@ -102,6 +104,9 @@ public class Gun : MonoBehaviour
             case "pierce":
                 pierce++;
                 break;
+            case "DoT":
+                DoT += Values[which];
+                break;
             case "overload":
                 overload += Mathf.RoundToInt(Values[which]);
                 break;
@@ -161,7 +166,7 @@ public class Gun : MonoBehaviour
 
         MaxSlots++;
 
-        LevelCost = 80 - StoredCostReduction;
+        LevelCost = 75 - StoredCostReduction;
         StoredCostReduction = 0;
         if (LevelCost < 0)
         {

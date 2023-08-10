@@ -218,17 +218,21 @@ PrefabInstance:
       propertyPath: ShardExplosion
       value: 
       objectReference: {fileID: 3791534163260377776}
+    - target: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 99204340688870425, guid: 9d9849148852ea04aaf94f540a101f1f, type: 3}
     - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: m_LocalPosition.x
@@ -311,15 +315,15 @@ MonoBehaviour:
   BulletFire: {fileID: 7530647327522871299, guid: 7eab626dd05593344ae8568210873c2a, type: 3}
   Dir: {fileID: 8485272765898106436}
   Form: {fileID: 3372471153961491350}
-  frequency: 0.12
-  delay: 0.144
-  frequencyRange: 0.12
+  frequency: 0.1
+  delay: 0.11
+  frequencyRange: 0.1
   spread: 0
   accuracy: 180
-  bulletForce: 0.4
-  forceRange: 0.04
-  bulletDuration: 3
-  damageEfficiency: 0.14
+  bulletForce: 0.3
+  forceRange: 0.03
+  bulletDuration: 2.5
+  damageEfficiency: 0.12
   bulletsCount: 1
   pierceCount: 3
   retainPierce: 0

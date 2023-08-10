@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7477792512691292626
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175433681554947643, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171464812646399845, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: red
+      value: 0.471
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171464812646399845, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: blue
+      value: 0.627
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171464812646399845, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: green
+      value: 0.157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171464812646399845, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: duration
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259008649908465903, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_Name
+      value: Plasma Particle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705464027398349269, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_Color.b
+      value: 0.627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705464027398349269, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_Color.g
+      value: 0.15686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705464027398349269, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: m_Color.r
+      value: 0.47058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988181843973328993, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}
+      propertyPath: duration
+      value: 0.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e675a92d59e6e3a4f982e30aec36de69, type: 3}

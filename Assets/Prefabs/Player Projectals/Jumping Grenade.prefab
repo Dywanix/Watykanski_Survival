@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4712206183988066061
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 967511290799001071, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927824081267301706, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: jump
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927824081267301706, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946786931316408927, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: m_Name
+      value: Jumping Grenade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+--- !u!1 &3399573486116877650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7946786931316408927, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  m_PrefabInstance: {fileID: 4712206183988066061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3006331852196618036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399573486116877650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f23c72aead3c84abf7a922664dbe20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  form: {fileID: 8937751562636165405}
+  jumpHeight: 6.78
+  jumpDuration: 0.8
+  rolling: 0
+--- !u!4 &8937751562636165405 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  m_PrefabInstance: {fileID: 4712206183988066061}
+  m_PrefabAsset: {fileID: 0}
