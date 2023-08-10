@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
                 {
                     for (int i = 0; i < eq.guns[eq.equipped].burst; i++)
                     {
-                        Invoke("ShootFlat", eq.guns[eq.equipped].burstDelay);
+                        Invoke("BurstShot", eq.guns[eq.equipped].burstDelay);
                     }
                 }
                 NewTask(eq.guns[eq.equipped].fireRate);
@@ -204,41 +204,22 @@ public class PlayerController : MonoBehaviour
             SwapGun(2);
     }
 
-    public void ShootFlat()
+    void BurstShot()
     {
-        if (gunslinger)
+        if (eq.guns[eq.equipped].bulletsLeft > 0 || eq.guns[eq.equipped].infiniteMagazine)
         {
-            if (Random.Range(0f, 1f) <= gunslinger.doubleShotChance + gunslinger.chanceBonus)
+            Fire();
+            if (!eq.guns[eq.equipped].infiniteMagazine)
             {
+                if (eq.guns[eq.equipped].Accessories[14] * 0.16f < Random.Range(0f, 1f))
+                    eq.guns[eq.equipped].bulletsLeft--;
+                DisplayAmmo();
+            }
+        }
+        else
+        {
+            if (eq.guns[eq.equipped].Accessories[14] * 0.16f > Random.Range(0f, 1f))
                 Fire();
-                if (eq.guns[eq.equipped].Accessories[15] * 0.22f >= Random.Range(0f, 1f))
-                {
-                    FireDirection(-40f);
-                    FireDirection(40f);
-                }
-                gunslinger.chanceBonus = 0f;
-                gunslinger.DisplayChance();
-            }
-            else
-            {
-                gunslinger.chanceBonus += 0.012f;
-                gunslinger.DisplayChance();
-            }
-        }
-
-        Fire();
-        if (eq.guns[eq.equipped].Accessories[15] * 0.22f >= Random.Range(0f, 1f))
-        {
-            FireDirection(-40f);
-            FireDirection(40f);
-        }
-
-        Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
-        if (!eq.guns[eq.equipped].infiniteMagazine)
-        {
-            if (eq.guns[eq.equipped].Accessories[14] * 0.16f < Random.Range(0f, 1f))
-                eq.guns[eq.equipped].bulletsLeft--;
-            DisplayAmmo();
         }
     }
 

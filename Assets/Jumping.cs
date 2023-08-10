@@ -23,18 +23,18 @@ public class Jumping : MonoBehaviour
             form.position = new Vector3(form.position.x, form.position.y + jumpHeight * Time.deltaTime, 0);
             jumpHeight -= fall * Time.deltaTime;
             if (jumpHeight < -jumpValue)
-                Jump();
+                Bounce();
         }
     }
 
-    void Jump()
+    void Bounce()
     {
-        if (jumpValue > 2f)
+        if (jumpValue > 1.8f)
         {
-            jumpValue *= 0.66f;
-            jumpValue -= 0.33f;
+            jumpValue *= 0.65f;
+            jumpValue -= 0.3f;
             jumpHeight = jumpValue;
-            jumpDuration *= 0.89f;
+            jumpDuration *= 0.88f;
             fall = jumpHeight * 2 / jumpDuration;
         }
         else rolling = true;

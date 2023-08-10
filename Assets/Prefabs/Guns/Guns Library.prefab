@@ -1895,19 +1895,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Burst Fire AR
   gunSprite: {fileID: 21300000, guid: 1dce1d0b66dcb4a409abb9f18a797732, type: 3}
-  damage: 22.4
-  fireRate: 0.478
-  accuracy: 9.22
-  penetration: 0.22
-  critChance: 0.1
-  reloadTime: 1.84
-  range: 1.1
-  force: 19.9
-  magazineSize: 24
-  ammo: 108
-  maxAmmo: 132
-  critDamage: 1.5
-  armorShred: 0
+  damage: 20.6
+  fireRate: 0.78
+  accuracy: 6.33
+  penetration: 0.23
+  critChance: 0.11
+  reloadTime: 1.7
+  range: 1.13
+  force: 20.2
+  magazineSize: 27
+  ammo: 80
+  maxAmmo: 107
+  critDamage: 1.57
+  armorShred: 0.01
   vulnerableApplied: 0
   bulletSpread: 1
   pierce: 1
@@ -1918,11 +1918,11 @@ MonoBehaviour:
   stunChance: 0
   stunDuration: 0
   burst: 2
-  burstDelay: 0.12
+  burstDelay: 0.16
   LevelCostCharge: 0
-  cameraShake: 1.22
-  shakeDuration: 0.0295
-  bulletsLeft: 24
+  cameraShake: 1.1
+  shakeDuration: 0.027
+  bulletsLeft: 27
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -1930,25 +1930,25 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 070000000a000000060000000a000000
+  Costs: 07000000060000000c0000000f000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 1.2
-  - 0.78
-  - 0.87
-  - 21
-  LevelUpBonuses:
-  - 0.7
-  - 0.92
-  - 1
+  - 1.1
   - 0.04
+  - 0.73
+  - 30
+  LevelUpBonuses:
   - 0
-  - 0.99
-  - 0.05
+  - 0.95
+  - 0.91
   - 0
-  - 2
+  - 0.03
+  - 1
   - 0
   - 0
+  - 3
+  - 0
+  - 0.1
   - 0
   - 0
   - 0
@@ -1957,14 +1957,14 @@ MonoBehaviour:
   - 0
   UpgradeType:
   - damage
-  - accuracy
+  - critChance
   - reloadTime
   - maxAmmo
   UpgradeInfo:
-  - +1,2 Damage
+  - +1,1 Damage
   - +22% Accuracy
-  - -13% Reload Time
-  - +23 Max Ammo
+  - -25% Reload Time
+  - +30 Max Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -2021,18 +2021,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Grenade Launcher
   gunSprite: {fileID: 21300000, guid: 4a79440eddbfb7c4dadc8390b6545685, type: 3}
-  damage: 22.4
-  fireRate: 0.478
-  accuracy: 9.22
-  penetration: 0.22
-  critChance: 0.1
-  reloadTime: 1.84
-  range: 2.85
-  force: 15
-  magazineSize: 24
-  ammo: 108
-  maxAmmo: 132
-  critDamage: 1.5
+  damage: 36.6
+  fireRate: 1.086
+  accuracy: 6.6
+  penetration: 0.36
+  critChance: 0.18
+  reloadTime: 1.6
+  range: 2.87
+  force: 14.7
+  magazineSize: 4
+  ammo: 32
+  maxAmmo: 36
+  critDamage: 1.6
   armorShred: 0
   vulnerableApplied: 0
   bulletSpread: 1
@@ -2046,9 +2046,9 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   LevelCostCharge: 0
-  cameraShake: 1.22
-  shakeDuration: 0.0295
-  bulletsLeft: 24
+  cameraShake: 4.39
+  shakeDuration: 0.0475
+  bulletsLeft: 4
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -2056,24 +2056,24 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 070000000a000000060000000a000000
+  Costs: 0c000000050000000c0000000a000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 1.2
-  - 0.78
-  - 0.87
-  - 21
+  - 3.4
+  - 0.94
+  - 0.36
+  - 7
   LevelUpBonuses:
-  - 0.7
-  - 0.92
-  - 1
-  - 0.04
   - 0
   - 0.99
-  - 0.05
+  - 1
   - 0
+  - 0.03
+  - 1
+  - 0
+  - 0
+  - 1
   - 2
-  - 0
   - 0
   - 0
   - 0
@@ -2083,14 +2083,14 @@ MonoBehaviour:
   - 0
   UpgradeType:
   - damage
-  - accuracy
-  - reloadTime
+  - fireRate
+  - range
   - maxAmmo
   UpgradeInfo:
-  - +1,2 Damage
-  - +22% Accuracy
-  - -13% Reload Time
-  - +23 Max Ammo
+  - +3,4 Damage
+  - +6% Fire Rate
+  - +36 Range
+  - +7 Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0

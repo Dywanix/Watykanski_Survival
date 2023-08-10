@@ -87,8 +87,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   form: {fileID: 8937751562636165405}
-  jumpHeight: 6.78
-  jumpDuration: 0.8
+  jumpHeight: 9.97
+  jumpDuration: 0.66
   rolling: 0
 --- !u!4 &8937751562636165405 stripped
 Transform:
