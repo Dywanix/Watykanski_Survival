@@ -119,6 +119,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -245,6 +246,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -304,10 +306,10 @@ MonoBehaviour:
   accuracy: 11.8
   penetration: 0.19
   critChance: 0.06
-  reloadTime: 0.421
+  reloadTime: 0.844
   range: 1.12
   force: 18.6
-  magazineSize: 9
+  magazineSize: 8
   ammo: 0
   maxAmmo: 0
   critDamage: 1.44
@@ -326,7 +328,7 @@ MonoBehaviour:
   LevelCostCharge: 0
   cameraShake: 3.96
   shakeDuration: 0.055
-  bulletsLeft: 9
+  bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -334,23 +336,23 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 090000000a0000002000000021000000
+  Costs: 090000000a000000200000000b000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
   - 1
   - 0.88
   - 1
-  - 1
+  - 0.09
   LevelUpBonuses:
   - 0.3
-  - 1
-  - 0.924
+  - 0.99
+  - 0.93
   - 0.04
   - 0
-  - 0.95
+  - 0.94
   - 0.04
   - 0
-  - 1
+  - 2
   - 0
   - 0
   - 0
@@ -363,15 +365,16 @@ MonoBehaviour:
   - damage
   - fireRate
   - bulletSpread
-  - overload
+  - DoT
   UpgradeInfo:
   - +1 Damage
   - +12% Fire Rate
   - +1 Bullet Spread
-  - +1 Overload
+  - +9% DoT
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 1
+  individualReloadCount: 2
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -430,7 +433,7 @@ MonoBehaviour:
   accuracy: 4.4
   penetration: 0.24
   critChance: 0.24
-  reloadTime: 0.404
+  reloadTime: 0.428
   range: 1.2
   force: 20
   magazineSize: 8
@@ -498,6 +501,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 1
+  individualReloadCount: 1
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -624,6 +628,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -750,6 +755,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -847,6 +853,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -900,17 +907,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Basic SMG
   gunSprite: {fileID: 21300000, guid: 5c710ba4855069b41ac50bf44f652dee, type: 3}
-  damage: 15.4
-  fireRate: 0.254
-  accuracy: 10.52
-  penetration: 0.13
+  damage: 14.3
+  fireRate: 0.2137
+  accuracy: 10.6
+  penetration: 0.12
   critChance: 0.2
-  reloadTime: 0.866
+  reloadTime: 0.898
   range: 0.99
-  force: 21
-  magazineSize: 27
-  ammo: 113
-  maxAmmo: 140
+  force: 20.8
+  magazineSize: 26
+  ammo: 116
+  maxAmmo: 142
   critDamage: 1.4
   armorShred: 0
   vulnerableApplied: 0
@@ -927,7 +934,7 @@ MonoBehaviour:
   LevelCostCharge: 0
   cameraShake: 0.61
   shakeDuration: 0.015
-  bulletsLeft: 27
+  bulletsLeft: 26
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -935,24 +942,24 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 0d000000090000000d00000006000000
+  Costs: 0c000000080000000e00000006000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 0.85
+  - 0.86
   - 0.03
-  - 4
+  - 8
   - 0.05
   LevelUpBonuses:
-  - 0.7
-  - 1
-  - 0.92
-  - 0
-  - 0.05
+  - 0.6
   - 0.99
+  - 0.95
+  - 0
+  - 0.04
+  - 0.98
   - 0.03
   - 0
   - 0
-  - 5
+  - 10
   - 0
   - 0
   - 0
@@ -966,13 +973,14 @@ MonoBehaviour:
   - magazineSize
   - critDamage
   UpgradeInfo:
-  - +15% Fire Rate
+  - +14% Fire Rate
   - +3% Penetration
-  - +4 Magazine Size
+  - +8 Magazine Size
   - +5% Crit Damage
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1099,6 +1107,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1196,6 +1205,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1322,6 +1332,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1541,6 +1552,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1667,6 +1679,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1793,6 +1806,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1895,17 +1909,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Basic AR
   gunSprite: {fileID: 21300000, guid: 64aec4ef9ab94b044b69b8e56f00aef0, type: 3}
-  damage: 22.4
-  fireRate: 0.478
+  damage: 17
+  fireRate: 0.284
   accuracy: 9.22
-  penetration: 0.22
+  penetration: 0.23
   critChance: 0.1
-  reloadTime: 1.84
+  reloadTime: 1.66
   range: 1.1
   force: 19.9
   magazineSize: 24
-  ammo: 108
-  maxAmmo: 132
+  ammo: 96
+  maxAmmo: 120
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
@@ -1930,23 +1944,23 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 070000000a000000060000000a000000
+  Costs: 070000000a0000000c00000007000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 1.2
+  - 0.9
   - 0.78
-  - 0.87
-  - 21
+  - 0.75
+  - 19
   LevelUpBonuses:
-  - 0.7
+  - 0.8
   - 0.92
   - 1
   - 0.04
   - 0
-  - 0.99
-  - 0.05
+  - 1.02
+  - 0.02
   - 0
-  - 2
+  - 1
   - 0
   - 0
   - 0
@@ -1961,13 +1975,14 @@ MonoBehaviour:
   - reloadTime
   - maxAmmo
   UpgradeInfo:
-  - +1,2 Damage
+  - +0,9 Damage
   - +22% Accuracy
-  - -13% Reload Time
-  - +23 Max Ammo
+  - -25% Reload Time
+  - +19 Max Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2094,6 +2109,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2220,6 +2236,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2273,8 +2290,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Jumping SMG
   gunSprite: {fileID: 21300000, guid: b6e72f78f8008fb4099f038183d2ac56, type: 3}
-  damage: 19.8
-  fireRate: 0.32
+  damage: 18.3
+  fireRate: 0.275
   accuracy: 7.9
   penetration: 0.16
   critChance: 0.14
@@ -2308,18 +2325,18 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 08000000060000000700000009000000
+  Costs: 0a000000060000000700000009000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 1.2
+  - 1.4
   - 0.93
   - 0.09
-  - 22
+  - 24
   LevelUpBonuses:
-  - 0
+  - 0.6
+  - 0.99
   - 1
-  - 1
-  - 0.02
+  - 0.03
   - 0
   - 0.95
   - 0
@@ -2331,7 +2348,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 1
+  - 2
   - 0
   UpgradeType:
   - damage
@@ -2339,13 +2356,14 @@ MonoBehaviour:
   - range
   - maxAmmo
   UpgradeInfo:
-  - +1,2 Damage
+  - +1,4 Damage
   - +7% Fire Rate
   - +9 Range
-  - +22 Ammo
+  - +24 Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2472,6 +2490,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2570,6 +2589,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:

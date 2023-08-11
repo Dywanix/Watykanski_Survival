@@ -267,6 +267,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -310,7 +311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 65, y: 165}
+  m_AnchoredPosition: {x: 65, y: 115}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6732571105169969530
@@ -538,7 +539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 200}
+  m_AnchoredPosition: {x: 10, y: 150}
   m_SizeDelta: {x: 125, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4890111953652569317
@@ -846,7 +847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 110}
+  m_AnchoredPosition: {x: 10, y: 60}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6601758593804174599
@@ -1239,7 +1240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 165}
+  m_AnchoredPosition: {x: 10, y: 115}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6601758593966808935
@@ -1665,6 +1666,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 0
   magazineMultiplier: 1
   bulletPrefab:
@@ -1853,7 +1855,7 @@ RectTransform:
   m_GameObject: {fileID: 6601758595130835581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5890588202763022718}
@@ -2092,33 +2094,33 @@ MonoBehaviour:
   day: 1
   task: 0
   taskMax: 0
-  maxHealth: 75
+  maxHealth: 86
   dHealth: 0
-  health: 75
-  maxShield: 80
+  health: 86
+  maxShield: 100
   dShield: 0
   shield: 0
   shieldChargeRate: 0
   shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
-  damageBonus: 1.044
-  fireRateBonus: 1.032
-  movementSpeed: 8.24
+  damageBonus: 1.054
+  fireRateBonus: 1.04
+  movementSpeed: 10.36
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
   dash: 0
   level: 1
   dayCount: 1
-  healthIncrease: 1.2
-  damageIncrease: 0.0024
-  fireRateIncrease: 0.0012
-  movementSpeedIncrease: 0.008
+  healthIncrease: 1.8
+  damageIncrease: 0.0029
+  fireRateIncrease: 0.0016
+  movementSpeedIncrease: 0.013
   additionalCritChance: 0
-  tools: 6
+  tools: 7
   tokens: 0
-  scrap: 25
+  scrap: 29
   animator: {fileID: 3325442803176177398}
   moveSpeed: 5
 --- !u!114 &6601758595229335008
@@ -2425,7 +2427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 65, y: 110}
+  m_AnchoredPosition: {x: 65, y: 60}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &9186182552320751895
@@ -2692,6 +2694,7 @@ MonoBehaviour:
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
+  individualReloadCount: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2998,7 +3001,7 @@ RectTransform:
   m_GameObject: {fileID: 9135777683879055386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5765139232063648317}
@@ -3008,7 +3011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 55}
+  m_AnchoredPosition: {x: 10, y: 35}
   m_SizeDelta: {x: 172.5, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6910552810508165452

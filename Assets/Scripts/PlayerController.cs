@@ -374,7 +374,9 @@ public class PlayerController : MonoBehaviour
         {
             if (eq.guns[eq.equipped].infiniteAmmo)
             {
-                eq.guns[eq.equipped].bulletsLeft++;
+                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].individualReloadCount;
+                if (eq.guns[eq.equipped].bulletsLeft > eq.guns[eq.equipped].MagazineTotalSize())
+                    eq.guns[eq.equipped].bulletsLeft = eq.guns[eq.equipped].MagazineTotalSize();
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 if (eq.guns[eq.equipped].Accessories[10] > 0)
                     eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 8;
@@ -387,7 +389,13 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                eq.guns[eq.equipped].bulletsLeft++;
+                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].individualReloadCount;
+                eq.guns[eq.equipped].ammo -= eq.guns[eq.equipped].individualReloadCount;
+                if (eq.guns[eq.equipped].bulletsLeft > eq.guns[eq.equipped].MagazineTotalSize())
+                {
+                    eq.guns[eq.equipped].ammo += eq.guns[eq.equipped].bulletsLeft -= eq.guns[eq.equipped].MagazineTotalSize();
+                    eq.guns[eq.equipped].bulletsLeft = eq.guns[eq.equipped].MagazineTotalSize();
+                }
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 8;
                 eq.guns[eq.equipped].ammo--;

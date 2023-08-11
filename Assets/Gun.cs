@@ -44,6 +44,7 @@ public class Gun : MonoBehaviour
     public float[] Values, LevelUpBonuses;
     public string[] UpgradeType, UpgradeInfo;
     public bool infiniteMagazine, infiniteAmmo, individualReload;
+    public int individualReloadCount;
     float temp;
     int tempi;
 

@@ -23695,7 +23695,7 @@ MonoBehaviour:
   rareSpawnGap: 0
   rareSpawnTime: 0
   bossNight: 0
-  chosenClas: 1
+  chosenClas: 0
 --- !u!1 &1182535554
 GameObject:
   m_ObjectHideFlags: 0
