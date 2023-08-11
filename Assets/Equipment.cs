@@ -9,7 +9,6 @@ public class Equipment : MonoBehaviour
     public GunsLibrary Library;
     public Transform Barrel;
     public Gun[] guns;
-    public GameObject[] gunSprite;
     public int[] Items, Accessories;
     public Image itemImage;
     public SpriteRenderer equippedGun;

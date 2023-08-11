@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo, toolsInfo, tokensInfo;
-    public Image healthBar, shieldBar, taskImage, dashImage;
+    public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, gunImage;
     public Bullet firedBullet;
     private EnemyBullet collidedBullet;
 
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public float task, taskMax;
 
     // -- statystyki --
-    public float maxHealth, health, maxShield, shield, shieldChargeRate, shieldChargeDelay, rechargeTimer, poison, damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
+    public float maxHealth, dHealth, health, maxShield, dShield, shield, shieldChargeRate, shieldChargeDelay, rechargeTimer, poison, damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
     public int level = 1, dayCount = 1;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     int tempi;
@@ -45,7 +45,11 @@ public class PlayerController : MonoBehaviour
         Cam = FindObjectOfType<CameraController>();
         DisplayAmmo();
         health = maxHealth;
+        dHealth = maxHealth;
+        dShield = shield;
         healthBar.fillAmount = health / maxHealth;
+        dropBar.fillAmount = dHealth / maxHealth;
+        dischargeBar.fillAmount = dShield / maxShield;
         shieldBar.fillAmount = shield / maxShield;
         Invoke("Tick", 0.8f);
     }
@@ -90,6 +94,18 @@ public class PlayerController : MonoBehaviour
                 rechargeTimer -= Time.deltaTime;
             else
                 GainShield(shieldChargeRate * Time.deltaTime);
+        }
+
+        if (dHealth > health)
+        {
+            dHealth -= (12f + maxHealth * 0.11f) * Time.deltaTime;
+            dropBar.fillAmount = dHealth / maxHealth;
+        }
+
+        if (dShield > shield)
+        {
+            dShield -= (12f + maxShield * 0.11f) * Time.deltaTime;
+            dischargeBar.fillAmount = dShield / maxShield;
         }
     }
 
@@ -202,6 +218,10 @@ public class PlayerController : MonoBehaviour
             SwapGun(1);
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             SwapGun(2);
+        else if (Input.mouseScrollDelta.y > 0f)
+            SwapNextGun(true);
+        else if (Input.mouseScrollDelta.y < 0f)
+            SwapNextGun(false);
     }
 
     void BurstShot()
@@ -412,13 +432,38 @@ public class PlayerController : MonoBehaviour
     {
         if (which != eq.equipped && eq.slotFilled[which])
         {
-            eq.gunSprite[eq.equipped].SetActive(false);
             eq.equipped = which;
-            eq.gunSprite[eq.equipped].SetActive(true);
+            gunImage.sprite = eq.guns[eq.equipped].gunSprite;
             eq.equippedGun.sprite = eq.guns[eq.equipped].gunSprite;
             DisplayAmmo();
-            NewTask(0.775f);
+            NewTask(0.33f);
         }
+    }
+
+    public void SwapNextGun(bool up)
+    {
+        if (up)
+        {
+            do
+            {
+                eq.equipped++;
+                if (eq.equipped >= 3)
+                    eq.equipped -= 3;
+            } while (!eq.slotFilled[eq.equipped]);
+        }
+        else
+        {
+            do
+            {
+                eq.equipped--;
+                if (eq.equipped < 0)
+                    eq.equipped += 3;
+            } while (!eq.slotFilled[eq.equipped]);
+        }
+        gunImage.sprite = eq.guns[eq.equipped].gunSprite;
+        eq.equippedGun.sprite = eq.guns[eq.equipped].gunSprite;
+        DisplayAmmo();
+        NewTask(0.33f);
     }
 
     public void PickUpGun(int which)
@@ -508,6 +553,11 @@ public class PlayerController : MonoBehaviour
         health += value;
         if (health > maxHealth)
             health = maxHealth;
+        if (dHealth < health)
+        {
+            dHealth = health;
+            dropBar.fillAmount = dHealth / maxHealth;
+        }
         healthBar.fillAmount = health / maxHealth;
     }
 
@@ -516,6 +566,11 @@ public class PlayerController : MonoBehaviour
         shield += value;
         if (shield > maxShield)
             shield = maxShield;
+        if (dShield < shield)
+        {
+            dShield = shield;
+            dischargeBar.fillAmount = dShield / maxShield;
+        }
         shieldBar.fillAmount = shield / maxShield;
     }
 

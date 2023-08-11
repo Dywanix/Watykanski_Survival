@@ -108,7 +108,7 @@ RectTransform:
   m_Children:
   - {fileID: 5129213375044683787}
   m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -399,7 +399,7 @@ RectTransform:
   m_Children:
   - {fileID: 8476120356419144551}
   m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -480,8 +480,6 @@ RectTransform:
   - {fileID: 2279105186385369624}
   - {fileID: 3107241615915574525}
   - {fileID: 2585763502664162633}
-  - {fileID: 2585763504064142084}
-  - {fileID: 2585763503652434595}
   - {fileID: 6300574927840079372}
   - {fileID: 4057450720578377940}
   - {fileID: 2585763503593169392}
@@ -778,17 +776,25 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
   cameraShake: 1
   shakeDuration: 0.022
   bulletsLeft: 18
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  LevelUpBonuses: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
@@ -945,17 +951,25 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0.12
   stunDuration: 1.2
-  specialCharge: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
   cameraShake: 0.8
   shakeDuration: 0.03
   bulletsLeft: 7
-  ammoFromPack: 0
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: 5
   TakenSlots: 0
+  LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  LevelUpBonuses: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 0
@@ -1000,7 +1014,7 @@ RectTransform:
   m_Children:
   - {fileID: 2585763502509852376}
   m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1113,17 +1127,25 @@ MonoBehaviour:
   slowDuration: 0
   stunChance: 0
   stunDuration: 0
-  specialCharge: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
   cameraShake: 3.08
   shakeDuration: 0.08
   bulletsLeft: 4
-  ammoFromPack: 3
+  bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   MaxSlots: -981220800
   TakenSlots: 0
+  LevelCost: 0
+  StoredCostReduction: 0
   Costs: 18000000180000001800000018000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values: []
+  LevelUpBonuses: []
+  UpgradeType: []
+  UpgradeInfo: []
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 1
@@ -1309,6 +1331,7 @@ MonoBehaviour:
   shieldBar: {fileID: 9031563321543693681}
   taskImage: {fileID: 475036668582658908}
   dashImage: {fileID: 5589820558722186184}
+  gunImage: {fileID: 2585763502664162632}
   firedBullet: {fileID: 0}
   gunslinger: {fileID: 0}
   berserker: {fileID: 0}
@@ -1366,10 +1389,6 @@ MonoBehaviour:
   guns:
   - {fileID: 2585763502731627171}
   - {fileID: 2585763502748573334}
-  gunSprite:
-  - {fileID: 2585763502664162634}
-  - {fileID: 2585763504064142085}
-  - {fileID: 2585763503652434596}
   Items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 0}
@@ -1585,7 +1604,7 @@ RectTransform:
   m_Children:
   - {fileID: 2585763502741186372}
   m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1704,82 +1723,6 @@ PositionConstraint:
   m_Sources:
   - sourceTransform: {fileID: 2585763503004784934}
     weight: 1
---- !u!1 &2585763503652434596
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2585763503652434595}
-  - component: {fileID: 2585763503652434593}
-  - component: {fileID: 2585763503652434594}
-  m_Layer: 5
-  m_Name: GunSprite3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2585763503652434595
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585763503652434596}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25, y: -100}
-  m_SizeDelta: {x: 400, y: 400}
-  m_Pivot: {x: 1, y: 1}
---- !u!222 &2585763503652434593
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585763503652434596}
-  m_CullTransparentMesh: 1
---- !u!114 &2585763503652434594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585763503652434596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.41611814, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca38129ec236e1e43b51e6f1150aa527, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2585763503681706033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1790,7 @@ RectTransform:
   m_Children:
   - {fileID: 2585763504076614113}
   m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2165,82 +2108,6 @@ Transform:
   m_Father: {fileID: 2585763503004487309}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2585763504064142085
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2585763504064142084}
-  - component: {fileID: 2585763504064142082}
-  - component: {fileID: 2585763504064142083}
-  m_Layer: 5
-  m_Name: GunSprite2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2585763504064142084
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585763504064142085}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25, y: -100}
-  m_SizeDelta: {x: 400, y: 400}
-  m_Pivot: {x: 1, y: 1}
---- !u!222 &2585763504064142082
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585763504064142085}
-  m_CullTransparentMesh: 1
---- !u!114 &2585763504064142083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2585763504064142085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ca38129ec236e1e43b51e6f1150aa527, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2585763504076614116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2319,7 @@ RectTransform:
   m_Children:
   - {fileID: 7214800209913266352}
   m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2588,7 +2455,7 @@ RectTransform:
   m_Children:
   - {fileID: 8439512996780278733}
   m_Father: {fileID: 2585763502275929526}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

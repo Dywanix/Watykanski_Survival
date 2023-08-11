@@ -74,16 +74,19 @@ public class SlotMachine : MonoBehaviour
         {
             Collect.interactable = true;
             prize = rolled[0];
+            CollectPrize();
         }
         else if ((rolled[0] == rolled[1]) || (rolled[0] == rolled[2]))
         {
             Collect.interactable = true;
             prize = rolled[0] + 4;
+            CollectPrize();
         }
         else if (rolled[1] == rolled[2])
         {
             Collect.interactable = true;
             prize = rolled[1] + 4;
+            CollectPrize();
         }
 
         UpdateInfo();

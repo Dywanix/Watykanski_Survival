@@ -88,6 +88,9 @@ public class Gun : MonoBehaviour
             case "range":
                 range += Values[which];
                 break;
+            case "force":
+                force += Values[which];
+                break;
             case "magazineSize":
                 magazineSize += Mathf.RoundToInt(Values[which]);
                 break;
