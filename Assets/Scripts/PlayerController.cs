@@ -694,6 +694,9 @@ public class PlayerController : MonoBehaviour
         {
             damageBonus += 0.0004f * (maxHealth - 50f) * eq.Items[8];
         }
+        dHealth += value;
+        dropBar.fillAmount = dHealth / maxHealth;
+        healthBar.fillAmount = health / maxHealth;
     }
 
     public void GainScrap(float amount)
