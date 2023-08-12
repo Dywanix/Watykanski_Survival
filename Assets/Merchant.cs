@@ -145,12 +145,12 @@ public class Merchant : MonoBehaviour
                     playerStats.GainTools(5);
                     break;
                 case 6:
-                    playerStats.GainShield(25);
+                    playerStats.GainShield(playerStats.maxShield * 0.25f);
                     break;
                 case 7:
                     playerStats.AmmoPack();
                     break;
-                case 9:
+                case 8:
                     playerStats.LevelUp();
                     break;
             }

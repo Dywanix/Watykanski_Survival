@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Transform Barrel, Hand, Dude, GunRot;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI magazineInfo, ammoInfo, scrapInfo, toolsInfo, tokensInfo;
+    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, scrapInfo, toolsInfo, tokensInfo;
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, gunImage;
     public Bullet firedBullet;
     private EnemyBullet collidedBullet;
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Gunslinger gunslinger;
     public Berserker berserker;
     public SteamGolem steamGolem;
+    public Engineer engineer;
 
     public float xInput = 0, yInput = 0;
     public bool mouseLeft, reloading, free = true, day = true;
@@ -48,9 +49,11 @@ public class PlayerController : MonoBehaviour
         dHealth = maxHealth;
         dShield = shield;
         healthBar.fillAmount = health / maxHealth;
+        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         dropBar.fillAmount = dHealth / maxHealth;
         dischargeBar.fillAmount = dShield / maxShield;
         shieldBar.fillAmount = shield / maxShield;
+        ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
         Invoke("Tick", 0.8f);
     }
 
@@ -542,6 +545,9 @@ public class PlayerController : MonoBehaviour
             shieldBar.fillAmount = shield / maxShield;
         }
 
+        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
+        ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
+
         if (health < 0f)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         //Application.Quit();
@@ -567,6 +573,7 @@ public class PlayerController : MonoBehaviour
             dropBar.fillAmount = dHealth / maxHealth;
         }
         healthBar.fillAmount = health / maxHealth;
+        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
     }
 
     public void GainShield(float value)
@@ -580,6 +587,7 @@ public class PlayerController : MonoBehaviour
             dischargeBar.fillAmount = dShield / maxShield;
         }
         shieldBar.fillAmount = shield / maxShield;
+        ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
     }
 
     public float SpeedMultiplyer(float efficiency)
@@ -657,9 +665,11 @@ public class PlayerController : MonoBehaviour
         {
             berserker.wrath = 0;
             berserker.GainWrath(0);
-            GainHP(2f);
+            GainHP(2.5f);
             RestoreHealth(maxHealth * 0.08f);
         }
+        if (engineer)
+            GainTools(1);
         LevelUp();
     }
 
@@ -690,6 +700,7 @@ public class PlayerController : MonoBehaviour
     {
         maxHealth += value;
         health += value;
+        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         if (eq.Items[8] > 0)
         {
             damageBonus += 0.0004f * (maxHealth - 50f) * eq.Items[8];
@@ -706,8 +717,10 @@ public class PlayerController : MonoBehaviour
         scrap += amount;
         scrapInfo.text = scrap.ToString("0");
 
-        if (steamGolem == true)
+        if (steamGolem)
             steamGolem.ClockworkMachine(amount);
+        if (engineer)
+            engineer.ConstructScrap(amount);
     }
 
     public void SpendScrap(float amount)
@@ -720,6 +733,9 @@ public class PlayerController : MonoBehaviour
     {
         tools += amount;
         toolsInfo.text = tools.ToString("0");
+
+        if (engineer)
+            engineer.ConstructTools(amount);
 
         //eq.guns[eq.equipped].GainSpecialCharge(0.06f * amount);
     }
