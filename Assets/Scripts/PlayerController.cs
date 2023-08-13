@@ -171,6 +171,11 @@ public class PlayerController : MonoBehaviour
             Dude.rotation = new Quaternion(0, 180, 0, 0);
         }*/
         Vector3 tempPos = transform.position;
+        if (xInput != 0f && yInput != 0)
+        {
+            xInput *= 0.7f;
+            yInput *= 0.7f;
+        }
         tempPos += new Vector3(xInput, yInput, 0) * (movementSpeed + dash) * Time.deltaTime;
         transform.position = tempPos;
         if (dash > 0)
@@ -445,7 +450,7 @@ public class PlayerController : MonoBehaviour
         {
             eq.equipped = which;
             gunImage.sprite = eq.guns[eq.equipped].gunSprite;
-            eq.equippedGun.sprite = eq.guns[eq.equipped].gunSprite;
+            eq.equippedGun.sprite = eq.guns[eq.equipped].holdingSprite;
             DisplayAmmo();
             NewTask(0.33f);
         }

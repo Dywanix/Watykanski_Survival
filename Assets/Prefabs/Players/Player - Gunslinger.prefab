@@ -573,6 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Handgun1
   gunSprite: {fileID: 21300000, guid: d7790b2cd89493b4684d14d100ce14e4, type: 3}
+  holdingSprite: {fileID: 0}
   damage: 26.8
   fireRate: 0.961
   accuracy: 6.84
@@ -1293,7 +1294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6601758593855852964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.155, y: -0.38, z: 0}
+  m_LocalPosition: {x: -0.155, y: -0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1331,8 +1332,8 @@ PositionConstraint:
   m_GameObject: {fileID: 6601758593855852964}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: -0.155, y: -0.38, z: 0}
-  m_TranslationOffset: {x: -0.155, y: -0.38, z: 0}
+  m_TranslationAtRest: {x: -0.155, y: -0.46, z: 0}
+  m_TranslationOffset: {x: -0.155, y: -0.46, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -2002,6 +2003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: SMG
   gunSprite: {fileID: 21300000, guid: de95e3fc3eca85b48bfb64f48aafc68b, type: 3}
+  holdingSprite: {fileID: 0}
   damage: 10.6
   fireRate: 0.494
   accuracy: 7.8
@@ -2311,7 +2313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6601758595229100615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: -1}
+  m_LocalPosition: {x: 0, y: 0.38, z: -1}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3004,6 +3006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Handgun1
   gunSprite: {fileID: 21300000, guid: 136e28c7b39a240408d16ad26bb619b7, type: 3}
+  holdingSprite: {fileID: 0}
   damage: 26.8
   fireRate: 0.961
   accuracy: 6.84

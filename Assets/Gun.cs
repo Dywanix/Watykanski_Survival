@@ -5,7 +5,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public string gunName;
-    public Sprite gunSprite;
+    public Sprite gunSprite, holdingSprite;
 
     [Header("Basic Staty")]
     public float damage;
