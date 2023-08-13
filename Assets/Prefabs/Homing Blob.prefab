@@ -44,7 +44,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3191054326414800118, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.75
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 4247014703229147205, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: delay
@@ -81,6 +81,14 @@ PrefabInstance:
     - target: {fileID: 5739135406867345582, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739135406867345582, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739135406867345582, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5739135406867345582, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}
       propertyPath: m_LocalPosition.x
@@ -151,8 +159,8 @@ MonoBehaviour:
   Body: {fileID: 7376724601911059199}
   playerBody: {fileID: 0}
   Direction: {fileID: 8661965579404961495}
-  frequency: 0.075
-  force: 1.25
+  frequency: 0.07
+  force: 1.5
 --- !u!4 &410396902964045479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5739135406867345582, guid: 31c27cd77f3098048b4222b0189d7184, type: 3}

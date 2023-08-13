@@ -35,6 +35,7 @@ Transform:
   - {fileID: 8782204059081660410}
   - {fileID: 5553765611719210858}
   - {fileID: 3712941404614496203}
+  - {fileID: 2905983396902309833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,6 +63,7 @@ MonoBehaviour:
   playerBody: {fileID: 0}
   Dir: {fileID: 7706248955104172212}
   Sight: {fileID: 3712941404614496203}
+  DamageOrigin: {fileID: 2905983396902309833}
   day_night: {fileID: 0}
   rare: 0
   boss: 0
@@ -240,6 +242,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2147148766416124722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2905983396902309833}
+  m_Layer: 0
+  m_Name: DamageOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2905983396902309833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147148766416124722}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6993061, y: 0.22492138, z: 0.062430337}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3102378484962785114}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2315292272722007952
 GameObject:
   m_ObjectHideFlags: 0

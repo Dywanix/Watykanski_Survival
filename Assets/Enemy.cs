@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] Items;
     public PlayerController playerStats;
     public Rigidbody2D Body, playerBody, Dir;
-    public Transform Sight;
+    public Transform Sight, DamageOrigin;
     private Bullet collidedBullet;
     private DamageTaken damageDisplay;
     public Day_Night_Cycle day_night;
@@ -254,12 +254,12 @@ public class Enemy : MonoBehaviour
 
         if (display)
         {
-            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Body.rotation + Random.Range(-12f, 12f));
-            GameObject text = Instantiate(damageTook, Body.position, Sight.rotation);
+            DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
+            GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
             Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
             damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
             damageDisplay.SetText(value, crited);
-            text_body.AddForce(Sight.up * 3.6f, ForceMode2D.Impulse);
+            text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
         }
 
         if (enrageStats.Length > 0)
