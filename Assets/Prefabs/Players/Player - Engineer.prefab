@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 25
+  m_text: 35
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1898,7 +1898,8 @@ MonoBehaviour:
   fireRateIncrease: 0.0021
   movementSpeedIncrease: 0.012
   additionalCritChance: 0
-  tools: 10
+  tools: 6
+  toolsStored: 6
   tokens: 0
   scrap: 35
   animator: {fileID: 4985177810459707306}
@@ -1957,7 +1958,7 @@ MonoBehaviour:
   TurretBarrel: {fileID: 1724142173992573699}
   bulletFired: {fileID: 0}
   scrapCollected: 0
-  scrapRequired: 43
+  scrapRequired: 60
   turretCooldown: 0
   turretMaxCooldown: 0
   turretFireRate: 0

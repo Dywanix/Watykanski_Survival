@@ -7,7 +7,7 @@ public class Workbench : MonoBehaviour
 {
     public GameObject Player, Glow, Hud, Upgrades, Others;
     public PlayerController playerStats;
-    public TMPro.TextMeshProUGUI specialUpgrades, Tooltip;
+    public TMPro.TextMeshProUGUI specialUpgrades, Tooltip, Parts;
     public TMPro.TextMeshProUGUI[] Cost, Info;
     public Button[] Buttons;
     public Image[] images;
@@ -58,7 +58,7 @@ public class Workbench : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                if (playerStats.tools >= playerStats.eq.guns[which].Costs[i])
+                if (playerStats.tools + playerStats.eq.guns[which].parts >= playerStats.eq.guns[which].Costs[i])
                     Buttons[i].interactable = true;
                 else Buttons[i].interactable = false;
             }
@@ -78,6 +78,7 @@ public class Workbench : MonoBehaviour
 
     public void GunInfo(int which)
     {
+        Parts.text = playerStats.eq.guns[which].parts.ToString("0");
         for (int i = 0; i < 4; i++)
         {
             Cost[i].text = playerStats.eq.guns[which].Costs[i].ToString("0");
@@ -104,7 +105,12 @@ public class Workbench : MonoBehaviour
 
     public void Upgrade(int which)
     {
-        playerStats.SpendTools(playerStats.eq.guns[current].Costs[which]);
+        playerStats.eq.guns[current].parts -= playerStats.eq.guns[current].Costs[which];
+        if (playerStats.eq.guns[current].parts < 0)
+        {
+            playerStats.SpendTools(-playerStats.eq.guns[current].parts);
+            playerStats.eq.guns[current].parts = 0;
+        }
         playerStats.eq.guns[current].Upgrade(which);
         UpdateInfo(current);
         playerStats.DisplayAmmo();

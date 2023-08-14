@@ -751,7 +751,8 @@ MonoBehaviour:
   fireRateIncrease: 0.0015
   movementSpeedIncrease: 0.009
   additionalCritChance: 0
-  tools: 7
+  tools: 4
+  toolsStored: 4
   tokens: 0
   scrap: 29
   animator: {fileID: 7977171312871803651}
@@ -861,6 +862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Assault Rifle
   gunSprite: {fileID: 21300000, guid: 4f6629a6c74ecb24aae87fe1e9a9d8db, type: 3}
+  holdingSprite: {fileID: 0}
   damage: 15
   fireRate: 0.597
   accuracy: 10.4
@@ -892,6 +894,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
@@ -961,6 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Shotgun
   gunSprite: {fileID: 21300000, guid: 136e28c7b39a240408d16ad26bb619b7, type: 3}
+  holdingSprite: {fileID: 0}
   damage: 11.4
   fireRate: 1.096
   accuracy: 12.5
@@ -992,6 +996,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
@@ -1559,7 +1564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 35
+  m_text: 29
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1674,6 +1679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunName: Axe
   gunSprite: {fileID: 0}
+  holdingSprite: {fileID: 0}
   damage: 24.2
   fireRate: 1.713
   accuracy: 8.4
@@ -1705,6 +1711,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 1121502336
   TakenSlots: 0
   LevelCost: 0
@@ -1871,7 +1878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3
+  m_text: 4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

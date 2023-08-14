@@ -145,7 +145,7 @@ MonoBehaviour:
   Dir: {fileID: 6884977038708695281}
   Sight: {fileID: 6884977038543306323}
   scrapDroppedRange: 070000000a000000
-  toolsDroppedRange: 0300000004000000
+  toolsDroppedRange: 0100000002000000
   itemsCount: 3
   maxHealth: 120
   health: 120

@@ -30,12 +30,12 @@ public class Engineer : MonoBehaviour
     public void ConstructTools(int value)
     {
         toolsCollected += value;
-        while (toolsCollected >= 12)
+        while (toolsCollected >= 8)
         {
-            toolsCollected -= 12;
+            toolsCollected -= 8;
             Upgrade();
         }
-        extraShieldBar.fillAmount = toolsCollected / 12f;
+        extraShieldBar.fillAmount = toolsCollected / 8f;
     }
 
     void Upgrade()

@@ -539,7 +539,7 @@ MonoBehaviour:
   enrageValue: []
   DeathDrop: {fileID: 0}
   scrapChance: 0.15
-  itemChance: 0.06
+  itemChance: 0.04
   scrapCount: 1
   itemCount: 1
   Blood: {fileID: 0}

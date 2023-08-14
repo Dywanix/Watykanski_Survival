@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
     [Header("Inne Staty")]
     public float LevelCostCharge;
     public float cameraShake, shakeDuration;
-    public int bulletsLeft, bonusAmmo, spreadMultiplyer, special;
+    public int bulletsLeft, bonusAmmo, spreadMultiplyer, special, parts;
     public int MaxSlots, TakenSlots, LevelCost, StoredCostReduction;
     public int[] Costs, Accessories;
     public float[] Values, LevelUpBonuses;
@@ -144,7 +144,7 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        ExperienceGain(Costs[which] * 0.25f);
+        ExperienceGain(Costs[which] * 0.26f);
         //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 

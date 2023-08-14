@@ -78,6 +78,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -206,6 +207,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -335,6 +337,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 4
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -463,6 +466,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -591,6 +595,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -719,6 +724,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -847,6 +853,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 0
@@ -946,6 +953,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 6
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -1074,6 +1082,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -1202,6 +1211,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -1330,6 +1340,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0
@@ -1429,6 +1440,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -1651,6 +1663,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -1779,6 +1792,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 4
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -1907,6 +1921,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 3
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -2084,6 +2099,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -2212,6 +2228,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -2340,6 +2357,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -2468,6 +2486,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -2596,6 +2615,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
@@ -2725,6 +2745,7 @@ MonoBehaviour:
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
+  parts: 0
   MaxSlots: 5
   TakenSlots: 0
   LevelCost: 0

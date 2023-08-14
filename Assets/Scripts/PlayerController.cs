@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     float temp;
 
     // -- zasoby --
-    public int tools, tokens;
+    public int tools, toolsStored, tokens;
     public float scrap;
 
     // -- animacje --
@@ -488,11 +488,13 @@ public class PlayerController : MonoBehaviour
         {
             eq.guns[1] = eq.Library.guns[which];
             eq.slotFilled[1] = true;
+            eq.guns[1].parts = toolsStored;
         }
         else if (!eq.slotFilled[2])
         {
             eq.guns[2] = eq.Library.guns[which];
             eq.slotFilled[2] = true;
+            eq.guns[2].parts = toolsStored;
         }
     }
 
@@ -737,7 +739,13 @@ public class PlayerController : MonoBehaviour
     public void GainTools(int amount)
     {
         tools += amount;
+        toolsStored += amount;
         toolsInfo.text = tools.ToString("0");
+        for (int i = 0; i < 3; i++)
+        {
+            if (eq.slotFilled[i])
+                eq.guns[i].parts += amount;
+        }
 
         if (engineer)
             engineer.ConstructTools(amount);
