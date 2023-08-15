@@ -810,12 +810,18 @@ MonoBehaviour:
   BoomerangAxe: {fileID: 8439197816819152736, guid: 1996d360eab5a25408f206d8e21a0d20, type: 3}
   AxeThrown: {fileID: 0}
   wrath: 0
+  wrathGain: 0.06
+  healthGain: 2.5
+  healthRestored: 0.08
   burstCooldown: 0
   burstMaxCooldown: 0
   swipeCooldown: 0
   swipeMaxCooldown: 0
   damageTaken: 0
   bonusWaves: 0
+  passivePerks: 0000000000
+  ability1Perks: 0000000000
+  ability2Perks: 0000000000
 --- !u!1 &221019378724568890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 10, y: 9.999985}
+  m_AnchoredPosition: {x: 10, y: 10}
   m_SizeDelta: {x: 240, y: 45}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &5445235754741697123

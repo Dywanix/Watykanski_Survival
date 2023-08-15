@@ -278,6 +278,7 @@ public class Gunslinger : MonoBehaviour
                         // passive - increase passive chance while unloading
                         break;
                     case 4:
+                        // passive - Bullet Storm - fire in random direction for free
                         break;
                 }
                 break;

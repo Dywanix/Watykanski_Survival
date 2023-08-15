@@ -1950,6 +1950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 3501153044524631229}
   TurretBullet: {fileID: 3577393885378744980, guid: c6bd373125aa2984ba657322b33e16e6, type: 3}
+  TurretRocket: {fileID: 5718590554070620667, guid: 0398089367c785048afd369cc9c96339, type: 3}
   EMPGrenade: {fileID: 7141853551666816857, guid: c9a9d37323376f34ebee716471568380, type: 3}
   Ability1: {fileID: 3501153044754660055}
   Ability2: {fileID: 3501153043452916854}
@@ -1959,14 +1960,20 @@ MonoBehaviour:
   bulletFired: {fileID: 0}
   scrapCollected: 0
   scrapRequired: 60
+  scrapStored: 0
   turretCooldown: 0
   turretMaxCooldown: 0
+  turretBaseCooldown: 38
+  turretDuration: 6
   turretFireRate: 0
   grenadeCooldown: 0
   grenadeMaxCooldown: 0
   toolsCollected: 0
   totalUpgrades: 0
   turretActive: 0
+  passivePerks: 0000000000
+  ability1Perks: 0000000000
+  ability2Perks: 0000000000
 --- !u!1 &3501153044524864283
 GameObject:
   m_ObjectHideFlags: 0

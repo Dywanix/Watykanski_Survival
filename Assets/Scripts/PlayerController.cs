@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
     public float task, taskMax;
 
     // -- statystyki --
-    public float maxHealth, dHealth, health, maxShield, dShield, shield, shieldChargeRate, shieldChargeDelay, rechargeTimer, poison, damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
+    public float maxHealth, dHealth, health, maxShield, dShield, shield, shieldChargeRate, shieldChargeDelay, rechargeTimer, poison,
+    damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
     public int level = 1, dayCount = 1;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     int tempi;
@@ -171,7 +172,7 @@ public class PlayerController : MonoBehaviour
             Dude.rotation = new Quaternion(0, 180, 0, 0);
         }*/
         Vector3 tempPos = transform.position;
-        if (xInput != 0f && yInput != 0)
+        if ((xInput == -1f || xInput == 1f) && (yInput == -1f || yInput == 1f))
         {
             xInput *= 0.7f;
             yInput *= 0.7f;
@@ -637,7 +638,14 @@ public class PlayerController : MonoBehaviour
 
     public float SpeedMultiplyer(float efficiency)
     {
-        return 1f + (fireRateBonus - 1f) * efficiency;
+        temp = fireRateBonus;
+        if (berserker)
+        {
+            if (berserker.passivePerks[3])
+            temp *= 1f + berserker.wrath * 0.4f;
+        }
+        temp *= 1f + (temp - 1f) * efficiency;
+        return temp;
     }
 
     public float DamageDealtMultiplyer(float efficiency)
@@ -701,6 +709,11 @@ public class PlayerController : MonoBehaviour
             if (eq.slotFilled[i])
             {
                 eq.guns[i].ammo = eq.guns[i].maxAmmo - eq.guns[i].bulletsLeft;
+                if (engineer)
+                {
+                    if (engineer.passivePerks[3])
+                        eq.guns[i].ammo += eq.guns[i].maxAmmo * engineer.totalUpgrades / 50;
+                }
             }
         }
         DisplayAmmo();
@@ -710,11 +723,18 @@ public class PlayerController : MonoBehaviour
         {
             berserker.wrath = 0;
             berserker.GainWrath(0);
-            GainHP(2.5f);
-            RestoreHealth(maxHealth * 0.08f);
+            GainHP(berserker.healthGain);
+            RestoreHealth(maxHealth * berserker.healthRestored);
         }
         if (engineer)
-            GainTools(1);
+        {
+            if (engineer.passivePerks[0])
+            {
+                GainTools(2);
+                GainScrap(6);
+            }
+            else GainTools(1);
+        }
         LevelUp();
     }
 
@@ -727,9 +747,20 @@ public class PlayerController : MonoBehaviour
             {
                 eq.guns[i].ammo = eq.guns[i].maxAmmo + eq.guns[i].bonusAmmo - eq.guns[i].bulletsLeft;
                 eq.guns[i].bonusAmmo = 0;
+                if (engineer)
+                {
+                    if (engineer.passivePerks[3])
+                        eq.guns[i].ammo += eq.guns[i].maxAmmo * engineer.totalUpgrades / 50;
+                }
             }
         }
         DisplayAmmo();
+
+        if (berserker)
+        {
+            if (berserker.passivePerks[0])
+                berserker.GainWrath(maxHealth * 0.046f);
+        }
     }
 
     public void LevelUp()
@@ -827,13 +858,13 @@ public class PlayerController : MonoBehaviour
         {
             gunslinger.GainPerk(ability, which);
         }
-        /*else if (berserker)
+        else if (berserker)
         {
             berserker.GainPerk(ability, which);
         }
         else if (engineer)
         {
             engineer.GainPerk(ability, which);
-        }*/
+        }
     }
 }

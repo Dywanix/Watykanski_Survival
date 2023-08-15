@@ -74,11 +74,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5660048313701625533, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
       propertyPath: pierce
-      value: 19
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5660048313701625533, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
       propertyPath: duration
-      value: 1000
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 5660048313701625533, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
       propertyPath: armorShred
@@ -86,11 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5660048313701625533, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
       propertyPath: damageGain
-      value: 0.03
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 5660048313701625533, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
       propertyPath: pierceEfficiency
-      value: 1.07
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9105280439881793243, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
       propertyPath: m_RootOrder
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chase: {fileID: 4614793882155508132}
   rotation: {fileID: 5839590253900731224}
-  delay: 1.24
+  delay: 1.25
 --- !u!114 &4614793882155508132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   Body: {fileID: 5629932862537838784}
   playerBody: {fileID: 0}
   Dir: {fileID: 2888193637228201591}
-  movementSpeed: 7.2
-  accelerationFlat: 0.176
-  accelerationProc: 0.0352
+  movementSpeed: 7.6
+  accelerationFlat: 0.196
+  accelerationProc: 0.0392
   active: 0

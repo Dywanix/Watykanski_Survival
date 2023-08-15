@@ -109,7 +109,7 @@ public class Merchant : MonoBehaviour
             else
             {
                 ItemsImages[i].sprite = sprites[Rolls[i]];
-                Costs[i] = Random.Range(MinCosts[i], MaxCosts[i] + 1);
+                Costs[i] = Random.Range(MinCosts[Rolls[i]], MaxCosts[Rolls[i]] + 1);
                 CostText[i].text = Costs[i].ToString("0");
             }
         }

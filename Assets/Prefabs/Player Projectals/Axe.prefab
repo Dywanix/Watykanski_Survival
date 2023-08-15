@@ -150,6 +150,18 @@ MonoBehaviour:
   yAngle: 0
   zAngle: -2.6
   body: {fileID: 9105280439881793243}
+--- !u!114 &7328257815346460895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240648045073124737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d997e1deccefd48aa5cb112fa2e245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9105280439881793243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4819930724240037949, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
