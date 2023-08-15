@@ -1968,6 +1968,8 @@ MonoBehaviour:
   turretFireRate: 0
   grenadeCooldown: 0
   grenadeMaxCooldown: 0
+  grenadeBaseCooldown: 32
+  grenadeForce: 12
   toolsCollected: 0
   totalUpgrades: 0
   turretActive: 0

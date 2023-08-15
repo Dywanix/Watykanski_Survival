@@ -12,16 +12,12 @@ public class Berserker : MonoBehaviour
     public Bullet AxeThrown;
     private ClearProjectals axeClear;
 
-    public float wrath, wrathGain, healthGain, healthRestored, burstCooldown, burstMaxCooldown, swipeCooldown, swipeMaxCooldown, damageTaken;
-    public int bonusWaves;
+    public float wrath, wrathGain, healthGain, burstCooldown, burstMaxCooldown, swipeCooldown, swipeMaxCooldown, damageTaken;
+    public int juggernautCount;
     int wavesCount;
     float waveDirection;
     
     public bool[] passivePerks, ability1Perks, ability2Perks;
-
-    void Start()
-    {
-    }
 
     void Update()
     {
@@ -29,6 +25,8 @@ public class Berserker : MonoBehaviour
             BurstCast();
         if (Input.GetMouseButton(1))
             SwipeCast();
+        if (Input.GetKeyDown(KeyCode.Z))
+            Invoke("EndlessRage", 3f);
 
         if (burstCooldown > 0)
         {
@@ -43,16 +41,29 @@ public class Berserker : MonoBehaviour
         }
     }
 
-    public void GainWrath(float value)
+    public void GainWrath(float value, bool taken)
     {
+        if (taken)
+            damageTaken += value;
         wrath += value * wrathGain / 100f;
         WrathCount.text = (wrath * 100).ToString("0.0") + "%";
-        damageTaken += value;
-        if (damageTaken >= 100f + 10f * bonusWaves)
+
+        if (passivePerks[4])
         {
-            damageTaken -= 100f + 10f * bonusWaves;
-            bonusWaves++;
+            while (damageTaken >= 40 + 2 * juggernautCount)
+            {
+                damageTaken -= 40 + 2 * juggernautCount;
+                juggernautCount++;
+                playerStats.GainHP(1f);
+            }
         }
+    }
+
+    public float HealthRestored()
+    {
+        if (passivePerks[0])
+            return playerStats.maxHealth * 0.1f + wrath * 90f;
+        else return playerStats.maxHealth * 0.08f;
     }
 
     void BurstCast()
@@ -60,73 +71,71 @@ public class Berserker : MonoBehaviour
         if (burstCooldown <= 0)
         {
             burstMaxCooldown = 11f / playerStats.cooldownReduction;
+            if (ability1Perks[3])
+                burstMaxCooldown /= 1f + 2f * wrath;
             burstCooldown = burstMaxCooldown;
 
-            wavesCount = 6 + playerStats.level / 3;
-            wavesCount += bonusWaves;
-            if (ability1Perks[0])
-                wavesCount += 2 +  Mathf.FloorToInt(wrath * 20f);
-            if (ability1Perks[4])
-                wavesCount += 1;
             Burst();
         }
         else if (playerStats.health > 5f)
         {
             playerStats.TakeDamage(5f, true);
-            wavesCount = 6 + playerStats.level / 3;
-            wavesCount += bonusWaves;
-            if (ability1Perks[0])
-                wavesCount += 2 +  Mathf.FloorToInt(wrath * 20f);
-            if (ability1Perks[4])
-                wavesCount += 1;
             Burst();
+            if (ability1Perks[3])
+                Invoke("SecondBurst", 0.4f);
         }
+    }
+
+    int WavesCount()
+    {
+        wavesCount = 6 + playerStats.level / 3;
+        if (ability1Perks[3])
+            wavesCount += 1 + Mathf.FloorToInt((playerStats.maxHealth - 100) / 22);
+        else wavesCount += Mathf.FloorToInt((playerStats.maxHealth - 100) / 25);
+        if (ability1Perks[0])
+            wavesCount += 2 + Mathf.FloorToInt(wrath * 20f);
+        return wavesCount;
     }
 
     void Burst()
     {
-        waveDirection = Random.Range(-12f, 12f);
-        for (int i = 0; i < wavesCount; i++)
-        {
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + waveDirection + i * (360f / wavesCount));
-            BurstFire();
-        }
+        BurstFire(WavesCount());
+    }
 
-        if (ability1Perks[4])
+    void SecondBurst()
+    {
+        BurstFire(WavesCount() / 2);
+    }
+
+    void BurstFire(int waves)
+    {
+        waveDirection = Random.Range(-180f, 180f);
+        for (int i = 0; i < waves; i++)
         {
-            if (wavesCount > 6)
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + waveDirection + i * (360f / waves));
+            GameObject bullet = Instantiate(Wave, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * 13.1f * playerStats.DamageDealtMultiplyer(0.19f), ForceMode2D.Impulse);
+            AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            if (ability1Perks[2])
             {
-                wavesCount -= 3;
-                Invoke("Burst", 0.32f);
+                AxeThrown.damage = (20.8f + 2.1f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+                AxeThrown.slowDuration += AxeThrown.damage * 0.0075f;
+            }
+            else AxeThrown.damage = (17.6f + 1.7f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+            if (ability1Perks[1])
+            {
+                AxeThrown.pierce++;
+                AxeThrown.pierceEfficiency += 0.08f;
             }
         }
     }
 
-    void BurstFire()
+    void EndlessRage()
     {
-        GameObject bullet = Instantiate(Wave, playerStats.Barrel.position, playerStats.Barrel.rotation);
-        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(playerStats.Barrel.up * 13.1f * playerStats.DamageDealtMultiplyer(0.19f), ForceMode2D.Impulse);
-        AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        if (ability1Perks[2])
-        {
-            AxeThrown.damage = (20.8f + 2.1f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
-            AxeThrown.slowDuration += AxeThrown.damage * 0.0075f;
-        }
-        else AxeThrown.damage = (17.6f + 1.7f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
-        if (ability1Perks[1])
-        {
-            AxeThrown.pierce++;
-             AxeThrown.pierceEfficiency += 0.08f;
-        }
-    }
+        BurstFire((WavesCount() / 3) - 1);
 
-    void PeriodicBurst()
-    {
-        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(0f, 360f));
-        BurstFire();
-
-        Invoke("PeriodicBurst", 3.6f / (1f + 2f * wrath));
+        Invoke("EndlessRage", 12f / (1f + 0.1f * WavesCount()));
     }
 
     /*void Enrage()
@@ -171,7 +180,7 @@ public class Berserker : MonoBehaviour
     void Swipe()
     {
         playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-3f, 3f));
-        GameObject bullet = Instantiate(BoomerangAxe, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        GameObject bullet = Instantiate(Axe, playerStats.Barrel.position, playerStats.Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
         if (ability2Perks[3])
@@ -207,8 +216,7 @@ public class Berserker : MonoBehaviour
                 switch (which)
                 {
                     case 0:
-                        healthRestored += 0.06f;
-                        // passive - gain wrath at the start of combat
+                        // passive - increased health restored & gain wrath at the start of combat
                         break;
                     case 1:
                         playerStats.GainHP(12f);
@@ -221,6 +229,14 @@ public class Berserker : MonoBehaviour
                         // passive - wrath also increases Fire Rate
                         break;
                     case 4:
+                        // passive - Juggernaut - increases wrath gained & HP with damage taken
+                        wrathGain += 0.02f;
+                        while (damageTaken >= 40 + 2 * juggernautCount)
+                        {
+                            damageTaken -= 40 + 2 * juggernautCount;
+                            juggernautCount++;
+                            playerStats.GainHP(1.2f);
+                        }
                         break;
                 }
                 break;
@@ -238,10 +254,11 @@ public class Berserker : MonoBehaviour
                         // passive - increases waves Damage & Slow
                         break;
                     case 3:
-                        Invoke("PeriodicBurst", 3.6f / (1f + 2f * wrath));
+                        // passive - increase waves count & decrease cooldown, off-cooldown cast fires 2nd time
                         break;
                     case 4:
-                        // passive - Endless Rage - increases number of waves, recast while high number
+                        // passive - Endless Rage - fires waves every so often
+                        Invoke("EndlessRage", 2f);
                         break;
                 }
                 break;

@@ -571,7 +571,7 @@ public class PlayerController : MonoBehaviour
             healthBar.fillAmount = health / maxHealth;
 
             if (berserker == true && !day)
-                berserker.GainWrath(value);
+                berserker.GainWrath(value, true);
         }
         else
         {
@@ -586,7 +586,7 @@ public class PlayerController : MonoBehaviour
                 healthBar.fillAmount = health / maxHealth;
 
                 if (berserker == true && !day)
-                    berserker.GainWrath(value);
+                    berserker.GainWrath(value, true);
             }
             shieldBar.fillAmount = shield / maxShield;
         }
@@ -722,9 +722,9 @@ public class PlayerController : MonoBehaviour
         if (berserker)
         {
             berserker.wrath = 0;
-            berserker.GainWrath(0);
+            berserker.GainWrath(0, false);
             GainHP(berserker.healthGain);
-            RestoreHealth(maxHealth * berserker.healthRestored);
+            RestoreHealth(berserker.HealthRestored());
         }
         if (engineer)
         {
@@ -759,7 +759,7 @@ public class PlayerController : MonoBehaviour
         if (berserker)
         {
             if (berserker.passivePerks[0])
-                berserker.GainWrath(maxHealth * 0.046f);
+                berserker.GainWrath(0.14f * (maxHealth - 80), false);
         }
     }
 

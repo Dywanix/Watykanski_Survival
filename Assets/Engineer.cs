@@ -10,8 +10,9 @@ public class Engineer : MonoBehaviour
     public Image Ability1, Ability2, extraToolBar, extraShieldBar;
     public Transform TurretBarrel;
     public Bullet bulletFired;
+    private EMP emp;
 
-    public float scrapCollected, scrapRequired, scrapStored, turretCooldown, turretMaxCooldown, turretBaseCooldown, turretDuration, turretFireRate, grenadeCooldown, grenadeMaxCooldown;
+    public float scrapCollected, scrapRequired, scrapStored, turretCooldown, turretMaxCooldown, turretBaseCooldown, turretDuration, turretFireRate, grenadeCooldown, grenadeMaxCooldown, grenadeBaseCooldown, grenadeForce;
     public int toolsCollected, totalUpgrades;
     public bool turretActive;
     float timeToFire;
@@ -177,15 +178,29 @@ public class Engineer : MonoBehaviour
     {
         if (grenadeCooldown <= 0f)
         {
-            grenadeMaxCooldown = 32f / playerStats.cooldownReduction; ;
+            grenadeMaxCooldown = grenadeBaseCooldown / playerStats.cooldownReduction; ;
             grenadeCooldown = grenadeMaxCooldown;
 
             playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation);
             GameObject bullet = Instantiate(EMPGrenade, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(playerStats.Barrel.up * 12f, ForceMode2D.Impulse);
+            bullet_body.AddForce(playerStats.Barrel.up * grenadeForce, ForceMode2D.Impulse);
             bulletFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            bulletFired.damage = (25f + 2f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+            if (ability2Perks[2])
+                bulletFired.damage = (31.2f + 3.5f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+            else bulletFired.damage = (25f + 2f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+
+            if (ability2Perks[0])
+            {
+                bulletFired.stunChance += 0.16f;
+                bulletFired.duration += 0.18f;
+                emp = bullet.GetComponent(typeof(EMP)) as EMP;
+                emp.stunDurationIncrease = 0.12f;
+            }
+            if (ability2Perks[1])
+                bulletFired.vulnerableApplied += 0.08f;
+            if (ability2Perks[2])
+                bulletFired.duration += 0.42f;
         }
     }
 
@@ -248,10 +263,15 @@ public class Engineer : MonoBehaviour
                 switch (which)
                 {
                     case 0:
+                        // passive - increases stun chance, duration & stun duration
                         break;
                     case 1:
+                        // passive - applies vulnerable
+                        grenadeBaseCooldown -= 6f;
                         break;
                     case 2:
+                        // passive - increases damage
+                        grenadeForce += 3.3f;
                         break;
                     case 3:
                         break;

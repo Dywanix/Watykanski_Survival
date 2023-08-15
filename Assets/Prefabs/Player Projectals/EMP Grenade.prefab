@@ -85,3 +85,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9956187fdfe76d4ba3e4affda225ee9, type: 3}
+--- !u!114 &1284942408198831060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5875256589144091475, guid: e9956187fdfe76d4ba3e4affda225ee9, type: 3}
+  m_PrefabInstance: {fileID: 4637602550058733703}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141853551666816857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e3f171d7732e246bff4937d06607c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7141853551666816857 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2540284202478483422, guid: e9956187fdfe76d4ba3e4affda225ee9, type: 3}
+  m_PrefabInstance: {fileID: 4637602550058733703}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1008518910662338095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141853551666816857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa15ecd1d09a9f4ab8179c81cd7ac25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Grenade: {fileID: 1284942408198831060}
+  stunDurationIncrease: 0
