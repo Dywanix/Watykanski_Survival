@@ -9,9 +9,11 @@ public class Gunslinger : MonoBehaviour
     public Image Ability1, Ability2;
     public TMPro.TextMeshProUGUI CurrentChance;
 
-    public float doubleShotChance, chanceBonus, rapidFireCooldown, rapidFireMaxCooldown, rapidFireFireRate, rapidFireMovementSpeed, unloadCooldown, unloadMaxCooldown, unloadGap;
-    int unloadCount;
+    public float doubleShotChance, chanceBonus, rapidFireCooldown, rapidFireMaxCooldown, rapidFireFireRate, rapidFireMovementSpeed, rapidFireDuration, rapidFireReloadRate, 
+        unloadCooldown, unloadMaxCooldown, unloadGap, unloadRechargeBonus, unloadAccuracy, unloadDamageBonus;
+    int unloadCount, unloadFired;
 
+    public bool[] passivePerks, ability1Perks, ability2Perks;
 
     void Update()
     {
@@ -31,7 +33,7 @@ public class Gunslinger : MonoBehaviour
 
         if (unloadCooldown > 0)
         {
-            unloadCooldown -= Time.deltaTime;
+            unloadCooldown -= Time.deltaTime * (1f + unloadRechargeBonus);
             Ability2.fillAmount = 1 - (unloadCooldown / unloadMaxCooldown);
         }
     }
@@ -55,31 +57,119 @@ public class Gunslinger : MonoBehaviour
             rapidFireCooldown = rapidFireMaxCooldown;
 
             rapidFireFireRate = 1.206f + 0.017f * playerStats.level;
-            rapidFireMovementSpeed = 0.54f + rapidFireFireRate * 0.46f;
+            if (ability1Perks[2])
+            {
+                rapidFireFireRate += 0.14f;
+                if (ability1Perks[4])
+                    rapidFireFireRate += 0.09f;
+                rapidFireMovementSpeed = 0.44f + rapidFireFireRate * 0.56f;
+            }
+            else rapidFireMovementSpeed = 0.54f + rapidFireFireRate * 0.46f;
 
             playerStats.fireRateBonus *= rapidFireFireRate;
             playerStats.movementSpeed *= rapidFireMovementSpeed;
 
-            Invoke("RapidFireEnd", 5f);
+            if (ability1Perks[0])
+                unloadRechargeBonus = 0.45f;
+
+            if (ability1Perks[1])
+            {
+                doubleShotChance += 0.04f;
+                playerStats.additionalCritChance += 0.04f;
+                if (ability1Perks[4])
+                {
+                    doubleShotChance += 0.03f;
+                    playerStats.additionalCritChance += 0.03f;
+                }
+                DisplayChance();
+            }
+
+            if (ability1Perks[3])
+            {
+                rapidFireReloadRate = (0.7f + playerStats.eq.guns[playerStats.eq.equipped].reloadTime) * 10f / (4f + 0.12f + playerStats.eq.guns[playerStats.eq.equipped].MagazineTotalSize());
+                for (float i = 0; i < rapidFireDuration; i += rapidFireReloadRate)
+                {
+                    Invoke("RapidReload", i);
+                }
+            }
+
+            Invoke("RapidFireEnd", rapidFireDuration);
         }
+    }
+
+    void RapidReload()
+    {
+        if (playerStats.eq.guns[playerStats.eq.equipped].infiniteAmmo)
+        {
+            if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft < playerStats.eq.guns[playerStats.eq.equipped].MagazineTotalSize())
+            {
+                playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft++;
+                if (ability1Perks[4])
+                    playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft++;
+            }
+        }
+        else
+        {
+            if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft < playerStats.eq.guns[playerStats.eq.equipped].MagazineTotalSize())
+            {
+                if (playerStats.eq.guns[playerStats.eq.equipped].ammo > 0)
+                {
+                    playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft++;
+                    playerStats.eq.guns[playerStats.eq.equipped].ammo--;
+                }
+                if (ability1Perks[4])
+                    playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft++;
+            }
+        }
+        playerStats.DisplayAmmo();
     }
 
     void RapidFireEnd()
     {
         playerStats.fireRateBonus /= rapidFireFireRate;
         playerStats.movementSpeed /= rapidFireMovementSpeed;
+
+        unloadRechargeBonus = 0f;
+
+        if (ability1Perks[1])
+        {
+            doubleShotChance -= 0.04f;
+            playerStats.additionalCritChance -= 0.04f;
+            if (ability1Perks[4])
+            {
+                doubleShotChance -= 0.03f;
+                playerStats.additionalCritChance -= 0.03f;
+            }
+            DisplayChance();
+        }
     }
 
     void Unload()
     {
         if (unloadCooldown <= 0 && playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0)
         {
-            unloadMaxCooldown = 4.2f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            if (ability2Perks[1])
+                unloadMaxCooldown = 3.36f + 2.52f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
+            else unloadMaxCooldown = 4.2f + 2.8f * playerStats.eq.guns[playerStats.eq.equipped].fireRate;
             unloadMaxCooldown /= playerStats.cooldownReduction;
             unloadCooldown = unloadMaxCooldown;
 
-            unloadGap = 0.05f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.63f);
+            if (ability2Perks[0])
+            {
+                if (ability2Perks[4])
+                    unloadGap = 0.035f + 0.09f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.75f);
+                else unloadGap = 0.04f + 0.1f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.75f);
+            }
+            else unloadGap = 0.05f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.63f);
             playerStats.NewTask(0.7f);
+
+            if (ability2Perks[2])
+            {
+                unloadDamageBonus = 1.06f + 0.002f * playerStats.level;
+                playerStats.damageBonus *= unloadDamageBonus;
+            }
+            if (ability2Perks[3])
+                doubleShotChance += 0.078f + 0.001f * playerStats.level;
 
             unloadCount = 0;
             for (float i = 0; i < 0.55f; i += unloadGap)
@@ -87,17 +177,110 @@ public class Gunslinger : MonoBehaviour
                 Invoke("Fire", i);
                 unloadCount++;
             }
+            unloadFired = 0;
+            Invoke("UnloadEnd", 0.7f);
         }
     }
 
     void Fire()
     {
         if (playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft > 0 || playerStats.eq.guns[playerStats.eq.equipped].infiniteMagazine)
-            playerStats.Shoot(4.5f);
+        {
+            unloadFired++;
+            playerStats.Shoot(unloadAccuracy);
+        }
         else
         {
             playerStats.task -= unloadGap;
             unloadCooldown -= unloadMaxCooldown / (unloadCount * 1f + 0.9f);
+        }
+        if (ability2Perks[4])
+            playerStats.Fire(180f);
+    }
+
+    void UnloadEnd()
+    {
+        if (ability2Perks[1])
+        {
+            playerStats.eq.guns[playerStats.eq.equipped].bulletsLeft += (8 + 3 * unloadCount) / 10;
+            playerStats.DisplayAmmo();
+        }
+        if (ability2Perks[2])
+            playerStats.damageBonus /= unloadDamageBonus;
+        if (ability2Perks[3])
+            doubleShotChance -= 0.078f + 0.001f * playerStats.level;
+    }
+
+    public void GainPerk(int ability, int which)
+    {
+        switch (ability)
+        {
+            case 0:
+                passivePerks[which] = true;
+                switch (which)
+                {
+                    case 0:
+                        doubleShotChance += 0.04f;
+                        DisplayChance();
+                        break;
+                    case 1:
+                        // passive - not consuming ammo
+                        break;
+                    case 2:
+                        // passive - gain 5% of base chance for every unsuccessful
+                        break;
+                    case 3:
+                        // passive  - increased damage when triggered
+                        break;
+                    case 4:
+                        // passive - Triple Shot - third shot chance
+                        break;
+                }
+                break;
+            case 1:
+                ability1Perks[which] = true;
+                switch (which)
+                {
+                    case 0:
+                        rapidFireDuration += 2f;
+                        // passive - faster unload recharge
+                        break;
+                    case 1:
+                        // passive - increase passive chance & crit chance while active
+                        break;
+                    case 2:
+                        // passive - increase bonuses
+                        break;
+                    case 3:
+                        // passive - auto reload
+                        break;
+                    case 4:
+                        rapidFireDuration += 2f;
+                        // passive - Bullet Time - couple bonuses
+                        break;
+                }
+                break;
+            case 2:
+                ability2Perks[which] = true;
+                switch (which)
+                {
+                    case 0:
+                        // passive - increase fire rate of unload
+                        break;
+                    case 1:
+                        // passive - reduce cooldown & ammo return
+                        break;
+                    case 2:
+                        unloadAccuracy = 1f;
+                        // passive - increase damage while unloading
+                        break;
+                    case 3:
+                        // passive - increase passive chance while unloading
+                        break;
+                    case 4:
+                        break;
+                }
+                break;
         }
     }
 }

@@ -257,39 +257,61 @@ public class PlayerController : MonoBehaviour
         {
             if (Random.Range(0f, 1f) <= gunslinger.doubleShotChance + gunslinger.chanceBonus)
             {
-                Fire(accuracy_change);
-                if (eq.guns[eq.equipped].Accessories[15] * 0.22f >= Random.Range(0f, 1f))
+                if (gunslinger.passivePerks[3])
+                    damageBonus *= 1.1f;
+                for (int i = 0; i < 2; i++)
                 {
-                    FireDirection(-40f, accuracy_change);
-                    FireDirection(40f, accuracy_change);
+                    Fire(accuracy_change);
                 }
+                if (gunslinger.passivePerks[4])
+                {
+                    if (Random.Range(0f, 1f) <= 0.4f)
+                        Fire(accuracy_change);
+                }
+                if (gunslinger.passivePerks[3])
+                    damageBonus /= 1.1f;
                 gunslinger.chanceBonus = 0f;
                 gunslinger.DisplayChance();
+                if (!gunslinger.passivePerks[0])
+                {
+                    if (!eq.guns[eq.equipped].infiniteMagazine)
+                    {
+                        if (eq.guns[eq.equipped].Accessories[14] * 0.16f < Random.Range(0f, 1f))
+                            eq.guns[eq.equipped].bulletsLeft--;
+                        DisplayAmmo();
+                    }
+                }
             }
             else
             {
+                Fire(accuracy_change);
                 gunslinger.chanceBonus += 0.012f;
+                if (gunslinger.passivePerks[2])
+                    gunslinger.chanceBonus += gunslinger.doubleShotChance * 0.05f;
                 gunslinger.DisplayChance();
+                if (!eq.guns[eq.equipped].infiniteMagazine)
+                {
+                    if (eq.guns[eq.equipped].Accessories[14] * 0.16f < Random.Range(0f, 1f))
+                        eq.guns[eq.equipped].bulletsLeft--;
+                    DisplayAmmo();
+                }
+            }
+        }
+        else
+        {
+            Fire(accuracy_change);
+            if (!eq.guns[eq.equipped].infiniteMagazine)
+            {
+                if (eq.guns[eq.equipped].Accessories[14] * 0.16f < Random.Range(0f, 1f))
+                    eq.guns[eq.equipped].bulletsLeft--;
+                DisplayAmmo();
             }
         }
 
-        Fire(accuracy_change);
-        if (eq.guns[eq.equipped].Accessories[15] * 0.22f >= Random.Range(0f, 1f))
-        {
-            FireDirection(-40f, accuracy_change);
-            FireDirection(40f, accuracy_change);
-        }
-
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
-        if (!eq.guns[eq.equipped].infiniteMagazine)
-        {
-            if (eq.guns[eq.equipped].Accessories[14] * 0.16f < Random.Range(0f, 1f))
-                eq.guns[eq.equipped].bulletsLeft--;
-            DisplayAmmo();
-        }
     }
 
-    void Fire(float accuracy_change = 0f)
+    public void Fire(float accuracy_change = 0f)
     {
         for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
         {
@@ -300,6 +322,11 @@ public class PlayerController : MonoBehaviour
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet(1f);
             eq.Flash();
+        }
+        if (eq.guns[eq.equipped].Accessories[15] * 0.22f >= Random.Range(0f, 1f))
+        {
+            FireDirection(-40f, accuracy_change);
+            FireDirection(40f, accuracy_change);
         }
 
         //eq.SpecialCharges();
@@ -406,7 +433,6 @@ public class PlayerController : MonoBehaviour
                 }
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 8;
-                eq.guns[eq.equipped].ammo--;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].MagazineTotalSize() || eq.guns[eq.equipped].ammo <= 0)
                     reloading = false;
                 else
@@ -437,6 +463,18 @@ public class PlayerController : MonoBehaviour
         }
         DisplayAmmo();
     }
+
+    /*public void ReloadAmmo(int amount, bool full)
+    {
+        tempi = amount;
+        eq.guns[eq.equipped].bulletsLeft += amount;
+        if (eq.guns[eq.equipped].bulletsLeft > eq.guns[eq.equipped].MagazineTotalSize())
+            eq.guns[eq.equipped].bulletsLeft = eq.guns[eq.equipped].MagazineTotalSize();
+        if (full)
+            eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
+        if (eq.guns[eq.equipped].Accessories[10] > 0)
+            eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 8;
+    }*/
 
     public void DisplayAmmo()
     {
@@ -781,5 +819,21 @@ public class PlayerController : MonoBehaviour
                 eq.guns[i].ammo += eq.guns[i].maxAmmo / 3;
             }
         }
+    }
+
+    public void GainPerk(int ability, int which)
+    {
+        if (gunslinger)
+        {
+            gunslinger.GainPerk(ability, which);
+        }
+        /*else if (berserker)
+        {
+            berserker.GainPerk(ability, which);
+        }
+        else if (engineer)
+        {
+            engineer.GainPerk(ability, which);
+        }*/
     }
 }

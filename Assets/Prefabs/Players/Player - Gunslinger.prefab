@@ -2561,13 +2561,21 @@ MonoBehaviour:
   CurrentChance: {fileID: 7320417212086596850}
   doubleShotChance: 0.12
   chanceBonus: 0
+  chanceGain: 0.012
   rapidFireCooldown: 0
   rapidFireMaxCooldown: 0
   rapidFireFireRate: 0
   rapidFireMovementSpeed: 0
+  rapidFireDuration: 5
+  rapidFireReloadRate: 0
   unloadCooldown: 0
   unloadMaxCooldown: 0
   unloadGap: 0
+  unloadRechargeBonus: 0
+  unloadAccuracy: 4.5
+  passivePerks: 0000000000
+  ability1Perks: 0000000000
+  ability2Perks: 0000000000
 --- !u!1 &6734454134645331451
 GameObject:
   m_ObjectHideFlags: 0

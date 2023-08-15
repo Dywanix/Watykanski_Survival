@@ -23671,7 +23671,7 @@ MonoBehaviour:
   - {fileID: 221019378589204405, guid: 0483dc6cada6ea54797751316175f189, type: 3}
   - {fileID: 3501153044524631225, guid: 9a10863e987cbff449ae8491d11c540c, type: 3}
   epics:
-  - {fileID: 2230373966677284076, guid: 44684d7bdc8c6ab4da444ee0c7bc9a5b, type: 3}
+  - {fileID: 9187309518645419397, guid: 1e41de61ff2407d4ba9282d42b814504, type: 3}
   bosses:
   - {fileID: 5635245682469565738, guid: 11640707c8d471a4aaf5155a5572f660, type: 3}
   endlessOne: {fileID: 1029557328}
