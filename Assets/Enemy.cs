@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] Items;
     public PlayerController playerStats;
     public Rigidbody2D Body, playerBody, Dir;
-    public Transform Sight, DamageOrigin;
+    public Transform Sight, DamageOrigin, FlankPosition;
     private Bullet collidedBullet;
     private DamageTaken damageDisplay;
     public Day_Night_Cycle day_night;
@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     [Header("Movement")]
     public float movementSpeed;
     public float aimingMovement, slow, stun;
+    public bool flank;
 
     [Header("Damage & Attacks")]
     public bool attackTimer = false;
@@ -113,7 +114,9 @@ public class Enemy : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
                 Attack();
-            if (Vector3.Distance(transform.position, Player.transform.position) >= minRange)
+            if (flank)
+                Flank();
+            else if (Vector3.Distance(transform.position, Player.transform.position) >= minRange)
                 Chase();
             /*switch (CurrentState)
             {
@@ -144,6 +147,28 @@ public class Enemy : MonoBehaviour
         Dir.rotation = angle;
     }
 
+    void Flank()
+    {
+        if (!attackTimer)
+        {
+            if (slow > 0f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * 0.6f * Time.deltaTime);
+                slow -= Time.deltaTime;
+            }
+            else transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * Time.deltaTime);
+        }
+        else
+        {
+            if (slow > 0f)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * 0.6f * aimingMovement * Time.deltaTime);
+                slow -= Time.deltaTime;
+            }
+            else transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * aimingMovement * Time.deltaTime);
+        }
+    }
+
     void Chase()
     {
         if (!attackTimer)
@@ -164,6 +189,21 @@ public class Enemy : MonoBehaviour
             }
             else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * aimingMovement * Time.deltaTime);
         }
+    }
+
+    public void FoundObstacle(Transform Point)
+    {
+        if (!flank)
+        {   
+            FlankPosition = Point;
+            flank = true;
+            Invoke("EndFlank", 0.2f);
+        }
+    }
+
+    void EndFlank()
+    {
+        flank = false;
     }
 
     void Attack()
