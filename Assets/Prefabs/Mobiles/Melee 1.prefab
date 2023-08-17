@@ -628,7 +628,7 @@ MonoBehaviour:
   movementSpeed: 3.92
   aimingMovement: 0
   slow: 0
-  stun: 0
+  stun: 0.6
   flank: 0
   attackTimer: 0
   attackDamage: 20

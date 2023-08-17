@@ -5,4 +5,5 @@ using UnityEngine;
 public class Wall : MonoBehaviour
 {
 	public Transform[] Ends;
+	public bool oneEnd;
 }

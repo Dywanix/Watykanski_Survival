@@ -102,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431149555311013325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8, y: 5}
+  m_Size: {x: 2.8, y: 6}
   m_EdgeRadius: 0
 --- !u!114 &1547678176469767488
 MonoBehaviour:
@@ -2561,7 +2561,6 @@ MonoBehaviour:
   CurrentChance: {fileID: 7320417212086596850}
   doubleShotChance: 0.12
   chanceBonus: 0
-  chanceGain: 0.012
   rapidFireCooldown: 0
   rapidFireMaxCooldown: 0
   rapidFireFireRate: 0
@@ -2573,6 +2572,7 @@ MonoBehaviour:
   unloadGap: 0
   unloadRechargeBonus: 0
   unloadAccuracy: 4.5
+  unloadDamageBonus: 0
   passivePerks: 0000000000
   ability1Perks: 0000000000
   ability2Perks: 0000000000

@@ -134,10 +134,10 @@ MonoBehaviour:
   Bullet: {fileID: 6579493852680662924, guid: 81c0b96a591ac0b49ab584c4c29ad92f, type: 3}
   Dir: {fileID: 6120307722163391349}
   form: {fileID: 2263032155689848701}
-  delay: 0.25
-  delayMultiplyer: 0.16
+  delay: 0.24
+  delayMultiplyer: 0.083
   accuracy: 0
-  bulletForce: 44.8
+  bulletForce: 40
   bulletsCount: 1
 --- !u!50 &6120307722163391349
 Rigidbody2D:

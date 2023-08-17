@@ -197,7 +197,7 @@ public class Enemy : MonoBehaviour
         {   
             FlankPosition = Point;
             flank = true;
-            Invoke("EndFlank", 0.25f);
+            Invoke("EndFlank", 0.15f);
         }
     }
 

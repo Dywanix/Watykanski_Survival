@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: force
-      value: 12.5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: health
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: attackSpeed
-      value: 3.71
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: bulletCount
