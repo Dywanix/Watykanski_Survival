@@ -1749,7 +1749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6884977038708695282, guid: f8c4fe9c2bc88554790644c3fec5b423, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6884977038708695282, guid: f8c4fe9c2bc88554790644c3fec5b423, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18696,7 +18696,7 @@ Transform:
   m_Children:
   - {fileID: 195900053}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1140780995
 Camera:
@@ -57198,7 +57198,7 @@ MonoBehaviour:
   dayCount: {fileID: 646819267}
   shop: {fileID: 1736285453}
   day: 1
-  bossFrequency: 5
+  bossFrequency: 1
   hordeSize: 0
   roll: 0
   epicCharges: 0

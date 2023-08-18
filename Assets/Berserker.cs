@@ -119,10 +119,10 @@ public class Berserker : MonoBehaviour
             AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
             if (ability1Perks[2])
             {
-                AxeThrown.damage = (20.8f + 2.1f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+                AxeThrown.damage = (21.2f + 2.2f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
                 AxeThrown.slowDuration += AxeThrown.damage * 0.0075f;
             }
-            else AxeThrown.damage = (17.6f + 1.7f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+            else AxeThrown.damage = (18.4f + 1.7f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
             if (ability1Perks[1])
             {
                 AxeThrown.pierce++;
