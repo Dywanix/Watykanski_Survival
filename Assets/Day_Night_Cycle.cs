@@ -52,10 +52,10 @@ public class Day_Night_Cycle : MonoBehaviour
     {
         switch (CurrentState)
         {
-            case (TimeState.Day):
+            /*case (TimeState.Day):
                 if (Input.GetKeyDown(KeyCode.H))
                     StartNight();
-                break;
+                break;*/
             case (TimeState.Night):
                 if (bossNight == false)
                 {
@@ -84,11 +84,12 @@ public class Day_Night_Cycle : MonoBehaviour
         DayBar.fillAmount = time / maxTime;
     }
 
-    void StartNight()
+    public void StartNight()
     {
         playerStats.Nightfall();
-        CurrentState = TimeState.Night;
-        maxTime = 60f + 4.8f * day;
+        //CurrentState = TimeState.Night;
+        shop.Close();
+        /*maxTime = 60f + 4.8f * day;
         time = 0;
 
         if (day % bossFrequency == 0)
@@ -112,8 +113,9 @@ public class Day_Night_Cycle : MonoBehaviour
             rareSpawnTime = rareSpawnGap * (1.4f + hordeSize * 0.2f);
 
             SummonHorde();
-        }
-        shop.Close();
+        }*/
+
+
     }
 
     public void StartDawn()

@@ -101,6 +101,7 @@ public class Workbench : MonoBehaviour
         Info[13].text = (playerStats.eq.guns[which].pierceEfficiency * 100).ToString("0") + "%";
         Info[14].text = playerStats.eq.guns[which].overload.ToString("0");
         Info[15].text = playerStats.eq.guns[which].MaxSlots.ToString("0");
+        Info[16].text = (playerStats.eq.guns[which].DoT * 100).ToString("0") + "%";
     }
 
     public void Upgrade(int which)

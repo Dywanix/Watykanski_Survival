@@ -343,6 +343,7 @@ public class PlayerController : MonoBehaviour
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet(1f);
+            eq.Flash();
         }
     }
 
@@ -543,7 +544,7 @@ public class PlayerController : MonoBehaviour
         {
             dash = 36.9f + movementSpeed * 0.51f;
 
-            maxDashCooldown = 8f / cooldownReduction;
+            maxDashCooldown = 7.5f / cooldownReduction;
             dashCooldown = maxDashCooldown;
 
             tempi = eq.guns[eq.equipped].MagazineTotalSize() * eq.Items[7] / 5;
