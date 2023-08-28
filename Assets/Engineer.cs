@@ -112,7 +112,7 @@ public class Engineer : MonoBehaviour
             rocketCount = 0;
             nextRocket = 5;
 
-            turretFireRate = 0.5f / (1 + 0.02f * playerStats.level);
+            turretFireRate = 0.51f / (1 + 0.0202f * playerStats.level);
             timeToFire += turretFireRate;
 
             Invoke("DeactivateTurret", turretDuration);

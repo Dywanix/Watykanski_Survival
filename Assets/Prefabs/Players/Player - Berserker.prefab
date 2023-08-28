@@ -810,15 +810,14 @@ MonoBehaviour:
   BoomerangAxe: {fileID: 8439197816819152736, guid: 1996d360eab5a25408f206d8e21a0d20, type: 3}
   AxeThrown: {fileID: 0}
   wrath: 0
-  wrathGain: 0.06
+  wrathGain: 0.062
   healthGain: 2.5
-  healthRestored: 0.08
   burstCooldown: 0
   burstMaxCooldown: 0
   swipeCooldown: 0
   swipeMaxCooldown: 0
   damageTaken: 0
-  bonusWaves: 0
+  juggernautCount: 0
   passivePerks: 0000000000
   ability1Perks: 0000000000
   ability2Perks: 0000000000

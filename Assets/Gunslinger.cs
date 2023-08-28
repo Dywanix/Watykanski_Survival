@@ -10,7 +10,7 @@ public class Gunslinger : MonoBehaviour
     public TMPro.TextMeshProUGUI CurrentChance;
 
     public float doubleShotChance, chanceBonus, rapidFireCooldown, rapidFireMaxCooldown, rapidFireFireRate, rapidFireMovementSpeed, rapidFireDuration, rapidFireReloadRate, 
-        unloadCooldown, unloadMaxCooldown, unloadGap, unloadRechargeBonus, unloadAccuracy, unloadDamageBonus;
+        unloadCooldown, unloadMaxCooldown, unloadDuration, unloadGap, unloadRechargeBonus, unloadAccuracy, unloadDamageBonus;
     int unloadCount, unloadFired;
 
     public bool[] passivePerks, ability1Perks, ability2Perks;
@@ -157,11 +157,11 @@ public class Gunslinger : MonoBehaviour
             if (ability2Perks[0])
             {
                 if (ability2Perks[4])
-                    unloadGap = 0.035f + 0.09f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.75f);
-                else unloadGap = 0.04f + 0.1f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.75f);
+                    unloadGap = 0.035f + 0.09f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.8f);
+                else unloadGap = 0.04f + 0.1f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.8f);
             }
-            else unloadGap = 0.05f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.63f);
-            playerStats.NewTask(0.7f);
+            else unloadGap = 0.05f + 0.12f * playerStats.eq.guns[playerStats.eq.equipped].fireRate / playerStats.SpeedMultiplyer(0.67f);
+            playerStats.NewTask(0.66f);
 
             if (ability2Perks[2])
             {
@@ -172,13 +172,13 @@ public class Gunslinger : MonoBehaviour
                 doubleShotChance += 0.078f + 0.001f * playerStats.level;
 
             unloadCount = 0;
-            for (float i = 0; i < 0.55f; i += unloadGap)
+            for (float i = 0; i < unloadDuration; i += unloadGap)
             {
                 Invoke("Fire", i);
                 unloadCount++;
             }
             unloadFired = 0;
-            Invoke("UnloadEnd", 0.7f);
+            Invoke("UnloadEnd", 0.66f);
         }
     }
 
@@ -265,13 +265,14 @@ public class Gunslinger : MonoBehaviour
                 switch (which)
                 {
                     case 0:
+                        unloadDuration = 0.67f;
                         // passive - increase fire rate of unload
                         break;
                     case 1:
                         // passive - reduce cooldown & ammo return
                         break;
                     case 2:
-                        unloadAccuracy = 1f;
+                        unloadAccuracy = 0.72f;
                         // passive - increase damage while unloading
                         break;
                     case 3:

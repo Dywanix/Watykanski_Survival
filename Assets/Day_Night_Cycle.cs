@@ -35,8 +35,8 @@ public class Day_Night_Cycle : MonoBehaviour
 
     void Start()
     {
-        //Instantiate(Players[PlayerPrefs.GetInt("Class")]);
-        Instantiate(Players[chosenClas]); // 0 - Gunslinger, 1 - Berserker
+        Instantiate(Players[PlayerPrefs.GetInt("Class")]);
+        //Instantiate(Players[chosenClas]); // 0 - Gunslinger, 1 - Berserker
 
         Player = GameObject.FindGameObjectWithTag("Player");
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
