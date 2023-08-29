@@ -125,7 +125,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 6183951528535322495, guid: fa2f8c3c6641ebc4399f27864070388b, type: 3}
+  - {fileID: 5893359571365976471, guid: 9402ba422403973408d900d7467d626b, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
@@ -384,7 +384,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
@@ -513,7 +513,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 6320131366731747711, guid: e4e199fb6abc014448a7b83bf8c9da40, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 5
   flashSpread: 16
@@ -642,7 +642,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
@@ -1378,7 +1378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2971924155989730239
 Transform:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 6320131366731747711, guid: e4e199fb6abc014448a7b83bf8c9da40, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 5
   flashSpread: 16
@@ -1839,7 +1839,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
@@ -1915,8 +1915,8 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   LevelCostCharge: 0
-  cameraShake: 17
-  shakeDuration: 0.222
+  cameraShake: 19.9
+  shakeDuration: 0.271
   bulletsLeft: 5
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1968,7 +1968,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 5478519011124509284, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+  - {fileID: 5239690129876251028, guid: ebfed965c846ab040bf68489ccb7570f, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 6
   flashSpread: 36
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
@@ -2275,7 +2275,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 1464246519426064460, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
@@ -2533,7 +2533,8 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 4048924461088704379, guid: 42db25182300e3549a6817e199e0b61c, type: 3}
+  - {fileID: 6741737064794144746, guid: 03180a3cfdf1ea648ab6e4e4095d6dda, type: 3}
+  - {fileID: 8121341149438534637, guid: 2cdfcb611ac5e3745a1327cb4469ce66, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
@@ -2662,8 +2663,8 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 3172954806413337685, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
-  - {fileID: 7905669060386059108, guid: ace0f9d271f1efe4b857b3a3a6d2daa6, type: 3}
+  - {fileID: 3982066536839230301, guid: 1b083aa83d10efd46a5f8535ea27f195, type: 3}
+  - {fileID: 1721548041437454189, guid: 18d501873df40dc4ab56dba214283c6a, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
