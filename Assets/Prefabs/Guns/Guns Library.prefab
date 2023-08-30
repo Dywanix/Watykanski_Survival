@@ -517,6 +517,135 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 5
   flashSpread: 16
+--- !u!1 &1392772750735860700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2661504400873802245}
+  - component: {fileID: 983171396914451910}
+  m_Layer: 0
+  m_Name: Cocktail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2661504400873802245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392772750735860700}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &983171396914451910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392772750735860700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Rifle
+  gunSprite: {fileID: 21300000, guid: 76745b8b52cb633488131948296311fd, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 76745b8b52cb633488131948296311fd, type: 3}
+  damage: 44
+  fireRate: 0.888
+  accuracy: 4.4
+  penetration: 0.24
+  critChance: 0.24
+  reloadTime: 0.428
+  range: 1.2
+  force: 20
+  magazineSize: 8
+  ammo: 24
+  maxAmmo: 32
+  critDamage: 1.66
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.64
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
+  cameraShake: 20.9
+  shakeDuration: 0.196
+  bulletsLeft: 8
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 0a000000070000000d00000039000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 3.4
+  - 0.03
+  - 2.7
+  - 1
+  LevelUpBonuses:
+  - 0
+  - 0.96
+  - 0.93
+  - 0.03
+  - 0.02
+  - 0.94
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - penetration
+  - force
+  - pierce
+  UpgradeInfo:
+  - +3,4 Damage
+  - +3% Penetration
+  - +2,7 Force
+  - +1 Pierce
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 1
+  individualReloadCount: 1
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 1686795061182180904, guid: 326fd7fd4b73cf042a134f37e07fe219, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 5
+  flashSpread: 16
 --- !u!1 &2598830977068030122
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +934,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -1163,7 +1292,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1019964497745636248
 MonoBehaviour:
@@ -1292,7 +1421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2480623888799790039
 MonoBehaviour:
@@ -1362,6 +1491,135 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
+--- !u!1 &4271480267339545355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3594292106018171830}
+  - component: {fileID: 556117431696019269}
+  m_Layer: 0
+  m_Name: Twin Bullets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3594292106018171830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4271480267339545355}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556117431696019269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4271480267339545355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Rifle
+  gunSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
+  holdingSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
+  damage: 44
+  fireRate: 0.888
+  accuracy: 4.4
+  penetration: 0.24
+  critChance: 0.24
+  reloadTime: 0.428
+  range: 1.2
+  force: 20
+  magazineSize: 8
+  ammo: 24
+  maxAmmo: 32
+  critDamage: 1.66
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.64
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
+  cameraShake: 20.9
+  shakeDuration: 0.196
+  bulletsLeft: 8
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 0a000000070000000d00000039000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 3.4
+  - 0.03
+  - 2.7
+  - 1
+  LevelUpBonuses:
+  - 0
+  - 0.96
+  - 0.93
+  - 0.03
+  - 0.02
+  - 0.94
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - penetration
+  - force
+  - pierce
+  UpgradeInfo:
+  - +3,4 Damage
+  - +3% Penetration
+  - +2,7 Force
+  - +1 Pierce
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 1
+  individualReloadCount: 1
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 9096077774305803365, guid: b93392dc5b53df54782024d90d602952, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 5
+  flashSpread: 16
 --- !u!1 &5086013156797040371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,7 +1650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5647800462568369657
 MonoBehaviour:
@@ -1551,6 +1809,8 @@ MonoBehaviour:
   - {fileID: 3239667672812241861}
   - {fileID: 1917316140008478284}
   - {fileID: 4140508597377094466}
+  - {fileID: 556117431696019269}
+  - {fileID: 983171396914451910}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,6 +2273,8 @@ Transform:
   - {fileID: 6309686917929599797}
   - {fileID: 6724929928266544271}
   - {fileID: 3387256452364949355}
+  - {fileID: 3594292106018171830}
+  - {fileID: 2661504400873802245}
   - {fileID: 2971924155989730239}
   - {fileID: 4278947165659766169}
   - {fileID: 6202056126562500248}
@@ -2698,7 +2960,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959943114771508542
 MonoBehaviour:
