@@ -129,6 +129,135 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 3
   flashSpread: 26
+--- !u!1 &847349847687333187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1631621053721637653}
+  - component: {fileID: 4277118613450138114}
+  m_Layer: 0
+  m_Name: Buckshot Shotgun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1631621053721637653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847349847687333187}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4277118613450138114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847349847687333187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Stronger Shotgun
+  gunSprite: {fileID: 21300000, guid: 492beb0739067c34caf0116ee97b8e70, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 492beb0739067c34caf0116ee97b8e70, type: 3}
+  damage: 18
+  fireRate: 0.75
+  accuracy: 7.2
+  penetration: 0.22
+  critChance: 0.07
+  reloadTime: 2.02
+  range: 1.16
+  force: 19.3
+  magazineSize: 6
+  ammo: 32
+  maxAmmo: 38
+  critDamage: 1.52
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 2
+  pierceEfficiency: 0.55
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
+  cameraShake: 25.7
+  shakeDuration: 0.18
+  bulletsLeft: 6
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 07000000090000000600000018000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.03
+  - 1
+  - 5
+  - 1
+  LevelUpBonuses:
+  - 1.1
+  - 0.94
+  - 1
+  - 0
+  - 0.02
+  - 0.98
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - penetration
+  - magazineSize
+  - maxAmmo
+  - bulletSpread
+  UpgradeInfo:
+  - +3% Penetration
+  - +1 Magazine Size
+  - +5 Ammo
+  - +1 Bullet Spread
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 7517314691958038469, guid: e7fecd86cdd4466409eccf755f882d59, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 4
+  flashSpread: 52
 --- !u!1 &1093269790366527781
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +1063,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -1292,7 +1421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1019964497745636248
 MonoBehaviour:
@@ -1421,7 +1550,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2480623888799790039
 MonoBehaviour:
@@ -1650,7 +1779,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5647800462568369657
 MonoBehaviour:
@@ -1812,6 +1941,7 @@ MonoBehaviour:
   - {fileID: 556117431696019269}
   - {fileID: 983171396914451910}
   - {fileID: 3936315515205341615}
+  - {fileID: 4277118613450138114}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,6 +2407,7 @@ Transform:
   - {fileID: 3594292106018171830}
   - {fileID: 2661504400873802245}
   - {fileID: 5194714431035022376}
+  - {fileID: 1631621053721637653}
   - {fileID: 2971924155989730239}
   - {fileID: 4278947165659766169}
   - {fileID: 6202056126562500248}
@@ -3091,7 +3222,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959943114771508542
 MonoBehaviour:
