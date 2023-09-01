@@ -1,5 +1,134 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &529315687761731544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5537800360404143622}
+  - component: {fileID: 1584725056593945842}
+  m_Layer: 0
+  m_Name: Gatling Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5537800360404143622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529315687761731544}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584725056593945842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529315687761731544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic SMG
+  gunSprite: {fileID: 21300000, guid: 1169e0923144be741b6c8dcb09dcdc55, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 1169e0923144be741b6c8dcb09dcdc55, type: 3}
+  damage: 15.6
+  fireRate: 0.191
+  accuracy: 20.4
+  penetration: 0.22
+  critChance: 0.1
+  reloadTime: 3.5
+  range: 1.12
+  force: 18.9
+  magazineSize: 44
+  ammo: 156
+  maxAmmo: 200
+  critDamage: 1.36
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
+  cameraShake: 6.28
+  shakeDuration: 0.095
+  bulletsLeft: 44
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 0a000000090000000d0000000a000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.2
+  - 0.89
+  - 0.84
+  - 39
+  LevelUpBonuses:
+  - 0.4
+  - 0.96
+  - 0.98
+  - 0.05
+  - 0
+  - 0.95
+  - 0
+  - 0
+  - 4
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - fireRate
+  - accuracy
+  - maxAmmo
+  UpgradeInfo:
+  - +1,2 Damage
+  - +11% Fire Rate
+  - +16% Accuracy
+  - +39 Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 3
+  flashSpread: 26
 --- !u!1 &546906197202244888
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,23 +305,23 @@ MonoBehaviour:
   gunName: Stronger Shotgun
   gunSprite: {fileID: 21300000, guid: 492beb0739067c34caf0116ee97b8e70, type: 3}
   holdingSprite: {fileID: 21300000, guid: 492beb0739067c34caf0116ee97b8e70, type: 3}
-  damage: 18
-  fireRate: 0.75
-  accuracy: 7.2
-  penetration: 0.22
-  critChance: 0.07
-  reloadTime: 2.02
-  range: 1.16
-  force: 19.3
-  magazineSize: 6
-  ammo: 32
-  maxAmmo: 38
-  critDamage: 1.52
+  damage: 22
+  fireRate: 0.72
+  accuracy: 6
+  penetration: 0.23
+  critChance: 0.08
+  reloadTime: 1.666
+  range: 1
+  force: 18
+  magazineSize: 8
+  ammo: 36
+  maxAmmo: 44
+  critDamage: 1.4
   armorShred: 0
   vulnerableApplied: 0
   bulletSpread: 1
   pierce: 2
-  pierceEfficiency: 0.55
+  pierceEfficiency: 0.5
   DoT: 0
   overload: 0
   slowDuration: 0
@@ -201,9 +330,9 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   LevelCostCharge: 0
-  cameraShake: 25.7
-  shakeDuration: 0.18
-  bulletsLeft: 6
+  cameraShake: 19.4
+  shakeDuration: 0.118
+  bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -212,41 +341,41 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 07000000090000000600000018000000
+  Costs: 0a0000000a0000001400000015000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 0.03
-  - 1
-  - 5
-  - 1
+  - 1.7
+  - 0.88
+  - 3
+  - 21
   LevelUpBonuses:
-  - 1.1
-  - 0.94
   - 1
-  - 0
-  - 0.02
+  - 0.99
   - 0.98
+  - 0.02
+  - 0
+  - 0.95
   - 0
   - 0
-  - 1
   - 0
   - 0
   - 0
   - 0
   - 0
+  - 0.05
   - 0
   - 0
   - 0
   UpgradeType:
-  - penetration
+  - damage
+  - fireRate
   - magazineSize
   - maxAmmo
-  - bulletSpread
   UpgradeInfo:
-  - +3% Penetration
-  - +1 Magazine Size
-  - +5 Ammo
-  - +1 Bullet Spread
+  - +1,7 Damage
+  - +12% Fire Rate
+  - +3 Magazine Size
+  - +21 Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -460,8 +589,8 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   LevelCostCharge: 0
-  cameraShake: 19.1
-  shakeDuration: 0.19
+  cameraShake: 15.6
+  shakeDuration: 0.146
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -517,6 +646,135 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
+--- !u!1 &1218539877975980926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 659064434746076032}
+  - component: {fileID: 6156332918428343795}
+  m_Layer: 0
+  m_Name: Piercer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &659064434746076032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218539877975980926}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6156332918428343795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218539877975980926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic SR
+  gunSprite: {fileID: 21300000, guid: 7ce3c29e969e3d74bb62d33ed6c2dfcb, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 7ce3c29e969e3d74bb62d33ed6c2dfcb, type: 3}
+  damage: 54.3
+  fireRate: 1.34
+  accuracy: 3.1
+  penetration: 0.36
+  critChance: 0.12
+  reloadTime: 0.99
+  range: 1.07
+  force: 21.7
+  magazineSize: 2
+  ammo: 18
+  maxAmmo: 20
+  critDamage: 1.58
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 2
+  pierceEfficiency: 1.16
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
+  cameraShake: 3.3
+  shakeDuration: 0.222
+  bulletsLeft: 2
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 09000000070000000900000017000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 3.9
+  - 0.08
+  - 1
+  - 1
+  LevelUpBonuses:
+  - 0
+  - 0.96
+  - 0.93
+  - 0.03
+  - 0.02
+  - 0.94
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - range
+  - magazineSize
+  - pierce
+  UpgradeInfo:
+  - +3,9 Damage
+  - +8 Range
+  - +1 Magazine Size
+  - +1 Pierce
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 5
+  flashSpread: 16
 --- !u!1 &1371518073042196905
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,23 +951,23 @@ MonoBehaviour:
   gunName: Rifle
   gunSprite: {fileID: 21300000, guid: 76745b8b52cb633488131948296311fd, type: 3}
   holdingSprite: {fileID: 21300000, guid: 76745b8b52cb633488131948296311fd, type: 3}
-  damage: 44
-  fireRate: 0.888
-  accuracy: 4.4
-  penetration: 0.24
-  critChance: 0.24
-  reloadTime: 0.428
-  range: 1.2
-  force: 20
-  magazineSize: 8
-  ammo: 24
-  maxAmmo: 32
-  critDamage: 1.66
+  damage: 23.5
+  fireRate: 0.7
+  accuracy: 3.7
+  penetration: 0.27
+  critChance: 0.17
+  reloadTime: 1.7
+  range: 1.17
+  force: 17.7
+  magazineSize: 7
+  ammo: 34
+  maxAmmo: 41
+  critDamage: 1.7
   armorShred: 0
   vulnerableApplied: 0
   bulletSpread: 1
   pierce: 1
-  pierceEfficiency: 0.64
+  pierceEfficiency: 0.5
   DoT: 0
   overload: 0
   slowDuration: 0
@@ -718,9 +976,9 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   LevelCostCharge: 0
-  cameraShake: 20.9
-  shakeDuration: 0.196
-  bulletsLeft: 8
+  cameraShake: 8.4
+  shakeDuration: 0.124
+  bulletsLeft: 7
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -729,20 +987,20 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 0a000000070000000d00000039000000
+  Costs: 0b0000000a0000001e00000009000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 3.4
-  - 0.03
-  - 2.7
+  - 2
+  - 10
   - 1
+  - 0.07
   LevelUpBonuses:
-  - 0
-  - 0.96
-  - 0.93
+  - 0.8
+  - 0.98
+  - 0.97
   - 0.03
   - 0.02
-  - 0.94
+  - 0.95
   - 0
   - 0
   - 0
@@ -750,23 +1008,23 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  - 0.05
+  - 0.06
   - 0
   - 0
   - 0
   UpgradeType:
   - damage
-  - penetration
-  - force
+  - maxAmmo
   - pierce
+  - DoT
   UpgradeInfo:
-  - +3,4 Damage
-  - +3% Penetration
-  - +2,7 Force
+  - +2 Damage
+  - +10 Ammo
   - +1 Pierce
+  - +7% DoT
   infiniteMagazine: 0
   infiniteAmmo: 0
-  individualReload: 1
+  individualReload: 0
   individualReloadCount: 1
   damageMultiplier: 1
   magazineMultiplier: 1
@@ -1063,7 +1321,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 19
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -1421,7 +1679,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 18
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1019964497745636248
 MonoBehaviour:
@@ -1550,7 +1808,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 21
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2480623888799790039
 MonoBehaviour:
@@ -1667,23 +1925,23 @@ MonoBehaviour:
   gunName: Rifle
   gunSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
   holdingSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
-  damage: 44
-  fireRate: 0.888
-  accuracy: 4.4
-  penetration: 0.24
-  critChance: 0.24
-  reloadTime: 0.428
-  range: 1.2
-  force: 20
-  magazineSize: 8
-  ammo: 24
-  maxAmmo: 32
-  critDamage: 1.66
+  damage: 22
+  fireRate: 0.77
+  accuracy: 4.8
+  penetration: 0.22
+  critChance: 0.22
+  reloadTime: 1.72
+  range: 1.1
+  force: 19.8
+  magazineSize: 11
+  ammo: 33
+  maxAmmo: 44
+  critDamage: 1.44
   armorShred: 0
   vulnerableApplied: 0
   bulletSpread: 1
   pierce: 1
-  pierceEfficiency: 0.64
+  pierceEfficiency: 0.5
   DoT: 0
   overload: 0
   slowDuration: 0
@@ -1692,9 +1950,9 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   LevelCostCharge: 0
-  cameraShake: 20.9
-  shakeDuration: 0.196
-  bulletsLeft: 8
+  cameraShake: 10.4
+  shakeDuration: 0.143
+  bulletsLeft: 11
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -1703,44 +1961,44 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 0a000000070000000d00000039000000
+  Costs: 060000000b0000000900000011000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 3.4
-  - 0.03
-  - 2.7
   - 1
+  - 0.87
+  - 0.81
+  - 18
   LevelUpBonuses:
   - 0
   - 0.96
-  - 0.93
+  - 0.96
   - 0.03
-  - 0.02
-  - 0.94
+  - 0
+  - 0.97
+  - 0
+  - 0
+  - 2
   - 0
   - 0
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  - 0.05
   - 0
   - 0
   - 0
   UpgradeType:
   - damage
-  - penetration
-  - force
-  - pierce
+  - fireRate
+  - reloadTime
+  - maxAmmo
   UpgradeInfo:
-  - +3,4 Damage
-  - +3% Penetration
-  - +2,7 Force
-  - +1 Pierce
+  - +1 Damage
+  - +13% Fire Rate
+  - +19% Reload Time
+  - +18 Ammo
   infiniteMagazine: 0
   infiniteAmmo: 0
-  individualReload: 1
+  individualReload: 0
   individualReloadCount: 1
   damageMultiplier: 1
   magazineMultiplier: 1
@@ -1749,6 +2007,138 @@ MonoBehaviour:
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 5
   flashSpread: 16
+--- !u!1 &4734694046563246812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7453397628505095491}
+  - component: {fileID: 2994166217174951008}
+  m_Layer: 0
+  m_Name: X
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7453397628505095491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4734694046563246812}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2994166217174951008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4734694046563246812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic AR
+  gunSprite: {fileID: 21300000, guid: f8653f641d78da245910a8721a81f2f2, type: 3}
+  holdingSprite: {fileID: 21300000, guid: f8653f641d78da245910a8721a81f2f2, type: 3}
+  damage: 19.3
+  fireRate: 0.37
+  accuracy: 8.3
+  penetration: 0.25
+  critChance: 0.11
+  reloadTime: 1.81
+  range: 1.05
+  force: 20
+  magazineSize: 21
+  ammo: 74
+  maxAmmo: 95
+  critDamage: 1.44
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  LevelCostCharge: 0
+  cameraShake: 9.5
+  shakeDuration: 0.169
+  bulletsLeft: 21
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000a0000000c00000007000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.9
+  - 0.78
+  - 0.75
+  - 19
+  LevelUpBonuses:
+  - 0.8
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 1.02
+  - 0.02
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +0,9 Damage
+  - +22% Accuracy
+  - -25% Reload Time
+  - +19 Max Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  - {fileID: 3151004535030301959, guid: fe2cf74a36ee27241b3414827230e725, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 3
+  flashSpread: 26
 --- !u!1 &5086013156797040371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +2169,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 17
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5647800462568369657
 MonoBehaviour:
@@ -1942,6 +2332,9 @@ MonoBehaviour:
   - {fileID: 983171396914451910}
   - {fileID: 3936315515205341615}
   - {fileID: 4277118613450138114}
+  - {fileID: 1584725056593945842}
+  - {fileID: 2994166217174951008}
+  - {fileID: 6156332918428343795}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2801,9 @@ Transform:
   - {fileID: 2661504400873802245}
   - {fileID: 5194714431035022376}
   - {fileID: 1631621053721637653}
+  - {fileID: 5537800360404143622}
+  - {fileID: 7453397628505095491}
+  - {fileID: 659064434746076032}
   - {fileID: 2971924155989730239}
   - {fileID: 4278947165659766169}
   - {fileID: 6202056126562500248}
@@ -2592,33 +2988,33 @@ MonoBehaviour:
   gunName: Plasma Gun
   gunSprite: {fileID: 21300000, guid: 1582ac1f9ee7d8f4b8a131bf7b01ce0b, type: 3}
   holdingSprite: {fileID: 21300000, guid: 1582ac1f9ee7d8f4b8a131bf7b01ce0b, type: 3}
-  damage: 29.9
-  fireRate: 0.832
-  accuracy: 6.46
-  penetration: 0.28
-  critChance: 0.13
-  reloadTime: 1.846
-  range: 1.47
-  force: 16
-  magazineSize: 6
-  ammo: 42
-  maxAmmo: 48
-  critDamage: 1.65
+  damage: 27.5
+  fireRate: 1.065
+  accuracy: 5.7
+  penetration: 0.26
+  critChance: 0.12
+  reloadTime: 2.16
+  range: 1.25
+  force: 12.5
+  magazineSize: 5
+  ammo: 25
+  maxAmmo: 30
+  critDamage: 1.5
   armorShred: 0
-  vulnerableApplied: 0.05
+  vulnerableApplied: 0
   bulletSpread: 1
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
-  overload: 0
-  slowDuration: 0.2
+  overload: 1
+  slowDuration: 0.1
   stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
   LevelCostCharge: 0
-  cameraShake: 10.3
-  shakeDuration: 0.186
+  cameraShake: 10.9
+  shakeDuration: 0.194
   bulletsLeft: 6
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2628,25 +3024,25 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 090000000a0000000900000008000000
+  Costs: 090000000c0000003000000007000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 0.89
-  - 0.06
-  - 10
-  - 0.07
+  - 1.9
+  - 0.75
+  - 1
+  - 0.05
   LevelUpBonuses:
   - 1.3
-  - 1
+  - 0.95
   - 0.96
   - 0.02
   - 0
-  - 0.97
-  - 0.07
+  - 1
   - 0
   - 0
   - 0
-  - 0.1
+  - 3
+  - 0
   - 0
   - 0
   - 0
@@ -2654,15 +3050,15 @@ MonoBehaviour:
   - 0
   - 0
   UpgradeType:
-  - fireRate
-  - critChance
-  - maxAmmo
-  - critDamage
+  - damage
+  - reloadTime
+  - spread
+  - slowDuration
   UpgradeInfo:
-  - +11% Fire Rate
-  - +6% Crit Chance
-  - +10 Max Ammo
-  - +7% Crit Damage
+  - +1,9 Damage
+  - -25% Reload Time
+  - +1 Spread
+  - +0,05s Slow
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -3222,7 +3618,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 20
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959943114771508542
 MonoBehaviour:

@@ -117,6 +117,9 @@ public class Gun : MonoBehaviour
             case "special":
                 special++;
                 break;
+            case "slowDuration":
+                slowDuration += Values[which];
+                break;
         }
         /*switch (which)
         {
@@ -144,7 +147,7 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        ExperienceGain(Costs[which] * 0.26f);
+        ExperienceGain(Costs[which] * 0.275f);
         //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 

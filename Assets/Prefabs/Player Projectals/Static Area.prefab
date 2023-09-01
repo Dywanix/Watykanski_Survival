@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2021625336800310794, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: duration
-      value: 1.1
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 2021625336800310795, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: m_Color.a
@@ -152,11 +152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2021625336800310796, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.3
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 2021625336800310796, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 2021625336800310796, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -260,8 +260,8 @@ MonoBehaviour:
   BulletTick: {fileID: 9027785523286392333, guid: 794d968d3470f5c4b89b242e18ae8dc2, type: 3}
   Dir: {fileID: 6365642495844801484}
   Form: {fileID: 563174339275664651}
-  frequency: 0.24
-  delay: 0.24
+  frequency: 0.25
+  delay: 0.25
   frequencyRange: 0
   damageEfficiency: 0.32
   bulletsCount: 1
