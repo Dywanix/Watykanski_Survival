@@ -215,7 +215,12 @@ public class PlayerController : MonoBehaviour
                         Invoke("BurstShot", eq.guns[eq.equipped].burstDelay);
                     }
                 }
-                NewTask(eq.guns[eq.equipped].fireRate);
+                if (eq.guns[eq.equipped].Accessories[21] > 0)
+                {
+                    temp = 1f + 0.3f * eq.guns[eq.equipped].Accessories[21] * (eq.guns[eq.equipped].MagazineTotalSize() - eq.guns[eq.equipped].bulletsLeft) / eq.guns[eq.equipped].MagazineTotalSize();
+                    NewTask(eq.guns[eq.equipped].fireRate / temp);
+                }
+                else NewTask(eq.guns[eq.equipped].fireRate);
             }
             else Reload();
         }
@@ -330,6 +335,7 @@ public class PlayerController : MonoBehaviour
             FireDirection(32f, accuracy_change);
         }
 
+        eq.OnHit();
         //eq.SpecialCharges();
     }
 
@@ -354,6 +360,10 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].Accessories[16] > 0)
         {
             firedBullet.damage *= 1f + (0.0025f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16]);
+        }
+        if (eq.guns[eq.equipped].Accessories[22] > 0)
+        {
+            firedBullet.damage *= 1f + (0.006f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[16]);
         }
         firedBullet.DoT = eq.guns[eq.equipped].DoT;
         if (eq.guns[eq.equipped].Accessories[18] > 0)
@@ -570,6 +580,25 @@ public class PlayerController : MonoBehaviour
                 eq.guns[eq.equipped].bulletsLeft += tempi;
             }
             DisplayAmmo();
+
+            if (eq.guns[eq.equipped].Accessories[19] > 0)
+                Invoke("DashFire", 0.44f);
+        }
+    }
+
+    void DashFire()
+    {
+        temp = 1.25f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
+        tempi = 0;
+
+        for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)
+        {
+            tempi++;
+        }
+
+        for (int i = 0; i < tempi; i++)
+        {
+            FireDirection((i * 2 - tempi + 1) * (5f / (1f + 0.05f * tempi)), 0f);
         }
     }
 

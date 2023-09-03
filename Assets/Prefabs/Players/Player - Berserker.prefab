@@ -777,12 +777,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   Items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Accessories: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemImage: {fileID: 0}
   equippedGun: {fileID: 221019377992242562}
   slotFilled: 010000
   equipped: 0
   item: 0
+  freeBulletCharges:
+  - 0
+  - 0
+  - 0
   Caltrop: {fileID: 8623896585513593077, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
   Knife: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
   Cleaver: {fileID: 3420914829355466476, guid: 3164997be77450344b880a82dcd4ee35, type: 3}
@@ -886,6 +890,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.4
   DoT: 0
+  damageGain: 0
   overload: 0
   slowDuration: 0
   stunChance: 0
@@ -988,6 +993,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.4
   DoT: 0
+  damageGain: 0
   overload: 0
   slowDuration: 0
   stunChance: 0
@@ -1703,6 +1709,7 @@ MonoBehaviour:
   pierce: 3
   pierceEfficiency: 0.64
   DoT: 0.1
+  damageGain: 0
   overload: 0
   slowDuration: 0
   stunChance: 0

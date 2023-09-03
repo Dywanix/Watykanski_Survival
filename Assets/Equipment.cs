@@ -18,6 +18,9 @@ public class Equipment : MonoBehaviour
     public int equipped, item;
     float temp;
 
+    // On Hit
+    public float[] freeBulletCharges;
+
     // -- items
     public GameObject Caltrop, Knife, Cleaver;
     public float itemsActivationRate = 1f;
@@ -44,9 +47,14 @@ public class Equipment : MonoBehaviour
         }
     }
 
-    void Update()
+    public void OnHit()
     {
-
+        freeBulletCharges[equipped] += 1f * guns[equipped].Accessories[20];
+        if (freeBulletCharges[equipped] >= 6f)
+        {
+            playerStats.FireDirection(0f, 0f);
+            freeBulletCharges[equipped] -= 6f;
+        }
     }
 
     void ThrowCaltrops()

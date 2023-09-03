@@ -362,7 +362,7 @@ public class CraftingTable : MonoBehaviour
                 break;
             case 2:
                 playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.4f;
-                playerStats.eq.guns[playerStats.eq.equipped].range += 0.03f;
+                playerStats.eq.guns[playerStats.eq.equipped].range += 0.06f;
                 break;
             case 3:
                 playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.14f;
@@ -421,12 +421,26 @@ public class CraftingTable : MonoBehaviour
                 // increase damage further with base damage
                 break;
             case 17:
-                playerStats.eq.guns[playerStats.eq.equipped].range += 0.02f;
+                playerStats.eq.guns[playerStats.eq.equipped].range += 0.04f;
                 playerStats.eq.guns[playerStats.eq.equipped].damageGain += 0.15f;
                 break;
             case 18:
                 playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.06f;
                 // +DoT per Penetration
+                break;
+            case 19:
+                // Dasing fires wave of bullets
+                break;
+            case 20:
+                // additional bullets fired every 6 shots
+                break;
+            case 21:
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.06f;
+                // increased fire rate with missing mag
+                break;
+            case 22:
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.06f;
+                // increase damage based on magazine size
                 break;
         }
         /*tempi = 0;
@@ -549,7 +563,7 @@ public class CraftingTable : MonoBehaviour
                 break;
             case 2:
                 playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.4f;
-                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.03f;
+                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.06f;
                 break;
             case 3:
                 playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.14f;
@@ -608,12 +622,26 @@ public class CraftingTable : MonoBehaviour
                 // increase damage further with base damage
                 break;
             case 17:
-                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.02f;
+                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.04f;
                 playerStats.eq.guns[playerStats.eq.equipped].damageGain -= 0.15f;
                 break;
             case 18:
                 playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.06f;
                 // +DoT per Penetration
+                break;
+            case 19:
+                // Dasing fires wave of bullets
+                break;
+            case 20:
+                // additional bullets fired every 6 shots
+                break;
+            case 21:
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.06f;
+                // increased fire rate with missing mag
+                break;
+            case 22:
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.06f;
+                // increase damage based on magazine size
                 break;
         }
         /*tempi = 0;
