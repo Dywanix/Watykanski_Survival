@@ -12,7 +12,7 @@ public class CraftingTable : MonoBehaviour
     public Button[] EQButtons, OnButtons;
     public Sprite[] AccessorySprite;
     public Sprite BCan, RCan;
-    public int[] AEQValues, ONValues, Weights;
+    public int[] AEQValues, ONValues;
     public GameObject[] tooltips;
 
     public PlayerController playerStats;
@@ -97,7 +97,7 @@ public class CraftingTable : MonoBehaviour
                     }
                     else
                     {
-                        if (Weights[i] <= playerStats.eq.guns[playerStats.eq.equipped].MaxSlots - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots)
+                        if (playerStats.eq.guns[playerStats.eq.equipped].MaxSlots - playerStats.eq.guns[playerStats.eq.equipped].TakenSlots > 0)
                             EQButtons[current].interactable = true;
                         else EQButtons[current].interactable = false;
                     }
@@ -258,7 +258,7 @@ public class CraftingTable : MonoBehaviour
         {
             playerStats.eq.Accessories[AEQValues[which]]--;
             playerStats.eq.guns[playerStats.eq.equipped].Accessories[AEQValues[which]]++;
-            playerStats.eq.guns[playerStats.eq.equipped].TakenSlots += Weights[AEQValues[which]];
+            playerStats.eq.guns[playerStats.eq.equipped].TakenSlots += 1;
 
             /*if (AEQValues[which] < playerStats.accessoriesPerType)
             {
@@ -295,7 +295,7 @@ public class CraftingTable : MonoBehaviour
         playerStats.eq.Accessories[ONValues[which]]++;
         playerStats.eq.guns[playerStats.eq.equipped].Accessories[ONValues[which]]--;
 
-        playerStats.eq.guns[playerStats.eq.equipped].TakenSlots -= Weights[ONValues[which]];
+        playerStats.eq.guns[playerStats.eq.equipped].TakenSlots -= 1;
 
         LoseEffect(ONValues[which]);
         tooltips[ONValues[which]].SetActive(false);
@@ -355,65 +355,78 @@ public class CraftingTable : MonoBehaviour
         switch (which)
         {
             case 0:
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.12f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.15f;
                 break;
             case 1:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.17f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.2f;
                 break;
             case 2:
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.3f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.4f;
                 playerStats.eq.guns[playerStats.eq.equipped].range += 0.03f;
                 break;
             case 3:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.1f;
+                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.14f;
                 break;
-                case 4:
-                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.12f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.12f;
+            case 4:
+                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.1f;
+                playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.15f;
                 break;
-                case 5:
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.75f;
+            case 5:
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 0.7f;
                 break;
-                case 6:
+            case 6:
                 playerStats.eq.guns[playerStats.eq.equipped].magazineMultiplier *= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 1.2f;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime *= 1.12f;
                 playerStats.DisplayAmmo();
                 break;
-                case 7:
+            case 7:
                 playerStats.eq.guns[playerStats.eq.equipped].spreadMultiplyer *= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 0.72f;
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.86f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 0.7f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 0.85f;
                 break;
-                case 8:
+            case 8:
                 playerStats.eq.guns[playerStats.eq.equipped].pierce += 1;
+                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.03f;
                 // +1 pierce on crit
                 break;
-                case 9:
+            case 9:
+                playerStats.eq.guns[playerStats.eq.equipped].pierce += 1;
                 // pierce efficiency
                 break;
-                case 10:
+            case 10:
                 // overload
                 break;
-                case 11:
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.04f;
+            case 11:
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.05f;
                 playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.06f;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.1f;
-                playerStats.eq.guns[playerStats.eq.equipped].range += 0.01f;
-                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.02f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.12f;
+                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.04f;
                 break;
-                case 12:
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.06f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.12f;
+            case 12:
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.075f;
+                playerStats.eq.guns[playerStats.eq.equipped].critDamage += 0.15f;
                 break;
-                case 13:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.12f;
-                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.07f;
+            case 13:
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.15f;
+                playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.075f;
                 break;
-                case 14:
+            case 14:
                 // chance not to consume ammo
                 break;
-                case 15:
+            case 15:
                 // chance to fire 2 additional bullets in cone
+                break;
+            case 16:
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.075f;
+                // increase damage further with base damage
+                break;
+            case 17:
+                playerStats.eq.guns[playerStats.eq.equipped].range += 0.02f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageGain += 0.15f;
+                break;
+            case 18:
+                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.06f;
+                // +DoT per Penetration
                 break;
         }
         /*tempi = 0;
@@ -529,66 +542,78 @@ public class CraftingTable : MonoBehaviour
         switch (which)
         {
             case 0:
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.12f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.15f;
                 break;
             case 1:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.17f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.2f;
                 break;
             case 2:
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.3f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.4f;
                 playerStats.eq.guns[playerStats.eq.equipped].range -= 0.03f;
                 break;
             case 3:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.1f;
+                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.14f;
                 break;
                 case 4:
-                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.12f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.12f;
+                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.1f;
+                playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.15f;
                 break;
                 case 5:
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.75f;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.7f;
                 break;
                 case 6:
                 playerStats.eq.guns[playerStats.eq.equipped].magazineMultiplier /= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 1.2f;
+                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 1.12f;
                 playerStats.DisplayAmmo();
                 break;
                 case 7:
                 playerStats.eq.guns[playerStats.eq.equipped].spreadMultiplyer /= 2;
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 0.72f;
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.86f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 0.7f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 0.85f;
                 break;
                 case 8:
                 playerStats.eq.guns[playerStats.eq.equipped].pierce -= 1;
+                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.03f;
                 // +1 pierce on crit
                 break;
                 case 9:
+                playerStats.eq.guns[playerStats.eq.equipped].pierce -= 1;
                 // pierce efficiency
                 break;
                 case 10:
                 // overload
-                playerStats.eq.guns[playerStats.eq.equipped].reloadTime /= 0.96f;
                 break;
                 case 11:
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.04f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.05f;
                 playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.06f;
-                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.1f;
-                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.01f;
-                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.02f;
+                playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.12f;
+                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.04f;
                 break;
                 case 12:
-                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.06f;
-                playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.12f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.075f;
+                playerStats.eq.guns[playerStats.eq.equipped].critDamage -= 0.15f;
                 break;
                 case 13:
-                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.12f;
-                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.07f;
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.15f;
+                playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.075f;
                 break;
                 case 14:
                 // chance not to consume ammo
                 break;
                 case 15:
                 // chance to fire 2 additional bullets in cone
+                break;
+            case 16:
+                playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.075f;
+                // increase damage further with base damage
+                break;
+            case 17:
+                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.02f;
+                playerStats.eq.guns[playerStats.eq.equipped].damageGain -= 0.15f;
+                break;
+            case 18:
+                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.06f;
+                // +DoT per Penetration
                 break;
         }
         /*tempi = 0;

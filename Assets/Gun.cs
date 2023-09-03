@@ -28,6 +28,7 @@ public class Gun : MonoBehaviour
     public int pierce;
     public float pierceEfficiency;
     public float DoT;
+    public float damageGain;
     public int overload;
     public float slowDuration;
     public float stunChance;
@@ -147,7 +148,7 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        ExperienceGain(Costs[which] * 0.275f);
+        ExperienceGain(Costs[which] * 0.3f);
         //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 

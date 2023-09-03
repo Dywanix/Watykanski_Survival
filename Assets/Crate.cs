@@ -30,7 +30,7 @@ public class Crate : MonoBehaviour
         {
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-            health += playerStats.dayCount * 12; scrapDroppedRange[1] += playerStats.dayCount * 2; toolsDroppedRange[1] += playerStats.dayCount / 2; dropChance += 0.001f * playerStats.dayCount;
+            health += playerStats.dayCount * 12; scrapDroppedRange[1] += playerStats.dayCount * 2; toolsDroppedRange[1] += playerStats.dayCount / 2; dropChance += 0.0012f * playerStats.dayCount;
         }
     }
 
@@ -82,7 +82,6 @@ public class Crate : MonoBehaviour
             DropScrap(scrapDroppedRange[0], scrapDroppedRange[1]);
             DropTools(toolsDroppedRange[0], toolsDroppedRange[1]);
 
-            DropItem(3);
             DropItem(4);
 
             for (int i = 0; i < itemsCount; i++)

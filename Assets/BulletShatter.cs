@@ -46,6 +46,7 @@ public class BulletShatter : MonoBehaviour
         BulletsShards.duration = ThisBullet.duration + bonusDuration;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;
         BulletsShards.DoT = ThisBullet.DoT;
+        BulletsShards.damageGain = ThisBullet.damageGain;
         BulletsShards.penetration = ThisBullet.penetration;
         BulletsShards.armorShred = ThisBullet.armorShred * damageEfficiency;
         BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied * damageEfficiency;
