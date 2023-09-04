@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 Dash();
+            if (Input.GetKeyDown(KeyCode.M))
+                eq.Accessories[Random.Range(0, eq.Accessories.Length)]++;
 
             GetInput();
             Movement();
@@ -217,7 +219,7 @@ public class PlayerController : MonoBehaviour
                 }
                 if (eq.guns[eq.equipped].Accessories[21] > 0)
                 {
-                    temp = 1f + 0.3f * eq.guns[eq.equipped].Accessories[21] * (eq.guns[eq.equipped].MagazineTotalSize() - eq.guns[eq.equipped].bulletsLeft) / eq.guns[eq.equipped].MagazineTotalSize();
+                    temp = 1f + 0.35f * eq.guns[eq.equipped].Accessories[21] * (eq.guns[eq.equipped].MagazineTotalSize() - eq.guns[eq.equipped].bulletsLeft) / eq.guns[eq.equipped].MagazineTotalSize();
                     NewTask(eq.guns[eq.equipped].fireRate / temp);
                 }
                 else NewTask(eq.guns[eq.equipped].fireRate);

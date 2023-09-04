@@ -383,7 +383,7 @@ public class Enemy : MonoBehaviour
 
     void DoTproc()
     {
-        temp = 1f + DoT * 0.4f;
+        temp = 2f + DoT * 0.25f;
         DoT -= temp;
         TakeDamage(temp / DamageTakenMultiplyer(1f), false, true);
     }

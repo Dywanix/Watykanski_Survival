@@ -35,6 +35,7 @@ public class Gun : MonoBehaviour
     public float stunDuration;
     public int burst;
     public float burstDelay;
+    public float onHitModifier;
 
     [Header("Inne Staty")]
     public float LevelCostCharge;

@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162e415cc00535c40b5546e4babce5a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 362476448506642160}
+  lightSource: {fileID: 362476448506642160}
   duration: 0.58
   startingPower: 1.5
 --- !u!1 &3160103584303975001

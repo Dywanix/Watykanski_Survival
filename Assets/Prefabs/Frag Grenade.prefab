@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52b22806be94344fbc92c35c971a4da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 3582208000087308208, guid: 951f16eefe7cb174a9e1072e5f7883d0, type: 3}
+  Bullet: {fileID: 1834730458111296259, guid: eb0380f572359a14aa164e92d08ceb8a, type: 3}
   Dir: {fileID: 8882339044340707084}
   form: {fileID: 1776967414326373204}
   delay: 1.08

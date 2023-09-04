@@ -19,7 +19,8 @@ public class Equipment : MonoBehaviour
     float temp;
 
     // On Hit
-    public float[] freeBulletCharges;
+    public GameObject Peacemaker, Boomerange;
+    public float[] freeBulletCharges, peacemakerCharges, boomerangCharges;
 
     // -- items
     public GameObject Caltrop, Knife, Cleaver;
@@ -54,6 +55,58 @@ public class Equipment : MonoBehaviour
         {
             playerStats.FireDirection(0f, 0f);
             freeBulletCharges[equipped] -= 6f;
+        }
+
+        peacemakerCharges[equipped] += (1f + 0.2f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired();
+        if (peacemakerCharges[equipped] >= 12f)
+        {
+            FirePeacemaker();
+            peacemakerCharges[equipped] -= 12f;
+        }
+
+        boomerangCharges[equipped] += (1f + 0.1f * guns[equipped].fireRate) * guns[equipped].Accessories[24];
+        if (peacemakerCharges[equipped] >= 11f)
+        {
+            FireBoomerang();
+            peacemakerCharges[equipped] -= 11f;
+        }
+    }
+
+    void FirePeacemaker()
+    {
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-0.7f * guns[equipped].accuracy, 0.7f * guns[equipped].accuracy));
+        GameObject bullet = Instantiate(Peacemaker, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * 20f * Random.Range(0.95f, 1.05f), ForceMode2D.Impulse);
+
+        playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        playerStats.SetBullet(1f);
+        playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+        playerStats.firedBullet.duration = 1.26f;
+
+        playerStats.firedBullet.damage *= 1.2f + 0.1f * playerStats.firedBullet.pierce;
+        playerStats.firedBullet.penetration += 0.12f;
+        playerStats.firedBullet.pierceEfficiency += 0.15f * playerStats.firedBullet.pierce;
+        playerStats.firedBullet.pierce = 5;
+    }
+
+    void FireBoomerang()
+    {
+        for (int i = 0; i < guns[equipped].BulletsFired(); i++)
+        {
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-0.6f * guns[equipped].accuracy - guns[equipped].BulletsFired() * 1f, 0.6f * guns[equipped].accuracy + guns[equipped].BulletsFired() * 1f));
+            GameObject bullet = Instantiate(Boomerange, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * 18f * Random.Range(0.96f, 1.04f), ForceMode2D.Impulse);
+
+            playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            playerStats.SetBullet(1f);
+            playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+            playerStats.firedBullet.duration = 30f;
+
+            playerStats.firedBullet.damage *= 1f + 0.3f * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.pierce += 7;
+            playerStats.firedBullet.pierceEfficiency = 0.6f + 0.5f * playerStats.firedBullet.pierceEfficiency;
         }
     }
 

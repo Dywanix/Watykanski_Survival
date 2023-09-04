@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoomerangAxe : MonoBehaviour
 {
     public Chase chase;
-    public Rotation rotation;
+    //public Rotation rotation;
     public float delay;
 
     bool returning;

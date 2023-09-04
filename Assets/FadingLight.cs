@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadingLight : MonoBehaviour
 {
-	public UnityEngine.Rendering.Universal.Light2D light;
+	public UnityEngine.Rendering.Universal.Light2D lightSource;
 	public float duration, startingPower;
 	float fading;
 
@@ -16,6 +16,6 @@ public class FadingLight : MonoBehaviour
 	void Update()
 	{
 		startingPower -= fading * Time.deltaTime;
-		light.intensity = startingPower;
+		lightSource.intensity = startingPower;
 	}
 }
