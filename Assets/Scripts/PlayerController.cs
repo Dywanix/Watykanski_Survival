@@ -329,7 +329,6 @@ public class PlayerController : MonoBehaviour
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet(1f);
-            eq.Flash();
         }
         if (eq.guns[eq.equipped].Accessories[15] * 0.15f >= Random.Range(0f, 1f))
         {
@@ -351,7 +350,6 @@ public class PlayerController : MonoBehaviour
             bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet(1f);
-            eq.Flash();
         }
     }
 

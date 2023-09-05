@@ -54,8 +54,8 @@ public class Waves : MonoBehaviour
         fight = true;
         StartButton.SetActive(false);
         round++;
-        wavesCount = 5 + round / 3;
-        waveDuration = 12f + 0.6f * round;
+        wavesCount = 5 + round / 4;
+        waveDuration = 14f + 0.8f * round;
         SummonWave();
     }
 

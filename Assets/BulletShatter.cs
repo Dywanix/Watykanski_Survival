@@ -16,7 +16,10 @@ public class BulletShatter : MonoBehaviour
     {
         delay *= Random.Range(1f, delayRange);
         if (countBasedOnGun)
+        {
             bulletsCount = ThisBullet.special;
+            spread /= 1f + 0.1f * bulletsCount;
+        }
     }
 
     void Update()

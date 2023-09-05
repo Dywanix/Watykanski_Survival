@@ -800,7 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chase: {fileID: 5983096465061855160}
-  delay: 1.85
+  delay: 1.8
 --- !u!114 &5983096465061855160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,9 +817,9 @@ MonoBehaviour:
   Body: {fileID: 6026023455536305859}
   playerBody: {fileID: 0}
   Dir: {fileID: 2979172989221059672}
-  movementSpeed: 15
-  accelerationFlat: 0.125
-  accelerationProc: 0.0156
+  movementSpeed: 16
+  accelerationFlat: 0.133
+  accelerationProc: 0.0177
   active: 0
 --- !u!1 &8363990378360051913
 GameObject:

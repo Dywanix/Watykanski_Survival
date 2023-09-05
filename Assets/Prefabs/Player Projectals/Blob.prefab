@@ -49,7 +49,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
   m_Color: {r: 0.41176474, g: 0.6313726, b: 0.10588236, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 2
+  m_PointLightOuterRadius: 2.4
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -119,9 +119,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+      propertyPath: spread
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+      propertyPath: accuracy
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: BulletShard
       value: 
       objectReference: {fileID: 5893359571365976471, guid: 9402ba422403973408d900d7467d626b, type: 3}
+    - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+      propertyPath: bulletForce
+      value: 15.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+      propertyPath: bonusDuration
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 3490393783323527124, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: m_RootOrder
       value: 0

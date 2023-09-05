@@ -74,8 +74,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 6.28
-  shakeDuration: 0.095
+  cameraShake: 7.14
+  shakeDuration: 0.098
   bulletsLeft: 44
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -336,8 +336,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 2.029
   LevelCostCharge: 0
-  cameraShake: 19.4
-  shakeDuration: 0.118
+  cameraShake: 21.5
+  shakeDuration: 0.123
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -467,8 +467,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 7.44
-  shakeDuration: 0.102
+  cameraShake: 7.51
+  shakeDuration: 0.103
   bulletsLeft: 11
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -599,8 +599,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 14.1
-  shakeDuration: 0.13
+  cameraShake: 11.5
+  shakeDuration: 0.112
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -730,8 +730,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 3.3
-  shakeDuration: 0.222
+  cameraShake: 9.9
+  shakeDuration: 0.111
   bulletsLeft: 2
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -741,45 +741,45 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 09000000070000000900000017000000
+  Costs: 0b000000070000003c0000000d000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 3.9
-  - 0.08
+  - 0.86
+  - 0.88
   - 1
-  - 1
+  - 0.14
   LevelUpBonuses:
-  - 0
-  - 0.96
-  - 0.93
+  - 2.4
+  - 1
+  - 1
   - 0.03
-  - 0.02
-  - 0.94
+  - 0.03
+  - 0.99
+  - 0
+  - 0
+  - 1
+  - 2
   - 0
   - 0
   - 0
   - 0
-  - 0
-  - 0
-  - 0
-  - 0.05
   - 0
   - 0
   - 0
   UpgradeType:
-  - damage
-  - range
-  - magazineSize
+  - fireRate
+  - reloadTime
   - pierce
+  - pierceEfficiency
   UpgradeInfo:
-  - +3,9 Damage
-  - +8 Range
-  - +1 Magazine Size
+  - +14% Fire Rate
+  - -12% Reload Time
   - +1 Pierce
+  - +14% Pierce Efficiency
   infiniteMagazine: 0
   infiniteAmmo: 0
-  individualReload: 0
-  individualReloadCount: 0
+  individualReload: 1
+  individualReloadCount: 1
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -861,8 +861,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 20.9
-  shakeDuration: 0.196
+  cameraShake: 21.5
+  shakeDuration: 0.19
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -872,7 +872,7 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 0a000000070000000d00000039000000
+  Costs: 0a000000070000000d00000028000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
   - 3.4
@@ -992,8 +992,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.72
   LevelCostCharge: 0
-  cameraShake: 8.4
-  shakeDuration: 0.124
+  cameraShake: 9.2
+  shakeDuration: 0.13
   bulletsLeft: 7
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1123,8 +1123,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 23.2
-  shakeDuration: 0.16
+  cameraShake: 24.3
+  shakeDuration: 0.165
   bulletsLeft: 6
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1254,8 +1254,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.1
   LevelCostCharge: 0
-  cameraShake: 10.3
-  shakeDuration: 0.186
+  cameraShake: 10.8
+  shakeDuration: 0.192
   bulletsLeft: 6
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1618,8 +1618,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 5.68
-  shakeDuration: 0.086
+  cameraShake: 7.6
+  shakeDuration: 0.1
   bulletsLeft: 26
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1982,8 +1982,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.8
   LevelCostCharge: 0
-  cameraShake: 10.4
-  shakeDuration: 0.143
+  cameraShake: 11.5
+  shakeDuration: 0.15
   bulletsLeft: 11
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2113,8 +2113,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.144
   LevelCostCharge: 0
-  cameraShake: 9.5
-  shakeDuration: 0.169
+  cameraShake: 9.8
+  shakeDuration: 0.166
   bulletsLeft: 21
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2124,25 +2124,25 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 070000000a0000000c00000007000000
+  Costs: 0c00000006000000070000000b000000
   Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 0.9
-  - 0.78
-  - 0.75
-  - 19
+  - 1.8
+  - 0.93
+  - 0.03
+  - 1
   LevelUpBonuses:
-  - 0.8
-  - 0.92
+  - 0.3
   - 1
-  - 0.04
+  - 0.96
   - 0
-  - 1.02
-  - 0.02
-  - 0
-  - 1
+  - 0.01
+  - 0.98
   - 0
   - 0
+  - 2
+  - 11
+  - 0.05
   - 0
   - 0
   - 0
@@ -2151,14 +2151,14 @@ MonoBehaviour:
   - 0
   UpgradeType:
   - damage
-  - accuracy
-  - reloadTime
-  - maxAmmo
+  - fireRate
+  - penetration
+  - special
   UpgradeInfo:
-  - +0,9 Damage
-  - +22% Accuracy
-  - -25% Reload Time
-  - +19 Max Ammo
+  - +1,8 Damage
+  - +7% Fire Rate
+  - +3% Penetration
+  - +34% X-plosion Damage
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
@@ -2479,8 +2479,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 24.3
-  shakeDuration: 0.226
+  cameraShake: 27.6
+  shakeDuration: 0.228
   bulletsLeft: 3
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2610,8 +2610,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 14.5
-  shakeDuration: 0.184
+  cameraShake: 15
+  shakeDuration: 0.175
   bulletsLeft: 7
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2741,8 +2741,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.7
   LevelCostCharge: 0
-  cameraShake: 19.9
-  shakeDuration: 0.271
+  cameraShake: 24.6
+  shakeDuration: 0.275
   bulletsLeft: 5
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2928,8 +2928,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 8.4
-  shakeDuration: 0.13
+  cameraShake: 10
+  shakeDuration: 0.156
   bulletsLeft: 24
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3059,8 +3059,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 2.703
   LevelCostCharge: 0
-  cameraShake: 10.9
-  shakeDuration: 0.194
+  cameraShake: 12
+  shakeDuration: 0.204
   bulletsLeft: 6
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3190,8 +3190,8 @@ MonoBehaviour:
   burstDelay: 0.2
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 7.84
-  shakeDuration: 0.124
+  cameraShake: 8.7
+  shakeDuration: 0.13
   bulletsLeft: 27
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3321,8 +3321,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.576
   LevelCostCharge: 0
-  cameraShake: 20.9
-  shakeDuration: 0.176
+  cameraShake: 21.9
+  shakeDuration: 0.171
   bulletsLeft: 4
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3452,8 +3452,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0.98
   LevelCostCharge: 0
-  cameraShake: 6.64
-  shakeDuration: 0.102
+  cameraShake: 7.7
+  shakeDuration: 0.105
   bulletsLeft: 18
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3584,8 +3584,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0.9
   LevelCostCharge: 0
-  cameraShake: 16.5
-  shakeDuration: 0.19
+  cameraShake: 17.3
+  shakeDuration: 0.196
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1

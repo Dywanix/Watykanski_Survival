@@ -110,6 +110,9 @@ public class Gun : MonoBehaviour
             case "pierce":
                 pierce++;
                 break;
+            case "pierceEfficiency":
+                pierceEfficiency += Values[which];
+                break;
             case "DoT":
                 DoT += Values[which];
                 break;
@@ -149,7 +152,7 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        ExperienceGain(Costs[which] * 0.3f);
+        ExperienceGain(Costs[which] * 0.31f);
         //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 

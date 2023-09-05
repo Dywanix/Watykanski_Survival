@@ -50,6 +50,8 @@ public class Equipment : MonoBehaviour
 
     public void OnHit()
     {
+        //Flash();
+
         freeBulletCharges[equipped] += 1f * guns[equipped].Accessories[20];
         if (freeBulletCharges[equipped] >= 6f)
         {
@@ -65,10 +67,10 @@ public class Equipment : MonoBehaviour
         }
 
         boomerangCharges[equipped] += (1f + 0.1f * guns[equipped].fireRate) * guns[equipped].Accessories[24];
-        if (peacemakerCharges[equipped] >= 11f)
+        if (boomerangCharges[equipped] >= 11f)
         {
             FireBoomerang();
-            peacemakerCharges[equipped] -= 11f;
+            boomerangCharges[equipped] -= 11f;
         }
     }
 
@@ -102,11 +104,11 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             playerStats.SetBullet(1f);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
-            playerStats.firedBullet.duration = 30f;
+            playerStats.firedBullet.duration = 33f;
 
-            playerStats.firedBullet.damage *= 1f + 0.3f * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.damage *= 1f + 0.06f * playerStats.firedBullet.pierce + 0.3f * playerStats.firedBullet.pierceEfficiency;
             playerStats.firedBullet.pierce += 7;
-            playerStats.firedBullet.pierceEfficiency = 0.6f + 0.5f * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.pierceEfficiency = 0.6f + 0.6f * playerStats.firedBullet.pierceEfficiency;
         }
     }
 

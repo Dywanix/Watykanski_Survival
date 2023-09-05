@@ -185,15 +185,15 @@ public class Berserker : MonoBehaviour
         AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
         if (ability2Perks[3])
         {
-            bullet_body.AddForce(playerStats.Barrel.up * 15.4f * playerStats.DamageDealtMultiplyer(1.03f), ForceMode2D.Impulse);
+            bullet_body.AddForce(playerStats.Barrel.up * 15.8f * playerStats.DamageDealtMultiplyer(1.06f), ForceMode2D.Impulse);
             AxeThrown.duration += 0.16f;
             if (ability2Perks[4])
                 AxeThrown.duration *= 16.7f;
         }
-        else bullet_body.AddForce(playerStats.Barrel.up * 14.4f * playerStats.DamageDealtMultiplyer(0.83f), ForceMode2D.Impulse);
+        else bullet_body.AddForce(playerStats.Barrel.up * 14.75f * playerStats.DamageDealtMultiplyer(0.85f), ForceMode2D.Impulse);
         if (ability2Perks[2])
-            AxeThrown.damage = (31.2f + 3f * playerStats.level + 0.05f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.9f);
-        else AxeThrown.damage = (29f + 2f * playerStats.level + 0.04f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.65f);
+            AxeThrown.damage = (31.2f + 3f * playerStats.level + 0.05f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.95f);
+        else AxeThrown.damage = (29f + 2f * playerStats.level + 0.04f * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1.68f);
         if (ability2Perks[0])
         {
             axeClear = bullet.GetComponent(typeof(ClearProjectals)) as ClearProjectals;

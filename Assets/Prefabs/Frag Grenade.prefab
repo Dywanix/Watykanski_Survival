@@ -176,5 +176,5 @@ MonoBehaviour:
   delay: 1.08
   delayMultiplyer: 0.193
   accuracy: 7
-  bulletForce: 8.8
+  bulletForce: 8.4
   bulletsCount: 7

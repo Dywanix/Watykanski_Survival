@@ -137,7 +137,7 @@ MonoBehaviour:
   delay: 0.24
   delayMultiplyer: 0.083
   accuracy: 0
-  bulletForce: 40
+  bulletForce: 38
   bulletsCount: 1
 --- !u!50 &6120307722163391349
 Rigidbody2D:
