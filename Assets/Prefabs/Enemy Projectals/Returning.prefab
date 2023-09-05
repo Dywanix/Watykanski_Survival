@@ -120,5 +120,7 @@ MonoBehaviour:
   Bullet: {fileID: 6559750192261573265, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
   Body: {fileID: 2148708059826236508}
   Barrel: {fileID: 1743724905686971112}
-  delay: 1.5
+  delay: 1.6
   delayMultiplyer: 0.12
+  accuracy: 0
+  force: 10

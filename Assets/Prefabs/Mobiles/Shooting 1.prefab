@@ -72,10 +72,10 @@ MonoBehaviour:
   dead: 0
   hpBar: {fileID: 381832870102724009}
   weight: 6
-  maxHealth: 64
-  health: 64
+  maxHealth: 70
+  health: 70
   regen: 0
-  armor: 14.9
+  armor: 17
   vulnerable: 0
   DoT: 0
   burning: 0
