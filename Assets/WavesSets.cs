@@ -5,4 +5,5 @@ using UnityEngine;
 public class WavesSets : MonoBehaviour
 {
     public GameObject[] Mobs;
+    public float[] weights;
 }

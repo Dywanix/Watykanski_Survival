@@ -8,11 +8,19 @@ public class Waves : MonoBehaviour
     public Day_Night_Cycle GN;
     public GameObject StartButton, Glow, Player;
     public WavesSets[] WaveSet;
+    public Wave[] waves;
+    public Transform[] SpawnPoints;
     public Image DurationFill;
     public TMPro.TextMeshProUGUI WavesLeftCounter;
-    float waveDuration, waveTimer;
-    int round, wavesCount;
+    public float bonusUnit;
+    public float waveDuration, waveTimer, waveStrength, currentStrength;
+    public int round, wavesCount, rolled;
     bool fight;
+
+    void Start()
+    {
+        bonusUnit = -1f;
+    }
 
     void Update()
     {
@@ -55,16 +63,49 @@ public class Waves : MonoBehaviour
         StartButton.SetActive(false);
         round++;
         wavesCount = 5 + round / 4;
-        waveDuration = 14f + 0.8f * round;
+        waveStrength = 28f + 7f * round;
+        bonusUnit -= 0.6f + 0.12f * waveStrength;
+        //waveDuration = 14f + 0.8f * round;
         SummonWave();
+        BonusGain();
     }
 
     void SummonWave()
     {
         wavesCount--;
-        waveTimer = waveDuration;
-        Instantiate(WaveSet[round - 1].Mobs[Random.Range(0, WaveSet[round - 1].Mobs.Length)], transform.position, transform.rotation);
         WavesLeftCounter.text = wavesCount.ToString("");
+
+        rolled = Random.Range(0, WaveSet[round - 1].Mobs.Length);
+        currentStrength = WaveSet[round - 1].weights[rolled];
+        waveDuration = 12f + 0.1f * currentStrength;
+        Instantiate(WaveSet[round - 1].Mobs[rolled], transform.position, transform.rotation);
+
+        if (waveStrength > currentStrength)
+            bonusUnit += (waveStrength - currentStrength) * (1f + 0.005f * currentStrength);
+        else bonusUnit -= (currentStrength - waveStrength) * (0.97f + 0.003f * currentStrength);
+        BonusCheck();
+
+        waveTimer = waveDuration;
+    }
+
+    void BonusGain()
+    {
+        if (fight)
+        {
+            bonusUnit += 0.25f + 0.025f * waveStrength;
+            Invoke("BonusGain", 4.66f);
+            BonusCheck();
+        }
+    }
+
+    void BonusCheck()
+    {
+        if (bonusUnit >= 0f)
+        {
+            rolled = Random.Range(0, waves[round - 1].Mobs.Length);
+            Instantiate(waves[round - 1].Mobs[rolled], SpawnPoints[Random.Range(0, SpawnPoints.Length)].position, transform.rotation);
+            bonusUnit -= waves[round - 1].weights[rolled];
+        }
     }
 
     void EndRound()
