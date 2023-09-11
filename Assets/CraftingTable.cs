@@ -442,6 +442,19 @@ public class CraftingTable : MonoBehaviour
                 playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.06f;
                 // increase damage based on magazine size
                 break;
+            case 23:
+                // Peacemaker - On Hit
+                break;
+            case 24:
+                // Boomerang - On Hit
+                break;
+            case 25:
+                // Wave - On Hit
+                break;
+            case 26:
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.1f;
+                // On Hit Rate Increase
+                break;
         }
         /*tempi = 0;
         while (which >= playerStats.accessoriesPerType)
@@ -642,6 +655,19 @@ public class CraftingTable : MonoBehaviour
             case 22:
                 playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.06f;
                 // increase damage based on magazine size
+                break;
+            case 23:
+                // Peacemaker - On Hit
+                break;
+            case 24:
+                // Boomerang - On Hit
+                break;
+            case 25:
+                // Wave - On Hit
+                break;
+            case 26:
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.1f;
+                // On Hit Rate Increase
                 break;
         }
         /*tempi = 0;

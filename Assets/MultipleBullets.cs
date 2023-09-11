@@ -38,5 +38,6 @@ public class MultipleBullets : MonoBehaviour
         BulletsShards.pierce = ThisBullet.pierce;
         BulletsShards.pierceEfficiency = ThisBullet.pierceEfficiency;
         BulletsShards.crit = ThisBullet.crit;
+        BulletsShards.special = ThisBullet.special;
     }
 }

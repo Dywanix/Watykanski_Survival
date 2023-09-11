@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: armor
-      value: 40
+      value: 41
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: force
@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: health
-      value: 102
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: throws
@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 2209203618792639154, guid: 884250bbc44ced94da5bb4fbe46f00e7, type: 3}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: maxHealth
-      value: 102
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: itemChance
@@ -117,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: attackSpeed
-      value: 2.68
+      value: 2.66
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: scrapChance

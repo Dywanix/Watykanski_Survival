@@ -19,8 +19,9 @@ public class Equipment : MonoBehaviour
     float temp;
 
     // On Hit
-    public GameObject Peacemaker, Boomerange;
-    public float[] freeBulletCharges, peacemakerCharges, boomerangCharges;
+    public GameObject Peacemaker, Boomerange, Wave;
+    public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges;
+    public MultipleBullets waveBullet;
 
     // -- items
     public GameObject Caltrop, Knife, Cleaver;
@@ -52,25 +53,32 @@ public class Equipment : MonoBehaviour
     {
         //Flash();
 
-        freeBulletCharges[equipped] += 1f * guns[equipped].Accessories[20];
+        freeBulletCharges[equipped] += 1f * guns[equipped].Accessories[20] * (1f + 0.2f * guns[equipped].Accessories[26]);
         if (freeBulletCharges[equipped] >= 6f)
         {
             playerStats.FireDirection(0f, 0f);
             freeBulletCharges[equipped] -= 6f;
         }
 
-        peacemakerCharges[equipped] += (1f + 0.2f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired();
+        peacemakerCharges[equipped] += (1f + 0.2f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired() * (1f + 0.2f * guns[equipped].Accessories[26]);
         if (peacemakerCharges[equipped] >= 12f)
         {
             FirePeacemaker();
             peacemakerCharges[equipped] -= 12f;
         }
 
-        boomerangCharges[equipped] += (1f + 0.1f * guns[equipped].fireRate) * guns[equipped].Accessories[24];
+        boomerangCharges[equipped] += (1f + 0.1f * guns[equipped].fireRate) * guns[equipped].Accessories[24] * (1f + 0.2f * guns[equipped].Accessories[26]);
         if (boomerangCharges[equipped] >= 11f)
         {
             FireBoomerang();
             boomerangCharges[equipped] -= 11f;
+        }
+
+        waveCharges[equipped] += 1f * guns[equipped].Accessories[25] * guns[equipped].BulletsFired() * (1f + 0.2f * guns[equipped].Accessories[26]);
+        if (waveCharges[equipped] >= 15f)
+        {
+            FireWave();
+            waveCharges[equipped] -= 15f;
         }
     }
 
@@ -110,6 +118,19 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet.pierce += 7;
             playerStats.firedBullet.pierceEfficiency = 0.6f + 0.6f * playerStats.firedBullet.pierceEfficiency;
         }
+    }
+
+    void FireWave()
+    {
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(guns[equipped].accuracy, guns[equipped].accuracy));
+        GameObject bullet = Instantiate(Wave, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * 20f * Random.Range(0.95f, 1.05f), ForceMode2D.Impulse);
+
+        playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        playerStats.SetBullet(1f);
+        waveBullet = bullet.GetComponent(typeof(MultipleBullets)) as MultipleBullets;
+        waveBullet.BulletShard = guns[equipped].bulletPrefab[Random.Range(0, guns[equipped].bulletPrefab.Length)];
     }
 
     void ThrowCaltrops()

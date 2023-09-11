@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EnemyState
 {
@@ -27,8 +28,8 @@ public class Enemy : MonoBehaviour
     public bool rare, boss, dead;
 
     [Header("Health & Resistance")]
-    public Bar hpBar;
     public int weight;
+    public Image healthFill, DoTFill;
     public float maxHealth, health, regen, armor, vulnerable, DoT, burning;
 
     [Header("Movement")]
@@ -96,8 +97,8 @@ public class Enemy : MonoBehaviour
         itemChance *= 1f + 0.08f * playerStats.eq.Items[9];
 
         health = maxHealth;
-        hpBar.SetMaxValue(maxHealth);
-        hpBar.SetValue(health);
+        DoTFill.fillAmount = 1f;
+        healthFill.fillAmount = 1f;
 
         Invoke("Tick", 0.6f);
     }
@@ -290,7 +291,8 @@ public class Enemy : MonoBehaviour
     void TakeDamage(float value, bool crited, bool display)
     {
         health -= value;
-        hpBar.SetValue(health);
+        DoTFill.fillAmount = (health - DoT) / maxHealth;
+        healthFill.fillAmount = health / maxHealth;
 
         if (display)
         {
@@ -336,7 +338,8 @@ public class Enemy : MonoBehaviour
         health += value;
         if (health > maxHealth)
             health = maxHealth;
-        hpBar.SetValue(health);
+        DoTFill.fillAmount = (health - DoT) / maxHealth;
+        healthFill.fillAmount = health / maxHealth;
     }
 
     public void GainStun(float duration)
@@ -376,8 +379,8 @@ public class Enemy : MonoBehaviour
 
     void Burn()
     {
-        vulnerable += 0.08f * 0.5f;
-        temp = (3f + maxHealth * 0.01f) * 0.5f;
+        vulnerable += 0.04f;
+        temp = (1.5f + maxHealth * 0.005f);
         TakeDamage(temp / DamageTakenMultiplyer(0.8f), false, false);
     }
 

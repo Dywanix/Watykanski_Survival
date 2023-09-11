@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: health
-      value: 73
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: weight
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 1834730458111296259, guid: eb0380f572359a14aa164e92d08ceb8a, type: 3}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: maxHealth
-      value: 73
+      value: 74
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: burstDelay

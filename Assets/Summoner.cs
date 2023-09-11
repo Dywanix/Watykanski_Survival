@@ -7,16 +7,15 @@ public class Summoner : MonoBehaviour
     public Enemy enemy;
     public GameObject Minion;
 
-    int extraSummon = 3;
     public float summonTimer, summonRate;
 
     Vector2 spawnLocation;
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= 20f)
+        if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= 25f)
         {
-            enemy.movementSpeed = 0.01f + 0.18f * Vector3.Distance(transform.position, enemy.Player.transform.position);
+            //enemy.movementSpeed = 0.01f + 0.18f * Vector3.Distance(transform.position, enemy.Player.transform.position);
             summonTimer -= Time.deltaTime;
             if (summonTimer <= 0f)
                 Summon();
@@ -27,13 +26,6 @@ public class Summoner : MonoBehaviour
     {
         summonTimer += summonRate;
         Spawn();
-        extraSummon++;
-        if (extraSummon >= 3)
-        {
-            extraSummon -= 3;
-            Spawn();
-            summonTimer += 0.2f * summonRate;
-        }
 
         summonRate *= 1.02f;
         enemy.vulnerable += 0.01f;
@@ -41,8 +33,8 @@ public class Summoner : MonoBehaviour
 
     void Spawn()
     {
-        spawnLocation.x = transform.position.x + Random.Range(-1f, 1f);
-        spawnLocation.y = transform.position.y + Random.Range(-1f, 1f);
+        spawnLocation.x = transform.position.x + Random.Range(-1.2f, 1.2f);
+        spawnLocation.y = transform.position.y + Random.Range(-1.2f, 1.2f);
         Instantiate(Minion, spawnLocation, transform.rotation);
     }
 }

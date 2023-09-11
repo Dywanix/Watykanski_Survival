@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Bar : MonoBehaviour
 {
-    public Slider slider;
-    public Image fill;
+    public Slider slider, DoT;
+    //public Image fill;
 
     public void SetMaxValue(float value)
     {

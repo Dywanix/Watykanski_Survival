@@ -24,6 +24,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4056697311820216878, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4056697311820216878, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
       propertyPath: m_Intensity
       value: 1.05
       objectReference: {fileID: 0}
@@ -34,6 +38,18 @@ PrefabInstance:
     - target: {fileID: 4056697311820216878, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
       propertyPath: m_PointLightOuterRadius
       value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788063484116980271, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788063484116980271, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4788063484116980271, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7058824
       objectReference: {fileID: 0}
     - target: {fileID: 6270391669353233514, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
       propertyPath: duration

@@ -63,7 +63,7 @@ public class Waves : MonoBehaviour
         StartButton.SetActive(false);
         round++;
         wavesCount = 5 + round / 4;
-        waveStrength = 26.5f + 6f * round + round * (round + 2);
+        waveStrength = 25 + 5f * round + round * (round + 2);
         bonusUnit -= 0.6f + 0.12f * waveStrength;
         //waveDuration = 14f + 0.8f * round;
         SummonWave();
@@ -77,7 +77,7 @@ public class Waves : MonoBehaviour
 
         rolled = Random.Range(0, WaveSet[round - 1].Mobs.Length);
         currentStrength = WaveSet[round - 1].weights[rolled];
-        waveDuration = 12f + 0.1f * currentStrength;
+        waveDuration = 13.6f + 0.08f * currentStrength;
         Instantiate(WaveSet[round - 1].Mobs[rolled], transform.position, transform.rotation);
 
         bonusUnit += waveStrength - currentStrength;
@@ -94,7 +94,7 @@ public class Waves : MonoBehaviour
         if (fight)
         {
             bonusUnit += 0.2f + 0.022f * waveStrength;
-            Invoke("BonusGain", 3.7f);
+            Invoke("BonusGain", 3.63f);
             BonusCheck();
         }
     }
