@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class CraftingTable : MonoBehaviour
 {
+    public Workbench bench;
     public GameObject Player, Glow, Hud;
     // accessory shit
-    public Image[] AInEq, AEquipped;
+    public Image[] AInEq, AEquipped, gunImages;
     public Image ThrashCan;
-    public Button[] EQButtons, OnButtons;
+    public Button[] EQButtons, OnButtons, gunButtons;
     public Sprite[] AccessorySprite;
     public Sprite BCan, RCan;
     public int[] AEQValues, ONValues;
-    public GameObject[] tooltips;
+    public GameObject[] tooltips, Guns;
 
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI EqippedSlots;
@@ -35,20 +36,57 @@ public class CraftingTable : MonoBehaviour
                 Glow.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && !active)
                 {
-                    playerStats.free = false;
-                    Hud.SetActive(true);
-                    UpdateInfo();
-                    active = true;
+                    Open();
                 }
             }
             else Glow.SetActive(false);
-
-            if (Input.GetKeyDown(KeyCode.Escape) && active)
-            {
-                Quit();
-            }
         }
         else Glow.SetActive(false);
+
+        if (Input.GetKeyDown(KeyCode.Escape) && active)
+        {
+            Quit();
+        }
+    }
+
+    public void Open()
+    {
+        UpdateSprites();
+        playerStats.free = false;
+        Hud.SetActive(true);
+        UpdateInfo();
+        active = true;
+    }
+
+    public void SwitchTable()
+    {
+        Hud.SetActive(false);
+        active = false;
+
+        for (int i = 0; i < tooltips.Length; i++)
+        {
+            tooltips[i].SetActive(false);
+        }
+        bench.Open();
+    }
+
+    public void SwitchGun(int which)
+    {
+        playerStats.SwapGun(which);
+        UpdateInfo();
+    }
+
+    void UpdateSprites()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (playerStats.eq.slotFilled[i])
+            {
+                Guns[i].SetActive(true);
+                gunImages[i].sprite = playerStats.eq.guns[i].gunSprite;
+            }
+            else Guns[i].SetActive(false);
+        }
     }
 
     public void Thrash()
@@ -68,6 +106,12 @@ public class CraftingTable : MonoBehaviour
 
     void UpdateInfo()
     {
+        for (int i = 0; i < 3; i++)
+        {
+            gunButtons[i].interactable = true;
+        }
+        gunButtons[playerStats.eq.equipped].interactable = false;
+
         // Eq
         for (int i = 0; i < AInEq.Length; i++)
         {

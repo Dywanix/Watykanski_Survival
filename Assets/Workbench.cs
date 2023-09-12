@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class Workbench : MonoBehaviour
 {
+    public CraftingTable crafting;
     public GameObject Player, Glow, Hud, Upgrades, Others;
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI specialUpgrades, Tooltip, Parts;
     public TMPro.TextMeshProUGUI[] Cost, Info;
-    public Button[] Buttons;
-    public Image[] images;
+    public Button[] Buttons, gunButtons;
+    public GameObject[] Guns;
+    public Image[] images, gunImages;
     public Sprite[] sprites;
 
     bool active, golden, viable, others;
@@ -31,27 +33,65 @@ public class Workbench : MonoBehaviour
                 Glow.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) && !active)
                 {
-                    UpdateInfo(playerStats.eq.equipped);
-                    playerStats.free = false;
-                    Hud.SetActive(true);
-                    active = true;
+                    Open();
                 }
             }
             else Glow.SetActive(false);
-
-            if (Input.GetKeyDown(KeyCode.Escape) && active && !golden)
-            {
-                playerStats.free = true;
-                Hud.SetActive(false);
-                active = false;
-            }
         }
         else Glow.SetActive(false);
+
+        if (Input.GetKeyDown(KeyCode.Escape) && active && !golden)
+        {
+            playerStats.free = true;
+            Hud.SetActive(false);
+            active = false;
+        }
+    }
+
+    public void Open()
+    {
+        UpdateSprites();
+        UpdateInfo(playerStats.eq.equipped);
+        playerStats.free = false;
+        Hud.SetActive(true);
+        active = true;
+    }
+
+    public void SwitchTable()
+    {
+        Hud.SetActive(false);
+        active = false;
+        crafting.Open();
+    }
+
+    public void SwitchGun(int which)
+    {
+        playerStats.SwapGun(which);
+        UpdateInfo(playerStats.eq.equipped);
+    }
+
+    void UpdateSprites()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (playerStats.eq.slotFilled[i])
+            {
+                Guns[i].SetActive(true);
+                gunImages[i].sprite = playerStats.eq.guns[i].gunSprite;
+            }
+            else Guns[i].SetActive(false);
+        }
     }
 
     public void UpdateInfo(int which)
     {
         current = which;
+
+        for (int i = 0; i < 3; i++)
+        {
+            gunButtons[i].interactable = true;
+        }
+        gunButtons[current].interactable = false;
 
         GunInfo(which);
         if (!golden)
