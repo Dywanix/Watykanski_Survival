@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 			player = Player.GetComponent(typeof(Transform)) as Transform;
 			target = player.position;//set default target
 		}
-		if (playerStats.free)
+		else if (playerStats.free)
         {
 			mousePos = CaptureMousePos(); //find out where the mouse is
 			shakeOffset = UpdateShake(); //account for screen shake

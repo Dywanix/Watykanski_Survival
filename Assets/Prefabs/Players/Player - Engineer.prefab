@@ -1874,9 +1874,9 @@ MonoBehaviour:
   day: 1
   task: 0
   taskMax: 0
-  maxHealth: 95
+  maxHealth: 96
   dHealth: 0
-  health: 95
+  health: 96
   maxShield: 100
   dShield: 0
   shield: 0
@@ -1884,19 +1884,19 @@ MonoBehaviour:
   shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
-  damageBonus: 1.04
-  fireRateBonus: 1.049
-  movementSpeed: 10.29
+  damageBonus: 1.041
+  fireRateBonus: 1.051
+  movementSpeed: 10.3
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
   dash: 0
   level: 1
   dayCount: 1
-  healthIncrease: 2.1
-  damageIncrease: 0.0026
-  fireRateIncrease: 0.0021
-  movementSpeedIncrease: 0.012
+  healthIncrease: 2.3
+  damageIncrease: 0.0028
+  fireRateIncrease: 0.0024
+  movementSpeedIncrease: 0.014
   additionalCritChance: 0
   tools: 6
   toolsStored: 6
@@ -2071,7 +2071,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 64aec4ef9ab94b044b69b8e56f00aef0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34adf1e2095a6c14f9cffcc17ce362a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2302,7 +2302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 425fc690ef5f65f40b7243361b333de2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4af624585374214a876649121385c9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
