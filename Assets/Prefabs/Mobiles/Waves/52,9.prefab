@@ -90,14 +90,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8935468354507865722, guid: 33260a23ab630ef44a413ecf74e12fb8, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8935468354507865722, guid: 33260a23ab630ef44a413ecf74e12fb8, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33260a23ab630ef44a413ecf74e12fb8, type: 3}
 --- !u!4 &1640031773810370346 stripped
@@ -112,14 +104,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2982693737831636579}
     m_Modifications:
-    - target: {fileID: 678595565765844972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678595565765844972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6630921574970927972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -182,14 +166,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2982693737831636579}
     m_Modifications:
-    - target: {fileID: 678595565765844972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678595565765844972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6630921574970927972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -252,14 +228,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2982693737831636579}
     m_Modifications:
-    - target: {fileID: 678595565765844972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 678595565765844972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6630921574970927972, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
       propertyPath: m_RootOrder
       value: 3

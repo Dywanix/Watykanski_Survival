@@ -5,27 +5,39 @@ using UnityEngine;
 public class Magnet : MonoBehaviour
 {
     public GameObject Player;
+    public Collider2D coll;
     public PlayerController playerStats;
 
     public float chaseSpeed, chaseRange;
+    bool active;
 
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+        Invoke("Activate", 0.6f);
+    }
+
+    void Activate()
+    {
+        coll.enabled = true;
+        active = true;
     }
 
     void Update()
     {
-        if (playerStats.day)
+        if (active)
         {
-            if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange * 1.8f)
-                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((5f + chaseSpeed * 2.5f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.15f) + chaseSpeed) * Time.deltaTime);
-            else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, chaseSpeed * Time.deltaTime);
-            chaseSpeed *= 1f + (0.15f * Time.deltaTime);
-            chaseRange *= 1f + (0.05f * Time.deltaTime);
+            if (playerStats.day)
+            {
+                if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange * 1.8f)
+                    transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((5f + chaseSpeed * 2.5f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.15f) + chaseSpeed) * Time.deltaTime);
+                else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, chaseSpeed * Time.deltaTime);
+                chaseSpeed *= 1f + (0.15f * Time.deltaTime);
+                chaseRange *= 1f + (0.05f * Time.deltaTime);
+            }
+            else if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange)
+                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((2f + chaseSpeed * 2f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.3f) + chaseSpeed * 0.1f) * Time.deltaTime);
         }
-        else if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange)
-            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((2f + chaseSpeed * 2f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.3f) + chaseSpeed * 0.1f) * Time.deltaTime);
     }
 }

@@ -599,8 +599,8 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   LevelCostCharge: 0
-  cameraShake: 11.5
-  shakeDuration: 0.112
+  cameraShake: 13.8
+  shakeDuration: 0.134
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1

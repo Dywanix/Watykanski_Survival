@@ -142,7 +142,7 @@ public class Merchant : MonoBehaviour
                     playerStats.movementSpeed += 0.05f;
                     break;
                 case 5:
-                    playerStats.GainTools(2);
+                    playerStats.GainTools(3);
                     break;
                 case 6:
                     playerStats.GainShield(playerStats.maxShield * 0.25f);
@@ -152,6 +152,9 @@ public class Merchant : MonoBehaviour
                     break;
                 case 8:
                     playerStats.LevelUp();
+                    break;
+                case 9:
+                    playerStats.GainTools(5);
                     break;
             }
         }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Waves : MonoBehaviour
 {
     public Day_Night_Cycle GN;
-    public GameObject StartButton, Glow, Player;
+    public GameObject StartButton, Glow, Player, Door;
     public WavesSets[] WaveSet;
     public Wave[] waves;
     public Transform[] SpawnPoints;
@@ -50,7 +50,7 @@ public class Waves : MonoBehaviour
                 {
                     SummonWave();
                 }
-                else EndRound();
+                else CheckForClear();
             }
             DurationFill.fillAmount = waveTimer / waveDuration;
         }
@@ -60,6 +60,7 @@ public class Waves : MonoBehaviour
     {
         GN.StartNight();
         fight = true;
+        Door.SetActive(true);
         StartButton.SetActive(false);
         round++;
         wavesCount = 5 + round / 4;
@@ -109,9 +110,17 @@ public class Waves : MonoBehaviour
         }
     }
 
+    void CheckForClear()
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy") == null)
+            EndRound();
+        else Invoke("CheckForClear", 0.6f);
+    }
+
     void EndRound()
     {
         fight = false;
+        Door.SetActive(false);
         StartButton.SetActive(true);
         GN.StartDay();
     }
