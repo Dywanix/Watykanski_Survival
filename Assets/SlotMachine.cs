@@ -32,6 +32,7 @@ public class SlotMachine : MonoBehaviour
                 {
                     UpdateInfo();
                     playerStats.free = false;
+                    playerStats.menuOpened = true;
                     Hud.SetActive(true);
                     active = true;
                 }

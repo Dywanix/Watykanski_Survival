@@ -41,6 +41,10 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public float moveSpeed = 5f;
 
+    // -- pause menu --
+    public GameObject Menu;
+    public bool menuOpened;
+
     void Start()
     {
         GetMouseInput();
@@ -86,6 +90,12 @@ public class PlayerController : MonoBehaviour
                     task += eq.guns[eq.equipped].fireRate;
                 }
             }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!menuOpened)
+                OpenMenu();
+            else CloseMenu();
         }
 
         if (dashCooldown > 0)
@@ -634,8 +644,7 @@ public class PlayerController : MonoBehaviour
         ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
 
         if (health < 0f)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        //Application.Quit();
+            ReturnToMenu();
     }
 
     public void GainPoison(float value)
@@ -905,5 +914,29 @@ public class PlayerController : MonoBehaviour
         {
             engineer.GainPerk(ability, which);
         }
+    }
+
+    void OpenMenu()
+    {
+        Menu.SetActive(true);
+        menuOpened = true;
+        free = false;
+    }
+
+    public void CloseMenu()
+    {
+        Menu.SetActive(false);
+        menuOpened = false;
+        free = true;
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }

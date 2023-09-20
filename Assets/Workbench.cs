@@ -42,9 +42,9 @@ public class Workbench : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && active && !golden)
         {
-            playerStats.free = true;
             Hud.SetActive(false);
             active = false;
+            playerStats.free = true;
         }
     }
 
@@ -53,6 +53,7 @@ public class Workbench : MonoBehaviour
         UpdateSprites();
         UpdateInfo(playerStats.eq.equipped);
         playerStats.free = false;
+        playerStats.menuOpened = true;
         Hud.SetActive(true);
         active = true;
     }

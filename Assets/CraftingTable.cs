@@ -53,6 +53,7 @@ public class CraftingTable : MonoBehaviour
     {
         UpdateSprites();
         playerStats.free = false;
+        playerStats.menuOpened = true;
         Hud.SetActive(true);
         UpdateInfo();
         active = true;
