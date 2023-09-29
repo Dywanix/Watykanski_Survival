@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228963646556670043, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: DoT
-      value: 0.16
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 8228963646556670043, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
       propertyPath: pierce
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d997e1deccefd48aa5cb112fa2e245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clears: 0
 --- !u!4 &9105280439881793243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4819930724240037949, guid: 7a5a52edb24f219488ee5aff8cd6c4d1, type: 3}
