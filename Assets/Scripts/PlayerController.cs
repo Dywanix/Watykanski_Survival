@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
                 eq.Accessories[Random.Range(0, eq.Accessories.Length)]++;
 
             GetInput();
-            Movement();
+            //Movement();
             Aim();
             if (task <= 0)
             {
@@ -125,6 +125,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void FixedUpdate()
+    {
+        Movement();
+    }
+
     public void NewTask(float duration)
     {
         taskMax = duration;
@@ -162,7 +167,7 @@ public class PlayerController : MonoBehaviour
 
     void Movement()
     {
-        if(Input.GetAxis("Horizontal") != 0)
+        /*if(Input.GetAxis("Horizontal") != 0)
         {
             animator.SetFloat("moveSpeed", Mathf.Abs(Input.GetAxis("Horizontal")));
         }
@@ -173,7 +178,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetFloat("moveSpeed", 0f);
-        }
+        }*/
         
         /*if(Input.GetAxis("Horizontal") > 0.01f)
         {
@@ -183,14 +188,16 @@ public class PlayerController : MonoBehaviour
         {
             Dude.rotation = new Quaternion(0, 180, 0, 0);
         }*/
-        Vector3 tempPos = transform.position;
+        //Vector3 tempPos = transform.position;
         if ((xInput == -1f || xInput == 1f) && (yInput == -1f || yInput == 1f))
         {
             xInput *= 0.7f;
             yInput *= 0.7f;
         }
-        tempPos += new Vector3(xInput, yInput, 0) * (movementSpeed + dash) * Time.deltaTime;
-        transform.position = tempPos;
+        //tempPos += new Vector3(xInput, yInput, 0) * (movementSpeed + dash) * Time.deltaTime;
+        //transform.position = tempPos;
+        Body.AddForce(transform.up * movementSpeed * yInput, ForceMode2D.Impulse);
+        Body.AddForce(transform.right * movementSpeed * xInput, ForceMode2D.Impulse);
         if (dash > 0)
             dash -= (36 + 6 * dash) * Time.deltaTime;
     }

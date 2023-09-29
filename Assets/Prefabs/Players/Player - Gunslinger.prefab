@@ -616,7 +616,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -682,7 +682,7 @@ MonoBehaviour:
   poison: 0
   damageBonus: 1.054
   fireRateBonus: 1.043
-  movementSpeed: 10.38
+  movementSpeed: 0.519
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
@@ -692,14 +692,14 @@ MonoBehaviour:
   healthIncrease: 1.9
   damageIncrease: 0.0033
   fireRateIncrease: 0.0018
-  movementSpeedIncrease: 0.014
+  movementSpeedIncrease: 0.0007
   additionalCritChance: 0
   tools: 4
   toolsStored: 4
   tokens: 0
   scrap: 29
   animator: {fileID: 7508960709266052724}
-  moveSpeed: 5
+  moveSpeed: 0
   Menu: {fileID: 2821856077054534156}
   menuOpened: 0
 --- !u!114 &2129462728280790370
