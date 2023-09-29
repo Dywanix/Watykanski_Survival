@@ -616,11 +616,11 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -662,8 +662,6 @@ MonoBehaviour:
   berserker: {fileID: 0}
   steamGolem: {fileID: 0}
   engineer: {fileID: 0}
-  xInput: 0
-  yInput: 0
   mouseLeft: 0
   reloading: 0
   free: 1
@@ -682,17 +680,17 @@ MonoBehaviour:
   poison: 0
   damageBonus: 1.054
   fireRateBonus: 1.043
-  movementSpeed: 0.519
+  movementSpeed: 519
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
-  dash: 0
+  dash: 1
   level: 1
   dayCount: 1
   healthIncrease: 1.9
   damageIncrease: 0.0033
   fireRateIncrease: 0.0018
-  movementSpeedIncrease: 0.0007
+  movementSpeedIncrease: 0.7
   additionalCritChance: 0
   tools: 4
   toolsStored: 4
@@ -1537,7 +1535,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129462729641926352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ca324e49e6d82164cae85c7a32e0bab8, type: 2}
   m_CullingMode: 0

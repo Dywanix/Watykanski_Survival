@@ -7,19 +7,15 @@ public class MovementTest : MonoBehaviour
     public Rigidbody2D Body;
     public float movementSpeed;
 
-    float xInput, yInput;
+    Vector2 move;
 
     void Update()
     {
-        xInput = Input.GetAxis("Horizontal");
-        yInput = Input.GetAxis("Vertical");
-
-        Move();
+        move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
-    void Move()
+    void FixedUpdate()
     {
-        Body.AddForce(transform.up * movementSpeed * yInput, ForceMode2D.Impulse);
-        Body.AddForce(transform.right * movementSpeed * xInput, ForceMode2D.Impulse);
+        Body.velocity = move * movementSpeed * Time.deltaTime;
     }
 }

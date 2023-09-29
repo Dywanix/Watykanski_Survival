@@ -2017,8 +2017,6 @@ MonoBehaviour:
   berserker: {fileID: 0}
   steamGolem: {fileID: 0}
   engineer: {fileID: 8628463651267321930}
-  xInput: 0
-  yInput: 0
   mouseLeft: 0
   reloading: 0
   free: 1
@@ -2037,17 +2035,17 @@ MonoBehaviour:
   poison: 0
   damageBonus: 1.041
   fireRateBonus: 1.051
-  movementSpeed: 10.3
+  movementSpeed: 515
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
-  dash: 0
+  dash: 1
   level: 1
   dayCount: 1
   healthIncrease: 2.3
   damageIncrease: 0.0028
   fireRateIncrease: 0.0024
-  movementSpeedIncrease: 0.014
+  movementSpeedIncrease: 0.7
   additionalCritChance: 0
   tools: 6
   toolsStored: 6
