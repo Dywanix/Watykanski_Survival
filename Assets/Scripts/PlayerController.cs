@@ -128,7 +128,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Body.AddForce(move * movementSpeed * Time.deltaTime);
         Body.velocity = move * movementSpeed * dash * Time.deltaTime;
     }
 
@@ -210,8 +209,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat("moveSpeed", 0f);
         }
-        //xInput = Input.GetAxis("Horizontal");
-        //yInput = Input.GetAxis("Vertical");
 
         /*if(Input.GetAxis("Horizontal") > 0.01f)
         {
