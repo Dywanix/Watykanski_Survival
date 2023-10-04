@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooting 6
       objectReference: {fileID: 0}
+    - target: {fileID: 795167121031384150, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1333476821953715616, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: m_Color.b
       value: 0.6862745

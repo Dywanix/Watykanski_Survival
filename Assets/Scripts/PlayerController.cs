@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     // -- statystyki --
     public float maxHealth, dHealth, health, maxShield, dShield, shield, shieldChargeRate, shieldChargeDelay, rechargeTimer, poison,
-    damageBonus, fireRateBonus, movementSpeed = 7, cooldownReduction = 1, maxDashCooldown, dashCooldown, dash;
+    damageBonus, fireRateBonus, movementSpeed, cooldownReduction, maxDashCooldown, dashCooldown, dash;
     public int level = 1, dayCount = 1;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
     int tempi;

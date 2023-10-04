@@ -56,10 +56,10 @@ public class Gunslinger : MonoBehaviour
             rapidFireMaxCooldown = 29f / playerStats.cooldownReduction;
             rapidFireCooldown = rapidFireMaxCooldown;
 
-            rapidFireFireRate = 1.206f + 0.017f * playerStats.level;
+            rapidFireFireRate = 1.21f + 0.018f * playerStats.level;
             if (ability1Perks[2])
             {
-                rapidFireFireRate += 0.14f;
+                rapidFireFireRate += 0.15f;
                 if (ability1Perks[4])
                     rapidFireFireRate += 0.09f;
                 rapidFireMovementSpeed = 0.44f + rapidFireFireRate * 0.56f;

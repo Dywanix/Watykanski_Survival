@@ -17,6 +17,7 @@ TagManager:
   - Token
   - Cycle
   - Obstacle
+  - Map
   layers:
   - Default
   - TransparentFX

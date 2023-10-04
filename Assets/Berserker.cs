@@ -119,10 +119,10 @@ public class Berserker : MonoBehaviour
             AxeThrown = bullet.GetComponent(typeof(Bullet)) as Bullet;
             if (ability1Perks[2])
             {
-                AxeThrown.damage = (21.2f + 2.2f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+                AxeThrown.damage = (21.7f + 2.3f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
                 AxeThrown.slowDuration += AxeThrown.damage * 0.0075f;
             }
-            else AxeThrown.damage = (18.4f + 1.7f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+            else AxeThrown.damage = (18.7f + 1.8f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
             if (ability1Perks[1])
             {
                 AxeThrown.pierce++;
@@ -223,14 +223,14 @@ public class Berserker : MonoBehaviour
                         healthGain += 2.5f;
                         break;
                     case 2:
-                        wrathGain += 0.02f;
+                        wrathGain += 0.021f;
                         break;
                     case 3:
                         // passive - wrath also increases Fire Rate
                         break;
                     case 4:
                         // passive - Juggernaut - increases wrath gained & HP with damage taken
-                        wrathGain += 0.02f;
+                        wrathGain += 0.021f;
                         while (damageTaken >= 40 + 2 * juggernautCount)
                         {
                             damageTaken -= 40 + 2 * juggernautCount;

@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 35
+  m_text: 36
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1975,7 +1975,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2023,9 +2023,9 @@ MonoBehaviour:
   day: 1
   task: 0
   taskMax: 0
-  maxHealth: 96
+  maxHealth: 97
   dHealth: 0
-  health: 96
+  health: 97
   maxShield: 100
   dShield: 0
   shield: 0
@@ -2033,24 +2033,24 @@ MonoBehaviour:
   shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
-  damageBonus: 1.041
-  fireRateBonus: 1.051
-  movementSpeed: 515
+  damageBonus: 1.042
+  fireRateBonus: 1.053
+  movementSpeed: 515.5
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
   dash: 1
   level: 1
   dayCount: 1
-  healthIncrease: 2.3
-  damageIncrease: 0.0028
-  fireRateIncrease: 0.0024
-  movementSpeedIncrease: 0.7
+  healthIncrease: 2.5
+  damageIncrease: 0.0031
+  fireRateIncrease: 0.0026
+  movementSpeedIncrease: 0.8
   additionalCritChance: 0
   tools: 6
   toolsStored: 6
   tokens: 0
-  scrap: 35
+  scrap: 36
   animator: {fileID: 4985177810459707306}
   moveSpeed: 5
   Menu: {fileID: 6830657303420374538}

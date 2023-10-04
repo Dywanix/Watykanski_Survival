@@ -138,10 +138,10 @@ public class Engineer : MonoBehaviour
         bulletFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
         if (ability1Perks[3])
         {
-            bulletFired.damage = (13.8f + 1.2f * playerStats.level + 0.06f * (playerStats.maxShield - 100)) * playerStats.DamageDealtMultiplyer(1f);
-            turretFireRate /= 1f + 0.07f * (playerStats.maxShield - 100);
+            bulletFired.damage = (14f + 1.3f * playerStats.level + 0.06f * (playerStats.maxShield - 100)) * playerStats.DamageDealtMultiplyer(1f);
+            timeToFire /= 1f + 0.07f * (playerStats.maxShield - 100);
         }
-        else bulletFired.damage = (12.6f + 0.9f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
+        else bulletFired.damage = (12f + 1f * playerStats.level) * playerStats.DamageDealtMultiplyer(1f);
 
         if (ability1Perks[1])
         {

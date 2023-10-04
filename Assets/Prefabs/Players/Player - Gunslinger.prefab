@@ -668,9 +668,9 @@ MonoBehaviour:
   day: 1
   task: 0
   taskMax: 0
-  maxHealth: 87
+  maxHealth: 88
   dHealth: 0
-  health: 87
+  health: 88
   maxShield: 100
   dShield: 0
   shield: 0
@@ -678,19 +678,19 @@ MonoBehaviour:
   shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
-  damageBonus: 1.054
-  fireRateBonus: 1.043
-  movementSpeed: 519
+  damageBonus: 1.056
+  fireRateBonus: 1.044
+  movementSpeed: 519.5
   cooldownReduction: 1
   maxDashCooldown: 0
   dashCooldown: 0
   dash: 1
   level: 1
   dayCount: 1
-  healthIncrease: 1.9
-  damageIncrease: 0.0033
-  fireRateIncrease: 0.0018
-  movementSpeedIncrease: 0.7
+  healthIncrease: 2
+  damageIncrease: 0.0036
+  fireRateIncrease: 0.002
+  movementSpeedIncrease: 0.8
   additionalCritChance: 0
   tools: 4
   toolsStored: 4
