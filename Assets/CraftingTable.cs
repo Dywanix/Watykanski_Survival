@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CraftingTable : MonoBehaviour
 {
     public Workbench bench;
-    public GameObject Player, Glow, Hud;
+    public GameObject Player, Hud;
     // accessory shit
     public Image[] AInEq, AEquipped, gunImages;
     public Image ThrashCan;
@@ -29,19 +29,6 @@ public class CraftingTable : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 4.2f)
-        {
-            if (playerStats.day)
-            {
-                Glow.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E) && !active)
-                {
-                    Open();
-                }
-            }
-            else Glow.SetActive(false);
-        }
-        else Glow.SetActive(false);
 
         if (Input.GetKeyDown(KeyCode.Escape) && active)
         {

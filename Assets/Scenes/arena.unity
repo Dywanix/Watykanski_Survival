@@ -16883,12 +16883,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crafting: {fileID: 748821958}
   Player: {fileID: 0}
-  Glow: {fileID: 840593449}
   Hud: {fileID: 273577153}
   Upgrades: {fileID: 1396319214}
-  Others: {fileID: 0}
   playerStats: {fileID: 0}
-  specialUpgrades: {fileID: 0}
   Tooltip: {fileID: 270360745}
   Parts: {fileID: 1058650540}
   Cost:
@@ -18976,7 +18973,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bench: {fileID: 636895978}
   Player: {fileID: 0}
-  Glow: {fileID: 1472131315}
   Hud: {fileID: 1499929266}
   AInEq:
   - {fileID: 2132365296}

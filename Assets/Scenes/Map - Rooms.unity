@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 6
 --- !u!222 &4457871
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 34
 --- !u!222 &6296629
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 35
 --- !u!222 &24144005
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 43
 --- !u!222 &25630886
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 21
 --- !u!222 &29943302
@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -1726,7 +1726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 30
 --- !u!222 &67398326
@@ -1986,7 +1986,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -2010,7 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 31
 --- !u!222 &71643024
@@ -2185,7 +2185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 5
 --- !u!222 &97570575
@@ -2240,7 +2240,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -2512,7 +2512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -2536,7 +2536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 32
 --- !u!222 &108225468
@@ -2690,7 +2690,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SpecialUpgrade
         m_Mode: 3
@@ -2795,7 +2795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -2819,7 +2819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 41
 --- !u!222 &116240244
@@ -3046,202 +3046,6 @@ Transform:
   m_Father: {fileID: 1684313952}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &126137034
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 126137036}
-  - component: {fileID: 126137038}
-  - component: {fileID: 126137035}
-  - component: {fileID: 126137037}
-  m_Layer: 0
-  m_Name: Workbench
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &126137035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126137034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f031ba7d91b194429ffbff54f45e2c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crafting: {fileID: 1080033496}
-  Player: {fileID: 0}
-  Glow: {fileID: 869778168}
-  Hud: {fileID: 1279216282}
-  Upgrades: {fileID: 1519074450}
-  Others: {fileID: 0}
-  playerStats: {fileID: 0}
-  specialUpgrades: {fileID: 0}
-  Tooltip: {fileID: 1238129523}
-  Parts: {fileID: 2115057777}
-  Cost:
-  - {fileID: 1627952838}
-  - {fileID: 1361032261}
-  - {fileID: 298250825}
-  - {fileID: 1705644362}
-  - {fileID: 19884427}
-  Info:
-  - {fileID: 1264564400}
-  - {fileID: 1380164282}
-  - {fileID: 1381873288}
-  - {fileID: 919220236}
-  - {fileID: 1666223376}
-  - {fileID: 1028596861}
-  - {fileID: 1030767246}
-  - {fileID: 1244568484}
-  - {fileID: 1845899057}
-  - {fileID: 1233254895}
-  - {fileID: 918243997}
-  - {fileID: 61847392}
-  - {fileID: 372813490}
-  - {fileID: 1790313221}
-  - {fileID: 1310458418}
-  - {fileID: 2091898858}
-  - {fileID: 1346290695}
-  Buttons:
-  - {fileID: 1207572665}
-  - {fileID: 1686811070}
-  - {fileID: 1809819037}
-  - {fileID: 809021484}
-  - {fileID: 1216592012}
-  gunButtons:
-  - {fileID: 1486698365}
-  - {fileID: 157743655}
-  - {fileID: 2048737919}
-  Guns:
-  - {fileID: 1486698361}
-  - {fileID: 157743651}
-  - {fileID: 2048737915}
-  images:
-  - {fileID: 569040198}
-  - {fileID: 1405182807}
-  - {fileID: 695510759}
-  - {fileID: 112765196}
-  gunImages:
-  - {fileID: 1486698362}
-  - {fileID: 157743652}
-  - {fileID: 2048737916}
-  sprites:
-  - {fileID: 21300000, guid: a8a3800668c26044788f6c2d85b9ae71, type: 3}
-  - {fileID: 21300000, guid: aedf014beac705e4999c1b955e31ff34, type: 3}
-  - {fileID: 21300000, guid: f218713bfc02b234bac3071affd57524, type: 3}
-  - {fileID: 21300000, guid: c9d1a0c234fb39348957bb702db19630, type: 3}
-  - {fileID: 21300000, guid: 8fd29a6fc72d2ab448bf3cf747eb40b7, type: 3}
-  - {fileID: 21300000, guid: bb3d442e32093dd40b0f45df05d8a4f7, type: 3}
-  - {fileID: 21300000, guid: 6ef6bd74f57584249a4616ccba615d4b, type: 3}
-  - {fileID: 21300000, guid: 22d93d8b441006f40ace0dfb148f8271, type: 3}
-  - {fileID: 21300000, guid: 26750d0aeb575e547823d7e82a6529aa, type: 3}
-  - {fileID: 21300000, guid: 42e092f108505d04ea05d584c710ee7d, type: 3}
-  - {fileID: 21300000, guid: 338f1a1bdec212f4c9a722730c827d17, type: 3}
-  - {fileID: 21300000, guid: b702aecfaa3026f4c86253a490e60947, type: 3}
-  rolled: 00000000000000000000000000000000
---- !u!4 &126137036
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126137034}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.25, y: 19.08, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 869778170}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &126137037
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126137034}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.73}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
-    newSize: {x: 3.2, y: 3.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.84}
-  m_EdgeRadius: 0
---- !u!212 &126137038
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126137034}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ae5680e4b43c364c9f228988d01e74d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &149150088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3337,7 +3141,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -3361,7 +3165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 36
 --- !u!222 &151425595
@@ -3574,8 +3378,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
-        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
+      - m_Target: {fileID: 828170800}
+        m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
         m_Arguments:
@@ -3870,7 +3674,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -3894,7 +3698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 7
 --- !u!222 &201761584
@@ -4478,7 +4282,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
@@ -4903,7 +4707,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -4927,7 +4731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 20
 --- !u!222 &258867410
@@ -6121,7 +5925,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
@@ -6331,7 +6135,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -6355,7 +6159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 18
 --- !u!222 &367826515
@@ -8428,7 +8232,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -8452,7 +8256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 25
 --- !u!222 &556439257
@@ -8681,7 +8485,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SpecialUpgrade
         m_Mode: 3
@@ -9477,7 +9281,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &666955781
 MonoBehaviour:
@@ -9661,7 +9465,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SpecialUpgrade
         m_Mode: 3
@@ -9917,7 +9721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 13
 --- !u!222 &720063004
@@ -9972,7 +9776,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -10066,7 +9870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 14
 --- !u!222 &721160476
@@ -10121,7 +9925,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -10227,7 +10031,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -10251,7 +10055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 16
 --- !u!222 &742758624
@@ -10364,7 +10168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 7
 --- !u!222 &743524060
@@ -10419,7 +10223,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -10629,7 +10433,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -10653,7 +10457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 6
 --- !u!222 &749954599
@@ -11388,7 +11192,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -11412,7 +11216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 23
 --- !u!222 &791244918
@@ -11525,7 +11329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 10
 --- !u!222 &801140531
@@ -11580,7 +11384,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -12027,7 +11831,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 828170799}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 3
@@ -12081,7 +11885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21046381f4afd154badb2b7eb754dcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 126137035}
+  table: {fileID: 828170799}
   order: 3
 --- !u!222 &809021487
 CanvasRenderer:
@@ -12184,6 +11988,8 @@ GameObject:
   m_Component:
   - component: {fileID: 828170798}
   - component: {fileID: 828170797}
+  - component: {fileID: 828170799}
+  - component: {fileID: 828170800}
   m_Layer: 0
   m_Name: Map
   m_TagString: Map
@@ -12225,8 +12031,306 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &828170799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828170796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f031ba7d91b194429ffbff54f45e2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crafting: {fileID: 828170800}
+  Player: {fileID: 0}
+  Hud: {fileID: 1279216282}
+  Upgrades: {fileID: 1519074450}
+  playerStats: {fileID: 0}
+  Tooltip: {fileID: 1238129523}
+  Parts: {fileID: 2115057777}
+  Cost:
+  - {fileID: 1627952838}
+  - {fileID: 1361032261}
+  - {fileID: 298250825}
+  - {fileID: 1705644362}
+  - {fileID: 19884427}
+  Info:
+  - {fileID: 1264564400}
+  - {fileID: 1380164282}
+  - {fileID: 1381873288}
+  - {fileID: 919220236}
+  - {fileID: 1666223376}
+  - {fileID: 1028596861}
+  - {fileID: 1030767246}
+  - {fileID: 1244568484}
+  - {fileID: 1845899057}
+  - {fileID: 1233254895}
+  - {fileID: 918243997}
+  - {fileID: 61847392}
+  - {fileID: 372813490}
+  - {fileID: 1790313221}
+  - {fileID: 1310458418}
+  - {fileID: 2091898858}
+  - {fileID: 1346290695}
+  Buttons:
+  - {fileID: 1207572665}
+  - {fileID: 1686811070}
+  - {fileID: 1809819037}
+  - {fileID: 809021484}
+  - {fileID: 1216592012}
+  gunButtons:
+  - {fileID: 1486698365}
+  - {fileID: 157743655}
+  - {fileID: 2048737919}
+  Guns:
+  - {fileID: 1486698361}
+  - {fileID: 157743651}
+  - {fileID: 2048737915}
+  images:
+  - {fileID: 569040198}
+  - {fileID: 1405182807}
+  - {fileID: 695510759}
+  - {fileID: 112765196}
+  gunImages:
+  - {fileID: 1486698362}
+  - {fileID: 157743652}
+  - {fileID: 2048737916}
+  sprites:
+  - {fileID: 21300000, guid: a8a3800668c26044788f6c2d85b9ae71, type: 3}
+  - {fileID: 21300000, guid: aedf014beac705e4999c1b955e31ff34, type: 3}
+  - {fileID: 21300000, guid: f218713bfc02b234bac3071affd57524, type: 3}
+  - {fileID: 21300000, guid: c9d1a0c234fb39348957bb702db19630, type: 3}
+  - {fileID: 21300000, guid: 8fd29a6fc72d2ab448bf3cf747eb40b7, type: 3}
+  - {fileID: 21300000, guid: bb3d442e32093dd40b0f45df05d8a4f7, type: 3}
+  - {fileID: 21300000, guid: 6ef6bd74f57584249a4616ccba615d4b, type: 3}
+  - {fileID: 21300000, guid: 22d93d8b441006f40ace0dfb148f8271, type: 3}
+  - {fileID: 21300000, guid: 26750d0aeb575e547823d7e82a6529aa, type: 3}
+  - {fileID: 21300000, guid: 42e092f108505d04ea05d584c710ee7d, type: 3}
+  - {fileID: 21300000, guid: 338f1a1bdec212f4c9a722730c827d17, type: 3}
+  - {fileID: 21300000, guid: b702aecfaa3026f4c86253a490e60947, type: 3}
+  rolled: 00000000000000000000000000000000
+--- !u!114 &828170800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828170796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342a8b218f088154985821e8d3cb06c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bench: {fileID: 828170799}
+  Player: {fileID: 0}
+  Hud: {fileID: 1168101583}
+  AInEq:
+  - {fileID: 1521262703}
+  - {fileID: 1033836478}
+  - {fileID: 1273447353}
+  - {fileID: 2085787745}
+  - {fileID: 1173636105}
+  - {fileID: 1813205943}
+  - {fileID: 749954601}
+  - {fileID: 201761586}
+  - {fileID: 1734989029}
+  - {fileID: 1382170693}
+  - {fileID: 2023424461}
+  - {fileID: 1002047460}
+  - {fileID: 1933103329}
+  - {fileID: 1933262107}
+  - {fileID: 876542856}
+  - {fileID: 1167174524}
+  - {fileID: 742758626}
+  - {fileID: 1406304789}
+  - {fileID: 367826517}
+  - {fileID: 1797280702}
+  - {fileID: 258867412}
+  - {fileID: 29943304}
+  - {fileID: 1948336764}
+  - {fileID: 791244920}
+  - {fileID: 1721566896}
+  - {fileID: 556439259}
+  - {fileID: 1706548378}
+  - {fileID: 1111586721}
+  - {fileID: 1867842753}
+  - {fileID: 1923538943}
+  - {fileID: 67398328}
+  - {fileID: 71643026}
+  - {fileID: 108225470}
+  - {fileID: 995733949}
+  - {fileID: 6296631}
+  - {fileID: 24144007}
+  - {fileID: 151425597}
+  - {fileID: 1660632886}
+  - {fileID: 1916691944}
+  - {fileID: 1058467092}
+  - {fileID: 116240246}
+  - {fileID: 2103292169}
+  - {fileID: 1605524217}
+  - {fileID: 25630888}
+  AEquipped:
+  - {fileID: 1956433899}
+  - {fileID: 2094849788}
+  - {fileID: 2138556095}
+  - {fileID: 1598017721}
+  - {fileID: 2038310609}
+  - {fileID: 97570577}
+  - {fileID: 4457873}
+  - {fileID: 743524062}
+  - {fileID: 969450326}
+  - {fileID: 1594573656}
+  - {fileID: 801140533}
+  - {fileID: 1706956388}
+  - {fileID: 1200895554}
+  - {fileID: 720063006}
+  - {fileID: 721160478}
+  - {fileID: 1326293173}
+  - {fileID: 986381079}
+  - {fileID: 2032083219}
+  gunImages:
+  - {fileID: 238357167}
+  - {fileID: 335828416}
+  - {fileID: 1426529204}
+  ThrashCan: {fileID: 844387100}
+  EQButtons:
+  - {fileID: 1521262699}
+  - {fileID: 1033836474}
+  - {fileID: 1273447349}
+  - {fileID: 2085787741}
+  - {fileID: 1173636101}
+  - {fileID: 1813205939}
+  - {fileID: 749954597}
+  - {fileID: 201761582}
+  - {fileID: 1734989025}
+  - {fileID: 1382170689}
+  - {fileID: 2023424457}
+  - {fileID: 1002047456}
+  - {fileID: 1933103325}
+  - {fileID: 1933262103}
+  - {fileID: 876542852}
+  - {fileID: 1167174520}
+  - {fileID: 742758622}
+  - {fileID: 1406304785}
+  - {fileID: 367826513}
+  - {fileID: 1797280698}
+  - {fileID: 258867408}
+  - {fileID: 29943300}
+  - {fileID: 1948336760}
+  - {fileID: 791244916}
+  - {fileID: 1721566892}
+  - {fileID: 556439255}
+  - {fileID: 1706548374}
+  - {fileID: 1111586717}
+  - {fileID: 1867842749}
+  - {fileID: 1923538939}
+  - {fileID: 67398324}
+  - {fileID: 71643022}
+  - {fileID: 108225466}
+  - {fileID: 995733945}
+  - {fileID: 6296627}
+  - {fileID: 24144003}
+  - {fileID: 151425593}
+  - {fileID: 1660632882}
+  - {fileID: 1916691940}
+  - {fileID: 1058467088}
+  - {fileID: 116240242}
+  - {fileID: 2103292165}
+  - {fileID: 1605524213}
+  - {fileID: 25630884}
+  OnButtons:
+  - {fileID: 1956433898}
+  - {fileID: 2094849787}
+  - {fileID: 2138556094}
+  - {fileID: 1598017720}
+  - {fileID: 2038310608}
+  - {fileID: 97570576}
+  - {fileID: 4457872}
+  - {fileID: 743524061}
+  - {fileID: 969450325}
+  - {fileID: 1594573655}
+  - {fileID: 801140532}
+  - {fileID: 1706956387}
+  - {fileID: 1200895553}
+  - {fileID: 720063005}
+  - {fileID: 721160477}
+  - {fileID: 1326293172}
+  - {fileID: 986381078}
+  - {fileID: 2032083218}
+  gunButtons:
+  - {fileID: 238357166}
+  - {fileID: 335828415}
+  - {fileID: 1426529203}
+  AccessorySprite:
+  - {fileID: 21300000, guid: 12f717ae812fb684d93923d137e82413, type: 3}
+  - {fileID: 21300000, guid: 506b685f6c5637f43bee169f29c10c6b, type: 3}
+  - {fileID: 21300000, guid: e386d90a337c590439a0502881ccf60a, type: 3}
+  - {fileID: 21300000, guid: 5afb68327c641a0488ca6f59a6fffd60, type: 3}
+  - {fileID: 21300000, guid: 035750a3680a6cb4391c574e38534ad2, type: 3}
+  - {fileID: 21300000, guid: 72a4f1d76fb0cd84eaa66f9f8e480170, type: 3}
+  - {fileID: 21300000, guid: 59c82bb1dcacd794a89ba558973a7cce, type: 3}
+  - {fileID: 21300000, guid: 19e0a8d765673cb4d866133b83518c09, type: 3}
+  - {fileID: 21300000, guid: aec893250511c724f87ed85fba8033c4, type: 3}
+  - {fileID: 21300000, guid: caa8d2ca7b3a1214da41da87e42c7064, type: 3}
+  - {fileID: 21300000, guid: 8fb7c0047f8cfd04cb609fd497c5c0ba, type: 3}
+  - {fileID: 21300000, guid: b2ade696a6e7d3c4faa006365a31dc9f, type: 3}
+  - {fileID: 21300000, guid: a4fc72db585c1ad43a0af4c181e53ae3, type: 3}
+  - {fileID: 21300000, guid: 3e2e35ba5760a5a469d77ece19ebfd93, type: 3}
+  - {fileID: 21300000, guid: a524e42690a759c4883e1b037ec98ebc, type: 3}
+  - {fileID: 21300000, guid: 51dc3ffd13496cb468ea5cba7a3bf4aa, type: 3}
+  - {fileID: 21300000, guid: 98754850ac33bd344b21a87eb004d7e4, type: 3}
+  - {fileID: 21300000, guid: cbe21444f82c14e4eb93d1ba30157554, type: 3}
+  - {fileID: 21300000, guid: ad96b08849c39574f906dc2d46f50f1c, type: 3}
+  - {fileID: 21300000, guid: 9c4c32163f20c1848be4499b711e2bc9, type: 3}
+  - {fileID: 21300000, guid: b56b9a1427971c24d8efab08a47c5d42, type: 3}
+  - {fileID: 21300000, guid: 45fa693e456151d49900c08de4b1db08, type: 3}
+  - {fileID: 21300000, guid: f5e14555243b4404194f3cf53534005b, type: 3}
+  - {fileID: 21300000, guid: d15f0543701a33944a17002e3809c03d, type: 3}
+  - {fileID: 21300000, guid: 4e6820d9509819a4a9e8703eb5701329, type: 3}
+  - {fileID: 21300000, guid: c69716af1d5fccc499feeaa97871400f, type: 3}
+  - {fileID: 21300000, guid: 856c3dfb2ba5f434682411b92575d8dd, type: 3}
+  BCan: {fileID: 21300000, guid: ba40c0edcce835841843faab83027e36, type: 3}
+  RCan: {fileID: 21300000, guid: 03dea298dee404c42a1341bc70b89927, type: 3}
+  AEQValues: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  ONValues: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  tooltips:
+  - {fileID: 69200532}
+  - {fileID: 98886971}
+  - {fileID: 1344391518}
+  - {fileID: 1017591643}
+  - {fileID: 802538982}
+  - {fileID: 1709575895}
+  - {fileID: 2096239378}
+  - {fileID: 790073025}
+  - {fileID: 801941171}
+  - {fileID: 553074500}
+  - {fileID: 1157809807}
+  - {fileID: 1151897197}
+  - {fileID: 2130590032}
+  - {fileID: 546873626}
+  - {fileID: 494111516}
+  - {fileID: 1900639398}
+  - {fileID: 551541997}
+  - {fileID: 2070464471}
+  - {fileID: 879433636}
+  - {fileID: 551428907}
+  - {fileID: 325652671}
+  - {fileID: 908012148}
+  - {fileID: 1575561493}
+  - {fileID: 1638553036}
+  - {fileID: 1206667255}
+  - {fileID: 1911774665}
+  - {fileID: 482609011}
+  Guns:
+  - {fileID: 238357164}
+  - {fileID: 335828413}
+  - {fileID: 1426529201}
+  playerStats: {fileID: 0}
+  EqippedSlots: {fileID: 1530385533}
 --- !u!1 &844387099
 GameObject:
   m_ObjectHideFlags: 0
@@ -12320,7 +12424,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Thrash
         m_Mode: 1
@@ -12560,90 +12664,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858908430}
   m_CullTransparentMesh: 1
---- !u!1 &869778168
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 869778170}
-  - component: {fileID: 869778169}
-  m_Layer: 0
-  m_Name: WorkbenchGlow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!212 &869778169
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869778168}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ae5680e4b43c364c9f228988d01e74d, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &869778170
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869778168}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.08, z: 1}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 126137036}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &875620022
 GameObject:
   m_ObjectHideFlags: 0
@@ -12775,7 +12795,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -12799,7 +12819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 14
 --- !u!222 &876542854
@@ -13226,7 +13246,7 @@ Transform:
   m_Children:
   - {fileID: 1030297419}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &895903511
 BoxCollider2D:
@@ -14382,7 +14402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 8
 --- !u!222 &969450324
@@ -14437,7 +14457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -14562,7 +14582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 828170799}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SwitchTable
         m_Mode: 1
@@ -14846,7 +14866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 16
 --- !u!222 &986381077
@@ -14901,7 +14921,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -15007,7 +15027,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -15031,7 +15051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 33
 --- !u!222 &995733947
@@ -15269,7 +15289,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -15293,7 +15313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 11
 --- !u!222 &1002047458
@@ -15984,7 +16004,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -16008,7 +16028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 1
 --- !u!222 &1033836476
@@ -16133,7 +16153,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -16157,7 +16177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 39
 --- !u!222 &1058467090
@@ -16437,9 +16457,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 828170799}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
-        m_MethodName: GoldenWench
+        m_MethodName: LevelUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16487,338 +16507,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067858877}
   m_CullTransparentMesh: 1
---- !u!1 &1080033495
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1080033497}
-  - component: {fileID: 1080033499}
-  - component: {fileID: 1080033498}
-  - component: {fileID: 1080033496}
-  m_Layer: 0
-  m_Name: Crafting Table
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1080033496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080033495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 342a8b218f088154985821e8d3cb06c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bench: {fileID: 126137035}
-  Player: {fileID: 0}
-  Glow: {fileID: 1130322950}
-  Hud: {fileID: 1168101583}
-  AInEq:
-  - {fileID: 1521262703}
-  - {fileID: 1033836478}
-  - {fileID: 1273447353}
-  - {fileID: 2085787745}
-  - {fileID: 1173636105}
-  - {fileID: 1813205943}
-  - {fileID: 749954601}
-  - {fileID: 201761586}
-  - {fileID: 1734989029}
-  - {fileID: 1382170693}
-  - {fileID: 2023424461}
-  - {fileID: 1002047460}
-  - {fileID: 1933103329}
-  - {fileID: 1933262107}
-  - {fileID: 876542856}
-  - {fileID: 1167174524}
-  - {fileID: 742758626}
-  - {fileID: 1406304789}
-  - {fileID: 367826517}
-  - {fileID: 1797280702}
-  - {fileID: 258867412}
-  - {fileID: 29943304}
-  - {fileID: 1948336764}
-  - {fileID: 791244920}
-  - {fileID: 1721566896}
-  - {fileID: 556439259}
-  - {fileID: 1706548378}
-  - {fileID: 1111586721}
-  - {fileID: 1867842753}
-  - {fileID: 1923538943}
-  - {fileID: 67398328}
-  - {fileID: 71643026}
-  - {fileID: 108225470}
-  - {fileID: 995733949}
-  - {fileID: 6296631}
-  - {fileID: 24144007}
-  - {fileID: 151425597}
-  - {fileID: 1660632886}
-  - {fileID: 1916691944}
-  - {fileID: 1058467092}
-  - {fileID: 116240246}
-  - {fileID: 2103292169}
-  - {fileID: 1605524217}
-  - {fileID: 25630888}
-  AEquipped:
-  - {fileID: 1956433899}
-  - {fileID: 2094849788}
-  - {fileID: 2138556095}
-  - {fileID: 1598017721}
-  - {fileID: 2038310609}
-  - {fileID: 97570577}
-  - {fileID: 4457873}
-  - {fileID: 743524062}
-  - {fileID: 969450326}
-  - {fileID: 1594573656}
-  - {fileID: 801140533}
-  - {fileID: 1706956388}
-  - {fileID: 1200895554}
-  - {fileID: 720063006}
-  - {fileID: 721160478}
-  - {fileID: 1326293173}
-  - {fileID: 986381079}
-  - {fileID: 2032083219}
-  gunImages:
-  - {fileID: 238357167}
-  - {fileID: 335828416}
-  - {fileID: 1426529204}
-  ThrashCan: {fileID: 844387100}
-  EQButtons:
-  - {fileID: 1521262699}
-  - {fileID: 1033836474}
-  - {fileID: 1273447349}
-  - {fileID: 2085787741}
-  - {fileID: 1173636101}
-  - {fileID: 1813205939}
-  - {fileID: 749954597}
-  - {fileID: 201761582}
-  - {fileID: 1734989025}
-  - {fileID: 1382170689}
-  - {fileID: 2023424457}
-  - {fileID: 1002047456}
-  - {fileID: 1933103325}
-  - {fileID: 1933262103}
-  - {fileID: 876542852}
-  - {fileID: 1167174520}
-  - {fileID: 742758622}
-  - {fileID: 1406304785}
-  - {fileID: 367826513}
-  - {fileID: 1797280698}
-  - {fileID: 258867408}
-  - {fileID: 29943300}
-  - {fileID: 1948336760}
-  - {fileID: 791244916}
-  - {fileID: 1721566892}
-  - {fileID: 556439255}
-  - {fileID: 1706548374}
-  - {fileID: 1111586717}
-  - {fileID: 1867842749}
-  - {fileID: 1923538939}
-  - {fileID: 67398324}
-  - {fileID: 71643022}
-  - {fileID: 108225466}
-  - {fileID: 995733945}
-  - {fileID: 6296627}
-  - {fileID: 24144003}
-  - {fileID: 151425593}
-  - {fileID: 1660632882}
-  - {fileID: 1916691940}
-  - {fileID: 1058467088}
-  - {fileID: 116240242}
-  - {fileID: 2103292165}
-  - {fileID: 1605524213}
-  - {fileID: 25630884}
-  OnButtons:
-  - {fileID: 1956433898}
-  - {fileID: 2094849787}
-  - {fileID: 2138556094}
-  - {fileID: 1598017720}
-  - {fileID: 2038310608}
-  - {fileID: 97570576}
-  - {fileID: 4457872}
-  - {fileID: 743524061}
-  - {fileID: 969450325}
-  - {fileID: 1594573655}
-  - {fileID: 801140532}
-  - {fileID: 1706956387}
-  - {fileID: 1200895553}
-  - {fileID: 720063005}
-  - {fileID: 721160477}
-  - {fileID: 1326293172}
-  - {fileID: 986381078}
-  - {fileID: 2032083218}
-  gunButtons:
-  - {fileID: 238357166}
-  - {fileID: 335828415}
-  - {fileID: 1426529203}
-  AccessorySprite:
-  - {fileID: 21300000, guid: 12f717ae812fb684d93923d137e82413, type: 3}
-  - {fileID: 21300000, guid: 506b685f6c5637f43bee169f29c10c6b, type: 3}
-  - {fileID: 21300000, guid: e386d90a337c590439a0502881ccf60a, type: 3}
-  - {fileID: 21300000, guid: 5afb68327c641a0488ca6f59a6fffd60, type: 3}
-  - {fileID: 21300000, guid: 035750a3680a6cb4391c574e38534ad2, type: 3}
-  - {fileID: 21300000, guid: 72a4f1d76fb0cd84eaa66f9f8e480170, type: 3}
-  - {fileID: 21300000, guid: 59c82bb1dcacd794a89ba558973a7cce, type: 3}
-  - {fileID: 21300000, guid: 19e0a8d765673cb4d866133b83518c09, type: 3}
-  - {fileID: 21300000, guid: aec893250511c724f87ed85fba8033c4, type: 3}
-  - {fileID: 21300000, guid: caa8d2ca7b3a1214da41da87e42c7064, type: 3}
-  - {fileID: 21300000, guid: 8fb7c0047f8cfd04cb609fd497c5c0ba, type: 3}
-  - {fileID: 21300000, guid: b2ade696a6e7d3c4faa006365a31dc9f, type: 3}
-  - {fileID: 21300000, guid: a4fc72db585c1ad43a0af4c181e53ae3, type: 3}
-  - {fileID: 21300000, guid: 3e2e35ba5760a5a469d77ece19ebfd93, type: 3}
-  - {fileID: 21300000, guid: a524e42690a759c4883e1b037ec98ebc, type: 3}
-  - {fileID: 21300000, guid: 51dc3ffd13496cb468ea5cba7a3bf4aa, type: 3}
-  - {fileID: 21300000, guid: 98754850ac33bd344b21a87eb004d7e4, type: 3}
-  - {fileID: 21300000, guid: cbe21444f82c14e4eb93d1ba30157554, type: 3}
-  - {fileID: 21300000, guid: ad96b08849c39574f906dc2d46f50f1c, type: 3}
-  - {fileID: 21300000, guid: 9c4c32163f20c1848be4499b711e2bc9, type: 3}
-  - {fileID: 21300000, guid: b56b9a1427971c24d8efab08a47c5d42, type: 3}
-  - {fileID: 21300000, guid: 45fa693e456151d49900c08de4b1db08, type: 3}
-  - {fileID: 21300000, guid: f5e14555243b4404194f3cf53534005b, type: 3}
-  - {fileID: 21300000, guid: d15f0543701a33944a17002e3809c03d, type: 3}
-  - {fileID: 21300000, guid: 4e6820d9509819a4a9e8703eb5701329, type: 3}
-  - {fileID: 21300000, guid: c69716af1d5fccc499feeaa97871400f, type: 3}
-  - {fileID: 21300000, guid: 856c3dfb2ba5f434682411b92575d8dd, type: 3}
-  BCan: {fileID: 21300000, guid: ba40c0edcce835841843faab83027e36, type: 3}
-  RCan: {fileID: 21300000, guid: 03dea298dee404c42a1341bc70b89927, type: 3}
-  AEQValues: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  ONValues: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  tooltips:
-  - {fileID: 69200532}
-  - {fileID: 98886971}
-  - {fileID: 1344391518}
-  - {fileID: 1017591643}
-  - {fileID: 802538982}
-  - {fileID: 1709575895}
-  - {fileID: 2096239378}
-  - {fileID: 790073025}
-  - {fileID: 801941171}
-  - {fileID: 553074500}
-  - {fileID: 1157809807}
-  - {fileID: 1151897197}
-  - {fileID: 2130590032}
-  - {fileID: 546873626}
-  - {fileID: 494111516}
-  - {fileID: 1900639398}
-  - {fileID: 551541997}
-  - {fileID: 2070464471}
-  - {fileID: 879433636}
-  - {fileID: 551428907}
-  - {fileID: 325652671}
-  - {fileID: 908012148}
-  - {fileID: 1575561493}
-  - {fileID: 1638553036}
-  - {fileID: 1206667255}
-  - {fileID: 1911774665}
-  - {fileID: 482609011}
-  Guns:
-  - {fileID: 238357164}
-  - {fileID: 335828413}
-  - {fileID: 1426529201}
-  playerStats: {fileID: 0}
-  EqippedSlots: {fileID: 1530385533}
---- !u!4 &1080033497
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080033495}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.32, y: 19.14, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1130322952}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1080033498
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080033495}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.05, y: -0.73}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 3.2}
-    newSize: {x: 3.2, y: 3.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.84}
-  m_EdgeRadius: 0
---- !u!212 &1080033499
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080033495}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ae5680e4b43c364c9f228988d01e74d, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.94137836, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1086298792
 GameObject:
   m_ObjectHideFlags: 0
@@ -16916,7 +16604,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089249019
 GameObject:
@@ -17257,7 +16945,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -17281,7 +16969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 27
 --- !u!222 &1111586719
@@ -17445,90 +17133,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1130322950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1130322952}
-  - component: {fileID: 1130322951}
-  m_Layer: 0
-  m_Name: Crafting Table Glow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!212 &1130322951
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130322950}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2ae5680e4b43c364c9f228988d01e74d, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 3.2, y: 3.2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1130322952
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130322950}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.08, z: 1}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1080033497}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148222013
 GameObject:
   m_ObjectHideFlags: 0
@@ -18360,7 +17964,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -18384,7 +17988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 15
 --- !u!222 &1167174522
@@ -18594,7 +18198,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -18618,7 +18222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 4
 --- !u!222 &1173636103
@@ -18944,7 +18548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 12
 --- !u!222 &1200895552
@@ -18999,7 +18603,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -19271,7 +18875,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 828170799}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 3
@@ -19325,7 +18929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21046381f4afd154badb2b7eb754dcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 126137035}
+  table: {fileID: 828170799}
   order: 0
 --- !u!222 &1207572668
 CanvasRenderer:
@@ -19419,7 +19023,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: LevelUp
         m_Mode: 1
@@ -20100,7 +19704,7 @@ Transform:
   - {fileID: 1480596868}
   - {fileID: 743890437}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264564397
 GameObject:
@@ -20301,7 +19905,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -20325,7 +19929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 2
 --- !u!222 &1273447351
@@ -24579,7 +24183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 15
 --- !u!222 &1326293171
@@ -24634,7 +24238,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -25723,7 +25327,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -25747,7 +25351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 9
 --- !u!222 &1382170691
@@ -25892,7 +25496,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SpecialUpgrade
         m_Mode: 3
@@ -26006,7 +25610,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -26030,7 +25634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 17
 --- !u!222 &1406304787
@@ -26162,7 +25766,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
@@ -26451,7 +26055,7 @@ Transform:
   - {fileID: 1769969697}
   - {fileID: 1092059358}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480596867
 GameObject:
@@ -26660,8 +26264,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
-        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
+      - m_Target: {fileID: 828170800}
+        m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
         m_Arguments:
@@ -27027,7 +26631,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -27051,7 +26655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 0
 --- !u!222 &1521262701
@@ -27209,7 +26813,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1530385532
 GameObject:
@@ -27640,7 +27244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575561493
 GameObject:
@@ -27831,7 +27435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 9
 --- !u!222 &1594573654
@@ -27886,7 +27490,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -27980,7 +27584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 3
 --- !u!222 &1598017719
@@ -28035,7 +27639,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -28172,7 +27776,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -28196,7 +27800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 42
 --- !u!222 &1605524215
@@ -28973,7 +28577,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -28997,7 +28601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 37
 --- !u!222 &1660632884
@@ -29355,7 +28959,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 828170799}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 3
@@ -29409,7 +29013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21046381f4afd154badb2b7eb754dcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 126137035}
+  table: {fileID: 828170799}
   order: 1
 --- !u!222 &1686811073
 CanvasRenderer:
@@ -29549,7 +29153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695828208
 GameObject:
@@ -29984,7 +29588,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -30008,7 +29612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 26
 --- !u!222 &1706548376
@@ -30121,7 +29725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 11
 --- !u!222 &1706956386
@@ -30176,7 +29780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -30494,7 +30098,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -30518,7 +30122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 24
 --- !u!222 &1721566894
@@ -30741,7 +30345,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -30765,7 +30369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 8
 --- !u!222 &1734989027
@@ -30909,7 +30513,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: SwitchTable
         m_Mode: 1
@@ -31751,7 +31355,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -31775,7 +31379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 19
 --- !u!222 &1797280700
@@ -32038,7 +31642,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
+      - m_Target: {fileID: 828170799}
         m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: Upgrade
         m_Mode: 3
@@ -32092,7 +31696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21046381f4afd154badb2b7eb754dcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 126137035}
+  table: {fileID: 828170799}
   order: 2
 --- !u!222 &1809819040
 CanvasRenderer:
@@ -32187,7 +31791,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -32211,7 +31815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 5
 --- !u!222 &1813205941
@@ -32536,7 +32140,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -32560,7 +32164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 28
 --- !u!222 &1867842751
@@ -33472,7 +33076,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -33496,7 +33100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 38
 --- !u!222 &1916691942
@@ -33891,7 +33495,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -33915,7 +33519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 29
 --- !u!222 &1923538941
@@ -34176,7 +33780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -34200,7 +33804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 12
 --- !u!222 &1933103327
@@ -34325,7 +33929,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -34349,7 +33953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 13
 --- !u!222 &1933262105
@@ -34610,7 +34214,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -34634,7 +34238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 22
 --- !u!222 &1948336762
@@ -34747,7 +34351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 0
 --- !u!222 &1956433897
@@ -34802,7 +34406,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -35175,7 +34779,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -35199,7 +34803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 10
 --- !u!222 &2023424459
@@ -35312,7 +34916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 17
 --- !u!222 &2032083217
@@ -35367,7 +34971,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -35596,7 +35200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 4
 --- !u!222 &2038310607
@@ -35651,7 +35255,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -35814,8 +35418,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 126137035}
-        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
+      - m_Target: {fileID: 828170800}
+        m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
         m_Arguments:
@@ -36027,7 +35631,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -36051,7 +35655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 3
 --- !u!222 &2085787743
@@ -36469,7 +36073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 1
 --- !u!222 &2094849786
@@ -36524,7 +36128,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3
@@ -36767,7 +36371,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: Equip
         m_Mode: 3
@@ -36791,7 +36395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: eq
   order: 41
 --- !u!222 &2103292167
@@ -40057,7 +39661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb31f32be1dc0468b92a50605f2ab6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 1080033496}
+  table: {fileID: 0}
   pack: equipped
   order: 2
 --- !u!222 &2138556093
@@ -40112,7 +39716,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080033496}
+      - m_Target: {fileID: 828170800}
         m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
         m_MethodName: UnEquip
         m_Mode: 3

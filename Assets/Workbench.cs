@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class Workbench : MonoBehaviour
 {
     public CraftingTable crafting;
-    public GameObject Player, Glow, Hud, Upgrades, Others;
+    public GameObject Player, Hud, Upgrades;
     public PlayerController playerStats;
-    public TMPro.TextMeshProUGUI specialUpgrades, Tooltip, Parts;
+    public TMPro.TextMeshProUGUI Tooltip, Parts;
     public TMPro.TextMeshProUGUI[] Cost, Info;
     public Button[] Buttons, gunButtons;
     public GameObject[] Guns;
     public Image[] images, gunImages;
     public Sprite[] sprites;
 
-    bool active, golden, viable, others;
+    bool active, viable, others;
     public int[] rolled;
     int current;
 
@@ -26,7 +26,7 @@ public class Workbench : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 4.2f)
+        /*if (Vector3.Distance(transform.position, Player.transform.position) <= 4.2f)
         {
             if (playerStats.day)
             {
@@ -38,9 +38,9 @@ public class Workbench : MonoBehaviour
             }
             else Glow.SetActive(false);
         }
-        else Glow.SetActive(false);
+        else Glow.SetActive(false);*/
 
-        if (Input.GetKeyDown(KeyCode.Escape) && active && !golden)
+        if (Input.GetKeyDown(KeyCode.Escape) && active)
         {
             Hud.SetActive(false);
             active = false;
@@ -95,26 +95,17 @@ public class Workbench : MonoBehaviour
         gunButtons[current].interactable = false;
 
         GunInfo(which);
-        if (!golden)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                if (playerStats.tools + playerStats.eq.guns[which].parts >= playerStats.eq.guns[which].Costs[i])
-                    Buttons[i].interactable = true;
-                else Buttons[i].interactable = false;
-            }
 
-            if (playerStats.tools >= playerStats.eq.guns[which].LevelCost)
-                Buttons[4].interactable = true;
-            else Buttons[4].interactable = false;
-        }
-        else
+        for (int i = 0; i < 4; i++)
         {
-            for (int i = 0; i < 5; i++)
-            {
-                Buttons[i].interactable = false;
-            }
+            if (playerStats.tools + playerStats.eq.guns[which].parts >= playerStats.eq.guns[which].Costs[i])
+                Buttons[i].interactable = true;
+            else Buttons[i].interactable = false;
         }
+
+        if (playerStats.tools >= playerStats.eq.guns[which].LevelCost)
+            Buttons[4].interactable = true;
+        else Buttons[4].interactable = false;
     }
 
     public void GunInfo(int which)
@@ -199,8 +190,6 @@ public class Workbench : MonoBehaviour
             }
             images[i].sprite = sprites[rolled[i]];
         }
-
-        golden = true;
         UpdateInfo(current);
         Upgrades.SetActive(true);
     }
@@ -211,7 +200,6 @@ public class Workbench : MonoBehaviour
         //playerStats.eq.guns[current].SpecialUpgrade(rolled[which]);
         playerStats.eq.guns[current].MaxSlots++;
         Upgrades.SetActive(false);
-        golden = false;
         UpdateInfo(current);
         playerStats.DisplayAmmo();
     }

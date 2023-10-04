@@ -82,7 +82,7 @@ public class Room : MonoBehaviour
         spawnTimer += (0.8f * wavesStrength[roll]) / waveFrequency;
         roundTimer = roundDuration;
         roundsCount--;
-        map.RoundsCount.text = roundsCount.ToString("0");
+        map.RoundsCount.text = (roundsCount + 1).ToString("0");
     }
 
     void CeaseSpawn()
