@@ -697,7 +697,7 @@ MonoBehaviour:
   tokens: 0
   scrap: 29
   animator: {fileID: 7508960709266052724}
-  moveSpeed: 0
+  moveSpeed: 5
   Menu: {fileID: 2821856077054534156}
   menuOpened: 0
 --- !u!114 &2129462728280790370
@@ -1535,7 +1535,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129462729641926352}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ca324e49e6d82164cae85c7a32e0bab8, type: 2}
   m_CullingMode: 0

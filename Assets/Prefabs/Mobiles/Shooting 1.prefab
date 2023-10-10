@@ -59,6 +59,8 @@ MonoBehaviour:
   Projectal: {fileID: 6559750192261573265, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
   Items:
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
+  - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
+  - {fileID: 5869546756734873047, guid: b5bd72dcc887f224a9f7dd33dfc23c38, type: 3}
   playerStats: {fileID: 0}
   Body: {fileID: 3979315075050305358}
   playerBody: {fileID: 0}

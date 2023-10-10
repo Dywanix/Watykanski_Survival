@@ -763,19 +763,6 @@ public class PlayerController : MonoBehaviour
     public void NewDay()
     {
         day = true;
-        for (int i = 1; i < 3; i++)
-        {
-            if (eq.slotFilled[i])
-            {
-                eq.guns[i].ammo = eq.guns[i].maxAmmo - eq.guns[i].bulletsLeft;
-                if (engineer)
-                {
-                    if (engineer.passivePerks[3])
-                        eq.guns[i].ammo += eq.guns[i].maxAmmo * engineer.totalUpgrades / 50;
-                }
-            }
-        }
-        DisplayAmmo();
         dayCount++;
         //RestoreHealth(40 + maxHealth * 0.5f);
         if (berserker)
@@ -800,6 +787,15 @@ public class PlayerController : MonoBehaviour
     public void Nightfall()
     {
         day = false;
+        if (berserker)
+        {
+            if (berserker.passivePerks[0])
+                berserker.GainWrath(0.14f * (maxHealth - 80), false);
+        }
+    }
+
+    public void AmmoRefill()
+    {
         for (int i = 1; i < 3; i++)
         {
             if (eq.slotFilled[i])
@@ -814,12 +810,6 @@ public class PlayerController : MonoBehaviour
             }
         }
         DisplayAmmo();
-
-        if (berserker)
-        {
-            if (berserker.passivePerks[0])
-                berserker.GainWrath(0.14f * (maxHealth - 80), false);
-        }
     }
 
     public void LevelUp()

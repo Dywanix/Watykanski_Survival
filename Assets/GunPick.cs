@@ -28,7 +28,7 @@ public class GunPick : MonoBehaviour
             Roll();
     }
 
-    void Roll()
+    public void Roll()
     {
         rolls[0] = Random.Range(0, Library.guns.Length);
 
