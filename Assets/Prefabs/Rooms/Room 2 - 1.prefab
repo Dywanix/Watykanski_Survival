@@ -5176,19 +5176,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2984539770339126415, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: m_Color.b
-      value: 0.78431374
+      value: 0.88235295
       objectReference: {fileID: 0}
     - target: {fileID: 2984539770339126415, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: m_Color.g
-      value: 0.78431374
+      value: 0.88235295
       objectReference: {fileID: 0}
     - target: {fileID: 7170783509991884072, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: m_Color.b
-      value: 0.78431374
+      value: 0.88235295
       objectReference: {fileID: 0}
     - target: {fileID: 7170783509991884072, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: m_Color.g
-      value: 0.78431374
+      value: 0.88235295
       objectReference: {fileID: 0}
     - target: {fileID: 7170783509991884072, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: m_Color.r
@@ -5204,11 +5204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889397587438967036, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: waveFrequency
-      value: 2.25
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8889397587438967036, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: spawnFrequency
-      value: 1.7
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 8889397587438967036, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: Mobs.Array.size
