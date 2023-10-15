@@ -9,7 +9,7 @@ public class Equipment : MonoBehaviour
     public GunsLibrary Library;
     public Transform Barrel;
     public Gun[] guns;
-    public int[] Items, Accessories;
+    public int[] Accessories;
     public Image itemImage;
     public SpriteRenderer equippedGun;
     private Bullet firedBullet;
@@ -24,8 +24,10 @@ public class Equipment : MonoBehaviour
     public MultipleBullets waveBullet;
 
     // -- items
-    public GameObject Caltrop, Knife, Cleaver;
-    public float itemsActivationRate = 1f;
+    public bool[] Items;
+    public GameObject DeflectProjectal;
+    //public GameObject Caltrop, Knife, Cleaver;
+    //public float itemsActivationRate = 1f;
 
     // -- special bullets
     public GameObject Saw, Laser;
@@ -38,6 +40,19 @@ public class Equipment : MonoBehaviour
         //Invoke("KnifeThrow", 2.85f);
         //Invoke("ThrowSaw", 3.5f);
         //Invoke("ThrowCleaver", 4f);
+    }
+
+    public void PickUpItem(int which)
+    {
+        Items[which] = true;
+
+        switch (which)
+        {
+            case 3:
+                playerStats.maxShield += 20;
+                playerStats.GainShield(0);
+                break;
+        }
     }
 
     public void Flash()
@@ -133,7 +148,21 @@ public class Equipment : MonoBehaviour
         waveBullet.BulletShard = guns[equipped].bulletPrefab[Random.Range(0, guns[equipped].bulletPrefab.Length)];
     }
 
-    void ThrowCaltrops()
+    public void Deflect(float damage)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Random.Range(0f, 80f) + 120f * i);
+            GameObject bullet = Instantiate(DeflectProjectal, Barrel.position, Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(Barrel.up * Random.Range(16f, 18.2f), ForceMode2D.Impulse);
+
+            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(0.8f) + 0.24f);
+        }
+    }
+
+    /*void ThrowCaltrops()
     {
         if (Items[0] > 0 && !playerStats.day)
         {
@@ -213,7 +242,7 @@ public class Equipment : MonoBehaviour
         Invoke("ThrowCleaver", temp);
     }
 
-    /*void AutoReload()
+    void AutoReload()
     {
         if (guns[equipped].bulletsLeft < guns[equipped].magazineSize)
         {
@@ -227,9 +256,9 @@ public class Equipment : MonoBehaviour
             else Invoke("AutoReload", (0.75f + 10f * guns[equipped].reloadTime / (2 + guns[equipped].magazineSize)));
         }
         else Invoke("AutoReload", 2f);
-    }*/
+    }
 
-    /*public void SpecialCharges()
+    public void SpecialCharges()
     {
         sawCharges += guns[equipped].Accessories[4] * guns[equipped].BulletsFired() * (1f + 0.15f * guns[equipped].Accessories[4 + playerStats.accessoriesPerType * 3]);
         if (sawCharges >= 12f)
@@ -244,7 +273,7 @@ public class Equipment : MonoBehaviour
             FireLaser();
             laserCharges -= 7f;
         }
-    }*/
+    }
 
     public void FireSaw()
     {
@@ -279,5 +308,5 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet.pierce = 50;
             playerStats.firedBullet.pierceEfficiency = 1f;
         }
-    }
+    }*/
 }

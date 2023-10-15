@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlanningTable : MonoBehaviour
 {
-    public GameObject Player, Glow, Hud;
+    /*public GameObject Player, Glow, Hud;
     public PlayerController playerStats;
     public Button Buy;
     public Button[] Picks;
@@ -128,5 +128,5 @@ public class PlanningTable : MonoBehaviour
                 playerStats.damageBonus += 0.0004f * (playerStats.maxHealth - 50f);
                 break;
         }
-    }
+    }*/
 }

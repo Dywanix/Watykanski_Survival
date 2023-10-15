@@ -93,9 +93,6 @@ public class Enemy : MonoBehaviour
             force *= Random.Range(0.95f, 1.05f);
         }
 
-        scrapChance *= 1f + 0.15f * playerStats.eq.Items[9];
-        itemChance *= 1f + 0.08f * playerStats.eq.Items[9];
-
         health = maxHealth;
         DoTFill.fillAmount = 1f;
         healthFill.fillAmount = 1f;

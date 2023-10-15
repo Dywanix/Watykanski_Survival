@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     damageBonus, fireRateBonus, movementSpeed, cooldownReduction, maxDashCooldown, dashCooldown, dash;
     public int level = 1, dayCount = 1;
     public float healthIncrease, damageIncrease, fireRateIncrease, movementSpeedIncrease, additionalCritChance;
+    bool undamaged;
     int tempi;
     float temp;
 
@@ -135,12 +136,11 @@ public class PlayerController : MonoBehaviour
     {
         if (dashCooldown <= 0)
         {
-            dash = 5f;
+            dash = 4.8f;
 
-            maxDashCooldown = 7f / cooldownReduction;
+            maxDashCooldown = 6.4f / cooldownReduction;
             dashCooldown = maxDashCooldown;
 
-            tempi = eq.guns[eq.equipped].MagazineTotalSize() * eq.Items[7] / 5;
             if (eq.guns[eq.equipped].bulletsLeft > eq.guns[eq.equipped].MagazineTotalSize())
             {
                 // nothing
@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
             DisplayAmmo();
 
             if (eq.guns[eq.equipped].Accessories[19] > 0)
-                Invoke("DashFire", 0.44f);
+                Invoke("DashFire", 0.4f);
         }
     }
 
@@ -169,7 +169,6 @@ public class PlayerController : MonoBehaviour
     void Tick()
     {
         //RestoreHealth(maxHealth * 0.0025f);
-        //RestoreHealth(maxHealth * 0.001f * eq.Items[5]);
 
         //if (berserker == true)
             //RestoreHealth((maxHealth * 2f - health) * 0.003f);
@@ -229,7 +228,7 @@ public class PlayerController : MonoBehaviour
         //transform.position = tempPos;
         if (dash > 1)
         {
-            dash -= 10f * Time.deltaTime;
+            dash -= 11f * Time.deltaTime;
             if (dash < 1)
                 dash = 1;
         }
@@ -462,6 +461,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Rain()
+    {
+        if (!day)
+        {
+            FireDirection(Random.Range(0f, 360f), 0f);
+            Invoke("Rain", eq.guns[eq.equipped].fireRate * 3f / SpeedMultiplyer(1.3f));
+        }
+    }
+
     void Reload()
     {
         if (!eq.guns[eq.equipped].infiniteMagazine && eq.guns[eq.equipped].bulletsLeft < eq.guns[eq.equipped].MagazineTotalSize())
@@ -609,7 +617,7 @@ public class PlayerController : MonoBehaviour
 
     void DashFire()
     {
-        temp = 1.25f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
+        temp = 1.15f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
         tempi = 0;
 
         for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)
@@ -625,9 +633,19 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float value, bool pierce)
     {
+        if (eq.Items[0])
+        {
+            if (undamaged)
+            {
+                undamaged = false;
+                movementSpeed /= 1.15f;
+            }
+        }
         if (pierce)
         {
             health -= value;
+            if (eq.Items[3])
+                GainShield(value * 0.4f);
             healthBar.fillAmount = health / maxHealth;
 
             if (berserker == true && !day)
@@ -643,6 +661,8 @@ public class PlayerController : MonoBehaviour
                 value = shield * (-1f);
                 shield = 0;
                 health -= value;
+                if (eq.Items[3])
+                    GainShield(value * 0.4f);
                 healthBar.fillAmount = health / maxHealth;
 
                 if (berserker == true && !day)
@@ -754,7 +774,12 @@ public class PlayerController : MonoBehaviour
         else if (other.transform.tag == "EnemyProjectal")
         {
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
-            TakeDamage(collidedBullet.damage, false);
+            if (eq.Items[1])
+            {
+                TakeDamage(collidedBullet.damage * 0.9f, false);
+                eq.Deflect(collidedBullet.damage);
+            }
+            else TakeDamage(collidedBullet.damage, false);
             GainPoison(collidedBullet.poison);
             //Destroy(other.gameObject);
         }
@@ -792,6 +817,16 @@ public class PlayerController : MonoBehaviour
             if (berserker.passivePerks[0])
                 berserker.GainWrath(0.14f * (maxHealth - 80), false);
         }
+        if (eq.Items[0])
+        {
+            if (!undamaged)
+            {
+                undamaged = true;
+                movementSpeed *= 1.15f;
+            }
+        }
+        if (eq.Items[2])
+            Invoke("Rain", 0.2f);
     }
 
     public void AmmoRefill()
@@ -826,10 +861,10 @@ public class PlayerController : MonoBehaviour
         maxHealth += value;
         health += value;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
-        if (eq.Items[8] > 0)
+        /*if (eq.Items[8] > 0)
         {
             damageBonus += 0.0004f * (maxHealth - 50f) * eq.Items[8];
-        }
+        }*/
         dHealth += value;
         dropBar.fillAmount = dHealth / maxHealth;
         healthBar.fillAmount = health / maxHealth;
@@ -837,7 +872,7 @@ public class PlayerController : MonoBehaviour
 
     public void GainScrap(float amount)
     {
-        amount *= 1f + 0.2f * eq.Items[5];
+        //amount *= 1f + 0.2f * eq.Items[5];
 
         scrap += amount;
         scrapInfo.text = scrap.ToString("0");
