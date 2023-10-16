@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
         if (playerStats.eq.Items[20])
             vulnerable += armor * 0.003f;
         if (playerStats.eq.Items[22])
-            curse += (7f + maxHealth * 0.15f) * playerStats.DamageDealtMultiplyer(0.2f);
+            curse += (10.5f + maxHealth * 0.15f) * playerStats.DamageDealtMultiplyer(0.2f);
 
         health = maxHealth;
         DoTFill.fillAmount = 1f;
@@ -412,7 +412,7 @@ public class Enemy : MonoBehaviour
             if (curse > 0)
             {
                 tempi = 1;
-                while ((10 + 2 * tempi) * tempi < curse)
+                while ((8 + 2 * tempi) * tempi < curse)
                 {
                     tempi++;
                 }

@@ -152,7 +152,7 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        ExperienceGain(Costs[which] * 0.31f);
+        ExperienceGain(Costs[which] * 0.32f);
         //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 

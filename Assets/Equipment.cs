@@ -19,8 +19,8 @@ public class Equipment : MonoBehaviour
     float temp;
 
     // On Hit
-    public GameObject Peacemaker, Boomerange, Wave;
-    public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges;
+    public GameObject Peacemaker, Boomerange, Wave, Orb;
+    public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, orbCharges;
     public MultipleBullets waveBullet;
 
     // -- items
@@ -151,6 +151,13 @@ public class Equipment : MonoBehaviour
             FireWave();
             waveCharges[equipped] -= 15f;
         }
+
+        orbCharges[equipped] += efficiency * (1f + 0.06f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * (1f + 0.2f * guns[equipped].Accessories[26]);
+        if (orbCharges[equipped] >= 6f)
+        {
+            FireOrb();
+            orbCharges[equipped] -= 6f;
+        }
     }
 
     void FirePeacemaker()
@@ -202,6 +209,23 @@ public class Equipment : MonoBehaviour
         playerStats.SetBullet(1f);
         waveBullet = bullet.GetComponent(typeof(MultipleBullets)) as MultipleBullets;
         waveBullet.BulletShard = guns[equipped].bulletPrefab[Random.Range(0, guns[equipped].bulletPrefab.Length)];
+    }
+
+    void FireOrb()
+    {
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-0.7f * guns[equipped].accuracy, 0.7f * guns[equipped].accuracy));
+        GameObject bullet = Instantiate(Orb, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * 18f * Random.Range(0.95f, 1.05f), ForceMode2D.Impulse);
+
+        playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        playerStats.SetBullet(1f);
+        playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+        playerStats.firedBullet.duration = 1.41f;
+
+        playerStats.firedBullet.damage *= 0.16f;
+        playerStats.firedBullet.DoT *= 3.8f; playerStats.firedBullet.DoT += 1.6f;
+        playerStats.firedBullet.curse *= 8.8f; playerStats.firedBullet.curse += 5.4f;
     }
 
     public void Deflect(float damage)

@@ -868,6 +868,14 @@ public class PlayerController : MonoBehaviour
             }
             else GainTools(1);
         }
+        for (int i = 0; i < 3; i++)
+        {
+            if (eq.slotFilled[i])
+            {
+                if (eq.guns[i].Accessories[27] > 0)
+                    eq.guns[i].parts += 5 * eq.guns[i].Accessories[27];
+            }
+        }
         if (eq.Items[18])
         {
             GainScrap(5);

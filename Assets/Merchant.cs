@@ -9,11 +9,11 @@ public class Merchant : MonoBehaviour
     public Transform[] ItemForm;
     public TMPro.TextMeshProUGUI[] CostText;
     public SpriteRenderer[] ItemsImages;
-    public Sprite[] sprites, accessorySprites;
+    public Sprite[] sprites, accessorySprites, itemSprites;
     public PlayerController playerStats;
 
-    public int[] Costs, MinCosts, MaxCosts, Rolls, Accessory;
-    public int accessoryChance;
+    public int[] Costs, MinCosts, MaxCosts, Rolls, Accessory, Item;
+    public int accessoryChance, itemChance;
     int roll;
     public bool[] aviable;
 
@@ -40,7 +40,7 @@ public class Merchant : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 7; i++)
         {
             if (Vector3.Distance(ItemForm[i].position, Player.transform.position) <= 1f)
             {
@@ -52,7 +52,7 @@ public class Merchant : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 7; i++)
             {
                 if (aviable[i])
                 {
@@ -78,9 +78,13 @@ public class Merchant : MonoBehaviour
 
     void SetShop()
     {
-        Rolls[0] = Random.Range(0, sprites.Length + accessoryChance);
+        //Rolls[0] = Random.Range(0, sprites.Length + accessoryChance);
 
-        do
+        for (int i = 0; i < 7; i++)
+        {
+            Rolls[i] = Random.Range(0, sprites.Length + accessoryChance + itemChance);
+        }
+        /*do
         {
             Rolls[1] = Random.Range(0, sprites.Length + accessoryChance);
         } while ((Rolls[1] == Rolls[0]) && (Rolls[1] < sprites.Length));
@@ -93,13 +97,20 @@ public class Merchant : MonoBehaviour
         do
         {
             Rolls[3] = Random.Range(0, sprites.Length + accessoryChance);
-        } while ((Rolls[3] == Rolls[0] || Rolls[3] == Rolls[1] || Rolls[3] == Rolls[2]) && (Rolls[1] < sprites.Length));
+        } while ((Rolls[3] == Rolls[0] || Rolls[3] == Rolls[1] || Rolls[3] == Rolls[2]) && (Rolls[1] < sprites.Length));*/
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 7; i++)
         {
             Items[i].SetActive(true);
             Texts[i].SetActive(true);
-            if (Rolls[i] >= sprites.Length)
+            if (Rolls[i] >= sprites.Length + accessoryChance)
+            {
+                Item[i] = Random.Range(0, itemSprites.Length);
+                ItemsImages[i].sprite = itemSprites[Item[i]];
+                Costs[i] = Random.Range(32, 40 + 1);
+                CostText[i].text = Costs[i].ToString("0");
+            }
+            else if (Rolls[i] >= sprites.Length)
             {
                 Accessory[i] = Random.Range(0, accessorySprites.Length);
                 ItemsImages[i].sprite = accessorySprites[Accessory[i]];
@@ -118,7 +129,11 @@ public class Merchant : MonoBehaviour
     void Bought(int what)
     {
         playerStats.SpendScrap(Costs[what]);
-        if (Rolls[what] >= sprites.Length)
+        if (Rolls[what] >= sprites.Length + accessoryChance)
+        {
+            playerStats.eq.PickUpItem(Item[what]);
+        }
+        else if (Rolls[what] >= sprites.Length)
         {
             playerStats.eq.Accessories[Accessory[what]]++;
         }

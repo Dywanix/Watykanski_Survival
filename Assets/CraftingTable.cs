@@ -487,6 +487,15 @@ public class CraftingTable : MonoBehaviour
                 playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.1f;
                 // On Hit Rate Increase
                 break;
+            case 27:
+                // Gun gains 5 parts after each room
+                break;
+            case 28:
+                playerStats.eq.guns[playerStats.eq.equipped].curse += 0.28f;
+                break;
+            case 29:
+                // Dread Orb - On Hit
+                break;
         }
         /*tempi = 0;
         while (which >= playerStats.accessoriesPerType)
@@ -700,6 +709,15 @@ public class CraftingTable : MonoBehaviour
             case 26:
                 playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.1f;
                 // On Hit Rate Increase
+                break;
+            case 27:
+                // Gun gains 5 parts after each room
+                break;
+            case 28:
+                playerStats.eq.guns[playerStats.eq.equipped].curse -= 0.28f;
+                break;
+            case 29:
+                // Dread Orb - On Hit
                 break;
         }
         /*tempi = 0;

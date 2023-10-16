@@ -26,19 +26,6 @@ public class Workbench : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        /*if (Vector3.Distance(transform.position, Player.transform.position) <= 4.2f)
-        {
-            if (playerStats.day)
-            {
-                Glow.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E) && !active)
-                {
-                    Open();
-                }
-            }
-            else Glow.SetActive(false);
-        }
-        else Glow.SetActive(false);*/
 
         if (Input.GetKeyDown(KeyCode.Escape) && active)
         {

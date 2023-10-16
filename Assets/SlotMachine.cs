@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class SlotMachine : MonoBehaviour
 {
-    public GameObject Player, Glow, Hud;
+    public GameObject Player, Hud;
     public PlayerController playerStats;
-    public Button Lever, Collect;
+    public Button Lever;
     public Image[] images;
     public Sprite[] sprites;
 
@@ -23,42 +23,34 @@ public class SlotMachine : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 4.2f)
-        {
-            if (playerStats.day)
-            {
-                Glow.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E) && !active)
-                {
-                    UpdateInfo();
-                    playerStats.free = false;
-                    playerStats.menuOpened = true;
-                    Hud.SetActive(true);
-                    active = true;
-                }
-            }
-            else Glow.SetActive(false);
 
-            if (Input.GetKeyDown(KeyCode.Escape) && active)
-            {
-                playerStats.free = true;
-                Hud.SetActive(false);
-                active = false;
-            }
+        if (Input.GetKeyDown(KeyCode.Escape) && active)
+        {
+            Hud.SetActive(false);
+            active = false;
+            playerStats.free = true;
         }
-        else Glow.SetActive(false);
+    }
+
+    public void Open()
+    {
+        UpdateInfo();
+        playerStats.free = false;
+        playerStats.menuOpened = true;
+        Hud.SetActive(true);
+        active = true;
     }
 
     void UpdateInfo()
     {
-        if (playerStats.tokens >= 1)
+        if (playerStats.scrap >= 12)
             Lever.interactable = true;
         else Lever.interactable = false;
     }
 
     public void Roll()
     {
-        playerStats.SpendTokens(1);
+        playerStats.SpendScrap(12);
 
         for (int i = 0; i < 3; i++)
         {
@@ -69,23 +61,18 @@ public class SlotMachine : MonoBehaviour
             }
         }
 
-        Collect.interactable = false;
-
         if (rolled[0] == rolled[1] && rolled[0] == rolled[2])
         {
-            Collect.interactable = true;
             prize = rolled[0];
             CollectPrize();
         }
         else if ((rolled[0] == rolled[1]) || (rolled[0] == rolled[2]))
         {
-            Collect.interactable = true;
             prize = rolled[0] + 4;
             CollectPrize();
         }
         else if (rolled[1] == rolled[2])
         {
-            Collect.interactable = true;
             prize = rolled[1] + 4;
             CollectPrize();
         }
@@ -95,12 +82,10 @@ public class SlotMachine : MonoBehaviour
 
     public void CollectPrize()
     {
-        Collect.interactable = false;
-
         switch (prize)
         {
             case 0:
-                playerStats.GainScrap(50);
+                playerStats.GainTokens(4);
                 break;
             case 1:
                 playerStats.GainTools(12);
@@ -118,7 +103,7 @@ public class SlotMachine : MonoBehaviour
                 }
                 break;
             case 4:
-                playerStats.GainScrap(12);
+                playerStats.GainTokens(1);
                 break;
             case 5:
                 playerStats.GainTools(3);
