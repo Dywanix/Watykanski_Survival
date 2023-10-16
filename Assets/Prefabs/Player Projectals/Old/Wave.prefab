@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionRadius: {fileID: 0}
+  ShardExplosion: {fileID: 0}
   duration: 1.08
   damage: 10
   penetration: 0.55
@@ -109,7 +110,7 @@ MonoBehaviour:
   slowDuration: 0.9
   stunChance: 0
   stunDuration: 0
-  pierceEfficiency: 0.85
+  pierceEfficiency: 0.88
   DoT: 0
   incendiary: 0
   damageGain: 0

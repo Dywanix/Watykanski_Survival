@@ -109,6 +109,8 @@ MonoBehaviour:
   scrapCount: 1
   itemCount: 1
   Blood: {fileID: 0}
+  CurseBullet: {fileID: 3674245068203054096, guid: c24f5ea2081f85f42b52e95e0055cbac, type: 3}
+  curse: 0
 --- !u!50 &3979315075050305358
 Rigidbody2D:
   serializedVersion: 4

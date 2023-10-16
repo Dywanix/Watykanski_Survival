@@ -26,6 +26,7 @@ public class Equipment : MonoBehaviour
     // -- items
     public bool[] Items;
     public GameObject DeflectProjectal;
+    public GameObject[] Drones;
     //public GameObject Caltrop, Knife, Cleaver;
     //public float itemsActivationRate = 1f;
 
@@ -40,6 +41,11 @@ public class Equipment : MonoBehaviour
         //Invoke("KnifeThrow", 2.85f);
         //Invoke("ThrowSaw", 3.5f);
         //Invoke("ThrowCleaver", 4f);
+
+        /*for (int i = 0; i < 24; i++)
+        {
+            PickUpItem(i);
+        }*/
     }
 
     public void PickUpItem(int which)
@@ -51,6 +57,56 @@ public class Equipment : MonoBehaviour
             case 3:
                 playerStats.maxShield += 20;
                 playerStats.GainShield(0);
+                break;
+            case 5:
+                playerStats.cooldownReduction += 0.38f;
+                break;
+            case 6:
+                playerStats.GainHP(10);
+                break;
+            case 7:
+                playerStats.damageBonus += (playerStats.maxHealth - 100) * 0.001f;
+                playerStats.GainHP(10);
+                break;
+            case 8:
+                playerStats.GainTools(6);
+                for (int i = 0; i < 3; i++)
+                {
+                    if (slotFilled[i])
+                    {
+                        guns[i].MaxSlots++;
+                    }
+                }
+                break;
+            case 9:
+                playerStats.movementSpeed += 35f;
+                break;
+            case 10:
+                playerStats.damageBonus += 0.06f;
+                playerStats.GainScrap(30);
+                break;
+            case 11:
+                playerStats.maxShield += 20;
+                playerStats.GainShield(0);
+                break;
+            case 13:
+                playerStats.dashBaseCooldown -= 0.8f;
+                break;
+            case 14:
+                Drones[0].SetActive(true);
+                break;
+            case 15:
+                playerStats.abilityDamageBonus += 0.2f;
+                break;
+            case 16:
+                playerStats.additionalCritChance += 0.07f;
+                break;
+            case 19:
+                playerStats.damageBonus += 0.3f;
+                break;
+            case 21:
+                playerStats.damageBonus += 0.06f;
+                playerStats.forceIncrease += 0.25f;
                 break;
         }
     }
@@ -64,32 +120,32 @@ public class Equipment : MonoBehaviour
         }
     }
 
-    public void OnHit()
+    public void OnHit(float efficiency)
     {
         //Flash();
 
-        freeBulletCharges[equipped] += 1f * guns[equipped].Accessories[20] * (1f + 0.2f * guns[equipped].Accessories[26]);
+        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20] * (1f + 0.2f * guns[equipped].Accessories[26]);
         if (freeBulletCharges[equipped] >= 6f)
         {
             playerStats.FireDirection(0f, 0f);
             freeBulletCharges[equipped] -= 6f;
         }
 
-        peacemakerCharges[equipped] += (1f + 0.2f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired() * (1f + 0.2f * guns[equipped].Accessories[26]);
+        peacemakerCharges[equipped] += efficiency * (1f + 0.2f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired() * (1f + 0.2f * guns[equipped].Accessories[26]);
         if (peacemakerCharges[equipped] >= 12f)
         {
             FirePeacemaker();
             peacemakerCharges[equipped] -= 12f;
         }
 
-        boomerangCharges[equipped] += (1f + 0.1f * guns[equipped].fireRate) * guns[equipped].Accessories[24] * (1f + 0.2f * guns[equipped].Accessories[26]);
+        boomerangCharges[equipped] += efficiency * (1f + 0.1f * guns[equipped].fireRate) * guns[equipped].Accessories[24] * (1f + 0.2f * guns[equipped].Accessories[26]);
         if (boomerangCharges[equipped] >= 11f)
         {
             FireBoomerang();
             boomerangCharges[equipped] -= 11f;
         }
 
-        waveCharges[equipped] += 1f * guns[equipped].Accessories[25] * guns[equipped].BulletsFired() * (1f + 0.2f * guns[equipped].Accessories[26]);
+        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25] * guns[equipped].BulletsFired() * (1f + 0.2f * guns[equipped].Accessories[26]);
         if (waveCharges[equipped] >= 15f)
         {
             FireWave();
@@ -158,7 +214,7 @@ public class Equipment : MonoBehaviour
             bullet_body.AddForce(Barrel.up * Random.Range(16f, 18.2f), ForceMode2D.Impulse);
 
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(0.8f) + 0.24f);
+            firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(1.2f) - 0.2f);
         }
     }
 

@@ -153,6 +153,7 @@ public class Engineer : MonoBehaviour
             bulletFired.penetration += 0.15f;
             bulletFired.armorShred += 0.012f;
         }
+        bulletFired.damage *= playerStats.abilityDamageBonus;
     }
 
     void TurretLaunch()
@@ -169,6 +170,8 @@ public class Engineer : MonoBehaviour
         bulletFired.damage *= 1.037f + 0.005f * playerStats.level;
         bulletFired.damage *= 1f + 0.025f * turretCount;
         turretFireRate /= 1.033f;
+
+        bulletFired.damage *= playerStats.abilityDamageBonus;
 
         rocketCount++;
         nextRocket += 5 + rocketCount;
@@ -201,6 +204,8 @@ public class Engineer : MonoBehaviour
                 bulletFired.vulnerableApplied += 0.08f;
             if (ability2Perks[2])
                 bulletFired.duration += 0.42f;
+
+            bulletFired.damage *= playerStats.abilityDamageBonus;
         }
     }
 

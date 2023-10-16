@@ -1484,7 +1484,7 @@ MonoBehaviour:
   stunChance: 0
   stunDuration: 0
   burst: 1
-  burstDelay: 0.21
+  burstDelay: 0.18
   onHitModifier: 1
   LevelCostCharge: 0
   cameraShake: 13.9

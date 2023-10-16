@@ -90,8 +90,8 @@ public class Berserker : MonoBehaviour
     {
         wavesCount = 6 + playerStats.level / 3;
         if (ability1Perks[3])
-            wavesCount += 1 + Mathf.FloorToInt((playerStats.maxHealth - 100) / 22);
-        else wavesCount += Mathf.FloorToInt((playerStats.maxHealth - 100) / 25);
+            wavesCount += 1 + Mathf.FloorToInt((playerStats.maxHealth - 100) / 21);
+        else wavesCount += Mathf.FloorToInt((playerStats.maxHealth - 100) / 24);
         if (ability1Perks[0])
             wavesCount += 2 + Mathf.FloorToInt(wrath * 20f);
         return wavesCount;
@@ -128,6 +128,7 @@ public class Berserker : MonoBehaviour
                 AxeThrown.pierce++;
                 AxeThrown.pierceEfficiency += 0.08f;
             }
+            AxeThrown.damage *= playerStats.abilityDamageBonus;
         }
     }
 
@@ -205,6 +206,7 @@ public class Berserker : MonoBehaviour
             AxeThrown.pierce += 2;
              AxeThrown.pierceEfficiency += 0.07f;
         }
+        AxeThrown.damage *= playerStats.abilityDamageBonus;
     }
 
     public void GainPerk(int ability, int which)
@@ -223,14 +225,14 @@ public class Berserker : MonoBehaviour
                         healthGain += 2.5f;
                         break;
                     case 2:
-                        wrathGain += 0.021f;
+                        wrathGain += 0.022f;
                         break;
                     case 3:
                         // passive - wrath also increases Fire Rate
                         break;
                     case 4:
                         // passive - Juggernaut - increases wrath gained & HP with damage taken
-                        wrathGain += 0.021f;
+                        wrathGain += 0.022f;
                         while (damageTaken >= 40 + 2 * juggernautCount)
                         {
                             damageTaken -= 40 + 2 * juggernautCount;

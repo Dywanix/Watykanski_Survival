@@ -18,12 +18,12 @@ public class Enemy : MonoBehaviour
     public PlayerController playerStats;
     public Rigidbody2D Body, playerBody, Dir;
     public Transform Sight, DamageOrigin, FlankPosition;
-    private Bullet collidedBullet;
+    private Bullet collidedBullet, firedBullet;
     private DamageTaken damageDisplay;
     public Day_Night_Cycle day_night;
 
     // ----- enemy stats -----
-    private int roll;
+    private int roll, tempi;
     private float temp;
     public bool rare, boss, dead;
 
@@ -60,6 +60,10 @@ public class Enemy : MonoBehaviour
     [Header("Graficzne")]
     public GameObject Blood;
 
+    [Header("Status")]
+    public GameObject CurseBullet;
+    public float curse;
+
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -74,24 +78,19 @@ public class Enemy : MonoBehaviour
         attackDamage *= Random.Range(0.92f, 1.08f);
         attackSpeed *= Random.Range(0.92f, 1.08f);
 
-        if (rare)
-        {
-            maxHealth *= 0.99f + 0.01f * playerStats.dayCount;
-            movementSpeed *= 0.986f + 0.014f * playerStats.dayCount;
-        }
-
         if (boss)
-        {
-            maxHealth *= 0.985f + 0.015f * playerStats.dayCount;
-            attackDamage *= 0.98f + 0.02f * playerStats.dayCount;
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
-        }
 
         if (ranged)
         {
             attackRange *= Random.Range(0.95f, 1.05f);
             force *= Random.Range(0.95f, 1.05f);
         }
+
+        if (playerStats.eq.Items[20])
+            vulnerable += armor * 0.003f;
+        if (playerStats.eq.Items[22])
+            curse += (7f + maxHealth * 0.15f) * playerStats.DamageDealtMultiplyer(0.2f);
 
         health = maxHealth;
         DoTFill.fillAmount = 1f;
@@ -251,17 +250,17 @@ public class Enemy : MonoBehaviour
             for (int i = 0; i < bulletCount; i++)
             {
                 Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + recoil + (i * 2 - bulletCount + 1) * bulletSpread / 2);
-                GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
-                Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-                scrap_body.AddForce(Sight.up * currentForce, ForceMode2D.Impulse);
+                GameObject bullet = Instantiate(Projectal, Dir.position, Sight.rotation);
+                Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+                bullet_body.AddForce(Sight.up * currentForce, ForceMode2D.Impulse);
             }
         }
         else
         {
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(-accuracy, accuracy));
-            GameObject scrap = Instantiate(Projectal, Dir.position, Sight.rotation);
-            Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-            scrap_body.AddForce(Sight.up * currentForce, ForceMode2D.Impulse);
+            GameObject bullet = Instantiate(Projectal, Dir.position, Sight.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(Sight.up * currentForce, ForceMode2D.Impulse);
         }
     }
 
@@ -279,6 +278,7 @@ public class Enemy : MonoBehaviour
             TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit, true);
             if (collidedBullet.DoT > 0)
                 GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
+            curse += collidedBullet.curse;
             if (collidedBullet.incendiary > 0)
                 burning += collidedBullet.incendiary;
         }
@@ -408,6 +408,25 @@ public class Enemy : MonoBehaviour
 
             if (DeathDrop)
                 DeathDrop.Trigger();
+
+            if (curse > 0)
+            {
+                tempi = 1;
+                while ((10 + 2 * tempi) * tempi < curse)
+                {
+                    tempi++;
+                }
+                curse /= tempi;
+                for (int i = 0; i < tempi; i++)
+                {
+                    Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 40f) + i * 360f / tempi);
+                    GameObject bullet = Instantiate(CurseBullet, Body.position, Sight.rotation);
+                    Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+                    bullet_body.AddForce(Sight.up * Random.Range(15f, 15.5f), ForceMode2D.Impulse);
+                    firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+                    firedBullet.damage = curse;
+                }
+            }
 
             if (boss)
             {

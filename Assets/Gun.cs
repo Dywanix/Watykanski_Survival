@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
     public int bulletSpread;
     public int pierce;
     public float pierceEfficiency;
-    public float DoT;
+    public float DoT, curse;
     public float damageGain;
     public int overload;
     public float slowDuration;
