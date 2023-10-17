@@ -18,6 +18,7 @@ TagManager:
   - Cycle
   - Obstacle
   - Map
+  - Item
   layers:
   - Default
   - TransparentFX

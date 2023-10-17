@@ -27,6 +27,7 @@ public class Equipment : MonoBehaviour
     public bool[] Items;
     public GameObject DeflectProjectal;
     public GameObject[] Drones;
+    public TMPro.TextMeshProUGUI Tooltip;
     //public GameObject Caltrop, Knife, Cleaver;
     //public float itemsActivationRate = 1f;
 
@@ -52,6 +53,7 @@ public class Equipment : MonoBehaviour
     {
         Items[which] = true;
 
+        ShowTooltip(which);
         switch (which)
         {
             case 3:
@@ -109,6 +111,92 @@ public class Equipment : MonoBehaviour
                 playerStats.forceIncrease += 0.25f;
                 break;
         }
+    }
+
+    void ShowTooltip(int which)
+    {
+        switch (which)
+        {
+            case 0:
+                Tooltip.text = "Increased Movement Speed until Damage Taken";
+                break;
+            case 1:
+                Tooltip.text = "Take less Damage from Bullets & Deflect Them Back";
+                break;
+            case 2:
+                Tooltip.text = "Randomly Fire Equipped Gun for Free";
+                break;
+            case 3:
+                Tooltip.text = "Increase Shield Capacity, Gain Shield when Losing Health";
+                break;
+            case 4:
+                Tooltip.text = "Dash Gains Second Charge";
+                break;
+            case 5:
+                Tooltip.text = "+38% Ability Haste";
+                break;
+            case 6:
+                Tooltip.text = "Increase Max Health & Health Restored";
+                break;
+            case 7:
+                Tooltip.text = "Increase Max Health, Gain Damage based on Max Health";
+                break;
+            case 8:
+                Tooltip.text = "Gain Tools. All Guns have +1 Accessory Slot";
+                break;
+            case 9:
+                Tooltip.text = "Increase Movement Speed. After using Dash Gain Short Burst";
+                break;
+            case 10:
+                Tooltip.text = "Increase Damage & Gain Gold";
+                break;
+            case 11:
+                Tooltip.text = "Increase Shield Capacity. Gain Shield at the Start of Combat";
+                break;
+            case 12:
+                Tooltip.text = "Reduce all Damage Taken";
+                break;
+            case 13:
+                Tooltip.text = "Reduce Dash Cooldown. Using Dash Reloads";
+                break;
+            case 14:
+                Tooltip.text = "Gain orbiting Drone that fires Outwards";
+                break;
+            case 15:
+                Tooltip.text = "Abilities Deal More Damage";
+                break;
+            case 16:
+                Tooltip.text = "Gain Crit Chance on all Guns";
+                break;
+            case 17:
+                Tooltip.text = "Increase On-Hit rate";
+                break;
+            case 18:
+                Tooltip.text = "Gain Gold & Tools after Completing Combat";
+                break;
+            case 19:
+                Tooltip.text = "Increase Damage Dealt & Taken";
+                break;
+            case 20:
+                Tooltip.text = "Enemies Gain Vulnerable based on Their Armor";
+                break;
+            case 21:
+                Tooltip.text = "Increase Damage & Bullet Speed";
+                break;
+            case 22:
+                Tooltip.text = "All enemies are Cursed";
+                break;
+            case 23:
+                Tooltip.text = "More Ammo for all Guns";
+                break;
+        }
+
+        Invoke("HideTooltip", 1f);
+    }
+
+    void HideTooltip()
+    {
+        Tooltip.text = "";
     }
 
     public void Flash()

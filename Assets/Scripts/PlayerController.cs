@@ -833,6 +833,11 @@ public class PlayerController : MonoBehaviour
             eq.Accessories[Random.Range(0, eq.Accessories.Length)]++;
             Destroy(other.gameObject);
         }
+        else if (other.transform.tag == "Item")
+        {
+            eq.Items[Random.Range(0, eq.Items.Length)] = true;
+            Destroy(other.gameObject);
+        }
         else if (other.transform.tag == "EnemyProjectal")
         {
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
