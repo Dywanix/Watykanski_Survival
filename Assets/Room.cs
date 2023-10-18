@@ -19,6 +19,8 @@ public class Room : MonoBehaviour
     float roundDuration;
     bool spawned;
 
+    public Barrels[] BarrelSpawn;
+
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(Map)) as Map;
@@ -72,6 +74,11 @@ public class Room : MonoBehaviour
         LeftDoors.SetActive(true);
         fight = true;
         map.RoundBar.SetActive(true);
+        for (int i = 0; i < BarrelSpawn.Length; i++)
+        {
+            BarrelSpawn[i].active = true;
+            BarrelSpawn[i].Spawn();
+        }
         map.playerStats.Nightfall();
         spawnTimer = 4f;
         SummonWave();
@@ -116,6 +123,10 @@ public class Room : MonoBehaviour
         SpawnChests();
         RightDoors.SetActive(false);
         map.RoundBar.SetActive(false);
+        for (int i = 0; i < BarrelSpawn.Length; i++)
+        {
+            BarrelSpawn[i].active = false;
+        }
         map.playerStats.NewDay();
     }
 

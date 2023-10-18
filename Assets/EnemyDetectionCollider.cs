@@ -12,5 +12,9 @@ public class EnemyDetectionCollider : MonoBehaviour
         {
             enemy.Struck(other);
         }
+        else if (other.transform.tag == "NeutralProjectal")
+        {
+            enemy.Struck(other);
+        }
     }
 }

@@ -19,6 +19,7 @@ TagManager:
   - Obstacle
   - Map
   - Item
+  - NeutralProjectal
   layers:
   - Default
   - TransparentFX
