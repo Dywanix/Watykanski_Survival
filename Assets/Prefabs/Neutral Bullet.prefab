@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6919776747395757946
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: Particle
+      value: 
+      objectReference: {fileID: 2400956534431559294, guid: e69d63f6ea102de4d809c81a4b9e6155, type: 3}
+    - target: {fileID: 1443862876075540408, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 17bad96dd537ecf4c882c37911168e06, type: 3}
+    - target: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_Name
+      value: Neutral Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_TagString
+      value: NeutralProjectal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24313727
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46274513
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.76470596
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534394181369274235, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534394181369274235, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: pierce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534394181369274235, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: duration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534394181369274235, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: pierceEfficiency
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+--- !u!1 &4803515555434746549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  m_PrefabInstance: {fileID: 6919776747395757946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7276551520229458237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803515555434746549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4234c1332cd7840970caab6f57381c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 2.5
+  damage: 12
+  poison: 0
+  persist: 0

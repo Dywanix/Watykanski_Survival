@@ -135,6 +135,10 @@ PrefabInstance:
       value: 15.7
       objectReference: {fileID: 0}
     - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+      propertyPath: bulletsCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: bonusDuration
       value: 0.06
       objectReference: {fileID: 0}

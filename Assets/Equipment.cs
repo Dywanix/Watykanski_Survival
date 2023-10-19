@@ -85,7 +85,7 @@ public class Equipment : MonoBehaviour
                 break;
             case 10:
                 playerStats.damageBonus += 0.06f;
-                playerStats.GainScrap(30);
+                playerStats.GainGold(30);
                 break;
             case 11:
                 playerStats.maxShield += 20;
@@ -109,6 +109,9 @@ public class Equipment : MonoBehaviour
             case 21:
                 playerStats.damageBonus += 0.06f;
                 playerStats.forceIncrease += 0.25f;
+                break;
+            case 25:
+                playerStats.GainHP(10);
                 break;
         }
     }
@@ -188,6 +191,15 @@ public class Equipment : MonoBehaviour
                 break;
             case 23:
                 Tooltip.text = "More Ammo for all Guns";
+                break;
+            case 24:
+                Tooltip.text = "Chance to Fire Twice";
+                break;
+            case 25:
+                Tooltip.text = "Increase Max Health. Gain Damage with Health Lost";
+                break;
+            case 26:
+                Tooltip.text = "Gain More Tools";
                 break;
         }
 

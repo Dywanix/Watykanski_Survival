@@ -675,6 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarrelPrefab:
   - {fileID: 5561100943008757886, guid: 61374f61d892bee46ba1444fde6f9c1a, type: 3}
+  - {fileID: 6805700450507937282, guid: fe4e5c92a2ff49d46b47ef5a3bbee359, type: 3}
   Origins:
   - {fileID: 486314849983533782}
   - {fileID: 6561369828734476869}

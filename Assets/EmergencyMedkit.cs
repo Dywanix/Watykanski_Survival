@@ -15,13 +15,13 @@ public class EmergencyMedkit : MonoBehaviour
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
 
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f && playerStats.scrap >= 25f)
+        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f && playerStats.gold >= 25f)
         {
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 playerStats.RestoreHealth(5f + playerStats.maxHealth * 0.25f);
-                playerStats.SpendScrap(25f);
+                playerStats.SpendGold(25f);
                 Destroy(gameObject);
             }
         }

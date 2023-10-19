@@ -15,12 +15,12 @@ public class RerollGuns : MonoBehaviour
             Player = GameObject.FindGameObjectWithTag("Player");
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f && playerStats.scrap >= 8)
+        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f && playerStats.gold >= 8)
         {
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                playerStats.SpendScrap(8);
+                playerStats.SpendGold(8f);
                 Pick.Roll();
             }
         }

@@ -43,14 +43,14 @@ public class SlotMachine : MonoBehaviour
 
     void UpdateInfo()
     {
-        if (playerStats.scrap >= 12)
+        if (playerStats.gold >= 12)
             Lever.interactable = true;
         else Lever.interactable = false;
     }
 
     public void Roll()
     {
-        playerStats.SpendScrap(12);
+        playerStats.SpendGold(12);
 
         for (int i = 0; i < 3; i++)
         {
@@ -85,7 +85,7 @@ public class SlotMachine : MonoBehaviour
         switch (prize)
         {
             case 0:
-                playerStats.GainTokens(4);
+                playerStats.GainKeys(4);
                 break;
             case 1:
                 playerStats.GainTools(12);
@@ -103,7 +103,7 @@ public class SlotMachine : MonoBehaviour
                 }
                 break;
             case 4:
-                playerStats.GainTokens(1);
+                playerStats.GainKeys(1);
                 break;
             case 5:
                 playerStats.GainTools(3);

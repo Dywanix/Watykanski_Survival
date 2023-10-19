@@ -38,6 +38,7 @@ public class Gun : MonoBehaviour
     public float onHitModifier;
 
     [Header("Inne Staty")]
+    public int level;
     public float LevelCostCharge;
     public float cameraShake, shakeDuration;
     public int bulletsLeft, bonusAmmo, spreadMultiplyer, special, parts;
@@ -49,6 +50,12 @@ public class Gun : MonoBehaviour
     public int individualReloadCount;
     float temp;
     int tempi;
+
+    [Header("Ability")]
+    public GameObject AbilityBullet;
+    public bool free;
+    public int ammoRequired;
+    public float cooldown, task, fireRateCooldownRatio;
 
     [Header("Multiplikatory Stat")]
     public float damageMultiplier;
@@ -64,6 +71,16 @@ public class Gun : MonoBehaviour
     void Start()
     {
         bulletsLeft = magazineSize + overload;
+    }
+
+    public float Cooldown()
+    {
+        return cooldown + fireRateCooldownRatio * fireRate;
+    }
+
+    public void Cast()
+    {
+
     }
 
     public void Upgrade(int which)
@@ -158,6 +175,8 @@ public class Gun : MonoBehaviour
 
     public void LevelUp()
     {
+        level++;
+
         damage += LevelUpBonuses[0];
         fireRate *= LevelUpBonuses[1];
         accuracy *= LevelUpBonuses[2];

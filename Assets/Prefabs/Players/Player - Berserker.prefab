@@ -662,7 +662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1377,7 +1377,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 29
+  m_text: '25
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2084,7 +2086,6 @@ GameObject:
   - component: {fileID: 3163810567583472969}
   - component: {fileID: 3163810567583472966}
   - component: {fileID: 3163810567583472967}
-  - component: {fileID: 732726338565634242}
   m_Layer: 0
   m_Name: Player - Berserker
   m_TagString: Player
@@ -2167,19 +2168,15 @@ MonoBehaviour:
   dashImage: {fileID: 9112165394691667686}
   gunImage: {fileID: 3163810567387486502}
   firedBullet: {fileID: 0}
-  gunslinger: {fileID: 0}
-  berserker: {fileID: 732726338565634242}
-  steamGolem: {fileID: 0}
-  engineer: {fileID: 0}
   mouseLeft: 0
   reloading: 0
   free: 1
   day: 1
   task: 0
   taskMax: 0
-  maxHealth: 104
+  maxHealth: 115
   dHealth: 0
-  health: 104
+  health: 115
   maxShield: 100
   dShield: 0
   shield: 0
@@ -2187,9 +2184,9 @@ MonoBehaviour:
   shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
-  damageBonus: 1.064
-  fireRateBonus: 1.035
-  movementSpeed: 509
+  damageBonus: 1.077
+  fireRateBonus: 1.042
+  movementSpeed: 511.5
   additionalCritChance: 0
   abilityDamageBonus: 1
   cooldownReduction: 1
@@ -2200,14 +2197,10 @@ MonoBehaviour:
   dash: 1
   level: 1
   dayCount: 1
-  healthIncrease: 3
-  damageIncrease: 0.0038
-  fireRateIncrease: 0.0018
-  movementSpeedIncrease: 0.6
-  tools: 4
-  toolsStored: 4
+  tools: 5
+  toolsStored: 5
   tokens: 0
-  scrap: 29
+  scrap: 25
   animator: {fileID: 6796050689862131281}
   moveSpeed: 5
   Menu: {fileID: 1246508385796368937}
@@ -2262,44 +2255,12 @@ MonoBehaviour:
   - 0
   - 0
   waveBullet: {fileID: 0}
-  Items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Items: 0000000000000000000000000000000000000000000000000001000000000000000000000000000000000000
   DeflectProjectal: {fileID: 3773145563270755769, guid: 465b71bf774779e4dbd2ec57ae0e92dd, type: 3}
   Drones: []
   Tooltip: {fileID: 1254696480972824055}
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
   Laser: {fileID: 1191445889087333895, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
---- !u!114 &732726338565634242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3163810567583472962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da5e4050e999c3d48ab10bcf48c2ffd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 3163810567583472966}
-  Ability1: {fileID: 3163810567336715052}
-  Ability2: {fileID: 3163810566503558541}
-  WrathCount: {fileID: 1576660295536186453}
-  Wave: {fileID: 6192007680720593526, guid: 57eccbbfc3133ee4ca604b19040c7354, type: 3}
-  Axe: {fileID: 2240648045073124737, guid: 75c453c28b75aa74a85d717a74980d9f, type: 3}
-  BoomerangAxe: {fileID: 8439197816819152736, guid: 1996d360eab5a25408f206d8e21a0d20, type: 3}
-  AxeThrown: {fileID: 0}
-  wrath: 0
-  wrathGain: 0.066
-  healthGain: 2.5
-  burstCooldown: 0
-  burstMaxCooldown: 0
-  swipeCooldown: 0
-  swipeMaxCooldown: 0
-  damageTaken: 0
-  juggernautCount: 0
-  passivePerks: 0000000000
-  ability1Perks: 0000000000
-  ability2Perks: 0000000000
 --- !u!1 &3163810567583763168
 GameObject:
   m_ObjectHideFlags: 0

@@ -74,6 +74,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 7.14
   shakeDuration: 0.098
@@ -125,6 +126,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -206,6 +213,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 8.96
   shakeDuration: 0.138
@@ -257,6 +265,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 6655847109245353895, guid: 631055d15ebcb904aa4a82fc1c6bbcb9, type: 3}
+  free: 1
+  ammoRequired: 0
+  cooldown: 12
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -338,6 +352,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 2.029
+  level: 0
   LevelCostCharge: 0
   cameraShake: 21.5
   shakeDuration: 0.123
@@ -389,6 +404,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -470,6 +491,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 7.51
   shakeDuration: 0.103
@@ -521,6 +543,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -540,7 +568,7 @@ GameObject:
   - component: {fileID: 105717031627600903}
   - component: {fileID: 1060765509938700522}
   m_Layer: 0
-  m_Name: Shotgun1
+  m_Name: Sawed-off Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Shotgun1
+  gunName: Sawed-off Shotgun
   gunSprite: {fileID: 21300000, guid: 69e381ba1e5298848a342039ada37bbb, type: 3}
   holdingSprite: {fileID: 21300000, guid: 95884f987087b574c9b1fe0ee83355dd, type: 3}
   damage: 12
@@ -603,6 +631,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 13.8
   shakeDuration: 0.134
@@ -654,6 +683,12 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 1
   individualReloadCount: 2
+  AbilityBullet: {fileID: 3562970364789152913, guid: 95b02a069760e4642baa6a8ce612bcc8, type: 3}
+  free: 0
+  ammoRequired: 1
+  cooldown: 5.3
+  task: 0.37
+  fireRateCooldownRatio: 3.3
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -672,7 +707,7 @@ GameObject:
   - component: {fileID: 659064434746076032}
   - component: {fileID: 6156332918428343795}
   m_Layer: 0
-  m_Name: Piercer
+  m_Name: Peacemaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Basic SR
+  gunName: Peacemaker
   gunSprite: {fileID: 21300000, guid: 7ce3c29e969e3d74bb62d33ed6c2dfcb, type: 3}
   holdingSprite: {fileID: 21300000, guid: 7ce3c29e969e3d74bb62d33ed6c2dfcb, type: 3}
   damage: 54.3
@@ -735,6 +770,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 9.9
   shakeDuration: 0.111
@@ -786,6 +822,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -867,6 +909,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 21.5
   shakeDuration: 0.19
@@ -918,6 +961,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -999,6 +1048,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.72
+  level: 0
   LevelCostCharge: 0
   cameraShake: 9.2
   shakeDuration: 0.13
@@ -1050,6 +1100,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1131,6 +1187,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 24.3
   shakeDuration: 0.165
@@ -1182,6 +1239,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1263,6 +1326,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 10.8
   shakeDuration: 0.192
@@ -1314,6 +1378,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1395,6 +1465,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  level: 0
   LevelCostCharge: 0
   cameraShake: 1.22
   shakeDuration: 0.0295
@@ -1417,6 +1488,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1435,7 +1512,7 @@ GameObject:
   - component: {fileID: 3511690465050746161}
   - component: {fileID: 4814360345304146876}
   m_Layer: 0
-  m_Name: BurstGun1
+  m_Name: Busrt Handgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1468,7 +1545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: AR1
+  gunName: Busrt Handgun
   gunSprite: {fileID: 21300000, guid: d4af624585374214a876649121385c9f, type: 3}
   holdingSprite: {fileID: 21300000, guid: 34adf1e2095a6c14f9cffcc17ce362a7, type: 3}
   damage: 12.3
@@ -1498,6 +1575,7 @@ MonoBehaviour:
   burst: 1
   burstDelay: 0.18
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 13.9
   shakeDuration: 0.188
@@ -1549,6 +1627,12 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1630,6 +1714,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 7.6
   shakeDuration: 0.1
@@ -1681,6 +1766,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1762,6 +1853,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  level: 0
   LevelCostCharge: 0
   cameraShake: 6.34
   shakeDuration: 0.05
@@ -1813,6 +1905,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1894,6 +1992,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  level: 0
   LevelCostCharge: 0
   cameraShake: 1.22
   shakeDuration: 0.0295
@@ -1916,6 +2015,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1934,7 +2039,7 @@ GameObject:
   - component: {fileID: 3594292106018171830}
   - component: {fileID: 556117431696019269}
   m_Layer: 0
-  m_Name: Twin Bullets
+  m_Name: Parallel Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1967,7 +2072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Rifle
+  gunName: Parallel Gun
   gunSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
   holdingSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
   damage: 22
@@ -1997,6 +2102,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.8
+  level: 0
   LevelCostCharge: 0
   cameraShake: 11.5
   shakeDuration: 0.15
@@ -2048,6 +2154,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
+  AbilityBullet: {fileID: 5284098002614362962, guid: f80f599fc9b54834f99f1da447006eca, type: 3}
+  free: 0
+  ammoRequired: 1
+  cooldown: 4.4
+  task: 0.88
+  fireRateCooldownRatio: 4.4
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2129,6 +2241,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.144
+  level: 0
   LevelCostCharge: 0
   cameraShake: 9.8
   shakeDuration: 0.166
@@ -2180,6 +2293,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2264,6 +2383,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  level: 0
   LevelCostCharge: 0
   cameraShake: 8.4
   shakeDuration: 0.13
@@ -2315,6 +2435,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2497,6 +2623,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 27.6
   shakeDuration: 0.228
@@ -2548,6 +2675,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2566,7 +2699,7 @@ GameObject:
   - component: {fileID: 5518898056319036725}
   - component: {fileID: 5518898056319036726}
   m_Layer: 0
-  m_Name: Handgun1
+  m_Name: Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2599,7 +2732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Handgun1
+  gunName: Revolver
   gunSprite: {fileID: 21300000, guid: 6b87e001227d9d240b6947cd4a67c364, type: 3}
   holdingSprite: {fileID: 21300000, guid: 59b29db457001204aa2c8ebfe75ec7dc, type: 3}
   damage: 26.8
@@ -2629,6 +2762,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 15
   shakeDuration: 0.175
@@ -2680,6 +2814,12 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 1
+  cooldown: 4.2
+  task: 0.54
+  fireRateCooldownRatio: 2.8
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2761,6 +2901,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.7
+  level: 0
   LevelCostCharge: 0
   cameraShake: 24.6
   shakeDuration: 0.275
@@ -2812,6 +2953,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2949,6 +3096,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 10
   shakeDuration: 0.156
@@ -3000,6 +3148,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3081,6 +3235,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 2.703
+  level: 0
   LevelCostCharge: 0
   cameraShake: 12
   shakeDuration: 0.204
@@ -3132,6 +3287,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3213,6 +3374,7 @@ MonoBehaviour:
   burst: 2
   burstDelay: 0.2
   onHitModifier: 1
+  level: 0
   LevelCostCharge: 0
   cameraShake: 8.7
   shakeDuration: 0.13
@@ -3264,6 +3426,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3345,6 +3513,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.576
+  level: 0
   LevelCostCharge: 0
   cameraShake: 21.9
   shakeDuration: 0.171
@@ -3396,6 +3565,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3477,6 +3652,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0.98
+  level: 0
   LevelCostCharge: 0
   cameraShake: 7.7
   shakeDuration: 0.105
@@ -3528,6 +3704,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 3048709566407093850, guid: 2d2d9e1e9f7701d4798a6ab84e6464c7, type: 3}
+  free: 0
+  ammoRequired: 0
+  cooldown: 6.9
+  task: 0.71
+  fireRateCooldownRatio: 4
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3610,6 +3792,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0.9
+  level: 0
   LevelCostCharge: 0
   cameraShake: 17.3
   shakeDuration: 0.196
@@ -3661,6 +3844,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3743,6 +3932,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  level: 0
   LevelCostCharge: 0
   cameraShake: 1
   shakeDuration: 0.02
@@ -3765,6 +3955,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:

@@ -16,13 +16,13 @@ public class AccessoryDispenser : MonoBehaviour
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
 
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f && playerStats.scrap >= cost)
+        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f && playerStats.gold >= cost)
         {
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
                 playerStats.eq.Accessories[Random.Range(0, playerStats.eq.Accessories.Length)]++;
-                playerStats.SpendScrap(cost);
+                playerStats.SpendGold(cost);
                 cost += 4f;
                 //Destroy(gameObject);
             }

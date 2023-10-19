@@ -44,7 +44,7 @@ public class Merchant : MonoBehaviour
         {
             if (Vector3.Distance(ItemForm[i].position, Player.transform.position) <= 1f)
             {
-                if (playerStats.scrap >= Costs[i])
+                if (playerStats.gold >= Costs[i])
                     Check(i, true);
                 else Check(i, false);
             }
@@ -128,7 +128,7 @@ public class Merchant : MonoBehaviour
 
     void Bought(int what)
     {
-        playerStats.SpendScrap(Costs[what]);
+        playerStats.SpendGold(Costs[what]);
         if (Rolls[what] >= sprites.Length + accessoryChance)
         {
             playerStats.eq.PickUpItem(Item[what]);
