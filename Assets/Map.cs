@@ -11,6 +11,10 @@ public class Map : MonoBehaviour
     public Image RoundBarFill;
     public TMPro.TextMeshProUGUI RoundsCount;
 
+    public PrizeChoice Prizes;
+    public int rareChance, epicChance;
+    int roll;
+
     void Start()
     {
         Instantiate(Players[PlayerPrefs.GetInt("Class")]);
@@ -23,5 +27,38 @@ public class Map : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public int PrizeRarity()
+    {
+        roll = Random.Range(1, 101);
+        if (roll <= epicChance)
+        {
+            // epic
+            epicChance = 2;
+            return 2;
+        }
+        else
+        {
+            if (roll <= epicChance + rareChance)
+            {
+                // rare
+                epicChance += 2 + epicChance / 5;
+                rareChance = 10;
+                return 1;
+            }
+            else
+            {
+                // common
+                epicChance += 2 + epicChance / 5;
+                rareChance += 4 + rareChance / 3;
+                return 0;
+            }
+        }
+    }
+
+    public void ChoosePrize(int rarity)
+    {
+        Prizes.Open(rarity);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SlotMachine : MonoBehaviour
 {
-    public GameObject Player, Hud;
+    public GameObject Hud;
     public PlayerController playerStats;
     public Button Lever;
     public Image[] images;
@@ -18,11 +18,8 @@ public class SlotMachine : MonoBehaviour
 
     void Update()
     {
-        if (!Player)
-        {
-            Player = GameObject.FindGameObjectWithTag("Player");
-            playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-        }
+        if (!playerStats)
+            playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(PlayerController)) as PlayerController;
 
         if (Input.GetKeyDown(KeyCode.Escape) && active)
         {

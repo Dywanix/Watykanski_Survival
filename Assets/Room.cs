@@ -6,9 +6,9 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
-    public Transform[] ChestLocation;
+    //public Transform[] ChestLocation;
     public GameObject StartButton, Glow, Player, LeftDoors, RightDoors;
-    public GameObject[] Waves, Mobs, Chests, ChestsSpawned;
+    public GameObject[] Waves, Mobs, Prizes; //Chests, ChestsSpawned;
 
     bool fight;
     public int roundsCount;
@@ -17,7 +17,7 @@ public class Room : MonoBehaviour
     public float[] WidthRange, HeightRange;
     int roll, roll2;
     float roundDuration;
-    bool spawned;
+    //bool spawned;
 
     public Barrels[] BarrelSpawn;
 
@@ -58,14 +58,14 @@ public class Room : MonoBehaviour
                 Spawn();
         }
 
-        if (spawned)
+        /*if (spawned)
         {
             for (int i = 0; i < 3; i++)
             {
                 if (ChestsSpawned[i] == null)
                     DeSpawnChests();
             }
-        }
+        }*/
     }
 
     void StartRound()
@@ -120,7 +120,7 @@ public class Room : MonoBehaviour
 
     void EndRound()
     {
-        SpawnChests();
+        SpawnPrize();
         RightDoors.SetActive(false);
         map.RoundBar.SetActive(false);
         for (int i = 0; i < BarrelSpawn.Length; i++)
@@ -130,7 +130,12 @@ public class Room : MonoBehaviour
         map.playerStats.NewDay();
     }
 
-    void SpawnChests()
+    void SpawnPrize()
+    {
+        Prizes[map.PrizeRarity()].SetActive(true);
+    }
+
+    /*void SpawnChests()
     {
         ChestsSpawned[0] = Instantiate(Chests[0], ChestLocation[0].position, transform.rotation);
         roll = Random.Range(1, Chests.Length);
@@ -151,5 +156,5 @@ public class Room : MonoBehaviour
             if (ChestsSpawned[i] != null)
                 Destroy(ChestsSpawned[i]);
         }
-    }
+    }*/
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Workbench : MonoBehaviour
 {
     public CraftingTable crafting;
-    public GameObject Player, Hud, Upgrades;
+    public GameObject Hud, Upgrades;
     public PlayerController playerStats;
     public TMPro.TextMeshProUGUI Tooltip, Parts;
     public TMPro.TextMeshProUGUI[] Cost, Info;
@@ -21,11 +21,8 @@ public class Workbench : MonoBehaviour
 
     void Update()
     {
-        if (!Player)
-        {
-            Player = GameObject.FindGameObjectWithTag("Player");
-            playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-        }
+        if (!playerStats)
+            playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(PlayerController)) as PlayerController;
 
         if (Input.GetKeyDown(KeyCode.Escape) && active)
         {

@@ -300,7 +300,7 @@ public class PlayerController : MonoBehaviour
                 {
                     for (int i = 0; i < eq.guns[eq.equipped].burst; i++)
                     {
-                        Invoke("BurstShot", eq.guns[eq.equipped].burstDelay);
+                        Invoke("BurstShot", eq.guns[eq.equipped].burstDelay * (i + 1));
                     }
                 }
                 if (eq.guns[eq.equipped].Accessories[21] > 0)

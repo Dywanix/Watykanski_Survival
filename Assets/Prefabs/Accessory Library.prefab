@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6808829495041207164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6544977035746502890}
+  - component: {fileID: 6817746636197411093}
+  m_Layer: 0
+  m_Name: Accessory Library
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6544977035746502890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808829495041207164}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6817746636197411093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808829495041207164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c724694b382e3842abbaaf93f67e51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AccessorySprite:
+  - {fileID: 21300000, guid: 12f717ae812fb684d93923d137e82413, type: 3}
+  - {fileID: 21300000, guid: 506b685f6c5637f43bee169f29c10c6b, type: 3}
+  - {fileID: 21300000, guid: e386d90a337c590439a0502881ccf60a, type: 3}
+  - {fileID: 21300000, guid: 5afb68327c641a0488ca6f59a6fffd60, type: 3}
+  - {fileID: 21300000, guid: 035750a3680a6cb4391c574e38534ad2, type: 3}
+  - {fileID: 21300000, guid: 72a4f1d76fb0cd84eaa66f9f8e480170, type: 3}
+  - {fileID: 21300000, guid: 59c82bb1dcacd794a89ba558973a7cce, type: 3}
+  - {fileID: 21300000, guid: 19e0a8d765673cb4d866133b83518c09, type: 3}
+  - {fileID: 21300000, guid: aec893250511c724f87ed85fba8033c4, type: 3}
+  - {fileID: 21300000, guid: caa8d2ca7b3a1214da41da87e42c7064, type: 3}
+  - {fileID: 21300000, guid: 8fb7c0047f8cfd04cb609fd497c5c0ba, type: 3}
+  - {fileID: 21300000, guid: b2ade696a6e7d3c4faa006365a31dc9f, type: 3}
+  - {fileID: 21300000, guid: a4fc72db585c1ad43a0af4c181e53ae3, type: 3}
+  - {fileID: 21300000, guid: 3e2e35ba5760a5a469d77ece19ebfd93, type: 3}
+  - {fileID: 21300000, guid: a524e42690a759c4883e1b037ec98ebc, type: 3}
+  - {fileID: 21300000, guid: 51dc3ffd13496cb468ea5cba7a3bf4aa, type: 3}
+  - {fileID: 21300000, guid: 98754850ac33bd344b21a87eb004d7e4, type: 3}
+  - {fileID: 21300000, guid: cbe21444f82c14e4eb93d1ba30157554, type: 3}
+  - {fileID: 21300000, guid: ad96b08849c39574f906dc2d46f50f1c, type: 3}
+  - {fileID: 21300000, guid: 9c4c32163f20c1848be4499b711e2bc9, type: 3}
+  - {fileID: 21300000, guid: b56b9a1427971c24d8efab08a47c5d42, type: 3}
+  - {fileID: 21300000, guid: 45fa693e456151d49900c08de4b1db08, type: 3}
+  - {fileID: 21300000, guid: f5e14555243b4404194f3cf53534005b, type: 3}
+  - {fileID: 21300000, guid: d15f0543701a33944a17002e3809c03d, type: 3}
+  - {fileID: 21300000, guid: 4e6820d9509819a4a9e8703eb5701329, type: 3}
+  - {fileID: 21300000, guid: c69716af1d5fccc499feeaa97871400f, type: 3}
+  - {fileID: 21300000, guid: 856c3dfb2ba5f434682411b92575d8dd, type: 3}
+  - {fileID: 21300000, guid: 2b8adf6f513ab834488f26eb1ac743d0, type: 3}
+  - {fileID: 21300000, guid: 0497ab89da3d2184c9bc518400da34d1, type: 3}
+  - {fileID: 21300000, guid: 001078f57a4e11a4e9a65a07337c8c3c, type: 3}
+  AccessoryTooltip:
+  - +15% Damage
+  - +20% Fire Rate
+  - +40% Accuracy & +6 Range
+  - +14% Penetration
+  - +10% Crit Chance & +15% Crit Damage
+  - -30% Reload Time
+  - Double the Magazine Size, but +12% Reload Time
+  - Double the amount of Fired Bullets, but -30% Damage & -15% Fire Rate
+  - +1 Pierce, +2 on Crit & +3% Crit Chance
+  - +1 Pierce & Increase Pierce Efficiency
+  - Overload 1/7 of Magazine after Reloading
+  - +5% Damage, +6% Fire Rate, +12% Accuracy & +4% Penetration
+  - +7,5% Damage & +15% Crit Damage
+  - +15% Fire Rate & + 7,5% Crit Chance
+  - 18% Chance to not consume Ammo
+  - 15% Chance to Fire 2 additional Bullets in a Cone
+  - +7,5% Damage, +1% Damage for every 4 Base Damage
+  - +4 Range, Bullets gain +15% Damage for every 1s in Air
+  - +6% Penetration, +1% DoT for every 2% Penetration
+  - Using Dash Fired wave of Bullets
+  - Fire Additional Bullet every 6th Shot
+  - +6% Fire Rate, + up to 35% Fire Rate with missing Magazine
+  - +6% Damage, +0,6% Damage for every 1 Magazine Size
+  - Fire Peacemaker Occasionally
+  - Fire Boomerang Occasionally
+  - Fire Wave of 6 Bullets every 15th Shot
+  - +10% Fire Rate, Increase On-Hit Rate by 20%
+  - After each Room gain 5 Gun Parts
+  - +28% Curse
+  - Fire Dread Orb Occasionally

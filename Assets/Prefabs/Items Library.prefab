@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5256278042531316336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3380796369291455551}
+  - component: {fileID: 7011704655857916455}
+  m_Layer: 0
+  m_Name: Items Library
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &3380796369291455551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256278042531316336}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7011704655857916455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256278042531316336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b9cb771488e0b4c8b71569c2f20b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemSprite:
+  - {fileID: 21300000, guid: 871b9c53df0dd0046a289c258c6076b9, type: 3}
+  - {fileID: 21300000, guid: e8f17c48494047f459e40291be9f4f8e, type: 3}
+  - {fileID: 21300000, guid: ceddd9d64705c1b4eb26cc30e6387c3d, type: 3}
+  - {fileID: 21300000, guid: 42797924b2c1c354d8014f27226d303e, type: 3}
+  - {fileID: 21300000, guid: ba03b508c457c414eb618dc989fd9f87, type: 3}
+  - {fileID: 21300000, guid: 6a97e0c407b088c4c9a6091bd23dac6c, type: 3}
+  - {fileID: 21300000, guid: b04b6fe28b988a740bb1bf7f1e0ceff1, type: 3}
+  - {fileID: 21300000, guid: 349bd6348204f7e45852239e57b27f13, type: 3}
+  - {fileID: 21300000, guid: 736559d4fd90ee74f9dc473d050d5e30, type: 3}
+  - {fileID: 21300000, guid: 1c85e938a632219419f60dc2e7b75578, type: 3}
+  - {fileID: 21300000, guid: 279ea734b0f8af74a8ad7a439c33ac41, type: 3}
+  - {fileID: 21300000, guid: 1af5c6aeedfb03a478b5b941c7dc73fc, type: 3}
+  - {fileID: 21300000, guid: 7c7913220488d274fa7998d8c50d298a, type: 3}
+  - {fileID: 21300000, guid: 16f4116105d23004abbbc428c27c5ab0, type: 3}
+  - {fileID: 21300000, guid: a98aa5ccd421a0e46bcf88dd26ae8fce, type: 3}
+  - {fileID: 21300000, guid: 2fb054a56222f25429ff8ded92aab433, type: 3}
+  - {fileID: 21300000, guid: ce622712653d50d48b1597729dab4bb3, type: 3}
+  - {fileID: 21300000, guid: 11f23192f24e63947995c5210af03eb0, type: 3}
+  - {fileID: 21300000, guid: 4e067868d7020ee40af28f70f2559f18, type: 3}
+  - {fileID: 21300000, guid: 4fead7f8be6dc374b844bec76d0b6a03, type: 3}
+  - {fileID: 21300000, guid: 645aca2ef8a5c014aa661402a8cf9273, type: 3}
+  - {fileID: 21300000, guid: fa7c730795c857a4f993dad26d4ba8fb, type: 3}
+  - {fileID: 21300000, guid: 68c22f89e314b4d41a6bae0b59c02f94, type: 3}
+  - {fileID: 21300000, guid: 686f541f7312fc4429c6184b011885e7, type: 3}
+  - {fileID: 21300000, guid: 6315edb7847447a42805d3622cfcb649, type: 3}
+  - {fileID: 21300000, guid: 36bac7b81496f8f47a4919d29803f084, type: 3}
+  - {fileID: 21300000, guid: 9034b3d643c8ffc4593c268609deb231, type: 3}
+  ItemTooltip:
+  - Gain +16% Movement Speed untill getting Hit
+  - Take 10% Less Damage from Projectals & Deflect them in random directions
+  - Fire Eqipped Gun in Random Direstions for free occassionally
+  - Increase Max Shield by 20. Gain 45% Lost Health as Shield
+  - Dash gains Second Charge
+  - Gain 38% Ability Haste
+  - Increase Max Health by 10. Increase Health Restored by 20%
+  - Increase Max Health by 10. Gain +1% Damage for every 10 Max Health above 100
+  - Gain 6 Tools. All Guns have 1 more Accessory Slot
+  - Increase Movement Speed by 7%. Using Dash gives Rush for 2,5s
+  - Increase Damage by 6%. Gain 30 Gold
+  - Increase Max Shield by 20. Gain Shield at the start of each Room
+  - Reduce Damage Taken by 3, to a minimum of 5
+  - Reduce Dash Cooldown by 0,8s. Using Dash Reloads 25% Magazine
+  - Gain Drone that orbits Player & Fires constantly Outwards
+  - Abilities deal 20% Increased Damage
+  - Gain +7% Crit Chance on all Guns
+  - Increase On-Hit Rate by 10%. Crits Increase by 35%
+  - After completing the Room gain 5 Gold & 1 Tools
+  - Increase Damage by 30%, but also increase Damage Taken by 25%
+  - Enemies gain Vulnerable equal to 30% of their Armor
+  - Increase Damage by 6% & Bullets Speed by 25%
+  - All Enemies are Cursed based on their Max Health
+  - All Guns Have 25% more Max Ammo
+  - All Guns have 17% Chance to Fire additional time for free
+  - Increase Max Health by 10. Gain +1% Damage for the Combat for every 8 HP Lost
+  - Gain 20% More Tools

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CraftingTable : MonoBehaviour
 {
     public Workbench bench;
-    public GameObject Player, Hud;
+    public GameObject Hud;
     // accessory shit
     public Image[] AInEq, AEquipped, gunImages;
     public Image ThrashCan;
@@ -24,11 +24,8 @@ public class CraftingTable : MonoBehaviour
 
     void Update()
     {
-        if (!Player)
-        {
-            Player = GameObject.FindGameObjectWithTag("Player");
-            playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
-        }
+        if (!playerStats)
+            playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(PlayerController)) as PlayerController;
 
         if (Input.GetKeyDown(KeyCode.Escape) && active)
         {
