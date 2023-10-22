@@ -85,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8889397587438967036, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: waveFrequency
-      value: 2.3
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 8889397587438967036, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: spawnFrequency
-      value: 1.75
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 8889397587438967036, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: Mobs.Array.size

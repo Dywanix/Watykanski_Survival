@@ -298,6 +298,7 @@ MonoBehaviour:
   stunDuration: 0
   pierceEfficiency: 0
   DoT: 0
+  curse: 0
   incendiary: 0
   damageGain: 0
   pierce: 0
@@ -395,13 +396,13 @@ MonoBehaviour:
   BulletShard: {fileID: 1082954273207939074, guid: 90894923887f80c43b5a92280d3534f8, type: 3}
   Dir: {fileID: 8597203529517308890}
   Form: {fileID: 8597203529664756073}
-  delay: 0.92
-  delayRange: 1.173
+  delay: 0.74
+  delayRange: 1.17
   spread: 180
   accuracy: 0
-  bulletForce: 15.2
+  bulletForce: 18.3
   forceRange: 0.05
-  bonusDuration: 0.2
+  bonusDuration: 0.16
   damageEfficiency: 0.88
   bulletsCount: 2
   pierceCount: 0

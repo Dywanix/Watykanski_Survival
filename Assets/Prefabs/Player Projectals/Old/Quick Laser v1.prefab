@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1191445888351011942, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
       propertyPath: duration
-      value: 0.27
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 1191445888351011942, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
       propertyPath: startingFade
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1191445889087333913, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
       propertyPath: duration
-      value: 0.18
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1191445889087333914, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
       propertyPath: m_RootOrder

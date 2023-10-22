@@ -71,6 +71,10 @@ PrefabInstance:
       propertyPath: duration
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 563174339275664654, guid: 99b59504eb32f734bbde9393a63815f4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 563174339275664655, guid: 99b59504eb32f734bbde9393a63815f4, type: 3}
       propertyPath: m_Name
       value: Static Tick

@@ -195,9 +195,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6914238718669416113, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
+      propertyPath: delay
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6914238718669416113, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
+      propertyPath: delayRange
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6914238718669416113, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
       propertyPath: BulletShard
       value: 
       objectReference: {fileID: 1721548041437454189, guid: 18d501873df40dc4ab56dba214283c6a, type: 3}
+    - target: {fileID: 6914238718669416113, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
+      propertyPath: damageEfficiency
+      value: 0.526
+      objectReference: {fileID: 0}
     - target: {fileID: 9088610403751734967, guid: 5cfe9c9303fac264796a32f7a5e05000, type: 3}
       propertyPath: m_Size.x
       value: 0.4

@@ -197,14 +197,14 @@ MonoBehaviour:
   shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
-  damageBonus: 1.042
-  fireRateBonus: 1.066
-  movementSpeed: 517.5
+  damageBonus: 1.05
+  fireRateBonus: 1.078
+  movementSpeed: 519
   additionalCritChance: 0
   abilityDamageBonus: 1
   cooldownReduction: 1
   forceIncrease: 1
-  dashBaseCooldown: 6.4
+  dashBaseCooldown: 6
   maxDashCooldown: 0
   abilityMaxCooldown: 0
   abilityCooldown: 0

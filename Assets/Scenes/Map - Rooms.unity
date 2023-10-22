@@ -11414,20 +11414,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3e25b248e6e9c2a4184115a0960994a8, type: 3}
   - {fileID: 21300000, guid: 9033641e387bb0c4b98201ec11975d1f, type: 3}
   CommonTooltips:
-  - +10 Gold
-  - +3 Tools
-  - +1 Keys
-  - Restore 25 Health
-  - Gain 20 Shield
+  - +15 Gold
+  - +5 Tools
+  - +2 Keys
+  - Restore 35 Health
+  - Gain 25 Shield
   - Increase Chance for Higher Rarity Prizes
   RareTooltips:
-  - +20 Gold
-  - +6 Tools
-  - +2 Keys
-  - +15 Max Health
-  - +1,5% Damage
-  - +1,75% Fire Rate
-  - +2% Movement Speed
+  - +30 Gold
+  - +10 Tools
+  - +4 Keys
+  - +20 Max Health
+  - +2,3% Damage
+  - +2,7% Fire Rate
+  - +3,2% Movement Speed
   EpicTooltips: []
   accessoryChance: 3
   rolls: 000000000000000000000000

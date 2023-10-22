@@ -459,7 +459,7 @@ public class PlayerController : MonoBehaviour
                 if (eq.guns[eq.equipped].free || task <= 0f)
                     UseAbility();
             }
-            else if (eq.guns[eq.equipped].bulletsLeft > eq.guns[eq.equipped].ammoRequired)
+            else if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].ammoRequired)
             {
                 if (eq.guns[eq.equipped].free || task <= 0f)
                     UseAbility();
@@ -476,8 +476,8 @@ public class PlayerController : MonoBehaviour
         switch (eq.guns[eq.equipped].gunName)
         {
             case "Revolver":
-                temp = (0.04f + 0.12f * eq.guns[eq.equipped].fireRate / SpeedMultiplyer(1f)) / (1f + 0.12f * eq.guns[eq.equipped].level);
-                for (float i = 0; i < 0.5f; i += temp)
+                temp = (0.03f + 0.1f * eq.guns[eq.equipped].fireRate / SpeedMultiplyer(1f)) / (1f + 0.12f * eq.guns[eq.equipped].level);
+                for (float i = 0; i < 0.4f; i += temp)
                 {
                     Invoke("BurstShot", i);
                 }
@@ -486,31 +486,31 @@ public class PlayerController : MonoBehaviour
                 eq.guns[eq.equipped].bulletsLeft -= 1;
                 DisplayAmmo();
                 FireAbility();
-                firedBullet.damage *= 0.79f + 0.1f * eq.guns[eq.equipped].BulletsFired();
+                firedBullet.damage *= 0.84f + 0.1f * eq.guns[eq.equipped].BulletsFired();
                 firedBullet.special = eq.guns[eq.equipped].BulletsFired() + eq.guns[eq.equipped].level;
                 break;
             case "Jumping SMG":
                 FireAbility();
-                firedBullet.damage *= 1.16f + 0.08f * eq.guns[eq.equipped].level;
+                firedBullet.damage *= 1.18f + 0.09f * eq.guns[eq.equipped].level;
                 break;
             case "Poison Gun":
                 FireAbility();
                 firedBullet.damage = (0.04f + 0.01f * eq.guns[eq.equipped].level) * firedBullet.damage + 2f;
                 firedBullet.DoT += 0.5f * firedBullet.DoT + 3f;
-                firedBullet.slowDuration += 0.15f / eq.guns[eq.equipped].fireRate;
+                firedBullet.slowDuration += 0.16f / eq.guns[eq.equipped].fireRate;
                 break;
             case "Parallel Gun":
                 eq.guns[eq.equipped].bulletsLeft -= 1;
                 DisplayAmmo();
                 FireAbility();
-                firedBullet.damage *= 1f + 0.06f * eq.guns[eq.equipped].level;
+                firedBullet.damage *= 1.04f + 0.08f * eq.guns[eq.equipped].level;
                 break;
         }
     }
 
     void FireAbility()
     {
-        Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy));
+        Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + 0.5f * Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy));
         GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * Random.Range(0.94f, 1.06f), ForceMode2D.Impulse);
@@ -683,7 +683,7 @@ public class PlayerController : MonoBehaviour
 
     void DashFire()
     {
-        temp = 1.15f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
+        temp = 1.1f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
         tempi = 0;
 
         for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)

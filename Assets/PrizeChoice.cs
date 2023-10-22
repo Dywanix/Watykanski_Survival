@@ -151,22 +151,22 @@ public class PrizeChoice : MonoBehaviour
                 switch (rolls[choice])
                 {
                     case 0:
-                        playerStats.GainGold(10);
+                        playerStats.GainGold(15);
                         break;
                     case 1:
-                        playerStats.GainTools(3);
+                        playerStats.GainTools(5);
                         break;
                     case 2:
-                        playerStats.GainKeys(1);
+                        playerStats.GainKeys(2);
                         break;
                     case 3:
-                        playerStats.RestoreHealth(25);
+                        playerStats.RestoreHealth(35);
                         break;
                     case 4:
-                        playerStats.GainShield(20);
+                        playerStats.GainShield(25);
                         break;
                     case 5:
-                        map.rareChance += 6 + map.rareChance / 3;
+                        map.rareChance += 7 + map.rareChance / 3;
                         map.epicChance += 3 + map.epicChance / 5;
                         break;
                 }
@@ -179,25 +179,25 @@ public class PrizeChoice : MonoBehaviour
                     switch (rolls[choice])
                     {
                         case 0:
-                            playerStats.GainGold(20);
+                            playerStats.GainGold(30);
                             break;
                         case 1:
-                            playerStats.GainTools(6);
+                            playerStats.GainTools(10);
                             break;
                         case 2:
-                            playerStats.GainKeys(2);
+                            playerStats.GainKeys(4);
                             break;
                         case 3:
-                            playerStats.GainHP(15);
+                            playerStats.GainHP(20);
                             break;
                         case 4:
-                            playerStats.damageBonus += 0.015f;
+                            playerStats.damageBonus += 0.023f;
                             break;
                         case 5:
-                            playerStats.fireRateBonus += 0.0175f;
+                            playerStats.fireRateBonus += 0.027f;
                             break;
                         case 6:
-                            playerStats.movementSpeed += 10f;
+                            playerStats.movementSpeed += 16f;
                             break;
                     }
                 }

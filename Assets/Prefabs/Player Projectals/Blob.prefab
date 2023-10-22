@@ -119,6 +119,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+      propertyPath: delay
+      value: 0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: spread
       value: 15.6
       objectReference: {fileID: 0}
@@ -127,12 +131,16 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
+      propertyPath: delayRange
+      value: 1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: BulletShard
       value: 
       objectReference: {fileID: 5893359571365976471, guid: 9402ba422403973408d900d7467d626b, type: 3}
     - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: bulletForce
-      value: 15.7
+      value: 18.9
       objectReference: {fileID: 0}
     - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: bulletsCount
@@ -140,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8245771037216576217, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: bonusDuration
-      value: 0.06
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3490393783323527124, guid: f359a6b0c37dd7f4abc2c05fd878b869, type: 3}
       propertyPath: m_RootOrder
