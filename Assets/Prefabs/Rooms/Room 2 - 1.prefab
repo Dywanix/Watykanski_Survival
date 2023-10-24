@@ -7,6 +7,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: Mobs.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: Mobs.Array.data[2]
+      value: 
+      objectReference: {fileID: 376688400217225062, guid: 33260a23ab630ef44a413ecf74e12fb8, type: 3}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: Mobs.Array.data[5]
+      value: 
+      objectReference: {fileID: 735359265308178938, guid: a2831b8202bc095498aad6baf48cac43, type: 3}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: Mobs.Array.data[6]
+      value: 
+      objectReference: {fileID: 8093450291002382064, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: Mobs.Array.data[7]
+      value: 
+      objectReference: {fileID: 8093450291002382064, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: Mobs.Array.data[8]
+      value: 
+      objectReference: {fileID: 9187309518645419397, guid: 1e41de61ff2407d4ba9282d42b814504, type: 3}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: mobsStrength.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: mobsStrength.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: mobsStrength.Array.data[5]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: mobsStrength.Array.data[6]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: mobsStrength.Array.data[7]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: mobsStrength.Array.data[8]
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1052126954466488897, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: m_RootOrder
       value: 10

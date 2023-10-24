@@ -638,7 +638,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5599614602578190228}
   - component: {fileID: 1067436882638993056}
-  - component: {fileID: 8889397587438967036}
   m_Layer: 0
   m_Name: Start Button
   m_TagString: Untagged
@@ -716,70 +715,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8889397587438967036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2567495680533986438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1b3bf0f2cb71f44b4c40b1424d0c42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  map: {fileID: 0}
-  SpawnPoint: {fileID: 1534773496886501194}
-  StartButton: {fileID: 4469483567486542609}
-  Glow: {fileID: 6381300595226013303}
-  Player: {fileID: 0}
-  LeftDoors: {fileID: 1860138234500314846}
-  RightDoors: {fileID: 6272782413015507300}
-  Waves:
-  - {fileID: 7323344833653545521, guid: 11880fa2b4bfccf46a4ea01ae81de73d, type: 3}
-  - {fileID: 5042172444915979014, guid: d3ff71b5a8be6164bb38a3ee9f5cfabc, type: 3}
-  - {fileID: 9213142604682105927, guid: dadd544f882b4274a935fa5369bd3062, type: 3}
-  - {fileID: 2420785332106461130, guid: 3d5dadaf0917f6c4a9f6157f6ace247c, type: 3}
-  - {fileID: 1062595643013326874, guid: 5b9427324d2c98246869af92b93d06aa, type: 3}
-  - {fileID: 3165261581046188700, guid: 274d216a62e8689488b5d0b861bdfa22, type: 3}
-  Mobs:
-  - {fileID: 529646748837235406, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
-  - {fileID: 376688400217225062, guid: 33260a23ab630ef44a413ecf74e12fb8, type: 3}
-  - {fileID: 735359265308178938, guid: a2831b8202bc095498aad6baf48cac43, type: 3}
-  - {fileID: 8093450291002382064, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
-  - {fileID: 5194013407741699722, guid: 7a50e5a2b7b2e27419274c3043e77211, type: 3}
-  - {fileID: 4089890278461062481, guid: f0ff71460eb6a6642981a8826d87856f, type: 3}
-  Prizes:
-  - {fileID: 6580651702705836817}
-  - {fileID: 6877460338384810309}
-  - {fileID: 6540871290147247642}
-  roundsCount: 3
-  waveFrequency: 2.15
-  spawnFrequency: 1.45
-  roundTimer: 0
-  spawnTimer: 0
-  wavesStrength:
-  - 27.6
-  - 28.6
-  - 29.7
-  - 29.7
-  - 30
-  - 41.4
-  mobsStrength:
-  - 6
-  - 10
-  - 9
-  - 12
-  - 15
-  - 10
-  WidthRange:
-  - -25
-  - 25
-  HeightRange:
-  - -18
-  - 18
-  BarrelSpawn:
-  - {fileID: 3654799419585330983}
 --- !u!1 &3218937091638035667
 GameObject:
   m_ObjectHideFlags: 0
@@ -29433,6 +29368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2910761907188748256}
   - component: {fileID: 3778899583279564546}
+  - component: {fileID: 498740556013339890}
   m_Layer: 0
   m_Name: Room 1 - 1
   m_TagString: Untagged
@@ -29482,6 +29418,56 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &498740556013339890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8147933182953753120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1b3bf0f2cb71f44b4c40b1424d0c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 0}
+  SpawnPoint: {fileID: 1534773496886501194}
+  StartButton: {fileID: 4469483567486542609}
+  Glow: {fileID: 6381300595226013303}
+  Player: {fileID: 0}
+  LeftDoors: {fileID: 1860138234500314846}
+  RightDoors: {fileID: 6272782413015507300}
+  Waves:
+  - {fileID: 7323344833653545521, guid: 11880fa2b4bfccf46a4ea01ae81de73d, type: 3}
+  - {fileID: 5042172444915979014, guid: d3ff71b5a8be6164bb38a3ee9f5cfabc, type: 3}
+  - {fileID: 9213142604682105927, guid: dadd544f882b4274a935fa5369bd3062, type: 3}
+  - {fileID: 2420785332106461130, guid: 3d5dadaf0917f6c4a9f6157f6ace247c, type: 3}
+  - {fileID: 1062595643013326874, guid: 5b9427324d2c98246869af92b93d06aa, type: 3}
+  - {fileID: 3165261581046188700, guid: 274d216a62e8689488b5d0b861bdfa22, type: 3}
+  Mobs:
+  - {fileID: 529646748837235406, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
+  - {fileID: 529646748837235406, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
+  - {fileID: 529646748837235406, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
+  - {fileID: 376688400217225062, guid: 33260a23ab630ef44a413ecf74e12fb8, type: 3}
+  - {fileID: 735359265308178938, guid: a2831b8202bc095498aad6baf48cac43, type: 3}
+  - {fileID: 8093450291002382064, guid: 746bfd75b8e91a4438d3e0e5fa45f616, type: 3}
+  Prizes:
+  - {fileID: 6580651702705836817}
+  - {fileID: 6877460338384810309}
+  - {fileID: 6540871290147247642}
+  roundStrength: 0
+  strengthIncrease: 0
+  roundsCount: 3
+  wavesStrength: 1b0000001c0000001d0000001d0000001e00000029000000
+  mobsStrength: 0600000006000000060000000a000000090000000c000000
+  WidthRange:
+  - -25
+  - 25
+  HeightRange:
+  - -18
+  - 18
+  BarrelSpawn:
+  - {fileID: 3654799419585330983}
 --- !u!1 &8688879871628980107
 GameObject:
   m_ObjectHideFlags: 0

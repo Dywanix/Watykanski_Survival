@@ -597,6 +597,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  room: {fileID: 0}
+  waveStrength: 52
+  strengthGrow: 5
+  maxMobsCount: 4
+  wavesCount: 2
+  CountIncrease: 42
 --- !u!212 &12126836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1685,6 +1691,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  room: {fileID: 0}
+  waveStrength: 63
+  strengthGrow: 7
+  maxMobsCount: 4
+  wavesCount: 2
+  CountIncrease: 38
 --- !u!212 &64764358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3957,6 +3969,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  room: {fileID: 0}
+  waveStrength: 71
+  strengthGrow: 7
+  maxMobsCount: 4
+  wavesCount: 2
+  CountIncrease: 36
 --- !u!212 &232070983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8565,6 +8583,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+  room: {fileID: 0}
+  waveStrength: 32
+  strengthGrow: 3
+  maxMobsCount: 4
+  wavesCount: 2
+  CountIncrease: 50
 --- !u!1 &695510755
 GameObject:
   m_ObjectHideFlags: 0
@@ -15625,6 +15649,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+  room: {fileID: 0}
+  waveStrength: 36
+  strengthGrow: 3
+  maxMobsCount: 4
+  wavesCount: 2
+  CountIncrease: 48
 --- !u!212 &1086298795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15755,7 +15785,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -23852,6 +23882,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  room: {fileID: 0}
+  waveStrength: 57
+  strengthGrow: 6
+  maxMobsCount: 4
+  wavesCount: 2
+  CountIncrease: 40
 --- !u!212 &1340000321
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35042,6 +35078,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  room: {fileID: 0}
+  waveStrength: 46
+  strengthGrow: 5
+  maxMobsCount: 4
+  wavesCount: 2
+  CountIncrease: 45
 --- !u!212 &2091028718
 SpriteRenderer:
   m_ObjectHideFlags: 0

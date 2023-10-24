@@ -6,18 +6,17 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
-    //public Transform[] ChestLocation;
     public GameObject StartButton, Glow, Player, LeftDoors, RightDoors;
-    public GameObject[] Waves, Mobs, Prizes; //Chests, ChestsSpawned;
+    public GameObject[] Waves, Mobs, Prizes;
 
     bool fight;
-    public int roundsCount;
-    public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
-    public float[] wavesStrength, mobsStrength;
+    public int roundStrength, strengthIncrease, mobsCount, roundsCount;
+    public float countIncrease;
+    //public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
+    public int[] wavesStrength, mobsStrength;
     public float[] WidthRange, HeightRange;
-    int roll, roll2;
-    float roundDuration;
-    //bool spawned;
+    int roll, roll2, strength, count;
+    //float roundDuration;
 
     public Barrels[] BarrelSpawn;
 
@@ -25,7 +24,7 @@ public class Room : MonoBehaviour
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(Map)) as Map;
     }
-
+    
     void Update()
     {
         if (!Player)
@@ -41,7 +40,7 @@ public class Room : MonoBehaviour
         }
         else Glow.SetActive(false);
 
-        if (fight)
+        /*if (fight)
         {
             roundTimer -= Time.deltaTime;
             map.RoundBarFill.fillAmount = roundTimer / roundDuration;
@@ -56,15 +55,6 @@ public class Room : MonoBehaviour
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0f)
                 Spawn();
-        }
-
-        /*if (spawned)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                if (ChestsSpawned[i] == null)
-                    DeSpawnChests();
-            }
         }*/
     }
 
@@ -80,8 +70,22 @@ public class Room : MonoBehaviour
             BarrelSpawn[i].Spawn();
         }
         map.playerStats.Nightfall();
-        spawnTimer = 4f;
-        SummonWave();
+        SpawnWave();
+        Invoke("IncreaseLimit", countIncrease);
+        //spawnTimer = 4f;
+        //SummonWave();
+    }
+
+    void SpawnWave()
+    {
+        strength = 0;
+        count = 0;
+        while (strength < roundStrength && count < mobsCount)
+        {
+            Spawn();
+        }
+
+        Invoke("CheckForClear", 3f);
     }
 
     void Spawn()
@@ -89,10 +93,20 @@ public class Room : MonoBehaviour
         SpawnPoint.position = new Vector3(transform.position.x + Random.Range(WidthRange[0], WidthRange[1]), transform.position.y + Random.Range(HeightRange[0], HeightRange[1]), 0f);
         roll = Random.Range(0, Mobs.Length);
         Instantiate(Mobs[roll], SpawnPoint.position, transform.rotation);
-        spawnTimer += (0.4f + mobsStrength[roll]) / spawnFrequency;
+        //spawnTimer += (0.4f + mobsStrength[roll]) / spawnFrequency;
+        strength += mobsStrength[roll];
+        count++;
     }
 
-    void SummonWave()
+    void IncreaseLimit()
+    {
+        mobsCount++;
+        countIncrease *= 1.25f;
+        if (fight)
+            Invoke("IncreaseLimit", countIncrease);
+    }
+
+    /*void SummonWave()
     {
         roll = Random.Range(0, Waves.Length);
         Instantiate(Waves[roll], transform.position, transform.rotation);
@@ -101,11 +115,11 @@ public class Room : MonoBehaviour
         roundTimer = roundDuration;
         roundsCount--;
         map.RoundsCount.text = (roundsCount + 1).ToString("0");
-    }
+    }*/
 
     void CeaseSpawn()
     {
-        fight = false;
+        //fight = false;
         map.RoundsCount.text = "";
 
         CheckForClear();
@@ -113,48 +127,44 @@ public class Room : MonoBehaviour
 
     void CheckForClear()
     {
-        if (GameObject.FindGameObjectWithTag("Enemy") == null)
-            EndRound();
-        else Invoke("CheckForClear", 0.6f);
+        if (strength < roundStrength)
+        {
+            if (GameObject.FindGameObjectsWithTag("Enemy").Length < mobsCount)
+                Spawn();
+            Invoke("CheckForClear", 0.65f);
+        }
+        else
+        {
+            if (GameObject.FindGameObjectWithTag("Enemy") == null)
+                EndRound();
+            else Invoke("CheckForClear", 0.65f);
+        }
     }
 
     void EndRound()
     {
-        SpawnPrize();
-        RightDoors.SetActive(false);
-        map.RoundBar.SetActive(false);
-        for (int i = 0; i < BarrelSpawn.Length; i++)
+        roundsCount--;
+        if (roundsCount == 0)
         {
-            BarrelSpawn[i].active = false;
+            fight = false;
+            SpawnPrize();
+            RightDoors.SetActive(false);
+            map.RoundBar.SetActive(false);
+            for (int i = 0; i < BarrelSpawn.Length; i++)
+            {
+                BarrelSpawn[i].active = false;
+            }
+            map.playerStats.NewDay();
         }
-        map.playerStats.NewDay();
+        else
+        {
+            roundStrength += strengthIncrease;
+            SpawnWave();
+        }
     }
 
     void SpawnPrize()
     {
         Prizes[map.PrizeRarity()].SetActive(true);
     }
-
-    /*void SpawnChests()
-    {
-        ChestsSpawned[0] = Instantiate(Chests[0], ChestLocation[0].position, transform.rotation);
-        roll = Random.Range(1, Chests.Length);
-        ChestsSpawned[1] = Instantiate(Chests[roll], ChestLocation[1].position, transform.rotation);
-        do
-        {
-            roll2 = Random.Range(1, Chests.Length);
-        } while (roll2 == roll);
-        ChestsSpawned[2] = Instantiate(Chests[roll2], ChestLocation[2].position, transform.rotation);
-        spawned = true;
-    }
-
-    void DeSpawnChests()
-    {
-        spawned = false;
-        for (int i = 0; i < 3; i++)
-        {
-            if (ChestsSpawned[i] != null)
-                Destroy(ChestsSpawned[i]);
-        }
-    }*/
 }
