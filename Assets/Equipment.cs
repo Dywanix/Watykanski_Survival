@@ -7,6 +7,7 @@ public class Equipment : MonoBehaviour
 {
     public PlayerController playerStats;
     public GunsLibrary Library;
+    public ItemsLibrary ILibrary;
     public Transform Barrel;
     public Gun[] guns;
     public int[] Accessories;
@@ -25,6 +26,8 @@ public class Equipment : MonoBehaviour
 
     // -- items
     public bool[] Items;
+    public int[] ItemList;
+    public int itemsCollected;
     public GameObject DeflectProjectal;
     public GameObject[] Drones;
     public TMPro.TextMeshProUGUI Tooltip;
@@ -52,6 +55,8 @@ public class Equipment : MonoBehaviour
     public void PickUpItem(int which)
     {
         Items[which] = true;
+        ItemList[itemsCollected] = which;
+        itemsCollected++;
 
         ShowTooltip(which);
         switch (which)

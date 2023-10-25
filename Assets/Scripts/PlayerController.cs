@@ -41,9 +41,12 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     public float moveSpeed = 5f;
 
-    // -- pause menu --
-    public GameObject Menu;
-    public bool menuOpened;
+    // -- Huds --
+    public GameObject Menu, Tab;
+    public bool menuOpened, tabOpened;
+    public TMPro.TextMeshProUGUI[] TabStatsText;
+    public GameObject[] CollectedItems;
+    public Image[] CollectedImages;
 
     void Start()
     {
@@ -99,11 +102,24 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!menuOpened)
                 OpenMenu();
-            else CloseMenu();
+            else
+            {
+                CloseMenu();
+                CloseTab();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!tabOpened)
+                OpenTab();
+            else
+                CloseTab();
         }
 
         if (dashCooldown > 0)
@@ -496,7 +512,7 @@ public class PlayerController : MonoBehaviour
             case "Poison Gun":
                 FireAbility();
                 firedBullet.damage = (0.04f + 0.01f * eq.guns[eq.equipped].level) * firedBullet.damage + 2f;
-                firedBullet.DoT += 0.5f * firedBullet.DoT + 3f;
+                firedBullet.DoT += 0.4f * firedBullet.DoT + 2.8f;
                 firedBullet.slowDuration += 0.16f / eq.guns[eq.equipped].fireRate;
                 break;
             case "Parallel Gun":
@@ -1029,6 +1045,39 @@ public class PlayerController : MonoBehaviour
     {
         Menu.SetActive(false);
         menuOpened = false;
+        free = true;
+    }
+
+    void OpenTab()
+    {
+        Tab.SetActive(true);
+        TabStatsText[0].text = maxHealth.ToString("0");
+        TabStatsText[1].text = ((damageBonus * 100f) -100f).ToString("0.0") + "%";
+        TabStatsText[2].text = ((fireRateBonus * 100f) -100f).ToString("0.0") + "%";
+        TabStatsText[3].text = ((movementSpeed / 5f) - 100f).ToString("0.0") + "%";
+        for (int i = 0; i < eq.itemsCollected; i++)
+        {
+            CollectedItems[i].SetActive(true);
+            CollectedImages[i].sprite = eq.ILibrary.ItemSprite[eq.ItemList[i]];
+        }
+        tabOpened = true;
+        free = false;
+    }
+
+    public void ItemTooltipOpen(int which)
+    {
+        eq.Tooltip.text = eq.ILibrary.ItemTooltip[eq.ItemList[which]];
+    }
+
+    public void ItemTooltipClose()
+    {
+        eq.Tooltip.text = "";
+    }
+
+    public void CloseTab()
+    {
+        Tab.SetActive(false);
+        tabOpened = false;
         free = true;
     }
 

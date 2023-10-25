@@ -13,7 +13,7 @@ public class PrizeChoice : MonoBehaviour
     public Image[] Gems, Choices;
     public TMPro.TextMeshProUGUI[] Tooltips;
     public Sprite[] GemsSprites, CommonSprites, RareSprites;
-    public string[] CommonTooltips, RareTooltips, EpicTooltips;
+    public string[] CommonTooltips, RareTooltips;
     public int accessoryChance;
 
     public int[] rolls, accessories, items;
@@ -191,13 +191,13 @@ public class PrizeChoice : MonoBehaviour
                             playerStats.GainHP(20);
                             break;
                         case 4:
-                            playerStats.damageBonus += 0.023f;
+                            playerStats.damageBonus += 0.027f;
                             break;
                         case 5:
-                            playerStats.fireRateBonus += 0.027f;
+                            playerStats.fireRateBonus += 0.032f;
                             break;
                         case 6:
-                            playerStats.movementSpeed += 16f;
+                            playerStats.movementSpeed += 20f;
                             break;
                     }
                 }
