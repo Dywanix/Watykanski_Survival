@@ -58,6 +58,7 @@ MonoBehaviour:
   magazineSize: 44
   ammo: 156
   maxAmmo: 200
+  targetArea: 0
   critDamage: 1.36
   armorShred: 0
   vulnerableApplied: 0
@@ -197,6 +198,7 @@ MonoBehaviour:
   magazineSize: 11
   ammo: 64
   maxAmmo: 75
+  targetArea: 0
   critDamage: 1.63
   armorShred: 0
   vulnerableApplied: 0
@@ -336,6 +338,7 @@ MonoBehaviour:
   magazineSize: 8
   ammo: 36
   maxAmmo: 44
+  targetArea: 0
   critDamage: 1.4
   armorShred: 0
   vulnerableApplied: 0
@@ -475,6 +478,7 @@ MonoBehaviour:
   magazineSize: 11
   ammo: 59
   maxAmmo: 70
+  targetArea: 0
   critDamage: 1.7
   armorShred: 0
   vulnerableApplied: 0
@@ -615,6 +619,7 @@ MonoBehaviour:
   magazineSize: 8
   ammo: 0
   maxAmmo: 0
+  targetArea: 0
   critDamage: 1.44
   armorShred: 0
   vulnerableApplied: 0
@@ -754,6 +759,7 @@ MonoBehaviour:
   magazineSize: 2
   ammo: 18
   maxAmmo: 20
+  targetArea: 0
   critDamage: 1.58
   armorShred: 0
   vulnerableApplied: 0
@@ -893,6 +899,7 @@ MonoBehaviour:
   magazineSize: 8
   ammo: 24
   maxAmmo: 32
+  targetArea: 0
   critDamage: 1.66
   armorShred: 0
   vulnerableApplied: 0
@@ -1032,6 +1039,7 @@ MonoBehaviour:
   magazineSize: 7
   ammo: 34
   maxAmmo: 41
+  targetArea: 0
   critDamage: 1.7
   armorShred: 0
   vulnerableApplied: 0
@@ -1171,6 +1179,7 @@ MonoBehaviour:
   magazineSize: 6
   ammo: 32
   maxAmmo: 38
+  targetArea: 0
   critDamage: 1.52
   armorShred: 0
   vulnerableApplied: 0
@@ -1310,6 +1319,7 @@ MonoBehaviour:
   magazineSize: 6
   ammo: 42
   maxAmmo: 48
+  targetArea: 0
   critDamage: 1.65
   armorShred: 0
   vulnerableApplied: 0.05
@@ -1421,7 +1431,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -1449,6 +1459,7 @@ MonoBehaviour:
   magazineSize: 24
   ammo: 108
   maxAmmo: 132
+  targetArea: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
@@ -1559,6 +1570,7 @@ MonoBehaviour:
   magazineSize: 18
   ammo: 0
   maxAmmo: 0
+  targetArea: 0
   critDamage: 1.57
   armorShred: 0
   vulnerableApplied: 0
@@ -1698,6 +1710,7 @@ MonoBehaviour:
   magazineSize: 26
   ammo: 116
   maxAmmo: 142
+  targetArea: 0
   critDamage: 1.4
   armorShred: 0
   vulnerableApplied: 0
@@ -1809,7 +1822,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1019964497745636248
 MonoBehaviour:
@@ -1837,6 +1850,7 @@ MonoBehaviour:
   magazineSize: 6
   ammo: 32
   maxAmmo: 38
+  targetArea: 0
   critDamage: 1.52
   armorShred: 0
   vulnerableApplied: 0
@@ -1948,7 +1962,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2480623888799790039
 MonoBehaviour:
@@ -1976,6 +1990,7 @@ MonoBehaviour:
   magazineSize: 17
   ammo: 76
   maxAmmo: 93
+  targetArea: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
@@ -2086,6 +2101,7 @@ MonoBehaviour:
   magazineSize: 11
   ammo: 33
   maxAmmo: 44
+  targetArea: 0
   critDamage: 1.44
   armorShred: 0
   vulnerableApplied: 0
@@ -2225,6 +2241,7 @@ MonoBehaviour:
   magazineSize: 21
   ammo: 74
   maxAmmo: 95
+  targetArea: 0
   critDamage: 1.44
   armorShred: 0
   vulnerableApplied: 0
@@ -2339,7 +2356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5647800462568369657
 MonoBehaviour:
@@ -2367,6 +2384,7 @@ MonoBehaviour:
   magazineSize: 24
   ammo: 108
   maxAmmo: 132
+  targetArea: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
@@ -2607,6 +2625,7 @@ MonoBehaviour:
   magazineSize: 3
   ammo: 18
   maxAmmo: 21
+  targetArea: 0
   critDamage: 1.72
   armorShred: 0
   vulnerableApplied: 0
@@ -2746,6 +2765,7 @@ MonoBehaviour:
   magazineSize: 7
   ammo: 0
   maxAmmo: 0
+  targetArea: 1
   critDamage: 1.65
   armorShred: 0
   vulnerableApplied: 0
@@ -2823,7 +2843,7 @@ MonoBehaviour:
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  - {fileID: 3080163295848660013, guid: 0e206f122f054ec448c3733f8c8656a2, type: 3}
   flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
   flashCount: 4
   flashSpread: 52
@@ -2885,6 +2905,7 @@ MonoBehaviour:
   magazineSize: 5
   ammo: 29
   maxAmmo: 34
+  targetArea: 0
   critDamage: 1.42
   armorShred: 0
   vulnerableApplied: 0
@@ -3014,6 +3035,7 @@ Transform:
   - {fileID: 5537800360404143622}
   - {fileID: 7453397628505095491}
   - {fileID: 659064434746076032}
+  - {fileID: 7672933874112669458}
   - {fileID: 2971924155989730239}
   - {fileID: 4278947165659766169}
   - {fileID: 6202056126562500248}
@@ -3080,6 +3102,7 @@ MonoBehaviour:
   magazineSize: 24
   ammo: 96
   maxAmmo: 120
+  targetArea: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
@@ -3219,6 +3242,7 @@ MonoBehaviour:
   magazineSize: 5
   ammo: 25
   maxAmmo: 30
+  targetArea: 0
   critDamage: 1.5
   armorShred: 0
   vulnerableApplied: 0
@@ -3358,6 +3382,7 @@ MonoBehaviour:
   magazineSize: 27
   ammo: 80
   maxAmmo: 107
+  targetArea: 0
   critDamage: 1.57
   armorShred: 0.01
   vulnerableApplied: 0
@@ -3497,6 +3522,147 @@ MonoBehaviour:
   magazineSize: 4
   ammo: 32
   maxAmmo: 36
+  targetArea: 0
+  critDamage: 1.6
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunChance: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1.576
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 21.9
+  shakeDuration: 0.171
+  bulletsLeft: 4
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 0c000000050000000c0000000a000000
+  Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 3.4
+  - 0.94
+  - 0.36
+  - 7
+  LevelUpBonuses:
+  - 0
+  - 0.99
+  - 1
+  - 0
+  - 0.03
+  - 1
+  - 0
+  - 0
+  - 1
+  - 2
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - fireRate
+  - range
+  - maxAmmo
+  UpgradeInfo:
+  - +3,4 Damage
+  - +6% Fire Rate
+  - +36 Range
+  - +7 Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  AbilityBullet: {fileID: 0}
+  free: 0
+  ammoRequired: 0
+  cooldown: 0
+  task: 0
+  fireRateCooldownRatio: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 3399573486116877650, guid: e57881db52ba6e44c979cd353e76ac4d, type: 3}
+  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
+  flashCount: 3
+  flashSpread: 26
+--- !u!1 &8225853495550403933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7672933874112669458}
+  - component: {fileID: 3298763077805474402}
+  m_Layer: 0
+  m_Name: Grenade Launcher v2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7672933874112669458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225853495550403933}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3298763077805474402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225853495550403933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Grenade Launcher
+  gunSprite: {fileID: 21300000, guid: 4a79440eddbfb7c4dadc8390b6545685, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 4a79440eddbfb7c4dadc8390b6545685, type: 3}
+  damage: 36.6
+  fireRate: 1.02
+  accuracy: 6.6
+  penetration: 0.36
+  critChance: 0.18
+  reloadTime: 1.44
+  range: 2.73
+  force: 14.7
+  magazineSize: 4
+  ammo: 32
+  maxAmmo: 36
+  targetArea: 1
   critDamage: 1.6
   armorShred: 0
   vulnerableApplied: 0
@@ -3636,6 +3802,7 @@ MonoBehaviour:
   magazineSize: 18
   ammo: 96
   maxAmmo: 104
+  targetArea: 0
   critDamage: 1.52
   armorShred: 0
   vulnerableApplied: 0
@@ -3776,6 +3943,7 @@ MonoBehaviour:
   magazineSize: 8
   ammo: 52
   maxAmmo: 60
+  targetArea: 0
   critDamage: 1.62
   armorShred: 0
   vulnerableApplied: 0
@@ -3888,7 +4056,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959943114771508542
 MonoBehaviour:
@@ -3916,6 +4084,7 @@ MonoBehaviour:
   magazineSize: 7
   ammo: 28
   maxAmmo: 35
+  targetArea: 0
   critDamage: 1.77
   armorShred: 0
   vulnerableApplied: 0

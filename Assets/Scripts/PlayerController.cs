@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform Barrel, Hand, Dude, GunRot;
+    public Transform Barrel, Hand, Dude, GunRot, TargetArea;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge;
@@ -380,14 +380,39 @@ public class PlayerController : MonoBehaviour
 
     public void Fire(float accuracy_change = 0f)
     {
-        for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
+        if (eq.guns[eq.equipped].targetArea)
         {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
-            GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
-            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
-            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            SetBullet(1f);
+            for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
+            {
+                temp = 1f;
+                if (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= eq.guns[eq.equipped].range * 24f)
+                    TargetArea.position = new Vector2(mousePos[0] + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 5, mousePos[1] + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 5);
+                else
+                {
+                    temp = Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / (eq.guns[eq.equipped].range * 24f);
+                    TargetArea.position = new Vector2(transform.position.x + (mousePos[0] - transform.position.x) / temp + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 5, transform.position.y + (mousePos[1] - transform.position.y) / temp + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 5);
+                }
+                GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
+                Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+                //bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * 0.4f, ForceMode2D.Impulse);
+                firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+                SetBullet(1f);
+                firedBullet.TargetedLocation = TargetArea;
+                firedBullet.duration /= Random.Range(0.96f, 1.04f);
+                firedBullet.duration /= forceIncrease;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
+            {
+                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
+                GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
+                Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+                bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
+                firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+                SetBullet(1f);
+            }
         }
         if (eq.guns[eq.equipped].Accessories[15] * 0.15f >= Random.Range(0f, 1f))
         {

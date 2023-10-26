@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     public int magazineSize;
     public int ammo;
     public int maxAmmo;
+    public bool targetArea;
 
     [Header("Special Staty")]
     public float critDamage;

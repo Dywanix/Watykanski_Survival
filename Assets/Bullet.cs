@@ -11,6 +11,21 @@ public class Bullet : MonoBehaviour
     public int pierce, special;
     public bool infinite, crit, AoE;
 
+    [Header("AreaBullets")]
+    public Transform TargetedLocation;
+    public FallingObject fall;
+    float travelX, travelY;
+
+    void Start()
+    {
+        if (TargetedLocation)
+        {
+            fall.duration = duration;
+            travelX = (TargetedLocation.position.x - transform.position.x) / duration;
+            travelY = (TargetedLocation.position.y - transform.position.y) / duration;
+        }
+    }
+
     void Update()
     {
         if (!infinite)
@@ -20,6 +35,10 @@ public class Bullet : MonoBehaviour
         {
             Explosions();
             Destroy(gameObject);
+        }
+        if (TargetedLocation)
+        {
+            transform.position = new Vector3(transform.position.x + travelX * Time.deltaTime, transform.position.y + travelY * Time.deltaTime, 0);
         }
     }
 
