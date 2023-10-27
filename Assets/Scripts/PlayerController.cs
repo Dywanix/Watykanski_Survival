@@ -408,9 +408,9 @@ public class PlayerController : MonoBehaviour
                 Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
                 GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
                 Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-                bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
                 firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
                 SetBullet(1f);
+                bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
             }
         }
         if (eq.guns[eq.equipped].Accessories[15] * 0.15f >= Random.Range(0f, 1f))
@@ -431,17 +431,19 @@ public class PlayerController : MonoBehaviour
             Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + direction + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
             GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            if (eq.guns[eq.equipped].targetArea && Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= eq.guns[eq.equipped].range * 24f)
-                bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f) * (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / (eq.guns[eq.equipped].range * 24f)), ForceMode2D.Impulse);
-            else bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * Random.Range(0.92f, 1.08f), ForceMode2D.Impulse);
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet(1f);
+            if (eq.guns[eq.equipped].targetArea && Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= eq.guns[eq.equipped].range * 24f)
+                bullet_body.AddForce(Barrel.up * firedBullet.force * (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / (eq.guns[eq.equipped].range * 24f)), ForceMode2D.Impulse);
+            else bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
         }
     }
 
     public void SetBullet(float efficiency)
     {
         firedBullet.duration = eq.guns[eq.equipped].range;
+        firedBullet.force = eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f);
+        firedBullet.mass = eq.guns[eq.equipped].heft;
         firedBullet.damage = eq.guns[eq.equipped].Damage() * DamageDealtMultiplyer(1f);
         if (eq.guns[eq.equipped].Accessories[16] > 0)
         {
@@ -480,7 +482,7 @@ public class PlayerController : MonoBehaviour
             firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
             firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
             firedBullet.slowDuration *= 0.7f + eq.guns[eq.equipped].critDamage * 0.3f;
-            firedBullet.slowDuration += 0.05f + 0.01f * firedBullet.damage;
+            firedBullet.mass *= 0.8f + eq.guns[eq.equipped].critDamage * 0.5f;
             firedBullet.stunChance *= 0.4f + eq.guns[eq.equipped].critDamage * 0.6f;
             firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].critDamage * 0.3f;
             firedBullet.pierceEfficiency *= 1.1f;

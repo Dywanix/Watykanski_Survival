@@ -16,6 +16,7 @@ public class Gun : MonoBehaviour
     public float reloadTime;
     public float range;
     public float force;
+    public float heft;
     public int magazineSize;
     public int ammo;
     public int maxAmmo;

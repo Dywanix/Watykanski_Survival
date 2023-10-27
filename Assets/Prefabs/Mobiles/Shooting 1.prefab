@@ -82,6 +82,7 @@ MonoBehaviour:
   vulnerable: 0
   movementSpeed: 3.38
   aimingMovement: 0.66
+  tenacity: 1
   slow: 0
   stun: 0.75
   flank: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   Blood: {fileID: 0}
   FireExplosion: {fileID: 9215768205720018552, guid: 2da69099b82e2c84da291631e6d1ecd5, type: 3}
   CurseBullet: {fileID: 3674245068203054096, guid: c24f5ea2081f85f42b52e95e0055cbac, type: 3}
+  burning: 0
   DoT: 0
   ablaze: 0
   curse: 0
@@ -124,8 +126,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 1.5
+  m_LinearDrag: 2.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

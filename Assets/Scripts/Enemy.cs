@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Movement")]
     public float movementSpeed;
-    public float aimingMovement, slow, stun;
+    public float aimingMovement, tenacity, slow, stun;
     public bool flank;
 
     [Header("Damage & Attacks")]
@@ -72,13 +72,11 @@ public class Enemy : MonoBehaviour
         playerBody = Player.GetComponent<Rigidbody2D>();
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
 
-        maxHealth *= Random.Range(0.96f, 1.04f);
-        maxHealth *= 1f + 0.016f * playerStats.dayCount;
+        /*maxHealth *= Random.Range(0.96f, 1.04f);
         armor *= Random.Range(0.98f, 1.02f);
         movementSpeed *= Random.Range(0.95f, 1.05f);
-        movementSpeed *= 1f + 0.005f * playerStats.dayCount;
         attackDamage *= Random.Range(0.92f, 1.08f);
-        attackSpeed *= Random.Range(0.92f, 1.08f);
+        attackSpeed *= Random.Range(0.92f, 1.08f);*/
 
         if (boss)
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
@@ -270,7 +268,9 @@ public class Enemy : MonoBehaviour
     {
         collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
         if (!collidedBullet.AoE)
-        {
+        {   
+            temp = collidedBullet.force * collidedBullet.mass / tenacity;
+            Body.AddForce(Sight.up * temp * -1f, ForceMode2D.Impulse);
             armor *= 1 - (collidedBullet.armorShred * 1.6f / (1f + 0.03f * weight));
             vulnerable += collidedBullet.vulnerableApplied * 1.6f / (1f + 0.03f * weight);
             if (collidedBullet.slowDuration > 0)

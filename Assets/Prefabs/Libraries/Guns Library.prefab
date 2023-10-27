@@ -55,6 +55,7 @@ MonoBehaviour:
   reloadTime: 3.2
   range: 0.89
   force: 22.6
+  heft: 0.1
   magazineSize: 44
   ammo: 156
   maxAmmo: 200
@@ -66,6 +67,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -195,6 +197,7 @@ MonoBehaviour:
   reloadTime: 1.29
   range: 0.92
   force: 22.9
+  heft: 0.03
   magazineSize: 11
   ammo: 64
   maxAmmo: 75
@@ -206,6 +209,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 1.06
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -335,6 +339,7 @@ MonoBehaviour:
   reloadTime: 1.5
   range: 0.8
   force: 21.4
+  heft: 0.2
   magazineSize: 8
   ammo: 36
   maxAmmo: 44
@@ -346,6 +351,7 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -475,6 +481,7 @@ MonoBehaviour:
   reloadTime: 2.47
   range: 0.15
   force: 0
+  heft: 0.02
   magazineSize: 11
   ammo: 59
   maxAmmo: 70
@@ -486,6 +493,7 @@ MonoBehaviour:
   pierce: 4
   pierceEfficiency: 0.77
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -616,6 +624,7 @@ MonoBehaviour:
   reloadTime: 0.76
   range: 0.84
   force: 22.5
+  heft: 0.08
   magazineSize: 8
   ammo: 0
   maxAmmo: 0
@@ -627,6 +636,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -756,6 +766,7 @@ MonoBehaviour:
   reloadTime: 0.9
   range: 0.85
   force: 25.9
+  heft: 0.17
   magazineSize: 2
   ammo: 18
   maxAmmo: 20
@@ -767,6 +778,7 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 1.16
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -896,6 +908,7 @@ MonoBehaviour:
   reloadTime: 0.4
   range: 0.96
   force: 23.9
+  heft: 0.18
   magazineSize: 8
   ammo: 24
   maxAmmo: 32
@@ -907,6 +920,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.64
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1036,6 +1050,7 @@ MonoBehaviour:
   reloadTime: 1.52
   range: 0.94
   force: 21
+  heft: 0.12
   magazineSize: 7
   ammo: 34
   maxAmmo: 41
@@ -1047,6 +1062,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1176,6 +1192,7 @@ MonoBehaviour:
   reloadTime: 1.84
   range: 0.91
   force: 23.2
+  heft: 0.13
   magazineSize: 6
   ammo: 32
   maxAmmo: 38
@@ -1187,6 +1204,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1316,6 +1334,7 @@ MonoBehaviour:
   reloadTime: 1.7
   range: 1.16
   force: 19
+  heft: 0.07
   magazineSize: 6
   ammo: 42
   maxAmmo: 48
@@ -1327,6 +1346,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1456,6 +1476,7 @@ MonoBehaviour:
   reloadTime: 1.84
   range: 1.1
   force: 19.9
+  heft: 0
   magazineSize: 24
   ammo: 108
   maxAmmo: 132
@@ -1467,6 +1488,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1567,6 +1589,7 @@ MonoBehaviour:
   reloadTime: 1.764
   range: 0.9
   force: 22.4
+  heft: 0.07
   magazineSize: 18
   ammo: 0
   maxAmmo: 0
@@ -1578,6 +1601,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1707,6 +1731,7 @@ MonoBehaviour:
   reloadTime: 0.898
   range: 0.99
   force: 20.8
+  heft: 0.08
   magazineSize: 26
   ammo: 116
   maxAmmo: 142
@@ -1718,6 +1743,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1847,6 +1873,7 @@ MonoBehaviour:
   reloadTime: 2.02
   range: 1.16
   force: 19.3
+  heft: 0
   magazineSize: 6
   ammo: 32
   maxAmmo: 38
@@ -1858,6 +1885,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -1987,6 +2015,7 @@ MonoBehaviour:
   reloadTime: 1.84
   range: 1.42
   force: 16
+  heft: 0
   magazineSize: 17
   ammo: 76
   maxAmmo: 93
@@ -1998,6 +2027,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -2098,6 +2128,7 @@ MonoBehaviour:
   reloadTime: 1.57
   range: 0.88
   force: 23.6
+  heft: 0.1
   magazineSize: 11
   ammo: 33
   maxAmmo: 44
@@ -2109,6 +2140,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -2238,6 +2270,7 @@ MonoBehaviour:
   reloadTime: 1.63
   range: 0.83
   force: 23.8
+  heft: 0.09
   magazineSize: 21
   ammo: 74
   maxAmmo: 95
@@ -2249,6 +2282,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -2381,6 +2415,7 @@ MonoBehaviour:
   reloadTime: 1.84
   range: 1.41
   force: 16
+  heft: 0
   magazineSize: 24
   ammo: 108
   maxAmmo: 132
@@ -2392,6 +2427,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -2622,6 +2658,7 @@ MonoBehaviour:
   reloadTime: 1.85
   range: 0.88
   force: 25.4
+  heft: 0.16
   magazineSize: 3
   ammo: 18
   maxAmmo: 21
@@ -2633,6 +2670,7 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 0.65
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0.032
   overload: 0
@@ -2762,6 +2800,7 @@ MonoBehaviour:
   reloadTime: 1.585
   range: 0.85
   force: 22.8
+  heft: 0.1
   magazineSize: 7
   ammo: 0
   maxAmmo: 0
@@ -2773,6 +2812,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -2902,6 +2942,7 @@ MonoBehaviour:
   reloadTime: 1.38
   range: 0.91
   force: 20
+  heft: 0.12
   magazineSize: 5
   ammo: 29
   maxAmmo: 34
@@ -2913,6 +2954,7 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 0.8
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -3099,6 +3141,7 @@ MonoBehaviour:
   reloadTime: 1.5
   range: 0.86
   force: 24
+  heft: 0.12
   magazineSize: 24
   ammo: 96
   maxAmmo: 120
@@ -3110,6 +3153,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -3239,6 +3283,7 @@ MonoBehaviour:
   reloadTime: 1.93
   range: 0.99
   force: 14.9
+  heft: 0.02
   magazineSize: 5
   ammo: 25
   maxAmmo: 30
@@ -3250,6 +3295,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 1
@@ -3379,6 +3425,7 @@ MonoBehaviour:
   reloadTime: 1.7
   range: 1.13
   force: 20.2
+  heft: 0.11
   magazineSize: 27
   ammo: 80
   maxAmmo: 107
@@ -3390,6 +3437,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -3519,6 +3567,7 @@ MonoBehaviour:
   reloadTime: 1.44
   range: 2.73
   force: 14.7
+  heft: 0.12
   magazineSize: 4
   ammo: 32
   maxAmmo: 36
@@ -3530,6 +3579,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -3659,6 +3709,7 @@ MonoBehaviour:
   reloadTime: 1.44
   range: 2.73
   force: 14.7
+  heft: 0.12
   magazineSize: 4
   ammo: 32
   maxAmmo: 36
@@ -3670,6 +3721,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -3799,6 +3851,7 @@ MonoBehaviour:
   reloadTime: 1.1
   range: 1.05
   force: 18.9
+  heft: 0.09
   magazineSize: 18
   ammo: 96
   maxAmmo: 104
@@ -3810,6 +3863,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -3940,6 +3994,7 @@ MonoBehaviour:
   reloadTime: 1.43
   range: 1.13
   force: 17.7
+  heft: 0.09
   magazineSize: 8
   ammo: 52
   maxAmmo: 60
@@ -3951,6 +4006,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
@@ -4081,6 +4137,7 @@ MonoBehaviour:
   reloadTime: 2.77
   range: 2
   force: 12
+  heft: 0
   magazineSize: 7
   ammo: 28
   maxAmmo: 35
@@ -4092,6 +4149,7 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 1
   DoT: 0
+  incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
