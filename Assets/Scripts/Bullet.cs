@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
 
     [Header("AreaBullets")]
     public Transform TargetedLocation;
+    public GameObject HitArea;
     public FallingObject fall;
     float travelX, travelY;
 
@@ -20,7 +21,9 @@ public class Bullet : MonoBehaviour
     {
         if (TargetedLocation)
         {
+            Instantiate(HitArea, TargetedLocation.position, TargetedLocation.rotation);
             fall.duration = duration;
+            duration += 0.01f;
             travelX = (TargetedLocation.position.x - transform.position.x) / duration;
             travelY = (TargetedLocation.position.y - transform.position.y) / duration;
         }

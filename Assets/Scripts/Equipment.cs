@@ -308,11 +308,12 @@ public class Equipment : MonoBehaviour
         playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(guns[equipped].accuracy, guns[equipped].accuracy));
         GameObject bullet = Instantiate(Wave, playerStats.Barrel.position, playerStats.Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(playerStats.Barrel.up * 20f * Random.Range(0.95f, 1.05f), ForceMode2D.Impulse);
-
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         playerStats.SetBullet(1f);
         waveBullet = bullet.GetComponent(typeof(MultipleBullets)) as MultipleBullets;
+        if (guns[equipped].targetArea && Vector3.Distance(playerStats.transform.position, new Vector2(playerStats.mousePos[0], playerStats.mousePos[1])) <= guns[equipped].range * 24f)
+            waveBullet.bulletForce = 20f * Random.Range(1.07f, 1.08f) * Vector3.Distance(playerStats.transform.position, new Vector2(playerStats.mousePos[0], playerStats.mousePos[1])) / (guns[equipped].range * 23f);
+        else waveBullet.bulletForce = 20f * Random.Range(0.95f, 1.05f);
         waveBullet.BulletShard = guns[equipped].bulletPrefab[Random.Range(0, guns[equipped].bulletPrefab.Length)];
     }
 

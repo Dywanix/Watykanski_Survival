@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: fall
       value: 
       objectReference: {fileID: 1636359410427372344}
+    - target: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: HitArea
+      value: 
+      objectReference: {fileID: 5887934940822114059, guid: 6e832aeb29b2f614296c6bc4fc950f29, type: 3}
     - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: m_RootOrder
       value: 0

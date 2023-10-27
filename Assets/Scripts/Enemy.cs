@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     [Header("Health & Resistance")]
     public int weight;
     public Image healthFill, DoTFill;
-    public float maxHealth, health, regen, armor, vulnerable, DoT, burning;
+    public float maxHealth, health, regen, armor, vulnerable;
 
     [Header("Movement")]
     public float movementSpeed;
@@ -61,8 +61,10 @@ public class Enemy : MonoBehaviour
     public GameObject Blood;
 
     [Header("Status")]
+    public GameObject FireExplosion;
     public GameObject CurseBullet;
-    public float curse;
+    public bool burning;
+    public float DoT, ablaze, curse;
 
     void Start()
     {
@@ -275,12 +277,13 @@ public class Enemy : MonoBehaviour
                 slow += collidedBullet.slowDuration * 1.6f / (1f + 0.03f * weight);
             if (collidedBullet.stunChance >= Random.Range(0f, 1f))
                 GainStun(collidedBullet.stunDuration * 1.6f / (1f + 0.03f * weight));
-            TakeDamage(collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration), collidedBullet.crit, true);
+            temp = collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration);
+            TakeDamage(temp, collidedBullet.crit, true);
             if (collidedBullet.DoT > 0)
-                GainDoT(collidedBullet.damage * collidedBullet.DoT / DamageTakenMultiplyer(collidedBullet.penetration));
-            curse += collidedBullet.curse;
+                GainDoT(temp * collidedBullet.DoT);
             if (collidedBullet.incendiary > 0)
-                burning += collidedBullet.incendiary;
+                SetAblaze(temp * collidedBullet.incendiary);
+            curse += collidedBullet.curse;
         }
         collidedBullet.Struck();
     }
@@ -349,6 +352,28 @@ public class Enemy : MonoBehaviour
         DoT += value;
     }
 
+    void SetAblaze(float value)
+    {
+        ablaze += value;
+        if (ablaze >= 20f && !burning)
+        {
+            burning = true;
+            Invoke("Conflagration", 0.5f);
+        }
+    }
+
+    void Conflagration()
+    {
+        ablaze -= 20f;
+        GameObject bullet = Instantiate(FireExplosion, Body.position, transform.rotation);
+        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        firedBullet.damage = 20f;
+        if (ablaze >= 20f)
+            Invoke("Conflagration", 0.5f);
+        else burning = false;
+        SetAblaze(0f);
+    }
+
     float DamageTakenMultiplyer(float penetration)
     {
         temp = 1f + (armor * (1 - penetration) * 0.01f);
@@ -360,11 +385,6 @@ public class Enemy : MonoBehaviour
     {
         //if (playerStats.day)
             //Burn();
-        if (burning > 0f)
-        {
-            Burn();
-            burning -= 0.5f;
-        }
 
         if (DoT > 0)
             DoTproc();

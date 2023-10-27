@@ -1174,6 +1174,8 @@ MonoBehaviour:
   reloading: 0
   free: 1
   day: 1
+  mousePos: {x: 0, y: 0, z: 0}
+  mouseVector: {x: 0, y: 0, z: 0}
   task: 0
   taskMax: 0
   maxHealth: 90
@@ -7451,7 +7453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1209949143777227327
 Transform:
   m_ObjectHideFlags: 0
@@ -8086,10 +8088,6 @@ PrefabInstance:
     - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5518898056319036726, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
-      propertyPath: targetArea
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}

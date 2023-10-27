@@ -80,8 +80,6 @@ MonoBehaviour:
   regen: 0
   armor: 17
   vulnerable: 0
-  DoT: 0
-  burning: 0
   movementSpeed: 3.38
   aimingMovement: 0.66
   slow: 0
@@ -109,7 +107,10 @@ MonoBehaviour:
   scrapCount: 1
   itemCount: 1
   Blood: {fileID: 0}
+  FireExplosion: {fileID: 9215768205720018552, guid: 2da69099b82e2c84da291631e6d1ecd5, type: 3}
   CurseBullet: {fileID: 3674245068203054096, guid: c24f5ea2081f85f42b52e95e0055cbac, type: 3}
+  DoT: 0
+  ablaze: 0
   curse: 0
 --- !u!50 &3979315075050305358
 Rigidbody2D:
