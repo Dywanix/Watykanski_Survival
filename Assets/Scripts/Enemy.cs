@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
         if (playerStats.eq.Items[20])
             vulnerable += armor * 0.003f;
         if (playerStats.eq.Items[22])
-            curse += (10.5f + maxHealth * 0.15f) * playerStats.DamageDealtMultiplyer(0.2f);
+            curse += (16.5f + maxHealth * 0.16f) * playerStats.DamageDealtMultiplyer(0.287f);
 
         health = maxHealth;
         shield = shieldCapacity;

@@ -52,13 +52,6 @@ public class Gun : MonoBehaviour
     float temp;
     int tempi;
 
-    [Header("Ability")]
-    public GameObject AbilityBullet;
-    public bool multiCast, free, abilityTargetArea;
-    public int ammoRequired;
-    public float cooldown, task, fireRateCooldownRatio;
-    public float throwRange, throwDelay;
-
     [Header("Multiplikatory Stat")]
     public float damageMultiplier;
     public int magazineMultiplier = 1;
@@ -73,16 +66,6 @@ public class Gun : MonoBehaviour
     void Start()
     {
         bulletsLeft = magazineSize + overload;
-    }
-
-    public float Cooldown()
-    {
-        return cooldown + fireRateCooldownRatio * fireRate;
-    }
-
-    public void Cast()
-    {
-
     }
 
     public void Upgrade(int which)
@@ -171,7 +154,7 @@ public class Gun : MonoBehaviour
                 break;
         }*/
 
-        ExperienceGain(Costs[which] * 0.32f);
+        ExperienceGain(Costs[which] * 0.326f);
         //GainSpecialCharge(0.12f + Costs[which] * 0.00015f);
     }
 

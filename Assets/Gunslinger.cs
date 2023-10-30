@@ -171,8 +171,6 @@ public class Gunslinger : MonoBehaviour
             if (ability2Perks[3])
                 doubleShotChance += 0.078f + 0.001f * playerStats.level;
 
-            playerStats.damageBonus *= playerStats.abilityDamageBonus;
-
             unloadCount = 0;
             for (float i = 0; i < unloadDuration; i += unloadGap)
             {
@@ -211,7 +209,6 @@ public class Gunslinger : MonoBehaviour
             playerStats.damageBonus /= unloadDamageBonus;
         if (ability2Perks[3])
             doubleShotChance -= 0.078f + 0.001f * playerStats.level;
-        playerStats.damageBonus /= playerStats.abilityDamageBonus;
     }
 
     public void GainPerk(int ability, int which)

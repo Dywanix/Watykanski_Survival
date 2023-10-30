@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
     public Transform Barrel, Hand, Dude, GunRot, TargetArea;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
-    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge;
+    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge, GrenadeCharge;
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage;
     public Bullet firedBullet;
+    public GameObject Grenade;
     private EnemyBullet collidedBullet;
 
     /*public Gunslinger gunslinger;
@@ -25,9 +26,10 @@ public class PlayerController : MonoBehaviour
     CameraController Cam;
     public float task, taskMax;
 
-    // -- statystyki --
-    public float maxHealth, dHealth, health, maxShield, dShield, shield, shieldChargeRate, shieldChargeDelay, rechargeTimer, poison,
-    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, abilityDamageBonus, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, abilityMaxCooldown, abilityCooldown, dashCooldown, dash;
+    [Header("Stats")]
+    public float maxHealth;
+    public float dHealth, health, maxShield, dShield, shield, poison,
+    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
     public int level = 1, dayCount = 1;
     bool undamaged, dashSecondCharge;
     int tempi, bonusTool;
@@ -88,8 +90,8 @@ public class PlayerController : MonoBehaviour
             move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             Movement();
             Aim();
-            if (Input.GetMouseButton(1))
-                AbilityCast();
+            if (Input.GetMouseButtonDown(1))
+                GrenadeCast();
             if (task <= 0)
             {
                 Action();
@@ -139,21 +141,23 @@ public class PlayerController : MonoBehaviour
                 dashSecondCharge = true;
                 maxDashCooldown = dashBaseCooldown / cooldownReduction;
                 dashCooldown += maxDashCooldown;
-                DashCharge.text = "+";
+                DashCharge.text = "1";
             }
         }
-        if (abilityCooldown > 0)
+        if (grenadeCooldown > 0)
         {
-            abilityCooldown -= Time.deltaTime;
-            abilityImage.fillAmount = 1 - (abilityCooldown / abilityMaxCooldown);
+            grenadeCooldown -= Time.deltaTime;
+            abilityImage.fillAmount = 1 - (grenadeCooldown / grenadeMaxCooldown);
         }
-
-        if (shield < maxShield)
+        else
         {
-            if (rechargeTimer > 0)
-                rechargeTimer -= Time.deltaTime;
-            else
-                GainShield(shieldChargeRate * Time.deltaTime);
+            if (grenadeCharges < grenadeMaxCharges)
+            {
+                grenadeCharges++;
+                GrenadeCharge.text = "+" + grenadeCharges.ToString("0");
+                grenadeMaxCooldown = grenadeBaseCooldown / cooldownReduction;
+                grenadeCooldown = grenadeMaxCooldown;
+            }
         }
 
         if (dHealth > health)
@@ -225,12 +229,12 @@ public class PlayerController : MonoBehaviour
         dash = 1f;
 
         if (eq.guns[eq.equipped].Accessories[19] > 0)
-            DashFire();
+            Invoke("DashFire", 0.07f);
 
         if (eq.Items[9])
         {
-            movementSpeed *= 1.2f;
-            Invoke("SprintEnd", 2.5f);
+            movementSpeed *= 1.25f;
+            Invoke("SprintEnd", 2.2f);
         }
     }
 
@@ -425,7 +429,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Items[17])
-            eq.OnHit(1.1f);
+            eq.OnHit(1.15f);
         else eq.OnHit(1f);
     }
 
@@ -499,40 +503,48 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void AbilityCast()
+    void GrenadeCast()
     {
-        if (abilityCooldown <= 0f)
+        if (grenadeCooldown <= 0f || grenadeCharges > 0)
         {
-            if (eq.guns[eq.equipped].ammoRequired == 0)
-            {
-                if (eq.guns[eq.equipped].free || task <= 0f)
-                    CastAbility();
-            }
-            else if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].ammoRequired)
-            {
-                if (eq.guns[eq.equipped].free || task <= 0f)
-                    CastAbility();
-            }
+            ThrowGrenade();
         }
     }
 
-    void CastAbility()
+    void ThrowGrenade()
     {
-        abilityMaxCooldown = eq.guns[eq.equipped].Cooldown() / cooldownReduction;
-        abilityCooldown = abilityMaxCooldown;
-        NewTask(eq.guns[eq.equipped].task);
-
-        if (eq.guns[eq.equipped].multiCast)
+        if (grenadeCharges > 0)
         {
-            for (int m = 0; m < eq.guns[eq.equipped].BulletsFired(); m++)
-            {
-                Invoke("UseAbility", m * 0.05f);
-            }
+            grenadeCharges--;
+            if (grenadeCharges == 0)
+                GrenadeCharge.text = "";
+            else GrenadeCharge.text = "+" + grenadeCharges.ToString("0");
         }
-        else UseAbility();
+        else
+        {
+            grenadeMaxCooldown = grenadeBaseCooldown / cooldownReduction;
+            grenadeCooldown = grenadeMaxCooldown;
+        }
+
+        temp = 1f;
+        if (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= throwRange)
+            TargetArea.position = new Vector2(mousePos[0], mousePos[1]);
+        else
+        {
+            temp = Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / throwRange;
+            TargetArea.position = new Vector2(transform.position.x + (mousePos[0] - transform.position.x) / temp, transform.position.y + (mousePos[1] - transform.position.y) / temp);
+        }
+        GameObject bullet = Instantiate(Grenade, Barrel.position, Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        firedBullet.TargetedLocation = TargetArea;
+        firedBullet.duration /= forceIncrease;
+        firedBullet.damage = (26f + toolsStored * 0.1f) * DamageDealtMultiplyer(1.05f);
+        if (eq.Items[13])
+            firedBullet.damage *= 1.22f;
     }
 
-    void UseAbility()
+    /*void UseAbility()
     {
         switch (eq.guns[eq.equipped].gunName)
         {
@@ -580,9 +592,9 @@ public class PlayerController : MonoBehaviour
                 firedBullet.damage *= 1.04f + 0.08f * eq.guns[eq.equipped].level;
                 break;
         }
-    }
+    }*/
 
-    void FireAbility()
+    /*void FireAbility()
     {
         Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + 0.5f * Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy));
         GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
@@ -590,33 +602,7 @@ public class PlayerController : MonoBehaviour
         firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         SetBullet(1f);
         bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
-    }
-
-    void ThrowAbility()
-    {
-        temp = 1f;
-        if (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= eq.guns[eq.equipped].throwRange)
-            TargetArea.position = new Vector2(mousePos[0] + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10, mousePos[1] + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10);
-        else
-        {
-            temp = Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / (eq.guns[eq.equipped].throwRange);
-            TargetArea.position = new Vector2(transform.position.x + (mousePos[0] - transform.position.x) / temp + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10, transform.position.y + (mousePos[1] - transform.position.y) / temp + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10);
-        }
-        GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
-        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        SetBullet(1f);
-        firedBullet.TargetedLocation = TargetArea;
-        firedBullet.duration = eq.guns[eq.equipped].throwDelay;
-        firedBullet.duration /= forceIncrease;
-    }
-
-    void InstantiateAbility()
-    {
-        GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        SetBullet(1f);
-    }
+    }*/
 
     void Rain()
     {
@@ -778,7 +764,7 @@ public class PlayerController : MonoBehaviour
 
     void SprintEnd()
     {
-        movementSpeed /= 1.2f;
+        movementSpeed /= 1.25f;
     }
 
     void DashFire()
@@ -829,7 +815,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             shield -= value;
-            rechargeTimer = shieldChargeDelay;
 
             if (shield < 0)
             {
@@ -837,7 +822,7 @@ public class PlayerController : MonoBehaviour
                 shield = 0;
                 health -= value;
                 if (eq.Items[3])
-                    GainShield(value * 0.4f);
+                    GainShield(value * 0.45f);
                 healthBar.fillAmount = health / maxHealth;
 
                 if (eq.Items[25] && !day)

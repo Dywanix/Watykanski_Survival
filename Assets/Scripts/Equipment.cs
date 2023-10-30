@@ -65,8 +65,11 @@ public class Equipment : MonoBehaviour
                 playerStats.maxShield += 20;
                 playerStats.GainShield(0);
                 break;
+            case 4:
+                playerStats.dashBaseCooldown /= 1.1f;
+                break;
             case 5:
-                playerStats.cooldownReduction += 0.38f;
+                playerStats.cooldownReduction += 0.4f;
                 break;
             case 6:
                 playerStats.GainHP(10);
@@ -86,7 +89,7 @@ public class Equipment : MonoBehaviour
                 }
                 break;
             case 9:
-                playerStats.movementSpeed += 35f;
+                playerStats.movementSpeed += 45f;
                 break;
             case 10:
                 playerStats.damageBonus += 0.06f;
@@ -97,19 +100,19 @@ public class Equipment : MonoBehaviour
                 playerStats.GainShield(0);
                 break;
             case 13:
-                playerStats.dashBaseCooldown -= 0.8f;
+                playerStats.dashBaseCooldown /= 1.15f;
                 break;
             case 14:
                 Drones[0].SetActive(true);
                 break;
             case 15:
-                playerStats.abilityDamageBonus += 0.2f;
+                playerStats.grenadeBaseCooldown /= 1.1f;
                 break;
             case 16:
                 playerStats.additionalCritChance += 0.07f;
                 break;
             case 19:
-                playerStats.damageBonus += 0.3f;
+                playerStats.damageBonus += 0.33f;
                 break;
             case 21:
                 playerStats.damageBonus += 0.06f;
@@ -117,6 +120,10 @@ public class Equipment : MonoBehaviour
                 break;
             case 25:
                 playerStats.GainHP(10);
+                break;
+            case 27:
+                playerStats.grenadeBaseCooldown /= 1.15f;
+                playerStats.grenadeMaxCharges++;
                 break;
         }
     }

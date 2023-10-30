@@ -78,21 +78,21 @@ MonoBehaviour:
   - Fire Eqipped Gun in Random Direstions for free occassionally
   - Increase Max Shield by 20. Gain 45% Lost Health as Shield
   - Dash gains Second Charge
-  - Gain 38% Ability Haste
+  - Gain 40% Ability Haste
   - Increase Max Health by 10. Increase Health Restored by 20%
   - Increase Max Health by 10. Gain +1% Damage for every 10 Max Health above 100
   - Gain 6 Tools. All Guns have 1 more Accessory Slot
-  - Increase Movement Speed by 7%. Using Dash gives Rush for 2,5s
+  - Increase Movement Speed by 7%. Using Dash gives Rush for 2,2s
   - Increase Damage by 6%. Gain 30 Gold
   - Increase Max Shield by 20. Gain Shield at the start of each Room
   - Reduce Damage Taken by 3, to a minimum of 5
   - Reduce Dash Cooldown by 0,8s. Using Dash Reloads 25% Magazine
   - Gain Drone that orbits Player & Fires constantly Outwards
-  - Abilities deal 20% Increased Damage
+  - Reduce Grenade Cooldown by 10%. Gredandes deal 22% more Damage.
   - Gain +7% Crit Chance on all Guns
   - Increase On-Hit Rate by 10%. Crits Increase by 35%
   - After completing the Room gain 5 Gold & 1 Tools
-  - Increase Damage by 30%, but also increase Damage Taken by 25%
+  - Increase Damage by 33%, but also increase Damage Taken by 25%
   - Enemies gain Vulnerable equal to 30% of their Armor
   - Increase Damage by 6% & Bullets Speed by 25%
   - All Enemies are Cursed based on their Max Health

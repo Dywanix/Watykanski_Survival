@@ -128,7 +128,6 @@ public class Berserker : MonoBehaviour
                 AxeThrown.pierce++;
                 AxeThrown.pierceEfficiency += 0.08f;
             }
-            AxeThrown.damage *= playerStats.abilityDamageBonus;
         }
     }
 
@@ -206,7 +205,6 @@ public class Berserker : MonoBehaviour
             AxeThrown.pierce += 2;
              AxeThrown.pierceEfficiency += 0.07f;
         }
-        AxeThrown.damage *= playerStats.abilityDamageBonus;
     }
 
     public void GainPerk(int ability, int which)

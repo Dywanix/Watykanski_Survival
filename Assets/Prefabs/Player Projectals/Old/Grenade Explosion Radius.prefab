@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2021625336800310792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.6, y: 3.6, z: 1}
+  m_LocalScale: {x: 4.4, y: 4.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,15 +102,18 @@ MonoBehaviour:
   ExplosionRadius: {fileID: 0}
   ShardExplosion: {fileID: 0}
   duration: 0.28
+  force: 0
+  mass: 0
   damage: 0
   penetration: 0
   armorShred: 0
   vulnerableApplied: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   pierceEfficiency: 1
   DoT: 0
+  shatter: 0
+  curse: 0
   incendiary: 0
   damageGain: 0
   pierce: 100
@@ -118,6 +121,9 @@ MonoBehaviour:
   infinite: 0
   crit: 0
   AoE: 0
+  TargetedLocation: {fileID: 0}
+  HitArea: {fileID: 0}
+  fall: {fileID: 0}
 --- !u!58 &2021625336800310793
 CircleCollider2D:
   m_ObjectHideFlags: 0
