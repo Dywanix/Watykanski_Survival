@@ -1188,9 +1188,9 @@ MonoBehaviour:
   shieldChargeDelay: 0
   rechargeTimer: 0
   poison: 0
-  damageBonus: 1.07
-  fireRateBonus: 1.056
-  movementSpeed: 545.5
+  damageBonus: 1.076
+  fireRateBonus: 1.06
+  movementSpeed: 549.5
   additionalCritChance: 0
   abilityDamageBonus: 1
   cooldownReduction: 1
@@ -1203,10 +1203,10 @@ MonoBehaviour:
   dash: 1
   level: 1
   dayCount: 1
+  gold: 30
   tools: 5
   toolsStored: 5
   keys: 1
-  gold: 30
   animator: {fileID: 7508960709266052724}
   moveSpeed: 5
   Menu: {fileID: 2821856077054534156}

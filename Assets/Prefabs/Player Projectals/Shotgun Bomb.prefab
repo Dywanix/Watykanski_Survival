@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 657983522902402775, guid: ebfed965c846ab040bf68489ccb7570f, type: 3}
       propertyPath: delay
-      value: 0.44
+      value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 657983522902402775, guid: ebfed965c846ab040bf68489ccb7570f, type: 3}
       propertyPath: spread
@@ -41,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 657983522902402775, guid: ebfed965c846ab040bf68489ccb7570f, type: 3}
       propertyPath: bonusDuration
-      value: 0.1
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 657983522902402775, guid: ebfed965c846ab040bf68489ccb7570f, type: 3}
       propertyPath: damageEfficiency

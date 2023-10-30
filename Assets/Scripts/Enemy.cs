@@ -29,16 +29,17 @@ public class Enemy : MonoBehaviour
 
     [Header("Health & Resistance")]
     public int weight;
-    public Image healthFill, DoTFill;
+    public Image healthFill, DoTFill, ShieldFill;
     public float maxHealth, health, regen, armor, vulnerable;
+    public float shieldCapacity, shield, rechargeTimer, shieldRechargeRate, shieldRechargeDelay;
 
     [Header("Movement")]
     public float movementSpeed;
-    public float aimingMovement, tenacity, slow, stun;
+    public float aimingMovement, tenacity, stun;
     public bool flank;
 
     [Header("Damage & Attacks")]
-    public bool attackTimer = false;
+    public float attackTimer;
     public float attackDamage, attackPoison, attackSpeed, attackRange;
 
     [Header("Ranged Stuff")]
@@ -47,10 +48,6 @@ public class Enemy : MonoBehaviour
     public int bulletCount, bulletBurst;
     public float bulletSpread, burstDelay, accuracy, force, minRange;
     float recoil, currentForce;
-
-    [Header("Specials")]
-    public string[] enrageStats;
-    public float[] enrageValue;
 
     [Header("Dropy")]
     public LeftOver DeathDrop;
@@ -63,8 +60,8 @@ public class Enemy : MonoBehaviour
     [Header("Status")]
     public GameObject FireExplosion;
     public GameObject CurseBullet;
-    public bool burning;
-    public float DoT, ablaze, curse;
+    public bool burning, slowed;
+    public float slow, DoT, ablaze, curse;
 
     void Start()
     {
@@ -81,11 +78,11 @@ public class Enemy : MonoBehaviour
         if (boss)
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
 
-        if (ranged)
+        /*if (ranged)
         {
             attackRange *= Random.Range(0.95f, 1.05f);
             force *= Random.Range(0.95f, 1.05f);
-        }
+        }*/
 
         if (playerStats.eq.Items[20])
             vulnerable += armor * 0.003f;
@@ -93,8 +90,8 @@ public class Enemy : MonoBehaviour
             curse += (10.5f + maxHealth * 0.15f) * playerStats.DamageDealtMultiplyer(0.2f);
 
         health = maxHealth;
-        DoTFill.fillAmount = 1f;
-        healthFill.fillAmount = 1f;
+        shield = shieldCapacity;
+        UpdateBars();
 
         Invoke("Tick", 0.6f);
     }
@@ -109,6 +106,8 @@ public class Enemy : MonoBehaviour
         }
         if (stun <= 0f)
         {
+            if (attackTimer >= 0f)
+                attackTimer -= Time.deltaTime * SpeedEfficiency();
             if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
                 Attack();
             if (flank)
@@ -127,6 +126,16 @@ public class Enemy : MonoBehaviour
         }
         else stun -= Time.deltaTime;
 
+        if (rechargeTimer > 0f)
+        {
+            rechargeTimer -= Time.deltaTime * SpeedEfficiency();
+        }
+        else if (shield < shieldCapacity)
+        {
+            shield += Time.deltaTime * shieldRechargeRate * SpeedEfficiency();
+            UpdateBars();
+        }
+
         /*if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
         {
             CurrentState = EnemyState.Attack;
@@ -137,6 +146,14 @@ public class Enemy : MonoBehaviour
         }*/
     }
 
+    void UpdateBars()
+    {
+        if (shieldCapacity > 0)
+            ShieldFill.fillAmount = shield / shieldCapacity;
+        DoTFill.fillAmount = (health - DoT) / maxHealth;
+        healthFill.fillAmount = health / maxHealth;
+    }
+
     void FixedUpdate()
     {
         Vector2 lookDir = playerBody.position - Body.position;
@@ -144,48 +161,26 @@ public class Enemy : MonoBehaviour
         Dir.rotation = angle;
     }
 
+    float SpeedEfficiency()
+    {
+        temp = 1f;
+        if (slowed)
+            temp *= 0.6f;
+        return temp;
+    }
+
     void Flank()
     {
-        if (!attackTimer)
-        {
-            if (slow > 0f)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * 0.6f * Time.deltaTime);
-                slow -= Time.deltaTime;
-            }
-            else transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * Time.deltaTime);
-        }
-        else
-        {
-            if (slow > 0f)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * 0.6f * aimingMovement * Time.deltaTime);
-                slow -= Time.deltaTime;
-            }
-            else transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * aimingMovement * Time.deltaTime);
-        }
+        if (attackTimer < 0f)
+            transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * SpeedEfficiency() * Time.deltaTime);
+        else transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * SpeedEfficiency() * aimingMovement * Time.deltaTime);
     }
 
     void Chase()
     {
-        if (!attackTimer)
-        {
-            if (slow > 0f)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * 0.6f * Time.deltaTime);
-                slow -= Time.deltaTime;
-            }
-            else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * Time.deltaTime);
-        }
-        else
-        {
-            if (slow > 0f)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * 0.6f * aimingMovement * Time.deltaTime);
-                slow -= Time.deltaTime;
-            }
-            else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * aimingMovement * Time.deltaTime);
-        }
+        if (attackTimer < 0f)
+            transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * SpeedEfficiency() * Time.deltaTime);
+        else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * SpeedEfficiency() * aimingMovement * Time.deltaTime);
     }
 
     public void FoundObstacle(Transform Point)
@@ -205,20 +200,14 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
-        if (!attackTimer)
+        if (attackTimer < 0f)
         {
             if (ranged)
                 Fire();
             else Strike();
-            StartCoroutine(attackTime());
-        }
-    }
 
-    public IEnumerator attackTime()
-    {
-        attackTimer = true;
-        yield return new WaitForSeconds(attackSpeed);
-        attackTimer = false;
+            attackTimer += attackSpeed;
+        }
     }
 
     void Strike()
@@ -274,10 +263,12 @@ public class Enemy : MonoBehaviour
             armor *= 1 - (collidedBullet.armorShred * 1.6f / (1f + 0.03f * weight));
             vulnerable += collidedBullet.vulnerableApplied * 1.6f / (1f + 0.03f * weight);
             if (collidedBullet.slowDuration > 0)
-                slow += collidedBullet.slowDuration * 1.6f / (1f + 0.03f * weight);
-            if (collidedBullet.stunChance >= Random.Range(0f, 1f))
+                GainSlow(collidedBullet.slowDuration * 1.6f / (1f + 0.03f * weight));
+            if (collidedBullet.stunDuration > 0)
                 GainStun(collidedBullet.stunDuration * 1.6f / (1f + 0.03f * weight));
             temp = collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration);
+            if (collidedBullet.shatter > 0)
+                ShatterShield(temp * collidedBullet.shatter);
             TakeDamage(temp, collidedBullet.crit, true);
             if (collidedBullet.DoT > 0)
                 GainDoT(temp * collidedBullet.DoT);
@@ -290,44 +281,45 @@ public class Enemy : MonoBehaviour
 
     void TakeDamage(float value, bool crited, bool display)
     {
-        health -= value;
-        DoTFill.fillAmount = (health - DoT) / maxHealth;
-        healthFill.fillAmount = health / maxHealth;
-
         if (display)
         {
             DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
             GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
             Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
             damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
-            damageDisplay.SetText(value, crited);
+            if (crited) damageDisplay.SetText(value, "red");
+            else damageDisplay.SetText(value, "orange");
             text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
         }
 
-        if (enrageStats.Length > 0)
+        if (shield > 0f)
         {
-            for (int i = 0; i < enrageStats.Length; i++)
-            {
-                switch (enrageStats[i])
-                {
-                    case "armor":
-                        armor += value * enrageValue[i];
-                        break;
-                    case "movementSpeed":
-                        movementSpeed += value * enrageValue[i];
-                        break;
-                    case "attackDamage":
-                        attackDamage += value * enrageValue[i];
-                        break;
-                    case "accuracy":
-                        accuracy += value * enrageValue[i];
-                        break;
-                    case "DoT":
-                        DoT += value * enrageValue[i];
-                        break;
-                }
-            }
+            shield -= value;
+            rechargeTimer = shieldRechargeDelay;
+
+            if (shield < 0f)
+                health += shield;
         }
+        else health -= value;
+
+        UpdateBars();
+
+        if (health <= 0)
+            Death();
+    }
+
+    void TakePoisonDamage(float value)
+    {
+        DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
+        GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+        Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
+        damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
+        damageDisplay.SetText(value, "green");
+        text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+
+        health -= value;
+
+        UpdateBars();
 
         if (health <= 0)
             Death();
@@ -338,8 +330,29 @@ public class Enemy : MonoBehaviour
         health += value;
         if (health > maxHealth)
             health = maxHealth;
-        DoTFill.fillAmount = (health - DoT) / maxHealth;
-        healthFill.fillAmount = health / maxHealth;
+        UpdateBars();
+    }
+
+    void GainSlow(float duration)
+    {
+        slow += duration;
+        if (slow >= 0.5f && !slowed)
+        {
+            slow -= 0.5f;
+            slowed = true;
+            Invoke("Thaw", 0.5f);
+        }
+    }
+
+    void Thaw()
+    {
+        if (slow >= 0.5f)
+        {
+            slow -= 0.5f;
+            Invoke("Thaw", 0.5f);
+        }
+        else
+            slowed = false;
     }
 
     public void GainStun(float duration)
@@ -350,6 +363,38 @@ public class Enemy : MonoBehaviour
     void GainDoT(float value)
     {
         DoT += value;
+        UpdateBars();
+    }
+
+    void ShatterShield(float value)
+    {
+        if (shield > 0)
+        {
+            if (value > shield)
+            {
+                DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
+                GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+                Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
+                damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
+                damageDisplay.SetText(shield, "cyan");
+                text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+
+                shield = 0;
+            }
+            else
+            {
+                shield -= value;
+
+                DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
+                GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+                Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
+                damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
+                damageDisplay.SetText(value, "cyan");
+                text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+            }
+
+            rechargeTimer = shieldRechargeDelay;
+        }
     }
 
     void SetAblaze(float value)
@@ -383,9 +428,6 @@ public class Enemy : MonoBehaviour
 
     void Tick()
     {
-        //if (playerStats.day)
-            //Burn();
-
         if (DoT > 0)
             DoTproc();
 
@@ -394,18 +436,11 @@ public class Enemy : MonoBehaviour
         Invoke("Tick", 0.5f);
     }
 
-    void Burn()
-    {
-        vulnerable += 0.04f;
-        temp = (1.5f + maxHealth * 0.005f);
-        TakeDamage(temp / DamageTakenMultiplyer(0.8f), false, false);
-    }
-
     void DoTproc()
     {
-        temp = 2f + DoT * 0.25f;
+        temp = 2.2f + DoT * 0.22f;
         DoT -= temp;
-        TakeDamage(temp / DamageTakenMultiplyer(1f), false, true);
+        TakePoisonDamage(temp);
     }
 
     void Death()

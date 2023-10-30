@@ -47,13 +47,18 @@ public class PulletExplosion : MonoBehaviour
 
     void SetBullet(int which)
     {
+        BulletsShards.duration = ThisBullet.duration;
+        BulletsShards.force = ThisBullet.force;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency[which];
         BulletsShards.DoT = ThisBullet.DoT;
+        BulletsShards.shatter = ThisBullet.shatter;
+        BulletsShards.incendiary = ThisBullet.incendiary;
+        BulletsShards.curse = ThisBullet.curse;
+        BulletsShards.damageGain = ThisBullet.damageGain;
         BulletsShards.penetration = ThisBullet.penetration;
         BulletsShards.armorShred = ThisBullet.armorShred;
         BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied;
         BulletsShards.slowDuration = ThisBullet.slowDuration;
-        BulletsShards.stunChance = ThisBullet.stunChance;
         BulletsShards.stunDuration = ThisBullet.stunDuration;
         if (retainPierce[which])
             BulletsShards.pierce = ThisBullet.pierce + pierceCount[which];

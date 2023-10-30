@@ -33,9 +33,9 @@ public class PlayerController : MonoBehaviour
     int tempi, bonusTool;
     float temp, wrath;
 
-    // -- zasoby --
-    public int tools, toolsStored, keys;
+    [Header("Resources")]
     public float gold;
+    public int tools, toolsStored, keys;
 
     // -- animacje --
     public Animator animator;
@@ -62,6 +62,11 @@ public class PlayerController : MonoBehaviour
         dischargeBar.fillAmount = dShield / maxShield;
         shieldBar.fillAmount = shield / maxShield;
         ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
+        GainGold(0f);
+        GainTools(0);
+        GainKeys(0);
+        toolsStored = tools;
+        eq.guns[eq.equipped].parts = toolsStored;
         Invoke("Tick", 0.8f);
         for (int i = 0; i < eq.Items.Length; i++)
         {
@@ -458,6 +463,7 @@ public class PlayerController : MonoBehaviour
         {
             firedBullet.DoT += 0.5f * eq.guns[eq.equipped].penetration * eq.guns[eq.equipped].Accessories[18];
         }
+        firedBullet.shatter = eq.guns[eq.equipped].shatter;
         firedBullet.incendiary = eq.guns[eq.equipped].incendiary;
         firedBullet.curse = eq.guns[eq.equipped].curse;
         firedBullet.damageGain = eq.guns[eq.equipped].damageGain;
@@ -465,7 +471,6 @@ public class PlayerController : MonoBehaviour
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
-        firedBullet.stunChance = eq.guns[eq.equipped].stunChance;
         firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
         firedBullet.pierce = eq.guns[eq.equipped].pierce;
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
@@ -483,7 +488,6 @@ public class PlayerController : MonoBehaviour
             firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
             firedBullet.slowDuration *= 0.7f + eq.guns[eq.equipped].critDamage * 0.3f;
             firedBullet.mass *= 0.8f + eq.guns[eq.equipped].critDamage * 0.5f;
-            firedBullet.stunChance *= 0.4f + eq.guns[eq.equipped].critDamage * 0.6f;
             firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].critDamage * 0.3f;
             firedBullet.pierceEfficiency *= 1.1f;
             firedBullet.crit = true;
@@ -502,22 +506,34 @@ public class PlayerController : MonoBehaviour
             if (eq.guns[eq.equipped].ammoRequired == 0)
             {
                 if (eq.guns[eq.equipped].free || task <= 0f)
-                    UseAbility();
+                    CastAbility();
             }
             else if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].ammoRequired)
             {
                 if (eq.guns[eq.equipped].free || task <= 0f)
-                    UseAbility();
+                    CastAbility();
             }
         }
     }
 
-    void UseAbility()
+    void CastAbility()
     {
         abilityMaxCooldown = eq.guns[eq.equipped].Cooldown() / cooldownReduction;
         abilityCooldown = abilityMaxCooldown;
         NewTask(eq.guns[eq.equipped].task);
 
+        if (eq.guns[eq.equipped].multiCast)
+        {
+            for (int m = 0; m < eq.guns[eq.equipped].BulletsFired(); m++)
+            {
+                Invoke("UseAbility", m * 0.05f);
+            }
+        }
+        else UseAbility();
+    }
+
+    void UseAbility()
+    {
         switch (eq.guns[eq.equipped].gunName)
         {
             case "Revolver":
@@ -531,15 +547,28 @@ public class PlayerController : MonoBehaviour
                 eq.guns[eq.equipped].bulletsLeft -= 1;
                 DisplayAmmo();
                 FireAbility();
-                firedBullet.damage *= 0.84f + 0.1f * eq.guns[eq.equipped].BulletsFired();
+                firedBullet.damage *= 0.8f + 0.12f * eq.guns[eq.equipped].BulletsFired();
                 firedBullet.special = eq.guns[eq.equipped].BulletsFired() + eq.guns[eq.equipped].level;
+                break;
+            case "Burst Handgun":
+                ThrowAbility();
+                firedBullet.damage *= 1.16f + 0.12f * eq.guns[eq.equipped].level;
+                firedBullet.shatter += 0.66f + 0.11f * eq.guns[eq.equipped].level;
+                firedBullet.stunDuration += 0.33f + (0.22f / eq.guns[eq.equipped].fireRate);
                 break;
             case "Jumping SMG":
                 FireAbility();
                 firedBullet.damage *= 1.18f + 0.09f * eq.guns[eq.equipped].level;
                 break;
+            case "Shotgun":
+                InstantiateAbility();
+                firedBullet.damage = (0.34f + 0.22f * eq.guns[eq.equipped].BulletsFired()) * firedBullet.damage + 20f + 12f * eq.guns[eq.equipped].level;
+                firedBullet.pierce = 100;
+                firedBullet.pierceEfficiency = 1f;
+                firedBullet.duration = 0.4f;
+                break;
             case "Poison Gun":
-                FireAbility();
+                ThrowAbility();
                 firedBullet.damage = (0.04f + 0.01f * eq.guns[eq.equipped].level) * firedBullet.damage + 2f;
                 firedBullet.DoT += 0.4f * firedBullet.DoT + 2.8f;
                 firedBullet.slowDuration += 0.16f / eq.guns[eq.equipped].fireRate;
@@ -558,7 +587,33 @@ public class PlayerController : MonoBehaviour
         Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + 0.5f * Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy));
         GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        bullet_body.AddForce(Barrel.up * eq.guns[eq.equipped].force * forceIncrease * Random.Range(0.94f, 1.06f), ForceMode2D.Impulse);
+        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        SetBullet(1f);
+        bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
+    }
+
+    void ThrowAbility()
+    {
+        temp = 1f;
+        if (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= eq.guns[eq.equipped].throwRange)
+            TargetArea.position = new Vector2(mousePos[0] + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10, mousePos[1] + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10);
+        else
+        {
+            temp = Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / (eq.guns[eq.equipped].throwRange);
+            TargetArea.position = new Vector2(transform.position.x + (mousePos[0] - transform.position.x) / temp + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10, transform.position.y + (mousePos[1] - transform.position.y) / temp + Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy) / 10);
+        }
+        GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        SetBullet(1f);
+        firedBullet.TargetedLocation = TargetArea;
+        firedBullet.duration = eq.guns[eq.equipped].throwDelay;
+        firedBullet.duration /= forceIncrease;
+    }
+
+    void InstantiateAbility()
+    {
+        GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
         firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         SetBullet(1f);
     }

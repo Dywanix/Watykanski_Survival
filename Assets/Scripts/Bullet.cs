@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public GameObject ExplosionRadius;
     private Bullet Explosion;
     public PulletExplosion ShardExplosion;
-    public float duration, force, mass, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunChance, stunDuration, pierceEfficiency, DoT, curse, incendiary, damageGain;
+    public float duration, force, mass, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, incendiary, damageGain;
     public int pierce, special;
     public bool infinite, crit, AoE;
 
@@ -79,17 +79,14 @@ public class Bullet : MonoBehaviour
         {
             GameObject bullet = Instantiate(ExplosionRadius, transform.position, transform.rotation);
             Explosion = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            Explosion.damage = damage; Explosion.DoT = DoT;
+            Explosion.damage = damage; Explosion.DoT = DoT; Explosion.shatter = shatter; Explosion.incendiary = incendiary; Explosion.curse = curse;
             Explosion.penetration = penetration;
             Explosion.armorShred = armorShred;
             Explosion.vulnerableApplied = vulnerableApplied;
             Explosion.slowDuration = slowDuration;
-            Explosion.stunChance = stunChance;
             Explosion.stunDuration = stunDuration;
-            Explosion.incendiary = incendiary;
         }
         if (ShardExplosion)
             ShardExplosion.Shatter();
-
     }
 }

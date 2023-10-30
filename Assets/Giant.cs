@@ -18,7 +18,7 @@ public class Giant : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= 8.4f + 1F * enemy.attackDamage)
         {
-            if (!enemy.attackTimer && enemy.stun <= 0f)
+            if (enemy.attackTimer < 0f && enemy.stun <= 0f)
             {
                 boulderTossCooldown -= Time.deltaTime * (1f + 0.01f * enemy.attackDamage);
                 if (boulderTossCooldown <= 0f)
@@ -40,7 +40,7 @@ public class Giant : MonoBehaviour
         enemy.vulnerable *= 1.006f;
         enemy.vulnerable += 0.012f;
 
-        enemy.StartCoroutine(enemy.attackTime());
+        enemy.attackTimer += enemy.attackSpeed;
 
         for (float i = 3f; i < enemy.attackDamage; i += 15f)
         {

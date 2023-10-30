@@ -195,7 +195,6 @@ public class Engineer : MonoBehaviour
 
             if (ability2Perks[0])
             {
-                bulletFired.stunChance += 0.16f;
                 bulletFired.duration += 0.18f;
                 emp = bullet.GetComponent(typeof(EMP)) as EMP;
                 emp.stunDurationIncrease = 0.12f;

@@ -29457,7 +29457,9 @@ MonoBehaviour:
   - {fileID: 6540871290147247642}
   roundStrength: 0
   strengthIncrease: 0
+  mobsCount: 0
   roundsCount: 3
+  countIncrease: 0
   wavesStrength: 1b0000001c0000001d0000001d0000001e00000029000000
   mobsStrength: 0600000006000000060000000a000000090000000c000000
   WidthRange:

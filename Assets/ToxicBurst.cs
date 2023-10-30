@@ -22,7 +22,7 @@ public class ToxicBurst : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= toxic.range)
         {
-            if (!enemy.attackTimer && enemy.stun <= 0f)
+            if (enemy.attackTimer < 0f && enemy.stun <= 0f)
             {
                 cloudCooldown -= Time.deltaTime;
                 if (cloudCooldown <= 0f)

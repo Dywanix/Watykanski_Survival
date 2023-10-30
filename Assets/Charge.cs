@@ -15,7 +15,7 @@ public class Charge : MonoBehaviour
 
     void Update()
     {
-        if (!enemy.attackTimer && enemy.stun <= 0f)
+        if (enemy.attackTimer < 0f && enemy.stun <= 0f)
         {
             chargeCooldown -= Time.deltaTime;
             if (chargeCooldown <= 0f)

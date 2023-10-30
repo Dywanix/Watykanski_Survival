@@ -21,7 +21,7 @@ public class Hazmat : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, enemy.Player.transform.position) <= range)
         {
-            if (!enemy.attackTimer && enemy.stun <= 0f)
+            if (enemy.attackTimer < 0f && enemy.stun <= 0f)
             {
                 bottleTossCooldown -= Time.deltaTime;
                 if (bottleTossCooldown <= 0f)

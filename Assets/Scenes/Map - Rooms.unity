@@ -598,8 +598,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 52
-  strengthGrow: 5
+  waveStrength: 56
+  strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 42
@@ -1692,8 +1692,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 63
-  strengthGrow: 7
+  waveStrength: 75
+  strengthGrow: 10
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 38
@@ -3970,11 +3970,11 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 71
-  strengthGrow: 7
+  waveStrength: 77
+  strengthGrow: 5
   maxMobsCount: 4
-  wavesCount: 2
-  CountIncrease: 36
+  wavesCount: 3
+  CountIncrease: 54
 --- !u!212 &232070983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8584,8 +8584,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
-  waveStrength: 32
-  strengthGrow: 3
+  waveStrength: 34
+  strengthGrow: 5
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 50
@@ -15649,8 +15649,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
-  waveStrength: 36
-  strengthGrow: 3
+  waveStrength: 38
+  strengthGrow: 6
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 48
@@ -23882,8 +23882,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 57
-  strengthGrow: 6
+  waveStrength: 62
+  strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 40
@@ -35078,8 +35078,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 46
-  strengthGrow: 5
+  waveStrength: 49
+  strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 45

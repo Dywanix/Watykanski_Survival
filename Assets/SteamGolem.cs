@@ -178,7 +178,6 @@ public class SteamGolem : MonoBehaviour
 
             playerStats.SetBullet(1f);
             playerStats.firedBullet.damage *= (1.1f + 0.01f * playerStats.level);
-            playerStats.firedBullet.stunChance = playerStats.eq.guns[1].stunChance * 3f + 0.09f + 0.01f * playerStats.level;
             playerStats.firedBullet.stunDuration = playerStats.eq.guns[1].stunDuration + 0.2f;
         }
     }

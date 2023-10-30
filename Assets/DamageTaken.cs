@@ -6,14 +6,25 @@ public class DamageTaken : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI damageText;
 
-    public void SetText(float damage, bool crited)
+    public void SetText(float damage, string hue)
     {
-        if (crited)
+        damageText.fontSize = 40 + damage * 0.2f;
+        switch (hue)
         {
-            damageText.fontSize = 48;
-            damageText.color = new Color(1, 0, 0, 1);
-            damageText.text = damage.ToString("0") + "!";
+            case "orange":
+                damageText.color = new Color(1, 0.5f, 0, 1);
+                break;
+            case "red":
+                damageText.color = new Color(1, 0, 0, 1);
+                damageText.fontSize += 8f;
+                break;
+            case "green":
+                damageText.color = new Color(0.388f, 0.709f, 0.063f, 1);
+                break;
+            case "cyan":
+                damageText.color = new Color(0.361f, 0.847f, 0.925f, 1);
+                break;
         }
-        else damageText.text = damage.ToString("0");
+        damageText.text = damage.ToString("0");
     }
 }

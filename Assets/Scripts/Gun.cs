@@ -29,11 +29,10 @@ public class Gun : MonoBehaviour
     public int bulletSpread;
     public int pierce;
     public float pierceEfficiency;
-    public float DoT, incendiary, curse;
+    public float DoT, shatter, incendiary, curse;
     public float damageGain;
     public int overload;
     public float slowDuration;
-    public float stunChance;
     public float stunDuration;
     public int burst;
     public float burstDelay;
@@ -55,9 +54,10 @@ public class Gun : MonoBehaviour
 
     [Header("Ability")]
     public GameObject AbilityBullet;
-    public bool free;
+    public bool multiCast, free, abilityTargetArea;
     public int ammoRequired;
     public float cooldown, task, fireRateCooldownRatio;
+    public float throwRange, throwDelay;
 
     [Header("Multiplikatory Stat")]
     public float damageMultiplier;

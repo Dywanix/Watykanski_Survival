@@ -67,12 +67,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -130,11 +130,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -209,12 +213,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 1.06
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -272,11 +276,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 6655847109245353895, guid: 631055d15ebcb904aa4a82fc1c6bbcb9, type: 3}
+  multiCast: 1
   free: 1
+  abilityTargetArea: 1
   ammoRequired: 0
   cooldown: 12
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 26
+  throwDelay: 0.8
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -351,12 +359,12 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -414,11 +422,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -493,12 +505,12 @@ MonoBehaviour:
   pierce: 4
   pierceEfficiency: 0.77
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -556,11 +568,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -636,12 +652,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -699,11 +715,15 @@ MonoBehaviour:
   individualReload: 1
   individualReloadCount: 2
   AbilityBullet: {fileID: 3562970364789152913, guid: 95b02a069760e4642baa6a8ce612bcc8, type: 3}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 1
   cooldown: 5.2
   task: 0.34
   fireRateCooldownRatio: 3.3
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -778,12 +798,12 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 1.16
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -841,11 +861,15 @@ MonoBehaviour:
   individualReload: 1
   individualReloadCount: 1
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -920,12 +944,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.64
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -983,11 +1007,15 @@ MonoBehaviour:
   individualReload: 1
   individualReloadCount: 1
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1062,12 +1090,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -1125,11 +1153,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 1
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1148,7 +1180,7 @@ GameObject:
   - component: {fileID: 5583108929284866987}
   - component: {fileID: 4277811958705481222}
   m_Layer: 0
-  m_Name: Stronger Shotgun
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,7 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Stronger Shotgun
+  gunName: Shotgun
   gunSprite: {fileID: 21300000, guid: 86bc91541fc244e489b374344847bbdb, type: 3}
   holdingSprite: {fileID: 21300000, guid: 86bc91541fc244e489b374344847bbdb, type: 3}
   damage: 14.4
@@ -1204,12 +1236,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -1266,12 +1298,16 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  free: 0
+  AbilityBullet: {fileID: 4809622619345976082, guid: 20ae8e04562ab4a4f89ba51c21702ee1, type: 3}
+  multiCast: 0
+  free: 1
+  abilityTargetArea: 0
   ammoRequired: 0
-  cooldown: 0
+  cooldown: 8
   task: 0
-  fireRateCooldownRatio: 0
+  fireRateCooldownRatio: 3.2
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1346,12 +1382,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0.2
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -1409,11 +1445,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1488,12 +1528,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -1522,11 +1562,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1545,7 +1589,7 @@ GameObject:
   - component: {fileID: 3511690465050746161}
   - component: {fileID: 4814360345304146876}
   m_Layer: 0
-  m_Name: Busrt Handgun
+  m_Name: Burst Handgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,7 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Busrt Handgun
+  gunName: Burst Handgun
   gunSprite: {fileID: 21300000, guid: d4af624585374214a876649121385c9f, type: 3}
   holdingSprite: {fileID: 21300000, guid: 34adf1e2095a6c14f9cffcc17ce362a7, type: 3}
   damage: 12.3
@@ -1601,12 +1645,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 1
   burstDelay: 0.17
@@ -1663,12 +1707,16 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  free: 0
+  AbilityBullet: {fileID: 1177863044836920252, guid: 60afc8373801ab34589e8e17b275d58c, type: 3}
+  multiCast: 1
+  free: 1
+  abilityTargetArea: 1
   ammoRequired: 0
-  cooldown: 0
+  cooldown: 12
   task: 0
-  fireRateCooldownRatio: 0
+  fireRateCooldownRatio: 3.3
+  throwRange: 23.6
+  throwDelay: 0.77
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1743,12 +1791,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -1806,11 +1854,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1885,12 +1937,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -1948,11 +2000,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2027,12 +2083,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -2061,11 +2117,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2140,12 +2200,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -2203,11 +2263,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 1
   AbilityBullet: {fileID: 5284098002614362962, guid: f80f599fc9b54834f99f1da447006eca, type: 3}
+  multiCast: 1
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 1
   cooldown: 4
   task: 0.8
   fireRateCooldownRatio: 4
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2282,12 +2346,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -2345,11 +2409,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2427,12 +2495,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -2490,11 +2558,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2670,12 +2742,12 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 0.65
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0.032
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -2733,11 +2805,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2812,12 +2888,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -2875,11 +2951,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 1
   cooldown: 3.6
   task: 0.44
   fireRateCooldownRatio: 2.4
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2954,12 +3034,12 @@ MonoBehaviour:
   pierce: 2
   pierceEfficiency: 0.8
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -3017,11 +3097,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3153,12 +3237,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -3216,11 +3300,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3295,12 +3383,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 1
   slowDuration: 0.1
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -3358,11 +3446,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3437,12 +3529,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 2
   burstDelay: 0.2
@@ -3500,11 +3592,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3579,12 +3675,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -3642,11 +3738,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3721,12 +3821,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -3784,11 +3884,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3863,12 +3967,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -3926,11 +4030,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 3048709566407093850, guid: 2d2d9e1e9f7701d4798a6ab84e6464c7, type: 3}
+  multiCast: 1
   free: 1
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 6.6
   task: 0.64
   fireRateCooldownRatio: 4
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4006,12 +4114,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 0.5
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0.04
-  stunChance: 0
   stunDuration: 0
   burst: 0
   burstDelay: 0
@@ -4069,11 +4177,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4149,12 +4261,12 @@ MonoBehaviour:
   pierce: 1
   pierceEfficiency: 1
   DoT: 0
+  shatter: 0
   incendiary: 0
   curse: 0
   damageGain: 0
   overload: 0
   slowDuration: 0
-  stunChance: 0.1
   stunDuration: 0.25
   burst: 0
   burstDelay: 0
@@ -4183,11 +4295,15 @@ MonoBehaviour:
   individualReload: 0
   individualReloadCount: 0
   AbilityBullet: {fileID: 0}
+  multiCast: 0
   free: 0
+  abilityTargetArea: 0
   ammoRequired: 0
   cooldown: 0
   task: 0
   fireRateCooldownRatio: 0
+  throwRange: 0
+  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:

@@ -48,7 +48,8 @@ public class Crate : MonoBehaviour
         GameObject text = Instantiate(damageTook, Dir.position, Sight.rotation);
         Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
         damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
-        damageDisplay.SetText(value, crited);
+        if (crited) damageDisplay.SetText(value, "red");
+        else damageDisplay.SetText(value, "orange");
         text_body.AddForce(Sight.up * 3.6f, ForceMode2D.Impulse);
 
         if (health <= 0)

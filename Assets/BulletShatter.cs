@@ -36,7 +36,7 @@ public class BulletShatter : MonoBehaviour
             Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + Random.Range(-accuracy, accuracy) + (i * 2 - bulletsCount + 1) * spread / 2);
             GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(Form.up * bulletForce * Random.Range(1f, 1f + forceRange), ForceMode2D.Impulse);
+            bullet_body.AddForce(Form.up * ThisBullet.force * Random.Range(1f, 1f + forceRange), ForceMode2D.Impulse);
             BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
         }
@@ -47,14 +47,18 @@ public class BulletShatter : MonoBehaviour
     void SetBullet()
     {
         BulletsShards.duration = ThisBullet.duration + bonusDuration;
+        BulletsShards.force = ThisBullet.force;
+        BulletsShards.mass = ThisBullet.mass;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;
         BulletsShards.DoT = ThisBullet.DoT;
+        BulletsShards.shatter = ThisBullet.shatter;
+        BulletsShards.incendiary = ThisBullet.incendiary;
+        BulletsShards.curse = ThisBullet.curse;
         BulletsShards.damageGain = ThisBullet.damageGain;
         BulletsShards.penetration = ThisBullet.penetration;
         BulletsShards.armorShred = ThisBullet.armorShred * damageEfficiency;
         BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied * damageEfficiency;
         BulletsShards.slowDuration = ThisBullet.slowDuration * damageEfficiency;
-        BulletsShards.stunChance = ThisBullet.stunChance * damageEfficiency;
         BulletsShards.stunDuration = ThisBullet.stunDuration;
         if (retainPierce)
             BulletsShards.pierce = ThisBullet.pierce + pierceCount;

@@ -27,13 +27,18 @@ public class MultipleBullets : MonoBehaviour
     void SetBullet()
     {
         BulletsShards.duration = ThisBullet.duration;
+        BulletsShards.force = ThisBullet.force;
+        BulletsShards.mass = ThisBullet.mass;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;
         BulletsShards.DoT = ThisBullet.DoT;
+        BulletsShards.shatter = ThisBullet.shatter;
+        BulletsShards.incendiary = ThisBullet.incendiary;
+        BulletsShards.curse = ThisBullet.curse;
+        BulletsShards.damageGain = ThisBullet.damageGain;
         BulletsShards.penetration = ThisBullet.penetration;
         BulletsShards.armorShred = ThisBullet.armorShred * damageEfficiency;
         BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied * damageEfficiency;
         BulletsShards.slowDuration = ThisBullet.slowDuration * damageEfficiency;
-        BulletsShards.stunChance = ThisBullet.stunChance * damageEfficiency;
         BulletsShards.stunDuration = ThisBullet.stunDuration;
         BulletsShards.pierce = ThisBullet.pierce;
         BulletsShards.pierceEfficiency = ThisBullet.pierceEfficiency;
