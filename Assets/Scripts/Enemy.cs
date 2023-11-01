@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] Items;
     public PlayerController playerStats;
     public Rigidbody2D Body, playerBody, Dir;
-    public Transform Sight, DamageOrigin, FlankPosition;
+    public Transform Sight, DamageOrigin, FlankPosition, Push;
     private Bullet collidedBullet, firedBullet;
     private DamageTaken damageDisplay;
     public Day_Night_Cycle day_night;
@@ -256,10 +256,11 @@ public class Enemy : MonoBehaviour
     public void Struck(Collider2D other)
     {
         collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
+        Push.rotation = other.transform.rotation;
         if (!collidedBullet.AoE)
         {   
             temp = collidedBullet.force * collidedBullet.mass / tenacity;
-            Body.AddForce(Sight.up * temp * -1f, ForceMode2D.Impulse);
+            Body.AddForce(Push.up * temp, ForceMode2D.Impulse);
             armor *= 1 - (collidedBullet.armorShred * 1.6f / (1f + 0.03f * weight));
             vulnerable += collidedBullet.vulnerableApplied * 1.6f / (1f + 0.03f * weight);
             if (collidedBullet.slowDuration > 0)
@@ -448,6 +449,8 @@ public class Enemy : MonoBehaviour
         if (!dead)
         {
             dead = true;
+
+            playerStats.EnemySlained();
 
             for (int i = 0; i < scrapCount; i++)
             {

@@ -77,6 +77,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.14
@@ -129,23 +130,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &546906197202244888
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +211,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 8.96
@@ -275,23 +264,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 6655847109245353895, guid: 631055d15ebcb904aa4a82fc1c6bbcb9, type: 3}
-  multiCast: 1
-  free: 1
-  abilityTargetArea: 1
-  ammoRequired: 0
-  cooldown: 12
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 26
-  throwDelay: 0.8
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 5893359571365976471, guid: 9402ba422403973408d900d7467d626b, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &847349847687333187
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +345,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 2.029
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 21.5
@@ -421,23 +398,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 7517314691958038469, guid: e7fecd86cdd4466409eccf755f882d59, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &1093269790366527781
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +479,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.51
@@ -567,24 +532,11 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 8202576004139201279, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
   - {fileID: 7551784778215316400, guid: e90ed73e6da1b4c4988dc544ee387667, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &1198900680301854574
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +614,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 13.8
@@ -708,29 +661,16 @@ MonoBehaviour:
   UpgradeInfo:
   - +1 Damage
   - +12% Fire Rate
-  - +1 Bullet Spread
+  - +1 Bullet Count
   - +9% DoT
   infiniteMagazine: 0
   infiniteAmmo: 1
   individualReload: 1
   individualReloadCount: 2
-  AbilityBullet: {fileID: 3562970364789152913, guid: 95b02a069760e4642baa6a8ce612bcc8, type: 3}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 1
-  cooldown: 5.2
-  task: 0.34
-  fireRateCooldownRatio: 3.3
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &1218539877975980926
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +748,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 9.9
@@ -860,23 +801,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 5
-  flashSpread: 16
 --- !u!1 &1371518073042196905
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,6 +882,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 21.5
@@ -1006,23 +935,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 5
-  flashSpread: 16
 --- !u!1 &1392772750735860700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1016,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.72
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 9.2
@@ -1152,23 +1069,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 1686795061182180904, guid: 326fd7fd4b73cf042a134f37e07fe219, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 5
-  flashSpread: 16
 --- !u!1 &2598830977068030122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1150,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 24.3
@@ -1293,28 +1198,15 @@ MonoBehaviour:
   - +3% Penetration
   - +1 Magazine Size
   - +5 Ammo
-  - +1 Bullet Spread
+  - +1 Bullet Count
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 4809622619345976082, guid: 20ae8e04562ab4a4f89ba51c21702ee1, type: 3}
-  multiCast: 0
-  free: 1
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 8
-  task: 0
-  fireRateCooldownRatio: 3.2
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &2636253376700014245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,6 +1284,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 10.8
@@ -1444,23 +1337,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 8597203529517308894, guid: 4208bacc7b1daa247ad167802a738b0d, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &2962044608577098084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,7 +1371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2305258803099737152
 MonoBehaviour:
@@ -1538,6 +1418,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 1.22
@@ -1561,23 +1442,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 6878076962156814887, guid: 4c935674536304d4e99cd188d287eb15, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &2996079823976944659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,6 +1523,7 @@ MonoBehaviour:
   burst: 1
   burstDelay: 0.17
   onHitModifier: 1.05
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 13.9
@@ -1696,7 +1565,7 @@ MonoBehaviour:
   UpgradeType:
   - damage
   - accuracy
-  - realodTime
+  - reloadTime
   - magazineSize
   UpgradeInfo:
   - +2 Damage
@@ -1707,23 +1576,10 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 1177863044836920252, guid: 60afc8373801ab34589e8e17b275d58c, type: 3}
-  multiCast: 1
-  free: 1
-  abilityTargetArea: 1
-  ammoRequired: 0
-  cooldown: 12
-  task: 0
-  fireRateCooldownRatio: 3.3
-  throwRange: 23.6
-  throwDelay: 0.77
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &3671352911484681855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1657,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.6
@@ -1853,23 +1710,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &3841801961933602629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,7 +1744,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1019964497745636248
 MonoBehaviour:
@@ -1947,6 +1791,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 6.34
@@ -1999,23 +1844,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 6728629390179744087, guid: 471a13bc311c8ea4693e414f4a85c3d8, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &3916744168927295610
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +1878,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2480623888799790039
 MonoBehaviour:
@@ -2093,6 +1925,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 1.22
@@ -2116,23 +1949,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 8194804281198867657, guid: 7c504783475519040ba022fc07231b17, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &4271480267339545355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,6 +2030,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.8
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 11.5
@@ -2262,23 +2083,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
-  AbilityBullet: {fileID: 5284098002614362962, guid: f80f599fc9b54834f99f1da447006eca, type: 3}
-  multiCast: 1
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 1
-  cooldown: 4
-  task: 0.8
-  fireRateCooldownRatio: 4
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 9096077774305803365, guid: b93392dc5b53df54782024d90d602952, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 5
-  flashSpread: 16
 --- !u!1 &4734694046563246812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,6 +2164,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.144
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 9.8
@@ -2408,16 +2217,6 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2425,9 +2224,6 @@ MonoBehaviour:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   - {fileID: 3151004535030301959, guid: fe2cf74a36ee27241b3414827230e725, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &5086013156797040371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,7 +2254,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5647800462568369657
 MonoBehaviour:
@@ -2505,6 +2301,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 8.4
@@ -2557,23 +2354,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 1649544961230825972, guid: 9e624e420449e254d85951ec2a708af6, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &5518898055452544451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,6 +2425,8 @@ MonoBehaviour:
   - {fileID: 1584725056593945842}
   - {fileID: 2994166217174951008}
   - {fileID: 6156332918428343795}
+  - {fileID: 3298763077805474402}
+  - {fileID: 6954186896709788617}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,6 +2538,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 27.6
@@ -2804,23 +2591,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 5
-  flashSpread: 16
 --- !u!1 &5518898056319036724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,6 +2672,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 15
@@ -2950,23 +2725,10 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 1
-  cooldown: 3.6
-  task: 0.44
-  fireRateCooldownRatio: 2.4
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &5518898056424690035
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,6 +2806,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.7
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 24.6
@@ -3096,23 +2859,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 5239690129876251028, guid: ebfed965c846ab040bf68489ccb7570f, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 6
-  flashSpread: 36
 --- !u!1 &5518898057136511715
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,6 +2912,7 @@ Transform:
   - {fileID: 7453397628505095491}
   - {fileID: 659064434746076032}
   - {fileID: 7672933874112669458}
+  - {fileID: 2513957261133025898}
   - {fileID: 2971924155989730239}
   - {fileID: 4278947165659766169}
   - {fileID: 6202056126562500248}
@@ -3247,6 +2998,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 10
@@ -3299,23 +3051,144 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
+--- !u!1 &6467301187820218827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2513957261133025898}
+  - component: {fileID: 6954186896709788617}
+  m_Layer: 0
+  m_Name: Reaper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2513957261133025898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467301187820218827}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518898057136511716}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6954186896709788617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467301187820218827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Reaper
+  gunSprite: {fileID: 21300000, guid: b2a98436cbdf98f40bcfa47efe8f507a, type: 3}
+  holdingSprite: {fileID: 21300000, guid: b2a98436cbdf98f40bcfa47efe8f507a, type: 3}
+  damage: 36
+  fireRate: 0.55
+  accuracy: 5
+  penetration: 0.25
+  critChance: 0.25
+  reloadTime: 1.24
+  range: 0.88
+  force: 22.5
+  heft: 0.1
+  magazineSize: 5
+  ammo: 25
+  maxAmmo: 30
+  targetArea: 0
+  critDamage: 1.75
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.75
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 1
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 15
+  shakeDuration: 0.125
+  bulletsLeft: 5
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 0a000000070000000d00000028000000
+  Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 3.4
+  - 0.03
+  - 3
+  - 1
+  LevelUpBonuses:
+  - 0
+  - 0.96
+  - 0.93
+  - 0.03
+  - 0.02
+  - 0.94
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - penetration
+  - force
+  - pierce
+  UpgradeInfo:
+  - +3,4 Damage
+  - +3% Penetration
+  - +3 Bullet Force
+  - +1 Pierce
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2134860343154502030, guid: 89859de1707144b47a22ff18bf9547d7, type: 3}
 --- !u!1 &7311595906207936656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,6 +3266,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 2.703
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 12
@@ -3434,34 +3308,21 @@ MonoBehaviour:
   UpgradeType:
   - damage
   - reloadTime
-  - spread
+  - bulletSpread
   - slowDuration
   UpgradeInfo:
   - +1,9 Damage
   - -25% Reload Time
-  - +1 Spread
+  - +1 Bullet Count
   - +0,05s Slow
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 44334075576541755, guid: fa65429621b029946b6df51ed7e8fa89, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &7762243306221226842
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,6 +3400,7 @@ MonoBehaviour:
   burst: 2
   burstDelay: 0.2
   onHitModifier: 1
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 8.7
@@ -3591,23 +3453,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &7913767698491047275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3685,6 +3534,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.576
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 21.9
@@ -3737,23 +3587,10 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 3399573486116877650, guid: e57881db52ba6e44c979cd353e76ac4d, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &8225853495550403933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,7 +3602,7 @@ GameObject:
   - component: {fileID: 7672933874112669458}
   - component: {fileID: 3298763077805474402}
   m_Layer: 0
-  m_Name: Grenade Launcher v2
+  m_Name: Howitzer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3798,21 +3635,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunName: Grenade Launcher
-  gunSprite: {fileID: 21300000, guid: 4a79440eddbfb7c4dadc8390b6545685, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 4a79440eddbfb7c4dadc8390b6545685, type: 3}
-  damage: 36.6
-  fireRate: 1.02
-  accuracy: 6.6
+  gunName: Howitzer
+  gunSprite: {fileID: 21300000, guid: 809504842ed60554e92a04f4b393ef02, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 809504842ed60554e92a04f4b393ef02, type: 3}
+  damage: 34.2
+  fireRate: 0.78
+  accuracy: 6
   penetration: 0.36
   critChance: 0.18
-  reloadTime: 1.44
-  range: 2.73
-  force: 14.7
-  heft: 0.12
-  magazineSize: 4
-  ammo: 32
-  maxAmmo: 36
+  reloadTime: 1.74
+  range: 0.91
+  force: 18
+  heft: 0.14
+  magazineSize: 6
+  ammo: 42
+  maxAmmo: 48
   targetArea: 1
   critDamage: 1.6
   armorShred: 0
@@ -3831,11 +3668,12 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 1.576
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
-  cameraShake: 21.9
-  shakeDuration: 0.171
-  bulletsLeft: 4
+  cameraShake: 24
+  shakeDuration: 0.173
+  bulletsLeft: 6
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
@@ -3844,24 +3682,24 @@ MonoBehaviour:
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
-  Costs: 0c000000050000000c0000000a000000
+  Costs: 080000000b000000060000002e000000
   Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Values:
-  - 3.4
-  - 0.94
-  - 0.36
-  - 7
+  - 2.1
+  - 0.1
+  - 1.1
+  - 1
   LevelUpBonuses:
+  - 1
+  - 0.94
+  - 1
+  - 0.06
   - 0
-  - 0.99
   - 1
   - 0
-  - 0.03
-  - 1
   - 0
   - 0
-  - 1
-  - 2
+  - 5
   - 0
   - 0
   - 0
@@ -3871,35 +3709,22 @@ MonoBehaviour:
   - 0
   UpgradeType:
   - damage
-  - fireRate
   - range
-  - maxAmmo
+  - force
+  - bulletSpread
   UpgradeInfo:
-  - +3,4 Damage
-  - +6% Fire Rate
-  - +36 Range
-  - +7 Ammo
+  - +2,1 Damage
+  - +10 Range
+  - +1,1 Force
+  - +1 Bullet Count
   infiniteMagazine: 0
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
-  - {fileID: 3399573486116877650, guid: e57881db52ba6e44c979cd353e76ac4d, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
+  - {fileID: 212314408667122038, guid: 1dd521ff223afce4db7525a78d593d49, type: 3}
 --- !u!1 &8722000444462337091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,6 +3802,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0.98
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.7
@@ -4029,24 +3855,11 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 3048709566407093850, guid: 2d2d9e1e9f7701d4798a6ab84e6464c7, type: 3}
-  multiCast: 1
-  free: 1
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 6.6
-  task: 0.64
-  fireRateCooldownRatio: 4
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 6741737064794144746, guid: 03180a3cfdf1ea648ab6e4e4095d6dda, type: 3}
   - {fileID: 8121341149438534637, guid: 2cdfcb611ac5e3745a1327cb4469ce66, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26
 --- !u!1 &8734146860638946593
 GameObject:
   m_ObjectHideFlags: 0
@@ -4124,6 +3937,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0.9
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 17.3
@@ -4176,24 +3990,11 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 3982066536839230301, guid: 1b083aa83d10efd46a5f8535ea27f195, type: 3}
   - {fileID: 1721548041437454189, guid: 18d501873df40dc4ab56dba214283c6a, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 4
-  flashSpread: 52
 --- !u!1 &9064302997938864561
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,7 +4025,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5518898057136511716}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1959943114771508542
 MonoBehaviour:
@@ -4271,6 +4072,7 @@ MonoBehaviour:
   burst: 0
   burstDelay: 0
   onHitModifier: 0
+  ammoRegain: 0
   level: 0
   LevelCostCharge: 0
   cameraShake: 1
@@ -4294,20 +4096,7 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
-  AbilityBullet: {fileID: 0}
-  multiCast: 0
-  free: 0
-  abilityTargetArea: 0
-  ammoRequired: 0
-  cooldown: 0
-  task: 0
-  fireRateCooldownRatio: 0
-  throwRange: 0
-  throwDelay: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 832351620062877871, guid: 2703742fd8b2c4e4d9675cabcd9a617d, type: 3}
-  flashPrefab: {fileID: 3323745400137481995, guid: 6eb20edec6944c64da8346268543b1b2, type: 3}
-  flashCount: 3
-  flashSpread: 26

@@ -406,7 +406,7 @@ public class PlayerController : MonoBehaviour
                 firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
                 SetBullet(1f);
                 firedBullet.TargetedLocation = TargetArea;
-                firedBullet.duration /= Random.Range(0.96f, 1.04f);
+                firedBullet.duration /= Random.Range(0.94f, 1.06f);
                 firedBullet.duration /= forceIncrease;
             }
         }
@@ -941,6 +941,18 @@ public class PlayerController : MonoBehaviour
             else TakeDamage(collidedBullet.damage, false);
             GainPoison(collidedBullet.poison);
             //Destroy(other.gameObject);
+        }
+    }
+
+    public void EnemySlained()
+    {
+        for (int i = 1; i < 3; i++)
+        {
+            if (eq.slotFilled[i] && eq.guns[i].ammoRegain > 0)
+            {
+                eq.guns[i].ammo += eq.guns[i].ammoRegain;
+                DisplayAmmo();
+            }
         }
     }
 

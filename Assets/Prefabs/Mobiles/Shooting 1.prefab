@@ -37,6 +37,7 @@ Transform:
   - {fileID: 3712941404614496203}
   - {fileID: 2905983396902309833}
   - {fileID: 5111219807229179415}
+  - {fileID: 6662593154147804746}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -68,6 +69,7 @@ MonoBehaviour:
   Sight: {fileID: 3712941404614496203}
   DamageOrigin: {fileID: 2905983396902309833}
   FlankPosition: {fileID: 182457412423089343}
+  Push: {fileID: 6662593154147804746}
   day_night: {fileID: 0}
   rare: 0
   boss: 0
@@ -105,8 +107,6 @@ MonoBehaviour:
   accuracy: 9.8
   force: 11.5
   minRange: 5.1
-  enrageStats: []
-  enrageValue: []
   DeathDrop: {fileID: 0}
   scrapChance: 0.18
   itemChance: 0.048
@@ -714,6 +714,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 8533619085793091751}
+--- !u!1 &3928553709246455362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6662593154147804746}
+  m_Layer: 0
+  m_Name: PushTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6662593154147804746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3928553709246455362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3102378484962785114}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4416060277808809383
 GameObject:
   m_ObjectHideFlags: 0

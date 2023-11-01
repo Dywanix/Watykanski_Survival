@@ -37,6 +37,7 @@ public class Gun : MonoBehaviour
     public int burst;
     public float burstDelay;
     public float onHitModifier;
+    public int ammoRegain;
 
     [Header("Inne Staty")]
     public int level;
@@ -59,9 +60,6 @@ public class Gun : MonoBehaviour
 
     [Header("Graficzne Staty")]
     public GameObject[] bulletPrefab;
-    public GameObject flashPrefab;
-    public int flashCount;
-    public float flashSpread;
 
     void Start()
     {

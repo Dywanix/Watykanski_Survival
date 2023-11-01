@@ -223,15 +223,6 @@ public class Equipment : MonoBehaviour
         Tooltip.text = "";
     }
 
-    public void Flash()
-    {
-        for (int i = 0; i < guns[equipped].flashCount; i++)
-        {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-guns[equipped].flashSpread * 0.6f, guns[equipped].flashSpread * 0.6f) + ((i * 2 + 1 - guns[equipped].flashCount) * guns[equipped].flashSpread / guns[equipped].flashCount));
-            Instantiate(guns[equipped].flashPrefab, Barrel.position, Barrel.rotation);
-        }
-    }
-
     public void OnHit(float efficiency)
     {
         //Flash();
