@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Equipment : MonoBehaviour
 {
     public PlayerController playerStats;
+    public bool gambler;
     public GunsLibrary Library;
     public ItemsLibrary ILibrary;
     public Transform Barrel;
@@ -40,6 +41,17 @@ public class Equipment : MonoBehaviour
 
     void Start()
     {
+        if (gambler)
+        {
+            guns[0] = Library.baseGuns[Random.Range(0, Library.baseGuns.Length)];
+            playerStats.gunImage.sprite = guns[equipped].gunSprite;
+            equippedGun.sprite = guns[equipped].holdingSprite;
+            playerStats.DisplayAmmo();
+            for (int i = 0; i < 2; i++)
+            {
+                PickUpItem(Random.Range(0, 35));
+            }
+        }
         //Invoke("AutoReload", 3f);
         //Invoke("ThrowCaltrops", 8f);
         //Invoke("KnifeThrow", 2.85f);
@@ -63,19 +75,19 @@ public class Equipment : MonoBehaviour
         {
             case 3:
                 playerStats.maxShield += 20;
-                playerStats.GainShield(0);
+                playerStats.GainShield(20);
                 break;
             case 4:
-                playerStats.dashBaseCooldown /= 1.1f;
+                playerStats.dashBaseCooldown /= 1.15f;
                 break;
             case 5:
-                playerStats.cooldownReduction += 0.4f;
+                playerStats.cooldownReduction += 0.42f;
                 break;
             case 6:
                 playerStats.GainHP(10);
                 break;
             case 7:
-                playerStats.damageBonus += (playerStats.maxHealth - 100) * 0.001f;
+                playerStats.GainDMG((playerStats.maxHealth - 100) * 0.0011f);
                 playerStats.GainHP(10);
                 break;
             case 8:
@@ -89,131 +101,75 @@ public class Equipment : MonoBehaviour
                 }
                 break;
             case 9:
-                playerStats.movementSpeed += 45f;
+                playerStats.GainMS(45f);
                 break;
             case 10:
-                playerStats.damageBonus += 0.06f;
+                playerStats.GainDMG(0.06f);
                 playerStats.GainGold(30);
                 break;
             case 11:
                 playerStats.maxShield += 20;
-                playerStats.GainShield(0);
+                playerStats.GainShield(20);
                 break;
             case 13:
                 playerStats.dashBaseCooldown /= 1.15f;
                 break;
             case 14:
-                Drones[0].SetActive(true);
+                playerStats.GainFR(0.072f);
+                playerStats.GainKeys(2);
                 break;
             case 15:
                 playerStats.grenadeBaseCooldown /= 1.1f;
                 break;
             case 16:
-                playerStats.additionalCritChance += 0.07f;
+                playerStats.additionalCritChance += 0.08f;
                 break;
             case 19:
-                playerStats.damageBonus += 0.33f;
+                playerStats.GainDMG(0.35f);
                 break;
             case 21:
-                playerStats.damageBonus += 0.06f;
+                playerStats.GainDMG(0.06f);
                 playerStats.forceIncrease += 0.25f;
                 break;
             case 25:
                 playerStats.GainHP(10);
                 break;
+            case 26:
+                playerStats.GainTools(2);
+                break;
             case 27:
-                playerStats.grenadeBaseCooldown /= 1.15f;
+                playerStats.grenadeBaseCooldown /= 1.16f;
                 playerStats.grenadeMaxCharges++;
+                break;
+            case 28:
+                playerStats.grenadeMaxCharges++;
+                break;
+            case 29:
+                // poison cloud potem
+                playerStats.grenadeMaxCharges++;
+                break;
+            case 31:
+                playerStats.GainDMG(0.06f);
+                break;
+            case 32:
+                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 4f;
+                playerStats.GainFR(0.072f);
+                break;
+            case 33:
+                Accessories[Random.Range(0, Accessories.Length)]++;
+                Accessories[Random.Range(0, Accessories.Length)]++;
+                playerStats.GainTools(6);
+                break;
+            case 34:
+                playerStats.maxShield += 20;
+                playerStats.GainShield(20);
                 break;
         }
     }
 
     void ShowTooltip(int which)
     {
-        switch (which)
-        {
-            case 0:
-                Tooltip.text = "Increased Movement Speed until Damage Taken";
-                break;
-            case 1:
-                Tooltip.text = "Take less Damage from Bullets & Deflect Them Back";
-                break;
-            case 2:
-                Tooltip.text = "Randomly Fire Equipped Gun for Free";
-                break;
-            case 3:
-                Tooltip.text = "Increase Shield Capacity, Gain Shield when Losing Health";
-                break;
-            case 4:
-                Tooltip.text = "Dash Gains Second Charge";
-                break;
-            case 5:
-                Tooltip.text = "+38% Ability Haste";
-                break;
-            case 6:
-                Tooltip.text = "Increase Max Health & Health Restored";
-                break;
-            case 7:
-                Tooltip.text = "Increase Max Health, Gain Damage based on Max Health";
-                break;
-            case 8:
-                Tooltip.text = "Gain Tools. All Guns have +1 Accessory Slot";
-                break;
-            case 9:
-                Tooltip.text = "Increase Movement Speed. After using Dash Gain Short Burst";
-                break;
-            case 10:
-                Tooltip.text = "Increase Damage & Gain Gold";
-                break;
-            case 11:
-                Tooltip.text = "Increase Shield Capacity. Gain Shield at the Start of Combat";
-                break;
-            case 12:
-                Tooltip.text = "Reduce all Damage Taken";
-                break;
-            case 13:
-                Tooltip.text = "Reduce Dash Cooldown. Using Dash Reloads";
-                break;
-            case 14:
-                Tooltip.text = "Gain orbiting Drone that fires Outwards";
-                break;
-            case 15:
-                Tooltip.text = "Abilities Deal More Damage";
-                break;
-            case 16:
-                Tooltip.text = "Gain Crit Chance on all Guns";
-                break;
-            case 17:
-                Tooltip.text = "Increase On-Hit rate";
-                break;
-            case 18:
-                Tooltip.text = "Gain Gold & Tools after Completing Combat";
-                break;
-            case 19:
-                Tooltip.text = "Increase Damage Dealt & Taken";
-                break;
-            case 20:
-                Tooltip.text = "Enemies Gain Vulnerable based on Their Armor";
-                break;
-            case 21:
-                Tooltip.text = "Increase Damage & Bullet Speed";
-                break;
-            case 22:
-                Tooltip.text = "All enemies are Cursed";
-                break;
-            case 23:
-                Tooltip.text = "More Ammo for all Guns";
-                break;
-            case 24:
-                Tooltip.text = "Chance to Fire Twice";
-                break;
-            case 25:
-                Tooltip.text = "Increase Max Health. Gain Damage with Health Lost";
-                break;
-            case 26:
-                Tooltip.text = "Gain More Tools";
-                break;
-        }
+        //Tooltip.text = ILibrary.ItemTooltip[ItemList[which]];
 
         Invoke("HideTooltip", 1f);
     }
@@ -342,7 +298,7 @@ public class Equipment : MonoBehaviour
             bullet_body.AddForce(Barrel.up * Random.Range(16f, 18.2f), ForceMode2D.Impulse);
 
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(1.2f) - 0.2f);
+            firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(1.2f) - 0.16f);
         }
     }
 

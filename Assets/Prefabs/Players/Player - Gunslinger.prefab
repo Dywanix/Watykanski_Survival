@@ -1296,7 +1296,7 @@ MonoBehaviour:
   toolsInfo: {fileID: 4061858948788743161}
   keysInfo: {fileID: 8652378745268323531}
   DashCharge: {fileID: 2029163332684131119}
-  GrenadeCharge: {fileID: 2029163332684131119}
+  GrenadeCharge: {fileID: 411639819747716739}
   healthBar: {fileID: 2129462728456948380}
   dropBar: {fileID: 3957181184538278871}
   shieldBar: {fileID: 1116174716991250032}
@@ -1410,6 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 2129462728280790371}
+  gambler: 0
   Library: {fileID: 3675395681611823778}
   ILibrary: {fileID: 3869461370312694584}
   Barrel: {fileID: 8552419788179766354}

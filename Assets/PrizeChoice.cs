@@ -191,13 +191,13 @@ public class PrizeChoice : MonoBehaviour
                             playerStats.GainHP(20);
                             break;
                         case 4:
-                            playerStats.damageBonus += 0.027f;
+                            playerStats.GainDMG(0.027f);
                             break;
                         case 5:
-                            playerStats.fireRateBonus += 0.032f;
+                            playerStats.GainFR(0.032f);
                             break;
                         case 6:
-                            playerStats.movementSpeed += 20f;
+                            playerStats.GainMS(20f);
                             break;
                     }
                 }

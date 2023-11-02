@@ -116,6 +116,9 @@ public class Gun : MonoBehaviour
             case "DoT":
                 DoT += Values[which];
                 break;
+            case "shatter":
+                shatter += Values[which];
+                break;
             case "overload":
                 overload += Mathf.RoundToInt(Values[which]);
                 break;

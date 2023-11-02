@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public float dHealth, health, maxShield, dShield, shield, poison,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
     public int level = 1, dayCount = 1;
-    bool undamaged, dashSecondCharge;
+    bool undamaged, dashSecondCharge, protection;
     int tempi, bonusTool;
     float temp, wrath;
 
@@ -70,10 +70,48 @@ public class PlayerController : MonoBehaviour
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
         Invoke("Tick", 0.8f);
-        for (int i = 0; i < eq.Items.Length; i++)
+        if (eq.gambler)
         {
-            if (eq.Items[i])
-                eq.PickUpItem(i);
+            temp = 28.9f;
+            while (temp > 0f)
+            {
+                tempi = Random.Range(0, 6);
+                switch (tempi)
+                {
+                    case 0:
+                        GainHP(10);
+                        temp -= 2f;
+                        break;
+                    case 1:
+                        GainDMG(0.012f);
+                        temp -= 1.8f;
+                        break;
+                    case 2:
+                        GainFR(0.014f);
+                        temp -= 1.75f;
+                        break;
+                    case 3:
+                        GainMS(8f);
+                        temp -= 1.6f;
+                        break;
+                    case 4:
+                        GainGold(4);
+                        temp -= 0.8f;
+                        break;
+                    case 5:
+                        GainTools(1);
+                        temp -= 0.6f;
+                        break;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < eq.Items.Length; i++)
+            {
+                if (eq.Items[i])
+                    eq.PickUpItem(i);
+            }
         }
     }
 
@@ -112,7 +150,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!menuOpened)
+            if (tabOpened)
+                CloseTab();
+            else if (!menuOpened)
                 OpenMenu();
             else
             {
@@ -234,7 +274,7 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[9])
         {
             movementSpeed *= 1.25f;
-            Invoke("SprintEnd", 2.2f);
+            Invoke("SprintEnd", 2.25f);
         }
     }
 
@@ -372,7 +412,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(float accuracy_change = 0f)
     {
-        if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f)
+        if (eq.Items[24] && Random.Range(0f, 1f) >= 0.82f)
             Fire(accuracy_change);
 
         Fire(accuracy_change);
@@ -429,7 +469,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Items[17])
-            eq.OnHit(1.15f);
+            eq.OnHit(1.16f);
         else eq.OnHit(1f);
     }
 
@@ -499,7 +539,7 @@ public class PlayerController : MonoBehaviour
                 firedBullet.pierce += eq.guns[eq.equipped].Accessories[8];
 
             if (eq.Items[17])
-                eq.OnHit(0.25f);
+                eq.OnHit(0.24f);
         }
     }
 
@@ -527,11 +567,11 @@ public class PlayerController : MonoBehaviour
         }
 
         temp = 1f;
-        if (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= throwRange)
+        if (Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) <= ThrowRange())
             TargetArea.position = new Vector2(mousePos[0], mousePos[1]);
         else
         {
-            temp = Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / throwRange;
+            temp = Vector3.Distance(transform.position, new Vector2(mousePos[0], mousePos[1])) / ThrowRange();
             TargetArea.position = new Vector2(transform.position.x + (mousePos[0] - transform.position.x) / temp, transform.position.y + (mousePos[1] - transform.position.y) / temp);
         }
         GameObject bullet = Instantiate(Grenade, Barrel.position, Barrel.rotation);
@@ -540,8 +580,17 @@ public class PlayerController : MonoBehaviour
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration /= forceIncrease;
         firedBullet.damage = (26f + toolsStored * 0.1f) * DamageDealtMultiplyer(1.05f);
-        if (eq.Items[13])
-            firedBullet.damage *= 1.22f;
+        if (eq.Items[15])
+            firedBullet.damage *= 1.23f;
+        if (eq.Items[28])
+            firedBullet.shatter += 0.78f;
+    }
+
+    float ThrowRange()
+    {
+        if (eq.Items[31])
+            return throwRange * DamageDealtMultiplyer(0.6f);
+        else return throwRange;
     }
 
     /*void UseAbility()
@@ -609,7 +658,7 @@ public class PlayerController : MonoBehaviour
         if (!day)
         {
             FireDirection(Random.Range(0f, 360f), 0f);
-            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.8f / SpeedMultiplyer(1.3f));
+            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.75f / SpeedMultiplyer(1.35f));
         }
     }
 
@@ -785,57 +834,62 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float value, bool pierce)
     {
-        if (eq.Items[19])
-            value *= 1.25f;
-        if (eq.Items[0])
-        {
-            if (undamaged)
-            {
-                undamaged = false;
-                movementSpeed /= 1.16f;
-            }
-        }
-        if (eq.Items[12])
-        {
-            if (value > 8)
-                value -= 3;
-            else if (value > 5)
-                value = 5;
-        }
-        if (pierce)
-        {
-            health -= value;
-            if (eq.Items[3])
-                GainShield(value * 0.45f);
-            healthBar.fillAmount = health / maxHealth;
-
-            if (eq.Items[25] && !day)
-                wrath += value / 800;
-        }
+        if (protection)
+            protection = false;
         else
         {
-            shield -= value;
-
-            if (shield < 0)
+            if (eq.Items[19])
+                value *= 1.25f;
+            if (eq.Items[0])
             {
-                value = shield * (-1f);
-                shield = 0;
+                if (undamaged)
+                {
+                    undamaged = false;
+                    movementSpeed /= 1.17f;
+                }
+            }
+            if (eq.Items[12])
+            {
+                if (value > 8)
+                    value -= 3;
+                else if (value > 5)
+                    value = 5;
+            }
+            if (pierce)
+            {
                 health -= value;
                 if (eq.Items[3])
                     GainShield(value * 0.45f);
                 healthBar.fillAmount = health / maxHealth;
 
                 if (eq.Items[25] && !day)
-                    wrath += value / 800;
+                    wrath += value / 600;
             }
-            shieldBar.fillAmount = shield / maxShield;
+            else
+            {
+                shield -= value;
+
+                if (shield < 0)
+                {
+                    value = shield * (-1f);
+                    shield = 0;
+                    health -= value;
+                    if (eq.Items[3])
+                        GainShield(value * 0.45f);
+                    healthBar.fillAmount = health / maxHealth;
+
+                    if (eq.Items[25] && !day)
+                        wrath += value / 600;
+                }
+                shieldBar.fillAmount = shield / maxShield;
+            }
+
+            healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
+            ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
+
+            if (health < 0f)
+                ReturnToMenu();
         }
-
-        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
-        ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
-
-        if (health < 0f)
-            ReturnToMenu();
     }
 
     public void GainPoison(float value)
@@ -850,7 +904,7 @@ public class PlayerController : MonoBehaviour
     public void RestoreHealth(float value)
     {
         if (eq.Items[6])
-            value *= 1.2f;
+            value *= 1.25f;
         health += value;
         if (health > maxHealth)
             health = maxHealth;
@@ -986,13 +1040,15 @@ public class PlayerController : MonoBehaviour
             if (!undamaged)
             {
                 undamaged = true;
-                movementSpeed *= 1.16f;
+                movementSpeed *= 1.17f;
             }
         }
         if (eq.Items[2])
             Invoke("Rain", 0.2f);
         if (eq.Items[11])
             GainShield(10 + 0.05f * maxShield);
+        if (eq.Items[34])
+            protection = true;
     }
 
     public void AmmoRefill()
@@ -1015,15 +1071,30 @@ public class PlayerController : MonoBehaviour
         level++;
     }
 
+    public void GainDMG(float value)
+    {
+        damageBonus += value;
+    }
+
+    public void GainFR(float value)
+    {
+        fireRateBonus += value;
+        if (eq.Items[32])
+            cooldownReduction += value / 4f;
+    }
+
+    public void GainMS(float value)
+    {
+        movementSpeed += value;
+    }
+
     public void GainHP(float value)
     {
         maxHealth += value;
         health += value;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         if (eq.Items[7])
-        {
-            damageBonus += 0.001f * value;
-        }
+            GainDMG(0.0011f * value);
         dHealth += value;
         dropBar.fillAmount = dHealth / maxHealth;
         healthBar.fillAmount = health / maxHealth;
@@ -1157,6 +1228,7 @@ public class PlayerController : MonoBehaviour
 
     public void CloseTab()
     {
+        ItemTooltipClose();
         Tab.SetActive(false);
         tabOpened = false;
         free = true;

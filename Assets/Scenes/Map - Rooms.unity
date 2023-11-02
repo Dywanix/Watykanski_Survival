@@ -11443,6 +11443,8 @@ MonoBehaviour:
   - {fileID: 2129462728280790375, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
   - {fileID: 8258762081838784112, guid: 04f135c1ae1c6bf469b62a9ba0bdb822, type: 3}
   - {fileID: 18708813180800065, guid: 05970f2af77bd7a48ab2ce0280a9666f, type: 3}
+  - {fileID: 7132016547561086850, guid: c63c5e43a393f8a449ec8443256111a2, type: 3}
+  - {fileID: 648255447103416094, guid: 622f31e512ad1b24e89974f404c9460e, type: 3}
   playerStats: {fileID: 0}
   RoundBarFill: {fileID: 5466635}
   RoundsCount: {fileID: 1874453417}

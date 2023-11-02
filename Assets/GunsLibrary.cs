@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GunsLibrary : MonoBehaviour
 {
-    public Gun[] guns;
+    public Gun[] guns, baseGuns;
 }

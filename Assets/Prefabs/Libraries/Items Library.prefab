@@ -72,31 +72,48 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6315edb7847447a42805d3622cfcb649, type: 3}
   - {fileID: 21300000, guid: 36bac7b81496f8f47a4919d29803f084, type: 3}
   - {fileID: 21300000, guid: 9034b3d643c8ffc4593c268609deb231, type: 3}
+  - {fileID: 21300000, guid: 05ec5454f1cdac142ae4133d6beb3153, type: 3}
+  - {fileID: 21300000, guid: f8195105afb10b64eb255ee67ef30b7e, type: 3}
+  - {fileID: 21300000, guid: 0c9171c27eb39d24aa34e733792a9e41, type: 3}
+  - {fileID: 21300000, guid: 4ee2adb5a4f10794b845c5a810774c58, type: 3}
+  - {fileID: 21300000, guid: 6124b967f5c1e4b4fb86bbe170491850, type: 3}
+  - {fileID: 21300000, guid: 4ab550e7274ade84e88043340f9cce13, type: 3}
+  - {fileID: 21300000, guid: 57c74e1e230f475418ef3a59d4393fc5, type: 3}
+  - {fileID: 21300000, guid: dd211b0894dcb484f97bd27f0a6a3a5f, type: 3}
   ItemTooltip:
-  - Gain +16% Movement Speed untill getting Hit
+  - Gain +17% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions
   - Fire Eqipped Gun in Random Direstions for free occassionally
   - Increase Max Shield by 20. Gain 45% Lost Health as Shield
-  - Dash gains Second Charge
-  - Gain 40% Ability Haste
-  - Increase Max Health by 10. Increase Health Restored by 20%
-  - Increase Max Health by 10. Gain +1% Damage for every 10 Max Health above 100
+  - Dash gains Second Charge & Reduce Dash Cooldown by 15%
+  - Gain 42% Cooldown Reduction
+  - Increase Max Health by 10. Increase Health Restored by 25%
+  - Increase Max Health by 10. Gain +1,1% Damage for every 10 Max Health above 100
   - Gain 6 Tools. All Guns have 1 more Accessory Slot
-  - Increase Movement Speed by 7%. Using Dash gives Rush for 2,2s
+  - Increase Movement Speed by 7%. Using Dash gives Rush for 2,25s
   - Increase Damage by 6%. Gain 30 Gold
   - Increase Max Shield by 20. Gain Shield at the start of each Room
   - Reduce Damage Taken by 3, to a minimum of 5
-  - Reduce Dash Cooldown by 0,8s. Using Dash Reloads 25% Magazine
-  - Gain Drone that orbits Player & Fires constantly Outwards
-  - Reduce Grenade Cooldown by 10%. Gredandes deal 22% more Damage.
-  - Gain +7% Crit Chance on all Guns
-  - Increase On-Hit Rate by 10%. Crits Increase by 35%
+  - Reduce Dash Cooldown by 15%. Using Dash Reloads 25% Magazine
+  - Increase Fire Rate by 7,2%. Gain 2 Keys
+  - Reduce Grenade Cooldown by 10%. Gredandes deal 23% more Damage.
+  - Gain +8% Crit Chance on all Guns
+  - Increase On-Hit Rate by 16%. Crits Increase by 40%
   - After completing the Room gain 5 Gold & 1 Tools
-  - Increase Damage by 33%, but also increase Damage Taken by 25%
-  - Enemies gain Vulnerable equal to 30% of their Armor
+  - Increase Damage by 35%, but also increase Damage Taken by 25%
+  - Enemies gain Vulnerable equal to 32% of their Armor
   - Increase Damage by 6% & Bullets Speed by 25%
-  - All Enemies are Cursed based on their Max Health
+  - All Enemies are Cursed
   - All Guns Have 25% more Max Ammo
-  - All Guns have 17% Chance to Fire additional time for free
-  - Increase Max Health by 10. Gain +1% Damage for the Combat for every 8 HP Lost
-  - Gain 20% More Tools
+  - All Guns have 18% Chance to Fire additional time for free
+  - Increase Max Health by 10. Gain +1% Damage for the Combat for every 6 HP Lost
+  - Gain 20% More Tools. Gain 2 Tools
+  - Reduce Grenade Cooldown by 16%. Grenade gains additional Charge
+  - Grenades have 78% Shatter. Grenade gains additional Charge
+  - Grenades leave Poison Cloud for 2,5s. Grenade gains additional Charge
+  - Grenades explode into 3 smaller ones that deal 40% Damage
+  - Increase Damage by 6%. Increase Grenade range based on Damage Increase
+  - Increase Fire Rate by 7,2%. Gain 1% Cooldown Reduction for every 4% Fire Rate
+    Increase
+  - Gain 2 random Accessories & 6 Tools
+  - Increase Max Shield by 20. Prevent first instance of damage each Combat
