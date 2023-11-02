@@ -111,7 +111,7 @@ MonoBehaviour:
   - Reduce Grenade Cooldown by 16%. Grenade gains additional Charge
   - Grenades have 78% Shatter. Grenade gains additional Charge
   - Grenades leave Poison Cloud for 2,5s. Grenade gains additional Charge
-  - Grenades explode into 3 smaller ones that deal 40% Damage
+  - Grenades explode into 3 smaller ones that deal 45% Damage each
   - Increase Damage by 6%. Increase Grenade range based on Damage Increase
   - Increase Fire Rate by 7,2%. Gain 1% Cooldown Reduction for every 4% Fire Rate
     Increase

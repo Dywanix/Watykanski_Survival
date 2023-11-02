@@ -270,7 +270,8 @@ public class Enemy : MonoBehaviour
             temp = collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration);
             if (collidedBullet.shatter > 0)
                 ShatterShield(temp * collidedBullet.shatter);
-            TakeDamage(temp, collidedBullet.crit, true);
+            if (!collidedBullet.damageLess)
+                TakeDamage(temp, collidedBullet.crit, true);
             if (collidedBullet.DoT > 0)
                 GainDoT(temp * collidedBullet.DoT);
             if (collidedBullet.incendiary > 0)

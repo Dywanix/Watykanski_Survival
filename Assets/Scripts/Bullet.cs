@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public PulletExplosion ShardExplosion;
     public float duration, force, mass, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, incendiary, damageGain;
     public int pierce, special;
-    public bool infinite, crit, AoE;
+    public bool infinite, crit, AoE, damageLess;
 
     [Header("AreaBullets")]
     public Transform TargetedLocation;

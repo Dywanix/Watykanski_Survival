@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage;
     public Bullet firedBullet;
     public GameObject Grenade;
+    public GrenadeEffects Effects;
     private EnemyBullet collidedBullet;
 
     /*public Gunslinger gunslinger;
@@ -577,6 +578,7 @@ public class PlayerController : MonoBehaviour
         GameObject bullet = Instantiate(Grenade, Barrel.position, Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration /= forceIncrease;
         firedBullet.damage = (26f + toolsStored * 0.1f) * DamageDealtMultiplyer(1.05f);
@@ -584,6 +586,10 @@ public class PlayerController : MonoBehaviour
             firedBullet.damage *= 1.23f;
         if (eq.Items[28])
             firedBullet.shatter += 0.78f;
+        if (eq.Items[29])
+            Effects.venom = true;
+        if (eq.Items[30])
+            Effects.small = true;
     }
 
     float ThrowRange()

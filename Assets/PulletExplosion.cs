@@ -8,7 +8,7 @@ public class PulletExplosion : MonoBehaviour
     public GameObject[] BulletShard;
     public Rigidbody2D Dir;
     public Transform Form;
-    public float[] bulletForce, damageEfficiency;
+    public float[] bulletForce, damageEfficiency, bonusDuration;
     public float delay, delayRange, accuracy;
     public int[] bulletsCount, pierceCount;
     public bool[] retainPierce;
@@ -47,7 +47,7 @@ public class PulletExplosion : MonoBehaviour
 
     void SetBullet(int which)
     {
-        BulletsShards.duration = ThisBullet.duration;
+        BulletsShards.duration = ThisBullet.duration + bonusDuration[which];
         BulletsShards.force = ThisBullet.force;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency[which];
         BulletsShards.DoT = ThisBullet.DoT;

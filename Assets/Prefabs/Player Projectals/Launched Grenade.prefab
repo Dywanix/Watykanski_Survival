@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6364693123814176815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6228523025300952653}
+  m_Layer: 0
+  m_Name: Form
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6228523025300952653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6364693123814176815}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8762319948271536226}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4969256745505767026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26,6 +57,10 @@ PrefabInstance:
     - target: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: penetration
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: ShardExplosion
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: m_RootOrder
@@ -102,9 +137,82 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5927824081267301706, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
   m_PrefabInstance: {fileID: 4969256745505767026}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3080163295848660013}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d09b16d86699f2940a65de91fdd3718a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3080163295848660013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7946786931316408927, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  m_PrefabInstance: {fileID: 4969256745505767026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2563651574014604590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080163295848660013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c2a82c36ddff040a5affdc188f950e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Grenade: {fileID: 6374578684429443232}
+  PoisonCloud: {fileID: 9214478453155810032, guid: ff13692e559bf75428a34f2ffc67d384, type: 3}
+  smallGrenades: {fileID: 2566711776871200177}
+  venom: 0
+  small: 0
+--- !u!114 &2566711776871200177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080163295848660013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c35a38e24eecc9e4db28d64c77803500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisBullet: {fileID: 6374578684429443232}
+  BulletsShards: {fileID: 0}
+  BulletShard:
+  - {fileID: 5599178945226377997, guid: b1bbb51fc6eaca548b20cbd460ee9858, type: 3}
+  Dir: {fileID: 5303853645452063645}
+  Form: {fileID: 6228523025300952653}
+  bulletForce:
+  - 4
+  damageEfficiency:
+  - 0.45
+  bonusDuration:
+  - 0.8
+  delay: 2000
+  delayRange: 2000
+  accuracy: 30
+  bulletsCount: 03000000
+  pierceCount: 64000000
+  retainPierce: 01
+--- !u!50 &5303853645452063645 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 967511290799001071, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  m_PrefabInstance: {fileID: 4969256745505767026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6374578684429443232 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  m_PrefabInstance: {fileID: 4969256745505767026}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080163295848660013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e3f171d7732e246bff4937d06607c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &8762319948271536226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4426012864177698320, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+  m_PrefabInstance: {fileID: 4969256745505767026}
+  m_PrefabAsset: {fileID: 0}
