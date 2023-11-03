@@ -294,10 +294,10 @@ public class Enemy : MonoBehaviour
             text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
         }
 
+        rechargeTimer = shieldRechargeDelay;
         if (shield > 0f)
         {
             shield -= value;
-            rechargeTimer = shieldRechargeDelay;
 
             if (shield < 0f)
                 health += shield;

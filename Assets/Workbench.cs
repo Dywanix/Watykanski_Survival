@@ -52,6 +52,8 @@ public class Workbench : MonoBehaviour
     public void SwitchGun(int which)
     {
         playerStats.SwapGun(which);
+
+        UpdateSprites();
         UpdateInfo(playerStats.eq.equipped);
     }
 

@@ -598,11 +598,11 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 59
+  waveStrength: 62
   strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 2
-  CountIncrease: 42
+  CountIncrease: 41
 --- !u!212 &12126836
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1692,11 +1692,11 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 79
-  strengthGrow: 11
+  waveStrength: 85
+  strengthGrow: 13
   maxMobsCount: 4
   wavesCount: 2
-  CountIncrease: 38
+  CountIncrease: 37
 --- !u!212 &64764358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3607,8 +3607,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 828170800}
-        m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
+      - m_Target: {fileID: 828170799}
+        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
         m_Arguments:
@@ -4173,11 +4173,11 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 80
-  strengthGrow: 6
+  waveStrength: 86
+  strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 3
-  CountIncrease: 54
+  CountIncrease: 52
 --- !u!212 &232070983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8710,7 +8710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &646674400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8929,10 +8929,10 @@ MonoBehaviour:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
   waveStrength: 35
-  strengthGrow: 6
+  strengthGrow: 7
   maxMobsCount: 4
   wavesCount: 2
-  CountIncrease: 50
+  CountIncrease: 49
 --- !u!1 &695510755
 GameObject:
   m_ObjectHideFlags: 0
@@ -9084,7 +9084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &711230286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9833,7 +9833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &748226867
 Transform:
   m_ObjectHideFlags: 0
@@ -11449,7 +11449,7 @@ MonoBehaviour:
   RoundBarFill: {fileID: 5466635}
   RoundsCount: {fileID: 1874453417}
   Prizes: {fileID: 828170802}
-  rareChance: 10
+  rareChance: 12
   epicChance: 2
 --- !u!4 &828170798
 Transform:
@@ -11846,6 +11846,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6d94579d097c0c248ad64e5d41b951be, type: 3}
   - {fileID: 21300000, guid: 3e25b248e6e9c2a4184115a0960994a8, type: 3}
   - {fileID: 21300000, guid: 9033641e387bb0c4b98201ec11975d1f, type: 3}
+  - {fileID: 21300000, guid: f295b8dd777beb34c9b4193b4ccc212d, type: 3}
   CommonTooltips:
   - +15 Gold
   - +5 Tools
@@ -11861,7 +11862,8 @@ MonoBehaviour:
   - +2,7% Damage
   - +3,2% Fire Rate
   - +4% Movement Speed
-  accessoryChance: 3
+  - +5,3% Cooldown Reduction
+  accessoryChance: 4
   rolls: 000000000000000000000000
   accessories: 000000000000000000000000
   items: 000000000000000000000000
@@ -16310,11 +16312,11 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
-  waveStrength: 40
-  strengthGrow: 6
+  waveStrength: 41
+  strengthGrow: 7
   maxMobsCount: 4
   wavesCount: 2
-  CountIncrease: 48
+  CountIncrease: 47
 --- !u!212 &1086298795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24627,11 +24629,11 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 64
-  strengthGrow: 10
+  waveStrength: 68
+  strengthGrow: 11
   maxMobsCount: 4
   wavesCount: 2
-  CountIncrease: 40
+  CountIncrease: 39
 --- !u!212 &1340000321
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26348,8 +26350,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 828170800}
-        m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
+      - m_Target: {fileID: 828170799}
+        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
         m_Arguments:
@@ -27907,6 +27909,10 @@ PrefabInstance:
     - target: {fileID: 580128021225627299, guid: b515263ac80bbe14ab28b48f705bf17b, type: 3}
       propertyPath: m_Name
       value: Gun Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 580128021225627299, guid: b515263ac80bbe14ab28b48f705bf17b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5871387538136865635, guid: b515263ac80bbe14ab28b48f705bf17b, type: 3}
       propertyPath: m_RootOrder
@@ -35595,8 +35601,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 828170800}
-        m_TargetAssemblyTypeName: CraftingTable, Assembly-CSharp
+      - m_Target: {fileID: 828170799}
+        m_TargetAssemblyTypeName: Workbench, Assembly-CSharp
         m_MethodName: SwitchGun
         m_Mode: 3
         m_Arguments:
@@ -36131,11 +36137,11 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 51
+  waveStrength: 53
   strengthGrow: 9
   maxMobsCount: 4
   wavesCount: 2
-  CountIncrease: 45
+  CountIncrease: 44
 --- !u!212 &2091028718
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -36785,6 +36791,7 @@ GameObject:
   - component: {fileID: 2107363311}
   - component: {fileID: 2107363310}
   - component: {fileID: 2107363309}
+  - component: {fileID: 2107363312}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -36883,6 +36890,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!70 &2107363312
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107363307}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &2111234612
 GameObject:
   m_ObjectHideFlags: 0

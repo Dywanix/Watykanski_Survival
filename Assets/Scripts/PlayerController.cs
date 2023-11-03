@@ -68,12 +68,11 @@ public class PlayerController : MonoBehaviour
         GainGold(0f);
         GainTools(0);
         GainKeys(0);
-        toolsStored = tools;
-        eq.guns[eq.equipped].parts = toolsStored;
+        dash = 0f;
         Invoke("Tick", 0.8f);
         if (eq.gambler)
         {
-            temp = 28.9f;
+            temp = 29.75f;
             while (temp > 0f)
             {
                 tempi = Random.Range(0, 6);
@@ -103,6 +102,10 @@ public class PlayerController : MonoBehaviour
                         GainTools(1);
                         temp -= 0.6f;
                         break;
+                    case 6:
+                        cooldownReduction += 0.006f;
+                        temp -= 0.45f;
+                        break;
                 }
             }
         }
@@ -114,6 +117,8 @@ public class PlayerController : MonoBehaviour
                     eq.PickUpItem(i);
             }
         }
+        toolsStored = tools;
+        eq.guns[eq.equipped].parts = toolsStored;
     }
 
     void Update()
@@ -148,6 +153,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        else
+            move = new Vector2(0, 0);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -216,7 +223,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Body.velocity = move * movementSpeed * dash * Time.deltaTime;
+        Body.velocity = move * (movementSpeed + dash) * Time.deltaTime;
     }
 
     void DashCast()
@@ -238,7 +245,7 @@ public class PlayerController : MonoBehaviour
 
     void Dash()
     {
-        dash = 6.55f;
+        dash = 2000f + 2 * movementSpeed;
         Invoke("Dashed", 0.13f);
 
         if (eq.Items[13])
@@ -267,7 +274,7 @@ public class PlayerController : MonoBehaviour
 
     void Dashed()
     {
-        dash = 1f;
+        dash = 0f;
 
         if (eq.guns[eq.equipped].Accessories[19] > 0)
             Invoke("DashFire", 0.07f);
@@ -590,12 +597,14 @@ public class PlayerController : MonoBehaviour
             Effects.venom = true;
         if (eq.Items[30])
             Effects.small = true;
+        if (eq.Items[31])
+            firedBullet.duration /= DamageDealtMultiplyer(0.36f);
     }
 
     float ThrowRange()
     {
         if (eq.Items[31])
-            return throwRange * DamageDealtMultiplyer(0.6f);
+            return throwRange * DamageDealtMultiplyer(0.36f);
         else return throwRange;
     }
 
@@ -893,7 +902,7 @@ public class PlayerController : MonoBehaviour
             healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
             ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
 
-            if (health < 0f)
+            if (health <= 0f)
                 ReturnToMenu();
         }
     }
@@ -970,7 +979,7 @@ public class PlayerController : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-        if (other.transform.tag == "Key")
+        if (other.transform.tag == "Token")
         {
             GainKeys(1);
             Destroy(other.gameObject);
@@ -1086,7 +1095,7 @@ public class PlayerController : MonoBehaviour
     {
         fireRateBonus += value;
         if (eq.Items[32])
-            cooldownReduction += value / 4f;
+            cooldownReduction += value / 3f;
     }
 
     public void GainMS(float value)
@@ -1209,7 +1218,7 @@ public class PlayerController : MonoBehaviour
     void OpenTab()
     {
         Tab.SetActive(true);
-        TabStatsText[0].text = maxHealth.ToString("0");
+        TabStatsText[0].text = ((cooldownReduction * 100f) - 100f).ToString("0.0") + "%";
         TabStatsText[1].text = ((damageBonus * 100f) -100f).ToString("0.0") + "%";
         TabStatsText[2].text = ((fireRateBonus * 100f) -100f).ToString("0.0") + "%";
         TabStatsText[3].text = ((movementSpeed / 5f) - 100f).ToString("0.0") + "%";

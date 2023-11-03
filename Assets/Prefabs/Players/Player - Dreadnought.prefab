@@ -4550,7 +4550,7 @@ GameObject:
   - component: {fileID: 8992962932584794806}
   - component: {fileID: 3769949059855871193}
   m_Layer: 5
-  m_Name: Max Health
+  m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4605,7 +4605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: 0%
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -4614,8 +4614,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255104
-  m_fontColor: {r: 0, g: 0.9960785, b: 0, a: 1}
+    rgba: 4294836349
+  m_fontColor: {r: 0.4901961, g: 0, b: 0.9960785, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6827,6 +6827,7 @@ MonoBehaviour:
   gunImage: {fileID: 7132016547352320998}
   firedBullet: {fileID: 0}
   Grenade: {fileID: 3080163295848660013, guid: 0e206f122f054ec448c3733f8c8656a2, type: 3}
+  Effects: {fileID: 0}
   mouseLeft: 0
   reloading: 0
   free: 1
@@ -6843,10 +6844,10 @@ MonoBehaviour:
   shield: 0
   poison: 0
   damageBonus: 1.084
-  fireRateBonus: 1.08
-  movementSpeed: 515
+  fireRateBonus: 1.082
+  movementSpeed: 516.5
   additionalCritChance: 0
-  cooldownReduction: 1
+  cooldownReduction: 1.01
   forceIncrease: 1
   dashBaseCooldown: 6
   maxDashCooldown: 0
@@ -7313,7 +7314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12682c54c98f6d947a63c8ae5723c398, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f295b8dd777beb34c9b4193b4ccc212d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

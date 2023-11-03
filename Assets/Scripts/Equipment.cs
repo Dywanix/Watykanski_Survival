@@ -152,7 +152,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainDMG(0.06f);
                 break;
             case 32:
-                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 4f;
+                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 3f;
                 playerStats.GainFR(0.072f);
                 break;
             case 33:

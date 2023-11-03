@@ -199,6 +199,9 @@ public class PrizeChoice : MonoBehaviour
                         case 6:
                             playerStats.GainMS(20f);
                             break;
+                        case 7:
+                            playerStats.cooldownReduction += 0.053f;
+                            break;
                     }
                 }
                 break;

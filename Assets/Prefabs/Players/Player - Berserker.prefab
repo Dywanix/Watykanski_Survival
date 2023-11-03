@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12682c54c98f6d947a63c8ae5723c398, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f295b8dd777beb34c9b4193b4ccc212d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2939,7 +2939,7 @@ GameObject:
   - component: {fileID: 5151985583415576140}
   - component: {fileID: 4579074720879516100}
   m_Layer: 5
-  m_Name: Max Health
+  m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2994,7 +2994,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: '0%
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -3003,8 +3005,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255104
-  m_fontColor: {r: 0, g: 0.9960785, b: 0, a: 1}
+    rgba: 4294836349
+  m_fontColor: {r: 0.4901961, g: 0, b: 0.9960785, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6975,6 +6977,7 @@ MonoBehaviour:
   gunImage: {fileID: 8258762082045254164}
   firedBullet: {fileID: 0}
   Grenade: {fileID: 3080163295848660013, guid: 0e206f122f054ec448c3733f8c8656a2, type: 3}
+  Effects: {fileID: 0}
   mouseLeft: 0
   reloading: 0
   free: 1
@@ -6990,11 +6993,11 @@ MonoBehaviour:
   dShield: 0
   shield: 0
   poison: 0
-  damageBonus: 1.105
-  fireRateBonus: 1.054
+  damageBonus: 1.106
+  fireRateBonus: 1.056
   movementSpeed: 516.5
   additionalCritChance: 0
-  cooldownReduction: 1
+  cooldownReduction: 1.012
   forceIncrease: 1
   dashBaseCooldown: 6
   maxDashCooldown: 0
@@ -7078,6 +7081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 8258762081838784116}
+  gambler: 0
   Library: {fileID: 284913281137059510}
   ILibrary: {fileID: 2326869177519934657}
   Barrel: {fileID: 1846501371970516805}

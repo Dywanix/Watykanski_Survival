@@ -7,7 +7,7 @@ public class Room : MonoBehaviour
     public Map map;
     public Transform SpawnPoint;
     public GameObject StartButton, Glow, Player, LeftDoors, RightDoors;
-    public GameObject[] Waves, Mobs, Prizes;
+    public GameObject[] Waves, Mobs, Prizes, SndPrizes;
 
     bool fight;
     public int roundStrength, strengthIncrease, mobsCount, roundsCount;
@@ -166,5 +166,11 @@ public class Room : MonoBehaviour
     void SpawnPrize()
     {
         Prizes[map.PrizeRarity()].SetActive(true);
+        roll = Random.Range(0, 9);
+        if (roll >= 7)
+            SndPrizes[2].SetActive(true);
+        else if (roll < 4)
+            SndPrizes[0].SetActive(true);
+        else SndPrizes[1].SetActive(true);
     }
 }
