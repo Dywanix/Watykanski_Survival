@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: itemChance
-      value: 0.056
+      value: 0.042
       objectReference: {fileID: 0}
     - target: {fileID: 8533619085793091751, guid: 2cd9a10fbb270c14a92dda6fb53cfcd8, type: 3}
       propertyPath: scrapCount

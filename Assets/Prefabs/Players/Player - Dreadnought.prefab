@@ -6843,11 +6843,11 @@ MonoBehaviour:
   dShield: 0
   shield: 0
   poison: 0
-  damageBonus: 1.084
-  fireRateBonus: 1.082
-  movementSpeed: 516.5
+  damageBonus: 1.082
+  fireRateBonus: 1.086
+  movementSpeed: 517
   additionalCritChance: 0
-  cooldownReduction: 1.01
+  cooldownReduction: 1.014
   forceIncrease: 1
   dashBaseCooldown: 6
   maxDashCooldown: 0

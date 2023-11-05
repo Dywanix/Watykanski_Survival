@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         Invoke("Tick", 0.8f);
         if (eq.gambler)
         {
-            temp = 29.75f;
+            temp = 30.2f;
             while (temp > 0f)
             {
                 tempi = Random.Range(0, 6);
@@ -1061,7 +1061,7 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[2])
             Invoke("Rain", 0.2f);
         if (eq.Items[11])
-            GainShield(10 + 0.05f * maxShield);
+            GainShield(0.1f * maxShield);
         if (eq.Items[34])
             protection = true;
     }

@@ -296,7 +296,7 @@ MonoBehaviour:
   fireRateBonus: 1.012
   movementSpeed: 506
   additionalCritChance: 0
-  cooldownReduction: 1.006
+  cooldownReduction: 1.008
   forceIncrease: 1
   dashBaseCooldown: 6
   maxDashCooldown: 0

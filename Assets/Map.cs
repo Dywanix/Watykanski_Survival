@@ -23,7 +23,6 @@ public class Map : MonoBehaviour
         playerStats.SwapGun(0);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

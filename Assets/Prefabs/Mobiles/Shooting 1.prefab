@@ -61,7 +61,11 @@ MonoBehaviour:
   Items:
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
+  - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
+  - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   - {fileID: 5869546756734873047, guid: b5bd72dcc887f224a9f7dd33dfc23c38, type: 3}
+  - {fileID: 5869546756734873047, guid: b5bd72dcc887f224a9f7dd33dfc23c38, type: 3}
+  - {fileID: 2318759274309051530, guid: 1cd4bd986c5ecae4ebe307483af6d8b0, type: 3}
   playerStats: {fileID: 0}
   Body: {fileID: 3979315075050305358}
   playerBody: {fileID: 0}
@@ -109,7 +113,7 @@ MonoBehaviour:
   minRange: 5.1
   DeathDrop: {fileID: 0}
   scrapChance: 0.18
-  itemChance: 0.048
+  itemChance: 0.036
   scrapCount: 1
   itemCount: 1
   Blood: {fileID: 0}
