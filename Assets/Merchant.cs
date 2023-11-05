@@ -12,7 +12,7 @@ public class Merchant : MonoBehaviour
     public Sprite[] sprites, accessorySprites, itemSprites;
     public PlayerController playerStats;
 
-    public int[] Costs, MinCosts, MaxCosts, Rolls, Accessory, Item;
+    public int[] Costs, Rolls, Accessory, Item;
     public int accessoryChance, itemChance;
     int roll;
     public bool[] aviable;
@@ -107,20 +107,20 @@ public class Merchant : MonoBehaviour
             {
                 Item[i] = Random.Range(0, itemSprites.Length);
                 ItemsImages[i].sprite = itemSprites[Item[i]];
-                Costs[i] = Random.Range(32, 40 + 1);
+                Costs[i] = Random.Range(40, 49 + 1);
                 CostText[i].text = Costs[i].ToString("0");
             }
             else if (Rolls[i] >= sprites.Length)
             {
                 Accessory[i] = Random.Range(0, accessorySprites.Length);
                 ItemsImages[i].sprite = accessorySprites[Accessory[i]];
-                Costs[i] = Random.Range(24, 30 + 1);
+                Costs[i] = Random.Range(25, 34 + 1);
                 CostText[i].text = Costs[i].ToString("0");
             }
             else
             {
                 ItemsImages[i].sprite = sprites[Rolls[i]];
-                Costs[i] = Random.Range(MinCosts[Rolls[i]], MaxCosts[Rolls[i]] + 1);
+                Costs[i] = 25;
                 CostText[i].text = Costs[i].ToString("0");
             }
         }
@@ -142,34 +142,31 @@ public class Merchant : MonoBehaviour
             switch (Rolls[what])
             {
                 case 0:
-                    playerStats.RestoreHealth(9f + playerStats.maxHealth * 0.3f);
+                    playerStats.RestoreHealth(70f);
                     break;
                 case 1:
-                    playerStats.GainHP(8);
+                    playerStats.GainHP(20);
                     break;
                 case 2:
-                    playerStats.damageBonus += 0.02f;
+                    playerStats.GainDMG(0.027f);
                     break;
                 case 3:
-                    playerStats.fireRateBonus += 0.03f;
+                    playerStats.GainFR(0.032f);
                     break;
                 case 4:
-                    playerStats.movementSpeed += 0.05f;
+                    playerStats.GainMS(20f);
                     break;
                 case 5:
-                    playerStats.GainTools(3);
+                    playerStats.GainTools(10);
                     break;
                 case 6:
-                    playerStats.GainShield(playerStats.maxShield * 0.25f);
+                    playerStats.GainShield(50f);
                     break;
                 case 7:
-                    playerStats.AmmoPack();
+                    playerStats.GainKeys(4);
                     break;
                 case 8:
-                    playerStats.LevelUp();
-                    break;
-                case 9:
-                    playerStats.GainTools(5);
+                    playerStats.cooldownReduction += 0.053f;
                     break;
             }
         }
