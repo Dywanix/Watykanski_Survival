@@ -162,7 +162,7 @@ public class Enemy : MonoBehaviour
         Dir.rotation = angle;
     }
 
-    float SpeedEfficiency()
+    public float SpeedEfficiency()
     {
         temp = 1f;
         if (slowed)

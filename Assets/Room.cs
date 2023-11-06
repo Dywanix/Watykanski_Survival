@@ -7,13 +7,13 @@ public class Room : MonoBehaviour
     public Map map;
     public Transform SpawnPoint;
     public GameObject StartButton, Glow, Player, LeftDoors, RightDoors;
-    public GameObject[] Waves, Mobs, Prizes, SndPrizes;
+    public GameObject[] Mobs, Prizes, SndPrizes;
 
     bool fight;
     public int roundStrength, strengthIncrease, mobsCount, roundsCount;
     public float countIncrease;
     //public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
-    public int[] wavesStrength, mobsStrength;
+    public int[] mobsStrength;
     public float[] WidthRange, HeightRange;
     int roll, roll2, strength, count;
     //float roundDuration;

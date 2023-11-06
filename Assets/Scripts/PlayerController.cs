@@ -963,12 +963,12 @@ public class PlayerController : MonoBehaviour
 
     public void Collided(Collider2D other)
     {
-        if (other.transform.tag == "Gold")
+        if (other.transform.tag == "Scrap")
         {
             GainGold(1);
             Destroy(other.gameObject);
         }
-        else if (other.transform.tag == "Gold5")
+        else if (other.transform.tag == "Scrap5")
         {
             GainGold(5);
             Destroy(other.gameObject);
