@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
     public int scrapCount, itemCount;
 
     [Header("Graficzne")]
-    public GameObject Blood;
+    public GameObject Smoke;
 
     [Header("Status")]
     public GameObject FireExplosion;
@@ -65,6 +65,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        Smoke.SetActive(true);
         Player = GameObject.FindGameObjectWithTag("Player");
         playerBody = Player.GetComponent<Rigidbody2D>();
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
