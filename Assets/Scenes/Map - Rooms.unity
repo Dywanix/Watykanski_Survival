@@ -599,7 +599,7 @@ MonoBehaviour:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
   waveStrength: 63
-  strengthGrow: 9
+  strengthGrow: 10
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 41
@@ -668,7 +668,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &19884424
 GameObject:
@@ -1692,8 +1692,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 86
-  strengthGrow: 15
+  waveStrength: 87
+  strengthGrow: 16
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 37
@@ -4174,7 +4174,7 @@ MonoBehaviour:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
   waveStrength: 87
-  strengthGrow: 9
+  strengthGrow: 10
   maxMobsCount: 4
   wavesCount: 3
   CountIncrease: 52
@@ -8911,7 +8911,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &666955781
 MonoBehaviour:
@@ -8928,8 +8928,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
-  waveStrength: 35
-  strengthGrow: 8
+  waveStrength: 36
+  strengthGrow: 7
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 49
@@ -11858,12 +11858,12 @@ MonoBehaviour:
   - +30 Gold
   - +10 Tools
   - +4 Keys
-  - +20 Max Health
+  - +10 Max Health
   - +2,7% Damage
   - +3,2% Fire Rate
   - +4% Movement Speed
   - +5,3% Cooldown Reduction
-  accessoryChance: 4
+  accessoryChance: 5
   rolls: 000000000000000000000000
   accessories: 000000000000000000000000
   items: 000000000000000000000000
@@ -16313,7 +16313,7 @@ MonoBehaviour:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
   waveStrength: 42
-  strengthGrow: 7
+  strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 47
@@ -16382,7 +16382,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089249019
 GameObject:
@@ -20189,7 +20189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924089518317470513, guid: dd7d5b921abdb0e4aa1b0818528cd6b8, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 924089518317470513, guid: dd7d5b921abdb0e4aa1b0818528cd6b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24633,7 +24633,7 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 69
+  waveStrength: 70
   strengthGrow: 12
   maxMobsCount: 4
   wavesCount: 2
@@ -27920,7 +27920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5871387538136865635, guid: b515263ac80bbe14ab28b48f705bf17b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5871387538136865635, guid: b515263ac80bbe14ab28b48f705bf17b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36142,7 +36142,7 @@ MonoBehaviour:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
   waveStrength: 54
-  strengthGrow: 9
+  strengthGrow: 10
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 44
@@ -36211,7 +36211,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091898855
 GameObject:

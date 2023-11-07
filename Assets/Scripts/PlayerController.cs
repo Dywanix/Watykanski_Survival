@@ -72,39 +72,39 @@ public class PlayerController : MonoBehaviour
         Invoke("Tick", 0.8f);
         if (eq.gambler)
         {
-            temp = 30.2f;
+            temp = 33f;
             while (temp > 0f)
             {
-                tempi = Random.Range(0, 6);
+                tempi = Random.Range(0, 7);
                 switch (tempi)
                 {
                     case 0:
-                        GainHP(10);
+                        GainHP(5);
                         temp -= 2f;
                         break;
                     case 1:
-                        GainDMG(0.012f);
-                        temp -= 1.8f;
+                        GainDMG(0.01f);
+                        temp -= 1.5f;
                         break;
                     case 2:
-                        GainFR(0.014f);
-                        temp -= 1.75f;
+                        GainFR(0.01f);
+                        temp -= 1.25f;
                         break;
                     case 3:
-                        GainMS(8f);
-                        temp -= 1.6f;
+                        GainMS(5f);
+                        temp -= 1f;
                         break;
                     case 4:
-                        GainGold(4);
-                        temp -= 0.8f;
+                        GainGold(3);
+                        temp -= 0.6f;
                         break;
                     case 5:
                         GainTools(1);
                         temp -= 0.6f;
                         break;
                     case 6:
-                        cooldownReduction += 0.006f;
-                        temp -= 0.45f;
+                        cooldownReduction += 0.004f;
+                        temp -= 0.3f;
                         break;
                 }
             }
@@ -672,6 +672,13 @@ public class PlayerController : MonoBehaviour
     {
         if (!day)
         {
+            if (eq.guns[eq.equipped].burst > 0)
+            {
+                for (int i = 0; i < eq.guns[eq.equipped].burst; i++)
+                {
+                    FireDirection(Random.Range(0f, 360f), 0f);
+                }
+            }
             FireDirection(Random.Range(0f, 360f), 0f);
             Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.75f / SpeedMultiplyer(1.35f));
         }
@@ -878,7 +885,7 @@ public class PlayerController : MonoBehaviour
                 healthBar.fillAmount = health / maxHealth;
 
                 if (eq.Items[25] && !day)
-                    wrath += value / 600;
+                    wrath += value / 500;
             }
             else
             {
@@ -894,7 +901,7 @@ public class PlayerController : MonoBehaviour
                     healthBar.fillAmount = health / maxHealth;
 
                     if (eq.Items[25] && !day)
-                        wrath += value / 600;
+                        wrath += value / 500;
                 }
                 shieldBar.fillAmount = shield / maxShield;
             }
@@ -1075,7 +1082,7 @@ public class PlayerController : MonoBehaviour
                 eq.guns[i].ammo = eq.guns[i].maxAmmo + eq.guns[i].bonusAmmo - eq.guns[i].bulletsLeft;
                 eq.guns[i].bonusAmmo = 0;
                 if (eq.Items[23])
-                    eq.guns[i].ammo += eq.guns[i].maxAmmo / 4;
+                    eq.guns[i].ammo += (eq.guns[i].maxAmmo * 3) / 20;
             }
         }
         DisplayAmmo();
@@ -1109,7 +1116,7 @@ public class PlayerController : MonoBehaviour
         health += value;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         if (eq.Items[7])
-            GainDMG(0.0011f * value);
+            GainDMG(0.001f * value);
         dHealth += value;
         dropBar.fillAmount = dHealth / maxHealth;
         healthBar.fillAmount = health / maxHealth;

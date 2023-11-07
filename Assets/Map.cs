@@ -43,7 +43,7 @@ public class Map : MonoBehaviour
             {
                 // rare
                 epicChance += 2 + epicChance / 5;
-                rareChance = 11;
+                rareChance = 12;
                 return 1;
             }
             else

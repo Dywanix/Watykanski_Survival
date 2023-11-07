@@ -86,12 +86,12 @@ MonoBehaviour:
   - Fire Eqipped Gun in Random Direstions for free occassionally
   - Increase Max Shield by 20. Gain 45% Lost Health as Shield
   - Dash gains Second Charge & Reduce Dash Cooldown by 15%
-  - Gain 42% Cooldown Reduction
-  - Increase Max Health by 10. Increase Health Restored by 25%
-  - Increase Max Health by 10. Gain +1,1% Damage for every 10 Max Health above 100
+  - Gain 44% Cooldown Reduction
+  - Increase Max Health by 20. Increase Health Restored by 25%
+  - Increase Max Health by 20. Gain +1% Damage for every 10 Max Health above 80
   - Gain 6 Tools. All Guns have 1 more Accessory Slot
   - Increase Movement Speed by 7%. Using Dash gives Rush for 2,25s
-  - Increase Damage by 6%. Gain 30 Gold
+  - Increase Damage by 6%. Gain 32 Gold
   - Increase Max Shield by 20. Gain Shield at the start of each Room
   - Reduce Damage Taken by 3, to a minimum of 5
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 25% Magazine
@@ -104,9 +104,9 @@ MonoBehaviour:
   - Enemies gain Vulnerable equal to 32% of their Armor
   - Increase Damage by 6% & Bullets Speed by 25%
   - All Enemies are Cursed
-  - All Guns Have 25% more Max Ammo
+  - Increase Fire Rate by 7,2%. All Guns Have 15% more Max Ammo
   - All Guns have 18% Chance to Fire additional time for free
-  - Increase Max Health by 10. Gain +1% Damage for the Combat for every 6 HP Lost
+  - Increase Max Health by 20. Gain +1% Damage for the Combat for every 5 HP Lost
   - Gain 20% More Tools. Gain 2 Tools
   - Reduce Grenade Cooldown by 16%. Grenade gains additional Charge
   - Grenades have 78% Shatter. Grenade gains additional Charge

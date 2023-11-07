@@ -1635,7 +1635,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1052126954466488897
 Transform:
   m_ObjectHideFlags: 0
@@ -30411,8 +30411,7 @@ MonoBehaviour:
   HeightRange:
   - -18
   - 18
-  BarrelSpawn:
-  - {fileID: 3654799419585330983}
+  BarrelSpawn: []
 --- !u!1 &8688879871628980107
 GameObject:
   m_ObjectHideFlags: 0

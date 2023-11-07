@@ -145,7 +145,7 @@ public class Merchant : MonoBehaviour
                     playerStats.RestoreHealth(70f);
                     break;
                 case 1:
-                    playerStats.GainHP(20);
+                    playerStats.GainHP(10);
                     break;
                 case 2:
                     playerStats.GainDMG(0.027f);

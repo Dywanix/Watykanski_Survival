@@ -113,9 +113,9 @@ MonoBehaviour:
   Dir: {fileID: 327920104148096441}
   Sight: {fileID: 4865812193980604539}
   itemsCount: 2
-  maxHealth: 94
-  health: 94
-  dropChance: 0.4061
+  maxHealth: 92
+  health: 92
+  dropChance: 0.4129
 --- !u!50 &327920104148096441
 Rigidbody2D:
   serializedVersion: 4

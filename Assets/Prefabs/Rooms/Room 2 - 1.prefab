@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: Mobs.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: Mobs.Array.data[2]
@@ -48,8 +48,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1969047425045948882, guid: bea921b658a361744b291c008b0faf09, type: 3}
     - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: Mobs.Array.data[13]
+      value: 
+      objectReference: {fileID: 8290596169094493792, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: mobsStrength.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: mobsStrength.Array.data[2]
@@ -90,6 +94,10 @@ PrefabInstance:
     - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: mobsStrength.Array.data[12]
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 498740556013339890, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+      propertyPath: mobsStrength.Array.data[13]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1052126954466488897, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
       propertyPath: m_RootOrder

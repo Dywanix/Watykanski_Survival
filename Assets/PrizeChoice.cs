@@ -188,7 +188,7 @@ public class PrizeChoice : MonoBehaviour
                             playerStats.GainKeys(4);
                             break;
                         case 3:
-                            playerStats.GainHP(20);
+                            playerStats.GainHP(10);
                             break;
                         case 4:
                             playerStats.GainDMG(0.027f);

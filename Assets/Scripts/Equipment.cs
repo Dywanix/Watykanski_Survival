@@ -46,8 +46,9 @@ public class Equipment : MonoBehaviour
             guns[0] = Library.baseGuns[Random.Range(0, Library.baseGuns.Length)];
             playerStats.gunImage.sprite = guns[equipped].gunSprite;
             equippedGun.sprite = guns[equipped].holdingSprite;
+            guns[equipped].parts = playerStats.toolsStored;
             playerStats.DisplayAmmo();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 PickUpItem(Random.Range(0, 35));
             }
@@ -81,14 +82,14 @@ public class Equipment : MonoBehaviour
                 playerStats.dashBaseCooldown /= 1.15f;
                 break;
             case 5:
-                playerStats.cooldownReduction += 0.42f;
+                playerStats.cooldownReduction += 0.44f;
                 break;
             case 6:
-                playerStats.GainHP(10);
+                playerStats.GainHP(20);
                 break;
             case 7:
-                playerStats.GainDMG((playerStats.maxHealth - 100) * 0.0011f);
-                playerStats.GainHP(10);
+                playerStats.GainDMG((playerStats.maxHealth - 80) * 0.001f);
+                playerStats.GainHP(20);
                 break;
             case 8:
                 playerStats.GainTools(6);
@@ -105,7 +106,7 @@ public class Equipment : MonoBehaviour
                 break;
             case 10:
                 playerStats.GainDMG(0.06f);
-                playerStats.GainGold(30);
+                playerStats.GainGold(32);
                 break;
             case 11:
                 playerStats.maxShield += 20;
@@ -131,8 +132,11 @@ public class Equipment : MonoBehaviour
                 playerStats.GainDMG(0.06f);
                 playerStats.forceIncrease += 0.25f;
                 break;
+            case 23:
+                playerStats.GainFR(0.072f);
+                break;
             case 25:
-                playerStats.GainHP(10);
+                playerStats.GainHP(20);
                 break;
             case 26:
                 playerStats.GainTools(2);
