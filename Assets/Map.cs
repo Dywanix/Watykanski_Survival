@@ -34,7 +34,7 @@ public class Map : MonoBehaviour
         if (roll <= epicChance)
         {
             // epic
-            epicChance = 2;
+            epicChance = 4;
             return 2;
         }
         else
@@ -42,15 +42,15 @@ public class Map : MonoBehaviour
             if (roll <= epicChance + rareChance)
             {
                 // rare
-                epicChance += 2 + epicChance / 5;
-                rareChance = 12;
+                epicChance += 2 + epicChance / 4;
+                rareChance = 16;
                 return 1;
             }
             else
             {
                 // common
-                epicChance += 2 + epicChance / 5;
-                rareChance += 4 + rareChance / 3;
+                epicChance += 2 + epicChance / 4;
+                rareChance += 5 + (2 * rareChance / 5);
                 return 0;
             }
         }

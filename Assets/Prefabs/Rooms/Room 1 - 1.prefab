@@ -390,7 +390,7 @@ MonoBehaviour:
   Glow: {fileID: 2842332727899386910}
   playerStats: {fileID: 0}
   rarity: 1
-  keysRequired: 4
+  keysRequired: 3
 --- !u!1 &1325506688918777177
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
   Glow: {fileID: 3315049139948114966}
   playerStats: {fileID: 0}
   rarity: 2
-  keysRequired: 6
+  keysRequired: 5
 --- !u!1 &2235478063196360376
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,8 @@ public class PrizeChoice : MonoBehaviour
     public ItemsLibrary ItemLib;
     public PlayerController playerStats;
     public GameObject Hud;
-    public Image[] Gems, Choices;
-    public TMPro.TextMeshProUGUI[] Tooltips;
-    public Sprite[] GemsSprites, CommonSprites, RareSprites;
-    public string[] CommonTooltips, RareTooltips;
+    public Image[] Choices;
+    public Sprite[] CommonSprites, RareSprites;
     public int accessoryChance;
 
     public int[] rolls, accessories, items;
@@ -36,10 +34,6 @@ public class PrizeChoice : MonoBehaviour
 
     void SetChoices()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            Gems[i].sprite = GemsSprites[Rarity];
-        }
         switch (Rarity)
         {
             case 0:
@@ -71,7 +65,6 @@ public class PrizeChoice : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Choices[i].sprite = CommonSprites[rolls[i]];
-            Tooltips[i].text = CommonTooltips[rolls[i]];
         }
     }
 
@@ -110,36 +103,32 @@ public class PrizeChoice : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             if (rolls[i] >= RareSprites.Length)
-            {
                 Choices[i].sprite = AccLib.AccessorySprite[accessories[i]];
-                Tooltips[i].text = AccLib.AccessoryTooltip[accessories[i]];
-            }
             else
-            {
                 Choices[i].sprite = RareSprites[rolls[i]];
-                Tooltips[i].text = RareTooltips[rolls[i]];
-            }
         }
     }
 
     void SetEpics()
     {
-        rolls[0] = Random.Range(0, ItemLib.ItemSprite.Length);
+        do
+        {
+            rolls[0] = Random.Range(0, ItemLib.ItemSprite.Length);
+        } while (playerStats.eq.Items[rolls[0]]);
 
         do
         {
             rolls[1] = Random.Range(0, ItemLib.ItemSprite.Length);
-        } while (rolls[1] == rolls[0]);
+        } while (rolls[1] == rolls[0] || (playerStats.eq.Items[rolls[1]]));
 
         do
         {
             rolls[2] = Random.Range(0, ItemLib.ItemSprite.Length);
-        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1]);
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || (playerStats.eq.Items[rolls[2]]));
 
         for (int i = 0; i < 3; i++)
         {
             Choices[i].sprite = ItemLib.ItemSprite[rolls[i]];
-            Tooltips[i].text = ItemLib.ItemTooltip[rolls[i]];
         }
     }
 
@@ -151,7 +140,7 @@ public class PrizeChoice : MonoBehaviour
                 switch (rolls[choice])
                 {
                     case 0:
-                        playerStats.GainGold(15);
+                        playerStats.GainGold(16);
                         break;
                     case 1:
                         playerStats.GainTools(5);
@@ -166,8 +155,8 @@ public class PrizeChoice : MonoBehaviour
                         playerStats.GainShield(25);
                         break;
                     case 5:
-                        map.rareChance += 7 + map.rareChance / 3;
-                        map.epicChance += 3 + map.epicChance / 5;
+                        map.rareChance += 9 + (2 * map.rareChance / 5);
+                        map.epicChance += 4 + (2 * map.epicChance / 9);
                         break;
                 }
                 break;
@@ -179,13 +168,13 @@ public class PrizeChoice : MonoBehaviour
                     switch (rolls[choice])
                     {
                         case 0:
-                            playerStats.GainGold(30);
+                            playerStats.GainGold(24);
                             break;
                         case 1:
-                            playerStats.GainTools(10);
+                            playerStats.GainTools(8);
                             break;
                         case 2:
-                            playerStats.GainKeys(4);
+                            playerStats.GainKeys(3);
                             break;
                         case 3:
                             playerStats.GainHP(10);

@@ -142,6 +142,14 @@ PrefabInstance:
       propertyPath: Particle
       value: 
       objectReference: {fileID: 3005701037349314797, guid: 72507d522efc9b04fb3e4dc35ff1664e, type: 3}
+    - target: {fileID: 4135925113127393432, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: frequency
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135925113127393432, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
+      propertyPath: frequencyGain
+      value: 1.043
+      objectReference: {fileID: 0}
     - target: {fileID: 5078845300959226542, guid: 85e96b0f626aaba4db45921c7fdad9ca, type: 3}
       propertyPath: m_Size.x
       value: 0.4

@@ -19,6 +19,7 @@ public class Equipment : MonoBehaviour
     public bool[] slotFilled;
     public int equipped, item;
     float temp;
+    int tempi, roll;
 
     // On Hit
     public GameObject Peacemaker, Boomerange, Wave, Orb;
@@ -48,9 +49,15 @@ public class Equipment : MonoBehaviour
             equippedGun.sprite = guns[equipped].holdingSprite;
             guns[equipped].parts = playerStats.toolsStored;
             playerStats.DisplayAmmo();
-            for (int i = 0; i < 3; i++)
+            tempi = 3;
+            while (tempi > 0)
             {
-                PickUpItem(Random.Range(0, 35));
+                roll = Random.Range(0, ILibrary.ItemSprite.Length);
+                if (!Items[roll])
+                {
+                    PickUpItem(roll);
+                    tempi--;
+                }
             }
         }
         //Invoke("AutoReload", 3f);
