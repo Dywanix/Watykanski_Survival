@@ -86,17 +86,17 @@ public class Equipment : MonoBehaviour
                 playerStats.GainShield(20);
                 break;
             case 4:
-                playerStats.dashBaseCooldown /= 1.15f;
+                playerStats.dashBaseCooldown /= 1.18f;
                 break;
             case 5:
-                playerStats.cooldownReduction += 0.44f;
+                playerStats.cooldownReduction += 0.46f;
                 break;
             case 6:
-                playerStats.GainHP(20);
+                playerStats.GainHP(10);
                 break;
             case 7:
-                playerStats.GainDMG((playerStats.maxHealth - 80) * 0.001f);
-                playerStats.GainHP(20);
+                playerStats.GainDMG((playerStats.maxHealth - 80) * 0.0012f);
+                playerStats.GainHP(10);
                 break;
             case 8:
                 playerStats.GainTools(6);
@@ -143,7 +143,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainFR(0.072f);
                 break;
             case 25:
-                playerStats.GainHP(20);
+                playerStats.GainHP(10);
                 break;
             case 26:
                 playerStats.GainTools(2);

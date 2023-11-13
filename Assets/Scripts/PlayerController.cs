@@ -592,7 +592,7 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[15])
             firedBullet.damage *= 1.23f;
         if (eq.Items[28])
-            firedBullet.shatter += 0.78f;
+            firedBullet.shatter += 0.82f;
         if (eq.Items[29])
             Effects.venom = true;
         if (eq.Items[30])
@@ -926,7 +926,7 @@ public class PlayerController : MonoBehaviour
     public void RestoreHealth(float value)
     {
         if (eq.Items[6])
-            value *= 1.25f;
+            value *= 1.3f;
         health += value;
         if (health > maxHealth)
             health = maxHealth;
@@ -1116,7 +1116,7 @@ public class PlayerController : MonoBehaviour
         health += value;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         if (eq.Items[7])
-            GainDMG(0.001f * value);
+            GainDMG(0.0012f * value);
         dHealth += value;
         dropBar.fillAmount = dHealth / maxHealth;
         healthBar.fillAmount = health / maxHealth;

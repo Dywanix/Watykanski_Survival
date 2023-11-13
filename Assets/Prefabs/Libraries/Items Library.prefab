@@ -85,10 +85,10 @@ MonoBehaviour:
   - Take 10% Less Damage from Projectals & Deflect them in random directions
   - Fire Eqipped Gun in Random Direstions for free occassionally
   - Increase Max Shield by 20. Gain 45% Lost Health as Shield
-  - Dash gains Second Charge & Reduce Dash Cooldown by 15%
-  - Gain 44% Cooldown Reduction
-  - Increase Max Health by 20. Increase Health Restored by 25%
-  - Increase Max Health by 20. Gain +1% Damage for every 10 Max Health above 80
+  - Dash gains Second Charge & Reduce Dash Cooldown by 18%
+  - Gain 46% Cooldown Reduction
+  - Increase Max Health by 10. Increase Health Restored by 30%
+  - Increase Max Health by 10. Gain +1,2% Damage for every 10 Max Health above 80
   - Gain 6 Tools. All Guns have 1 more Accessory Slot
   - Increase Movement Speed by 7%. Using Dash gives Rush for 2,25s
   - Increase Damage by 6%. Gain 32 Gold
@@ -106,10 +106,10 @@ MonoBehaviour:
   - All Enemies are Cursed
   - Increase Fire Rate by 7,2%. All Guns Have 15% more Max Ammo
   - All Guns have 18% Chance to Fire additional time for free
-  - Increase Max Health by 20. Gain +1% Damage for the Combat for every 5 HP Lost
+  - Increase Max Health by 10. Gain +1% Damage for the Combat for every 5 HP Lost
   - Gain 20% More Tools. Gain 2 Tools
   - Reduce Grenade Cooldown by 16%. Grenade gains additional Charge
-  - Grenades have 78% Shatter. Grenade gains additional Charge
+  - Grenades have 82% Shatter. Grenade gains additional Charge
   - Grenades leave Poison Cloud for 2,5s. Grenade gains additional Charge
   - Grenades explode into 3 smaller ones that deal 45% Damage each
   - Increase Damage by 6%. Increase Grenade range based on Damage Increase
