@@ -6843,11 +6843,11 @@ MonoBehaviour:
   dShield: 0
   shield: 0
   poison: 0
-  damageBonus: 1.057
-  fireRateBonus: 1.058
-  movementSpeed: 513.5
+  damageBonus: 1.06
+  fireRateBonus: 1.063
+  movementSpeed: 515
   additionalCritChance: 0
-  cooldownReduction: 1.016
+  cooldownReduction: 1.019
   forceIncrease: 1
   dashBaseCooldown: 6
   maxDashCooldown: 0
@@ -6861,7 +6861,7 @@ MonoBehaviour:
   dash: 1
   level: 1
   dayCount: 1
-  gold: 27
+  gold: 28
   tools: 6
   toolsStored: 6
   keys: 0

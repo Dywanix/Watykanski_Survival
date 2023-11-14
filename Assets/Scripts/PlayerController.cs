@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         Invoke("Tick", 0.8f);
         if (eq.gambler)
         {
-            temp = 33f;
+            temp = 34.8f;
             while (temp > 0f)
             {
                 tempi = Random.Range(0, 7);
@@ -926,7 +926,7 @@ public class PlayerController : MonoBehaviour
     public void RestoreHealth(float value)
     {
         if (eq.Items[6])
-            value *= 1.3f;
+            value *= 1.35f;
         health += value;
         if (health > maxHealth)
             health = maxHealth;

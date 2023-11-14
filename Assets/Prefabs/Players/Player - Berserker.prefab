@@ -6986,18 +6986,18 @@ MonoBehaviour:
   mouseVector: {x: 0, y: 0, z: 0}
   task: 0
   taskMax: 0
-  maxHealth: 95
+  maxHealth: 100
   dHealth: 0
-  health: 95
+  health: 100
   maxShield: 100
   dShield: 0
   shield: 0
   poison: 0
-  damageBonus: 1.08
-  fireRateBonus: 1.046
-  movementSpeed: 513
+  damageBonus: 1.076
+  fireRateBonus: 1.045
+  movementSpeed: 513.5
   additionalCritChance: 0
-  cooldownReduction: 1.018
+  cooldownReduction: 1.021
   forceIncrease: 1
   dashBaseCooldown: 6
   maxDashCooldown: 0
@@ -7011,7 +7011,7 @@ MonoBehaviour:
   dash: 1
   level: 1
   dayCount: 1
-  gold: 10
+  gold: 11
   tools: 5
   toolsStored: 5
   keys: 0
