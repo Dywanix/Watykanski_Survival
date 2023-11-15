@@ -155,8 +155,10 @@ public class PrizeChoice : MonoBehaviour
                         playerStats.GainShield(25);
                         break;
                     case 5:
-                        map.rareChance += 9 + (2 * map.rareChance / 5);
-                        map.epicChance += 4 + (2 * map.epicChance / 9);
+                        map.luck += 1;
+                        playerStats.luck += 1;
+                        map.rareChance += 8 + (map.rareChance * 2 + map.luck * 3) / 6;
+                        map.epicChance += 4 + (map.epicChance + map.luck) / 5;
                         break;
                 }
                 break;

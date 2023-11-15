@@ -8,9 +8,9 @@ public class embiggen : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Transform Card;
     public Vector3 scaleChange;
 
-    void Start()
+    public void EmSmollen()
     {
-        Card.localScale = new Vector3(1f, 1f, 1f);
+        Card.localScale -= scaleChange;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -20,6 +20,6 @@ public class embiggen : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Card.localScale -= scaleChange;
+        EmSmollen();
     }
 }

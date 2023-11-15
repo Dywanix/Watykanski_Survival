@@ -12,7 +12,7 @@ public class Map : MonoBehaviour
     public TMPro.TextMeshProUGUI RoundsCount;
 
     public PrizeChoice Prizes;
-    public int rareChance, epicChance;
+    public int rareChance, epicChance, luck;
     int roll;
 
     void Start()
@@ -34,7 +34,7 @@ public class Map : MonoBehaviour
         if (roll <= epicChance)
         {
             // epic
-            epicChance = 4;
+            epicChance = 4 + luck / 5;
             return 2;
         }
         else
@@ -42,15 +42,15 @@ public class Map : MonoBehaviour
             if (roll <= epicChance + rareChance)
             {
                 // rare
-                epicChance += 2 + epicChance / 4;
-                rareChance = 16;
+                epicChance += 2 + (epicChance + luck) / 4;
+                rareChance = 16 + luck / 2;
                 return 1;
             }
             else
             {
                 // common
-                epicChance += 2 + epicChance / 4;
-                rareChance += 5 + (2 * rareChance / 5);
+                epicChance += 2 + (epicChance + luck) / 4;
+                rareChance += 5 + (2 * rareChance + 3 * luck) / 5;
                 return 0;
             }
         }

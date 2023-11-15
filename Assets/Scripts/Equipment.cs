@@ -131,6 +131,8 @@ public class Equipment : MonoBehaviour
                 break;
             case 16:
                 playerStats.additionalCritChance += 0.08f;
+                playerStats.luck += 2;
+                playerStats.map.luck += 2;
                 break;
             case 19:
                 playerStats.GainDMG(0.35f);

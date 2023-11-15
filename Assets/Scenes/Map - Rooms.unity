@@ -598,8 +598,8 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 63
-  strengthGrow: 10
+  waveStrength: 64
+  strengthGrow: 11
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 41
@@ -1388,6 +1388,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33905262}
   m_CullTransparentMesh: 1
+--- !u!1 &58590634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58590635}
+  - component: {fileID: 58590637}
+  - component: {fileID: 58590636}
+  m_Layer: 5
+  m_Name: EnDarken
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &58590635
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58590634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1010664805}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 2000, y: 2000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &58590636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58590634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &58590637
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58590634}
+  m_CullTransparentMesh: 1
 --- !u!1 &58868792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,10 +1766,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rooms:
-  - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  - {fileID: 8485730766241308348, guid: 8f16bf55a08b4984c8d22d701ded78b8, type: 3}
   room: {fileID: 0}
-  waveStrength: 87
-  strengthGrow: 16
+  waveStrength: 89
+  strengthGrow: 17
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 37
@@ -4171,13 +4247,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rooms:
-  - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  - {fileID: 8485730766241308348, guid: 8f16bf55a08b4984c8d22d701ded78b8, type: 3}
   room: {fileID: 0}
-  waveStrength: 87
-  strengthGrow: 10
+  waveStrength: 95
+  strengthGrow: 19
   maxMobsCount: 4
-  wavesCount: 3
-  CountIncrease: 52
+  wavesCount: 2
+  CountIncrease: 36
 --- !u!212 &232070983
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8929,7 +9005,7 @@ MonoBehaviour:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
   waveStrength: 36
-  strengthGrow: 7
+  strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 2
   CountIncrease: 49
@@ -11451,6 +11527,7 @@ MonoBehaviour:
   Prizes: {fileID: 828170802}
   rareChance: 16
   epicChance: 4
+  luck: 0
 --- !u!4 &828170798
 Transform:
   m_ObjectHideFlags: 0
@@ -11467,7 +11544,7 @@ Transform:
   - {fileID: 1929818487}
   - {fileID: 748226867}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &828170799
 MonoBehaviour:
@@ -11830,10 +11907,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 74e817cdf389d8b4cb465a3d4fde24f6, type: 3}
   - {fileID: 21300000, guid: bcb365d65f47ab444a62bb07a3979850, type: 3}
   - {fileID: 21300000, guid: 12682c54c98f6d947a63c8ae5723c398, type: 3}
-  - {fileID: 21300000, guid: 6d94579d097c0c248ad64e5d41b951be, type: 3}
-  - {fileID: 21300000, guid: 3e25b248e6e9c2a4184115a0960994a8, type: 3}
-  - {fileID: 21300000, guid: 9033641e387bb0c4b98201ec11975d1f, type: 3}
-  - {fileID: 21300000, guid: f295b8dd777beb34c9b4193b4ccc212d, type: 3}
+  - {fileID: 21300000, guid: aa5cc1ed3ec465e41bc0e347de26cd53, type: 3}
+  - {fileID: 21300000, guid: 666ef1ab7699a9a4abe838e2d9c17c84, type: 3}
+  - {fileID: 21300000, guid: cdfa9aa6b66e4ec4bb5e7011701a6f09, type: 3}
+  - {fileID: 21300000, guid: f5dc8e4cf5136b5469d56407899d9ffd, type: 3}
   accessoryChance: 6
   rolls: 000000000000000000000000
   accessories: 000000000000000000000000
@@ -12703,7 +12780,8 @@ GameObject:
   - component: {fileID: 894878030}
   - component: {fileID: 894878029}
   - component: {fileID: 894878028}
-  m_Layer: 0
+  - component: {fileID: 894878031}
+  m_Layer: 5
   m_Name: Choice 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12723,7 +12801,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010664805}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12786,6 +12864,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 894878031}
+        m_TargetAssemblyTypeName: embiggen, Assembly-CSharp
+        m_MethodName: EmSmollen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &894878029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12824,6 +12914,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894878026}
   m_CullTransparentMesh: 1
+--- !u!114 &894878031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894878026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c7f31568b104f45bf83de62a128ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 894878027}
+  scaleChange: {x: 0.2, y: 0.2, z: 0}
 --- !u!1 &904824443
 GameObject:
   m_ObjectHideFlags: 0
@@ -15184,7 +15288,7 @@ GameObject:
   - component: {fileID: 1010664805}
   - component: {fileID: 1010664807}
   - component: {fileID: 1010664806}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Prize Hud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15203,6 +15307,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 58590635}
   - {fileID: 1281761338}
   - {fileID: 894878027}
   - {fileID: 1978832162}
@@ -16334,7 +16439,7 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
   room: {fileID: 0}
-  waveStrength: 42
+  waveStrength: 43
   strengthGrow: 8
   maxMobsCount: 4
   wavesCount: 2
@@ -19450,7 +19555,8 @@ GameObject:
   - component: {fileID: 1281761340}
   - component: {fileID: 1281761341}
   - component: {fileID: 1281761339}
-  m_Layer: 0
+  - component: {fileID: 1281761342}
+  m_Layer: 5
   m_Name: Choice 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19470,11 +19576,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010664805}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -192, y: 0}
+  m_AnchoredPosition: {x: -225, y: 0}
   m_SizeDelta: {x: 184, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281761339
@@ -19533,6 +19639,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1281761342}
+        m_TargetAssemblyTypeName: embiggen, Assembly-CSharp
+        m_MethodName: EmSmollen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1281761340
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19571,6 +19689,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1281761342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281761337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c7f31568b104f45bf83de62a128ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 1281761338}
+  scaleChange: {x: 0.2, y: 0.2, z: 0}
 --- !u!1001 &1284641379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19580,11 +19712,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 924089518317470513, guid: dd7d5b921abdb0e4aa1b0818528cd6b8, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 924089518317470513, guid: dd7d5b921abdb0e4aa1b0818528cd6b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 355
+      value: 422
       objectReference: {fileID: 0}
     - target: {fileID: 924089518317470513, guid: dd7d5b921abdb0e4aa1b0818528cd6b8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24025,10 +24157,10 @@ MonoBehaviour:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
   waveStrength: 70
-  strengthGrow: 12
+  strengthGrow: 7
   maxMobsCount: 4
-  wavesCount: 2
-  CountIncrease: 39
+  wavesCount: 3
+  CountIncrease: 62
 --- !u!212 &1340000321
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24089,12 +24221,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340000319}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 391, y: 0, z: 0}
+  m_LocalPosition: {x: 355, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344391518
 GameObject:
@@ -26542,7 +26674,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575561493
 GameObject:
@@ -28512,7 +28644,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695828208
 GameObject:
@@ -33647,6 +33779,111 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1955060237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1955060240}
+  - component: {fileID: 1955060239}
+  - component: {fileID: 1955060238}
+  m_Layer: 0
+  m_Name: RoomSpawner8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1955060238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955060237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776d47e1820c7f84abc8d90b825f5454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rooms:
+  - {fileID: 8485730766241308348, guid: 8f16bf55a08b4984c8d22d701ded78b8, type: 3}
+  room: {fileID: 0}
+  waveStrength: 101
+  strengthGrow: 15
+  maxMobsCount: 4
+  wavesCount: 3
+  CountIncrease: 50
+--- !u!212 &1955060239
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955060237}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 0.39215687, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1955060240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955060237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 592, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1956433894
 GameObject:
   m_ObjectHideFlags: 0
@@ -34075,7 +34312,8 @@ GameObject:
   - component: {fileID: 1978832165}
   - component: {fileID: 1978832164}
   - component: {fileID: 1978832163}
-  m_Layer: 0
+  - component: {fileID: 1978832166}
+  m_Layer: 5
   m_Name: Choice 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34095,11 +34333,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1010664805}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192, y: 0}
+  m_AnchoredPosition: {x: 225, y: 0}
   m_SizeDelta: {x: 184, y: 256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978832163
@@ -34158,6 +34396,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1978832166}
+        m_TargetAssemblyTypeName: embiggen, Assembly-CSharp
+        m_MethodName: EmSmollen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1978832164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34196,6 +34446,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978832161}
   m_CullTransparentMesh: 1
+--- !u!114 &1978832166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978832161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c7f31568b104f45bf83de62a128ed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Card: {fileID: 1978832162}
+  scaleChange: {x: 0.2, y: 0.2, z: 0}
 --- !u!1 &2023424456
 GameObject:
   m_ObjectHideFlags: 0
@@ -35300,7 +35564,7 @@ MonoBehaviour:
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
   room: {fileID: 0}
-  waveStrength: 54
+  waveStrength: 55
   strengthGrow: 10
   maxMobsCount: 4
   wavesCount: 2

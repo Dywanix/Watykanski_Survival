@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Grenade;
     public GrenadeEffects Effects;
     private EnemyBullet collidedBullet;
+    public Map map;
 
     /*public Gunslinger gunslinger;
     public Berserker berserker;
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth;
     public float dHealth, health, maxShield, dShield, shield, poison,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
-    public int level = 1, dayCount = 1;
+    public int level = 1, dayCount = 1, luck;
     bool undamaged, dashSecondCharge, protection;
     int tempi, bonusTool;
     float temp, wrath;
@@ -55,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         GetMouseInput();
         Cam = FindObjectOfType<CameraController>();
+        map = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(Map)) as Map;
         DisplayAmmo();
         health = maxHealth;
         dHealth = maxHealth;
@@ -404,6 +406,8 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].bulletsLeft > 0 || eq.guns[eq.equipped].infiniteMagazine)
         {
             Fire();
+            if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
+                Fire();
             if (!eq.guns[eq.equipped].infiniteMagazine)
             {
                 if (eq.guns[eq.equipped].Accessories[14] * 0.18f < Random.Range(0f, 1f))
@@ -414,13 +418,17 @@ public class PlayerController : MonoBehaviour
         else
         {
             if (eq.guns[eq.equipped].Accessories[14] * 0.18f > Random.Range(0f, 1f))
+            {
                 Fire();
+                if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
+                    Fire();
+            }
         }
     }
 
     public void Shoot(float accuracy_change = 0f)
     {
-        if (eq.Items[24] && Random.Range(0f, 1f) >= 0.82f)
+        if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
             Fire(accuracy_change);
 
         Fire(accuracy_change);
@@ -588,7 +596,7 @@ public class PlayerController : MonoBehaviour
         Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration /= forceIncrease;
-        firedBullet.damage = (26f + toolsStored * 0.1f) * DamageDealtMultiplyer(1.05f);
+        firedBullet.damage = (26f + toolsStored * 0.1f + level * 0.4f) * DamageDealtMultiplyer(1.05f);
         if (eq.Items[15])
             firedBullet.damage *= 1.23f;
         if (eq.Items[28])
