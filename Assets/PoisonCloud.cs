@@ -11,6 +11,6 @@ public class PoisonCloud : MonoBehaviour
 	{
 		GameObject bullet = Instantiate(CloudPrefab, transform.position, transform.rotation);
         Cloud = bullet.GetComponent(typeof(Bullet)) as Bullet;
-		Cloud.damage =  Explosion.damage * 0.155f;
+		Cloud.damage =  Explosion.damage * 0.186f;
 	}
 }

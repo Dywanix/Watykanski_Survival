@@ -406,7 +406,7 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].bulletsLeft > 0 || eq.guns[eq.equipped].infiniteMagazine)
         {
             Fire();
-            if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
+            if (eq.Items[24] && Random.Range(0f, 1f) >= 0.825f - 0.007f * luck)
                 Fire();
             if (!eq.guns[eq.equipped].infiniteMagazine)
             {
@@ -428,7 +428,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(float accuracy_change = 0f)
     {
-        if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
+        if (eq.Items[24] && Random.Range(0f, 1f) >= 0.825f - 0.007f * luck)
             Fire(accuracy_change);
 
         Fire(accuracy_change);
@@ -596,7 +596,7 @@ public class PlayerController : MonoBehaviour
         Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration /= forceIncrease;
-        firedBullet.damage = (26f + toolsStored * 0.1f + level * 0.4f) * DamageDealtMultiplyer(1.05f);
+        firedBullet.damage = (27f + toolsStored * 0.1f + level * 0.5f) * DamageDealtMultiplyer(1.06f);
         if (eq.Items[15])
             firedBullet.damage *= 1.23f;
         if (eq.Items[28])
@@ -893,7 +893,7 @@ public class PlayerController : MonoBehaviour
                 healthBar.fillAmount = health / maxHealth;
 
                 if (eq.Items[25] && !day)
-                    wrath += value / 500;
+                    wrath += value * 0.003f;
             }
             else
             {
@@ -909,7 +909,7 @@ public class PlayerController : MonoBehaviour
                     healthBar.fillAmount = health / maxHealth;
 
                     if (eq.Items[25] && !day)
-                        wrath += value / 500;
+                        wrath += value * 0.003f;
                 }
                 shieldBar.fillAmount = shield / maxShield;
             }

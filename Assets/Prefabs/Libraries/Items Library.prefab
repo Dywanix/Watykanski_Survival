@@ -105,8 +105,8 @@ MonoBehaviour:
   - Increase Damage by 6% & Bullets Speed by 25%
   - All Enemies are Cursed
   - Increase Fire Rate by 7,2%. All Guns Have 15% more Max Ammo
-  - All Guns have 18% Chance to Fire additional time for free
-  - Increase Max Health by 10. Gain +1% Damage for the Combat for every 5 HP Lost
+  - All Guns have a 17,5% Chance to Fire additional time for free
+  - Increase Max Health by 10. Gain +0,3% Damage for the Combat for every 1 HP Lost
   - Gain 20% More Tools. Gain 2 Tools
   - Reduce Grenade Cooldown by 16%. Grenade gains additional Charge
   - Grenades have 82% Shatter. Grenade gains additional Charge
