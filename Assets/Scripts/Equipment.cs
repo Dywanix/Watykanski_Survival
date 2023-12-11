@@ -130,7 +130,7 @@ public class Equipment : MonoBehaviour
                 playerStats.grenadeBaseCooldown /= 1.1f;
                 break;
             case 16:
-                playerStats.additionalCritChance += 0.08f;
+                playerStats.additionalCritChance += 0.09f;
                 playerStats.luck += 2;
                 playerStats.map.luck += 2;
                 break;
@@ -139,7 +139,7 @@ public class Equipment : MonoBehaviour
                 break;
             case 21:
                 playerStats.GainDMG(0.06f);
-                playerStats.forceIncrease += 0.25f;
+                playerStats.forceIncrease += 0.28f;
                 break;
             case 23:
                 playerStats.GainFR(0.072f);
@@ -151,14 +151,13 @@ public class Equipment : MonoBehaviour
                 playerStats.GainTools(2);
                 break;
             case 27:
-                playerStats.grenadeBaseCooldown /= 1.16f;
+                playerStats.grenadeBaseCooldown /= 1.18f;
                 playerStats.grenadeMaxCharges++;
                 break;
             case 28:
                 playerStats.grenadeMaxCharges++;
                 break;
             case 29:
-                // poison cloud potem
                 playerStats.grenadeMaxCharges++;
                 break;
             case 31:
@@ -171,11 +170,10 @@ public class Equipment : MonoBehaviour
             case 33:
                 Accessories[Random.Range(0, Accessories.Length)]++;
                 Accessories[Random.Range(0, Accessories.Length)]++;
-                playerStats.GainTools(6);
+                playerStats.GainTools(8);
                 break;
             case 34:
-                playerStats.maxShield += 20;
-                playerStats.GainShield(20);
+                playerStats.Item34();
                 break;
         }
     }

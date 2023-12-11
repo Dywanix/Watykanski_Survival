@@ -131,6 +131,8 @@ public class PlayerController : MonoBehaviour
                 DashCast();
             if (Input.GetKeyDown(KeyCode.M))
                 eq.Accessories[Random.Range(0, eq.Accessories.Length)]++;
+            if (Input.GetKeyDown(KeyCode.T))
+                Item34();
 
             GetInput();
             move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -252,7 +254,7 @@ public class PlayerController : MonoBehaviour
 
         if (eq.Items[13])
         {
-            tempi = eq.guns[eq.equipped].MagazineTotalSize() / 4;
+            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * 3) / 10;
 
             for (int i = 0; i < tempi; i++)
             {
@@ -596,23 +598,23 @@ public class PlayerController : MonoBehaviour
         Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration /= forceIncrease;
-        firedBullet.damage = (27f + toolsStored * 0.1f + level * 0.5f) * DamageDealtMultiplyer(1.06f);
+        firedBullet.damage = (27f + toolsStored * 0.1f + level * 0.6f) * DamageDealtMultiplyer(1.07f);
         if (eq.Items[15])
             firedBullet.damage *= 1.23f;
         if (eq.Items[28])
-            firedBullet.shatter += 0.82f;
+            firedBullet.shatter += 0.91f;
         if (eq.Items[29])
             Effects.venom = true;
         if (eq.Items[30])
             Effects.small = true;
         if (eq.Items[31])
-            firedBullet.duration /= DamageDealtMultiplyer(0.36f);
+            firedBullet.duration /= DamageDealtMultiplyer(0.4f);
     }
 
     float ThrowRange()
     {
         if (eq.Items[31])
-            return throwRange * DamageDealtMultiplyer(0.36f);
+            return throwRange * DamageDealtMultiplyer(0.4f);
         else return throwRange;
     }
 
@@ -688,7 +690,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             FireDirection(Random.Range(0f, 360f), 0f);
-            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.75f / SpeedMultiplyer(1.35f));
+            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.62f / SpeedMultiplyer(1.41f));
         }
     }
 
@@ -875,7 +877,7 @@ public class PlayerController : MonoBehaviour
                 if (undamaged)
                 {
                     undamaged = false;
-                    movementSpeed /= 1.17f;
+                    movementSpeed /= 1.2f;
                 }
             }
             if (eq.Items[12])
@@ -1070,15 +1072,15 @@ public class PlayerController : MonoBehaviour
             if (!undamaged)
             {
                 undamaged = true;
-                movementSpeed *= 1.17f;
+                movementSpeed *= 1.2f;
             }
         }
         if (eq.Items[2])
             Invoke("Rain", 0.2f);
         if (eq.Items[11])
             GainShield(0.1f * maxShield);
-        if (eq.Items[34])
-            protection = true;
+        //if (eq.Items[34])
+            //protection = true;
     }
 
     public void AmmoRefill()
@@ -1198,6 +1200,30 @@ public class PlayerController : MonoBehaviour
                 eq.guns[i].ammo += eq.guns[i].maxAmmo / 3;
             }
         }
+    }
+
+    public void Item34()
+    {
+        if (maxHealth > 5)
+        {
+            temp = maxHealth - 5;
+            maxHealth = 5;
+            if (eq.Items[7])
+                GainDMG(-0.0012f * temp);
+            maxShield += temp;
+        }
+
+        if (health > 5)
+        {
+            temp = health - 5;
+            health = 5;
+            shield += temp * 1.2f;
+        }
+
+        healthBar.fillAmount = health / maxHealth;
+        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
+        shieldBar.fillAmount = shield / maxShield;
+        ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
     }
 
     /*public void GainPerk(int ability, int which)
