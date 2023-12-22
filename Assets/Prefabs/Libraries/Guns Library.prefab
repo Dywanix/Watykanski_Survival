@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic SMG
-  gunSprite: {fileID: 21300000, guid: 1169e0923144be741b6c8dcb09dcdc55, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 1169e0923144be741b6c8dcb09dcdc55, type: 3}
+  gunSprite: {fileID: 21300000, guid: dfd6ca155f42b2940a075b7f36a4e497, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 7b6d61dd8bf1d1b48bb97dc353758750, type: 3}
   damage: 15.6
   fireRate: 0.18
   accuracy: 20.4
@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Poison Gun
-  gunSprite: {fileID: 21300000, guid: dea41ffa6b6e03b4d9f4d7697fe45d1c, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 05dd930e6717f4d40873a9d1dc08b183, type: 3}
+  gunSprite: {fileID: 21300000, guid: ac86e84b1c1b1504792a35ae6bc20385, type: 3}
+  holdingSprite: {fileID: 21300000, guid: f3d1713b60504e242badb4eb084713a1, type: 3}
   damage: 15.8
   fireRate: 0.52
   accuracy: 4.62
@@ -313,8 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Revolver
-  gunSprite: {fileID: 21300000, guid: 38e7fd107afd8cb43926be3afa149d71, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 7d1e5fb32b8618749b03f0b12e16ee3f, type: 3}
+  gunSprite: {fileID: 21300000, guid: ba9e20a1446b7504ba37639e2a0afbb5, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 8bf25f99276602b448a5b6ee9eb1eb8c, type: 3}
   damage: 10.9
   fireRate: 0.56
   accuracy: 4.2
@@ -447,8 +447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Stronger Shotgun
-  gunSprite: {fileID: 21300000, guid: 492beb0739067c34caf0116ee97b8e70, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 492beb0739067c34caf0116ee97b8e70, type: 3}
+  gunSprite: {fileID: 21300000, guid: 54db2b7c348223a4ebd6dbe5e9f859ea, type: 3}
+  holdingSprite: {fileID: 21300000, guid: e64cda2645cc3194b898b18dbb208417, type: 3}
   damage: 22
   fireRate: 0.675
   accuracy: 6
@@ -716,8 +716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Sawed-off Shotgun
-  gunSprite: {fileID: 21300000, guid: 69e381ba1e5298848a342039ada37bbb, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 95884f987087b574c9b1fe0ee83355dd, type: 3}
+  gunSprite: {fileID: 21300000, guid: 85e96698dcd2d4d4691954d8495400cd, type: 3}
+  holdingSprite: {fileID: 21300000, guid: d20dbeeacac6a644188acd5f965909d3, type: 3}
   damage: 12
   fireRate: 0.934
   accuracy: 11.8
@@ -850,8 +850,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Peacemaker
-  gunSprite: {fileID: 21300000, guid: 7ce3c29e969e3d74bb62d33ed6c2dfcb, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 7ce3c29e969e3d74bb62d33ed6c2dfcb, type: 3}
+  gunSprite: {fileID: 21300000, guid: 23106cc8d1d21bc48b63f44444c90fdf, type: 3}
+  holdingSprite: {fileID: 21300000, guid: f3fd3578424368f48be8f65e798df2cd, type: 3}
   damage: 54.3
   fireRate: 1.26
   accuracy: 3.1
@@ -984,8 +984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Rifle
-  gunSprite: {fileID: 21300000, guid: a4331117e7d8a644093d63a8e5986e97, type: 3}
-  holdingSprite: {fileID: 21300000, guid: eedd3b1ea5320414384cdc4e652207e3, type: 3}
+  gunSprite: {fileID: 21300000, guid: 1a151f3a27b68a14ea0bfb32665925b7, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 5b774d76e0168c346bb0742e265c05ad, type: 3}
   damage: 44
   fireRate: 0.835
   accuracy: 4.4
@@ -1252,8 +1252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Shotgun
-  gunSprite: {fileID: 21300000, guid: 86bc91541fc244e489b374344847bbdb, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 86bc91541fc244e489b374344847bbdb, type: 3}
+  gunSprite: {fileID: 21300000, guid: 9685256d4e64d8b419f633a63402872f, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 515cf78fec4e68c45af10ce99272e669, type: 3}
   damage: 14.4
   fireRate: 0.77
   accuracy: 11.4
@@ -1386,8 +1386,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Plasma Gun
-  gunSprite: {fileID: 21300000, guid: dc971bd7e998dfd4491d853afff53324, type: 3}
-  holdingSprite: {fileID: 21300000, guid: dc971bd7e998dfd4491d853afff53324, type: 3}
+  gunSprite: {fileID: 21300000, guid: aa4936ba0a434ee4e9762877b494a915, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 425126176bb07ec4e9e85cc3e72093e0, type: 3}
   damage: 29.9
   fireRate: 0.78
   accuracy: 6.46
@@ -1625,8 +1625,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Burst Handgun
-  gunSprite: {fileID: 21300000, guid: d4af624585374214a876649121385c9f, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 34adf1e2095a6c14f9cffcc17ce362a7, type: 3}
+  gunSprite: {fileID: 21300000, guid: 9e84f8f259371b546b2ec4af6c356d27, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 9fc4febe9c90f1c48bca521fb4778901, type: 3}
   damage: 12.3
   fireRate: 0.774
   accuracy: 7.6
@@ -1759,8 +1759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic SMG
-  gunSprite: {fileID: 21300000, guid: 5c710ba4855069b41ac50bf44f652dee, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 07edf1b7a66f99444910ade102c952b7, type: 3}
+  gunSprite: {fileID: 21300000, guid: 8e9496a4c7efff04ba4388189baad365, type: 3}
+  holdingSprite: {fileID: 21300000, guid: f4be24b6e40b5434290cbf97bb08cfa5, type: 3}
   damage: 14.3
   fireRate: 0.2137
   accuracy: 10.6
@@ -2132,8 +2132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Parallel Gun
-  gunSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
-  holdingSprite: {fileID: 21300000, guid: b3e270e9e7a039f48bad4f438991c2fe, type: 3}
+  gunSprite: {fileID: 21300000, guid: cdd3329d52e45c14bb9ec99e16852deb, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 4213508c53b403946be8af148a98a2d8, type: 3}
   damage: 22
   fireRate: 0.72
   accuracy: 4.8
@@ -2266,8 +2266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: f8653f641d78da245910a8721a81f2f2, type: 3}
-  holdingSprite: {fileID: 21300000, guid: f8653f641d78da245910a8721a81f2f2, type: 3}
+  gunSprite: {fileID: 21300000, guid: 700aeacc1e007254a95def9bcd60d509, type: 3}
+  holdingSprite: {fileID: 21300000, guid: c768554c43211c049aec3ecca1b46b9e, type: 3}
   damage: 19.3
   fireRate: 0.34
   accuracy: 8.3
@@ -2646,8 +2646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic SR
-  gunSprite: {fileID: 21300000, guid: d51aa76ae37380844b82e77d0c6ace02, type: 3}
-  holdingSprite: {fileID: 21300000, guid: d51aa76ae37380844b82e77d0c6ace02, type: 3}
+  gunSprite: {fileID: 21300000, guid: 804480a8be0a905428ac44a1b0c1e0ed, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 99f09b8bf9fc05949a79d962d69d3bb1, type: 3}
   damage: 56.5
   fireRate: 1.25
   accuracy: 2.9
@@ -2780,8 +2780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Revolver
-  gunSprite: {fileID: 21300000, guid: 6b87e001227d9d240b6947cd4a67c364, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 59b29db457001204aa2c8ebfe75ec7dc, type: 3}
+  gunSprite: {fileID: 21300000, guid: ce9517037ebbed745851bcb82aab21e8, type: 3}
+  holdingSprite: {fileID: 21300000, guid: c5fc0c1e7724b3740b931ae97ee001de, type: 3}
   damage: 26.8
   fireRate: 0.873
   accuracy: 6.84
@@ -2914,8 +2914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Blob Shotgun
-  gunSprite: {fileID: 21300000, guid: e590f60fbd15cca41b0586ac8bc4f892, type: 3}
-  holdingSprite: {fileID: 21300000, guid: e590f60fbd15cca41b0586ac8bc4f892, type: 3}
+  gunSprite: {fileID: 21300000, guid: 88ce3c41ae62a8e4abf0604a12c07c11, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 99b07776f4e1c20448433639725caaca, type: 3}
   damage: 33
   fireRate: 0.96
   accuracy: 9.5
@@ -3106,8 +3106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 64aec4ef9ab94b044b69b8e56f00aef0, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 64aec4ef9ab94b044b69b8e56f00aef0, type: 3}
+  gunSprite: {fileID: 21300000, guid: 5dc84ee82a44b2949ae9daca121a2726, type: 3}
+  holdingSprite: {fileID: 21300000, guid: ede763b09488982468e6f4d4d2b67e18, type: 3}
   damage: 17
   fireRate: 0.26
   accuracy: 9.22
@@ -3240,8 +3240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Reaper
-  gunSprite: {fileID: 21300000, guid: b2a98436cbdf98f40bcfa47efe8f507a, type: 3}
-  holdingSprite: {fileID: 21300000, guid: b2a98436cbdf98f40bcfa47efe8f507a, type: 3}
+  gunSprite: {fileID: 21300000, guid: db02cf08056ddbe41866acb36a804233, type: 3}
+  holdingSprite: {fileID: 21300000, guid: b6a13897e9b5e7247b6fe358a78b549c, type: 3}
   damage: 36
   fireRate: 0.55
   accuracy: 5
@@ -3374,8 +3374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Plasma Gun
-  gunSprite: {fileID: 21300000, guid: 1582ac1f9ee7d8f4b8a131bf7b01ce0b, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 1582ac1f9ee7d8f4b8a131bf7b01ce0b, type: 3}
+  gunSprite: {fileID: 21300000, guid: 18c01446f67fc44498870e63b4f1ef20, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 259f811e73d8d1f459f87a0f69913321, type: 3}
   damage: 27.5
   fireRate: 1
   accuracy: 5.7
@@ -3508,8 +3508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Burst Fire AR
-  gunSprite: {fileID: 21300000, guid: 1dce1d0b66dcb4a409abb9f18a797732, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 1dce1d0b66dcb4a409abb9f18a797732, type: 3}
+  gunSprite: {fileID: 21300000, guid: d3fa391d9cf5c244d921d84337265e28, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 55687f8b068b6594e96819fad6cc1f53, type: 3}
   damage: 20.6
   fireRate: 1.23
   accuracy: 6.33
@@ -3776,8 +3776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Howitzer
-  gunSprite: {fileID: 21300000, guid: 809504842ed60554e92a04f4b393ef02, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 809504842ed60554e92a04f4b393ef02, type: 3}
+  gunSprite: {fileID: 21300000, guid: 39c885feb63538a4bbc83ebd22faf706, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 9fbbc530911891f4db5f4650e9653011, type: 3}
   damage: 34.2
   fireRate: 0.78
   accuracy: 6
@@ -3910,8 +3910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Jumping SMG
-  gunSprite: {fileID: 21300000, guid: daeb9dc0dc7a85d4c8d9003a64e556a4, type: 3}
-  holdingSprite: {fileID: 21300000, guid: dc09d103b84c9624ba869284c2a53991, type: 3}
+  gunSprite: {fileID: 21300000, guid: 1d1ca19d0e93ebf4db33bc2e6b8644c0, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 50668a7e633ca0f49b8f8e32d0d8170b, type: 3}
   damage: 18.3
   fireRate: 0.252
   accuracy: 7.9

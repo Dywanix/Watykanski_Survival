@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2f04142dffaafe043bb654436837e1c5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1f0dfbeec8abbd448958b3f05921e055, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -33,7 +33,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: idle_sprite_0
+  m_Name: gunslinger_anim
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: moveSpeed
@@ -126,7 +126,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4c2fc8e15a1de094aa3507f678dce786, type: 2}
+  m_Motion: {fileID: 7400000, guid: d65c994f405d89a4f9ecc00d2e4c34f9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
