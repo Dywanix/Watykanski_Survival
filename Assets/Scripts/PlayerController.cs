@@ -1078,7 +1078,7 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[2])
             Invoke("Rain", 0.2f);
         if (eq.Items[11])
-            GainShield(0.1f * maxShield);
+            GainShield(0.106f * maxShield);
         //if (eq.Items[34])
             //protection = true;
     }
@@ -1112,7 +1112,7 @@ public class PlayerController : MonoBehaviour
     {
         fireRateBonus += value;
         if (eq.Items[32])
-            cooldownReduction += value / 3f;
+            cooldownReduction += value / 2.8f;
     }
 
     public void GainMS(float value)

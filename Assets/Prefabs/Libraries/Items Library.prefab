@@ -113,7 +113,7 @@ MonoBehaviour:
   - Grenades leave Poison Cloud for 2,5s. Grenade gains additional Charge
   - Grenades explode into 3 smaller ones that deal 45% Damage each
   - Increase Damage by 6%. Increase Grenade range based on Damage Increase
-  - Increase Fire Rate by 7,2%. Gain 1% Cooldown Reduction for every 3% Fire Rate
+  - Increase Fire Rate by 7,2%. Gain 1% Cooldown Reduction for every 2,8% Fire Rate
     Increase
   - Gain 2 random Accessories & 8 Tools
-  - Increase Max Shield by 20. Prevent first instance of damage each Combat
+  - Transform Max Health into Shield.
