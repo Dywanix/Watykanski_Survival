@@ -12,7 +12,8 @@ public class Map : MonoBehaviour
     public TMPro.TextMeshProUGUI RoundsCount;
 
     public PrizeChoice Prizes;
-    public int rareChance, epicChance, luck;
+    public GunPickHud Guns;
+    public int level, rareChance, epicChance, luck;
     int roll;
 
     void Start()
@@ -59,5 +60,20 @@ public class Map : MonoBehaviour
     public void ChoosePrize(int rarity)
     {
         Prizes.Open(rarity);
+    }
+
+    public void GunPrize()
+    {
+        playerStats.free = false;
+        playerStats.menuOpened = true;
+        Guns.Open(level);
+    }
+
+    public void PickGun(int which)
+    {
+        playerStats.PickUpGun(Guns.rolls[which]);
+        playerStats.free = true;
+        playerStats.menuOpened = false;
+        Guns.Hud.SetActive(false);
     }
 }

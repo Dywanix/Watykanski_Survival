@@ -6,7 +6,7 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
-    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors;
+    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize;
     public GameObject[] Mobs, Prizes, SndPrizes;
 
     bool fight;
@@ -149,6 +149,7 @@ public class Room : MonoBehaviour
             fight = false;
             SpawnPrize();
             RightDoors.SetActive(false);
+            map.level++;
             map.RoundBar.SetActive(false);
             for (int i = 0; i < BarrelSpawn.Length; i++)
             {
@@ -172,5 +173,7 @@ public class Room : MonoBehaviour
         else if (roll < 4)
             SndPrizes[0].SetActive(true);
         else SndPrizes[1].SetActive(true);
+
+        GunPrize.SetActive(true);
     }
 }

@@ -33,7 +33,8 @@ public class PlayerController : MonoBehaviour
     public float dHealth, health, maxShield, dShield, shield, poison,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
     public int level = 1, dayCount = 1, luck;
-    bool undamaged, dashSecondCharge, protection;
+    public bool undamaged;
+    bool dashSecondCharge, protection;
     int tempi, bonusTool;
     float temp, wrath;
 
@@ -286,7 +287,7 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[9])
         {
             movementSpeed *= 1.25f;
-            Invoke("SprintEnd", 2.25f);
+            Invoke("SprintEnd", 2.5f);
         }
     }
 
@@ -487,7 +488,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Items[17])
-            eq.OnHit(1.16f);
+            eq.OnHit(1.2f);
         else eq.OnHit(1f);
     }
 
@@ -557,7 +558,7 @@ public class PlayerController : MonoBehaviour
                 firedBullet.pierce += eq.guns[eq.equipped].Accessories[8];
 
             if (eq.Items[17])
-                eq.OnHit(0.24f);
+                eq.OnHit(0.28f);
         }
     }
 
@@ -871,13 +872,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             if (eq.Items[19])
-                value *= 1.25f;
+                value *= 1.24f;
             if (eq.Items[0])
             {
                 if (undamaged)
                 {
                     undamaged = false;
-                    movementSpeed /= 1.2f;
+                    movementSpeed -= 60f;
+                    fireRateBonus -= 0.12f;
                 }
             }
             if (eq.Items[12])
@@ -895,7 +897,7 @@ public class PlayerController : MonoBehaviour
                 healthBar.fillAmount = health / maxHealth;
 
                 if (eq.Items[25] && !day)
-                    wrath += value * 0.003f;
+                    wrath += value * 0.0032f;
             }
             else
             {
@@ -911,7 +913,7 @@ public class PlayerController : MonoBehaviour
                     healthBar.fillAmount = health / maxHealth;
 
                     if (eq.Items[25] && !day)
-                        wrath += value * 0.003f;
+                        wrath += value * 0.0032f;
                 }
                 shieldBar.fillAmount = shield / maxShield;
             }
@@ -974,6 +976,8 @@ public class PlayerController : MonoBehaviour
     {
         temp = damageBonus;
         temp *= 1f + wrath;
+        if (eq.Items[19])
+            temp *= 1.36f;
         temp *= 1f + (temp - 1f) * efficiency;
         return temp;
     }
@@ -1072,7 +1076,8 @@ public class PlayerController : MonoBehaviour
             if (!undamaged)
             {
                 undamaged = true;
-                movementSpeed *= 1.2f;
+                movementSpeed += 60f;
+                fireRateBonus += 0.12f;
             }
         }
         if (eq.Items[2])
@@ -1113,6 +1118,13 @@ public class PlayerController : MonoBehaviour
         fireRateBonus += value;
         if (eq.Items[32])
             cooldownReduction += value / 2.8f;
+    }
+
+    public void GainCR(float value)
+    {
+        if (eq.Items[5])
+            value *= 2;
+        cooldownReduction += value;
     }
 
     public void GainMS(float value)

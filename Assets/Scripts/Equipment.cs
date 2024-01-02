@@ -81,6 +81,11 @@ public class Equipment : MonoBehaviour
         ShowTooltip(which);
         switch (which)
         {
+            case 0:
+                playerStats.undamaged = true;
+                playerStats.movementSpeed += 60f;
+                playerStats.fireRateBonus += 0.12f;
+                break;
             case 3:
                 playerStats.maxShield += 20;
                 playerStats.GainShield(20);
@@ -89,7 +94,8 @@ public class Equipment : MonoBehaviour
                 playerStats.dashBaseCooldown /= 1.18f;
                 break;
             case 5:
-                playerStats.cooldownReduction += 0.46f;
+                playerStats.cooldownReduction += playerStats.cooldownReduction - 1f;
+                playerStats.GainCR(0.12f);
                 break;
             case 6:
                 playerStats.GainHP(10);
@@ -133,9 +139,6 @@ public class Equipment : MonoBehaviour
                 playerStats.additionalCritChance += 0.09f;
                 playerStats.luck += 2;
                 playerStats.map.luck += 2;
-                break;
-            case 19:
-                playerStats.GainDMG(0.35f);
                 break;
             case 21:
                 playerStats.GainDMG(0.06f);
