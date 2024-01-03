@@ -1330,7 +1330,7 @@ MonoBehaviour:
   info: Reloads 1 bullet at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 6.4
+  cameraShake: 3.2
   shakeDuration: 0.064
   bulletsLeft: 8
   bonusAmmo: 0
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   info: Reloads 2 bullets at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 11.1
+  cameraShake: 5.55
   shakeDuration: 0.108
   bulletsLeft: 8
   bonusAmmo: 0
@@ -1870,7 +1870,7 @@ MonoBehaviour:
   info: +20% Crit Damage
   level: 0
   LevelCostCharge: 0
-  cameraShake: 12
+  cameraShake: 6
   shakeDuration: 0.14
   bulletsLeft: 6
   bonusAmmo: 0
@@ -2246,7 +2246,7 @@ MonoBehaviour:
   info: Fires in a burst of 2
   level: 0
   LevelCostCharge: 0
-  cameraShake: 11.2
+  cameraShake: 5.6
   shakeDuration: 0.151
   bulletsLeft: 22
   bonusAmmo: 0
@@ -2757,7 +2757,7 @@ MonoBehaviour:
   info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 6.4
+  cameraShake: 3.2
   shakeDuration: 0.064
   bulletsLeft: 30
   bonusAmmo: 0
@@ -3165,7 +3165,7 @@ MonoBehaviour:
   info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 8
+  cameraShake: 4
   shakeDuration: 0.08
   bulletsLeft: 24
   bonusAmmo: 0
@@ -3300,7 +3300,7 @@ MonoBehaviour:
   info: Has 1 more Accessory Slot
   level: 0
   LevelCostCharge: 0
-  cameraShake: 6.7
+  cameraShake: 3.35
   shakeDuration: 0.067
   bulletsLeft: 23
   bonusAmmo: 0
@@ -4263,7 +4263,7 @@ MonoBehaviour:
   info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 11.2
+  cameraShake: 5.6
   shakeDuration: 0.096
   bulletsLeft: 18
   bonusAmmo: 0
@@ -4568,7 +4568,7 @@ MonoBehaviour:
   info: Fires in a burst of 3
   level: 0
   LevelCostCharge: 0
-  cameraShake: 7.2
+  cameraShake: 3.6
   shakeDuration: 0.072
   bulletsLeft: 27
   bonusAmmo: 0
@@ -4838,7 +4838,7 @@ MonoBehaviour:
   info: Has 40% Shatter
   level: 0
   LevelCostCharge: 0
-  cameraShake: 6.4
+  cameraShake: 3.2
   shakeDuration: 0.08
   bulletsLeft: 1
   bonusAmmo: 0
@@ -5688,7 +5688,7 @@ MonoBehaviour:
   info: Reloads 1 bullet at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 6.4
+  cameraShake: 3.2
   shakeDuration: 0.064
   bulletsLeft: 8
   bonusAmmo: 0
