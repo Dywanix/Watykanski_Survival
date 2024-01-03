@@ -111,6 +111,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.14
@@ -245,6 +246,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 8.96
@@ -379,6 +381,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 8
@@ -513,6 +516,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 2.029
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 21.5
@@ -647,6 +651,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.51
@@ -782,6 +787,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 13.8
@@ -916,6 +922,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 9.9
@@ -1050,6 +1057,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 21.5
@@ -1184,6 +1192,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.72
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 9.2
@@ -1270,7 +1279,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1238829799000623049
 MonoBehaviour:
@@ -1318,10 +1327,11 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: Reloads 1 bullet at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 8
-  shakeDuration: 0.08
+  cameraShake: 6.4
+  shakeDuration: 0.064
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1452,10 +1462,11 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: Reloads 2 bullets at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 13.8
-  shakeDuration: 0.134
+  cameraShake: 11.1
+  shakeDuration: 0.108
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1586,6 +1597,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 24.3
@@ -1720,6 +1732,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 10.8
@@ -1854,10 +1867,11 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: +20% Crit Damage
   level: 0
   LevelCostCharge: 0
-  cameraShake: 15
-  shakeDuration: 0.175
+  cameraShake: 12
+  shakeDuration: 0.14
   bulletsLeft: 6
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1988,6 +2002,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 1.22
@@ -2093,6 +2108,7 @@ MonoBehaviour:
   burstDelay: 0.17
   onHitModifier: 1.05
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 13.9
@@ -2227,10 +2243,11 @@ MonoBehaviour:
   burstDelay: 0.14
   onHitModifier: 1
   ammoRegain: 0
+  info: Fires in a burst of 2
   level: 0
   LevelCostCharge: 0
-  cameraShake: 13.9
-  shakeDuration: 0.188
+  cameraShake: 11.2
+  shakeDuration: 0.151
   bulletsLeft: 22
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2361,6 +2378,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.6
@@ -2495,6 +2513,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 6.34
@@ -2629,6 +2648,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 1.22
@@ -2734,10 +2754,11 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 8
-  shakeDuration: 0.08
+  cameraShake: 6.4
+  shakeDuration: 0.064
   bulletsLeft: 30
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2868,6 +2889,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.8
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 11.5
@@ -3002,6 +3024,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.144
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 9.8
@@ -3091,7 +3114,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &530555170747924727
 MonoBehaviour:
@@ -3139,16 +3162,152 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 10
-  shakeDuration: 0.1
+  cameraShake: 8
+  shakeDuration: 0.08
   bulletsLeft: 24
   bonusAmmo: 0
   spreadMultiplyer: 1
   special: 0
   parts: 0
   MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000a0000000c00000007000000
+  Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.9
+  - 0.8
+  - 0.75
+  - 19
+  LevelUpBonuses:
+  - 0.8
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 1.02
+  - 0.02
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +0,9 Damage
+  - +20% Accuracy
+  - -25% Reload Time
+  - +19 Max Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+--- !u!1 &4885709264730667964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1395087325996044592}
+  - component: {fileID: 4608076951876019979}
+  m_Layer: 0
+  m_Name: PM #2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1395087325996044592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885709264730667964}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065234181681847253}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4608076951876019979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885709264730667964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic AR
+  gunSprite: {fileID: 21300000, guid: 8e9496a4c7efff04ba4388189baad365, type: 3}
+  holdingSprite: {fileID: 21300000, guid: f4be24b6e40b5434290cbf97bb08cfa5, type: 3}
+  damage: 14.7
+  fireRate: 0.19
+  accuracy: 6.6
+  penetration: 0
+  critChance: 0.23
+  reloadTime: 1.12
+  range: 0.88
+  force: 25
+  heft: 0.1
+  magazineSize: 23
+  ammo: 121
+  maxAmmo: 144
+  targetArea: 0
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 0
+  info: Has 1 more Accessory Slot
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 6.7
+  shakeDuration: 0.067
+  bulletsLeft: 23
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
   TakenSlots: 0
   LevelCost: 75
   StoredCostReduction: 0
@@ -3273,6 +3432,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 8.4
@@ -3382,6 +3542,8 @@ MonoBehaviour:
   - {fileID: 530555170747924727}
   - {fileID: 2164643823217467334}
   - {fileID: 3432866884392792932}
+  - {fileID: 4608076951876019979}
+  - {fileID: 4340804945093319756}
   baseGuns:
   - {fileID: 3006803437225745943}
   - {fileID: 3387941136709306523}
@@ -3500,6 +3662,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 27.6
@@ -3634,6 +3797,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 15
@@ -3768,6 +3932,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.7
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 24.6
@@ -3960,6 +4125,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 10
@@ -4046,7 +4212,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3432866884392792932
 MonoBehaviour:
@@ -4094,10 +4260,11 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 14
-  shakeDuration: 0.12
+  cameraShake: 11.2
+  shakeDuration: 0.096
   bulletsLeft: 18
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -4228,6 +4395,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 1
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 15
@@ -4349,7 +4517,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2164643823217467334
 MonoBehaviour:
@@ -4393,14 +4561,15 @@ MonoBehaviour:
   overload: 0
   slowDuration: 0
   stunDuration: 0
-  burst: 3
+  burst: 2
   burstDelay: 0.07
   onHitModifier: 1
   ammoRegain: 0
+  info: Fires in a burst of 3
   level: 0
   LevelCostCharge: 0
-  cameraShake: 9
-  shakeDuration: 0.09
+  cameraShake: 7.2
+  shakeDuration: 0.072
   bulletsLeft: 27
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -4531,6 +4700,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 2.703
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 12
@@ -4665,10 +4835,11 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
+  info: Has 40% Shatter
   level: 0
   LevelCostCharge: 0
-  cameraShake: 8
-  shakeDuration: 0.1
+  cameraShake: 6.4
+  shakeDuration: 0.08
   bulletsLeft: 1
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -4750,6 +4921,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7633584990623121729}
+  - {fileID: 1395087325996044592}
+  - {fileID: 677094948157550373}
   - {fileID: 2266680376312615749}
   - {fileID: 2490719051583080137}
   - {fileID: 3491003624677725860}
@@ -4835,6 +5008,7 @@ MonoBehaviour:
   burstDelay: 0.2
   onHitModifier: 1
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 8.7
@@ -4969,6 +5143,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.576
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 21.9
@@ -5103,6 +5278,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1.576
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 24
@@ -5237,6 +5413,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0.98
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 7.7
@@ -5372,6 +5549,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0.9
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 17.3
@@ -5429,6 +5607,141 @@ MonoBehaviour:
   bulletPrefab:
   - {fileID: 3982066536839230301, guid: 1b083aa83d10efd46a5f8535ea27f195, type: 3}
   - {fileID: 1721548041437454189, guid: 18d501873df40dc4ab56dba214283c6a, type: 3}
+--- !u!1 &9055387389709651431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 677094948157550373}
+  - component: {fileID: 4340804945093319756}
+  m_Layer: 0
+  m_Name: SG #2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &677094948157550373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055387389709651431}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065234181681847253}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4340804945093319756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055387389709651431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic AR
+  gunSprite: {fileID: 21300000, guid: 1a151f3a27b68a14ea0bfb32665925b7, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 5b774d76e0168c346bb0742e265c05ad, type: 3}
+  damage: 50.8
+  fireRate: 0.535
+  accuracy: 7.6
+  penetration: 0
+  critChance: 0.12
+  reloadTime: 0.32
+  range: 0.99
+  force: 25
+  heft: 0.2
+  magazineSize: 9
+  ammo: 48
+  maxAmmo: 57
+  targetArea: 0
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 0
+  info: Reloads 1 bullet at a time
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 6.4
+  shakeDuration: 0.064
+  bulletsLeft: 8
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000a0000000c00000007000000
+  Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.9
+  - 0.8
+  - 0.75
+  - 19
+  LevelUpBonuses:
+  - 0.8
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 1.02
+  - 0.02
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +0,9 Damage
+  - +20% Accuracy
+  - -25% Reload Time
+  - +19 Max Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 1
+  individualReloadCount: 1
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &9064302997938864561
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,6 +5820,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 0
   ammoRegain: 0
+  info: 
   level: 0
   LevelCostCharge: 0
   cameraShake: 1

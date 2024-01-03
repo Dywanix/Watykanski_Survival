@@ -87,7 +87,7 @@ public class GunPickHud : MonoBehaviour
             else DamageValue[i].text = gun[i].damage.ToString("0.0");
             FireRateValue[i].text = (1f / gun[i].fireRate).ToString("0.00") + "/s";
             CritValue[i].text = (gun[i].critChance * 100).ToString("0") + "%";
-            AccuracyValue[i].text = ((1f - gun[i].accuracy) * 100f).ToString("0.0") + "%";
+            AccuracyValue[i].text = ((100f - gun[i].accuracy)).ToString("0.0") + "%";
             ReloadValue[i].text = gun[i].reloadTime.ToString("0.00") + "s";
             MagazineValue[i].text = gun[i].magazineSize.ToString("0");
             AmmoValue[i].text = gun[i].maxAmmo.ToString("0");

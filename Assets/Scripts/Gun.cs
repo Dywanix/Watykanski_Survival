@@ -38,6 +38,7 @@ public class Gun : MonoBehaviour
     public float burstDelay;
     public float onHitModifier;
     public int ammoRegain;
+    public string info;
 
     [Header("Inne Staty")]
     public int level;
