@@ -164,6 +164,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -299,6 +301,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -434,6 +438,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -569,6 +575,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -704,6 +712,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -840,6 +850,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 1
   individualReloadCount: 2
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -975,6 +987,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1110,6 +1124,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1245,6 +1261,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1303,7 +1321,7 @@ MonoBehaviour:
   critChance: 0.1
   reloadTime: 0.425
   range: 0.94
-  force: 25
+  force: 20
   heft: 0.1
   magazineSize: 8
   ammo: 40
@@ -1380,6 +1398,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1438,7 +1458,7 @@ MonoBehaviour:
   critChance: 0.09
   reloadTime: 0.67
   range: 0.9
-  force: 25
+  force: 20
   heft: 0.08
   magazineSize: 8
   ammo: 0
@@ -1515,6 +1535,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 1
   individualReloadCount: 2
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1650,6 +1672,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1785,6 +1809,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -1843,7 +1869,7 @@ MonoBehaviour:
   critChance: 0.22
   reloadTime: 1.22
   range: 0.92
-  force: 25
+  force: 20
   heft: 0.1
   magazineSize: 6
   ammo: 0
@@ -1920,6 +1946,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2026,6 +2054,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2161,6 +2191,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2219,7 +2251,7 @@ MonoBehaviour:
   critChance: 0.19
   reloadTime: 1.52
   range: 0.97
-  force: 25
+  force: 20
   heft: 0.07
   magazineSize: 22
   ammo: 0
@@ -2296,6 +2328,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2431,6 +2465,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2566,6 +2602,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2672,6 +2710,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2730,7 +2770,7 @@ MonoBehaviour:
   critChance: 0.24
   reloadTime: 1
   range: 0.87
-  force: 25
+  force: 20
   heft: 0.09
   magazineSize: 30
   ammo: 150
@@ -2807,6 +2847,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2942,6 +2984,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3077,6 +3121,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3138,7 +3184,7 @@ MonoBehaviour:
   critChance: 0.13
   reloadTime: 1.3
   range: 0.95
-  force: 25
+  force: 20
   heft: 0.11
   magazineSize: 24
   ammo: 108
@@ -3215,6 +3261,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3273,7 +3321,7 @@ MonoBehaviour:
   critChance: 0.23
   reloadTime: 1.12
   range: 0.88
-  force: 25
+  force: 20
   heft: 0.1
   magazineSize: 23
   ammo: 121
@@ -3350,6 +3398,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3485,6 +3535,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3715,6 +3767,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3850,6 +3904,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -3985,6 +4041,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4178,6 +4236,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4236,7 +4296,7 @@ MonoBehaviour:
   critChance: 0.18
   reloadTime: 0.86
   range: 1.06
-  force: 25
+  force: 20
   heft: 0.13
   magazineSize: 18
   ammo: 54
@@ -4313,6 +4373,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4448,6 +4510,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4541,7 +4605,7 @@ MonoBehaviour:
   critChance: 0.15
   reloadTime: 1.3
   range: 0.97
-  force: 25
+  force: 20
   heft: 0.1
   magazineSize: 27
   ammo: 138
@@ -4618,6 +4682,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4753,6 +4819,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -4811,7 +4879,7 @@ MonoBehaviour:
   critChance: 0.15
   reloadTime: 0
   range: 1
-  force: 25
+  force: 20
   heft: 0.07
   magazineSize: 1
   ammo: 0
@@ -4888,6 +4956,8 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -5061,6 +5131,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -5196,6 +5268,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -5331,6 +5405,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -5466,6 +5542,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -5602,6 +5680,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -5661,7 +5741,7 @@ MonoBehaviour:
   critChance: 0.12
   reloadTime: 0.32
   range: 0.99
-  force: 25
+  force: 20
   heft: 0.2
   magazineSize: 9
   ammo: 48
@@ -5738,6 +5818,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -5844,6 +5926,8 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:

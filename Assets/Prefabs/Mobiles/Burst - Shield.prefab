@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: shieldRechargeDelay
-      value: 2.7
+      value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 7203879946272198725, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: m_IsActive

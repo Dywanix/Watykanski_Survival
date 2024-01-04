@@ -158,7 +158,7 @@ public class PrizeChoice : MonoBehaviour
                         map.luck += 1;
                         playerStats.luck += 1;
                         map.rareChance += 8 + (map.rareChance * 2 + map.luck * 3) / 6;
-                        map.epicChance += 4 + (map.epicChance + map.luck) / 5;
+                        map.epicChance += 5 + (map.epicChance + map.luck) / 4;
                         break;
                 }
                 break;
@@ -188,7 +188,7 @@ public class PrizeChoice : MonoBehaviour
                             playerStats.GainFR(0.032f);
                             break;
                         case 6:
-                            playerStats.GainMS(20f);
+                            playerStats.GainMS(5f);
                             break;
                         case 7:
                             playerStats.cooldownReduction += 0.053f;

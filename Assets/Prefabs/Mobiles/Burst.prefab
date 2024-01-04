@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: force
-      value: 10.8
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: health
@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: minRange
-      value: 5.8
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: Projectal
@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: attackRange
-      value: 17.4
+      value: 10.2
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: attackSpeed
@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: aimingMovement
-      value: 0.77
+      value: 0.88
       objectReference: {fileID: 0}
     - target: {fileID: 4847288113050027004, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: m_RootOrder

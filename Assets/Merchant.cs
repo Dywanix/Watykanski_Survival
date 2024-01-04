@@ -154,7 +154,7 @@ public class Merchant : MonoBehaviour
                     playerStats.GainFR(0.032f);
                     break;
                 case 4:
-                    playerStats.GainMS(20f);
+                    playerStats.GainMS(4f);
                     break;
                 case 5:
                     playerStats.GainTools(10);

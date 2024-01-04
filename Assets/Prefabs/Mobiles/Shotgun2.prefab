@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: force
-      value: 10.7
+      value: 6.2
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: health
@@ -85,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: minRange
-      value: 4.6
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: tenacity
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: attackRange
-      value: 13.8
+      value: 8.3
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: attackSpeed

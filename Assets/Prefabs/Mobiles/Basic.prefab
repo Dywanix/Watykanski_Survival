@@ -1200,7 +1200,7 @@ MonoBehaviour:
   shieldRechargeRate: 0
   shieldRechargeDelay: 0
   movementSpeed: 3.41
-  aimingMovement: 0.66
+  aimingMovement: 0.77
   tenacity: 1
   stun: 0.82
   flank: 0
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   attackDamage: 16
   attackPoison: 0
   attackSpeed: 2.67
-  attackRange: 15.5
+  attackRange: 8.4
   ranged: 1
   throws: 0
   bulletCount: 1
@@ -1216,8 +1216,8 @@ MonoBehaviour:
   bulletSpread: 0
   burstDelay: 0
   accuracy: 9.6
-  force: 11.5
-  minRange: 5.1
+  force: 7.2
+  minRange: 2.8
   DeathDrop: {fileID: 0}
   scrapChance: 0.21
   itemChance: 0.042

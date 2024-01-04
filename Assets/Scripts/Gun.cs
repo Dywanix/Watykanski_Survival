@@ -54,12 +54,16 @@ public class Gun : MonoBehaviour
     float temp;
     int tempi;
 
+    [Header("Special Bullets")]
+    public float poisonBulletChance;
+    public float plasmaBulletChance;
+
     [Header("Multiplikatory Stat")]
     public float damageMultiplier;
     public int magazineMultiplier = 1;
     //public float fireRateMultiplier;
 
-    [Header("Graficzne Staty")]
+    [Header("Pociski")]
     public GameObject[] bulletPrefab;
 
     void Start()

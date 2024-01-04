@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6453456993202942366, guid: 884250bbc44ced94da5bb4fbe46f00e7, type: 3}
       propertyPath: bulletForce
-      value: 8.8
+      value: 5.7
       objectReference: {fileID: 0}
     - target: {fileID: -6453456993202942366, guid: 884250bbc44ced94da5bb4fbe46f00e7, type: 3}
       propertyPath: bulletsCount

@@ -1307,6 +1307,7 @@ MonoBehaviour:
   gunImage: {fileID: 2129462728609157379}
   firedBullet: {fileID: 0}
   Grenade: {fileID: 3080163295848660013, guid: 0e206f122f054ec448c3733f8c8656a2, type: 3}
+  CurrentBullet: {fileID: 0}
   Effects: {fileID: 0}
   map: {fileID: 0}
   mouseLeft: 0
@@ -1326,16 +1327,16 @@ MonoBehaviour:
   poison: 0
   damageBonus: 1.065
   fireRateBonus: 1.058
-  movementSpeed: 547.5
+  movementSpeed: 438
   additionalCritChance: 0
   cooldownReduction: 1.024
   forceIncrease: 1
-  dashBaseCooldown: 6
+  dashBaseCooldown: 5.8
   maxDashCooldown: 0
   dashCooldown: 0
   grenadeMaxCharges: 0
   grenadeCharges: 0
-  throwRange: 22
+  throwRange: 17.6
   grenadeBaseCooldown: 10
   grenadeMaxCooldown: 0
   grenadeCooldown: 0
@@ -1460,6 +1461,9 @@ MonoBehaviour:
   Drones:
   - {fileID: 706043509644104363}
   Tooltip: {fileID: 234213453934805638}
+  PoisonBulletPrefab: {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+  PlasmaBulletPrefab: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+  PlasmaPoisonBulletPrefab: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
   Laser: {fileID: 1191445889087333895, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
 --- !u!1 &2129462728456948370

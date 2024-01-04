@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge, GrenadeCharge;
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage;
     public Bullet firedBullet;
-    public GameObject Grenade;
+    public GameObject Grenade, CurrentBullet;
     public GrenadeEffects Effects;
     private EnemyBullet collidedBullet;
     public Map map;
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         Invoke("Tick", 0.8f);
         if (eq.gambler)
         {
-            temp = 34.8f;
+            temp = 37.6f;
             while (temp > 0f)
             {
                 tempi = Random.Range(0, 7);
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
                         temp -= 1.25f;
                         break;
                     case 3:
-                        GainMS(5f);
+                        GainMS(1f);
                         temp -= 1f;
                         break;
                     case 4:
@@ -250,7 +250,7 @@ public class PlayerController : MonoBehaviour
 
     void Dash()
     {
-        dash = 2000f + 2 * movementSpeed;
+        dash = 1500f + 1.875f * movementSpeed;
         Invoke("Dashed", 0.13f);
 
         if (eq.Items[13])
@@ -383,7 +383,7 @@ public class PlayerController : MonoBehaviour
                 }
                 if (eq.guns[eq.equipped].Accessories[21] > 0)
                 {
-                    temp = 1f + 0.35f * eq.guns[eq.equipped].Accessories[21] * (eq.guns[eq.equipped].MagazineTotalSize() - eq.guns[eq.equipped].bulletsLeft) / eq.guns[eq.equipped].MagazineTotalSize();
+                    temp = 1f + 0.45f * eq.guns[eq.equipped].Accessories[21] * (eq.guns[eq.equipped].MagazineTotalSize() - eq.guns[eq.equipped].bulletsLeft) / eq.guns[eq.equipped].MagazineTotalSize();
                     NewTask(eq.guns[eq.equipped].fireRate / temp);
                 }
                 else NewTask(eq.guns[eq.equipped].fireRate);
@@ -413,14 +413,14 @@ public class PlayerController : MonoBehaviour
                 Fire();
             if (!eq.guns[eq.equipped].infiniteMagazine)
             {
-                if (eq.guns[eq.equipped].Accessories[14] * 0.18f < Random.Range(0f, 1f))
+                if (eq.guns[eq.equipped].Accessories[14] * 0.2f < Random.Range(0f, 1f))
                     eq.guns[eq.equipped].bulletsLeft--;
                 DisplayAmmo();
             }
         }
         else
         {
-            if (eq.guns[eq.equipped].Accessories[14] * 0.18f > Random.Range(0f, 1f))
+            if (eq.guns[eq.equipped].Accessories[14] * 0.2f > Random.Range(0f, 1f))
             {
                 Fire();
                 if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
@@ -438,7 +438,7 @@ public class PlayerController : MonoBehaviour
 
         if (!eq.guns[eq.equipped].infiniteMagazine)
         {
-            if (eq.guns[eq.equipped].Accessories[14] * 0.18f < Random.Range(0f, 1f))
+            if (eq.guns[eq.equipped].Accessories[14] * 0.2f < Random.Range(0f, 1f))
                 eq.guns[eq.equipped].bulletsLeft--;
             DisplayAmmo();
         }
@@ -474,14 +474,14 @@ public class PlayerController : MonoBehaviour
             for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
             {
                 Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
-                GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
+                GameObject bullet = Instantiate(SetBulletPrefab(), Barrel.position, Barrel.rotation);
                 Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
                 firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
                 SetBullet(1f);
                 bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
             }
         }
-        if (eq.guns[eq.equipped].Accessories[15] * 0.15f >= Random.Range(0f, 1f))
+        if (eq.guns[eq.equipped].Accessories[15] * 0.18f >= Random.Range(0f, 1f))
         {
             FireDirection(-32f, accuracy_change);
             FireDirection(32f, accuracy_change);
@@ -497,7 +497,7 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
         {
             Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + direction + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
-            GameObject bullet = Instantiate(eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)], Barrel.position, Barrel.rotation);
+            GameObject bullet = Instantiate(SetBulletPrefab(), Barrel.position, Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet(1f);
@@ -507,6 +507,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public GameObject SetBulletPrefab()
+    {
+        if (eq.guns[eq.equipped].plasmaBulletChance > Random.Range(0f, 1f))
+        {
+            if (eq.guns[eq.equipped].poisonBulletChance > Random.Range(0f, 1f))
+            {
+                CurrentBullet = eq.PlasmaPoisonBulletPrefab;
+            }
+            else CurrentBullet = eq.PlasmaBulletPrefab;
+        }
+        else if (eq.guns[eq.equipped].poisonBulletChance > Random.Range(0f, 1f))
+        {
+            CurrentBullet = eq.PoisonBulletPrefab;
+        }
+        else
+        {
+            CurrentBullet = eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)];
+        }
+
+        return CurrentBullet;
+    }
+
     public void SetBullet(float efficiency)
     {
         firedBullet.duration = eq.guns[eq.equipped].range;
@@ -514,13 +536,9 @@ public class PlayerController : MonoBehaviour
         firedBullet.mass = eq.guns[eq.equipped].heft;
         firedBullet.damage = eq.guns[eq.equipped].Damage() * DamageDealtMultiplyer(1f);
         if (eq.guns[eq.equipped].Accessories[16] > 0)
-        {
-            firedBullet.damage *= 1f + (0.0025f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16]);
-        }
+            firedBullet.damage *= 1f + (0.004f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16]);
         if (eq.guns[eq.equipped].Accessories[22] > 0)
-        {
-            firedBullet.damage *= 1f + (0.006f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[16]);
-        }
+            firedBullet.damage *= 1f + (0.008f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[16]);
         firedBullet.DoT = eq.guns[eq.equipped].DoT;
         if (eq.guns[eq.equipped].Accessories[18] > 0)
         {
@@ -537,11 +555,6 @@ public class PlayerController : MonoBehaviour
         firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
         firedBullet.pierce = eq.guns[eq.equipped].pierce;
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
-        if (eq.guns[eq.equipped].Accessories[9] > 0)
-        {
-            temp = 0.05f + 0.1f / (1f * eq.guns[eq.equipped].pierce);
-            firedBullet.pierceEfficiency += temp * eq.guns[eq.equipped].Accessories[9];
-        }
         firedBullet.special = eq.guns[eq.equipped].special;
 
         if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
@@ -555,7 +568,10 @@ public class PlayerController : MonoBehaviour
             firedBullet.pierceEfficiency *= 1.1f;
             firedBullet.crit = true;
             if (eq.guns[eq.equipped].Accessories[8] > 0)
+            {
                 firedBullet.pierce += eq.guns[eq.equipped].Accessories[8];
+                firedBullet.pierceEfficiency += 0.1f * eq.guns[eq.equipped].Accessories[8];
+            }
 
             if (eq.Items[17])
                 eq.OnHit(0.28f);
@@ -599,7 +615,7 @@ public class PlayerController : MonoBehaviour
         Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration /= forceIncrease;
-        firedBullet.damage = (27f + toolsStored * 0.1f + level * 0.6f) * DamageDealtMultiplyer(1.07f);
+        firedBullet.damage = (29.7f + toolsStored * 0.11f + level * 0.66f) * DamageDealtMultiplyer(1.08f);
         if (eq.Items[15])
             firedBullet.damage *= 1.23f;
         if (eq.Items[28])
@@ -718,7 +734,7 @@ public class PlayerController : MonoBehaviour
                     eq.guns[eq.equipped].bulletsLeft = eq.guns[eq.equipped].MagazineTotalSize();
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 if (eq.guns[eq.equipped].Accessories[10] > 0)
-                    eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 7;
+                    eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].MagazineTotalSize())
                     reloading = false;
                 else
@@ -736,7 +752,7 @@ public class PlayerController : MonoBehaviour
                     eq.guns[eq.equipped].bulletsLeft = eq.guns[eq.equipped].MagazineTotalSize();
                 }
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
-                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 7;
+                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].MagazineTotalSize() || eq.guns[eq.equipped].ammo <= 0)
                     reloading = false;
                 else
@@ -762,7 +778,7 @@ public class PlayerController : MonoBehaviour
                 eq.guns[eq.equipped].ammo = 0;
             }
             eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
-            eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 7;
+            eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
             reloading = false;
         }
         DisplayAmmo();
@@ -1129,7 +1145,7 @@ public class PlayerController : MonoBehaviour
 
     public void GainMS(float value)
     {
-        movementSpeed += value;
+        movementSpeed += value * 4f; //value = procent, 4f as in base 400 movement speed 
     }
 
     public void GainHP(float value)
@@ -1274,7 +1290,7 @@ public class PlayerController : MonoBehaviour
         TabStatsText[0].text = ((cooldownReduction * 100f) - 100f).ToString("0.0") + "%";
         TabStatsText[1].text = ((damageBonus * 100f) -100f).ToString("0.0") + "%";
         TabStatsText[2].text = ((fireRateBonus * 100f) -100f).ToString("0.0") + "%";
-        TabStatsText[3].text = ((movementSpeed / 5f) - 100f).ToString("0.0") + "%";
+        TabStatsText[3].text = ((movementSpeed / 4f) - 100f).ToString("0.0") + "%";
         for (int i = 0; i < eq.itemsCollected; i++)
         {
             CollectedItems[i].SetActive(true);

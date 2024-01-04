@@ -76,33 +76,33 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0497ab89da3d2184c9bc518400da34d1, type: 3}
   - {fileID: 21300000, guid: 001078f57a4e11a4e9a65a07337c8c3c, type: 3}
   AccessoryTooltip:
-  - +15% Damage
-  - +20% Fire Rate
-  - +40% Accuracy & +6 Range
+  - +18% Damage
+  - +24% Fire Rate
+  - +48% Accuracy & +8 Range
   - +14% Penetration
-  - +10% Crit Chance & +15% Crit Damage
-  - -30% Reload Time
-  - Double the Magazine Size, but +12% Reload Time
-  - Double the amount of Fired Bullets, but -30% Damage & -15% Fire Rate
-  - +1 Pierce, +2 on Crit & +3% Crit Chance
-  - +1 Pierce & Increase Pierce Efficiency
-  - Overload 1/7 of Magazine after Reloading
+  - +12% Crit Chance & +18% Crit Damage
+  - -36% Reload Time
+  - Double the Magazine Size, but +8% Reload Time
+  - Double the amount of Fired Bullets, but -28% Damage & -14% Fire Rate
+  - +15% Crit Chance, Crits Increase Pierce
+  - +1 Pierce & +15% Pierce Efficiency
+  - Overload 1/6 of Magazine after Reloading
   - +5% Damage, +6% Fire Rate, +12% Accuracy & +4% Penetration
-  - +7,5% Damage & +15% Crit Damage
-  - +15% Fire Rate & + 7,5% Crit Chance
-  - 18% Chance to not consume Ammo
-  - 15% Chance to Fire 2 additional Bullets in a Cone
-  - +7,5% Damage, +1% Damage for every 4 Base Damage
+  - +9% Damage & +18% Crit Damage
+  - +18% Fire Rate & + 9% Crit Chance
+  - 20% Chance to not consume Ammo
+  - 18% Chance to Fire 2 additional Bullets in a Cone
+  - +6% Damage, +0,4% Damage for every 1 Base Damage
   - +4 Range, Bullets gain +18% Damage for every 1s in Air
   - +6% Penetration, +1% DoT for every 2% Penetration
   - Using Dash Fired wave of Bullets
-  - Fire Additional Bullet every 6th Shot
-  - +6% Fire Rate, + up to 35% Fire Rate with missing Magazine
-  - +6% Damage, +0,6% Damage for every 1 Magazine Size
+  - Fire Additional Bullet every 5th Shot
+  - +6% Fire Rate, + up to 45% Fire Rate with missing Magazine
+  - +6% Damage, +0,8% Damage for every 1 Magazine Size
   - Fire Peacemaker Occasionally
   - Fire Boomerang Occasionally
-  - Fire Wave of 6 Bullets every 15th Shot
-  - +10% Fire Rate, Increase On-Hit Rate by 20%
+  - Fire Wave of 6 Bullets every 13th Shot
+  - +9% Fire Rate, Increase On-Hit Rate by 30%
   - After each Room gain 5 Gun Parts
   - +28% Curse
   - Fire Dread Orb Occasionally

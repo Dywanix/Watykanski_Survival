@@ -44,14 +44,14 @@ public class Map : MonoBehaviour
             {
                 // rare
                 epicChance += 2 + (epicChance + luck) / 4;
-                rareChance = 16 + luck / 2;
+                rareChance = 20 + (2 * luck) / 3;
                 return 1;
             }
             else
             {
                 // common
                 epicChance += 2 + (epicChance + luck) / 4;
-                rareChance += 5 + (2 * rareChance + 3 * luck) / 5;
+                rareChance += 6 + (2 * rareChance + 3 * luck) / 4;
                 return 0;
             }
         }
