@@ -614,7 +614,7 @@ public class PlayerController : MonoBehaviour
         firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
-        firedBullet.duration /= forceIncrease;
+        firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.damage = (29.7f + toolsStored * 0.11f + level * 0.66f) * DamageDealtMultiplyer(1.08f);
         if (eq.Items[15])
             firedBullet.damage *= 1.23f;

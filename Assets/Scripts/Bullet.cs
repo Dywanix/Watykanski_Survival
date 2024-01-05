@@ -9,7 +9,8 @@ public class Bullet : MonoBehaviour
     public PulletExplosion ShardExplosion;
     public float duration, force, mass, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, incendiary, damageGain;
     public int pierce, special;
-    public bool infinite, crit, AoE, damageLess;
+    public bool crit, AoE, damageLess;
+    bool fallen;
 
     [Header("AreaBullets")]
     public Transform TargetedLocation;
@@ -27,22 +28,42 @@ public class Bullet : MonoBehaviour
             travelX = (TargetedLocation.position.x - transform.position.x) / duration;
             travelY = (TargetedLocation.position.y - transform.position.y) / duration;
         }
+        Invoke("Fall", duration);
+        Invoke("End", 0.5f + duration * 2f);
     }
 
     void Update()
     {
-        if (!infinite)
-            duration -= Time.deltaTime;
+        //duration -= Time.deltaTime;
         damage *= 1f + damageGain * Time.deltaTime;
-        if (duration <= 0)
+        /*if (duration <= 0)
         {
             Explosions();
             Destroy(gameObject);
-        }
+        }*/
+        if (fallen)
+            damage /= 1f + 1.2f * Time.deltaTime;
+
         if (TargetedLocation)
         {
             transform.position = new Vector3(transform.position.x + travelX * Time.deltaTime, transform.position.y + travelY * Time.deltaTime, 0);
         }
+    }
+
+    void Fall()
+    {
+        fallen = true;
+        if (TargetedLocation)
+        {
+            Explosions();
+            Destroy(gameObject);
+        }
+    }
+
+    void End()
+    {
+        Explosions();
+        Destroy(gameObject);
     }
 
     /*private void OnTriggerEnter2D(Collider2D other)
@@ -60,15 +81,13 @@ public class Bullet : MonoBehaviour
     {
         Explosions();
 
-        if (!infinite)
-        {
-            pierce--;
-            damage *= pierceEfficiency;
-            armorShred *= 0.2f + 0.8f * pierceEfficiency;
-            vulnerableApplied *= 0.2f + 0.8f * pierceEfficiency;
-            slowDuration *= 0.4f + 0.6f * pierceEfficiency;
-            stunDuration *= 0.4f + 0.6f * pierceEfficiency;
-        }
+        pierce--;
+        damage *= pierceEfficiency;
+        armorShred *= 0.2f + 0.8f * pierceEfficiency;
+        vulnerableApplied *= 0.2f + 0.8f * pierceEfficiency;
+        slowDuration *= 0.4f + 0.6f * pierceEfficiency;
+        stunDuration *= 0.4f + 0.6f * pierceEfficiency;
+
         if (pierce <= 0)
             Destroy(gameObject);
     }

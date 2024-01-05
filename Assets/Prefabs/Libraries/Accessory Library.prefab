@@ -78,8 +78,8 @@ MonoBehaviour:
   AccessoryTooltip:
   - +18% Damage
   - +24% Fire Rate
-  - +48% Accuracy & +8 Range
-  - +14% Penetration
+  - +48% Accuracy & +3 Range
+  - 25% Chance to fire Poison Bullet
   - +12% Crit Chance & +18% Crit Damage
   - -36% Reload Time
   - Double the Magazine Size, but +8% Reload Time
@@ -87,7 +87,7 @@ MonoBehaviour:
   - +15% Crit Chance, Crits Increase Pierce
   - +1 Pierce & +15% Pierce Efficiency
   - Overload 1/6 of Magazine after Reloading
-  - +5% Damage, +6% Fire Rate, +12% Accuracy & +4% Penetration
+  - 25% Chance to fire Plasma Bullet
   - +9% Damage & +18% Crit Damage
   - +18% Fire Rate & + 9% Crit Chance
   - 20% Chance to not consume Ammo

@@ -1336,7 +1336,7 @@ MonoBehaviour:
   dashCooldown: 0
   grenadeMaxCharges: 0
   grenadeCharges: 0
-  throwRange: 17.6
+  throwRange: 11.2
   grenadeBaseCooldown: 10
   grenadeMaxCooldown: 0
   grenadeCooldown: 0
@@ -7088,12 +7088,12 @@ GameObject:
   - component: {fileID: 8521260219550689641}
   - component: {fileID: 7607622739680396612}
   m_Layer: 5
-  m_Name: Stat Screen
+  m_Name: EQ Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3953876814332079169
 RectTransform:
   m_ObjectHideFlags: 0

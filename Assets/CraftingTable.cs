@@ -391,7 +391,7 @@ public class CraftingTable : MonoBehaviour
                 break;
             case 2:
                 playerStats.eq.guns[playerStats.eq.equipped].accuracy /= 1.48f;
-                playerStats.eq.guns[playerStats.eq.equipped].range += 0.08f;
+                playerStats.eq.guns[playerStats.eq.equipped].range += 0.03f;
                 break;
             case 3:
                 playerStats.eq.guns[playerStats.eq.equipped].poisonBulletChance += 0.25f;
@@ -610,7 +610,7 @@ public class CraftingTable : MonoBehaviour
                 break;
             case 2:
                 playerStats.eq.guns[playerStats.eq.equipped].accuracy *= 1.48f;
-                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.08f;
+                playerStats.eq.guns[playerStats.eq.equipped].range -= 0.03f;
                 break;
             case 3:
                 playerStats.eq.guns[playerStats.eq.equipped].poisonBulletChance -= 0.25f;

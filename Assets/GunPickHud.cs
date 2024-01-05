@@ -14,7 +14,7 @@ public class GunPickHud : MonoBehaviour
     bool viable;
 
     public Image[] GunImage;
-    public TMPro.TextMeshProUGUI[] DamageValue, FireRateValue, CritValue, AccuracyValue, ReloadValue, MagazineValue, AmmoValue, BonusValue;
+    public TMPro.TextMeshProUGUI[] DamageValue, FireRateValue, CritValue, AccuracyValue, RangeValue, ReloadValue, MagazineValue, AmmoValue, BonusValue;
 
     public void Open(int level)
     {
@@ -88,6 +88,7 @@ public class GunPickHud : MonoBehaviour
             FireRateValue[i].text = (1f / gun[i].fireRate).ToString("0.00") + "/s";
             CritValue[i].text = (gun[i].critChance * 100).ToString("0") + "%";
             AccuracyValue[i].text = ((100f - gun[i].accuracy)).ToString("0.0") + "%";
+            RangeValue[i].text = (gun[i].range * 100f).ToString("0,0");
             ReloadValue[i].text = gun[i].reloadTime.ToString("0.00") + "s";
             MagazineValue[i].text = gun[i].magazineSize.ToString("0");
             AmmoValue[i].text = gun[i].maxAmmo.ToString("0");
