@@ -94,7 +94,7 @@ MonoBehaviour:
   - 18% Chance to Fire 2 additional Bullets in a Cone
   - +6% Damage, +0,4% Damage for every 1 Base Damage
   - +4 Range, Bullets gain +18% Damage for every 1s in Air
-  - +6% Penetration, +1% DoT for every 2% Penetration
+  - +8% Fire Rate, start round with +20% Ammo
   - Using Dash Fired wave of Bullets
   - Fire Additional Bullet every 5th Shot
   - +6% Fire Rate, + up to 45% Fire Rate with missing Magazine

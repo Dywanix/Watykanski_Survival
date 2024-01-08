@@ -450,8 +450,8 @@ public class CraftingTable : MonoBehaviour
                 playerStats.eq.guns[playerStats.eq.equipped].damageGain += 0.15f;
                 break;
             case 18:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration += 0.06f;
-                // +DoT per Penetration
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate /= 1.08f;
+                // + Ammo
                 break;
             case 19:
                 // Dasing fires wave of bullets
@@ -669,8 +669,8 @@ public class CraftingTable : MonoBehaviour
                 playerStats.eq.guns[playerStats.eq.equipped].damageGain -= 0.15f;
                 break;
             case 18:
-                playerStats.eq.guns[playerStats.eq.equipped].penetration -= 0.06f;
-                // +DoT per Penetration
+                playerStats.eq.guns[playerStats.eq.equipped].fireRate *= 1.08f;
+                // + Ammo
                 break;
             case 19:
                 // Dasing fires wave of bullets

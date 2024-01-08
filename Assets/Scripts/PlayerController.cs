@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Transform Barrel, Hand, Dude, GunRot, TargetArea;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
+    public Backpack bp;
     public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge, GrenadeCharge;
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage;
     public Bullet firedBullet;
@@ -47,11 +48,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
 
     // -- Huds --
-    public GameObject Menu, Tab;
+    public GameObject Menu;
     public bool menuOpened, tabOpened;
-    public TMPro.TextMeshProUGUI[] TabStatsText;
-    public GameObject[] CollectedItems;
-    public Image[] CollectedImages;
 
     void Start()
     {
@@ -250,12 +248,12 @@ public class PlayerController : MonoBehaviour
 
     void Dash()
     {
-        dash = 1500f + 1.875f * movementSpeed;
+        dash = 1240f + 1.55f * movementSpeed;
         Invoke("Dashed", 0.13f);
 
         if (eq.Items[13])
         {
-            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * 3) / 10;
+            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * 5) / 20;
 
             for (int i = 0; i < tempi; i++)
             {
@@ -287,7 +285,23 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[9])
         {
             movementSpeed *= 1.25f;
-            Invoke("SprintEnd", 2.5f);
+            Invoke("SprintEnd", 2f);
+        }
+    }
+
+    void DashFire()
+    {
+        temp = 0.91f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
+        tempi = 0;
+
+        for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)
+        {
+            tempi++;
+        }
+
+        for (int i = 0; i < tempi; i++)
+        {
+            FireDirection((i * 2 - tempi + 1) * (5f / (1f + 0.05f * tempi)), 0f);
         }
     }
 
@@ -540,10 +554,6 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].Accessories[22] > 0)
             firedBullet.damage *= 1f + (0.008f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[16]);
         firedBullet.DoT = eq.guns[eq.equipped].DoT;
-        if (eq.guns[eq.equipped].Accessories[18] > 0)
-        {
-            firedBullet.DoT += 0.5f * eq.guns[eq.equipped].penetration * eq.guns[eq.equipped].Accessories[18];
-        }
         firedBullet.shatter = eq.guns[eq.equipped].shatter;
         firedBullet.incendiary = eq.guns[eq.equipped].incendiary;
         firedBullet.curse = eq.guns[eq.equipped].curse;
@@ -865,22 +875,6 @@ public class PlayerController : MonoBehaviour
         movementSpeed /= 1.25f;
     }
 
-    void DashFire()
-    {
-        temp = 1.1f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
-        tempi = 0;
-
-        for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)
-        {
-            tempi++;
-        }
-
-        for (int i = 0; i < tempi; i++)
-        {
-            FireDirection((i * 2 - tempi + 1) * (5f / (1f + 0.05f * tempi)), 0f);
-        }
-    }
-
     public void TakeDamage(float value, bool pierce)
     {
         if (protection)
@@ -1065,6 +1059,7 @@ public class PlayerController : MonoBehaviour
     public void NewDay()
     {
         day = true;
+        AmmoRefill();
         dayCount++;
         //RestoreHealth(40 + maxHealth * 0.5f);
         wrath = 0;
@@ -1087,6 +1082,7 @@ public class PlayerController : MonoBehaviour
     public void Nightfall()
     {
         day = false;
+        AmmoRefill();
         if (eq.Items[0])
         {
             if (!undamaged)
@@ -1114,6 +1110,8 @@ public class PlayerController : MonoBehaviour
                 eq.guns[i].bonusAmmo = 0;
                 if (eq.Items[23])
                     eq.guns[i].ammo += (eq.guns[i].maxAmmo * 3) / 20;
+                if (eq.guns[i].Accessories[18] > 0)
+                    eq.guns[i].ammo += (eq.guns[i].maxAmmo) / 5;
             }
         }
         DisplayAmmo();
@@ -1286,16 +1284,7 @@ public class PlayerController : MonoBehaviour
 
     void OpenTab()
     {
-        Tab.SetActive(true);
-        TabStatsText[0].text = ((cooldownReduction * 100f) - 100f).ToString("0.0") + "%";
-        TabStatsText[1].text = ((damageBonus * 100f) -100f).ToString("0.0") + "%";
-        TabStatsText[2].text = ((fireRateBonus * 100f) -100f).ToString("0.0") + "%";
-        TabStatsText[3].text = ((movementSpeed / 4f) - 100f).ToString("0.0") + "%";
-        for (int i = 0; i < eq.itemsCollected; i++)
-        {
-            CollectedItems[i].SetActive(true);
-            CollectedImages[i].sprite = eq.ILibrary.ItemSprite[eq.ItemList[i]];
-        }
+        bp.OpenBackpack();
         tabOpened = true;
         free = false;
     }
@@ -1313,7 +1302,7 @@ public class PlayerController : MonoBehaviour
     public void CloseTab()
     {
         ItemTooltipClose();
-        Tab.SetActive(false);
+        bp.CloseBackpack();
         tabOpened = false;
         free = true;
     }
