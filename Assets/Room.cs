@@ -6,7 +6,7 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
-    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize;
+    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize, AccessoryPrize;
     public GameObject[] Mobs, Prizes, SndPrizes;
 
     bool fight;
@@ -174,6 +174,8 @@ public class Room : MonoBehaviour
             SndPrizes[0].SetActive(true);
         else SndPrizes[1].SetActive(true);
 
-        GunPrize.SetActive(true);
+        if (map.GunCheck())
+            GunPrize.SetActive(true);
+        else AccessoryPrize.SetActive(true);
     }
 }
