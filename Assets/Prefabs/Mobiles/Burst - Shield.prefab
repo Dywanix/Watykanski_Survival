@@ -57,31 +57,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: health
-      value: 58
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: weight
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: maxHealth
-      value: 58
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: itemChance
-      value: 0.066
+      value: 0.072
+      objectReference: {fileID: 0}
+    - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
+      propertyPath: scrapCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: scrapChance
-      value: 0.33
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: shieldCapacity
-      value: 38
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: shieldRechargeRate
-      value: 4
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 6954170810062982392, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: shieldRechargeDelay

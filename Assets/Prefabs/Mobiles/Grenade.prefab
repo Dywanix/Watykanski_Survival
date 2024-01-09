@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: health
-      value: 108
+      value: 234
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: throws
@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: minRange
-      value: 5.8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: tenacity
@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 3144665690506890880, guid: 13b5249fbcc3a814ca29b00b9acefdc0, type: 3}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: maxHealth
-      value: 108
+      value: 234
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: itemChance
@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: attackRange
-      value: 11.6
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: attackSpeed
-      value: 2.26
+      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: scrapChance
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: movementSpeed
-      value: 3.22
+      value: 2.69
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: aimingMovement

@@ -2528,10 +2528,12 @@ MonoBehaviour:
   dayCount: 1
   luck: 0
   undamaged: 0
+  invulnerable: 0
   gold: 24
   tools: 4
   toolsStored: 4
   keys: 1
+  playerSprite: {fileID: 2129462729641926354}
   animator: {fileID: 7508960709266052724}
   moveSpeed: 5
   Menu: {fileID: 2821856077054534156}

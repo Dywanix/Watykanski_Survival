@@ -73,15 +73,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: force
-      value: 6.2
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: health
-      value: 115
+      value: 339
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: weight
-      value: 15
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
+      propertyPath: accuracy
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: minRange
@@ -92,16 +96,20 @@ PrefabInstance:
       value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
+      propertyPath: itemCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: maxHealth
-      value: 115
+      value: 339
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: itemChance
-      value: 0.09
+      value: 0.054
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: scrapCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: attackRange
@@ -109,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: attackSpeed
-      value: 3.56
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: bulletCount
@@ -117,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: scrapChance
-      value: 0.225
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: bulletSpread
@@ -125,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: movementSpeed
-      value: 3.38
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}

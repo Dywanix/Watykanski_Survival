@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.22352943
       objectReference: {fileID: 0}
+    - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Name
       value: Plasma-Poison Bullet

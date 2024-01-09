@@ -1189,17 +1189,15 @@ MonoBehaviour:
   healthFill: {fileID: 15675506785638440}
   DoTFill: {fileID: 4756362084689119383}
   ShieldFill: {fileID: 4173083075688941370}
-  maxHealth: 70
-  health: 70
-  regen: 0
-  armor: 22
+  maxHealth: 113
+  health: 113
   vulnerable: 0
   shieldCapacity: 0
   shield: 0
   rechargeTimer: 0
   shieldRechargeRate: 0
   shieldRechargeDelay: 0
-  movementSpeed: 3.41
+  movementSpeed: 2.85
   aimingMovement: 0.77
   tenacity: 1
   stun: 0.82
@@ -1207,7 +1205,7 @@ MonoBehaviour:
   attackTimer: 0.5
   attackDamage: 16
   attackPoison: 0
-  attackSpeed: 2.67
+  attackSpeed: 2.59
   attackRange: 8.4
   ranged: 1
   throws: 0
@@ -1215,7 +1213,7 @@ MonoBehaviour:
   bulletBurst: 1
   bulletSpread: 0
   burstDelay: 0
-  accuracy: 9.6
+  accuracy: 9.3
   force: 7.2
   minRange: 2.8
   DeathDrop: {fileID: 0}

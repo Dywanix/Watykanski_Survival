@@ -522,7 +522,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.6
   m_Color: {r: 0.75294125, g: 0.46274513, b: 0.2392157, a: 1}
-  m_Intensity: 1.7
+  m_Intensity: 0.8
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -698,22 +698,28 @@ MonoBehaviour:
   ExplosionRadius: {fileID: 0}
   ShardExplosion: {fileID: 0}
   duration: 3
+  force: 0
+  mass: 0
   damage: 10
   penetration: 0
   armorShred: 0
   vulnerableApplied: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   pierceEfficiency: 0
   DoT: 0
+  shatter: 0
+  curse: 0
   incendiary: 0
   damageGain: 0
   pierce: 0
   special: 0
-  infinite: 0
   crit: 0
   AoE: 0
+  damageLess: 0
+  TargetedLocation: {fileID: 0}
+  HitArea: {fileID: 0}
+  fall: {fileID: 0}
 --- !u!50 &6026023455536305859
 Rigidbody2D:
   serializedVersion: 4

@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
     [Header("Health & Resistance")]
     public int weight;
     public Image healthFill, DoTFill, ShieldFill;
-    public float maxHealth, health, regen, armor, vulnerable;
+    public float maxHealth, health, vulnerable;
     public float shieldCapacity, shield, rechargeTimer, shieldRechargeRate, shieldRechargeDelay;
 
     [Header("Movement")]
@@ -85,8 +85,8 @@ public class Enemy : MonoBehaviour
             force *= Random.Range(0.95f, 1.05f);
         }*/
 
-        if (playerStats.eq.Items[20])
-            vulnerable += armor * 0.0032f;
+        /*if (playerStats.eq.Items[20])
+            vulnerable += armor * 0.0032f;*/
         if (playerStats.eq.Items[22])
             curse += (24f + maxHealth * 0.2f) * playerStats.DamageDealtMultiplyer(0.312f);
 
@@ -262,13 +262,13 @@ public class Enemy : MonoBehaviour
         {   
             temp = collidedBullet.force * collidedBullet.mass / tenacity;
             Body.AddForce(Push.up * temp, ForceMode2D.Impulse);
-            armor *= 1 - (collidedBullet.armorShred * 1.6f / (1f + 0.03f * weight));
+            //armor *= 1 - (collidedBullet.armorShred * 1.6f / (1f + 0.03f * weight));
             vulnerable += collidedBullet.vulnerableApplied * 1.6f / (1f + 0.03f * weight);
             if (collidedBullet.slowDuration > 0)
                 GainSlow(collidedBullet.slowDuration * 1.6f / (1f + 0.03f * weight));
             if (collidedBullet.stunDuration > 0)
                 GainStun(collidedBullet.stunDuration * 1.6f / (1f + 0.03f * weight));
-            temp = collidedBullet.damage / DamageTakenMultiplyer(collidedBullet.penetration);
+            temp = collidedBullet.damage / DamageTakenMultiplyer();
             if (collidedBullet.shatter > 0)
                 ShatterShield(temp * collidedBullet.shatter);
             if (!collidedBullet.damageLess)
@@ -422,10 +422,10 @@ public class Enemy : MonoBehaviour
         SetAblaze(0f);
     }
 
-    float DamageTakenMultiplyer(float penetration)
+    float DamageTakenMultiplyer()
     {
-        temp = 1f + (armor * (1 - penetration) * 0.01f);
-        temp /= 1f + vulnerable;
+        //temp = 1f + (armor * (1 - penetration) * 0.01f);
+        temp = 1f + vulnerable;
         return temp;
     }
 
@@ -434,7 +434,7 @@ public class Enemy : MonoBehaviour
         if (DoT > 0)
             DoTproc();
 
-        RestoreHealth(regen * 0.5f);
+        //RestoreHealth(regen * 0.5f);
 
         Invoke("Tick", 0.5f);
     }

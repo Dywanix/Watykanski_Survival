@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     public float dHealth, health, maxShield, dShield, shield, poison,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
     public int level = 1, dayCount = 1, luck;
-    public bool undamaged;
+    public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, bonusTool;
     float temp, wrath;
@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     [Header("Resources")]
     public float gold;
     public int tools, toolsStored, keys;
+
+    public SpriteRenderer playerSprite;
 
     // -- animacje --
     public Animator animator;
@@ -625,7 +627,7 @@ public class PlayerController : MonoBehaviour
         Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration = 0.8f / forceIncrease;
-        firedBullet.damage = (29.7f + toolsStored * 0.11f + level * 0.66f) * DamageDealtMultiplyer(1.08f);
+        firedBullet.damage = (32.6f + toolsStored * 0.12f + level * 0.72f) * DamageDealtMultiplyer(1.09f);
         if (eq.Items[15])
             firedBullet.damage *= 1.23f;
         if (eq.Items[28])
@@ -877,46 +879,33 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float value, bool pierce)
     {
-        if (protection)
-            protection = false;
-        else
+        if (!invulnerable)
         {
-            if (eq.Items[19])
-                value *= 1.24f;
-            if (eq.Items[0])
-            {
-                if (undamaged)
-                {
-                    undamaged = false;
-                    movementSpeed -= 60f;
-                    fireRateBonus -= 0.12f;
-                }
-            }
-            if (eq.Items[12])
-            {
-                if (value > 8)
-                    value -= 3;
-                else if (value > 5)
-                    value = 5;
-            }
-            if (pierce)
-            {
-                health -= value;
-                if (eq.Items[3])
-                    GainShield(value * 0.45f);
-                healthBar.fillAmount = health / maxHealth;
-
-                if (eq.Items[25] && !day)
-                    wrath += value * 0.0032f;
-            }
+            Damaged();
+            if (protection)
+                protection = false;
             else
             {
-                shield -= value;
-
-                if (shield < 0)
+                if (eq.Items[19])
+                    value *= 1.24f;
+                if (eq.Items[0])
                 {
-                    value = shield * (-1f);
-                    shield = 0;
+                    if (undamaged)
+                    {
+                        undamaged = false;
+                        movementSpeed -= 60f;
+                        fireRateBonus -= 0.12f;
+                    }
+                }
+                if (eq.Items[12])
+                {
+                    if (value > 8)
+                        value -= 3;
+                    else if (value > 5)
+                        value = 5;
+                }
+                if (pierce)
+                {
                     health -= value;
                     if (eq.Items[3])
                         GainShield(value * 0.45f);
@@ -925,15 +914,45 @@ public class PlayerController : MonoBehaviour
                     if (eq.Items[25] && !day)
                         wrath += value * 0.0032f;
                 }
-                shieldBar.fillAmount = shield / maxShield;
+                else
+                {
+                    shield -= value;
+
+                    if (shield < 0)
+                    {
+                        value = shield * (-1f);
+                        shield = 0;
+                        health -= value;
+                        if (eq.Items[3])
+                            GainShield(value * 0.45f);
+                        healthBar.fillAmount = health / maxHealth;
+
+                        if (eq.Items[25] && !day)
+                            wrath += value * 0.0032f;
+                    }
+                    shieldBar.fillAmount = shield / maxShield;
+                }
+
+                healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
+                ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
+
+                if (health <= 0f)
+                    ReturnToMenu();
             }
-
-            healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
-            ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
-
-            if (health <= 0f)
-                ReturnToMenu();
         }
+    }
+
+    void Damaged()
+    {
+        invulnerable = true;
+        playerSprite.color = new Color(1f, 0f, 0f, 1f);
+        Invoke("Recovered", 0.22f);
+    }
+
+    void Recovered()
+    {
+        invulnerable = false;
+        playerSprite.color = new Color(1f, 1f, 1f, 1f);
     }
 
     public void GainPoison(float value)

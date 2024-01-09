@@ -60,12 +60,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989171258437923369, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: force
+      value: 7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989171258437923369, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
       propertyPath: fireTimer
-      value: 4.7
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 4989171258437923369, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
       propertyPath: frequency
-      value: 3.8
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079909410695643057, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: weight
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079909410695643057, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: itemCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079909410695643057, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: itemChance
+      value: 0.051
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079909410695643057, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: scrapCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8079909410695643057, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: scrapChance
+      value: 0.255
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}

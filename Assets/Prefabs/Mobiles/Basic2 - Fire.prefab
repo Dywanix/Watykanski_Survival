@@ -40,15 +40,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 160496791731952649, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
       propertyPath: weight
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 160496791731952649, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
       propertyPath: itemChance
-      value: 0.078
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 160496791731952649, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
       propertyPath: scrapChance
-      value: 0.39
+      value: 0.225
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974058218624864657, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
+      propertyPath: force
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: 3974058218624864657, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
       propertyPath: fireTimer
@@ -56,7 +60,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3974058218624864657, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
       propertyPath: frequency
-      value: 3.8
+      value: 4.75
       objectReference: {fileID: 0}
     - target: {fileID: 3974058218624864657, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
       propertyPath: Barrels.Array.size

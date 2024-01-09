@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: health
-      value: 76
+      value: 146
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: weight
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: maxHealth
-      value: 76
+      value: 146
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: itemChance
@@ -85,15 +85,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: shieldCapacity
-      value: 60
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: shieldRechargeRate
-      value: 5.6
+      value: 7.7
       objectReference: {fileID: 0}
     - target: {fileID: 7634244171977484427, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: shieldRechargeDelay
-      value: 2.9
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7676728084812067894, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: m_IsActive

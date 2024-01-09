@@ -63,7 +63,7 @@ public class Map : MonoBehaviour
     {
         gunChance++;
         range = gunChance * gunChance;
-        if (range >= Random.Range(0, range + 22))
+        if (range > Random.Range(0, range + 24))
         {
             gunChance = 0;
             return true;

@@ -60,12 +60,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6696512621799990547, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
+      propertyPath: force
+      value: 6.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6696512621799990547, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: fireTimer
-      value: 4.5
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 6696512621799990547, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
       propertyPath: frequency
-      value: 3.7
+      value: 3.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}

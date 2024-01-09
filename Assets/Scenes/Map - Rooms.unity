@@ -1942,8 +1942,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828170797}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: PickGun
-        m_Mode: 3
+        m_MethodName: PickTools
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -11481,7 +11481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &607742092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15806,12 +15806,13 @@ MonoBehaviour:
   RoundsCount: {fileID: 1874453417}
   Prizes: {fileID: 828170802}
   Guns: {fileID: 828170803}
-  Accessories: {fileID: 0}
+  Accessories: {fileID: 828170804}
   level: 0
   rareChance: 20
   epicChance: 4
   luck: 0
   gunChance: 0
+  range: 0
 --- !u!4 &828170798
 Transform:
   m_ObjectHideFlags: 0
@@ -16219,6 +16220,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   rolls: 000000000000000000000000
+  taken: 000000000000000000000000000000000000000000000000000000000000
   GunImage:
   - {fileID: 365972587}
   - {fileID: 2136139169}
@@ -16271,12 +16273,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975f039c768acab49a342156f0860282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 0}
+  map: {fileID: 828170797}
   Hud: {fileID: 607742091}
   Lib: {fileID: 252311726}
-  rolls: 
-  AccessoryImage: []
-  AccessoryTooltip: []
+  rolls: 0000000000000000
+  AccessoryImage:
+  - {fileID: 701654293}
+  - {fileID: 642353060}
+  AccessoryButton:
+  - {fileID: 1129091871}
+  - {fileID: 1414753419}
+  AccessoryTooltip:
+  - {fileID: 1435280712}
+  - {fileID: 1826756638}
 --- !u!1 &828330948
 GameObject:
   m_ObjectHideFlags: 0
@@ -22428,7 +22437,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828170797}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: PickGun
+        m_MethodName: PickAccessory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30344,7 +30353,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828170797}
         m_TargetAssemblyTypeName: Map, Assembly-CSharp
-        m_MethodName: PickGun
+        m_MethodName: PickAccessory
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34240,7 +34249,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.85
+  m_Intensity: 0.75
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
