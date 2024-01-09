@@ -12,6 +12,7 @@ public class AccessoryPickHud : MonoBehaviour
     public int[] rolls;
 
     public Image[] AccessoryImage;
+    public Button[] AccessoryButton;
     public TMPro.TextMeshProUGUI[] AccessoryTooltip;
 
     public void Open()
@@ -28,7 +29,10 @@ public class AccessoryPickHud : MonoBehaviour
             AccessoryImage[i].sprite = Lib.AccessorySprite[rolls[i]];
             AccessoryTooltip[i].text =  Lib.AccessoryTooltip[rolls[i]];
             if (map.playerStats.tools >= 8)
-                rolls[2] = 4;
+                AccessoryButton[i].interactable = true;
+            else AccessoryButton[i].interactable = false;
         }
+
+        Hud.SetActive(true);
     }
 }

@@ -14,8 +14,8 @@ public class Map : MonoBehaviour
     public PrizeChoice Prizes;
     public GunPickHud Guns;
     public AccessoryPickHud Accessories;
-    public int level, rareChance, epicChance, luck, gunChance;
-    int roll, range;
+    public int level, rareChance, epicChance, luck, gunChance, range;
+    int roll; //range;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class Map : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         playerStats.SwapGun(0);
-        gunChance = 4;
+        gunChance = 5;
     }
 
     void Update()
@@ -63,7 +63,7 @@ public class Map : MonoBehaviour
     {
         gunChance++;
         range = gunChance * gunChance;
-        if (Random.Range(0, range + 10) >= range)
+        if (range >= Random.Range(0, range + 22))
         {
             gunChance = 0;
             return true;
@@ -93,8 +93,26 @@ public class Map : MonoBehaviour
     public void PickGun(int which)
     {
         playerStats.PickUpGun(Guns.rolls[which]);
+        Guns.taken[Guns.rolls[which]] = true;
         playerStats.free = true;
         playerStats.menuOpened = false;
         Guns.Hud.SetActive(false);
+    }
+
+    public void PickAccessory(int which)
+    {
+        playerStats.eq.Accessories[Accessories.rolls[which]]++;
+        playerStats.SpendTools(8);
+        playerStats.free = true;
+        playerStats.menuOpened = false;
+        Accessories.Hud.SetActive(false);
+    }
+
+    public void PickTools()
+    {
+        playerStats.GainTools(3);
+        playerStats.free = true;
+        playerStats.menuOpened = false;
+        Accessories.Hud.SetActive(false);
     }
 }

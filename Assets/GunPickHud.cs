@@ -10,6 +10,7 @@ public class GunPickHud : MonoBehaviour
 
     public Gun[] gun;
     public int[] rolls;
+    public bool[] taken;
     int upgrades, roll;
     bool viable;
 
@@ -20,7 +21,13 @@ public class GunPickHud : MonoBehaviour
     {
         upgrades = 4 + level;
 
-        rolls[0] = Random.Range(0, Lib.guns.Length);
+        viable = false;
+        while (!viable)
+        {
+            rolls[0] = Random.Range(0, Lib.guns.Length);
+            if (!taken[rolls[0]])
+                viable = true;
+        }
         gun[0] = Lib.guns[rolls[0]];
 
         viable = false;
@@ -28,7 +35,10 @@ public class GunPickHud : MonoBehaviour
         {
             rolls[1] = Random.Range(0, Lib.guns.Length);
             if (rolls[1] != rolls[0])
-                viable = true;
+            {
+                if (!taken[rolls[1]])
+                    viable = true;
+            }
         }
         gun[1] = Lib.guns[rolls[1]];
 
@@ -37,7 +47,10 @@ public class GunPickHud : MonoBehaviour
         {
             rolls[2] = Random.Range(0, Lib.guns.Length);
             if (rolls[2] != rolls[0] && rolls[2] != rolls[1])
-                viable = true;
+            {
+                if (!taken[rolls[2]])
+                    viable = true;
+            }
         }
         gun[2] = Lib.guns[rolls[2]];
 
@@ -95,6 +108,4 @@ public class GunPickHud : MonoBehaviour
             BonusValue[i].text = gun[i].info;
         }
     }
-
-
 }
