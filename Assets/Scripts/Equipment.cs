@@ -86,8 +86,8 @@ public class Equipment : MonoBehaviour
         {
             case 0:
                 playerStats.undamaged = true;
-                playerStats.movementSpeed += 60f;
-                playerStats.fireRateBonus += 0.12f;
+                playerStats.movementSpeed += 44f;
+                playerStats.fireRateBonus += 0.14f;
                 break;
             case 3:
                 playerStats.maxShield += 20;
@@ -108,7 +108,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainHP(10);
                 break;
             case 8:
-                playerStats.GainTools(6);
+                playerStats.GainTools(8);
                 for (int i = 0; i < 3; i++)
                 {
                     if (slotFilled[i])
@@ -132,7 +132,6 @@ public class Equipment : MonoBehaviour
                 playerStats.dashBaseCooldown /= 1.15f;
                 break;
             case 14:
-                playerStats.GainFR(0.072f);
                 playerStats.GainKeys(2);
                 break;
             case 15:

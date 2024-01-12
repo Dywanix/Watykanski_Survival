@@ -81,7 +81,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 57c74e1e230f475418ef3a59d4393fc5, type: 3}
   - {fileID: 21300000, guid: dd211b0894dcb484f97bd27f0a6a3a5f, type: 3}
   ItemTooltip:
-  - Gain +12% Fire Rate & Movement Speed untill getting Hit
+  - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions
   - Fire Eqipped Gun in Random Direstions for free occassionally
   - Increase Max Shield by 20. Gain 45% Lost Health as Shield
@@ -89,13 +89,13 @@ MonoBehaviour:
   - Increase Cooldown Reduction by 12%. Double all Cooldown Reduction.
   - Increase Max Health by 10. Increase Health Restored by 35%
   - Increase Max Health by 10. Gain +1,2% Damage for every 10 Max Health above 80
-  - Gain 6 Tools. All Guns have 1 more Accessory Slot
+  - Gain 8 Tools. All Guns have 1 more Accessory Slot
   - Increase Movement Speed by 9%. Using Dash gives Rush for 2,5s
   - Increase Damage by 6%. Gain 32 Gold
   - Increase Max Shield by 20. Gain Shield at the start of each Room
   - Reduce Damage Taken by 3, to a minimum of 5
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine
-  - Increase Fire Rate by 7,2%. Gain 2 Keys
+  - Every Key collected gives 3,6% Fire Rate. Gain 2 Keys
   - Reduce Grenade Cooldown by 10%. Gredandes deal 23% more Damage.
   - Gain +9% Crit Chance on all Guns
   - Increase On-Hit Rate by 20%. Crits Increase by 48%

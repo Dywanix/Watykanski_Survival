@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public Equipment eq;
     public Backpack bp;
     public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge, GrenadeCharge;
-    public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage;
+    public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage, damageFlash;
     public Bullet firedBullet;
     public GameObject Grenade, CurrentBullet;
     public GrenadeEffects Effects;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, bonusTool;
-    float temp, wrath;
+    float temp, wrath, flashA;
 
     [Header("Resources")]
     public float gold;
@@ -158,8 +158,13 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        else
-            move = new Vector2(0, 0);
+        else move = new Vector2(0, 0);
+
+        if (flashA > 0f)
+        {
+            flashA -= 0.8f * Time.deltaTime;
+            damageFlash.color = new Color(1f, 0f, 0f, flashA);
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -893,8 +898,8 @@ public class PlayerController : MonoBehaviour
                     if (undamaged)
                     {
                         undamaged = false;
-                        movementSpeed -= 60f;
-                        fireRateBonus -= 0.12f;
+                        movementSpeed -= 44f;
+                        fireRateBonus -= 0.14f;
                     }
                 }
                 if (eq.Items[12])
@@ -946,6 +951,8 @@ public class PlayerController : MonoBehaviour
     {
         invulnerable = true;
         playerSprite.color = new Color(1f, 0f, 0f, 1f);
+        flashA = 0.35f;
+        damageFlash.color = new Color(1f, 0f, 0f, flashA);
         Invoke("Recovered", 0.22f);
     }
 
@@ -1107,8 +1114,8 @@ public class PlayerController : MonoBehaviour
             if (!undamaged)
             {
                 undamaged = true;
-                movementSpeed += 60f;
-                fireRateBonus += 0.12f;
+                movementSpeed += 44f;
+                fireRateBonus += 0.14f;
             }
         }
         if (eq.Items[2])
@@ -1150,7 +1157,7 @@ public class PlayerController : MonoBehaviour
     {
         fireRateBonus += value;
         if (eq.Items[32])
-            cooldownReduction += value / 2.8f;
+            GainCR(value / 2.8f);
     }
 
     public void GainCR(float value)
@@ -1226,6 +1233,8 @@ public class PlayerController : MonoBehaviour
     public void GainKeys(int amount)
     {
         keys += amount;
+        if (eq.Items[14])
+            GainFR(0.036f);
         keysInfo.text = keys.ToString("0");
     }
 
