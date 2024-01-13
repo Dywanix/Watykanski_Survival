@@ -495,7 +495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7554130585949390338
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2569,6 +2569,7 @@ MonoBehaviour:
   firedBullet: {fileID: 0}
   Grenade: {fileID: 3080163295848660013, guid: 0e206f122f054ec448c3733f8c8656a2, type: 3}
   CurrentBullet: {fileID: 0}
+  DamageFlash: {fileID: 689938538099744625}
   Effects: {fileID: 0}
   map: {fileID: 0}
   mouseLeft: 0

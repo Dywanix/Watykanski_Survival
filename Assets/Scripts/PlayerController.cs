@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge, GrenadeCharge;
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage, damageFlash;
     public Bullet firedBullet;
-    public GameObject Grenade, CurrentBullet;
+    public GameObject Grenade, CurrentBullet, DamageFlash;
     public GrenadeEffects Effects;
     private EnemyBullet collidedBullet;
     public Map map;
@@ -164,6 +164,8 @@ public class PlayerController : MonoBehaviour
         {
             flashA -= 0.8f * Time.deltaTime;
             damageFlash.color = new Color(1f, 0f, 0f, flashA);
+            if (flashA <= 0f)
+                DamageFlash.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -952,6 +954,7 @@ public class PlayerController : MonoBehaviour
         invulnerable = true;
         playerSprite.color = new Color(1f, 0f, 0f, 1f);
         flashA = 0.35f;
+        DamageFlash.SetActive(true);
         damageFlash.color = new Color(1f, 0f, 0f, flashA);
         Invoke("Recovered", 0.22f);
     }
