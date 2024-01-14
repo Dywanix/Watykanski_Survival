@@ -8,11 +8,11 @@ public class AccessoryHovered : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public Backpack bp;
 
     public int order;
-    public bool equipped;
+    public bool equipped, rerolled;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        bp.TooltipOpen(order, equipped);
+        bp.TooltipOpen(order, equipped, rerolled);
     }
 
     public void OnPointerExit(PointerEventData eventData)

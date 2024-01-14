@@ -9,15 +9,18 @@ public class Backpack : MonoBehaviour
     public Equipment eq;
     public AccessoryLibrary ALibrary;
 
-    public GameObject Tab;
+    public GameObject Tab, RerollHud, GunHud;
     public TMPro.TextMeshProUGUI[] StatsText;
     public GameObject[] Guns, CollectedItems, StoredAccessories, EquippedAccesssories, GunSlots;
+    public Button WorkbenchButton, RerollButton;
     public Button[] GunButton, StoredButton, EquippedButton;
-    public Image[] GunsImage, CollectedImages, StoredImages, EquippedImages;
+    public Image[] GunsImage, CollectedImages, StoredImages, EquippedImages, RerolledImages;
     public Image CurrentGunImage;
 
-    public int[] StoredAccessory, EquippedAccessory;
+    public int[] StoredAccessory, EquippedAccessory, RerolledAccessory;
+    public bool[] rerollSlots;
     int currentGun, currentAccessory;
+    bool reroll;
 
     public void OpenBackpack()
     {
@@ -46,8 +49,23 @@ public class Backpack : MonoBehaviour
             if (eq.slotFilled[i])
                 GunsImage[i].sprite = eq.guns[i].gunSprite;
         }
-        GunButton[currentGun].interactable = false;
-        CurrentGunImage.sprite = eq.guns[currentGun].gunSprite;
+        if (!reroll)
+        {
+            GunButton[currentGun].interactable = false;
+            WorkbenchButton.interactable = true;
+            CurrentGunImage.sprite = eq.guns[currentGun].gunSprite;
+            GunHud.SetActive(true);
+            RerollHud.SetActive(false);
+        }
+        else
+        {
+            WorkbenchButton.interactable = false;
+            if (AllSlotsFilled())
+                RerollButton.interactable = true;
+            else RerollButton.interactable = false;
+            GunHud.SetActive(false);
+            RerollHud.SetActive(true);
+        }
 
         for (int i = 0; i < eq.itemsCollected; i++)
         {
@@ -69,11 +87,6 @@ public class Backpack : MonoBehaviour
         {
             EquippedImages[i].enabled = false;
             GunSlots[i].SetActive(false);
-        }
-
-        for (int i = 0; i < eq.guns[currentGun].MaxSlots; i++)
-        {
-            GunSlots[i].SetActive(true);
         }
 
         currentAccessory = 0;
@@ -105,33 +118,88 @@ public class Backpack : MonoBehaviour
             }
         }
 
-        if (eq.guns[currentGun].TakenSlots >= eq.guns[currentGun].MaxSlots)
+        if (!reroll)
         {
-            for (int i = 0; i < currentAccessory; i++)
+            for (int i = 0; i < eq.guns[currentGun].MaxSlots; i++)
             {
-                StoredButton[i].interactable = false;
+                GunSlots[i].SetActive(true);
+            }
+
+            if (eq.guns[currentGun].TakenSlots >= eq.guns[currentGun].MaxSlots)
+            {
+                for (int i = 0; i < currentAccessory; i++)
+                {
+                    StoredButton[i].interactable = false;
+                }
+            }
+
+            currentAccessory = 0;
+            for (int i = 0; i < eq.Accessories.Length; i++)
+            {
+                if (eq.guns[currentGun].Accessories[i] > 0)
+                {
+                    for (int j = 0; j < eq.guns[currentGun].Accessories[i]; j++)
+                    {
+                        EquippedImages[currentAccessory].sprite = ALibrary.AccessorySprite[i];
+                        EquippedImages[currentAccessory].enabled = true;
+                        EquippedAccessory[currentAccessory] = i;
+                        currentAccessory++;
+                    }
+                }
             }
         }
-
-        currentAccessory = 0;
-        for (int i = 0; i < eq.Accessories.Length; i++)
+        else
         {
-            if (eq.guns[currentGun].Accessories[i] > 0)
+            for (int i = 0; i < 3; i++)
             {
-                for (int j = 0; j < eq.guns[currentGun].Accessories[i]; j++)
+                if (rerollSlots[i])
                 {
-                    EquippedImages[currentAccessory].sprite = ALibrary.AccessorySprite[i];
-                    EquippedImages[currentAccessory].enabled = true;
-                    EquippedAccessory[currentAccessory] = i;
-                    currentAccessory++;
+                    RerolledImages[i].sprite = ALibrary.AccessorySprite[RerolledAccessory[i]];
+                    RerolledImages[i].enabled = true;
+                }
+                else RerolledImages[i].enabled = false;
+            }
+
+            if (AllSlotsFilled())
+            {
+                for (int i = 0; i < currentAccessory; i++)
+                {
+                    StoredButton[i].interactable = false;
                 }
             }
         }
     }
 
+    bool AllSlotsFilled()
+    {
+        if (rerollSlots[0] && rerollSlots[1] && rerollSlots[2])
+            return true;
+        else return false;
+    }
+
     public void ChooseGun(int which)
     {
         currentGun = which;
+        reroll = false;
+
+        UpdateInfo();
+    }
+
+    public void ChooseReroll()
+    {
+        reroll = true;
+
+        UpdateInfo();
+    }
+
+    public void Reroll()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            rerollSlots[i] = false;
+        }
+
+        // dodaæ jeszcze efekt samego rollowania xd
 
         UpdateInfo();
     }
@@ -139,10 +207,32 @@ public class Backpack : MonoBehaviour
     public void EquipAccessory(int placement)
     {
         eq.Accessories[StoredAccessory[placement]]--;
-        eq.guns[currentGun].Accessories[StoredAccessory[placement]]++;
-        eq.guns[currentGun].TakenSlots += 1;
 
-        GainEffect(StoredAccessory[placement]);
+        if (!reroll)
+        {
+            eq.guns[currentGun].Accessories[StoredAccessory[placement]]++;
+            eq.guns[currentGun].TakenSlots += 1;
+
+            GainEffect(StoredAccessory[placement]);
+        }
+        else
+        {
+            if (!rerollSlots[0])
+            {
+                RerolledAccessory[0] = StoredAccessory[placement];
+                rerollSlots[0] = true;
+            }
+            else if (!rerollSlots[1])
+            {
+                RerolledAccessory[1] = StoredAccessory[placement];
+                rerollSlots[1] = true;
+            }
+            else
+            {
+                RerolledAccessory[2] = StoredAccessory[placement];
+                rerollSlots[2] = true;
+            }
+        }
         TooltipClose();
 
         UpdateInfo();
@@ -151,10 +241,18 @@ public class Backpack : MonoBehaviour
     public void RemoveAccessory(int placement)
     {
         eq.Accessories[EquippedAccessory[placement]]++;
-        eq.guns[currentGun].Accessories[EquippedAccessory[placement]]--;
-        eq.guns[currentGun].TakenSlots -= 1;
 
-        LoseEffect(EquippedAccessory[placement]);
+        if (!reroll)
+        {
+            eq.guns[currentGun].Accessories[EquippedAccessory[placement]]--;
+            eq.guns[currentGun].TakenSlots -= 1;
+
+            LoseEffect(EquippedAccessory[placement]);
+        }
+        else
+        {
+            rerollSlots[placement] = false;
+        }
         TooltipClose();
 
         UpdateInfo();
@@ -386,10 +484,12 @@ public class Backpack : MonoBehaviour
         }
     }
 
-    public void TooltipOpen(int placement, bool equipped)
+    public void TooltipOpen(int placement, bool equipped, bool rerolled)
     {
         if (equipped)
             eq.Tooltip.text = ALibrary.AccessoryTooltip[EquippedAccessory[placement]];
+        else if (rerolled)
+            eq.Tooltip.text = ALibrary.AccessoryTooltip[RerolledAccessory[placement]];
         else eq.Tooltip.text = ALibrary.AccessoryTooltip[StoredAccessory[placement]];
     }
 
