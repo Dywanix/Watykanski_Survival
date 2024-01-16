@@ -37,7 +37,10 @@ public class PlayerController : MonoBehaviour
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, bonusTool;
-    float temp, wrath, flashA;
+    float temp, flashA;
+
+    // items stats
+    public float wrath, shieldCapacitor;
 
     [Header("Resources")]
     public float gold;
@@ -75,7 +78,7 @@ public class PlayerController : MonoBehaviour
         Invoke("Tick", 0.8f);
         if (eq.gambler)
         {
-            temp = 37.6f;
+            temp = 40.0f;
             while (temp > 0f)
             {
                 tempi = Random.Range(0, 7);
@@ -992,6 +995,8 @@ public class PlayerController : MonoBehaviour
 
     public void GainShield(float value)
     {
+        if (eq.Items[11])
+            ShieldCapacitor(value);
         shield += value;
         if (shield > maxShield)
             shield = maxShield;
@@ -1092,14 +1097,6 @@ public class PlayerController : MonoBehaviour
         dayCount++;
         //RestoreHealth(40 + maxHealth * 0.5f);
         wrath = 0;
-        for (int i = 0; i < 3; i++)
-        {
-            if (eq.slotFilled[i])
-            {
-                if (eq.guns[i].Accessories[27] > 0)
-                    eq.guns[i].parts += 5 * eq.guns[i].Accessories[27];
-            }
-        }
         if (eq.Items[18])
         {
             GainGold(5);
@@ -1124,7 +1121,10 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[2])
             Invoke("Rain", 0.2f);
         if (eq.Items[11])
-            GainShield(0.106f * maxShield);
+        {
+            shield = maxShield;
+            GainShield(0f);
+        }
         //if (eq.Items[34])
             //protection = true;
     }
@@ -1185,6 +1185,14 @@ public class PlayerController : MonoBehaviour
         dHealth += value;
         dropBar.fillAmount = dHealth / maxHealth;
         healthBar.fillAmount = health / maxHealth;
+    }
+
+    public void GainSC(float value)
+    {
+        if (eq.Items[11])
+            value *= 0.3f;
+        maxShield += value;
+        GainShield(value);
     }
 
     public void GainGold(float amount)
@@ -1256,6 +1264,26 @@ public class PlayerController : MonoBehaviour
                 eq.guns[i].bonusAmmo += eq.guns[i].maxAmmo / 3;
                 eq.guns[i].ammo += eq.guns[i].maxAmmo / 3;
             }
+        }
+    }
+
+    public void Item11()
+    {
+        maxShield *= 0.3f;
+        ShieldCapacitor(shield);
+        shield = maxShield;
+
+        GainSC(20);
+    }
+
+    public void ShieldCapacitor(float amount)
+    {
+        shieldCapacitor += amount;
+        while (shieldCapacitor >= 16f)
+        {
+            shieldCapacitor -= 16f;
+            maxShield += 1f;
+            GainShield(0f);
         }
     }
 

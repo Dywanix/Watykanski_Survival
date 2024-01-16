@@ -390,7 +390,7 @@ MonoBehaviour:
   Glow: {fileID: 2842332727899386910}
   playerStats: {fileID: 0}
   rarity: 1
-  keysRequired: 3
+  cost: 0
 --- !u!1 &1214385971476575561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1197,7 @@ MonoBehaviour:
   Glow: {fileID: 3315049139948114966}
   playerStats: {fileID: 0}
   rarity: 2
-  keysRequired: 5
+  cost: 0
 --- !u!1 &2235478063196360376
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   Glow: {fileID: 1325506688918777177}
   playerStats: {fileID: 0}
   rarity: 0
-  keysRequired: 2
+  cost: 0
 --- !u!1 &3697983774925790111
 GameObject:
   m_ObjectHideFlags: 0
@@ -9245,7 +9245,7 @@ MonoBehaviour:
   Glow: {fileID: 3797590408843073957}
   playerStats: {fileID: 0}
   rarity: 2
-  keysRequired: 0
+  cost: 0
 --- !u!1 &6580651702705836817
 GameObject:
   m_ObjectHideFlags: 0
@@ -9350,7 +9350,7 @@ MonoBehaviour:
   Glow: {fileID: 4177689794179634712}
   playerStats: {fileID: 0}
   rarity: 0
-  keysRequired: 0
+  cost: 0
 --- !u!1 &6752198046397993014
 GameObject:
   m_ObjectHideFlags: 0
@@ -9769,7 +9769,7 @@ MonoBehaviour:
   Glow: {fileID: 237543773935760525}
   playerStats: {fileID: 0}
   rarity: 1
-  keysRequired: 0
+  cost: 0
 --- !u!1 &6975491890297788190
 GameObject:
   m_ObjectHideFlags: 0
@@ -12159,16 +12159,17 @@ MonoBehaviour:
   - {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
   - {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
   - {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
-  - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
+  - {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
+  - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   Items2:
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
-  - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   - {fileID: 2318759274309051530, guid: 1cd4bd986c5ecae4ebe307483af6d8b0, type: 3}
-  range1: 080000000b000000
-  range2: 0200000003000000
+  - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
+  range1: 080000000d000000
+  range2: 0200000004000000
 --- !u!50 &7027386748001352187
 Rigidbody2D:
   serializedVersion: 4

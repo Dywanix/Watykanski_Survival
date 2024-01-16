@@ -92,7 +92,7 @@ MonoBehaviour:
   - Gain 8 Tools. All Guns have 1 more Accessory Slot
   - Increase Movement Speed by 9%. Using Dash gives Rush for 2,5s
   - Increase Damage by 6%. Gain 32 Gold
-  - Increase Max Shield by 20. Gain Shield at the start of each Room
+  - Decrease Max Shield greatly. Fully recharge Shield at the start of Combat
   - Reduce Damage Taken by 3, to a minimum of 5
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine
   - Every Key collected gives 3,6% Fire Rate. Gain 2 Keys

@@ -126,7 +126,7 @@ MonoBehaviour:
   Glow: {fileID: 4093467137569062389}
   playerStats: {fileID: 0}
   rarity: 0
-  cost: 12
+  cost: 18
 --- !u!1 &190012666460026200
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 12
+  m_text: 18
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b6400ac3954f8f442af2874500773fc7, type: 2}
   m_sharedMaterial: {fileID: -2277706604864201706, guid: b6400ac3954f8f442af2874500773fc7, type: 2}

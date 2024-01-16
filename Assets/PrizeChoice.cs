@@ -41,9 +41,8 @@ public class PrizeChoice : MonoBehaviour
                 SetBaseAccessories();
                 break;
             case 1:
-                SetBaseAccessories();
                 playerStats.GainKeys(1);
-                //SetRareAccessories();
+                SetRareAccessories();
                 break;
             case 2:
                 SetItems();
@@ -191,17 +190,9 @@ public class PrizeChoice : MonoBehaviour
 
     public void ChoosePrize(int choice)
     {
-        switch (Rarity)
-        {
-            case 0:
-                playerStats.eq.Accessories[rolls[choice]]++;
-                break;
-            case 1:
-                break;
-            case 2:
-                playerStats.eq.PickUpItem(rolls[choice]);
-                break;
-        }
+        if (Rarity == 2)
+            playerStats.eq.PickUpItem(rolls[choice]);
+        else playerStats.eq.Accessories[rolls[choice]]++;
         playerStats.free = true;
         playerStats.menuOpened = false;
         Hud.SetActive(false);

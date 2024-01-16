@@ -194,7 +194,7 @@ public class Backpack : MonoBehaviour
 
     int RerollToolsCost()
     {
-        return 24 - NumberOfSlotsFilled() * 8;
+        return 18 - NumberOfSlotsFilled() * 6;
     }
 
     public void ChooseGun(int which)

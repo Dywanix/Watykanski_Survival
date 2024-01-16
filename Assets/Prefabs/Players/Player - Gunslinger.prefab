@@ -3020,6 +3020,7 @@ MonoBehaviour:
   Peacemaker: {fileID: 2584865487150053145, guid: 4199b497d05905a46aa0b0a9e542175e, type: 3}
   Boomerange: {fileID: 7608570293721976720, guid: 4e39c7dcfe890264983a3356cf95405b, type: 3}
   Wave: {fileID: 5166568421592281273, guid: 9116c8cd7df5950499683757c0779288, type: 3}
+  Laser: {fileID: 8202576004139201279, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
   Orb: {fileID: 7626946675666722328, guid: aa760cd493129c14da55ed7be64c288e, type: 3}
   freeBulletCharges:
   - 0
@@ -3034,6 +3035,10 @@ MonoBehaviour:
   - 0
   - 0
   waveCharges:
+  - 0
+  - 0
+  - 0
+  laserCharges:
   - 0
   - 0
   - 0
@@ -3053,7 +3058,6 @@ MonoBehaviour:
   PlasmaBulletPrefab: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
   PlasmaPoisonBulletPrefab: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
-  Laser: {fileID: 1191445889087333895, guid: 83f6ec3806319884d90f37fc37872c1a, type: 3}
 --- !u!114 &4870294145413830454
 MonoBehaviour:
   m_ObjectHideFlags: 0

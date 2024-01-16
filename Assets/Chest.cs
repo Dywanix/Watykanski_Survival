@@ -36,7 +36,7 @@ public class Chest : MonoBehaviour
 
     void OpenChest()
     {
-        amount = Random.Range(range1[0], range1[1] + 1);
+        amount = Random.Range(range1[0], range1[1] + 1 + playerStats.luck);
         for (int i = 0; i < amount; i++)
         {
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));

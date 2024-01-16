@@ -22,8 +22,8 @@ public class Equipment : MonoBehaviour
     int tempi, roll;
 
     // On Hit
-    public GameObject Peacemaker, Boomerange, Wave, Orb;
-    public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, orbCharges;
+    public GameObject Peacemaker, Boomerange, Wave, Laser, Orb;
+    public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, laserCharges, orbCharges;
     public MultipleBullets waveBullet;
 
     // -- items
@@ -40,7 +40,7 @@ public class Equipment : MonoBehaviour
     [Header("Pociski")]
     public GameObject PoisonBulletPrefab;
     public GameObject PlasmaBulletPrefab, PlasmaPoisonBulletPrefab;
-    public GameObject Saw, Laser;
+    public GameObject Saw; //Laser;
     //public float sawCharges, laserCharges;
 
     void Start()
@@ -90,8 +90,7 @@ public class Equipment : MonoBehaviour
                 playerStats.fireRateBonus += 0.14f;
                 break;
             case 3:
-                playerStats.maxShield += 20;
-                playerStats.GainShield(20);
+                playerStats.GainSC(20);
                 break;
             case 4:
                 playerStats.dashBaseCooldown /= 1.18f;
@@ -125,8 +124,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainGold(32);
                 break;
             case 11:
-                playerStats.maxShield += 20;
-                playerStats.GainShield(20);
+                playerStats.Item11();
                 break;
             case 13:
                 playerStats.dashBaseCooldown /= 1.15f;
@@ -227,6 +225,13 @@ public class Equipment : MonoBehaviour
             waveCharges[equipped] -= 13f;
         }
 
+        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27] * (1f + 0.3f * guns[equipped].Accessories[26]);
+        if (laserCharges[equipped] >= 5f)
+        {
+            FireLaser();
+            laserCharges[equipped] -= 5f;
+        }
+
         orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * (1f + 0.3f * guns[equipped].Accessories[26]);
         if (orbCharges[equipped] >= 5f)
         {
@@ -264,7 +269,7 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             playerStats.SetBullet(1f);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
-            playerStats.firedBullet.duration = 33f;
+            playerStats.firedBullet.duration = 40f;
 
             playerStats.firedBullet.damage *= 1.1f + 0.06f * playerStats.firedBullet.pierce + 0.35f * playerStats.firedBullet.pierceEfficiency;
             playerStats.firedBullet.pierce += 7;
@@ -284,6 +289,27 @@ public class Equipment : MonoBehaviour
             waveBullet.bulletForce = 20f * Random.Range(1.07f, 1.08f) * Vector3.Distance(playerStats.transform.position, new Vector2(playerStats.mousePos[0], playerStats.mousePos[1])) / (guns[equipped].range * 23f);
         else waveBullet.bulletForce = 20f * Random.Range(0.95f, 1.05f);
         waveBullet.BulletShard = guns[equipped].bulletPrefab[Random.Range(0, guns[equipped].bulletPrefab.Length)];
+    }
+
+    void FireLaser()
+    {
+        for (int i = 0; i < guns[equipped].BulletsFired(); i++)
+        {
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-0.6f * guns[equipped].accuracy - guns[equipped].BulletsFired() * 1f, 0.6f * guns[equipped].accuracy + guns[equipped].BulletsFired() * 1f));
+            GameObject bullet = Instantiate(Laser, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * 0f * Random.Range(0.96f, 1.04f), ForceMode2D.Impulse);
+
+            playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            playerStats.SetBullet(1f);
+            playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+            playerStats.firedBullet.duration = 0.14f;
+
+            playerStats.firedBullet.damage *= 0.35f + 0.025f * playerStats.firedBullet.pierce + 0.06f * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.pierce = 10;
+            playerStats.firedBullet.pierceEfficiency = 1f;
+            playerStats.firedBullet.shatter += 0.6f + 0.2f * playerStats.firedBullet.shatter;
+        }
     }
 
     void FireOrb()

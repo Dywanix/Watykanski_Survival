@@ -16,7 +16,7 @@ public class EmergencyArmor : MonoBehaviour
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
 
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 3.5f && playerStats.tools >= cost)
+        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.2f && playerStats.tools >= cost)
         {
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
