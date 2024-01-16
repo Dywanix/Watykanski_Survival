@@ -10,7 +10,7 @@ public class Chest : MonoBehaviour
     public Rigidbody2D Dir;
 
     public GameObject[] Items1, Items2;
-    public int KeysRequired;
+    //public int KeysRequired;
     public int[] range1, range2;
     int amount;
 
@@ -22,12 +22,12 @@ public class Chest : MonoBehaviour
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
 
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 3.5f && playerStats.keys >= KeysRequired)
+        if (Vector3.Distance(transform.position, Player.transform.position) <= 3.5f) //&& playerStats.keys >= KeysRequired)
         {
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                playerStats.SpendKeys(KeysRequired);
+                //playerStats.SpendKeys(KeysRequired);
                 OpenChest();
             }
         }

@@ -10,6 +10,7 @@ public class Backpack : MonoBehaviour
     public AccessoryLibrary ALibrary;
 
     public GameObject Tab, RerollHud, GunHud;
+    public TMPro.TextMeshProUGUI ToolsCost;
     public TMPro.TextMeshProUGUI[] StatsText;
     public GameObject[] Guns, CollectedItems, StoredAccessories, EquippedAccesssories, GunSlots;
     public Button WorkbenchButton, RerollButton;
@@ -19,7 +20,7 @@ public class Backpack : MonoBehaviour
 
     public int[] StoredAccessory, EquippedAccessory, RerolledAccessory;
     public bool[] rerollSlots;
-    int currentGun, currentAccessory;
+    int currentGun, currentAccessory, tempi;
     bool reroll;
 
     public void OpenBackpack()
@@ -60,7 +61,10 @@ public class Backpack : MonoBehaviour
         else
         {
             WorkbenchButton.interactable = false;
+            ToolsCost.text = RerollToolsCost().ToString("0");
             if (AllSlotsFilled())
+                RerollButton.interactable = true;
+            else if (player.tools >= RerollToolsCost())
                 RerollButton.interactable = true;
             else RerollButton.interactable = false;
             GunHud.SetActive(false);
@@ -177,6 +181,22 @@ public class Backpack : MonoBehaviour
         else return false;
     }
 
+    int NumberOfSlotsFilled()
+    {
+        tempi = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            if (rerollSlots[i])
+                tempi++;
+        }
+        return tempi;
+    }
+
+    int RerollToolsCost()
+    {
+        return 30 - NumberOfSlotsFilled() * 10;
+    }
+
     public void ChooseGun(int which)
     {
         currentGun = which;
@@ -194,6 +214,8 @@ public class Backpack : MonoBehaviour
 
     public void Reroll()
     {
+        player.SpendTools(RerollToolsCost());
+
         for (int i = 0; i < 3; i++)
         {
             rerollSlots[i] = false;

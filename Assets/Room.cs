@@ -6,7 +6,7 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
-    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize, AccessoryPrize;
+    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize, AccessoryPrize, Chest;
     public GameObject[] Mobs, Prizes, SndPrizes;
 
     bool fight;
@@ -166,6 +166,7 @@ public class Room : MonoBehaviour
 
     void SpawnPrize()
     {
+        Chest.SetActive(true);
         Prizes[map.PrizeRarity()].SetActive(true);
         roll = Random.Range(0, 9);
         if (roll >= 7)
