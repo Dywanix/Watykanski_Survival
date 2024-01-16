@@ -2959,11 +2959,11 @@ MonoBehaviour:
   dShield: 0
   shield: 0
   poison: 0
-  damageBonus: 1.065
-  fireRateBonus: 1.058
-  movementSpeed: 438
+  damageBonus: 1.07
+  fireRateBonus: 1.07
+  movementSpeed: 444
   additionalCritChance: 0
-  cooldownReduction: 1.024
+  cooldownReduction: 1.03
   forceIncrease: 1
   dashBaseCooldown: 4.8
   maxDashCooldown: 0
@@ -2980,10 +2980,10 @@ MonoBehaviour:
   luck: 0
   undamaged: 0
   invulnerable: 0
-  gold: 24
-  tools: 4
-  toolsStored: 4
-  keys: 1
+  gold: 26
+  tools: 6
+  toolsStored: 6
+  keys: 0
   playerSprite: {fileID: 2129462729641926354}
   animator: {fileID: 7508960709266052724}
   moveSpeed: 5

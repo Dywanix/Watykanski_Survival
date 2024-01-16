@@ -10,11 +10,12 @@ public class PrizeChoice : MonoBehaviour
     public ItemsLibrary ItemLib;
     public PlayerController playerStats;
     public GameObject Hud;
-    public Image[] Choices;
-    public Sprite[] CommonSprites, RareSprites;
-    public int accessoryChance;
+    public Image[] ChoicesBackground, Choices;
+    public TMPro.TextMeshProUGUI[] Tooltips;
+    public Sprite BaseBG, RareBG, ItemBG;
+    //public int accessoryChance;
 
-    public int[] rolls, accessories, items;
+    public int[] rolls; //accessories, items;
     int Rarity;
 
     void Update()
@@ -37,18 +38,20 @@ public class PrizeChoice : MonoBehaviour
         switch (Rarity)
         {
             case 0:
-                SetCommons();
+                SetBaseAccessories();
                 break;
             case 1:
-                SetRares();
+                SetBaseAccessories();
+                playerStats.GainKeys(1);
+                //SetRareAccessories();
                 break;
             case 2:
-                SetEpics();
+                SetItems();
                 break;
         }
     }
 
-    void SetCommons()
+    /*void SetCommons()
     {
         rolls[0] = Random.Range(0, CommonSprites.Length);
 
@@ -64,11 +67,12 @@ public class PrizeChoice : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
+            ChoicesBackground[i].sprite = BaseBG;
             Choices[i].sprite = CommonSprites[rolls[i]];
         }
-    }
+    }*/
 
-    void SetRares()
+    /*void SetRares()
     {
         rolls[0] = Random.Range(0, RareSprites.Length + accessoryChance);
         if (rolls[0] >= RareSprites.Length)
@@ -102,14 +106,65 @@ public class PrizeChoice : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
+            ChoicesBackground[i].sprite = RareBG;
             if (rolls[i] >= RareSprites.Length)
                 Choices[i].sprite = AccLib.AccessorySprite[accessories[i]];
             else
                 Choices[i].sprite = RareSprites[rolls[i]];
         }
+    }*/
+
+    void SetBaseAccessories()
+    {
+        do
+        {
+            rolls[0] = Random.Range(0, AccLib.AccessorySprite.Length);
+        } while (playerStats.eq.Items[rolls[0]]);
+
+        do
+        {
+            rolls[1] = Random.Range(0, AccLib.AccessorySprite.Length);
+        } while (rolls[1] == rolls[0]);
+
+        do
+        {
+            rolls[2] = Random.Range(0, AccLib.AccessorySprite.Length);
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1]);
+
+        for (int i = 0; i < 3; i++)
+        {
+            ChoicesBackground[i].sprite = BaseBG;
+            Choices[i].sprite = AccLib.AccessorySprite[rolls[i]];
+            Tooltips[i].text = AccLib.AccessoryTooltip[rolls[i]];
+        }
     }
 
-    void SetEpics()
+    void SetRareAccessories()
+    {
+        do
+        {
+            rolls[0] = Random.Range(0, AccLib.AccessorySprite.Length);
+        } while (playerStats.eq.Items[rolls[0]]);
+
+        do
+        {
+            rolls[1] = Random.Range(0, AccLib.AccessorySprite.Length);
+        } while (rolls[1] == rolls[0]);
+
+        do
+        {
+            rolls[2] = Random.Range(0, AccLib.AccessorySprite.Length);
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1]);
+
+        for (int i = 0; i < 3; i++)
+        {
+            ChoicesBackground[i].sprite = RareBG;
+            Choices[i].sprite = AccLib.AccessorySprite[rolls[i]];
+            Tooltips[i].text = AccLib.AccessoryTooltip[rolls[i]];
+        }
+    }
+
+    void SetItems()
     {
         do
         {
@@ -119,16 +174,18 @@ public class PrizeChoice : MonoBehaviour
         do
         {
             rolls[1] = Random.Range(0, ItemLib.ItemSprite.Length);
-        } while (rolls[1] == rolls[0] || (playerStats.eq.Items[rolls[1]]));
+        } while (rolls[1] == rolls[0] || playerStats.eq.Items[rolls[1]]);
 
         do
         {
             rolls[2] = Random.Range(0, ItemLib.ItemSprite.Length);
-        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || (playerStats.eq.Items[rolls[2]]));
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || playerStats.eq.Items[rolls[2]]);
 
         for (int i = 0; i < 3; i++)
         {
+            ChoicesBackground[i].sprite = ItemBG;
             Choices[i].sprite = ItemLib.ItemSprite[rolls[i]];
+            Tooltips[i].text = ItemLib.ItemTooltip[rolls[i]];
         }
     }
 
@@ -137,64 +194,9 @@ public class PrizeChoice : MonoBehaviour
         switch (Rarity)
         {
             case 0:
-                switch (rolls[choice])
-                {
-                    case 0:
-                        playerStats.GainGold(16);
-                        break;
-                    case 1:
-                        playerStats.GainTools(5);
-                        break;
-                    case 2:
-                        playerStats.GainKeys(2);
-                        break;
-                    case 3:
-                        playerStats.RestoreHealth(35);
-                        break;
-                    case 4:
-                        playerStats.GainShield(25);
-                        break;
-                    case 5:
-                        map.luck += 1;
-                        playerStats.luck += 1;
-                        map.rareChance += 8 + (map.rareChance * 2 + map.luck * 3) / 6;
-                        map.epicChance += 5 + (map.epicChance + map.luck) / 4;
-                        break;
-                }
+                playerStats.eq.Accessories[rolls[choice]]++;
                 break;
             case 1:
-                if (rolls[choice] >= RareSprites.Length)
-                    playerStats.eq.Accessories[accessories[choice]]++;
-                else
-                {
-                    switch (rolls[choice])
-                    {
-                        case 0:
-                            playerStats.GainGold(24);
-                            break;
-                        case 1:
-                            playerStats.GainTools(8);
-                            break;
-                        case 2:
-                            playerStats.GainKeys(3);
-                            break;
-                        case 3:
-                            playerStats.GainHP(10);
-                            break;
-                        case 4:
-                            playerStats.GainDMG(0.027f);
-                            break;
-                        case 5:
-                            playerStats.GainFR(0.032f);
-                            break;
-                        case 6:
-                            playerStats.GainMS(5f);
-                            break;
-                        case 7:
-                            playerStats.cooldownReduction += 0.053f;
-                            break;
-                    }
-                }
                 break;
             case 2:
                 playerStats.eq.PickUpItem(rolls[choice]);

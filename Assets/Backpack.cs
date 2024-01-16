@@ -194,7 +194,7 @@ public class Backpack : MonoBehaviour
 
     int RerollToolsCost()
     {
-        return 30 - NumberOfSlotsFilled() * 10;
+        return 24 - NumberOfSlotsFilled() * 8;
     }
 
     public void ChooseGun(int which)
@@ -221,9 +221,10 @@ public class Backpack : MonoBehaviour
             rerollSlots[i] = false;
         }
 
-        // dodaæ jeszcze efekt samego rollowania xd
+        player.map.ChoosePrize(player.map.PrizeRarity());
 
         UpdateInfo();
+        CloseBackpack();
     }
 
     public void EquipAccessory(int placement)
