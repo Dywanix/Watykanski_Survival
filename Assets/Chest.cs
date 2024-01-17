@@ -13,6 +13,7 @@ public class Chest : MonoBehaviour
     public GameObject[] Items1, Items2;
     //public int KeysRequired;
     public int[] range1, range2;
+    public bool potionGuaranteed;
     int amount;
 
     void Update()
@@ -37,10 +38,13 @@ public class Chest : MonoBehaviour
 
     void OpenChest()
     {
-        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
-        GameObject potion = Instantiate(HealthPotion, Dir.position, transform.rotation);
-        Rigidbody2D potion_body = potion.GetComponent<Rigidbody2D>();
-        potion_body.AddForce(Sight.up * Random.Range(1.3f, 5.0f), ForceMode2D.Impulse);
+        if (potionGuaranteed)
+        {
+            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+            GameObject potion = Instantiate(HealthPotion, Dir.position, transform.rotation);
+            Rigidbody2D potion_body = potion.GetComponent<Rigidbody2D>();
+            potion_body.AddForce(Sight.up * Random.Range(1.2f, 3.5f), ForceMode2D.Impulse);
+        }
 
         amount = Random.Range(range1[0], range1[1] + 1 + playerStats.luck);
         for (int i = 0; i < amount; i++)

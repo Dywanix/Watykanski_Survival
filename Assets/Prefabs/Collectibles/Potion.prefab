@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8445968070005688979, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
       propertyPath: m_Name
       value: Potion
@@ -70,6 +74,10 @@ PrefabInstance:
     - target: {fileID: 1899054540941211187, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496493065344469382, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}

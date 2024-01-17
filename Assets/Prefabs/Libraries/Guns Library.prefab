@@ -2227,7 +2227,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7883449400016885017}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &482881049413243200
 MonoBehaviour:
@@ -3678,6 +3678,143 @@ MonoBehaviour:
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 1649544961230825972, guid: 9e624e420449e254d85951ec2a708af6, type: 3}
+--- !u!1 &5506601985173318202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801556758170803939}
+  - component: {fileID: 148386626280579096}
+  m_Layer: 0
+  m_Name: Build-a-Gun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1801556758170803939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506601985173318202}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7883449400016885017}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148386626280579096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506601985173318202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Revolver
+  gunSprite: {fileID: 21300000, guid: 3a3c16d40acc5a840926c6c3beec31d6, type: 3}
+  holdingSprite: {fileID: 21300000, guid: cfc94c4770bc6c540941dcc29edbed4c, type: 3}
+  damage: 15.7
+  fireRate: 0.57
+  accuracy: 5.6
+  penetration: 0
+  critChance: 0.17
+  reloadTime: 1.27
+  range: 0.26
+  force: 20
+  heft: 0.1
+  magazineSize: 17
+  ammo: 0
+  maxAmmo: 0
+  targetArea: 0
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 0
+  info: Has +(1) Accessory Slot
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 5.2
+  shakeDuration: 0.16
+  bulletsLeft: 17
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 4
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000e0000000900000005000000
+  Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.8
+  - 0.05
+  - 0.04
+  - 0.9
+  LevelUpBonuses:
+  - 0.5
+  - 0.94
+  - 0.95
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - penetration
+  - critChance
+  - reloadTime
+  UpgradeInfo:
+  - +1,8 Damage
+  - +5% Penetration
+  - +4% Crit Chance
+  - -10% Reload Time
+  infiniteMagazine: 0
+  infiniteAmmo: 1
+  individualReload: 0
+  individualReloadCount: 0
+  poisonBulletChance: 0
+  plasmaBulletChance: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &5518898055452544451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4685,8 +4822,9 @@ Transform:
   m_Children:
   - {fileID: 2806785319552471226}
   - {fileID: 5443877569428587918}
-  - {fileID: 4630930601520033627}
+  - {fileID: 1801556758170803939}
   - {fileID: 7730649509790221757}
+  - {fileID: 4630930601520033627}
   m_Father: {fileID: 4983335614787120282}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

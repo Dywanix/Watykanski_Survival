@@ -80,6 +80,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4ab550e7274ade84e88043340f9cce13, type: 3}
   - {fileID: 21300000, guid: 57c74e1e230f475418ef3a59d4393fc5, type: 3}
   - {fileID: 21300000, guid: dd211b0894dcb484f97bd27f0a6a3a5f, type: 3}
+  - {fileID: 21300000, guid: d615df5e73811504b92892e9e8416649, type: 3}
+  - {fileID: 21300000, guid: a92744f06ded5ef4494ab0f45414dfbb, type: 3}
+  - {fileID: 21300000, guid: 65fbf7f4abc2617419b75240b347b05f, type: 3}
   ItemTooltip:
   - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions
@@ -87,7 +90,7 @@ MonoBehaviour:
   - Increase Max Shield by 20. Gain 45% Lost Health as Shield
   - Dash gains Second Charge & Reduce Dash Cooldown by 18%
   - Increase Cooldown Reduction by 12%. Double all Cooldown Reduction.
-  - Increase Max Health by 10. Increase Health Restored by 35%
+  - Increase Max Health by 10. Increase healing from Potions by 10% of Max Health
   - Increase Max Health by 10. Gain +1,2% Damage for every 10 Max Health above 80
   - Gain 8 Tools. All Guns have 1 more Accessory Slot
   - Increase Movement Speed by 9%. Using Dash gives Rush for 2,5s
@@ -95,11 +98,11 @@ MonoBehaviour:
   - Decrease Max Shield greatly. Fully recharge Shield at the start of Combat
   - Reduce Damage Taken by 3, to a minimum of 5
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine
-  - Every Key collected gives 3,6% Fire Rate. Gain 2 Keys
+  - Increase Potion Slots by 2. Fill them all
   - Reduce Grenade Cooldown by 10%. Gredandes deal 23% more Damage.
   - Gain +9% Crit Chance on all Guns
   - Increase On-Hit Rate by 20%. Crits Increase by 48%
-  - After completing the Room gain 5 Gold & 1 Tools
+  - Chance to spawn bonus Chest
   - Increase Damage by 36%, but also increase Damage Taken by 24%
   - Enemies gain Vulnerable equal to 32% of their Armor
   - Increase Damage by 6% & Bullets Speed by 28%
@@ -117,3 +120,6 @@ MonoBehaviour:
     Increase
   - Gain 2 random Accessories & 8 Tools
   - Transform Max Health into Shield.
+  - Every Tool collected gives 1 Shield. Gain 6 Tools
+  - Every Potion used increases Max Health by 1. Gain 2 Potion
+  - Increase Potion Slots by 1 & healing from Potions by 5

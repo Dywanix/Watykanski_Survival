@@ -130,13 +130,18 @@ public class Equipment : MonoBehaviour
                 playerStats.dashBaseCooldown /= 1.15f;
                 break;
             case 14:
-                //playerStats.GainKeys(2);
+                playerStats.GainPotionSlots(2);
+                playerStats.GainPotions(100);
                 break;
             case 15:
                 playerStats.grenadeBaseCooldown /= 1.1f;
                 break;
             case 16:
                 playerStats.additionalCritChance += 0.09f;
+                playerStats.luck += 2;
+                playerStats.map.luck += 2;
+                break;
+            case 18:
                 playerStats.luck += 2;
                 playerStats.map.luck += 2;
                 break;
@@ -177,6 +182,15 @@ public class Equipment : MonoBehaviour
                 break;
             case 34:
                 playerStats.Item34();
+                break;
+            case 35:
+                playerStats.GainTools(6);
+                break;
+            case 36:
+                playerStats.GainPotions(2);
+                break;
+            case 37:
+                playerStats.GainPotionSlots(1);
                 break;
         }
     }
@@ -232,7 +246,7 @@ public class Equipment : MonoBehaviour
             laserCharges[equipped] -= 5f;
         }
 
-        orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * (1f + 0.3f * guns[equipped].Accessories[26]);
+        //orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * (1f + 0.3f * guns[equipped].Accessories[26]);
         if (orbCharges[equipped] >= 5f)
         {
             FireOrb();

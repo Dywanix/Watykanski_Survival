@@ -6,10 +6,10 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
-    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize, AccessoryPrize, Chest;
+    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize, AccessoryPrize, Chest, BonusChest;
     public GameObject[] Mobs, Prizes, SndPrizes;
 
-    bool fight;
+    bool fight, ended;
     public int roundStrength, strengthIncrease, mobsCount, roundsCount;
     public float countIncrease;
     //public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
@@ -35,7 +35,8 @@ public class Room : MonoBehaviour
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                StartRound();
+                if (!ended)
+                    StartRound();
             }
         }
         else Glow.SetActive(false);
@@ -147,6 +148,7 @@ public class Room : MonoBehaviour
         if (roundsCount == 0)
         {
             fight = false;
+            ended = true;
             SpawnPrize();
             RightDoors.SetActive(false);
             map.level++;
@@ -167,7 +169,12 @@ public class Room : MonoBehaviour
     void SpawnPrize()
     {
         Chest.SetActive(true);
-        Prizes[map.PrizeRarity()].SetActive(true);
+        if (map.playerStats.eq.Items[18])
+        {
+            if (17 + map.luck >= Random.Range(0, 100))
+                BonusChest.SetActive(true);
+        }
+        /*Prizes[map.PrizeRarity()].SetActive(true);
         roll = Random.Range(0, 9);
         if (roll >= 7)
             SndPrizes[2].SetActive(true);
@@ -177,6 +184,6 @@ public class Room : MonoBehaviour
 
         if (map.GunCheck())
             GunPrize.SetActive(true);
-        else AccessoryPrize.SetActive(true);
+        else AccessoryPrize.SetActive(true);*/
     }
 }

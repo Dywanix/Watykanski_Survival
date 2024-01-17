@@ -104,5 +104,5 @@ MonoBehaviour:
   - Fire Wave of 6 Bullets every 13th Shot
   - +9% Fire Rate, Increase On-Hit Rate by 30%
   - Fire Laser Occasionally
-  - +28% Curse
-  - Fire Dread Orb Occasionally
+  - +30% DoT
+  - +6% Damage & +30% Shatter

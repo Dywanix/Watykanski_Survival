@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: guns.Array.data[0]
       value: 
-      objectReference: {fileID: 181357406552264535}
+      objectReference: {fileID: 448366005064515087}
     - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: Items.Array.data[2]
       value: 1
@@ -113,9 +113,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
---- !u!114 &181357406552264535 stripped
+--- !u!114 &448366005064515087 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8729446868769482278, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9050437227606349694, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
   m_PrefabInstance: {fileID: 8908531505778239857}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

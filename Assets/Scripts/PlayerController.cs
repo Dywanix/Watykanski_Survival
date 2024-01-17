@@ -301,7 +301,7 @@ public class PlayerController : MonoBehaviour
 
         if (eq.Items[9])
         {
-            movementSpeed *= 1.25f;
+            movementSpeed += 100f;
             Invoke("SprintEnd", 2f);
         }
     }
@@ -666,7 +666,14 @@ public class PlayerController : MonoBehaviour
     {
         if (potions > 0 && health < maxHealth)
         {
-            RestoreHealth(10f);
+            temp = 10f;
+            if (eq.Items[36])
+                GainHP(1);
+            if (eq.Items[6])
+                temp += maxHealth * 0.1f;
+            if (eq.Items[37])
+                temp += 5f;
+            RestoreHealth(temp);
             potions--;
             potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");
         }
@@ -899,7 +906,7 @@ public class PlayerController : MonoBehaviour
 
     void SprintEnd()
     {
-        movementSpeed /= 1.25f;
+        movementSpeed -= 100f;
     }
 
     public void TakeDamage(float value, bool pierce)
@@ -1004,8 +1011,6 @@ public class PlayerController : MonoBehaviour
     public void RestoreHealth(float value)
     {
         Healed();
-        if (eq.Items[6])
-            value *= 1.35f;
         health += value;
         if (health > maxHealth)
             health = maxHealth;
@@ -1071,8 +1076,11 @@ public class PlayerController : MonoBehaviour
         }
         if (other.transform.tag == "Potion")
         {
-            GainPotions(1);
-            Destroy(other.gameObject);
+            if (potions < maxPotions)
+            {
+                GainPotions(1);
+                Destroy(other.gameObject);
+            }
         }
         else if (other.transform.tag == "Medkit")
         {
@@ -1247,6 +1255,10 @@ public class PlayerController : MonoBehaviour
             }
             amount += tempi;
         }
+        if (eq.Items[35])
+        {
+            GainShield(amount);
+        }
 
         tools += amount;
         toolsStored += amount;
@@ -1271,6 +1283,12 @@ public class PlayerController : MonoBehaviour
         potions += amount;
         if (potions > maxPotions)
             potions = maxPotions;
+        potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");
+    }
+
+    public void GainPotionSlots(int amount)
+    {
+        maxPotions += amount;
         potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");
     }
 

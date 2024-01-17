@@ -386,10 +386,11 @@ public class Backpack : MonoBehaviour
                 // Gun gains 5 parts after each room
                 break;
             case 28:
-                eq.guns[currentGun].curse += 0.28f;
+                eq.guns[currentGun].DoT += 0.30f;
                 break;
             case 29:
-                // Dread Orb - On Hit
+                eq.guns[currentGun].damageMultiplier *= 1.06f;
+                eq.guns[currentGun].shatter += 0.30f;
                 break;
         }
     }
@@ -499,10 +500,11 @@ public class Backpack : MonoBehaviour
                 // Gun gains 5 parts after each room
                 break;
             case 28:
-                eq.guns[currentGun].curse -= 0.28f;
+                eq.guns[currentGun].DoT -= 0.30f;
                 break;
             case 29:
-                // Dread Orb - On Hit
+                eq.guns[currentGun].damageMultiplier /= 1.06f;
+                eq.guns[currentGun].shatter -= 0.30f;
                 break;
         }
     }
