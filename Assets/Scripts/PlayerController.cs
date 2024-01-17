@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public Backpack bp;
-    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, keysInfo, DashCharge, GrenadeCharge;
+    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage, damageFlash;
     public Bullet firedBullet;
     public GameObject Grenade, CurrentBullet, DamageFlash;
@@ -38,13 +38,14 @@ public class PlayerController : MonoBehaviour
     bool dashSecondCharge, protection;
     int tempi, bonusTool;
     float temp, flashA;
+    bool greenF;
 
     // items stats
     public float wrath, shieldCapacitor;
 
     [Header("Resources")]
     public float gold;
-    public int tools, toolsStored, keys;
+    public int tools, toolsStored, potions, maxPotions;
 
     public SpriteRenderer playerSprite;
 
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
         ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
         GainGold(0f);
         GainTools(0);
-        GainKeys(0);
+        //GainKeys(0);
         dash = 0f;
         Invoke("Tick", 0.8f);
         if (eq.gambler)
@@ -133,10 +134,6 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 DashCast();
-            if (Input.GetKeyDown(KeyCode.M))
-                eq.Accessories[Random.Range(0, eq.Accessories.Length)]++;
-            if (Input.GetKeyDown(KeyCode.T))
-                Item34();
 
             GetInput();
             move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -144,6 +141,8 @@ public class PlayerController : MonoBehaviour
             Aim();
             if (Input.GetMouseButtonDown(1))
                 GrenadeCast();
+            if (Input.GetKeyDown(KeyCode.V))
+                DrinkPotion();
             if (task <= 0)
             {
                 Action();
@@ -166,7 +165,9 @@ public class PlayerController : MonoBehaviour
         if (flashA > 0f)
         {
             flashA -= 0.8f * Time.deltaTime;
-            damageFlash.color = new Color(1f, 0f, 0f, flashA);
+            if (greenF)
+                damageFlash.color = new Color(0f, 1f, 0f, flashA);
+            else damageFlash.color = new Color(1f, 0f, 0f, flashA);
             if (flashA <= 0f)
                 DamageFlash.SetActive(false);
         }
@@ -260,8 +261,12 @@ public class PlayerController : MonoBehaviour
 
     void Dash()
     {
-        dash = 1240f + 1.55f * movementSpeed;
-        Invoke("Dashed", 0.13f);
+        dash = 720f + 0.72f * movementSpeed;
+        Invoke("Dashed", 0.12f);
+
+        invulnerable = true;
+        playerSprite.color = new Color(0.4f, 0.4f, 1f, 1f);
+        Invoke("Recovered", 0.2f);
 
         if (eq.Items[13])
         {
@@ -657,6 +662,16 @@ public class PlayerController : MonoBehaviour
         else return throwRange;
     }
 
+    void DrinkPotion()
+    {
+        if (potions > 0 && health < maxHealth)
+        {
+            RestoreHealth(10f);
+            potions--;
+            potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");
+        }
+    }
+
     /*void UseAbility()
     {
         switch (eq.guns[eq.equipped].gunName)
@@ -954,12 +969,21 @@ public class PlayerController : MonoBehaviour
 
     void Damaged()
     {
+        greenF = false;
         invulnerable = true;
         playerSprite.color = new Color(1f, 0f, 0f, 1f);
         flashA = 0.35f;
         DamageFlash.SetActive(true);
         damageFlash.color = new Color(1f, 0f, 0f, flashA);
         Invoke("Recovered", 0.22f);
+    }
+
+    void Healed()
+    {
+        greenF = true;
+        flashA = 0.3f;
+        DamageFlash.SetActive(true);
+        damageFlash.color = new Color(0f, 1f, 0f, flashA);
     }
 
     void Recovered()
@@ -979,6 +1003,7 @@ public class PlayerController : MonoBehaviour
 
     public void RestoreHealth(float value)
     {
+        Healed();
         if (eq.Items[6])
             value *= 1.35f;
         health += value;
@@ -1044,9 +1069,9 @@ public class PlayerController : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-        if (other.transform.tag == "Token")
+        if (other.transform.tag == "Potion")
         {
-            GainKeys(1);
+            GainPotions(1);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Medkit")
@@ -1241,18 +1266,12 @@ public class PlayerController : MonoBehaviour
         toolsInfo.text = tools.ToString("0");
     }
 
-    public void GainKeys(int amount)
+    public void GainPotions(int amount)
     {
-        keys += amount;
-        if (eq.Items[14])
-            GainFR(0.036f);
-        keysInfo.text = keys.ToString("0");
-    }
-
-    public void SpendKeys(int amount)
-    {
-        keys -= amount;
-        keysInfo.text = keys.ToString("0");
+        potions += amount;
+        if (potions > maxPotions)
+            potions = maxPotions;
+        potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");
     }
 
     public void AmmoPack()

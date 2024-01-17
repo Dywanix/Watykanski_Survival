@@ -8,7 +8,7 @@ public class DamageTaken : MonoBehaviour
 
     public void SetText(float damage, string hue)
     {
-        damageText.fontSize = 40 + damage * 0.2f;
+        damageText.fontSize = 42 + damage * 0.22f;
         switch (hue)
         {
             case "orange":

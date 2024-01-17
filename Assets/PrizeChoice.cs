@@ -41,7 +41,7 @@ public class PrizeChoice : MonoBehaviour
                 SetBaseAccessories();
                 break;
             case 1:
-                playerStats.GainKeys(1);
+                //playerStats.GainKeys(1);
                 SetRareAccessories();
                 break;
             case 2:

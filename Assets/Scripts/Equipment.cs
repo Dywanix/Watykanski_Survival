@@ -130,7 +130,7 @@ public class Equipment : MonoBehaviour
                 playerStats.dashBaseCooldown /= 1.15f;
                 break;
             case 14:
-                playerStats.GainKeys(2);
+                //playerStats.GainKeys(2);
                 break;
             case 15:
                 playerStats.grenadeBaseCooldown /= 1.1f;

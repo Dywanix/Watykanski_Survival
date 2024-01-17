@@ -500,7 +500,7 @@ public class Enemy : MonoBehaviour
     void DropScrap()
     {
         Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
-        GameObject scrap = Instantiate(Scrap, Body.position, Sight.rotation);
+        GameObject scrap = Instantiate(Scrap, Body.position, transform.rotation);
         Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
         scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
     }
@@ -508,7 +508,7 @@ public class Enemy : MonoBehaviour
     void DropItem()
     {
         Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
-        GameObject scrap = Instantiate(Items[Random.Range(0, Items.Length)], Dir.position, Sight.rotation);
+        GameObject scrap = Instantiate(Items[Random.Range(0, Items.Length)], Dir.position, transform.rotation);
         Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
         scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
     }

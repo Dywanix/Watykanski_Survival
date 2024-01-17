@@ -82,7 +82,7 @@ public class SlotMachine : MonoBehaviour
         switch (prize)
         {
             case 0:
-                playerStats.GainKeys(4);
+                //playerStats.GainKeys(4);
                 break;
             case 1:
                 playerStats.GainTools(12);
@@ -100,7 +100,7 @@ public class SlotMachine : MonoBehaviour
                 }
                 break;
             case 4:
-                playerStats.GainKeys(1);
+                //playerStats.GainKeys(1);
                 break;
             case 5:
                 playerStats.GainTools(3);

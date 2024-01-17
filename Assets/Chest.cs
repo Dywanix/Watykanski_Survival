@@ -9,6 +9,7 @@ public class Chest : MonoBehaviour
     public Transform Sight;
     public Rigidbody2D Dir;
 
+    public GameObject HealthPotion;
     public GameObject[] Items1, Items2;
     //public int KeysRequired;
     public int[] range1, range2;
@@ -36,11 +37,16 @@ public class Chest : MonoBehaviour
 
     void OpenChest()
     {
+        Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+        GameObject potion = Instantiate(HealthPotion, Dir.position, transform.rotation);
+        Rigidbody2D potion_body = potion.GetComponent<Rigidbody2D>();
+        potion_body.AddForce(Sight.up * Random.Range(1.3f, 5.0f), ForceMode2D.Impulse);
+
         amount = Random.Range(range1[0], range1[1] + 1 + playerStats.luck);
         for (int i = 0; i < amount; i++)
         {
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
-            GameObject item = Instantiate(Items1[Random.Range(0, Items1.Length)], Dir.position, Sight.rotation);
+            GameObject item = Instantiate(Items1[Random.Range(0, Items1.Length)], Dir.position, transform.rotation);
             Rigidbody2D item_body = item.GetComponent<Rigidbody2D>();
             item_body.AddForce(Sight.up * Random.Range(1.3f, 5.0f), ForceMode2D.Impulse);
         }
@@ -49,7 +55,7 @@ public class Chest : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
-            GameObject item = Instantiate(Items2[Random.Range(0, Items2.Length)], Dir.position, Sight.rotation);
+            GameObject item = Instantiate(Items2[Random.Range(0, Items2.Length)], Dir.position, transform.rotation);
             Rigidbody2D item_body = item.GetComponent<Rigidbody2D>();
             item_body.AddForce(Sight.up * Random.Range(1.3f, 5.0f), ForceMode2D.Impulse);
         }

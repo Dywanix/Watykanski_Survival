@@ -163,7 +163,7 @@ public class Merchant : MonoBehaviour
                     playerStats.GainShield(50f);
                     break;
                 case 7:
-                    playerStats.GainKeys(4);
+                    //playerStats.GainKeys(4);
                     break;
                 case 8:
                     playerStats.cooldownReduction += 0.053f;
