@@ -27,14 +27,16 @@ public class Equipment : MonoBehaviour
     public MultipleBullets waveBullet;
 
     // -- items
+    //public GameObject[] Drones;
+    //public GameObject Caltrop, Knife, Cleaver;
+    //public float itemsActivationRate = 1f;
+
+    [Header("Items")]
     public bool[] Items;
     public int[] ItemList;
     public int itemsCollected;
-    public GameObject DeflectProjectal;
-    public GameObject[] Drones;
+    public GameObject DeflectProjectal, KnifeProjectal;
     public TMPro.TextMeshProUGUI Tooltip;
-    //public GameObject Caltrop, Knife, Cleaver;
-    //public float itemsActivationRate = 1f;
 
     // -- special bullets
     [Header("Pociski")]
@@ -354,6 +356,33 @@ public class Equipment : MonoBehaviour
 
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(1.2f) - 0.16f);
+        }
+    }
+
+    public void ActivateItems()
+    {
+        if (Items[38])
+            Invoke("KnifeThrow", 2.1f);
+    }
+
+    void KnifeThrow()
+    {
+        if (!playerStats.day)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 20f + 20f * i);
+                GameObject knife = Instantiate(KnifeProjectal, Barrel.position, Barrel.rotation);
+                Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
+                knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
+
+                firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
+                firedBullet.damage = (20 + 1.6f * playerStats.dayCount) * playerStats.DamageDealtMultiplyer(1f);
+            }
+
+            temp = 4.2f / (1f + playerStats.SpeedMultiplyer(0.7f));
+            temp /= (1f + playerStats.cooldownReduction * 0.4f);
+            Invoke("KnifeThrow", temp);
         }
     }
 

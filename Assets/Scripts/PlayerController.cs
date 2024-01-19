@@ -1130,11 +1130,6 @@ public class PlayerController : MonoBehaviour
         dayCount++;
         //RestoreHealth(40 + maxHealth * 0.5f);
         wrath = 0;
-        if (eq.Items[18])
-        {
-            GainGold(5);
-            GainTools(1);
-        }
         LevelUp();
     }
 
@@ -1142,6 +1137,7 @@ public class PlayerController : MonoBehaviour
     {
         day = false;
         AmmoRefill();
+        eq.ActivateItems();
         if (eq.Items[0])
         {
             if (!undamaged)
@@ -1309,16 +1305,14 @@ public class PlayerController : MonoBehaviour
         maxShield *= 0.3f;
         ShieldCapacitor(shield);
         shield = maxShield;
-
-        GainSC(20);
     }
 
     public void ShieldCapacitor(float amount)
     {
         shieldCapacitor += amount;
-        while (shieldCapacitor >= 16f)
+        while (shieldCapacitor >= 15f)
         {
-            shieldCapacitor -= 16f;
+            shieldCapacitor -= 15f;
             maxShield += 1f;
             GainShield(0f);
         }

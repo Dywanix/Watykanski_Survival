@@ -83,6 +83,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d615df5e73811504b92892e9e8416649, type: 3}
   - {fileID: 21300000, guid: a92744f06ded5ef4494ab0f45414dfbb, type: 3}
   - {fileID: 21300000, guid: 65fbf7f4abc2617419b75240b347b05f, type: 3}
+  - {fileID: 21300000, guid: 0d8f440edda9dda4e81dc67d3ce63540, type: 3}
   ItemTooltip:
   - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions
@@ -123,3 +124,4 @@ MonoBehaviour:
   - Every Tool collected gives 1 Shield. Gain 6 Tools
   - Every Potion used increases Max Health by 1. Gain 2 Potion
   - Increase Potion Slots by 1 & healing from Potions by 5
+  - Throw 3 Knives in a small cone every 3s
