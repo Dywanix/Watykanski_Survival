@@ -6,4 +6,5 @@ public class AccessoryLibrary : MonoBehaviour
 {
     public Sprite[] AccessorySprite;
     public string[] AccessoryTooltip;
+    public int count;
 }

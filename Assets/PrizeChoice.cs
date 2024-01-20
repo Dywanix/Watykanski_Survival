@@ -41,7 +41,6 @@ public class PrizeChoice : MonoBehaviour
                 SetBaseAccessories();
                 break;
             case 1:
-                //playerStats.GainKeys(1);
                 SetRareAccessories();
                 break;
             case 2:
@@ -115,19 +114,16 @@ public class PrizeChoice : MonoBehaviour
 
     void SetBaseAccessories()
     {
-        do
-        {
-            rolls[0] = Random.Range(0, AccLib.AccessorySprite.Length);
-        } while (playerStats.eq.Items[rolls[0]]);
+        rolls[0] = Random.Range(0, AccLib.count);
 
         do
         {
-            rolls[1] = Random.Range(0, AccLib.AccessorySprite.Length);
+            rolls[1] = Random.Range(0, AccLib.count);
         } while (rolls[1] == rolls[0]);
 
         do
         {
-            rolls[2] = Random.Range(0, AccLib.AccessorySprite.Length);
+            rolls[2] = Random.Range(0, AccLib.count);
         } while (rolls[2] == rolls[0] || rolls[2] == rolls[1]);
 
         for (int i = 0; i < 3; i++)
@@ -140,19 +136,16 @@ public class PrizeChoice : MonoBehaviour
 
     void SetRareAccessories()
     {
-        do
-        {
-            rolls[0] = Random.Range(0, AccLib.AccessorySprite.Length);
-        } while (playerStats.eq.Items[rolls[0]]);
+        rolls[0] = Random.Range(AccLib.count, AccLib.count * 2);
 
         do
         {
-            rolls[1] = Random.Range(0, AccLib.AccessorySprite.Length);
+            rolls[1] = Random.Range(AccLib.count, AccLib.count * 2);
         } while (rolls[1] == rolls[0]);
 
         do
         {
-            rolls[2] = Random.Range(0, AccLib.AccessorySprite.Length);
+            rolls[2] = Random.Range(AccLib.count, AccLib.count * 2);
         } while (rolls[2] == rolls[0] || rolls[2] == rolls[1]);
 
         for (int i = 0; i < 3; i++)

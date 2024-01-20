@@ -75,6 +75,36 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2b8adf6f513ab834488f26eb1ac743d0, type: 3}
   - {fileID: 21300000, guid: 0497ab89da3d2184c9bc518400da34d1, type: 3}
   - {fileID: 21300000, guid: 001078f57a4e11a4e9a65a07337c8c3c, type: 3}
+  - {fileID: 21300000, guid: 48f2d997db7dba94aab0e2b87512b886, type: 3}
+  - {fileID: 21300000, guid: ee90a583a8860204cbd3dd8d75862f8b, type: 3}
+  - {fileID: 21300000, guid: e979fa1e3000fc64f9c8ebd062f70e33, type: 3}
+  - {fileID: 21300000, guid: 73c961b8d44b8be4784708d852229e3a, type: 3}
+  - {fileID: 21300000, guid: aed2c0bb33ba0a64685181900cd0393d, type: 3}
+  - {fileID: 21300000, guid: 98246535a284baa45bd6e39dc8e5ccce, type: 3}
+  - {fileID: 21300000, guid: bd93f353ac5146649882fe4d4ed072ba, type: 3}
+  - {fileID: 21300000, guid: 32ebb2869a27ca740a86a540c281d727, type: 3}
+  - {fileID: 21300000, guid: 47bb93a657b1f6a439c54606a21401bf, type: 3}
+  - {fileID: 21300000, guid: e08d9db66984d834fbfeda148c80ca74, type: 3}
+  - {fileID: 21300000, guid: b734e33ecad79844f906170867f7910c, type: 3}
+  - {fileID: 21300000, guid: 3c9905ab179c80944b8269e7fa109412, type: 3}
+  - {fileID: 21300000, guid: efdefbb6549c7a443a69d6bf7ac82a24, type: 3}
+  - {fileID: 21300000, guid: 08de09d6e92970141b36f8ca1d5f362b, type: 3}
+  - {fileID: 21300000, guid: ce0fc66658da4b44bb3e468ceb8e8a83, type: 3}
+  - {fileID: 21300000, guid: 2002d4f656a4d7e45a9a667e354fde79, type: 3}
+  - {fileID: 21300000, guid: 21ea1815e2ab625419eb3a5ec4b8b1e7, type: 3}
+  - {fileID: 21300000, guid: d17fdc4be7134214fadf2527162ad93b, type: 3}
+  - {fileID: 21300000, guid: ae50d40ad7f2e684da50dfce8cc267f8, type: 3}
+  - {fileID: 21300000, guid: 3bcc2e45ed6f3d44291965bd69c8ff35, type: 3}
+  - {fileID: 21300000, guid: 13d46f089fa72064cb11e843107ce4dc, type: 3}
+  - {fileID: 21300000, guid: b44ce32a355858a4692f0f9e71b73cbf, type: 3}
+  - {fileID: 21300000, guid: dc231f74340685742ba0be001e24044e, type: 3}
+  - {fileID: 21300000, guid: 73e1d98c6fd8dd84daa7cc2c8ee5e3de, type: 3}
+  - {fileID: 21300000, guid: 0b53569551c5c6c4ba3210e08d8f0db8, type: 3}
+  - {fileID: 21300000, guid: c542e057bd917af44b2d79642502ac0c, type: 3}
+  - {fileID: 21300000, guid: be97ba9d83272ad4988e7379e63dafac, type: 3}
+  - {fileID: 21300000, guid: 3437e74823c904844889a1b8b17a2ed3, type: 3}
+  - {fileID: 21300000, guid: 85c92893493647c4d9f3d675590b47c8, type: 3}
+  - {fileID: 21300000, guid: 74b1d01b02f97714fb8163d6c98877f9, type: 3}
   AccessoryTooltip:
   - +18% Damage
   - +24% Fire Rate
@@ -106,3 +136,34 @@ MonoBehaviour:
   - Fire Laser Occasionally
   - +30% DoT
   - +6% Damage & +30% Shatter
+  - +27% Damage
+  - +36% Fire Rate
+  - +72% Accuracy & +4 Range
+  - 35% Chance to fire Poison Bullet
+  - +18% Crit Chance & +27% Crit Damage
+  - -48% Reload Time
+  - Triple the Magazine Size, but +12% Reload Time
+  - Triple the amount of Fired Bullets, but -42% Damage & -21% Fire Rate
+  - +24% Crit Chance, Crits Increase Pierce
+  - +2 Pierce & +20% Pierce Efficiency
+  - Overload 1/5 of Magazine after Reloading
+  - 35% Chance to fire Plasma Bullet
+  - +13,5% Damage & +27% Crit Damage
+  - +27% Fire Rate & + 13,5% Crit Chance
+  - 30% Chance to not consume Ammo
+  - 27% Chance to Fire 2 additional Bullets in a Cone
+  - +9% Damage, +0,6% Damage for every 1 Base Damage
+  - +6 Range, Bullets gain +27% Damage for every 1s in Air
+  - +12% Fire Rate, start round with +30% Ammo
+  - Using Dash Fired wave of Bullets
+  - Fire Additional Bullet every 3,3 Shots
+  - +9% Fire Rate, + up to 67,5% Fire Rate with missing Magazine
+  - +9% Damage, +1,2% Damage for every 1 Magazine Size
+  - Fire Peacemaker Occasionally
+  - Fire Boomerang Occasionally
+  - Fire Wave of 6 Bullets every 8,7 Shots
+  - +13,5% Fire Rate, Increase On-Hit Rate by 45%
+  - Fire Laser Occasionally
+  - +45% DoT
+  - +9% Damage & +45% Shatter
+  count: 30

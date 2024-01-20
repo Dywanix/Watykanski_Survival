@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Equipment : MonoBehaviour
 {
     public PlayerController playerStats;
+    public Backpack bp;
     public bool gambler;
     public GunsLibrary Library;
     public ItemsLibrary ILibrary;
@@ -18,6 +19,7 @@ public class Equipment : MonoBehaviour
 
     public bool[] slotFilled;
     public int equipped, item;
+    public float onHitIncrease;
     float temp;
     int tempi, roll;
 
@@ -212,43 +214,49 @@ public class Equipment : MonoBehaviour
     public void OnHit(float efficiency)
     {
         //Flash();
+        onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.45f * guns[equipped].Accessories[26 + bp.ALibrary.count];
 
-        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20] * (1f + 0.3f * guns[equipped].Accessories[26]);
+        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20] * onHitIncrease;
+        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20 + bp.ALibrary.count] * onHitIncrease * 1.5f;
         if (freeBulletCharges[equipped] >= 5f)
         {
             playerStats.FireDirection(0f, 0f);
             freeBulletCharges[equipped] -= 5f;
         }
 
-        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired() * (1f + 0.3f * guns[equipped].Accessories[26]);
+        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired() * onHitIncrease;
+        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.5f;
         if (peacemakerCharges[equipped] >= 11f)
         {
             FirePeacemaker();
             peacemakerCharges[equipped] -= 11f;
         }
 
-        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24] * (1f + 0.3f * guns[equipped].Accessories[26]);
+        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24] * onHitIncrease;
+        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24 + bp.ALibrary.count] * onHitIncrease * 1.5f;
         if (boomerangCharges[equipped] >= 10f)
         {
             FireBoomerang();
             boomerangCharges[equipped] -= 10f;
         }
 
-        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25] * guns[equipped].BulletsFired() * (1f + 0.3f * guns[equipped].Accessories[26]);
+        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25] * guns[equipped].BulletsFired() * onHitIncrease;
+        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.5f;
         if (waveCharges[equipped] >= 13f)
         {
             FireWave();
             waveCharges[equipped] -= 13f;
         }
 
-        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27] * (1f + 0.3f * guns[equipped].Accessories[26]);
+        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27] * onHitIncrease;
+        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27 + bp.ALibrary.count] * onHitIncrease * 1.5f;
         if (laserCharges[equipped] >= 5f)
         {
             FireLaser();
             laserCharges[equipped] -= 5f;
         }
 
-        //orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * (1f + 0.3f * guns[equipped].Accessories[26]);
+        //orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * onHitIncrease;
         if (orbCharges[equipped] >= 5f)
         {
             FireOrb();
