@@ -13,7 +13,7 @@ public class Backpack : MonoBehaviour
     public TMPro.TextMeshProUGUI ToolsCost;
     public TMPro.TextMeshProUGUI[] StatsText;
     public GameObject[] Guns, CollectedItems, StoredAccessories, EquippedAccesssories, GunSlots;
-    public Button WorkbenchButton, RerollButton;
+    public Button WorkbenchButton, RerollButton, UpgradeButton;
     public Button[] GunButton, StoredButton, EquippedButton;
     public Image[] GunsImage, CollectedImages, StoredImages, EquippedImages, RerolledImages;
     public Image CurrentGunImage;
@@ -21,7 +21,7 @@ public class Backpack : MonoBehaviour
     public int[] StoredAccessory, EquippedAccessory, RerolledAccessory;
     public bool[] rerollSlots;
     int currentGun, currentAccessory, tempi;
-    bool reroll;
+    bool reroll, viable;
 
     public void OpenBackpack()
     {
@@ -61,12 +61,17 @@ public class Backpack : MonoBehaviour
         else
         {
             WorkbenchButton.interactable = false;
-            ToolsCost.text = RerollToolsCost().ToString("0");
+            ToolsCost.text = UpgradeToolsCost().ToString("0");
             if (AllSlotsFilled())
                 RerollButton.interactable = true;
-            else if (player.tools >= RerollToolsCost())
-                RerollButton.interactable = true;
             else RerollButton.interactable = false;
+            if (player.tools >= UpgradeToolsCost() && NumberOfSlotsFilled() > 0)
+            {
+                if (CheckForRareAccessories())
+                    UpgradeButton.interactable = true;
+                else UpgradeButton.interactable = false;
+            }
+            else UpgradeButton.interactable = false;
             GunHud.SetActive(false);
             RerollHud.SetActive(true);
         }
@@ -192,9 +197,20 @@ public class Backpack : MonoBehaviour
         return tempi;
     }
 
-    int RerollToolsCost()
+    bool CheckForRareAccessories()
     {
-        return 18 - NumberOfSlotsFilled() * 6;
+        viable = true;
+        for (int i = 0; i < 3; i++)
+        {
+            if (rerollSlots[i] && RerolledAccessory[i] > ALibrary.count)
+                viable = false;
+        }
+        return viable;
+    }
+
+    int UpgradeToolsCost()
+    {
+        return NumberOfSlotsFilled() * 25;
     }
 
     public void ChooseGun(int which)
@@ -214,7 +230,7 @@ public class Backpack : MonoBehaviour
 
     public void Reroll()
     {
-        player.SpendTools(RerollToolsCost());
+        player.SpendTools(UpgradeToolsCost());
 
         for (int i = 0; i < 3; i++)
         {
@@ -224,7 +240,19 @@ public class Backpack : MonoBehaviour
         player.map.ChoosePrize(player.map.PrizeRarity());
 
         UpdateInfo();
-        CloseBackpack();
+        //CloseBackpack();
+    }
+
+    public void Upgrade()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (rerollSlots[i])
+                eq.Accessories[RerolledAccessory[i] + ALibrary.count]++;
+            rerollSlots[i] = false;
+        }
+
+        UpdateInfo();
     }
 
     public void EquipAccessory(int placement)
