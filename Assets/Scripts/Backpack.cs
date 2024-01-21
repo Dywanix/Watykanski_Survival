@@ -230,8 +230,6 @@ public class Backpack : MonoBehaviour
 
     public void Reroll()
     {
-        player.SpendTools(UpgradeToolsCost());
-
         for (int i = 0; i < 3; i++)
         {
             rerollSlots[i] = false;
@@ -240,7 +238,7 @@ public class Backpack : MonoBehaviour
         player.map.ChoosePrize(player.map.PrizeRarity());
 
         UpdateInfo();
-        //CloseBackpack();
+        player.CloseTab();
     }
 
     public void Upgrade()

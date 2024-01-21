@@ -95,7 +95,7 @@ MonoBehaviour:
   - Increase Max Health by 10. Gain +1,2% Damage for every 10 Max Health above 80
   - Gain 8 Tools. All Guns have 1 more Accessory Slot
   - Increase Movement Speed by 9%. Using Dash gives Rush for 2,5s
-  - Increase Damage by 6%. Gain 32 Gold
+  - Increase Damage by 6%. Gain 4 Gold Every 5th Enemy slained
   - Decrease Max Shield greatly. Fully recharge Shield at the start of Combat
   - Reduce Damage Taken by 3, to a minimum of 5
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine

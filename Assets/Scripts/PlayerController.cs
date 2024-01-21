@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
     float temp, flashA;
     bool greenF;
 
-    // items stats
+    [Header("Items")]
+    public int bloodMoney;
     public float wrath, shieldCapacitor;
 
     [Header("Resources")]
@@ -1127,6 +1128,15 @@ public class PlayerController : MonoBehaviour
 
     public void EnemySlained()
     {
+        if (eq.Items[10])
+        {
+            bloodMoney++;
+            while (bloodMoney >= 5)
+            {
+                bloodMoney -= 5;
+                GainGold(4);
+            }
+        }
         for (int i = 1; i < 3; i++)
         {
             if (eq.slotFilled[i] && eq.guns[i].ammoRegain > 0)
@@ -1321,6 +1331,7 @@ public class PlayerController : MonoBehaviour
         maxShield *= 0.3f;
         ShieldCapacitor(shield);
         shield = maxShield;
+        GainShield(0);
     }
 
     public void ShieldCapacitor(float amount)

@@ -125,7 +125,6 @@ public class Equipment : MonoBehaviour
                 break;
             case 10:
                 playerStats.GainDMG(0.06f);
-                playerStats.GainGold(32);
                 break;
             case 11:
                 playerStats.Item11();

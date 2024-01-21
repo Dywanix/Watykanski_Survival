@@ -2980,6 +2980,7 @@ MonoBehaviour:
   luck: 0
   undamaged: 0
   invulnerable: 0
+  bloodMoney: 0
   wrath: 0
   shieldCapacitor: 0
   gold: 26
