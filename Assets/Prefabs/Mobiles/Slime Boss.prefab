@@ -1056,6 +1056,7 @@ MonoBehaviour:
   enemy: {fileID: 5112013100894520751}
   rotation: {fileID: 4567611384151682393}
   Projectal: {fileID: 6559750192261573265, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
+  Grenade: {fileID: 3144665690506890880, guid: 13b5249fbcc3a814ca29b00b9acefdc0, type: 3}
   AoEOrigin: {fileID: 2814825433367143774}
   AutoBarrel: {fileID: 3388163987722578557}
   Barrels:
