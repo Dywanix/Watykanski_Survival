@@ -1206,6 +1206,18 @@ public class PlayerController : MonoBehaviour
         level++;
     }
 
+    public void GainHP(float value)
+    {
+        maxHealth += value;
+        health += value;
+        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
+        if (eq.Items[7])
+            GainDMG(0.0012f * value);
+        dHealth += value;
+        dropBar.fillAmount = dHealth / maxHealth;
+        healthBar.fillAmount = health / maxHealth;
+    }
+
     public void GainDMG(float value)
     {
         damageBonus += value;
@@ -1228,18 +1240,6 @@ public class PlayerController : MonoBehaviour
     public void GainMS(float value)
     {
         movementSpeed += value * 4f; //value = procent, 4f as in base 400 movement speed 
-    }
-
-    public void GainHP(float value)
-    {
-        maxHealth += value;
-        health += value;
-        healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
-        if (eq.Items[7])
-            GainDMG(0.0012f * value);
-        dHealth += value;
-        dropBar.fillAmount = dHealth / maxHealth;
-        healthBar.fillAmount = health / maxHealth;
     }
 
     public void GainSC(float value)
