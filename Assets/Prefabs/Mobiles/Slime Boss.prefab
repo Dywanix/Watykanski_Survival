@@ -937,8 +937,8 @@ MonoBehaviour:
   healthFill: {fileID: 6405085511621298566}
   DoTFill: {fileID: 1933488455654414649}
   ShieldFill: {fileID: 7006786756820588180}
-  maxHealth: 2500
-  health: 2500
+  maxHealth: 3000
+  health: 3000
   vulnerable: 0
   shieldCapacity: 0
   shield: 0

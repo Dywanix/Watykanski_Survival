@@ -299,8 +299,8 @@ public class Backpack : MonoBehaviour
             eq.guns[currentGun].TakenSlots -= 1;
 
             if (StoredAccessory[placement] >= ALibrary.count)
-                LoseRareEffect(StoredAccessory[placement] - ALibrary.count);
-            else LoseEffect(StoredAccessory[placement]);
+                LoseRareEffect(EquippedAccessory[placement] - ALibrary.count);
+            else LoseEffect(EquippedAccessory[placement]);
         }
         else
         {
