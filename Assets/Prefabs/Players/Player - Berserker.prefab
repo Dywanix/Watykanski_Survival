@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2129462728280621767, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d20dbeeacac6a644188acd5f965909d3, type: 3}
     - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: guns.Array.data[0]
       value: 
@@ -99,6 +103,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2129462728609157379, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85e96698dcd2d4d4691954d8495400cd, type: 3}
+    - target: {fileID: 2129462729641926354, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 676517965, guid: caa95fbc1bdd55c4bbd6cdec45db3a53, type: 3}
+    - target: {fileID: 7508960709266052724, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2312c510c5bfdb947a1094700b82d67b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
 --- !u!114 &7695938819249752333 stripped

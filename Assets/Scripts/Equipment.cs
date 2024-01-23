@@ -137,7 +137,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainPotions(100);
                 break;
             case 15:
-                playerStats.grenadeBaseCooldown /= 1.1f;
+                playerStats.grenadeBaseCooldown /= 1.11f;
                 break;
             case 16:
                 playerStats.additionalCritChance += 0.09f;
@@ -181,7 +181,7 @@ public class Equipment : MonoBehaviour
             case 33:
                 Accessories[Random.Range(0, Accessories.Length)]++;
                 Accessories[Random.Range(0, Accessories.Length)]++;
-                playerStats.GainTools(8);
+                playerStats.GainTools(10);
                 break;
             case 34:
                 playerStats.Item34();

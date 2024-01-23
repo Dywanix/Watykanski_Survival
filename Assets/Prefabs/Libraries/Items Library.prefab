@@ -100,7 +100,7 @@ MonoBehaviour:
   - Reduce Damage Taken by 3, to a minimum of 5
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine
   - Increase Potion Slots by 2. Fill them all
-  - Reduce Grenade Cooldown by 10%. Gredandes deal 23% more Damage.
+  - Reduce Grenade Cooldown by 11%. Gredandes deal 24% more Damage.
   - Gain +9% Crit Chance on all Guns
   - Increase On-Hit Rate by 20%. Crits Increase by 48%
   - Chance to spawn bonus Chest
@@ -115,11 +115,11 @@ MonoBehaviour:
   - Reduce Grenade Cooldown by 18%. Grenade gains additional Charge
   - Grenades have 91% Shatter. Grenade gains additional Charge
   - Grenades leave Poison Cloud for 2,5s. Grenade gains additional Charge
-  - Grenades explode into 3 smaller ones that deal 45% Damage each
+  - Grenades explode into 3 smaller ones that deal 48% Damage each
   - Increase Damage by 6%. Increase Grenade range based on Damage Increase
   - Increase Fire Rate by 7,2%. Gain 1% Cooldown Reduction for every 2,8% Fire Rate
     Increase
-  - Gain 2 random Accessories & 8 Tools
+  - Gain 2 random Accessories & 10 Tools
   - Transform Max Health into Shield.
   - Every Tool collected gives 1 Shield. Gain 6 Tools
   - Every Potion used increases Max Health by 1. Gain 2 Potion

@@ -243,6 +243,8 @@ public class Backpack : MonoBehaviour
 
     public void Upgrade()
     {
+        player.SpendTools(UpgradeToolsCost());
+
         for (int i = 0; i < 3; i++)
         {
             if (rerollSlots[i])

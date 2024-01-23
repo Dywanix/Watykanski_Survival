@@ -655,7 +655,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.damage = (32.5f + /*toolsStored * 0.12f +*/ level * 1.5f) * DamageDealtMultiplyer(1.1f);
         if (eq.Items[15])
-            firedBullet.damage *= 1.23f;
+            firedBullet.damage *= 1.24f;
         if (eq.Items[28])
             firedBullet.shatter += 0.91f;
         if (eq.Items[29])

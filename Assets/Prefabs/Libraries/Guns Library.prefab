@@ -1451,13 +1451,13 @@ MonoBehaviour:
   gunName: Sawed-off Shotgun
   gunSprite: {fileID: 21300000, guid: 85e96698dcd2d4d4691954d8495400cd, type: 3}
   holdingSprite: {fileID: 21300000, guid: d20dbeeacac6a644188acd5f965909d3, type: 3}
-  damage: 10.4
-  fireRate: 0.85
+  damage: 10.8
+  fireRate: 0.84
   accuracy: 11.3
   penetration: 0
   critChance: 0.09
-  reloadTime: 0.6
-  range: 0.232
+  reloadTime: 0.58
+  range: 0.23
   force: 20
   heft: 0.08
   magazineSize: 8
@@ -1862,13 +1862,13 @@ MonoBehaviour:
   gunName: Revolver
   gunSprite: {fileID: 21300000, guid: ce9517037ebbed745851bcb82aab21e8, type: 3}
   holdingSprite: {fileID: 21300000, guid: c5fc0c1e7724b3740b931ae97ee001de, type: 3}
-  damage: 28.4
-  fireRate: 0.83
+  damage: 29.1
+  fireRate: 0.82
   accuracy: 5.8
   penetration: 0
   critChance: 0.22
-  reloadTime: 1.22
-  range: 0.252
+  reloadTime: 1.18
+  range: 0.253
   force: 20
   heft: 0.1
   magazineSize: 6
@@ -3725,12 +3725,12 @@ MonoBehaviour:
   gunName: Revolver
   gunSprite: {fileID: 21300000, guid: 3a3c16d40acc5a840926c6c3beec31d6, type: 3}
   holdingSprite: {fileID: 21300000, guid: cfc94c4770bc6c540941dcc29edbed4c, type: 3}
-  damage: 15.7
-  fireRate: 0.57
+  damage: 16
+  fireRate: 0.53
   accuracy: 5.6
   penetration: 0
   critChance: 0.17
-  reloadTime: 1.27
+  reloadTime: 1.23
   range: 0.26
   force: 20
   heft: 0.1
@@ -5149,8 +5149,8 @@ MonoBehaviour:
   gunName: Revolver
   gunSprite: {fileID: 21300000, guid: ba9e20a1446b7504ba37639e2a0afbb5, type: 3}
   holdingSprite: {fileID: 21300000, guid: 8bf25f99276602b448a5b6ee9eb1eb8c, type: 3}
-  damage: 12
-  fireRate: 0.475
+  damage: 12.3
+  fireRate: 0.47
   accuracy: 4.5
   penetration: 0
   critChance: 0.15
