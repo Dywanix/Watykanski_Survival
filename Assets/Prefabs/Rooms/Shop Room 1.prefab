@@ -126,7 +126,7 @@ MonoBehaviour:
   Glow: {fileID: 4093467137569062389}
   playerStats: {fileID: 0}
   rarity: 1
-  cost: 30
+  cost: 36
 --- !u!1 &190012666460026200
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '30
+  m_text: '36
 
 '
   m_isRightToLeft: 0

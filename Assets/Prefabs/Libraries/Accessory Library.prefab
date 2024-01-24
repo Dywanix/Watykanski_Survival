@@ -121,9 +121,9 @@ MonoBehaviour:
   - +9% Damage & +18% Crit Damage
   - +18% Fire Rate & + 9% Crit Chance
   - 20% Chance to not consume Ammo
-  - 18% Chance to Fire 2 additional Bullets in a Cone
+  - 20% Chance to Fire 2 additional Bullets in a Cone
   - +6% Damage, +0,4% Damage for every 1 Base Damage
-  - +4 Range, Bullets gain +18% Damage for every 1s in Air
+  - 25% Chance to fire Explosive Bullet
   - +8% Fire Rate, start round with +20% Ammo
   - Using Dash Fired wave of Bullets
   - Fire Additional Bullet every 5th Shot
@@ -136,34 +136,34 @@ MonoBehaviour:
   - Fire Laser Occasionally
   - +30% DoT
   - +6% Damage & +30% Shatter
-  - +27% Damage
-  - +36% Fire Rate
-  - +72% Accuracy & +4 Range
-  - 35% Chance to fire Poison Bullet
-  - +18% Crit Chance & +27% Crit Damage
-  - -48% Reload Time
-  - Triple the Magazine Size, but +12% Reload Time
+  - +28,8% Damage
+  - +38,4% Fire Rate
+  - +67,5% Accuracy & +5 Range
+  - 40% Chance to fire Poison Bullet
+  - +19,2% Crit Chance & +28,8% Crit Damage
+  - -60% Reload Time
+  - Triple the Magazine Size, but +12,5% Reload Time
   - Triple the amount of Fired Bullets, but -42% Damage & -21% Fire Rate
-  - +24% Crit Chance, Crits Increase Pierce
-  - +2 Pierce & +20% Pierce Efficiency
+  - +27% Crit Chance, Crits Increase Pierce
+  - +2 Pierce & +18% Pierce Efficiency
   - Overload 1/5 of Magazine after Reloading
-  - 35% Chance to fire Plasma Bullet
-  - +13,5% Damage & +27% Crit Damage
-  - +27% Fire Rate & + 13,5% Crit Chance
-  - 30% Chance to not consume Ammo
-  - 27% Chance to Fire 2 additional Bullets in a Cone
-  - +9% Damage, +0,6% Damage for every 1 Base Damage
-  - +6 Range, Bullets gain +27% Damage for every 1s in Air
-  - +12% Fire Rate, start round with +30% Ammo
+  - 40% Chance to fire Plasma Bullet
+  - +14,4% Damage & +28,8% Crit Damage
+  - +28,8% Fire Rate & + 14,4% Crit Chance
+  - 32% Chance to not consume Ammo
+  - 32% Chance to Fire 2 additional Bullets in a Cone
+  - +9,6% Damage, +0,64% Damage for every 1 Base Damage
+  - 40% Chance to fire Explosive Bullet
+  - +12,8% Fire Rate, start round with +32% Ammo
   - Using Dash Fired wave of Bullets
-  - Fire Additional Bullet every 3,3 Shots
-  - +9% Fire Rate, + up to 67,5% Fire Rate with missing Magazine
-  - +9% Damage, +1,2% Damage for every 1 Magazine Size
+  - Fire Additional Bullet every 3,125 Shots
+  - +9,6% Fire Rate, + up to 72% Fire Rate with missing Magazine
+  - +9,6% Damage, +1,28% Damage for every 1 Magazine Size
   - Fire Peacemaker Occasionally
   - Fire Boomerang Occasionally
-  - Fire Wave of 6 Bullets every 8,7 Shots
-  - +13,5% Fire Rate, Increase On-Hit Rate by 45%
+  - Fire Wave of 6 Bullets every 8,125 Shots
+  - +14,4% Fire Rate, Increase On-Hit Rate by 48%
   - Fire Laser Occasionally
-  - +45% DoT
-  - +9% Damage & +45% Shatter
+  - +48% DoT
+  - +9,6% Damage & +48% Shatter
   count: 30

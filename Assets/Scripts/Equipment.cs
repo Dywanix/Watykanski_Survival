@@ -211,10 +211,10 @@ public class Equipment : MonoBehaviour
     public void OnHit(float efficiency)
     {
         //Flash();
-        onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.45f * guns[equipped].Accessories[26 + bp.ALibrary.count];
+        onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.48f * guns[equipped].Accessories[26 + bp.ALibrary.count];
 
         freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20] * onHitIncrease;
-        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20 + bp.ALibrary.count] * onHitIncrease * 1.5f;
+        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20 + bp.ALibrary.count] * onHitIncrease * 1.8f;
         if (freeBulletCharges[equipped] >= 5f)
         {
             playerStats.FireDirection(0f, 0f);
@@ -222,7 +222,7 @@ public class Equipment : MonoBehaviour
         }
 
         peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired() * onHitIncrease;
-        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.5f;
+        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.6f;
         if (peacemakerCharges[equipped] >= 11f)
         {
             FirePeacemaker();
@@ -230,7 +230,7 @@ public class Equipment : MonoBehaviour
         }
 
         boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24] * onHitIncrease;
-        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24 + bp.ALibrary.count] * onHitIncrease * 1.5f;
+        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24 + bp.ALibrary.count] * onHitIncrease * 1.6f;
         if (boomerangCharges[equipped] >= 10f)
         {
             FireBoomerang();
@@ -238,7 +238,7 @@ public class Equipment : MonoBehaviour
         }
 
         waveCharges[equipped] += efficiency * guns[equipped].Accessories[25] * guns[equipped].BulletsFired() * onHitIncrease;
-        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.5f;
+        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.6f;
         if (waveCharges[equipped] >= 13f)
         {
             FireWave();
@@ -246,7 +246,7 @@ public class Equipment : MonoBehaviour
         }
 
         laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27] * onHitIncrease;
-        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27 + bp.ALibrary.count] * onHitIncrease * 1.5f;
+        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27 + bp.ALibrary.count] * onHitIncrease * 1.6f;
         if (laserCharges[equipped] >= 5f)
         {
             FireLaser();

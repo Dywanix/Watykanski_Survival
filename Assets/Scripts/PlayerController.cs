@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
             {
                 task -= Time.deltaTime * SpeedMultiplyer(1f);
                 taskImage.fillAmount = 1 - (task / taskMax);
-                if (mouseLeft && reloading && eq.guns[eq.equipped].bulletsLeft > 0)
+                if (Input.GetMouseButtonDown(0) && reloading && eq.guns[eq.equipped].bulletsLeft > 0)
                 {
                     reloading = false;
                     NewTask(0.1f);
@@ -309,8 +309,9 @@ public class PlayerController : MonoBehaviour
 
     void DashFire()
     {
-        temp = 0.91f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
-        temp += 1.36f * eq.guns[eq.equipped].Accessories[19 + bp.ALibrary.count] * SpeedMultiplyer(1f);
+        temp = 0;
+        temp += 0.9f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
+        temp += 1.44f * eq.guns[eq.equipped].Accessories[19 + bp.ALibrary.count] * SpeedMultiplyer(1f);
         tempi = 0;
 
         for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)
@@ -416,7 +417,7 @@ public class PlayerController : MonoBehaviour
                 }
                 if (eq.guns[eq.equipped].Accessories[21] > 0 || eq.guns[eq.equipped].Accessories[21 + bp.ALibrary.count] > 0)
                 {
-                    temp = 1f + 0.45f * (eq.guns[eq.equipped].Accessories[21] + 1.5f * eq.guns[eq.equipped].Accessories[21 + bp.ALibrary.count]) * (eq.guns[eq.equipped].MagazineTotalSize() - eq.guns[eq.equipped].bulletsLeft) / eq.guns[eq.equipped].MagazineTotalSize();
+                    temp = 1f + 0.45f * (eq.guns[eq.equipped].Accessories[21] + 1.6f * eq.guns[eq.equipped].Accessories[21 + bp.ALibrary.count]) * (eq.guns[eq.equipped].MagazineTotalSize() - eq.guns[eq.equipped].bulletsLeft) / eq.guns[eq.equipped].MagazineTotalSize();
                     NewTask(eq.guns[eq.equipped].fireRate / temp);
                 }
                 else NewTask(eq.guns[eq.equipped].fireRate);
@@ -446,14 +447,14 @@ public class PlayerController : MonoBehaviour
                 Fire();
             if (!eq.guns[eq.equipped].infiniteMagazine)
             {
-                if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.3f < Random.Range(0f, 1f))
+                if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.32f < Random.Range(0f, 1f))
                     eq.guns[eq.equipped].bulletsLeft--;
                 DisplayAmmo();
             }
         }
         else
         {
-            if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.3f < Random.Range(0f, 1f))
+            if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.32f < Random.Range(0f, 1f))
             {
                 Fire();
                 if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
@@ -471,7 +472,7 @@ public class PlayerController : MonoBehaviour
 
         if (!eq.guns[eq.equipped].infiniteMagazine)
         {
-            if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.3f < Random.Range(0f, 1f))
+            if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.32f < Random.Range(0f, 1f))
                 eq.guns[eq.equipped].bulletsLeft--;
             DisplayAmmo();
         }
@@ -514,7 +515,7 @@ public class PlayerController : MonoBehaviour
                 bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
             }
         }
-        if (eq.guns[eq.equipped].Accessories[15] * 0.18f + eq.guns[eq.equipped].Accessories[15 + bp.ALibrary.count] * 0.27f >= Random.Range(0f, 1f))
+        if (eq.guns[eq.equipped].Accessories[15] * 0.2f + eq.guns[eq.equipped].Accessories[15 + bp.ALibrary.count] * 0.32f >= Random.Range(0f, 1f))
         {
             FireDirection(-32f, accuracy_change);
             FireDirection(32f, accuracy_change);
@@ -572,11 +573,11 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].Accessories[16] > 0)
             firedBullet.damage *= 1f + (0.004f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16]);
         if (eq.guns[eq.equipped].Accessories[16 + bp.ALibrary.count] > 0)
-            firedBullet.damage *= 1f + (0.006f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16 + bp.ALibrary.count]);
+            firedBullet.damage *= 1f + (0.0064f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16 + bp.ALibrary.count]);
         if (eq.guns[eq.equipped].Accessories[22] > 0)
             firedBullet.damage *= 1f + (0.008f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[22]);
         if (eq.guns[eq.equipped].Accessories[22 + bp.ALibrary.count] > 0)
-            firedBullet.damage *= 1f + (0.012f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[22 + bp.ALibrary.count]);
+            firedBullet.damage *= 1f + (0.0128f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[22 + bp.ALibrary.count]);
         firedBullet.DoT = eq.guns[eq.equipped].DoT;
         firedBullet.shatter = eq.guns[eq.equipped].shatter;
         firedBullet.incendiary = eq.guns[eq.equipped].incendiary;
@@ -793,7 +794,7 @@ public class PlayerController : MonoBehaviour
                 if (eq.guns[eq.equipped].Accessories[10] > 0)
                     eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
                 if (eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] > 0)
-                    eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 5;
+                    eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 4;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].MagazineTotalSize())
                     reloading = false;
                 else
@@ -812,7 +813,7 @@ public class PlayerController : MonoBehaviour
                 }
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
-                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 5;
+                eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 4;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].MagazineTotalSize() || eq.guns[eq.equipped].ammo <= 0)
                     reloading = false;
                 else
@@ -839,7 +840,7 @@ public class PlayerController : MonoBehaviour
             }
             eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
             eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
-            eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 5;
+            eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 4;
             reloading = false;
         }
         DisplayAmmo();
@@ -1197,7 +1198,7 @@ public class PlayerController : MonoBehaviour
                 if (eq.guns[i].Accessories[18] > 0)
                     eq.guns[i].ammo += (eq.guns[i].maxAmmo * eq.guns[i].Accessories[18]) / 5;
                 if (eq.guns[i].Accessories[18 + bp.ALibrary.count] > 0)
-                    eq.guns[i].ammo += (eq.guns[i].maxAmmo * eq.guns[i].Accessories[18 + bp.ALibrary.count * 3]) / 10;
+                    eq.guns[i].ammo += (eq.guns[i].maxAmmo * eq.guns[i].Accessories[18 + bp.ALibrary.count * 8]) / 25;
             }
         }
         DisplayAmmo();

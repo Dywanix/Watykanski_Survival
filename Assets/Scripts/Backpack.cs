@@ -215,7 +215,7 @@ public class Backpack : MonoBehaviour
 
     int UpgradeToolsCost()
     {
-        return NumberOfSlotsFilled() * 25;
+        return NumberOfSlotsFilled() * 30;
     }
 
     public void ChooseGun(int which)
@@ -270,7 +270,7 @@ public class Backpack : MonoBehaviour
             eq.guns[currentGun].TakenSlots += 1;
 
             if (StoredAccessory[placement] >= ALibrary.count)
-                GainRareEffect(StoredAccessory[placement] - ALibrary.count);
+                GainUncommonEffect(StoredAccessory[placement] - ALibrary.count);
             else GainEffect(StoredAccessory[placement]);
         }
         else
@@ -305,8 +305,8 @@ public class Backpack : MonoBehaviour
             eq.guns[currentGun].Accessories[EquippedAccessory[placement]]--;
             eq.guns[currentGun].TakenSlots -= 1;
 
-            if (StoredAccessory[placement] >= ALibrary.count)
-                LoseRareEffect(EquippedAccessory[placement] - ALibrary.count);
+            if (EquippedAccessory[placement] >= ALibrary.count)
+                LoseUncommonEffect(EquippedAccessory[placement] - ALibrary.count);
             else LoseEffect(EquippedAccessory[placement]);
         }
         else
@@ -329,7 +329,7 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].fireRate /= 1.24f;
                 break;
             case 2:
-                eq.guns[currentGun].accuracy /= 1.48f;
+                eq.guns[currentGun].accuracy *= 0.52f;
                 eq.guns[currentGun].range += 0.03f;
                 break;
             case 3:
@@ -443,7 +443,7 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].fireRate *= 1.24f;
                 break;
             case 2:
-                eq.guns[currentGun].accuracy *= 1.48f;
+                eq.guns[currentGun].accuracy /= 0.52f;
                 eq.guns[currentGun].range -= 0.03f;
                 break;
             case 3:
@@ -546,33 +546,33 @@ public class Backpack : MonoBehaviour
         }
     }
 
-    void GainRareEffect(int whatEffect)
+    void GainUncommonEffect(int whatEffect)
     {
         switch (whatEffect)
         {
             case 0:
-                eq.guns[currentGun].damageMultiplier *= 1.27f;
+                eq.guns[currentGun].damageMultiplier *= 1.288f;
                 break;
             case 1:
-                eq.guns[currentGun].fireRate /= 1.36f;
+                eq.guns[currentGun].fireRate /= 1.384f;
                 break;
             case 2:
-                eq.guns[currentGun].accuracy /= 1.72f;
-                eq.guns[currentGun].range += 0.04f;
+                eq.guns[currentGun].accuracy *= 0.325f;
+                eq.guns[currentGun].range += 0.05f;
                 break;
             case 3:
-                eq.guns[currentGun].poisonBulletChance += 0.35f;
+                eq.guns[currentGun].poisonBulletChance += 0.4f;
                 break;
             case 4:
-                eq.guns[currentGun].critChance += 0.18f;
-                eq.guns[currentGun].critDamage += 0.27f;
+                eq.guns[currentGun].critChance += 0.192f;
+                eq.guns[currentGun].critDamage += 0.288f;
                 break;
             case 5:
-                eq.guns[currentGun].reloadTime *= 0.52f;
+                eq.guns[currentGun].reloadTime *= 0.4f;
                 break;
             case 6:
                 eq.guns[currentGun].magazineMultiplier *= 3;
-                eq.guns[currentGun].reloadTime *= 1.12f;
+                eq.guns[currentGun].reloadTime *= 1.125f;
                 player.DisplayAmmo();
                 break;
             case 7:
@@ -581,26 +581,26 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].fireRate /= 0.79f;
                 break;
             case 8:
-                eq.guns[currentGun].critChance += 0.24f;
+                eq.guns[currentGun].critChance += 0.27f;
                 // +1 pierce & +10% pierce efficiency on crit
                 break;
             case 9:
                 eq.guns[currentGun].pierce += 2;
-                eq.guns[currentGun].pierceEfficiency += 0.2f;
+                eq.guns[currentGun].pierceEfficiency += 0.18f;
                 break;
             case 10:
                 // overload
                 break;
             case 11:
-                eq.guns[currentGun].plasmaBulletChance += 0.35f;
+                eq.guns[currentGun].plasmaBulletChance += 0.4f;
                 break;
             case 12:
-                eq.guns[currentGun].damageMultiplier *= 1.135f;
-                eq.guns[currentGun].critDamage += 0.27f;
+                eq.guns[currentGun].damageMultiplier *= 1.144f;
+                eq.guns[currentGun].critDamage += 0.288f;
                 break;
             case 13:
-                eq.guns[currentGun].fireRate /= 1.27f;
-                eq.guns[currentGun].critChance += 0.135f;
+                eq.guns[currentGun].fireRate /= 1.288f;
+                eq.guns[currentGun].critChance += 0.144f;
                 break;
             case 14:
                 // chance not to consume ammo
@@ -609,7 +609,7 @@ public class Backpack : MonoBehaviour
                 // chance to fire 2 additional bullets in cone
                 break;
             case 16:
-                eq.guns[currentGun].damageMultiplier *= 1.09f;
+                eq.guns[currentGun].damageMultiplier *= 1.096f;
                 // increase damage further with base damage
                 break;
             case 17:
@@ -617,21 +617,21 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].damageGain += 0.27f;
                 break;
             case 18:
-                eq.guns[currentGun].fireRate /= 1.12f;
+                eq.guns[currentGun].fireRate /= 1.128f;
                 // + Ammo
                 break;
             case 19:
                 // Dasing fires wave of bullets
                 break;
             case 20:
-                // additional bullets fired every 6 shots - On Hit
+                // additional bullets fired every 3,125 shots - On Hit
                 break;
             case 21:
-                eq.guns[currentGun].fireRate /= 1.09f;
+                eq.guns[currentGun].fireRate /= 1.096f;
                 // increased fire rate with missing mag
                 break;
             case 22:
-                eq.guns[currentGun].damageMultiplier *= 1.09f;
+                eq.guns[currentGun].damageMultiplier *= 1.096f;
                 // increase damage based on magazine size
                 break;
             case 23:
@@ -644,49 +644,49 @@ public class Backpack : MonoBehaviour
                 // Wave - On Hit
                 break;
             case 26:
-                eq.guns[currentGun].fireRate /= 1.135f;
+                eq.guns[currentGun].fireRate /= 1.144f;
                 // On Hit Rate Increase
                 break;
             case 27:
                 // Laser - On Hit
                 break;
             case 28:
-                eq.guns[currentGun].DoT += 0.45f;
+                eq.guns[currentGun].DoT += 0.48f;
                 break;
             case 29:
-                eq.guns[currentGun].damageMultiplier *= 1.09f;
-                eq.guns[currentGun].shatter += 0.45f;
+                eq.guns[currentGun].damageMultiplier *= 1.096f;
+                eq.guns[currentGun].shatter += 0.48f;
                 break;
         }
     }
 
-    void LoseRareEffect(int whatEffect)
+    void LoseUncommonEffect(int whatEffect)
     {
         switch (whatEffect)
         {
             case 0:
-                eq.guns[currentGun].damageMultiplier /= 1.27f;
+                eq.guns[currentGun].damageMultiplier /= 1.288f;
                 break;
             case 1:
-                eq.guns[currentGun].fireRate *= 1.36f;
+                eq.guns[currentGun].fireRate *= 1.384f;
                 break;
             case 2:
-                eq.guns[currentGun].accuracy *= 1.72f;
-                eq.guns[currentGun].range -= 0.04f;
+                eq.guns[currentGun].accuracy /= 0.325f;
+                eq.guns[currentGun].range -= 0.05f;
                 break;
             case 3:
-                eq.guns[currentGun].poisonBulletChance -= 0.35f;
+                eq.guns[currentGun].poisonBulletChance -= 0.4f;
                 break;
             case 4:
-                eq.guns[currentGun].critChance -= 0.18f;
-                eq.guns[currentGun].critDamage -= 0.27f;
+                eq.guns[currentGun].critChance -= 0.192f;
+                eq.guns[currentGun].critDamage -= 0.288f;
                 break;
             case 5:
-                eq.guns[currentGun].reloadTime /= 0.52f;
+                eq.guns[currentGun].reloadTime /= 0.4f;
                 break;
             case 6:
                 eq.guns[currentGun].magazineMultiplier /= 3;
-                eq.guns[currentGun].reloadTime /= 1.12f;
+                eq.guns[currentGun].reloadTime /= 1.125f;
                 player.DisplayAmmo();
                 break;
             case 7:
@@ -695,26 +695,26 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].fireRate *= 0.79f;
                 break;
             case 8:
-                eq.guns[currentGun].critChance -= 0.24f;
-                // +1 pierce & +15% pierce efficiency on crit
+                eq.guns[currentGun].critChance -= 0.27f;
+                // +1 pierce & +10% pierce efficiency on crit
                 break;
             case 9:
                 eq.guns[currentGun].pierce -= 2;
-                eq.guns[currentGun].pierceEfficiency -= 0.2f;
+                eq.guns[currentGun].pierceEfficiency -= 0.18f;
                 break;
             case 10:
                 // overload
                 break;
             case 11:
-                eq.guns[currentGun].plasmaBulletChance -= 0.35f;
+                eq.guns[currentGun].plasmaBulletChance -= 0.4f;
                 break;
             case 12:
-                eq.guns[currentGun].damageMultiplier /= 1.135f;
-                eq.guns[currentGun].critDamage -= 0.27f;
+                eq.guns[currentGun].damageMultiplier /= 1.144f;
+                eq.guns[currentGun].critDamage /= 0.288f;
                 break;
             case 13:
-                eq.guns[currentGun].fireRate *= 1.27f;
-                eq.guns[currentGun].critChance -= 0.135f;
+                eq.guns[currentGun].fireRate *= 1.288f;
+                eq.guns[currentGun].critChance -= 0.144f;
                 break;
             case 14:
                 // chance not to consume ammo
@@ -723,7 +723,7 @@ public class Backpack : MonoBehaviour
                 // chance to fire 2 additional bullets in cone
                 break;
             case 16:
-                eq.guns[currentGun].damageMultiplier /= 1.09f;
+                eq.guns[currentGun].damageMultiplier /= 1.096f;
                 // increase damage further with base damage
                 break;
             case 17:
@@ -731,21 +731,21 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].damageGain -= 0.27f;
                 break;
             case 18:
-                eq.guns[currentGun].fireRate *= 1.12f;
+                eq.guns[currentGun].fireRate *= 1.128f;
                 // + Ammo
                 break;
             case 19:
                 // Dasing fires wave of bullets
                 break;
             case 20:
-                // additional bullets fired every 6 shots
+                // additional bullets fired every 3,125 shots - On Hit
                 break;
             case 21:
-                eq.guns[currentGun].fireRate *= 1.09f;
+                eq.guns[currentGun].fireRate *= 1.096f;
                 // increased fire rate with missing mag
                 break;
             case 22:
-                eq.guns[currentGun].damageMultiplier /= 1.09f;
+                eq.guns[currentGun].damageMultiplier /= 1.096f;
                 // increase damage based on magazine size
                 break;
             case 23:
@@ -758,18 +758,18 @@ public class Backpack : MonoBehaviour
                 // Wave - On Hit
                 break;
             case 26:
-                eq.guns[currentGun].fireRate *= 1.135f;
+                eq.guns[currentGun].fireRate *= 1.144f;
                 // On Hit Rate Increase
                 break;
             case 27:
                 // Laser - On Hit
                 break;
             case 28:
-                eq.guns[currentGun].DoT -= 0.45f;
+                eq.guns[currentGun].DoT -= 0.48f;
                 break;
             case 29:
-                eq.guns[currentGun].damageMultiplier /= 1.09f;
-                eq.guns[currentGun].shatter -= 0.45f;
+                eq.guns[currentGun].damageMultiplier /= 1.096f;
+                eq.guns[currentGun].shatter -= 0.48f;
                 break;
         }
     }
