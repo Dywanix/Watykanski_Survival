@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public GameObject ExplosionRadius;
     private Bullet Explosion;
     public PulletExplosion ShardExplosion;
-    public float duration, force, mass, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, incendiary, damageGain;
+    public float duration, falloff, force, mass, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, incendiary, damageGain;
     public int pierce, special;
     public bool crit, AoE, damageLess;
     bool fallen;
@@ -28,8 +28,8 @@ public class Bullet : MonoBehaviour
             travelX = (TargetedLocation.position.x - transform.position.x) / duration;
             travelY = (TargetedLocation.position.y - transform.position.y) / duration;
         }
-        Invoke("Fall", duration);
-        Invoke("End", 0.5f + duration * 2f);
+        Invoke("Fall", falloff);
+        Invoke("End", duration);
     }
 
     void Update()

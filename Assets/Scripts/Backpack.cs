@@ -23,6 +23,11 @@ public class Backpack : MonoBehaviour
     int currentGun, currentAccessory, tempi;
     bool reroll, viable;
 
+    [Header("Gun Bonus Info")]
+    public GameObject InfoTab;
+    public TMPro.TextMeshProUGUI[] GunStatsText;
+    bool infoTabOpened;
+
     public void OpenBackpack()
     {
         Tab.SetActive(true);
@@ -786,5 +791,29 @@ public class Backpack : MonoBehaviour
     public void CloseBackpack()
     {
         Tab.SetActive(false);
+    }
+
+    public void GunInfoClicked()
+    {
+        if (!infoTabOpened)
+        {
+            infoTabOpened = true;
+            InfoTab.SetActive(infoTabOpened);
+            if (eq.guns[currentGun].BulletsFired() > 1) GunStatsText[0].text = eq.guns[currentGun].Damage().ToString("0.0") + "x" + eq.guns[currentGun].BulletsFired().ToString("0");
+            else GunStatsText[0].text = eq.guns[currentGun].Damage().ToString("0.0");
+            GunStatsText[1].text = (1f / eq.guns[currentGun].fireRate).ToString("0.00") + "/s";
+            GunStatsText[2].text = (eq.guns[currentGun].critChance * 100).ToString("0") + "%";
+            GunStatsText[3].text = ((100f - eq.guns[currentGun].accuracy)).ToString("0.0") + "%";
+            GunStatsText[4].text = (eq.guns[currentGun].range * 100f).ToString("0,0");
+            GunStatsText[5].text = eq.guns[currentGun].reloadTime.ToString("0.00") + "s";
+            GunStatsText[6].text = eq.guns[currentGun].MagazineTotalSize().ToString("0");
+            GunStatsText[7].text = eq.guns[currentGun].maxAmmo.ToString("0");
+            GunStatsText[8].text = eq.guns[currentGun].info;
+        }
+        else
+        {
+            infoTabOpened = false;
+            InfoTab.SetActive(infoTabOpened);
+        }
     }
 }

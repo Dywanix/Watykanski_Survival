@@ -48,6 +48,7 @@ public class PulletExplosion : MonoBehaviour
     void SetBullet(int which)
     {
         BulletsShards.duration = ThisBullet.duration + bonusDuration[which];
+        BulletsShards.falloff = ThisBullet.falloff + 0.25f;
         BulletsShards.force = ThisBullet.force;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency[which];
         BulletsShards.DoT = ThisBullet.DoT;

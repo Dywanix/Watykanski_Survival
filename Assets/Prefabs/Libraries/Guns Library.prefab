@@ -1459,7 +1459,7 @@ MonoBehaviour:
   reloadTime: 0.58
   range: 0.23
   force: 20
-  heft: 0.08
+  heft: 0.06
   magazineSize: 8
   ammo: 0
   maxAmmo: 0
@@ -1537,6 +1537,143 @@ MonoBehaviour:
   individualReloadCount: 2
   poisonBulletChance: 0
   plasmaBulletChance: 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+--- !u!1 &2212724744192666305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4371222862709336698}
+  - component: {fileID: 1887778943013783895}
+  m_Layer: 0
+  m_Name: Chanco-Guno
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4371222862709336698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212724744192666305}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7883449400016885017}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1887778943013783895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2212724744192666305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Chanco-Guno
+  gunSprite: {fileID: 21300000, guid: ac86e84b1c1b1504792a35ae6bc20385, type: 3}
+  holdingSprite: {fileID: 21300000, guid: f3d1713b60504e242badb4eb084713a1, type: 3}
+  damage: 14.4
+  fireRate: 0.41
+  accuracy: 5.5
+  penetration: 0
+  critChance: 0.17
+  reloadTime: 1.07
+  range: 0.255
+  force: 20
+  heft: 0.09
+  magazineSize: 11
+  ammo: 0
+  maxAmmo: 0
+  targetArea: 0
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 0
+  info: Has 5% Chance to fire all kind of Bullets
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 3.3
+  shakeDuration: 0.111
+  bulletsLeft: 11
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000e0000000900000005000000
+  Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 1.8
+  - 0.05
+  - 0.04
+  - 0.9
+  LevelUpBonuses:
+  - 0.5
+  - 0.94
+  - 0.95
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0
+  - 1
+  - 0
+  - 0.05
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - penetration
+  - critChance
+  - reloadTime
+  UpgradeInfo:
+  - +1,8 Damage
+  - +5% Penetration
+  - +4% Crit Chance
+  - -10% Reload Time
+  infiniteMagazine: 0
+  infiniteAmmo: 1
+  individualReload: 0
+  individualReloadCount: 0
+  poisonBulletChance: 0.05
+  plasmaBulletChance: 0.05
   damageMultiplier: 1
   magazineMultiplier: 1
   bulletPrefab:
@@ -2227,7 +2364,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7883449400016885017}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &482881049413243200
 MonoBehaviour:
@@ -3877,6 +4014,7 @@ MonoBehaviour:
   - {fileID: 3387941136709306523}
   - {fileID: 482881049413243200}
   - {fileID: 617677927871692741}
+  - {fileID: 1887778943013783895}
 --- !u!1 &5518898055514371838
 GameObject:
   m_ObjectHideFlags: 0
@@ -4824,6 +4962,7 @@ Transform:
   - {fileID: 5443877569428587918}
   - {fileID: 1801556758170803939}
   - {fileID: 7730649509790221757}
+  - {fileID: 4371222862709336698}
   - {fileID: 4630930601520033627}
   m_Father: {fileID: 4983335614787120282}
   m_RootOrder: 0

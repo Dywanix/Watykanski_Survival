@@ -180,11 +180,11 @@ MonoBehaviour:
   Dir: {fileID: 5303853645452063645}
   Form: {fileID: 6228523025300952653}
   bulletForce:
-  - 4
+  - 3.3
   damageEfficiency:
-  - 0.48
+  - 0.52
   bonusDuration:
-  - 0.8
+  - 0.11
   delay: 2000
   delayRange: 2000
   accuracy: 30

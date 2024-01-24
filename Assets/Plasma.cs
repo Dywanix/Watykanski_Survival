@@ -41,7 +41,8 @@ public class Plasma : MonoBehaviour
 
     void SetBullet()
     {
-        BulletsShards.duration = ThisBullet.duration + 0.2f;
+        BulletsShards.duration = ThisBullet.duration + 0.25f;
+        BulletsShards.falloff = ThisBullet.falloff + 0.25f;
         BulletsShards.force = ThisBullet.force;
         BulletsShards.mass = ThisBullet.mass;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;

@@ -49,13 +49,11 @@ public class Equipment : MonoBehaviour
 
     void Start()
     {
+        playerStats.gunImage.sprite = guns[equipped].gunSprite;
+        equippedGun.sprite = guns[equipped].holdingSprite;
+        playerStats.DisplayAmmo();
         if (gambler)
         {
-            guns[0] = Library.baseGuns[Random.Range(0, Library.baseGuns.Length)];
-            playerStats.gunImage.sprite = guns[equipped].gunSprite;
-            equippedGun.sprite = guns[equipped].holdingSprite;
-            guns[equipped].parts = playerStats.toolsStored;
-            playerStats.DisplayAmmo();
             tempi = 3;
             while (tempi > 0)
             {

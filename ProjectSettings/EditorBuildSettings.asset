@@ -5,19 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Character Select.unity
-    guid: 3075e9c9312fb7443bf70127a71c7fb3
-  - enabled: 0
-    path: Assets/Scenes/Mapa.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 65e4d4b74d6a099499a0dc451158c1ce
+    path: Assets/Scenes/Character Lobby.unity
+    guid: 6c4f25e0cd82dc845ad46c9fd58aa624
   - enabled: 1
     path: Assets/Scenes/Map - Rooms.unity
     guid: 01547170bbd377e4a96a834987f0d780
   - enabled: 0
+    path: Assets/Scenes/Mapa.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/Menu.unity
+    guid: 65e4d4b74d6a099499a0dc451158c1ce
+  - enabled: 0
     path: Assets/Scenes/arena.unity
     guid: 9262d2888bf60644aa1579c0a4a20714
+  - enabled: 0
+    path: Assets/Scenes/Character Select.unity
+    guid: 3075e9c9312fb7443bf70127a71c7fb3
   m_configObjects: {}

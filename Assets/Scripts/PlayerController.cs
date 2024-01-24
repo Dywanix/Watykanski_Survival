@@ -564,7 +564,8 @@ public class PlayerController : MonoBehaviour
 
     public void SetBullet(float efficiency)
     {
-        firedBullet.duration = eq.guns[eq.equipped].range;
+        firedBullet.falloff = eq.guns[eq.equipped].range;
+        firedBullet.duration = (0.5f + eq.guns[eq.equipped].range * 2f) / forceIncrease;
         firedBullet.force = eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f);
         firedBullet.mass = eq.guns[eq.equipped].heft;
         firedBullet.damage = eq.guns[eq.equipped].Damage() * DamageDealtMultiplyer(1f);
@@ -653,6 +654,7 @@ public class PlayerController : MonoBehaviour
         Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration = 0.8f / forceIncrease;
+        firedBullet.falloff = 0.8f / forceIncrease;
         firedBullet.damage = (32.5f + /*toolsStored * 0.12f +*/ level * 1.5f) * DamageDealtMultiplyer(1.1f);
         if (eq.Items[15])
             firedBullet.damage *= 1.24f;

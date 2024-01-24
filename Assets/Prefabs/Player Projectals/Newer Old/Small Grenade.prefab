@@ -12,8 +12,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
+      propertyPath: falloff
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: duration
-      value: 0.8
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2054016520708955858, guid: 746d32441cb12714e87e23d8db5a4433, type: 3}
       propertyPath: ExplosionRadius
