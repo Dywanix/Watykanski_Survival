@@ -1348,8 +1348,8 @@ MonoBehaviour:
   info: Reloads 1 bullet at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 1.95
-  shakeDuration: 0.053
+  cameraShake: 1.37
+  shakeDuration: 0.037
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1485,8 +1485,8 @@ MonoBehaviour:
   info: Reloads 2 bullets at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 3.34
-  shakeDuration: 0.089
+  cameraShake: 2.34
+  shakeDuration: 0.062
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -1622,8 +1622,8 @@ MonoBehaviour:
   info: Has 5% Chance to fire all kind of Bullets
   level: 0
   LevelCostCharge: 0
-  cameraShake: 2.48
-  shakeDuration: 0.083
+  cameraShake: 1.74
+  shakeDuration: 0.058
   bulletsLeft: 11
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2033,8 +2033,8 @@ MonoBehaviour:
   info: +20% Crit Damage
   level: 0
   LevelCostCharge: 0
-  cameraShake: 3.6
-  shakeDuration: 0.116
+  cameraShake: 2.52
+  shakeDuration: 0.081
   bulletsLeft: 6
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2415,8 +2415,8 @@ MonoBehaviour:
   info: Fires in a burst of 2
   level: 0
   LevelCostCharge: 0
-  cameraShake: 3.38
-  shakeDuration: 0.125
+  cameraShake: 2.37
+  shakeDuration: 0.088
   bulletsLeft: 22
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -2552,8 +2552,8 @@ MonoBehaviour:
   info: Fires in Burst of 2
   level: 0
   LevelCostCharge: 0
-  cameraShake: 1.8
-  shakeDuration: 0.053
+  cameraShake: 1.26
+  shakeDuration: 0.037
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3072,7 +3072,7 @@ MonoBehaviour:
   level: 0
   LevelCostCharge: 0
   cameraShake: 1.95
-  shakeDuration: 0.053
+  shakeDuration: 0.037
   bulletsLeft: 30
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3485,8 +3485,8 @@ MonoBehaviour:
   info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 2.4
-  shakeDuration: 0.066
+  cameraShake: 1.68
+  shakeDuration: 0.046
   bulletsLeft: 24
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3622,8 +3622,8 @@ MonoBehaviour:
   info: Has 1 more Accessory Slot
   level: 0
   LevelCostCharge: 0
-  cameraShake: 2.03
-  shakeDuration: 0.055
+  cameraShake: 1.42
+  shakeDuration: 0.039
   bulletsLeft: 23
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -3896,8 +3896,8 @@ MonoBehaviour:
   info: Has +(1) Accessory Slot
   level: 0
   LevelCostCharge: 0
-  cameraShake: 3.15
-  shakeDuration: 0.096
+  cameraShake: 2.21
+  shakeDuration: 0.067
   bulletsLeft: 17
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -4737,8 +4737,8 @@ MonoBehaviour:
   info: 
   level: 0
   LevelCostCharge: 0
-  cameraShake: 3.38
-  shakeDuration: 0.079
+  cameraShake: 2.37
+  shakeDuration: 0.055
   bulletsLeft: 18
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -5048,8 +5048,8 @@ MonoBehaviour:
   info: Fires in a burst of 3
   level: 0
   LevelCostCharge: 0
-  cameraShake: 2.18
-  shakeDuration: 0.059
+  cameraShake: 1.53
+  shakeDuration: 0.041
   bulletsLeft: 27
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -5322,8 +5322,8 @@ MonoBehaviour:
   info: Has 40% Shatter
   level: 0
   LevelCostCharge: 0
-  cameraShake: 1.95
-  shakeDuration: 0.066
+  cameraShake: 1.37
+  shakeDuration: 0.046
   bulletsLeft: 1
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -5459,8 +5459,8 @@ MonoBehaviour:
   info: Has 25% Chance to fire Plasma Bullet
   level: 0
   LevelCostCharge: 0
-  cameraShake: 3.08
-  shakeDuration: 0.071
+  cameraShake: 2.16
+  shakeDuration: 0.05
   bulletsLeft: 21
   bonusAmmo: 0
   spreadMultiplyer: 1
@@ -6323,8 +6323,8 @@ MonoBehaviour:
   info: Reloads 1 bullet at a time
   level: 0
   LevelCostCharge: 0
-  cameraShake: 1.95
-  shakeDuration: 0.053
+  cameraShake: 1.37
+  shakeDuration: 0.037
   bulletsLeft: 8
   bonusAmmo: 0
   spreadMultiplyer: 1
