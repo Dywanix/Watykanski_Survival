@@ -394,7 +394,7 @@ public class CraftingTable : MonoBehaviour
                 playerStats.eq.guns[playerStats.eq.equipped].range += 0.03f;
                 break;
             case 3:
-                playerStats.eq.guns[playerStats.eq.equipped].poisonBulletChance += 0.25f;
+                //playerStats.eq.guns[playerStats.eq.equipped].poisonBulletChance += 0.25f;
                 break;
             case 4:
                 playerStats.eq.guns[playerStats.eq.equipped].critChance += 0.12f;
@@ -425,7 +425,7 @@ public class CraftingTable : MonoBehaviour
                 // overload
                 break;
             case 11:
-                playerStats.eq.guns[playerStats.eq.equipped].plasmaBulletChance += 0.25f;
+                //playerStats.eq.guns[playerStats.eq.equipped].plasmaBulletChance += 0.25f;
                 break;
             case 12:
                 playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier *= 1.09f;
@@ -613,7 +613,7 @@ public class CraftingTable : MonoBehaviour
                 playerStats.eq.guns[playerStats.eq.equipped].range -= 0.03f;
                 break;
             case 3:
-                playerStats.eq.guns[playerStats.eq.equipped].poisonBulletChance -= 0.25f;
+                //playerStats.eq.guns[playerStats.eq.equipped].poisonBulletChance -= 0.25f;
                 break;
                 case 4:
                 playerStats.eq.guns[playerStats.eq.equipped].critChance -= 0.12f;
@@ -644,7 +644,7 @@ public class CraftingTable : MonoBehaviour
                 // overload
                 break;
                 case 11:
-                playerStats.eq.guns[playerStats.eq.equipped].plasmaBulletChance -= 0.25f;
+                //playerStats.eq.guns[playerStats.eq.equipped].plasmaBulletChance -= 0.25f;
                 break;
                 case 12:
                 playerStats.eq.guns[playerStats.eq.equipped].damageMultiplier /= 1.09f;

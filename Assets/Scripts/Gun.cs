@@ -55,8 +55,7 @@ public class Gun : MonoBehaviour
     int tempi;
 
     [Header("Special Bullets")]
-    public float poisonBulletChance;
-    public float plasmaBulletChance;
+    public float[] specialBulletChance;
 
     [Header("Multiplikatory Stat")]
     public float damageMultiplier;

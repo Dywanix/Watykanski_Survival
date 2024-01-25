@@ -31,7 +31,7 @@ public class PlayerControllerLobby : MonoBehaviour
     public float damageBonus;
     public float fireRateBonus, movementSpeed, cooldownReduction, dashBaseCooldown,
     maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
-    int tempi, bonusTool;
+    public int tempi;
     float temp, flashA;
     bool greenF;
 
@@ -286,10 +286,17 @@ public class PlayerControllerLobby : MonoBehaviour
     public GameObject SetBulletPrefab()
     {
         tempi = 0;
-        if (guns[currentClass].poisonBulletChance > Random.Range(0f, 1f))
-            tempi++;
-        if (guns[currentClass].plasmaBulletChance > Random.Range(0f, 1f))
+        /*for (int i = 0; i < 3; i++)
+        {
+            if (guns[currentClass].specialBulletChance[i] > Random.Range(0f, 1f))
+                tempi += (2 ^ i) - 1;
+        }*/
+        if (guns[currentClass].specialBulletChance[0] > Random.Range(0f, 1f))
+            tempi += 1;
+        if (guns[currentClass].specialBulletChance[1] > Random.Range(0f, 1f))
             tempi += 2;
+        if (guns[currentClass].specialBulletChance[2] > Random.Range(0f, 1f))
+            tempi += 4;
 
         if (tempi > 0)
             CurrentBullet = SpecialBullets[tempi - 1];

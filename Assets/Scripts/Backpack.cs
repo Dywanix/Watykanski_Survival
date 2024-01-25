@@ -333,7 +333,7 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].range += 0.03f;
                 break;
             case 3:
-                eq.guns[currentGun].poisonBulletChance += 0.25f;
+                eq.guns[currentGun].specialBulletChance[0] += 0.25f;
                 break;
             case 4:
                 eq.guns[currentGun].critChance += 0.12f;
@@ -364,7 +364,7 @@ public class Backpack : MonoBehaviour
                 // overload
                 break;
             case 11:
-                eq.guns[currentGun].plasmaBulletChance += 0.25f;
+                eq.guns[currentGun].specialBulletChance[1] += 0.25f;
                 break;
             case 12:
                 eq.guns[currentGun].damageMultiplier *= 1.09f;
@@ -385,8 +385,7 @@ public class Backpack : MonoBehaviour
                 // increase damage further with base damage
                 break;
             case 17:
-                eq.guns[currentGun].range += 0.04f;
-                eq.guns[currentGun].damageGain += 0.18f;
+                eq.guns[currentGun].specialBulletChance[2] += 0.25f;
                 break;
             case 18:
                 eq.guns[currentGun].fireRate /= 1.08f;
@@ -447,7 +446,7 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].range -= 0.03f;
                 break;
             case 3:
-                eq.guns[currentGun].poisonBulletChance -= 0.25f;
+                eq.guns[currentGun].specialBulletChance[0] -= 0.25f;
                 break;
             case 4:
                 eq.guns[currentGun].critChance -= 0.12f;
@@ -478,7 +477,7 @@ public class Backpack : MonoBehaviour
                 // overload
                 break;
             case 11:
-                eq.guns[currentGun].plasmaBulletChance -= 0.25f;
+                eq.guns[currentGun].specialBulletChance[1] -= 0.25f;
                 break;
             case 12:
                 eq.guns[currentGun].damageMultiplier /= 1.09f;
@@ -499,8 +498,7 @@ public class Backpack : MonoBehaviour
                 // increase damage further with base damage
                 break;
             case 17:
-                eq.guns[currentGun].range -= 0.04f;
-                eq.guns[currentGun].damageGain -= 0.18f;
+                eq.guns[currentGun].specialBulletChance[2] -= 0.25f;
                 break;
             case 18:
                 eq.guns[currentGun].fireRate *= 1.08f;
@@ -561,7 +559,7 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].range += 0.05f;
                 break;
             case 3:
-                eq.guns[currentGun].poisonBulletChance += 0.4f;
+                eq.guns[currentGun].specialBulletChance[0] += 0.4f;
                 break;
             case 4:
                 eq.guns[currentGun].critChance += 0.192f;
@@ -592,7 +590,7 @@ public class Backpack : MonoBehaviour
                 // overload
                 break;
             case 11:
-                eq.guns[currentGun].plasmaBulletChance += 0.4f;
+                eq.guns[currentGun].specialBulletChance[1] += 0.4f;
                 break;
             case 12:
                 eq.guns[currentGun].damageMultiplier *= 1.144f;
@@ -613,8 +611,7 @@ public class Backpack : MonoBehaviour
                 // increase damage further with base damage
                 break;
             case 17:
-                eq.guns[currentGun].range += 0.06f;
-                eq.guns[currentGun].damageGain += 0.27f;
+                eq.guns[currentGun].specialBulletChance[2] += 0.4f;
                 break;
             case 18:
                 eq.guns[currentGun].fireRate /= 1.128f;
@@ -675,7 +672,7 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].range -= 0.05f;
                 break;
             case 3:
-                eq.guns[currentGun].poisonBulletChance -= 0.4f;
+                eq.guns[currentGun].specialBulletChance[0] -= 0.4f;
                 break;
             case 4:
                 eq.guns[currentGun].critChance -= 0.192f;
@@ -706,7 +703,7 @@ public class Backpack : MonoBehaviour
                 // overload
                 break;
             case 11:
-                eq.guns[currentGun].plasmaBulletChance -= 0.4f;
+                eq.guns[currentGun].specialBulletChance[1] -= 0.4f;
                 break;
             case 12:
                 eq.guns[currentGun].damageMultiplier /= 1.144f;
@@ -727,8 +724,7 @@ public class Backpack : MonoBehaviour
                 // increase damage further with base damage
                 break;
             case 17:
-                eq.guns[currentGun].range -= 0.06f;
-                eq.guns[currentGun].damageGain -= 0.27f;
+                eq.guns[currentGun].specialBulletChance[2] -= 0.4f;
                 break;
             case 18:
                 eq.guns[currentGun].fireRate *= 1.128f;

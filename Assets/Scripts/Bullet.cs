@@ -92,7 +92,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void Explosions()
+    public void Explosions()
     {
         if (AoE)
         {

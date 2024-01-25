@@ -270,7 +270,8 @@ public class Equipment : MonoBehaviour
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         playerStats.SetBullet(1f);
         playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
-        playerStats.firedBullet.duration = 1.38f;
+        playerStats.firedBullet.falloff += 0.4f + 0.4f * playerStats.firedBullet.falloff;
+        playerStats.firedBullet.duration = 0.4f + 0.4f * playerStats.firedBullet.duration;
 
         playerStats.firedBullet.damage *= 1.4f + 0.14f * playerStats.firedBullet.pierce;
         playerStats.firedBullet.pierceEfficiency += 0.16f * playerStats.firedBullet.pierce;
@@ -289,7 +290,8 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             playerStats.SetBullet(1f);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
-            playerStats.firedBullet.duration = 40f;
+            playerStats.firedBullet.falloff = 40f;
+            playerStats.firedBullet.duration = 50f;
 
             playerStats.firedBullet.damage *= 1.1f + 0.06f * playerStats.firedBullet.pierce + 0.35f * playerStats.firedBullet.pierceEfficiency;
             playerStats.firedBullet.pierce += 7;
@@ -323,12 +325,13 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             playerStats.SetBullet(1f);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+            playerStats.firedBullet.falloff = 0.12f;
             playerStats.firedBullet.duration = 0.14f;
 
-            playerStats.firedBullet.damage *= 0.35f + 0.025f * playerStats.firedBullet.pierce + 0.06f * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.damage *= 0.36f + 0.025f * playerStats.firedBullet.pierce + 0.06f * playerStats.firedBullet.pierceEfficiency;
             playerStats.firedBullet.pierce = 10;
             playerStats.firedBullet.pierceEfficiency = 1f;
-            playerStats.firedBullet.shatter += 0.6f + 0.2f * playerStats.firedBullet.shatter;
+            playerStats.firedBullet.shatter += 0.6f + 0.3f * playerStats.firedBullet.shatter;
         }
     }
 

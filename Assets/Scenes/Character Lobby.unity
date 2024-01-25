@@ -7991,7 +7991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5518898055452544453, guid: ba319b297bc597f43b8fd550d982aee9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15931,9 +15931,14 @@ MonoBehaviour:
   DeflectProjectal: {fileID: 3773145563270755769, guid: 465b71bf774779e4dbd2ec57ae0e92dd, type: 3}
   KnifeProjectal: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
   Tooltip: {fileID: 234213453846802095}
-  PoisonBulletPrefab: {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
-  PlasmaBulletPrefab: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  PlasmaPoisonBulletPrefab: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+  SpecialBullets:
+  - {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+  - {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+  - {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+  - {fileID: 7419258523427994237, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
+  - {fileID: 1023839990212055130, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
+  - {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+  - {fileID: 7813484985475569114, guid: e535aa56407c2ac409875c9eef107d6e, type: 3}
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
 --- !u!1 &2129462728201173326
 GameObject:
@@ -20027,9 +20032,14 @@ MonoBehaviour:
   firedBullet: {fileID: 0}
   Grenade: {fileID: 3080163295848660013, guid: 0e206f122f054ec448c3733f8c8656a2, type: 3}
   CurrentBullet: {fileID: 0}
-  PoisonBulletPrefab: {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
-  PlasmaBulletPrefab: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  PlasmaPoisonBulletPrefab: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+  SpecialBullets:
+  - {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+  - {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+  - {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+  - {fileID: 7419258523427994237, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
+  - {fileID: 1023839990212055130, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
+  - {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+  - {fileID: 7813484985475569114, guid: e535aa56407c2ac409875c9eef107d6e, type: 3}
   mouseLeft: 0
   reloading: 0
   free: 1
@@ -20051,6 +20061,7 @@ MonoBehaviour:
   grenadeMaxCooldown: 0
   grenadeCooldown: 0
   dash: 1
+  tempi: 0
   playerSprite: {fileID: 2129462729595728635}
   heldGunSprite: {fileID: 2129462728200875758}
   animators:

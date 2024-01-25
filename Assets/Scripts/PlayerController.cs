@@ -544,10 +544,17 @@ public class PlayerController : MonoBehaviour
     public GameObject SetBulletPrefab()
     {
         tempi = 0;
-        if (eq.guns[eq.equipped].poisonBulletChance > Random.Range(0f, 1f))
-            tempi++;
-        if (eq.guns[eq.equipped].plasmaBulletChance > Random.Range(0f, 1f))
+        /*for (int i = 0; i < 3; i++)
+        {
+            if (eq.guns[eq.equipped].specialBulletChance[i] > Random.Range(0f, 1f))
+                tempi += (2 ^ i) - 1;
+        }*/
+        if (eq.guns[eq.equipped].specialBulletChance[0] > Random.Range(0f, 1f))
+            tempi += 1;
+        if (eq.guns[eq.equipped].specialBulletChance[1] > Random.Range(0f, 1f))
             tempi += 2;
+        if (eq.guns[eq.equipped].specialBulletChance[2] > Random.Range(0f, 1f))
+            tempi += 4;
 
         if (tempi > 0)
             CurrentBullet = eq.SpecialBullets[tempi - 1];
@@ -689,7 +696,7 @@ public class PlayerController : MonoBehaviour
 
     void DrinkPotion()
     {
-        if (potions > 0 && health < maxHealth)
+        if (potions > 0 && (health < maxHealth || eq.Items[34]))
         {
             temp = 10f;
             if (eq.Items[36])
@@ -698,6 +705,14 @@ public class PlayerController : MonoBehaviour
                 temp += maxHealth * 0.1f;
             if (eq.Items[37])
                 temp += 5f;
+            if (eq.Items[34])
+            {
+                if (temp > maxHealth - health)
+                {
+                    RestoreHealth(maxHealth - health);
+                    GainShield(temp + health - maxHealth);
+                }
+            }
             RestoreHealth(temp);
             potions--;
             potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");

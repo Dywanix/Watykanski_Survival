@@ -120,7 +120,7 @@ MonoBehaviour:
   - Increase Fire Rate by 7,2%. Gain 1% Cooldown Reduction for every 2,8% Fire Rate
     Increase
   - Gain 2 random Accessories & 10 Tools
-  - Transform Max Health into Shield.
+  - Transform Max Health into Shield. Potions can give Shield instead
   - Every Tool collected gives 1 Shield. Gain 6 Tools
   - Every Potion used increases Max Health by 1. Gain 2 Potion
   - Increase Potion Slots by 1 & healing from Potions by 5
