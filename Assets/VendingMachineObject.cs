@@ -7,6 +7,8 @@ public class VendingMachineObject : MonoBehaviour
     public GameObject Player, Glow;
     public VendingMachine vendingMachine;
 
+    public bool opened;
+
     void Start()
     {
         vendingMachine = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(VendingMachine)) as VendingMachine;
@@ -22,7 +24,8 @@ public class VendingMachineObject : MonoBehaviour
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                vendingMachine.Open();
+                vendingMachine.Open(opened);
+                opened = true;
             }
         }
         else Glow.SetActive(false);

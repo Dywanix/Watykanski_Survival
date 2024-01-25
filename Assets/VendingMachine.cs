@@ -12,10 +12,18 @@ public class VendingMachine : MonoBehaviour
 
     public bool[] slotFull;
     public int[] slots, items, costs;
+    public TMPro.TextMeshProUGUI Tooltip;
 
+    [Header("Cabinet")]
     public Image[] slotImage;
     public Sprite[] otherSprites;
     public TMPro.TextMeshProUGUI[] costValue;
+
+    [Header("Usage")]
+    public TMPro.TextMeshProUGUI playerGold;
+    public TMPro.TextMeshProUGUI[] digitValue;
+    public bool[] digitWritten;
+    public int[] digits;
 
     bool active, viable;
     int tempi, roll, freeSlots;
@@ -33,13 +41,15 @@ public class VendingMachine : MonoBehaviour
         }
     }
 
-    public void Open()
+    public void Open(bool opened)
     {
-        SetCabinet();
+        if (!opened)
+            SetCabinet();
         playerStats.free = false;
         playerStats.menuOpened = true;
         Hud.SetActive(true);
         active = true;
+        UpdateCabinet();
     }
 
     void SetCabinet()
@@ -47,6 +57,7 @@ public class VendingMachine : MonoBehaviour
         for (int i = 0; i < slotFull.Length; i++)
         {
             slotFull[i] = false;
+            slotImage[i].enabled = true;
         }
         freeSlots = 20;
 
@@ -82,10 +93,91 @@ public class VendingMachine : MonoBehaviour
 
     void UpdateCabinet()
     {
+        playerGold.text = playerStats.gold.ToString("0");
         for (int i = 0; i < slotFull.Length; i++)
         {
             if (!slotFull[i])
                 slotImage[i].enabled = false;
+        }
+        for (int i = 0; i < 2; i++)
+        {
+            if (digitWritten[i])
+                digitValue[i].text = digits[i].ToString("0");
+        }
+    }
+
+    public void WriteDigit(int which)
+    {
+        if (!digitWritten[0])
+        {
+            digitWritten[0] = true;
+            digits[0] = which;
+        }
+        else if (!digitWritten[1])
+        {
+            digitWritten[1] = true;
+            digits[1] = which;
+
+            Invoke("Check", 0.3f);
+        }
+        UpdateCabinet();
+    }
+
+    void Check()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            digitWritten[i] = false;
+            digitValue[i].text = "-";
+        }
+
+        tempi = digits[1] + digits[0] * 9 - 10;
+        if (tempi < 20)
+            GetItem(tempi);
+
+        UpdateCabinet();
+    }
+
+    void GetItem(int which)
+    {
+        if (costs[which] <= playerStats.gold)
+        {
+            slotFull[tempi] = false;
+            playerStats.SpendGold(costs[which]);
+            if (slots[which] == 0)
+                playerStats.eq.PickUpItem(items[which]);
+            else if (slots[which] == 1)
+                playerStats.eq.Accessories[items[which]]++;
+            else
+            {
+                switch (slots[which])
+                {
+                    case 2:
+                        playerStats.RestoreHealth(5 + playerStats.maxHealth * 0.1f);
+                        break;
+                    case 3:
+                        playerStats.GainShield(10f);
+                        break;
+                    case 4:
+                        playerStats.GainDMG(0.027f);
+                        break;
+                    case 5:
+                        playerStats.GainFR(0.032f);
+                        break;
+                    case 6:
+                        playerStats.GainMS(4f);
+                        break;
+                    case 7:
+                        playerStats.GainCR(0.053f);
+                        break;
+                    case 8:
+                        playerStats.GainTools(3);
+                        break;
+                    case 9:
+                        playerStats.GainPotions(1);
+                        break;
+                }
+            }
         }
     }
 
@@ -148,5 +240,48 @@ public class VendingMachine : MonoBehaviour
         slotImage[roll].sprite = otherSprites[what - 2];
         costs[roll] = Random.Range(20, 24);
         costValue[roll].text = costs[roll].ToString("0");
+    }
+
+    public void SlotTooltipOpen(int slot)
+    {
+        if (slots[slot] == 0)
+            Tooltip.text = Lib.ItemTooltip[items[slot]];
+        else if (slots[slot] == 1)
+            Tooltip.text = ALib.AccessoryTooltip[items[slot]];
+        else
+        {
+                switch (slots[slot])
+                {
+                    case 2:
+                        Tooltip.text = "Restore " + (5 + playerStats.maxHealth * 0.1f).ToString("0") + " Health";
+                        break;
+                    case 3:
+                        Tooltip.text = "Gain 10 Shield";
+                        break;
+                    case 4:
+                        Tooltip.text = "Gain 2,7% Damage Increase";
+                        break;
+                    case 5:
+                        Tooltip.text = "Gain 3,2% Fire Rate Increase";
+                        break;
+                    case 6:
+                        Tooltip.text = "Gain 4% Movement Speed Increase";
+                        break;
+                    case 7:
+                        Tooltip.text = "Gain 5,3% Cooldown Reduction Increase";
+                        break;
+                    case 8:
+                        Tooltip.text = "Gain 3 Tools";
+                        break;
+                    case 9:
+                        Tooltip.text = "Gain 1 Potion";
+                        break;
+                }
+        }
+    }
+
+    public void SlotTooltipClose()
+    {
+        Tooltip.text = "";
     }
 }

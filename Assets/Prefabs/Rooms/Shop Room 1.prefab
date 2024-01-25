@@ -526,6 +526,7 @@ Transform:
   - {fileID: 1618151016350627587}
   - {fileID: 1090333841702243347}
   - {fileID: 929182681851298933}
+  - {fileID: 3966686451659608794}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8608,3 +8609,65 @@ MonoBehaviour:
   cost: 10
   effect: 0
   left: 2
+--- !u!1001 &3063821719267914090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5898594895256458737}
+    m_Modifications:
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771524090323499908, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_Name
+      value: Vending Machine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+--- !u!4 &3966686451659608794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2128058375392568240, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+  m_PrefabInstance: {fileID: 3063821719267914090}
+  m_PrefabAsset: {fileID: 0}

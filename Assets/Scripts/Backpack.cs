@@ -298,10 +298,9 @@ public class Backpack : MonoBehaviour
 
     public void RemoveAccessory(int placement)
     {
-        eq.Accessories[EquippedAccessory[placement]]++;
-
         if (!reroll)
         {
+            eq.Accessories[EquippedAccessory[placement]]++;
             eq.guns[currentGun].Accessories[EquippedAccessory[placement]]--;
             eq.guns[currentGun].TakenSlots -= 1;
 
@@ -311,6 +310,7 @@ public class Backpack : MonoBehaviour
         }
         else
         {
+            eq.Accessories[RerolledAccessory[placement]]++;
             rerollSlots[placement] = false;
         }
         TooltipClose();

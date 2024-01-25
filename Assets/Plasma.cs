@@ -8,7 +8,7 @@ public class Plasma : MonoBehaviour
     public GameObject BulletShard;
     public Rigidbody2D Dir;
     public Transform Form;
-    public float delay, bulletForce, damageEfficiency;
+    public float delay, damageEfficiency;
 
     public bool explosive;
 
@@ -34,10 +34,10 @@ public class Plasma : MonoBehaviour
             {
                 for (int j = 0; j < 2; j++)
                 {
-                    Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + (55f + 35f * i) * (1 - 2f * j));
+                    Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + (50f + 40f * i) * (1 - 2f * j));
                     GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
                     Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-                    bullet_body.AddForce(Form.up * ThisBullet.force * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
+                    bullet_body.AddForce(Form.up * (3 + ThisBullet.force * 0.6f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
                     BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
                     SetBullet();
                 }
@@ -52,7 +52,7 @@ public class Plasma : MonoBehaviour
                     Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + (65f + 50f * i) * (1 - 2f * j));
                     GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
                     Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-                    bullet_body.AddForce(Form.up * ThisBullet.force * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
+                    bullet_body.AddForce(Form.up * (3 + ThisBullet.force * 0.6f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
                     BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
                     SetBullet();
                 }
