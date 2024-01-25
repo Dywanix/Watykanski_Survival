@@ -42,8 +42,7 @@ public class Equipment : MonoBehaviour
 
     // -- special bullets
     [Header("Pociski")]
-    public GameObject PoisonBulletPrefab;
-    public GameObject PlasmaBulletPrefab, PlasmaPoisonBulletPrefab;
+    public GameObject[] SpecialBullets;
     public GameObject Saw; //Laser;
     //public float sawCharges, laserCharges;
 

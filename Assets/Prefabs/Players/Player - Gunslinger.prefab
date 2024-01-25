@@ -3467,9 +3467,10 @@ MonoBehaviour:
   DeflectProjectal: {fileID: 3773145563270755769, guid: 465b71bf774779e4dbd2ec57ae0e92dd, type: 3}
   KnifeProjectal: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
   Tooltip: {fileID: 234213453934805638}
-  PoisonBulletPrefab: {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
-  PlasmaBulletPrefab: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  PlasmaPoisonBulletPrefab: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+  SpecialBullets:
+  - {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+  - {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+  - {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
   Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
 --- !u!114 &4870294145413830454
 MonoBehaviour:

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &635345613900683356
+--- !u!1001 &4924967572664655794
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: Particle
       value: 
-      objectReference: {fileID: 5587097361789659833, guid: a54af293e6246c74eaa2bd6f35c98be0, type: 3}
+      objectReference: {fileID: 2400956534431559294, guid: e69d63f6ea102de4d809c81a4b9e6155, type: 3}
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: frequency
       value: 0.1
@@ -34,30 +34,22 @@ PrefabInstance:
     - target: {fileID: 1443862876075540408, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d9780fc8e16daf14db1727cdd5d9a9eb, type: 3}
-    - target: {fileID: 1772678282706353308, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-      propertyPath: m_Mass
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772678282706353308, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-      propertyPath: m_LinearDrag
-      value: 0.12
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 17bad96dd537ecf4c882c37911168e06, type: 3}
     - target: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Name
-      value: Plasma Bullet
+      value: Explosive Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Color.b
-      value: 0.9960785
+      value: 0.24313727
       objectReference: {fileID: 0}
     - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.46274513
       objectReference: {fileID: 0}
     - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Color.r
-      value: 0.44705886
+      value: 0.76470596
       objectReference: {fileID: 0}
     - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Intensity
@@ -69,8 +61,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416963121152030269, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 2.3
+      value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3534394181369274235, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: AoE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3534394181369274235, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 2021625336800310792, guid: 1830d497b47332b42be026bc5265458a, type: 3}
     - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -125,49 +125,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
---- !u!50 &1173437265090045120 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 1772678282706353308, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  m_PrefabInstance: {fileID: 635345613900683356}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3062250661861096851 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  m_PrefabInstance: {fileID: 635345613900683356}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2153485355414811355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062250661861096851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185e8313e39d4ee49b262003c9bcca6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThisBullet: {fileID: 4169633622331885351}
-  BulletsShards: {fileID: 0}
-  BulletShard: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  Dir: {fileID: 1173437265090045120}
-  Form: {fileID: 6528528114766655129}
-  delay: 0.6
-  bulletForce: 12
-  damageEfficiency: 0.72
---- !u!114 &4169633622331885351 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3534394181369274235, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  m_PrefabInstance: {fileID: 635345613900683356}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3062250661861096851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e3f171d7732e246bff4937d06607c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &6528528114766655129 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
-  m_PrefabInstance: {fileID: 635345613900683356}
-  m_PrefabAsset: {fileID: 0}

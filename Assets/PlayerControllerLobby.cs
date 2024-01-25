@@ -19,7 +19,7 @@ public class PlayerControllerLobby : MonoBehaviour
     public Image taskImage, dashImage, abilityImage, gunImage;
     public Bullet firedBullet;
     public GameObject Grenade, CurrentBullet;
-    public GameObject PoisonBulletPrefab, PlasmaBulletPrefab, PlasmaPoisonBulletPrefab;
+    public GameObject[] SpecialBullets;
 
     Vector2 move;
     public bool mouseLeft, reloading, free = true;
@@ -285,29 +285,23 @@ public class PlayerControllerLobby : MonoBehaviour
 
     public GameObject SetBulletPrefab()
     {
+        tempi = 0;
+        if (guns[currentClass].poisonBulletChance > Random.Range(0f, 1f))
+            tempi++;
         if (guns[currentClass].plasmaBulletChance > Random.Range(0f, 1f))
-        {
-            if (guns[currentClass].poisonBulletChance > Random.Range(0f, 1f))
-            {
-                CurrentBullet = PlasmaPoisonBulletPrefab;
-            }
-            else CurrentBullet = PlasmaBulletPrefab;
-        }
-        else if (guns[currentClass].poisonBulletChance > Random.Range(0f, 1f))
-        {
-            CurrentBullet = PoisonBulletPrefab;
-        }
-        else
-        {
-            CurrentBullet = guns[currentClass].bulletPrefab[Random.Range(0, guns[currentClass].bulletPrefab.Length)];
-        }
+            tempi += 2;
+
+        if (tempi > 0)
+            CurrentBullet = SpecialBullets[tempi - 1];
+        else CurrentBullet = guns[currentClass].bulletPrefab[Random.Range(0, guns[currentClass].bulletPrefab.Length)];
 
         return CurrentBullet;
     }
 
     public void SetBullet(float efficiency)
     {
-        firedBullet.duration = guns[currentClass].range;
+        firedBullet.falloff = guns[currentClass].range;
+        firedBullet.duration = (0.5f + guns[currentClass].range * 2f);
         firedBullet.force = guns[currentClass].force * Random.Range(1.02f, 1.08f);
         firedBullet.mass = guns[currentClass].heft;
         firedBullet.damage = guns[currentClass].Damage() * DamageDealtMultiplyer(1f);

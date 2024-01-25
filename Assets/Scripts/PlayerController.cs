@@ -543,6 +543,17 @@ public class PlayerController : MonoBehaviour
 
     public GameObject SetBulletPrefab()
     {
+        tempi = 0;
+        if (eq.guns[eq.equipped].poisonBulletChance > Random.Range(0f, 1f))
+            tempi++;
+        if (eq.guns[eq.equipped].plasmaBulletChance > Random.Range(0f, 1f))
+            tempi += 2;
+
+        if (tempi > 0)
+            CurrentBullet = eq.SpecialBullets[tempi - 1];
+        else CurrentBullet = eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)];
+
+        /*
         if (eq.guns[eq.equipped].plasmaBulletChance > Random.Range(0f, 1f))
         {
             if (eq.guns[eq.equipped].poisonBulletChance > Random.Range(0f, 1f))
@@ -558,14 +569,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             CurrentBullet = eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)];
-        }
+        }*/
 
         return CurrentBullet;
     }
 
     public void SetBullet(float efficiency)
     {
-        firedBullet.falloff = eq.guns[eq.equipped].range;
+        firedBullet.falloff = eq.guns[eq.equipped].range / forceIncrease;
         firedBullet.duration = (0.5f + eq.guns[eq.equipped].range * 2f) / forceIncrease;
         firedBullet.force = eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f);
         firedBullet.mass = eq.guns[eq.equipped].heft;
