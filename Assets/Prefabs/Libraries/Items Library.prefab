@@ -102,10 +102,10 @@ MonoBehaviour:
   - Increase Potion Slots by 2. Fill them all
   - Reduce Grenade Cooldown by 11%. Gredandes deal 24% more Damage.
   - Gain +9% Crit Chance on all Guns
-  - Increase On-Hit Rate by 20%. Crits Increase by 48%
+  - Increase On-Hit Rate by (20 + 30% Crit Chance)%
   - Chance to spawn bonus Chest
   - Increase Damage by 36%, but also increase Damage Taken by 24%
-  - Enemies gain Vulnerable equal to 32% of their Armor
+  - Increase Chance for Special Bullets by 15%
   - Increase Damage by 6% & Bullets Speed by 28%
   - All Enemies are Cursed
   - Increase Fire Rate by 7,2%. All Guns Have 15% more Max Ammo

@@ -522,7 +522,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Items[17])
-            eq.OnHit(1.2f);
+            eq.OnHit(1.2f + 0.3f * (eq.guns[eq.equipped].critChance + additionalCritChance));
         else eq.OnHit(1f);
     }
 
@@ -549,34 +549,19 @@ public class PlayerController : MonoBehaviour
             if (eq.guns[eq.equipped].specialBulletChance[i] > Random.Range(0f, 1f))
                 tempi += (2 ^ i) - 1;
         }*/
-        if (eq.guns[eq.equipped].specialBulletChance[0] > Random.Range(0f, 1f))
+        if (eq.Items[20])
+            temp = 0.85f - 0.01f * luck;
+        else temp = 1f;
+        if (eq.guns[eq.equipped].specialBulletChance[0] > Random.Range(0f, temp))
             tempi += 1;
-        if (eq.guns[eq.equipped].specialBulletChance[1] > Random.Range(0f, 1f))
+        if (eq.guns[eq.equipped].specialBulletChance[1] > Random.Range(0f, temp))
             tempi += 2;
-        if (eq.guns[eq.equipped].specialBulletChance[2] > Random.Range(0f, 1f))
+        if (eq.guns[eq.equipped].specialBulletChance[2] > Random.Range(0f, temp))
             tempi += 4;
 
         if (tempi > 0)
             CurrentBullet = eq.SpecialBullets[tempi - 1];
         else CurrentBullet = eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)];
-
-        /*
-        if (eq.guns[eq.equipped].plasmaBulletChance > Random.Range(0f, 1f))
-        {
-            if (eq.guns[eq.equipped].poisonBulletChance > Random.Range(0f, 1f))
-            {
-                CurrentBullet = eq.PlasmaPoisonBulletPrefab;
-            }
-            else CurrentBullet = eq.PlasmaBulletPrefab;
-        }
-        else if (eq.guns[eq.equipped].poisonBulletChance > Random.Range(0f, 1f))
-        {
-            CurrentBullet = eq.PoisonBulletPrefab;
-        }
-        else
-        {
-            CurrentBullet = eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)];
-        }*/
 
         return CurrentBullet;
     }
@@ -630,9 +615,6 @@ public class PlayerController : MonoBehaviour
                 firedBullet.pierce += eq.guns[eq.equipped].Accessories[8 + bp.ALibrary.count];
                 firedBullet.pierceEfficiency += 0.15f * eq.guns[eq.equipped].Accessories[8 + bp.ALibrary.count];
             }
-
-            if (eq.Items[17])
-                eq.OnHit(0.28f);
         }
     }
 
