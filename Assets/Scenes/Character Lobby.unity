@@ -166,7 +166,7 @@ Animator:
   m_GameObject: {fileID: 25550908}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2312c510c5bfdb947a1094700b82d67b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6d946b788942b0b41bb0ee007b8064af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -218,7 +218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 676517965, guid: caa95fbc1bdd55c4bbd6cdec45db3a53, type: 3}
+  m_Sprite: {fileID: -1143297036, guid: 98f04d2966fcc2a469a819387899288d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -296,8 +296,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -355,7 +355,7 @@ RectTransform:
   m_GameObject: {fileID: 31722327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: -0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1094919086}
@@ -614,8 +614,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -673,7 +673,7 @@ RectTransform:
   m_GameObject: {fileID: 408618889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: -0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1149936681}
@@ -980,7 +980,7 @@ Animator:
   m_GameObject: {fileID: 638358528}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f2e884a628fd0543b6932497f73ca49, type: 2}
+  m_Controller: {fileID: 9100000, guid: e826e6ba2888b3d4b851b9d13d15d7ce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1032,7 +1032,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1024752990, guid: 9cd9a324e7cb4ef4abab89844e1194df, type: 3}
+  m_Sprite: {fileID: -2128001982, guid: 823fa1a4ccdd19647a1cadf0905c4210, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1080,7 +1080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.6}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700734130
@@ -1222,8 +1222,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1369,7 +1369,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
+  m_Sprite: {fileID: 535320363, guid: 2289c13d50c046d4d82d30aa6330ccb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1406,7 +1406,7 @@ Animator:
   m_GameObject: {fileID: 802569891}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c0024d96ddfca7439cac403686c18d6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 860af2cc866b03b4da803cac84aca1ff, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1595,7 +1595,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 676517965, guid: caa95fbc1bdd55c4bbd6cdec45db3a53, type: 3}
+  m_Sprite: {fileID: -1143297036, guid: 98f04d2966fcc2a469a819387899288d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1632,7 +1632,7 @@ Animator:
   m_GameObject: {fileID: 928872418}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f774c66236bae248a45cc53ed901a8d, type: 2}
+  m_Controller: {fileID: 9100000, guid: c4988c175a68cdf48889305ed5d48d51, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7300,12 +7300,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
+  m_Sprite: {fileID: -239854372, guid: a785108d95a9a724bb8b6e625cc98d74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7337,7 +7337,7 @@ Animator:
   m_GameObject: {fileID: 1060771829}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c0024d96ddfca7439cac403686c18d6, type: 2}
+  m_Controller: {fileID: 9100000, guid: acfb5bc9c9aa2e44c959744f391e3e51, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7385,7 +7385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.6}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1094919087
@@ -7486,7 +7486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.6}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1097530081
@@ -7587,7 +7587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.6}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1149936682
@@ -7694,7 +7694,7 @@ Animator:
   m_GameObject: {fileID: 1189649817}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dffaaa31a2cc4940b0ebe32469b24b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: d4948bd002496fe45be99f1fce902a9e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7746,8 +7746,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
-  m_Color: {r: 0.9150943, g: 0.8065287, b: 0.11654504, a: 1}
+  m_Sprite: {fileID: 535320363, guid: 2289c13d50c046d4d82d30aa6330ccb2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7834,7 +7834,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 801147488, guid: b0e34122de3d5e04b88f4d067a8639a8, type: 3}
+  m_Sprite: {fileID: -701129592, guid: d5cd7bcd0135889459a1859b3815b3ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7871,7 +7871,7 @@ Animator:
   m_GameObject: {fileID: 1207778338}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f504b09c709eb9a419421b1f33a5ee4f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7d7a328caf9370f4f83443e3c58d51b0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8102,8 +8102,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8249,7 +8249,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1024752990, guid: 9cd9a324e7cb4ef4abab89844e1194df, type: 3}
+  m_Sprite: {fileID: -2128001982, guid: 823fa1a4ccdd19647a1cadf0905c4210, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8286,7 +8286,7 @@ Animator:
   m_GameObject: {fileID: 1358525513}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a1f68cef525103a4688b6205cfe0e384, type: 2}
+  m_Controller: {fileID: 9100000, guid: 78a2e2620e3aa9c478576f5f6fc5cf00, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11549,7 +11549,7 @@ Animator:
   m_GameObject: {fileID: 1456955220}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dffaaa31a2cc4940b0ebe32469b24b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: eb4411a6c4138ec45b75cf73cc8f2439, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11601,7 +11601,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
+  m_Sprite: {fileID: -239854372, guid: a785108d95a9a724bb8b6e625cc98d74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11640,7 +11640,7 @@ Animator:
   m_GameObject: {fileID: 1562334771}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 94c3e9f902f17794d9c5f5d56fe39d1f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f978249a86560e549a8f9b12321b94db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11692,7 +11692,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 801147488, guid: b0e34122de3d5e04b88f4d067a8639a8, type: 3}
+  m_Sprite: {fileID: -701129592, guid: d5cd7bcd0135889459a1859b3815b3ad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11861,7 +11861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.6}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876652033
@@ -11992,8 +11992,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13021,7 +13021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 3
 --- !u!114 &343493902346683774
 MonoBehaviour:
@@ -13067,7 +13067,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2129462728201173322}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -13141,7 +13141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 0
 --- !u!114 &411639819525341866
 MonoBehaviour:
@@ -13744,7 +13744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 13
 --- !u!114 &901235438477921459
 MonoBehaviour:
@@ -13758,7 +13758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 16
 --- !u!1 &905792207382728690
 GameObject:
@@ -14202,7 +14202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 10
 --- !u!114 &1360745640049073307
 MonoBehaviour:
@@ -14426,7 +14426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 15
 --- !u!114 &1492936096127888891
 MonoBehaviour:
@@ -14604,7 +14604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 4
 --- !u!222 &1612713672389235222
 CanvasRenderer:
@@ -15210,7 +15210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 2
 --- !u!222 &1953687267967897724
 CanvasRenderer:
@@ -15771,175 +15771,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2129462728201173322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129462728201173326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fd96c304246304481afb887b33494b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Barrel: {fileID: 2129462729415987594}
-  Hand: {fileID: 2129462729645413640}
-  Dude: {fileID: 2129462729595728632}
-  GunRot: {fileID: 2129462728200875759}
-  TargetArea: {fileID: 5764638123915071878}
-  Body: {fileID: 2129462728201173317}
-  Gun: {fileID: 2129462729645413646}
-  eq: {fileID: 2129462728201173323}
-  bp: {fileID: 0}
-  healthInfo: {fileID: 0}
-  ShieldInfo: {fileID: 0}
-  magazineInfo: {fileID: 2129462728978516865}
-  ammoInfo: {fileID: 4990391809041621032}
-  goldInfo: {fileID: 0}
-  toolsInfo: {fileID: 0}
-  potionsInfo: {fileID: 0}
-  DashCharge: {fileID: 2029163332864542470}
-  GrenadeCharge: {fileID: 411639819525341866}
-  healthBar: {fileID: 0}
-  dropBar: {fileID: 0}
-  shieldBar: {fileID: 0}
-  dischargeBar: {fileID: 0}
-  taskImage: {fileID: 838624686789077042}
-  dashImage: {fileID: 5193118515629511402}
-  abilityImage: {fileID: 2129462728506902304}
-  gunImage: {fileID: 2129462728395324714}
-  damageFlash: {fileID: 7178213966424447132}
-  firedBullet: {fileID: 0}
-  Grenade: {fileID: 3080163295848660013, guid: 0e206f122f054ec448c3733f8c8656a2, type: 3}
-  CurrentBullet: {fileID: 0}
-  DamageFlash: {fileID: 689938538045158232}
-  Effects: {fileID: 0}
-  map: {fileID: 0}
-  mouseLeft: 0
-  reloading: 0
-  free: 1
-  day: 1
-  mousePos: {x: 0, y: 0, z: 0}
-  mouseVector: {x: 0, y: 0, z: 0}
-  task: 0
-  taskMax: 0
-  maxHealth: 75
-  dHealth: 0
-  health: 75
-  maxShield: 100
-  dShield: 0
-  shield: 0
-  poison: 0
-  damageBonus: 1.07
-  fireRateBonus: 1.07
-  movementSpeed: 444
-  additionalCritChance: 0
-  cooldownReduction: 1.03
-  forceIncrease: 1
-  dashBaseCooldown: 4.75
-  maxDashCooldown: 0
-  dashCooldown: 0
-  grenadeMaxCharges: 0
-  grenadeCharges: 0
-  throwRange: 11.2
-  grenadeBaseCooldown: 10
-  grenadeMaxCooldown: 0
-  grenadeCooldown: 0
-  dash: 1
-  level: 1
-  dayCount: 1
-  luck: 0
-  undamaged: 0
-  invulnerable: 0
-  bloodMoney: 0
-  wrath: 0
-  shieldCapacitor: 0
-  gold: 26
-  tools: 6
-  toolsStored: 6
-  potions: 0
-  maxPotions: 3
-  playerSprite: {fileID: 2129462729595728635}
-  animator: {fileID: 7508960709085641309}
-  moveSpeed: 5
-  Menu: {fileID: 2821856077008457253}
-  menuOpened: 0
-  tabOpened: 0
---- !u!114 &2129462728201173323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2129462728201173326}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb6301cad14aac478b7667a8eb2d8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
-  bp: {fileID: 0}
-  gambler: 0
-  Library: {fileID: 0}
-  ILibrary: {fileID: 0}
-  Barrel: {fileID: 8552419788259381371}
-  guns:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Accessories: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  itemImage: {fileID: 0}
-  equippedGun: {fileID: 2129462728200875758}
-  slotFilled: 010000
-  equipped: 0
-  item: 0
-  onHitIncrease: 0
-  Peacemaker: {fileID: 2584865487150053145, guid: 4199b497d05905a46aa0b0a9e542175e, type: 3}
-  Boomerange: {fileID: 7608570293721976720, guid: 4e39c7dcfe890264983a3356cf95405b, type: 3}
-  Wave: {fileID: 5166568421592281273, guid: 9116c8cd7df5950499683757c0779288, type: 3}
-  Laser: {fileID: 8202576004139201279, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
-  Orb: {fileID: 7626946675666722328, guid: aa760cd493129c14da55ed7be64c288e, type: 3}
-  freeBulletCharges:
-  - 0
-  - 0
-  - 0
-  peacemakerCharges:
-  - 0
-  - 0
-  - 0
-  boomerangCharges:
-  - 0
-  - 0
-  - 0
-  waveCharges:
-  - 0
-  - 0
-  - 0
-  laserCharges:
-  - 0
-  - 0
-  - 0
-  orbCharges:
-  - 0
-  - 0
-  - 0
-  waveBullet: {fileID: 0}
-  Items: 0000000000000000000000000000000001000000000000000100000000000000000000000000000000000000
-  ItemList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  itemsCollected: 0
-  DeflectProjectal: {fileID: 3773145563270755769, guid: 465b71bf774779e4dbd2ec57ae0e92dd, type: 3}
-  KnifeProjectal: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
-  Tooltip: {fileID: 234213453846802095}
-  SpecialBullets:
-  - {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
-  - {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  - {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
-  - {fileID: 7419258523427994237, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
-  - {fileID: 1023839990212055130, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
-  - {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
-  - {fileID: 7813484985475569114, guid: e535aa56407c2ac409875c9eef107d6e, type: 3}
-  Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
 --- !u!1 &2129462728201173326
 GameObject:
   m_ObjectHideFlags: 0
@@ -15950,9 +15781,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2129462728201173316}
   - component: {fileID: 2129462728201173317}
-  - component: {fileID: 2129462728201173322}
-  - component: {fileID: 2129462728201173323}
   - component: {fileID: 4870294145334213408}
+  - component: {fileID: 4870294145334213409}
   m_Layer: 0
   m_Name: Player - Lobby
   m_TagString: Player
@@ -16358,7 +16188,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
+  m_Sprite: {fileID: -239854372, guid: a785108d95a9a724bb8b6e625cc98d74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -16989,7 +16819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 9
 --- !u!224 &2590647507047288989
 RectTransform:
@@ -17477,7 +17307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 7
 --- !u!224 &2841717747228346968
 RectTransform:
@@ -17841,7 +17671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 17
 --- !u!114 &3157721726054531752
 MonoBehaviour:
@@ -18222,7 +18052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 5
 --- !u!114 &3435717607218161922
 MonoBehaviour:
@@ -18611,7 +18441,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2129462728201173322}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: ReturnToMenu
         m_Mode: 1
@@ -19998,7 +19828,7 @@ MonoBehaviour:
   - {fileID: 727895452}
   - {fileID: 1263535676}
   sprites:
-  - {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
+  - {fileID: -239854372, guid: a785108d95a9a724bb8b6e625cc98d74, type: 3}
   - {fileID: 676517965, guid: caa95fbc1bdd55c4bbd6cdec45db3a53, type: 3}
   - {fileID: -1024752990, guid: 9cd9a324e7cb4ef4abab89844e1194df, type: 3}
   - {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
@@ -20072,6 +19902,101 @@ MonoBehaviour:
   - {fileID: 1562334772}
   moveSpeed: 5
   Menu: {fileID: 2821856077008457253}
+  menuOpened: 0
+  tabOpened: 0
+--- !u!114 &4870294145334213409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129462728201173326}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7fd96c304246304481afb887b33494b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Barrel: {fileID: 0}
+  Hand: {fileID: 0}
+  Dude: {fileID: 0}
+  GunRot: {fileID: 0}
+  TargetArea: {fileID: 0}
+  Body: {fileID: 0}
+  Gun: {fileID: 0}
+  eq: {fileID: 0}
+  bp: {fileID: 0}
+  healthInfo: {fileID: 0}
+  ShieldInfo: {fileID: 0}
+  magazineInfo: {fileID: 0}
+  ammoInfo: {fileID: 0}
+  goldInfo: {fileID: 0}
+  toolsInfo: {fileID: 0}
+  potionsInfo: {fileID: 0}
+  DashCharge: {fileID: 0}
+  GrenadeCharge: {fileID: 0}
+  healthBar: {fileID: 0}
+  dropBar: {fileID: 0}
+  shieldBar: {fileID: 0}
+  dischargeBar: {fileID: 0}
+  taskImage: {fileID: 0}
+  dashImage: {fileID: 0}
+  abilityImage: {fileID: 0}
+  gunImage: {fileID: 0}
+  damageFlash: {fileID: 0}
+  firedBullet: {fileID: 0}
+  Grenade: {fileID: 0}
+  CurrentBullet: {fileID: 0}
+  DamageFlash: {fileID: 0}
+  Effects: {fileID: 0}
+  map: {fileID: 0}
+  mouseLeft: 0
+  reloading: 0
+  free: 1
+  day: 1
+  mousePos: {x: 0, y: 0, z: 0}
+  mouseVector: {x: 0, y: 0, z: 0}
+  task: 0
+  taskMax: 0
+  maxHealth: 0
+  dHealth: 0
+  health: 0
+  maxShield: 0
+  dShield: 0
+  shield: 0
+  poison: 0
+  damageBonus: 0
+  fireRateBonus: 0
+  movementSpeed: 0
+  additionalCritChance: 0
+  cooldownReduction: 0
+  forceIncrease: 0
+  dashBaseCooldown: 0
+  maxDashCooldown: 0
+  dashCooldown: 0
+  grenadeMaxCharges: 0
+  grenadeCharges: 0
+  throwRange: 0
+  grenadeBaseCooldown: 0
+  grenadeMaxCooldown: 0
+  grenadeCooldown: 0
+  dash: 0
+  level: 1
+  dayCount: 1
+  luck: 0
+  undamaged: 0
+  invulnerable: 0
+  bloodMoney: 0
+  wrath: 0
+  shieldCapacitor: 0
+  gold: 0
+  tools: 0
+  toolsStored: 0
+  potions: 0
+  maxPotions: 0
+  playerSprite: {fileID: 0}
+  animator: {fileID: 0}
+  moveSpeed: 5
+  Menu: {fileID: 0}
   menuOpened: 0
   tabOpened: 0
 --- !u!224 &4877395922746924740
@@ -20487,7 +20412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 14
 --- !u!114 &5108747185369374889
 MonoBehaviour:
@@ -21370,7 +21295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 19
 --- !u!224 &5604707214284901069
 RectTransform:
@@ -21525,7 +21450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 6
 --- !u!114 &5730755326210925802
 MonoBehaviour:
@@ -21695,7 +21620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 12
 --- !u!1 &5807565265944902032
 GameObject:
@@ -21943,7 +21868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84ca6df2cb41244883f5993ad7937e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
 --- !u!114 &6026661461613842985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22085,7 +22010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 8
 --- !u!1 &6092439017689369977
 GameObject:
@@ -23100,7 +23025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 1
 --- !u!224 &6638649833301879212
 RectTransform:
@@ -23336,7 +23261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 11
 --- !u!114 &6840385197841806756
 MonoBehaviour:
@@ -26119,7 +26044,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2129462728201173322}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: CloseGame
         m_Mode: 1
@@ -26203,7 +26128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07453923957cf449a0674a415ea7718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 2129462728201173322}
+  playerStats: {fileID: 0}
   order: 18
 --- !u!114 &8668184376775305411
 MonoBehaviour:

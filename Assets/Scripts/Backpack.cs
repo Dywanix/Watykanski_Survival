@@ -428,6 +428,34 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].damageMultiplier *= 1.06f;
                 eq.guns[currentGun].shatter += 0.30f;
                 break;
+            case 30:
+                eq.guns[currentGun].DoT += 0.12f;
+                eq.guns[currentGun].specialBulletChance[0] += 0.15f;
+                break;
+            case 31:
+                eq.guns[currentGun].fireRate /= 1.096f;
+                eq.guns[currentGun].specialBulletChance[1] += 0.15f;
+                break;
+            case 32:
+                eq.guns[currentGun].damageMultiplier *= 1.072f;
+                eq.guns[currentGun].specialBulletChance[2] += 0.15f;
+                break;
+            case 33:
+                for (int i = 0; i < 3; i++)
+                {
+                    eq.guns[currentGun].specialBulletChance[i] += 0.1f;
+                }
+                break;
+            case 34:
+                eq.guns[currentGun].critChance += 0.06f;
+                // crits increase Special Bullet Chance
+                break;
+            case 35:
+                // Every Non-Effect gives chance for next shot
+                break;
+            case 36:
+                // Every Effect gives chance for other Effects
+                break;
         }
     }
 
@@ -540,6 +568,34 @@ public class Backpack : MonoBehaviour
             case 29:
                 eq.guns[currentGun].damageMultiplier /= 1.06f;
                 eq.guns[currentGun].shatter -= 0.30f;
+                break;
+            case 30:
+                eq.guns[currentGun].DoT -= 0.12f;
+                eq.guns[currentGun].specialBulletChance[0] -= 0.15f;
+                break;
+            case 31:
+                eq.guns[currentGun].fireRate *= 1.096f;
+                eq.guns[currentGun].specialBulletChance[1] -= 0.15f;
+                break;
+            case 32:
+                eq.guns[currentGun].damageMultiplier /= 1.072f;
+                eq.guns[currentGun].specialBulletChance[2] -= 0.15f;
+                break;
+            case 33:
+                for (int i = 0; i < 3; i++)
+                {
+                    eq.guns[currentGun].specialBulletChance[i] -= 0.1f;
+                }
+                break;
+            case 34:
+                eq.guns[currentGun].critChance -= 0.06f;
+                // crits increase Special Bullet Chance
+                break;
+            case 35:
+                // Every Non-Effect gives chance for next shot
+                break;
+            case 36:
+                // Every Effect gives chance for other Effects
                 break;
         }
     }
@@ -654,6 +710,34 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].damageMultiplier *= 1.096f;
                 eq.guns[currentGun].shatter += 0.48f;
                 break;
+            case 30:
+                eq.guns[currentGun].DoT += 0.192f;
+                eq.guns[currentGun].specialBulletChance[0] += 0.24f;
+                break;
+            case 31:
+                eq.guns[currentGun].fireRate /= 1.154f;
+                eq.guns[currentGun].specialBulletChance[1] += 0.24f;
+                break;
+            case 32:
+                eq.guns[currentGun].damageMultiplier *= 1.115f;
+                eq.guns[currentGun].specialBulletChance[2] += 0.24f;
+                break;
+            case 33:
+                for (int i = 0; i < 3; i++)
+                {
+                    eq.guns[currentGun].specialBulletChance[i] += 0.16f;
+                }
+                break;
+            case 34:
+                eq.guns[currentGun].critChance += 0.096f;
+                // crits increase Special Bullet Chance
+                break;
+            case 35:
+                // Every Non-Effect gives chance for next shot
+                break;
+            case 36:
+                // Every Effect gives chance for other Effects
+                break;
         }
     }
 
@@ -766,6 +850,34 @@ public class Backpack : MonoBehaviour
             case 29:
                 eq.guns[currentGun].damageMultiplier /= 1.096f;
                 eq.guns[currentGun].shatter -= 0.48f;
+                break;
+            case 30:
+                eq.guns[currentGun].DoT -= 0.192f;
+                eq.guns[currentGun].specialBulletChance[0] -= 0.24f;
+                break;
+            case 31:
+                eq.guns[currentGun].fireRate *= 1.154f;
+                eq.guns[currentGun].specialBulletChance[1] -= 0.24f;
+                break;
+            case 32:
+                eq.guns[currentGun].damageMultiplier /= 1.115f;
+                eq.guns[currentGun].specialBulletChance[2] -= 0.24f;
+                break;
+            case 33:
+                for (int i = 0; i < 3; i++)
+                {
+                    eq.guns[currentGun].specialBulletChance[i] -= 0.16f;
+                }
+                break;
+            case 34:
+                eq.guns[currentGun].critChance -= 0.096f;
+                // crits increase Special Bullet Chance
+                break;
+            case 35:
+                // Every Non-Effect gives chance for next shot
+                break;
+            case 36:
+                // Every Effect gives chance for other Effects
                 break;
         }
     }
