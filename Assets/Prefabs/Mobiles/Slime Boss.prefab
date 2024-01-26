@@ -933,12 +933,12 @@ MonoBehaviour:
   rare: 0
   boss: 0
   dead: 0
-  weight: 50
+  weight: 52
   healthFill: {fileID: 6405085511621298566}
   DoTFill: {fileID: 1933488455654414649}
   ShieldFill: {fileID: 7006786756820588180}
-  maxHealth: 3000
-  health: 3000
+  maxHealth: 3300
+  health: 3300
   vulnerable: 0
   shieldCapacity: 0
   shield: 0
@@ -965,10 +965,10 @@ MonoBehaviour:
   force: 7.2
   minRange: 2.8
   DeathDrop: {fileID: 0}
-  scrapChance: 0.21
-  itemChance: 0.042
-  scrapCount: 1
-  itemCount: 1
+  scrapChance: 0.312
+  itemChance: 0.195
+  scrapCount: 5
+  itemCount: 4
   Smoke: {fileID: 4293344160462907742}
   FireExplosion: {fileID: 9215768205720018552, guid: 2da69099b82e2c84da291631e6d1ecd5, type: 3}
   CurseBullet: {fileID: 3674245068203054096, guid: c24f5ea2081f85f42b52e95e0055cbac, type: 3}

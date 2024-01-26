@@ -60,9 +60,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5814124740561864753, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+      propertyPath: damage
+      value: 1.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814124740561864753, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: BulletShard
       value: 
       objectReference: {fileID: 1023839990212055130, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
+    - target: {fileID: 5814124740561864753, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+      propertyPath: damageEfficiency
+      value: 0.69
+      objectReference: {fileID: 0}
     - target: {fileID: 5878832462636604686, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -116,6 +124,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
   m_PrefabInstance: {fileID: 818814908802044579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4012628824495525977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7813484985475569114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac40f13e1eed5d2459759b20f72659c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisBullet: {fileID: 9209258993077186414}
+  baseDoT: 1.3
+  procDoT: 0.3
 --- !u!114 &6063954454106421948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,19 +159,6 @@ MonoBehaviour:
   delay: 0.155
   particleForce: 3
   particleRange: 30
---- !u!114 &4012628824495525977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7813484985475569114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac40f13e1eed5d2459759b20f72659c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThisBullet: {fileID: 9209258993077186414}
 --- !u!114 &9209258993077186414 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8399459118122761677, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}

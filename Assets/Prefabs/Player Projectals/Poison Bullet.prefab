@@ -146,3 +146,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisBullet: {fileID: 4742182983731406472}
+  baseDoT: 1.2
+  procDoT: 0.2

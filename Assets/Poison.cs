@@ -6,6 +6,8 @@ public class Poison : MonoBehaviour
 {
     public Bullet ThisBullet;
 
+    public float baseDoT, procDoT;
+
     void Start()
     {
         //Invoke("PoisonUp", 0.05f);
@@ -14,6 +16,6 @@ public class Poison : MonoBehaviour
 
     void PoisonUp()
     {
-        ThisBullet.DoT += 1.2f + ThisBullet.DoT * 0.2f;
+        ThisBullet.DoT += baseDoT + ThisBullet.DoT * procDoT;
     }
 }
