@@ -557,8 +557,7 @@ public class PlayerController : MonoBehaviour
             temp = 0.85f - 0.01f * luck;
         else temp = 1f;
 
-        temp2 = 1f;
-        //temp2 = 1f + eq.guns[eq.equipped].critChance * (0.06f * eq.guns[eq.equipped].Accessories[34]) + (0.096f * eq.guns[eq.equipped].Accessories[34 + bp.ALibrary.count]);
+        temp2 = 1f + eq.guns[eq.equipped].critChance * (0.06f * eq.guns[eq.equipped].Accessories[34]) + (0.096f * eq.guns[eq.equipped].Accessories[34 + bp.ALibrary.count]);
 
         if ((eq.guns[eq.equipped].specialBulletChance[0] + eq.guns[eq.equipped].specialBulletNextChance[0]) * temp2 > Random.Range(0f, temp))
         {
@@ -569,38 +568,52 @@ public class PlayerController : MonoBehaviour
         else 
         {
             effectOn[0] = false;
-            //eq.guns[eq.equipped].specialBulletNextChance[0] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count]];
+            eq.guns[eq.equipped].specialBulletNextChance[0] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
         }
 
         if ((eq.guns[eq.equipped].specialBulletChance[1] + eq.guns[eq.equipped].specialBulletNextChance[1]) * temp2> Random.Range(0f, temp))
         {
             effectOn[1] = true;
             tempi += 2;
+            eq.guns[eq.equipped].specialBulletNextChance[1] = 0f;
         }
         else 
         {
             effectOn[1] = false;
-            //eq.guns[eq.equipped].specialBulletNextChance[1] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count]];
+            eq.guns[eq.equipped].specialBulletNextChance[1] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
         }
 
         if ((eq.guns[eq.equipped].specialBulletChance[2] + eq.guns[eq.equipped].specialBulletNextChance[2]) * temp2> Random.Range(0f, temp))
         {
             effectOn[2] = true;
             tempi += 4;
+            eq.guns[eq.equipped].specialBulletNextChance[2] = 0f;
         }
         else 
         {
             effectOn[2] = false;
-            //eq.guns[eq.equipped].specialBulletNextChance[2] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count]];
+            eq.guns[eq.equipped].specialBulletNextChance[2] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
         }
 
-        /*if (eq.guns[eq.equipped].Accessories[36] > 0 || eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count]] > 0)
+        if ((eq.guns[eq.equipped].specialBulletChance[3] + eq.guns[eq.equipped].specialBulletNextChance[3]) * temp2 > Random.Range(0f, temp))
+        {
+            effectOn[3] = true;
+            tempi += 8;
+            eq.guns[eq.equipped].specialBulletNextChance[3] = 0f;
+        }
+        else
+        {
+            effectOn[3] = false;
+            eq.guns[eq.equipped].specialBulletNextChance[3] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
+        }
+
+        if (eq.guns[eq.equipped].Accessories[36] > 0 || eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count] > 0)
         {
             temp3 = 0f;
             for (int i = 0; i < 3; i++)
             {
                 if (effectOn[i])
-                    temp3 += eq.guns[eq.equipped].Accessories[36] * 0.2f + eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count]] * 0.32f;
+                    temp3 += eq.guns[eq.equipped].Accessories[36] * 0.2f + eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count] * 0.32f;
             }
 
             if (!effectOn[0])
@@ -620,7 +633,13 @@ public class PlayerController : MonoBehaviour
                 if (temp3 * temp2 > Random.Range(0f, temp))
                     tempi += 4;
             }
-        }*/
+
+            if (!effectOn[3])
+            {
+                if (temp3 * temp2 > Random.Range(0f, temp))
+                    tempi += 8;
+            }
+        }
 
         if (tempi > 0)
             CurrentBullet = SpecialBullets[tempi];
@@ -762,66 +781,6 @@ public class PlayerController : MonoBehaviour
             potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");
         }
     }
-
-    /*void UseAbility()
-    {
-        switch (eq.guns[eq.equipped].gunName)
-        {
-            case "Revolver":
-                temp = (0.03f + 0.1f * eq.guns[eq.equipped].fireRate / SpeedMultiplyer(1f)) / (1f + 0.12f * eq.guns[eq.equipped].level);
-                for (float i = 0; i < 0.4f; i += temp)
-                {
-                    Invoke("BurstShot", i);
-                }
-                break;
-            case "Sawed-off Shotgun":
-                eq.guns[eq.equipped].bulletsLeft -= 1;
-                DisplayAmmo();
-                FireAbility();
-                firedBullet.damage *= 0.8f + 0.12f * eq.guns[eq.equipped].BulletsFired();
-                firedBullet.special = eq.guns[eq.equipped].BulletsFired() + eq.guns[eq.equipped].level;
-                break;
-            case "Burst Handgun":
-                ThrowAbility();
-                firedBullet.damage *= 1.16f + 0.12f * eq.guns[eq.equipped].level;
-                firedBullet.shatter += 0.66f + 0.11f * eq.guns[eq.equipped].level;
-                firedBullet.stunDuration += 0.33f + (0.22f / eq.guns[eq.equipped].fireRate);
-                break;
-            case "Jumping SMG":
-                FireAbility();
-                firedBullet.damage *= 1.18f + 0.09f * eq.guns[eq.equipped].level;
-                break;
-            case "Shotgun":
-                InstantiateAbility();
-                firedBullet.damage = (0.34f + 0.22f * eq.guns[eq.equipped].BulletsFired()) * firedBullet.damage + 20f + 12f * eq.guns[eq.equipped].level;
-                firedBullet.pierce = 100;
-                firedBullet.pierceEfficiency = 1f;
-                firedBullet.duration = 0.4f;
-                break;
-            case "Poison Gun":
-                ThrowAbility();
-                firedBullet.damage = (0.04f + 0.01f * eq.guns[eq.equipped].level) * firedBullet.damage + 2f;
-                firedBullet.DoT += 0.4f * firedBullet.DoT + 2.8f;
-                firedBullet.slowDuration += 0.16f / eq.guns[eq.equipped].fireRate;
-                break;
-            case "Parallel Gun":
-                eq.guns[eq.equipped].bulletsLeft -= 1;
-                DisplayAmmo();
-                FireAbility();
-                firedBullet.damage *= 1.04f + 0.08f * eq.guns[eq.equipped].level;
-                break;
-        }
-    }*/
-
-    /*void FireAbility()
-    {
-        Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + 0.5f * Random.Range(-eq.guns[eq.equipped].accuracy, eq.guns[eq.equipped].accuracy));
-        GameObject bullet = Instantiate(eq.guns[eq.equipped].AbilityBullet, Barrel.position, Barrel.rotation);
-        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        SetBullet(1f);
-        bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
-    }*/
 
     void Rain()
     {

@@ -173,8 +173,8 @@ public class Equipment : MonoBehaviour
                 playerStats.GainFR(0.072f);
                 break;
             case 33:
-                Accessories[Random.Range(0, Accessories.Length)]++;
-                Accessories[Random.Range(0, Accessories.Length)]++;
+                Accessories[Random.Range(0, bp.ALibrary.count)]++;
+                Accessories[Random.Range(0, bp.ALibrary.count)]++;
                 playerStats.GainTools(10);
                 break;
             case 34:

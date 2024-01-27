@@ -158,8 +158,19 @@ MonoBehaviour:
   - Fire Laser Occasionally
   - +30% DoT
   - +6% Damage & +30% Shatter
+  - +12% DoT & 15% Chance to fire Poison Bullet
+  - +9,6% Fire Rate & 15% Chance to fire Plasma Bullet
+  - +7,2% Damage & 15% Chance to fire Explosive Bullet
+  - 9% Chance for every Special Bullet
+  - +6% Crit Chance, increase Chance for Special Bullets by 20% Crit Chance
+  - Every non-Special Bullet increases Chance for next shot by 5%
+  - For Every Special effect on, get 20% Chance for other Special effects
+  - 25% Chance to fire Electric Bullet
+  - +18% Shatter & 15% Chance to fire Electric Bullet
+  - 12,5% Chance to fire Poison & Plasma Bullets
+  - 12,5% Chance to fire Explosive & Electric Bullets
   - +28,8% Damage
-  - +38,4% Fire Rate
+  - 40% Chance to fire Plasma Bullet
   - +67,5% Accuracy & +5 Range
   - 40% Chance to fire Poison Bullet
   - +19,2% Crit Chance & +28,8% Crit Damage
@@ -168,9 +179,9 @@ MonoBehaviour:
   - Triple the amount of Fired Bullets, but -42% Damage & -21% Fire Rate
   - +27% Crit Chance, Crits Increase Pierce
   - +2 Pierce & +18% Pierce Efficiency
-  - Overload 1/5 of Magazine after Reloading
+  - Overload 1/4 of Magazine after Reloading
   - 40% Chance to fire Plasma Bullet
-  - +14,4% Damage & +28,8% Crit Damage
+  - +14.4% Damage & +28,8% Crit Damage
   - +28,8% Fire Rate & + 14,4% Crit Chance
   - 32% Chance to not consume Ammo
   - 32% Chance to Fire 2 additional Bullets in a Cone
@@ -188,25 +199,14 @@ MonoBehaviour:
   - Fire Laser Occasionally
   - +48% DoT
   - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
-  - +9,6% Damage & +48% Shatter
+  - +19,2% DoT & 24% Chance to fire Poison Bullet
+  - +15,4% Fire Rate & 24% Chance to fire Plasma Bullet
+  - +11,5% Damage & 24% Chance to fire Explosive Bullet
+  - 14% Chance for every Special Bullet
+  - +9,6% Crit Chance, increase Chance for Special Bullets by 32% Crit Chance
+  - Every non-Special Bullet increases Chance for next shot by 8%
+  - For Every Special effect on, get 32% Chance for other Special effects
+  - 40% Chance to fire Electric Bullet
   - +28,8% Shatter & 24% Chance to fire Electric Bullet
   - 20% Chance to fire Poison & Plasma Bullets
   - 20% Chance to fire Explosive & Electric Bullets
