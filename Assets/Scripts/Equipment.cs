@@ -128,7 +128,7 @@ public class Equipment : MonoBehaviour
                 break;
             case 14:
                 playerStats.GainPotionSlots(2);
-                playerStats.GainPotions(100);
+                playerStats.GainPotions(playerStats.maxPotions / 2);
                 break;
             case 15:
                 playerStats.grenadeBaseCooldown /= 1.11f;
@@ -184,7 +184,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainTools(6);
                 break;
             case 36:
-                playerStats.GainPotions(2);
+                playerStats.GainPotions(1);
                 break;
             case 37:
                 playerStats.GainPotionSlots(1);

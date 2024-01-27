@@ -763,7 +763,7 @@ public class PlayerController : MonoBehaviour
         {
             temp = 10f;
             if (eq.Items[36])
-                GainHP(1);
+                GainHP(2);
             if (eq.Items[6])
                 temp += maxHealth * 0.1f;
             if (eq.Items[37])

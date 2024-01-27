@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunChoice : MonoBehaviour
 {
-    public GunPick Pick;
+    public GunTestRoom Pick;
     public GameObject Player, Glow;
     public int position;
 
@@ -14,7 +14,7 @@ public class GunChoice : MonoBehaviour
         {
             Player = GameObject.FindGameObjectWithTag("Player");
         }
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f)
+        if (Vector3.Distance(transform.position, Player.transform.position) <= 0.7f)
         {
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))

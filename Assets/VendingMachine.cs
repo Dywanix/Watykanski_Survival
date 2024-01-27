@@ -16,6 +16,7 @@ public class VendingMachine : MonoBehaviour
 
     [Header("Cabinet")]
     public Image[] slotImage;
+    public Image[] slotBackground;
     public Sprite[] otherSprites;
     public TMPro.TextMeshProUGUI[] costValue;
 
@@ -97,8 +98,19 @@ public class VendingMachine : MonoBehaviour
         for (int i = 0; i < slotFull.Length; i++)
         {
             if (!slotFull[i])
+            {
                 slotImage[i].enabled = false;
+                slotBackground[i].color = new Color(0.56f, 0.46f, 0.38f, 1);
+                costValue[i].text = "0";
+            }
+            else
+            {
+                if (costs[i] <= playerStats.gold)
+                    slotBackground[i].color = new Color(0.37f, 0.64f, 0.38f, 1);
+                else slotBackground[i].color = new Color(0.56f, 0.46f, 0.38f, 1);
+            }
         }
+
         for (int i = 0; i < 2; i++)
         {
             if (digitWritten[i])
