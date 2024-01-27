@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, bonusTool;
-    float temp, flashA;
+    float temp, temp2, temp3, flashA;
     bool greenF;
 
     [Header("Items")]
@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
     [Header("Resources")]
     public float gold;
     public int tools, toolsStored, potions, maxPotions;
+
+    [Header("Special Bullets")]
+    public bool[] effectOn;
+    public GameObject[] SpecialBullets;
 
     public SpriteRenderer playerSprite;
 
@@ -552,15 +556,74 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[20])
             temp = 0.85f - 0.01f * luck;
         else temp = 1f;
-        if (eq.guns[eq.equipped].specialBulletChance[0] > Random.Range(0f, temp))
+
+        temp2 = 1f;
+        //temp2 = 1f + eq.guns[eq.equipped].critChance * (0.06f * eq.guns[eq.equipped].Accessories[34]) + (0.096f * eq.guns[eq.equipped].Accessories[34 + bp.ALibrary.count]);
+
+        if ((eq.guns[eq.equipped].specialBulletChance[0] + eq.guns[eq.equipped].specialBulletNextChance[0]) * temp2 > Random.Range(0f, temp))
+        {
+            effectOn[0] = true;
             tempi += 1;
-        if (eq.guns[eq.equipped].specialBulletChance[1] > Random.Range(0f, temp))
+            eq.guns[eq.equipped].specialBulletNextChance[0] = 0f;
+        }
+        else 
+        {
+            effectOn[0] = false;
+            //eq.guns[eq.equipped].specialBulletNextChance[0] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count]];
+        }
+
+        if ((eq.guns[eq.equipped].specialBulletChance[1] + eq.guns[eq.equipped].specialBulletNextChance[1]) * temp2> Random.Range(0f, temp))
+        {
+            effectOn[1] = true;
             tempi += 2;
-        if (eq.guns[eq.equipped].specialBulletChance[2] > Random.Range(0f, temp))
+        }
+        else 
+        {
+            effectOn[1] = false;
+            //eq.guns[eq.equipped].specialBulletNextChance[1] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count]];
+        }
+
+        if ((eq.guns[eq.equipped].specialBulletChance[2] + eq.guns[eq.equipped].specialBulletNextChance[2]) * temp2> Random.Range(0f, temp))
+        {
+            effectOn[2] = true;
             tempi += 4;
+        }
+        else 
+        {
+            effectOn[2] = false;
+            //eq.guns[eq.equipped].specialBulletNextChance[2] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count]];
+        }
+
+        /*if (eq.guns[eq.equipped].Accessories[36] > 0 || eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count]] > 0)
+        {
+            temp3 = 0f;
+            for (int i = 0; i < 3; i++)
+            {
+                if (effectOn[i])
+                    temp3 += eq.guns[eq.equipped].Accessories[36] * 0.2f + eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count]] * 0.32f;
+            }
+
+            if (!effectOn[0])
+            {
+                if (temp3 * temp2 > Random.Range(0f, temp))
+                    tempi += 1;
+            }
+
+            if (!effectOn[1])
+            {
+                if (temp3 * temp2 > Random.Range(0f, temp))
+                    tempi += 2;
+            }
+
+            if (!effectOn[2])
+            {
+                if (temp3 * temp2 > Random.Range(0f, temp))
+                    tempi += 4;
+            }
+        }*/
 
         if (tempi > 0)
-            CurrentBullet = eq.SpecialBullets[tempi - 1];
+            CurrentBullet = SpecialBullets[tempi];
         else CurrentBullet = eq.guns[eq.equipped].bulletPrefab[Random.Range(0, eq.guns[eq.equipped].bulletPrefab.Length)];
 
         return CurrentBullet;
@@ -586,7 +649,6 @@ public class PlayerController : MonoBehaviour
         firedBullet.incendiary = eq.guns[eq.equipped].incendiary;
         firedBullet.curse = eq.guns[eq.equipped].curse;
         firedBullet.damageGain = eq.guns[eq.equipped].damageGain;
-        firedBullet.penetration = eq.guns[eq.equipped].penetration;
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;

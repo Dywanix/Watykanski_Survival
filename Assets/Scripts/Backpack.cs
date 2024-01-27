@@ -441,9 +441,9 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].specialBulletChance[2] += 0.15f;
                 break;
             case 33:
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 4; i++)
                 {
-                    eq.guns[currentGun].specialBulletChance[i] += 0.1f;
+                    eq.guns[currentGun].specialBulletChance[i] += 0.09f;
                 }
                 break;
             case 34:
@@ -455,6 +455,21 @@ public class Backpack : MonoBehaviour
                 break;
             case 36:
                 // Every Effect gives chance for other Effects
+                break;
+            case 37:
+                eq.guns[currentGun].specialBulletChance[3] += 0.25f;
+                break;
+            case 38:
+                eq.guns[currentGun].shatter += 0.18f;
+                eq.guns[currentGun].specialBulletChance[3] += 0.15f;
+                break;
+            case 39:
+                eq.guns[currentGun].specialBulletChance[0] += 0.125f;
+                eq.guns[currentGun].specialBulletChance[1] += 0.125f;
+                break;
+            case 40:
+                eq.guns[currentGun].specialBulletChance[2] += 0.125f;
+                eq.guns[currentGun].specialBulletChance[3] += 0.125f;
                 break;
         }
     }
@@ -582,9 +597,9 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].specialBulletChance[2] -= 0.15f;
                 break;
             case 33:
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 4; i++)
                 {
-                    eq.guns[currentGun].specialBulletChance[i] -= 0.1f;
+                    eq.guns[currentGun].specialBulletChance[i] -= 0.09f;
                 }
                 break;
             case 34:
@@ -596,6 +611,21 @@ public class Backpack : MonoBehaviour
                 break;
             case 36:
                 // Every Effect gives chance for other Effects
+                break;
+            case 37:
+                eq.guns[currentGun].specialBulletChance[3] -= 0.25f;
+                break;
+            case 38:
+                eq.guns[currentGun].shatter -= 0.18f;
+                eq.guns[currentGun].specialBulletChance[3] -= 0.15f;
+                break;
+            case 39:
+                eq.guns[currentGun].specialBulletChance[0] -= 0.125f;
+                eq.guns[currentGun].specialBulletChance[1] -= 0.125f;
+                break;
+            case 40:
+                eq.guns[currentGun].specialBulletChance[2] -= 0.125f;
+                eq.guns[currentGun].specialBulletChance[3] -= 0.125f;
                 break;
         }
     }
@@ -723,9 +753,9 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].specialBulletChance[2] += 0.24f;
                 break;
             case 33:
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 4; i++)
                 {
-                    eq.guns[currentGun].specialBulletChance[i] += 0.16f;
+                    eq.guns[currentGun].specialBulletChance[i] += 0.14f;
                 }
                 break;
             case 34:
@@ -737,6 +767,21 @@ public class Backpack : MonoBehaviour
                 break;
             case 36:
                 // Every Effect gives chance for other Effects
+                break;
+            case 37:
+                eq.guns[currentGun].specialBulletChance[3] += 0.40f;
+                break;
+            case 38:
+                eq.guns[currentGun].shatter += 0.288f;
+                eq.guns[currentGun].specialBulletChance[2] += 0.24f;
+                break;
+            case 39:
+                eq.guns[currentGun].specialBulletChance[0] += 0.2f;
+                eq.guns[currentGun].specialBulletChance[1] += 0.2f;
+                break;
+            case 40:
+                eq.guns[currentGun].specialBulletChance[2] += 0.2f;
+                eq.guns[currentGun].specialBulletChance[3] += 0.2f;
                 break;
         }
     }
@@ -864,9 +909,9 @@ public class Backpack : MonoBehaviour
                 eq.guns[currentGun].specialBulletChance[2] -= 0.24f;
                 break;
             case 33:
-                for (int i = 0; i < 3; i++)
+                for (int i = 0; i < 4; i++)
                 {
-                    eq.guns[currentGun].specialBulletChance[i] -= 0.16f;
+                    eq.guns[currentGun].specialBulletChance[i] -= 0.14f;
                 }
                 break;
             case 34:
@@ -878,6 +923,21 @@ public class Backpack : MonoBehaviour
                 break;
             case 36:
                 // Every Effect gives chance for other Effects
+                break;
+            case 37:
+                eq.guns[currentGun].specialBulletChance[3] -= 0.40f;
+                break;
+            case 38:
+                eq.guns[currentGun].shatter -= 0.288f;
+                eq.guns[currentGun].specialBulletChance[2] -= 0.24f;
+                break;
+            case 39:
+                eq.guns[currentGun].specialBulletChance[0] -= 0.2f;
+                eq.guns[currentGun].specialBulletChance[1] -= 0.2f;
+                break;
+            case 40:
+                eq.guns[currentGun].specialBulletChance[2] -= 0.2f;
+                eq.guns[currentGun].specialBulletChance[3] -= 0.2f;
                 break;
         }
     }

@@ -11,7 +11,6 @@ public class Gun : MonoBehaviour
     public float damage;
     public float fireRate; //fireRate oznacza czas miêdzy strza³ami w s, a reaload iloœæ s,
     public float accuracy;
-    public float penetration;
     public float critChance;
     public float reloadTime;
     public float range;
@@ -56,6 +55,7 @@ public class Gun : MonoBehaviour
 
     [Header("Special Bullets")]
     public float[] specialBulletChance;
+    public float[] specialBulletNextChance;
 
     [Header("Multiplikatory Stat")]
     public float damageMultiplier;
@@ -82,9 +82,6 @@ public class Gun : MonoBehaviour
                 break;
             case "accuracy":
                 accuracy *= Values[which];
-                break;
-            case "penetration":
-                penetration += Values[which];
                 break;
             case "critChance":
                 critChance += Values[which];
@@ -170,7 +167,6 @@ public class Gun : MonoBehaviour
         damage += LevelUpBonuses[0];
         fireRate *= LevelUpBonuses[1];
         accuracy *= LevelUpBonuses[2];
-        penetration += LevelUpBonuses[3];
         critChance += LevelUpBonuses[4];
         reloadTime *= LevelUpBonuses[5];
         range += LevelUpBonuses[6];

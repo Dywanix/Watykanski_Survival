@@ -75,6 +75,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2b8adf6f513ab834488f26eb1ac743d0, type: 3}
   - {fileID: 21300000, guid: 0497ab89da3d2184c9bc518400da34d1, type: 3}
   - {fileID: 21300000, guid: 001078f57a4e11a4e9a65a07337c8c3c, type: 3}
+  - {fileID: 21300000, guid: bb8a0fd1f94c4af40aec064d548c96b0, type: 3}
+  - {fileID: 21300000, guid: 48f54d6b5b1b59049804d3c4c5ea54cb, type: 3}
+  - {fileID: 21300000, guid: 6facb8d5a0c9ee34cb51d1e8bd9ec9d0, type: 3}
+  - {fileID: 21300000, guid: b11e874ff70f9b0499dd7e019b77fe3e, type: 3}
+  - {fileID: 21300000, guid: 7e467a967934b404cb317e39ec541bb7, type: 3}
+  - {fileID: 21300000, guid: 3fee185fe40aa4c47862db681600f1d7, type: 3}
+  - {fileID: 21300000, guid: bbf35c067d10dbd43897ba10b7945262, type: 3}
+  - {fileID: 21300000, guid: 0c1f7f6185e3889438610915685eabfc, type: 3}
+  - {fileID: 21300000, guid: 187df5225bd74dc4fa9d4c0ee6651b6b, type: 3}
+  - {fileID: 21300000, guid: 99fee4132cc010843bb8a304099616d8, type: 3}
+  - {fileID: 21300000, guid: eb0a3f1c38010d340bbd10cfdeec2fa3, type: 3}
   - {fileID: 21300000, guid: 48f2d997db7dba94aab0e2b87512b886, type: 3}
   - {fileID: 21300000, guid: ee90a583a8860204cbd3dd8d75862f8b, type: 3}
   - {fileID: 21300000, guid: e979fa1e3000fc64f9c8ebd062f70e33, type: 3}
@@ -105,6 +116,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3437e74823c904844889a1b8b17a2ed3, type: 3}
   - {fileID: 21300000, guid: 85c92893493647c4d9f3d675590b47c8, type: 3}
   - {fileID: 21300000, guid: 74b1d01b02f97714fb8163d6c98877f9, type: 3}
+  - {fileID: 21300000, guid: ea070bf9ffe77034195052079ddb14f5, type: 3}
+  - {fileID: 21300000, guid: 86d7c3dde8eff29469bee85e8a64dc55, type: 3}
+  - {fileID: 21300000, guid: 2187a2150718e534ab3a7922c0d7f83d, type: 3}
+  - {fileID: 21300000, guid: e6c081a137cf6ca459725cc2028546ad, type: 3}
+  - {fileID: 21300000, guid: 22842e5738cf49e4c91283327484fa4b, type: 3}
+  - {fileID: 21300000, guid: f16198b0b89bb80479baa244efdbb21a, type: 3}
+  - {fileID: 21300000, guid: 143863bb1977cbe4ab876ea71d9c6bc5, type: 3}
+  - {fileID: 21300000, guid: 63fa48cefba08a84fa19e03ba183b062, type: 3}
+  - {fileID: 21300000, guid: f50fbf65ed60df241b6bda5eeea3247b, type: 3}
+  - {fileID: 21300000, guid: 97b11b88b40e59941a85752d98bc4017, type: 3}
+  - {fileID: 21300000, guid: 2903677ed0102ac46a783202e5e47346, type: 3}
   AccessoryTooltip:
   - +18% Damage
   - +24% Fire Rate
@@ -166,4 +188,26 @@ MonoBehaviour:
   - Fire Laser Occasionally
   - +48% DoT
   - +9,6% Damage & +48% Shatter
-  count: 30
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +9,6% Damage & +48% Shatter
+  - +28,8% Shatter & 24% Chance to fire Electric Bullet
+  - 20% Chance to fire Poison & Plasma Bullets
+  - 20% Chance to fire Explosive & Electric Bullets
+  count: 41

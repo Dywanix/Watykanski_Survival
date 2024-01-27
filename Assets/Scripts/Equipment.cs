@@ -40,10 +40,7 @@ public class Equipment : MonoBehaviour
     public GameObject DeflectProjectal, KnifeProjectal;
     public TMPro.TextMeshProUGUI Tooltip;
 
-    // -- special bullets
-    [Header("Pociski")]
-    public GameObject[] SpecialBullets;
-    public GameObject Saw; //Laser;
+    //public GameObject Saw, Laser;
     //public float sawCharges, laserCharges;
 
     void Start()

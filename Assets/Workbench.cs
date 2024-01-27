@@ -105,7 +105,6 @@ public class Workbench : MonoBehaviour
         Info[0].text = playerStats.eq.guns[which].Damage().ToString("0.0");
         Info[1].text = (1 / playerStats.eq.guns[which].fireRate).ToString("0.00") + "/s";
         Info[2].text = (100 - playerStats.eq.guns[which].accuracy).ToString("0.00") + "%";
-        Info[3].text = (playerStats.eq.guns[which].penetration * 100).ToString("0") + "%";
         Info[4].text = (playerStats.eq.guns[which].critChance * 100).ToString("0") + "%";
         Info[5].text = playerStats.eq.guns[which].reloadTime.ToString("0.00") + "s";
         Info[6].text = (playerStats.eq.guns[which].range * 100).ToString("0");

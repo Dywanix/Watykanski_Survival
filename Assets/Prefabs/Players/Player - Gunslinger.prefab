@@ -3234,7 +3234,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8116616fc19c22a438af79f3a5d2567d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5fc0c1e7724b3740b931ae97ee001de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3396,6 +3396,16 @@ MonoBehaviour:
   toolsStored: 6
   potions: 0
   maxPotions: 3
+  effectOn: 000000
+  SpecialBullets:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+  - {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+  - {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+  - {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+  - {fileID: 7419258523427994237, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
+  - {fileID: 1023839990212055130, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
+  - {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+  - {fileID: 7813484985475569114, guid: e535aa56407c2ac409875c9eef107d6e, type: 3}
   playerSprite: {fileID: 2129462729641926354}
   animator: {fileID: 7508960709266052724}
   moveSpeed: 5
@@ -3467,15 +3477,6 @@ MonoBehaviour:
   DeflectProjectal: {fileID: 3773145563270755769, guid: 465b71bf774779e4dbd2ec57ae0e92dd, type: 3}
   KnifeProjectal: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
   Tooltip: {fileID: 234213453934805638}
-  SpecialBullets:
-  - {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
-  - {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  - {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
-  - {fileID: 7419258523427994237, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
-  - {fileID: 1023839990212055130, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
-  - {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
-  - {fileID: 7813484985475569114, guid: e535aa56407c2ac409875c9eef107d6e, type: 3}
-  Saw: {fileID: 7422215637751177472, guid: 7f192a4f1274c5d4ba58f8b795e5a835, type: 3}
 --- !u!114 &4870294145413830454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4440,7 +4441,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1621306733, guid: 000abffbdea74024290c428147a7cf6e, type: 3}
+  m_Sprite: {fileID: -239854372, guid: a785108d95a9a724bb8b6e625cc98d74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4461,7 +4462,7 @@ Animator:
   m_GameObject: {fileID: 2129462729641926352}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dffaaa31a2cc4940b0ebe32469b24b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: eb4411a6c4138ec45b75cf73cc8f2439, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

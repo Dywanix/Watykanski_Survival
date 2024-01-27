@@ -104,6 +104,7 @@ public class Bullet : MonoBehaviour
             Explosion.vulnerableApplied = vulnerableApplied;
             Explosion.slowDuration = slowDuration;
             Explosion.stunDuration = stunDuration;
+            Explosion.crit = crit;
         }
         if (ShardExplosion)
             ShardExplosion.Shatter();

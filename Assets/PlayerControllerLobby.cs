@@ -297,6 +297,8 @@ public class PlayerControllerLobby : MonoBehaviour
             tempi += 2;
         if (guns[currentClass].specialBulletChance[2] > Random.Range(0f, 1f))
             tempi += 4;
+        if (guns[currentClass].specialBulletChance[3] > Random.Range(0f, 1f))
+            tempi += 8;
 
         if (tempi > 0)
             CurrentBullet = SpecialBullets[tempi - 1];
@@ -317,7 +319,6 @@ public class PlayerControllerLobby : MonoBehaviour
         firedBullet.incendiary = guns[currentClass].incendiary;
         firedBullet.curse = guns[currentClass].curse;
         firedBullet.damageGain = guns[currentClass].damageGain;
-        firedBullet.penetration = guns[currentClass].penetration;
         firedBullet.armorShred = guns[currentClass].armorShred;
         firedBullet.vulnerableApplied = guns[currentClass].vulnerableApplied;
         firedBullet.slowDuration = guns[currentClass].slowDuration;

@@ -110,11 +110,11 @@ PrefabInstance:
     - target: {fileID: 2129462729641926354, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 676517965, guid: caa95fbc1bdd55c4bbd6cdec45db3a53, type: 3}
+      objectReference: {fileID: -1143297036, guid: 98f04d2966fcc2a469a819387899288d, type: 3}
     - target: {fileID: 7508960709266052724, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2312c510c5bfdb947a1094700b82d67b, type: 2}
+      objectReference: {fileID: 9100000, guid: 6d946b788942b0b41bb0ee007b8064af, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
 --- !u!114 &7695938819249752333 stripped
