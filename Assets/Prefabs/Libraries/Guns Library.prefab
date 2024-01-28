@@ -2106,6 +2106,294 @@ MonoBehaviour:
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 8597203529517308894, guid: 4208bacc7b1daa247ad167802a738b0d, type: 3}
+--- !u!1 &2832839490150293637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9160211098938665299}
+  - component: {fileID: 1010307031944205033}
+  m_Layer: 0
+  m_Name: AR #1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9160211098938665299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832839490150293637}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065234181681847253}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010307031944205033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832839490150293637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic AR
+  gunSprite: {fileID: 21300000, guid: 23106cc8d1d21bc48b63f44444c90fdf, type: 3}
+  holdingSprite: {fileID: 21300000, guid: f3fd3578424368f48be8f65e798df2cd, type: 3}
+  damage: 16.7
+  fireRate: 0.27
+  accuracy: 7
+  critChance: 0.17
+  reloadTime: 0.77
+  range: 0.257
+  force: 20
+  heft: 0.11
+  magazineSize: 27
+  ammo: 80
+  maxAmmo: 107
+  targetArea: 0
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 0
+  info: Has 25% Chance to fire Electric Bullet
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 1.76
+  shakeDuration: 0.041
+  bulletsLeft: 27
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000a0000000c00000007000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.9
+  - 0.8
+  - 0.75
+  - 19
+  LevelUpBonuses:
+  - 0.8
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 1.02
+  - 0.02
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +0,9 Damage
+  - +20% Accuracy
+  - -25% Reload Time
+  - +19 Max Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  specialBulletChance:
+  - 0
+  - 0
+  - 0
+  - 0.25
+  specialBulletNextChance:
+  - 0
+  - 0
+  - 0
+  - 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+--- !u!1 &2842763502130972339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 675847745593369399}
+  - component: {fileID: 2714843280367425100}
+  m_Layer: 0
+  m_Name: AR #8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &675847745593369399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842763502130972339}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065234181681847253}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2714843280367425100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842763502130972339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic AR
+  gunSprite: {fileID: 21300000, guid: b1ae059e6c07cd74aa06d0b0fab21748, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 234606c7114710042b20abb8a0820e60, type: 3}
+  damage: 19
+  fireRate: 0.29
+  accuracy: 7.5
+  critChance: 0.12
+  reloadTime: 1.11
+  range: 0.246
+  force: 20
+  heft: 0.11
+  magazineSize: 28
+  ammo: 80
+  maxAmmo: 108
+  targetArea: 0
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 0
+  info: Has 25% Chance to fire Poison Bullet
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 1.95
+  shakeDuration: 0.045
+  bulletsLeft: 28
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000a0000000c00000007000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.9
+  - 0.8
+  - 0.75
+  - 19
+  LevelUpBonuses:
+  - 0.8
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 1.02
+  - 0.02
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +0,9 Damage
+  - +20% Accuracy
+  - -25% Reload Time
+  - +19 Max Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  specialBulletChance:
+  - 0.25
+  - 0
+  - 0
+  - 0
+  specialBulletNextChance:
+  - 0
+  - 0
+  - 0
+  - 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &2918813332727121374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,7 +3897,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &530555170747924727
 MonoBehaviour:
@@ -4003,6 +4291,150 @@ MonoBehaviour:
   magazineMultiplier: 1
   bulletPrefab:
   - {fileID: 1649544961230825972, guid: 9e624e420449e254d85951ec2a708af6, type: 3}
+--- !u!1 &5465305710866925543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5259938686884117886}
+  - component: {fileID: 147891409077426666}
+  m_Layer: 0
+  m_Name: AR #3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5259938686884117886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465305710866925543}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065234181681847253}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &147891409077426666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465305710866925543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2b30abef13f92428a0d5d7826c16ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: Basic AR
+  gunSprite: {fileID: 21300000, guid: cdd3329d52e45c14bb9ec99e16852deb, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 4213508c53b403946be8af148a98a2d8, type: 3}
+  damage: 24.8
+  fireRate: 0.38
+  accuracy: 8
+  critChance: 0.18
+  reloadTime: 1.18
+  range: 0.248
+  force: 20
+  heft: 0.11
+  magazineSize: 18
+  ammo: 66
+  maxAmmo: 84
+  targetArea: 0
+  critDamage: 1.5
+  armorShred: 0
+  vulnerableApplied: 0
+  bulletSpread: 1
+  pierce: 1
+  pierceEfficiency: 0.5
+  DoT: 0
+  shatter: 0
+  incendiary: 0
+  curse: 0
+  damageGain: 0
+  overload: 0
+  slowDuration: 0
+  stunDuration: 0
+  burst: 0
+  burstDelay: 0
+  onHitModifier: 1
+  ammoRegain: 0
+  info: Has 25% Chance to fire Explosive Bullet
+  level: 0
+  LevelCostCharge: 0
+  cameraShake: 2.34
+  shakeDuration: 0.054
+  bulletsLeft: 18
+  bonusAmmo: 0
+  spreadMultiplyer: 1
+  special: 0
+  parts: 0
+  MaxSlots: 3
+  TakenSlots: 0
+  LevelCost: 75
+  StoredCostReduction: 0
+  Costs: 070000000a0000000c00000007000000
+  Accessories: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Values:
+  - 0.9
+  - 0.8
+  - 0.75
+  - 19
+  LevelUpBonuses:
+  - 0.8
+  - 0.92
+  - 1
+  - 0.04
+  - 0
+  - 1.02
+  - 0.02
+  - 0
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  UpgradeType:
+  - damage
+  - accuracy
+  - reloadTime
+  - maxAmmo
+  UpgradeInfo:
+  - +0,9 Damage
+  - +20% Accuracy
+  - -25% Reload Time
+  - +19 Max Ammo
+  infiniteMagazine: 0
+  infiniteAmmo: 0
+  individualReload: 0
+  individualReloadCount: 0
+  specialBulletChance:
+  - 0
+  - 0
+  - 0.25
+  - 0
+  specialBulletNextChance:
+  - 0
+  - 0
+  - 0
+  - 0
+  damageMultiplier: 1
+  magazineMultiplier: 1
+  bulletPrefab:
+  - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &5506601985173318202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4204,6 +4636,10 @@ MonoBehaviour:
   - {fileID: 4340804945093319756}
   - {fileID: 4618988980857961881}
   - {fileID: 1597723596707050769}
+  - {fileID: 173119698643071168}
+  - {fileID: 2714843280367425100}
+  - {fileID: 147891409077426666}
+  - {fileID: 1010307031944205033}
   baseGuns:
   - {fileID: 3006803437225745943}
   - {fileID: 3387941136709306523}
@@ -4877,7 +5313,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3432866884392792932
 MonoBehaviour:
@@ -5194,7 +5630,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2164643823217467334
 MonoBehaviour:
@@ -5618,7 +6054,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1065234181681847253}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4618988980857961881
 MonoBehaviour:
@@ -5766,10 +6202,13 @@ Transform:
   - {fileID: 4579143387414643143}
   - {fileID: 677094948157550373}
   - {fileID: 2266680376312615749}
+  - {fileID: 9160211098938665299}
+  - {fileID: 5259938686884117886}
   - {fileID: 2490719051583080137}
   - {fileID: 3491003624677725860}
   - {fileID: 2465005156021071023}
   - {fileID: 2695745577462082962}
+  - {fileID: 675847745593369399}
   m_Father: {fileID: 4983335614787120282}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
