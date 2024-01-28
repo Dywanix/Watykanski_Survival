@@ -1303,8 +1303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 9685256d4e64d8b419f633a63402872f, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 515cf78fec4e68c45af10ce99272e669, type: 3}
+  gunSprite: {fileID: 21300000, guid: 0b6f5f245150cc644bf3165f59b2892c, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 5fd3e3d277ac21441a16ef52222218bd, type: 3}
   damage: 12.8
   fireRate: 0.665
   accuracy: 10.2
@@ -1447,8 +1447,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 637da71207874e143910a214ac6c0084, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 471816fd88e3d6540a73d0542104fb33, type: 3}
+  gunSprite: {fileID: 21300000, guid: e37d8e3ef7c0feb47b5d5e28023f552c, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 6f9942b3a8c1c364d80f22fe1da2dc3e, type: 3}
   damage: 13.1
   fireRate: 0.2
   accuracy: 5.7
@@ -1591,8 +1591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Sawed-off Shotgun
-  gunSprite: {fileID: 21300000, guid: 85e96698dcd2d4d4691954d8495400cd, type: 3}
-  holdingSprite: {fileID: 21300000, guid: d20dbeeacac6a644188acd5f965909d3, type: 3}
+  gunSprite: {fileID: 21300000, guid: edca6e13b641e6e48af956fba1824a1f, type: 3}
+  holdingSprite: {fileID: 21300000, guid: fa2c3d34c5ef1c540ae827029dc0a12b, type: 3}
   damage: 10.8
   fireRate: 0.84
   accuracy: 11.3
@@ -1735,8 +1735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Chanco-Guno
-  gunSprite: {fileID: 21300000, guid: ac86e84b1c1b1504792a35ae6bc20385, type: 3}
-  holdingSprite: {fileID: 21300000, guid: f3d1713b60504e242badb4eb084713a1, type: 3}
+  gunSprite: {fileID: 21300000, guid: 8b440bfff2a1dcf47b5264d9f463b098, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 96ae40eec5f3ce644a647c7d51502954, type: 3}
   damage: 14
   fireRate: 0.42
   accuracy: 5.7
@@ -2151,8 +2151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 23106cc8d1d21bc48b63f44444c90fdf, type: 3}
-  holdingSprite: {fileID: 21300000, guid: f3fd3578424368f48be8f65e798df2cd, type: 3}
+  gunSprite: {fileID: 21300000, guid: c0c0bb23660e2ae42be444c9dd748b9c, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 48994245fcbf2d140929de378e3080cd, type: 3}
   damage: 16.7
   fireRate: 0.27
   accuracy: 7
@@ -2295,8 +2295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: b1ae059e6c07cd74aa06d0b0fab21748, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 234606c7114710042b20abb8a0820e60, type: 3}
+  gunSprite: {fileID: 21300000, guid: 2b5e57d72d1aa9c468dcabe83159e65d, type: 3}
+  holdingSprite: {fileID: 21300000, guid: bbc1002bea0935a4699c4dd5fac98124, type: 3}
   damage: 19
   fireRate: 0.29
   accuracy: 7.5
@@ -2439,8 +2439,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Revolver
-  gunSprite: {fileID: 21300000, guid: ce9517037ebbed745851bcb82aab21e8, type: 3}
-  holdingSprite: {fileID: 21300000, guid: c5fc0c1e7724b3740b931ae97ee001de, type: 3}
+  gunSprite: {fileID: 21300000, guid: 742fe048c04397c4496548e5cdde103d, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 89a04bbdaf7335f40bc3bcec1939828a, type: 3}
   damage: 29.1
   fireRate: 0.82
   accuracy: 5.8
@@ -2826,8 +2826,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Burst Handgun
-  gunSprite: {fileID: 21300000, guid: 9e84f8f259371b546b2ec4af6c356d27, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 9fc4febe9c90f1c48bca521fb4778901, type: 3}
+  gunSprite: {fileID: 21300000, guid: 55c45d7e755342c479176bdc0e829f12, type: 3}
+  holdingSprite: {fileID: 21300000, guid: b5b197cfba63ead408ca222dbbd2aafa, type: 3}
   damage: 13.4
   fireRate: 0.702
   accuracy: 6.9
@@ -2970,8 +2970,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 54db2b7c348223a4ebd6dbe5e9f859ea, type: 3}
-  holdingSprite: {fileID: 21300000, guid: e64cda2645cc3194b898b18dbb208417, type: 3}
+  gunSprite: {fileID: 21300000, guid: e83c5f30fabe7194888115663ada0910, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 9da5fd2fc5160f04b86cfc813d5cc641, type: 3}
   damage: 13.5
   fireRate: 0.675
   accuracy: 8
@@ -3493,8 +3493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 1d1ca19d0e93ebf4db33bc2e6b8644c0, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 50668a7e633ca0f49b8f8e32d0d8170b, type: 3}
+  gunSprite: {fileID: 21300000, guid: 13a63e434cdfe3d44b7741de443be5de, type: 3}
+  holdingSprite: {fileID: 21300000, guid: e02dd83fbb6f5834ab5387042444da5d, type: 3}
   damage: 11.4
   fireRate: 0.13
   accuracy: 6.4
@@ -3912,8 +3912,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 5dc84ee82a44b2949ae9daca121a2726, type: 3}
-  holdingSprite: {fileID: 21300000, guid: ede763b09488982468e6f4d4d2b67e18, type: 3}
+  gunSprite: {fileID: 21300000, guid: 249785172e0a52e4c99ba11395f874bb, type: 3}
+  holdingSprite: {fileID: 21300000, guid: a18b6a44d3a1c234b8468de3be6d2fec, type: 3}
   damage: 18.5
   fireRate: 0.22
   accuracy: 8.4
@@ -4056,8 +4056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 8e9496a4c7efff04ba4388189baad365, type: 3}
-  holdingSprite: {fileID: 21300000, guid: f4be24b6e40b5434290cbf97bb08cfa5, type: 3}
+  gunSprite: {fileID: 21300000, guid: 60b604a0f39530c47a4071e4436fdf39, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 5c3517416f639fd40bfdb95182105b51, type: 3}
   damage: 14.7
   fireRate: 0.19
   accuracy: 6.6
@@ -4336,8 +4336,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: cdd3329d52e45c14bb9ec99e16852deb, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 4213508c53b403946be8af148a98a2d8, type: 3}
+  gunSprite: {fileID: 21300000, guid: 70c4d50b4caa3f1439505e36015064a7, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 196066ec64af74d48ac398701a8d7037, type: 3}
   damage: 24.8
   fireRate: 0.38
   accuracy: 8
@@ -4480,8 +4480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Revolver
-  gunSprite: {fileID: 21300000, guid: 3a3c16d40acc5a840926c6c3beec31d6, type: 3}
-  holdingSprite: {fileID: 21300000, guid: cfc94c4770bc6c540941dcc29edbed4c, type: 3}
+  gunSprite: {fileID: 21300000, guid: 3dcb3cc1ca294094c8171b0fcc037d2a, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 84f465b24bf26cc44becf611352948a0, type: 3}
   damage: 16
   fireRate: 0.53
   accuracy: 5.6
@@ -5328,8 +5328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: db02cf08056ddbe41866acb36a804233, type: 3}
-  holdingSprite: {fileID: 21300000, guid: b6a13897e9b5e7247b6fe358a78b549c, type: 3}
+  gunSprite: {fileID: 21300000, guid: 117be3b8b05a5254196d93a15d095219, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 6db1304aa226703499a088ff71008d68, type: 3}
   damage: 26.9
   fireRate: 0.395
   accuracy: 5.4
@@ -5645,8 +5645,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: d3fa391d9cf5c244d921d84337265e28, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 55687f8b068b6594e96819fad6cc1f53, type: 3}
+  gunSprite: {fileID: 21300000, guid: c5c72242ee404a440b7f634ae3ff304b, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 338ddcb69b1e2c3419f3bd0c8d990a7d, type: 3}
   damage: 13.8
   fireRate: 0.416
   accuracy: 6
@@ -5925,8 +5925,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Revolver
-  gunSprite: {fileID: 21300000, guid: ba9e20a1446b7504ba37639e2a0afbb5, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 8bf25f99276602b448a5b6ee9eb1eb8c, type: 3}
+  gunSprite: {fileID: 21300000, guid: 7e6dcef9915c3934a9d43bc5d5f213c7, type: 3}
+  holdingSprite: {fileID: 21300000, guid: a875112b5cb1a4d46a8c5d4877eff786, type: 3}
   damage: 12.3
   fireRate: 0.47
   accuracy: 4.5
@@ -6069,8 +6069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: aa4936ba0a434ee4e9762877b494a915, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 425126176bb07ec4e9e85cc3e72093e0, type: 3}
+  gunSprite: {fileID: 21300000, guid: e4065aca616bbd44d83bbe7a7c2543ba, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 3032e9c31ace1554081565cb557be807, type: 3}
   damage: 21.7
   fireRate: 0.325
   accuracy: 7.2
@@ -6939,8 +6939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Basic AR
-  gunSprite: {fileID: 21300000, guid: 1a151f3a27b68a14ea0bfb32665925b7, type: 3}
-  holdingSprite: {fileID: 21300000, guid: 5b774d76e0168c346bb0742e265c05ad, type: 3}
+  gunSprite: {fileID: 21300000, guid: 919549fa719cd914a8a043f3e09070e4, type: 3}
+  holdingSprite: {fileID: 21300000, guid: 0d332f7d57a72254497dfff5b90da4e2, type: 3}
   damage: 50.8
   fireRate: 0.535
   accuracy: 7.6

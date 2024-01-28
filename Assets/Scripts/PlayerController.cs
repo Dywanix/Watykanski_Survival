@@ -926,7 +926,7 @@ public class PlayerController : MonoBehaviour
             } while (!eq.slotFilled[eq.equipped]);
         }
         gunImage.sprite = eq.guns[eq.equipped].gunSprite;
-        eq.equippedGun.sprite = eq.guns[eq.equipped].gunSprite;
+        eq.equippedGun.sprite = eq.guns[eq.equipped].holdingSprite;
         DisplayAmmo();
         NewTask(0.33f);
     }

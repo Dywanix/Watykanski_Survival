@@ -8361,6 +8361,7 @@ Transform:
   - {fileID: 6856320487938470645}
   - {fileID: 5743444553049160502}
   - {fileID: 3266712878352810449}
+  - {fileID: 3047940698409261188}
   - {fileID: 4124356477766036760}
   - {fileID: 62777368644080079}
   m_Father: {fileID: 0}
@@ -8399,7 +8400,7 @@ MonoBehaviour:
   RightDoors: {fileID: 482459736411988432}
   GunPrize: {fileID: 8239268912641088681}
   AccessoryPrize: {fileID: 7477746696878844664}
-  Chest: {fileID: 3970257733086384856}
+  Chest: {fileID: 8239268912641088681}
   BonusChest: {fileID: 6362093576902244244}
   Mobs:
   - {fileID: 4018806695531950022, guid: 37878398f388e6442bfbbccca72a8dc9, type: 3}
@@ -11206,10 +11207,9 @@ Transform:
   - {fileID: 5494443000981507359}
   - {fileID: 6503488983712565475}
   - {fileID: 3673338706909845306}
-  - {fileID: 3047940698409261188}
   - {fileID: 2981624573548329838}
   m_Father: {fileID: 8780460458242068308}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4172846795292686916
 GameObject:
@@ -13744,7 +13744,7 @@ Transform:
   - {fileID: 6305884606774385679}
   - {fileID: 4930969136647694158}
   m_Father: {fileID: 4124356477766036760}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8589363582045791428
 SpriteRenderer:
@@ -13845,7 +13845,7 @@ Transform:
   - {fileID: 8731742551595744148}
   - {fileID: 3334595430949061405}
   m_Father: {fileID: 8780460458242068308}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7513497828719761068
 GameObject:
@@ -14573,15 +14573,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8239268912641088681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: -2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: -2}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8062061744900643037}
   - {fileID: 7032737032361493809}
-  m_Father: {fileID: 4124356477766036760}
-  m_RootOrder: 3
+  m_Father: {fileID: 8780460458242068308}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6356570411228775996
 SpriteRenderer:
