@@ -101,7 +101,7 @@ MonoBehaviour:
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine
   - Increase Potion Slots by 2 & fill half of them
   - Reduce Grenade Cooldown by 11%. Gredandes deal 24% more Damage.
-  - Gain +9% Crit Chance on all Guns
+  - Gain +10% Crit Chance on all Guns
   - Increase On-Hit Rate by (20 + 30% Crit Chance)%
   - Chance to spawn bonus Chest
   - Increase Damage by 36%, but also increase Damage Taken by 24%
@@ -121,7 +121,7 @@ MonoBehaviour:
     Increase
   - Gain 2 random Accessories & 10 Tools
   - Transform Max Health into Shield. Potions can give Shield instead
-  - Every Tool collected gives 1 Shield. Gain 6 Tools
+  - Every 5 Tools collected gives 6 Shield. Gain 6 Tools
   - Every Potion used increases Max Health by 2. Gain 1 Potion
   - Increase Potion Slots by 1 & healing from Potions by 5
   - Throw 3 Knives in a small cone every 3s

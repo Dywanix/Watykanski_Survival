@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Items")]
     public int bloodMoney;
+    public int builtShield;
     public float wrath, shieldCapacitor;
 
     [Header("Resources")]
@@ -1311,7 +1312,12 @@ public class PlayerController : MonoBehaviour
         }
         if (eq.Items[35])
         {
-            GainShield(amount);
+            builtShield += amount;
+            while (builtShield >= 5)
+            {
+                builtShield -= 5;
+                GainShield(6);
+            }
         }
 
         tools += amount;
@@ -1385,7 +1391,7 @@ public class PlayerController : MonoBehaviour
             maxHealth = 5;
             if (eq.Items[7])
                 GainDMG(-0.0012f * temp);
-            maxShield += temp;
+            maxShield += temp * 1.1f;
         }
 
         if (health > 5)

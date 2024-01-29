@@ -134,7 +134,7 @@ public class Equipment : MonoBehaviour
                 playerStats.grenadeBaseCooldown /= 1.11f;
                 break;
             case 16:
-                playerStats.additionalCritChance += 0.09f;
+                playerStats.additionalCritChance += 0.1f;
                 playerStats.luck += 2;
                 playerStats.map.luck += 2;
                 break;
