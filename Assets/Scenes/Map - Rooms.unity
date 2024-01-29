@@ -338,7 +338,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5466632
 GameObject:
@@ -1063,6 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  - {fileID: 1263660669595215130, guid: ccefe158fc918124ea0ed907716b3220, type: 3}
   room: {fileID: 0}
   waveStrength: 64
   strengthGrow: 11
@@ -1134,7 +1135,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &14366925
 GameObject:
@@ -13037,7 +13038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780460458242068308, guid: 4c3da94d24506e04199b8ffc0e1e0b65, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8780460458242068308, guid: 4c3da94d24506e04199b8ffc0e1e0b65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21169,6 +21170,7 @@ MonoBehaviour:
   Ends:
   - {fileID: 1913789873}
   oneEnd: 1
+  solid: 0
 --- !u!70 &537847242
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -22000,6 +22002,7 @@ MonoBehaviour:
   - {fileID: 1666773865}
   - {fileID: 1182328944}
   oneEnd: 0
+  solid: 0
 --- !u!70 &554522185
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23984,6 +23987,7 @@ MonoBehaviour:
   - {fileID: 2131795741}
   - {fileID: 1188303027}
   oneEnd: 0
+  solid: 0
 --- !u!70 &632025729
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -24735,7 +24739,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &666955781
 MonoBehaviour:
@@ -24751,6 +24755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+  - {fileID: 2486417914055074930, guid: 27681d2de045cce43aa5c5bf453fc28b, type: 3}
+  - {fileID: 8998231891502373396, guid: eaca6391690ab8e4c8e32c273f5a5445, type: 3}
   room: {fileID: 0}
   waveStrength: 36
   strengthGrow: 8
@@ -27299,6 +27305,7 @@ MonoBehaviour:
   - {fileID: 156857196}
   - {fileID: 149150089}
   oneEnd: 0
+  solid: 0
 --- !u!70 &759042718
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -28897,6 +28904,7 @@ MonoBehaviour:
   - {fileID: 80394942}
   - {fileID: 1695828209}
   oneEnd: 0
+  solid: 0
 --- !u!70 &806758044
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -30409,6 +30417,7 @@ MonoBehaviour:
   - {fileID: 1895003349}
   - {fileID: 1724567069}
   oneEnd: 0
+  solid: 0
 --- !u!70 &846435213
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -30998,6 +31007,7 @@ MonoBehaviour:
   - {fileID: 1603173448}
   - {fileID: 1862595990}
   oneEnd: 0
+  solid: 0
 --- !u!70 &875620025
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -35462,7 +35472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5898594895256458737, guid: b2aac5ec9681ecc46902fad9aca6e29e, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5898594895256458737, guid: b2aac5ec9681ecc46902fad9aca6e29e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38172,6 +38182,7 @@ MonoBehaviour:
   Ends:
   - {fileID: 816894786}
   oneEnd: 1
+  solid: 0
 --- !u!70 &971731803
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -41288,6 +41299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8147933182953753120, guid: 086dc2c038445ea44b059cd14873b4c7, type: 3}
+  - {fileID: 2486417914055074930, guid: 27681d2de045cce43aa5c5bf453fc28b, type: 3}
+  - {fileID: 8998231891502373396, guid: eaca6391690ab8e4c8e32c273f5a5445, type: 3}
   room: {fileID: 0}
   waveStrength: 43
   strengthGrow: 8
@@ -41359,7 +41372,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088327284
 GameObject:
@@ -41525,7 +41538,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 8.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -41918,6 +41931,7 @@ MonoBehaviour:
   - {fileID: 976479967}
   - {fileID: 1552170109}
   oneEnd: 0
+  solid: 0
 --- !u!70 &1092642558
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -43525,6 +43539,7 @@ MonoBehaviour:
   - {fileID: 1882337711}
   - {fileID: 2111234613}
   oneEnd: 0
+  solid: 0
 --- !u!70 &1158560972
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -43956,6 +43971,7 @@ MonoBehaviour:
   - {fileID: 1201554172}
   - {fileID: 629480854}
   oneEnd: 0
+  solid: 0
 --- !u!70 &1165357343
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -45143,6 +45159,7 @@ MonoBehaviour:
   - {fileID: 372873988}
   - {fileID: 1370294799}
   oneEnd: 0
+  solid: 0
 --- !u!70 &1199031342
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -50906,7 +50923,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3807771053694119222, guid: 65723b222817e7d42954d9588aeaeb0a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3807771053694119222, guid: 65723b222817e7d42954d9588aeaeb0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51233,6 +51250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  - {fileID: 1263660669595215130, guid: ccefe158fc918124ea0ed907716b3220, type: 3}
   room: {fileID: 0}
   waveStrength: 70
   strengthGrow: 7
@@ -51304,7 +51322,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1344391518
 GameObject:
@@ -60435,6 +60453,7 @@ MonoBehaviour:
   - {fileID: 116868459}
   - {fileID: 812364542}
   oneEnd: 0
+  solid: 0
 --- !u!70 &1684313954
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -61004,6 +61023,7 @@ MonoBehaviour:
   - {fileID: 1509646919}
   - {fileID: 879415917}
   oneEnd: 0
+  solid: 0
 --- !u!70 &1696313353
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -62380,6 +62400,7 @@ MonoBehaviour:
   - {fileID: 98189350}
   - {fileID: 78752892}
   oneEnd: 0
+  solid: 0
 --- !u!70 &1732719286
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -72140,6 +72161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 8769025061083429922, guid: cf069c22e0126da49a8121e8d95ce488, type: 3}
+  - {fileID: 1263660669595215130, guid: ccefe158fc918124ea0ed907716b3220, type: 3}
   room: {fileID: 0}
   waveStrength: 55
   strengthGrow: 10
@@ -72211,7 +72233,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091898855
 GameObject:

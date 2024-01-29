@@ -13,12 +13,12 @@ public class DetectObstacle : MonoBehaviour
         if (other.transform.tag == "Obstacle")
         {
             wall = other.GetComponent<Wall>();
-            if (wall.oneEnd) enemy.FoundObstacle(wall.Ends[0]);
+            if (wall.oneEnd) enemy.FoundObstacle(wall.Ends[0], wall.solid);
             else
             {
                 if (Vector3.Distance(wall.Ends[0].position, enemy.Player.transform.position) < Vector3.Distance(wall.Ends[1].position, enemy.Player.transform.position))
-                    enemy.FoundObstacle(wall.Ends[0]);
-                else enemy.FoundObstacle(wall.Ends[1]);
+                    enemy.FoundObstacle(wall.Ends[0], wall.solid);
+                else enemy.FoundObstacle(wall.Ends[1], wall.solid);
             }
         }
     }

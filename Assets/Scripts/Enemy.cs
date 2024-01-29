@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
     [Header("Damage & Attacks")]
     public float attackTimer;
     public float attackDamage, attackPoison, attackSpeed, attackRange;
+    public bool repositioning;
 
     [Header("Ranged Stuff")]
     public bool ranged = false;
@@ -107,9 +108,9 @@ public class Enemy : MonoBehaviour
         }
         if (stun <= 0f)
         {
-            if (attackTimer >= 0f)
+            if (attackTimer >= 0f && !repositioning)
                 attackTimer -= Time.deltaTime * SpeedEfficiency();
-            if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
+            if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange && !repositioning)
                 Attack();
             if (flank)
                 Flank();
@@ -172,31 +173,42 @@ public class Enemy : MonoBehaviour
 
     void Flank()
     {
-        if (attackTimer < 0f)
+        if (attackTimer < 0f || repositioning)
             transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * SpeedEfficiency() * Time.deltaTime);
         else transform.position = Vector2.MoveTowards(transform.position, FlankPosition.position, movementSpeed * SpeedEfficiency() * aimingMovement * Time.deltaTime);
     }
 
     void Chase()
     {
-        if (attackTimer < 0f)
+        if (attackTimer < 0f || repositioning)
             transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * SpeedEfficiency() * Time.deltaTime);
         else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, movementSpeed * SpeedEfficiency() * aimingMovement * Time.deltaTime);
     }
 
-    public void FoundObstacle(Transform Point)
+    public void FoundObstacle(Transform Point, bool solid)
     {
         if (!flank)
         {   
             FlankPosition = Point;
             flank = true;
-            Invoke("EndFlank", 0.15f);
+            if (solid)
+            {
+                repositioning = true;
+                Invoke("EndReposition", 0.35f);
+            }
+            else Invoke("EndFlank", 0.15f);
         }
     }
 
     void EndFlank()
     {
         flank = false;
+    }
+
+    void EndReposition()
+    {
+        flank = false;
+        repositioning = false;
     }
 
     void Attack()
