@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6319733149353440752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 457579323622835727, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: red
+      value: 0.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 457579323622835727, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: blue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457579323622835727, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: green
+      value: 0.776
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816183345398565005, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: DoT
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816183345398565005, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: damage
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625461715506526735, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625461715506526735, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_Color.g
+      value: 0.77647066
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625461715506526735, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19215688
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118126811429831345, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_Name
+      value: ToxicBarrelExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550301443765248855, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981694269715289162, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: damage
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981694269715289162, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
+      propertyPath: poison
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}

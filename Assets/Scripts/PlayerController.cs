@@ -1050,10 +1050,12 @@ public class PlayerController : MonoBehaviour
     public void GainPoison(float value)
     {
         poison += value;
+        TakeDamage(poison, true);
+        /*poison += value;
 
         if (poison >= value * 3f)
             TakeDamage(value * 3f, true);
-        else TakeDamage(poison, true);
+        else TakeDamage(poison, true);*/
     }
 
     public void RestoreHealth(float value)
@@ -1154,6 +1156,13 @@ public class PlayerController : MonoBehaviour
                 eq.Deflect(collidedBullet.damage);
             }
             else TakeDamage(collidedBullet.damage, false);
+            GainPoison(collidedBullet.poison);
+            //Destroy(other.gameObject);
+        }
+        else if (other.transform.tag == "NeutralProjectal")
+        {
+            collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
+            TakeDamage(collidedBullet.damage, false);
             GainPoison(collidedBullet.poison);
             //Destroy(other.gameObject);
         }

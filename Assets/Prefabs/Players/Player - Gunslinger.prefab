@@ -3366,7 +3366,7 @@ MonoBehaviour:
   maxShield: 100
   dShield: 0
   shield: 0
-  poison: 0
+  poison: 3
   damageBonus: 1.07
   fireRateBonus: 1.07
   movementSpeed: 444
@@ -3389,6 +3389,7 @@ MonoBehaviour:
   undamaged: 0
   invulnerable: 0
   bloodMoney: 0
+  builtShield: 0
   wrath: 0
   shieldCapacitor: 0
   gold: 26

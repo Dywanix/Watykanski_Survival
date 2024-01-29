@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4811231763019414698, guid: 5d15b065e130cb24384b23de3a42ec96, type: 3}
       propertyPath: damage
-      value: 44
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 4811231763019414698, guid: 5d15b065e130cb24384b23de3a42ec96, type: 3}
       propertyPath: duration
@@ -229,23 +229,29 @@ MonoBehaviour:
   ExplosionRadius: {fileID: 0}
   ShardExplosion: {fileID: 0}
   duration: 0.4
-  damage: 95
-  penetration: 0.55
+  falloff: 0
+  force: 0
+  mass: 0
+  damage: 120
+  penetration: 0
   armorShred: 0
   vulnerableApplied: 0
   slowDuration: 0
-  stunChance: 0
   stunDuration: 0
   pierceEfficiency: 1
   DoT: 0
+  shatter: 0
   curse: 0
   incendiary: 0
   damageGain: 0
   pierce: 100
   special: 0
-  infinite: 0
   crit: 0
   AoE: 0
+  damageLess: 0
+  TargetedLocation: {fileID: 0}
+  HitArea: {fileID: 0}
+  fall: {fileID: 0}
 --- !u!4 &8550301443765248855 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5244806019488451511, guid: 5d15b065e130cb24384b23de3a42ec96, type: 3}
