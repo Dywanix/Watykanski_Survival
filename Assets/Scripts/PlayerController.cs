@@ -10,13 +10,19 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public Backpack bp;
-    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
+    public Map map;
+
+    [Header("UI")]
+    public TMPro.TextMeshProUGUI healthInfo;
+    public TMPro.TextMeshProUGUI ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
     public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage, damageFlash;
+    public RectTransform healthBack, healthFill, healthDrop, shieldBack, shieldFill, shieldDrop;
+
+    [Header("Objects")]
     public Bullet firedBullet;
     public GameObject Grenade, CurrentBullet, DamageFlash;
     public GrenadeEffects Effects;
     private EnemyBullet collidedBullet;
-    public Map map;
 
     /*public Gunslinger gunslinger;
     public Berserker berserker;
@@ -132,6 +138,8 @@ public class PlayerController : MonoBehaviour
         }
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
+
+        UpdateBars();
     }
 
     void Update()
@@ -241,6 +249,16 @@ public class PlayerController : MonoBehaviour
             dShield -= (12f + maxShield * 0.11f) * Time.deltaTime;
             dischargeBar.fillAmount = dShield / maxShield;
         }
+    }
+
+    void UpdateBars()
+    {
+        healthBack.sizeDelta = new Vector2(maxHealth * 3 + 20, 45);
+        healthFill.sizeDelta = new Vector2(maxHealth * 3, 30);
+        healthDrop.sizeDelta = new Vector2(maxHealth * 3, 30);
+        shieldBack.sizeDelta = new Vector2(maxShield * 2 + 20, 30);
+        shieldFill.sizeDelta = new Vector2(maxShield * 2, 15);
+        shieldDrop.sizeDelta = new Vector2(maxShield * 2, 15);
     }
 
     void FixedUpdate()
@@ -1256,6 +1274,7 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[7])
             GainDMG(0.0012f * value);
         dHealth += value;
+        UpdateBars();
         dropBar.fillAmount = dHealth / maxHealth;
         healthBar.fillAmount = health / maxHealth;
     }
@@ -1289,6 +1308,7 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[11])
             value *= 0.3f;
         maxShield += value;
+        UpdateBars();
         GainShield(value);
     }
 
@@ -1378,6 +1398,7 @@ public class PlayerController : MonoBehaviour
         maxShield *= 0.3f;
         ShieldCapacitor(shield);
         shield = maxShield;
+        UpdateBars();
         GainShield(0);
     }
 
@@ -1388,6 +1409,7 @@ public class PlayerController : MonoBehaviour
         {
             shieldCapacitor -= 15f;
             maxShield += 1f;
+            UpdateBars();
             GainShield(0f);
         }
     }
@@ -1410,6 +1432,7 @@ public class PlayerController : MonoBehaviour
             shield += temp * 1.2f;
         }
 
+        UpdateBars();
         healthBar.fillAmount = health / maxHealth;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         shieldBar.fillAmount = shield / maxShield;

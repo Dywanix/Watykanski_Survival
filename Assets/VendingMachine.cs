@@ -203,7 +203,11 @@ public class VendingMachine : MonoBehaviour
             {
                 slotFull[roll] = true;
                 slots[roll] = 0; // item
-                items[roll] = Random.Range(0, Lib.ItemSprite.Length);
+                do
+                {
+                    items[roll] = Random.Range(0, Lib.ItemSprite.Length);
+                }
+                while (!playerStats.eq.Items[items[roll]]);
                 viable = true;
             }
         } while (!viable);

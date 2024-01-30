@@ -13,7 +13,7 @@ public class Chest : MonoBehaviour
     public GameObject[] Items1, Items2;
     //public int KeysRequired;
     public int[] range1, range2;
-    public bool potionGuaranteed;
+    public float potionChance;
     int amount;
 
     void Update()
@@ -38,7 +38,7 @@ public class Chest : MonoBehaviour
 
     void OpenChest()
     {
-        if (potionGuaranteed)
+        if (potionChance >= Random.Range(0f, 100f))
         {
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject potion = Instantiate(HealthPotion, Dir.position, transform.rotation);
