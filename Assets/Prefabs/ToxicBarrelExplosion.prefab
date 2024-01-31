@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8981694269715289162, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}
       propertyPath: poison
-      value: 2
+      value: 66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ba95cf870e1d3d4793c05cc43358005, type: 3}

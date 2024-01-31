@@ -135,6 +135,16 @@ public class VendingMachine : MonoBehaviour
         UpdateCabinet();
     }
 
+    public void ResetDigits()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            digitWritten[i] = false;
+            digitValue[i].text = "-";
+        }
+    }
+
+
     void Check()
     {
         for (int i = 0; i < 2; i++)
@@ -207,7 +217,7 @@ public class VendingMachine : MonoBehaviour
                 {
                     items[roll] = Random.Range(0, Lib.ItemSprite.Length);
                 }
-                while (!playerStats.eq.Items[items[roll]]);
+                while (playerStats.eq.Items[items[roll]]);
                 viable = true;
             }
         } while (!viable);

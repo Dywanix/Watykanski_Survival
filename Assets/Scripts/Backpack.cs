@@ -773,7 +773,7 @@ public class Backpack : MonoBehaviour
                 break;
             case 38:
                 eq.guns[currentGun].shatter += 0.288f;
-                eq.guns[currentGun].specialBulletChance[2] += 0.24f;
+                eq.guns[currentGun].specialBulletChance[3] += 0.24f;
                 break;
             case 39:
                 eq.guns[currentGun].specialBulletChance[0] += 0.2f;
@@ -929,7 +929,7 @@ public class Backpack : MonoBehaviour
                 break;
             case 38:
                 eq.guns[currentGun].shatter -= 0.288f;
-                eq.guns[currentGun].specialBulletChance[2] -= 0.24f;
+                eq.guns[currentGun].specialBulletChance[3] -= 0.24f;
                 break;
             case 39:
                 eq.guns[currentGun].specialBulletChance[0] -= 0.2f;

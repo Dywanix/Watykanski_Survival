@@ -24,7 +24,7 @@ public class Chest : MonoBehaviour
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
 
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 3.5f) //&& playerStats.keys >= KeysRequired)
+        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.8f) //&& playerStats.keys >= KeysRequired)
         {
             Glow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))

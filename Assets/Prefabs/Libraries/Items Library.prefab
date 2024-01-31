@@ -46,44 +46,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemSprite:
   - {fileID: 21300000, guid: 871b9c53df0dd0046a289c258c6076b9, type: 3}
-  - {fileID: 21300000, guid: e8f17c48494047f459e40291be9f4f8e, type: 3}
+  - {fileID: 21300000, guid: 489fe5473dd118a4e959ae35beffb9ee, type: 3}
   - {fileID: 21300000, guid: ceddd9d64705c1b4eb26cc30e6387c3d, type: 3}
-  - {fileID: 21300000, guid: 42797924b2c1c354d8014f27226d303e, type: 3}
+  - {fileID: 21300000, guid: 88e59fd25d7416a40a22d450a079cce7, type: 3}
   - {fileID: 21300000, guid: ba03b508c457c414eb618dc989fd9f87, type: 3}
-  - {fileID: 21300000, guid: 6a97e0c407b088c4c9a6091bd23dac6c, type: 3}
-  - {fileID: 21300000, guid: b04b6fe28b988a740bb1bf7f1e0ceff1, type: 3}
-  - {fileID: 21300000, guid: 349bd6348204f7e45852239e57b27f13, type: 3}
+  - {fileID: 21300000, guid: a895e4f35df394c4bb618bf14a0519a7, type: 3}
+  - {fileID: 21300000, guid: f696dc1081ff96a42aaf6cc6a01cc869, type: 3}
+  - {fileID: 21300000, guid: 233ea7177936419428de92f710bf8842, type: 3}
   - {fileID: 21300000, guid: 736559d4fd90ee74f9dc473d050d5e30, type: 3}
-  - {fileID: 21300000, guid: 1c85e938a632219419f60dc2e7b75578, type: 3}
-  - {fileID: 21300000, guid: 279ea734b0f8af74a8ad7a439c33ac41, type: 3}
-  - {fileID: 21300000, guid: 1af5c6aeedfb03a478b5b941c7dc73fc, type: 3}
+  - {fileID: 21300000, guid: 8232a75c53f6fcf4dab03b5c8aac3b04, type: 3}
+  - {fileID: 21300000, guid: bc323a0c26e6be74dbf86f845eb609d1, type: 3}
+  - {fileID: 21300000, guid: 2a762e2ba1df0534dbbe6f252404bade, type: 3}
   - {fileID: 21300000, guid: 7c7913220488d274fa7998d8c50d298a, type: 3}
-  - {fileID: 21300000, guid: 16f4116105d23004abbbc428c27c5ab0, type: 3}
+  - {fileID: 21300000, guid: be669cb27f831b0429b68cdac8fe6c06, type: 3}
   - {fileID: 21300000, guid: a98aa5ccd421a0e46bcf88dd26ae8fce, type: 3}
   - {fileID: 21300000, guid: 2fb054a56222f25429ff8ded92aab433, type: 3}
   - {fileID: 21300000, guid: ce622712653d50d48b1597729dab4bb3, type: 3}
   - {fileID: 21300000, guid: 11f23192f24e63947995c5210af03eb0, type: 3}
   - {fileID: 21300000, guid: 4e067868d7020ee40af28f70f2559f18, type: 3}
-  - {fileID: 21300000, guid: 4fead7f8be6dc374b844bec76d0b6a03, type: 3}
+  - {fileID: 21300000, guid: 4e629d1f7165fd74cbf8d3c5c3bf0724, type: 3}
   - {fileID: 21300000, guid: 645aca2ef8a5c014aa661402a8cf9273, type: 3}
   - {fileID: 21300000, guid: fa7c730795c857a4f993dad26d4ba8fb, type: 3}
   - {fileID: 21300000, guid: 68c22f89e314b4d41a6bae0b59c02f94, type: 3}
   - {fileID: 21300000, guid: 686f541f7312fc4429c6184b011885e7, type: 3}
-  - {fileID: 21300000, guid: 6315edb7847447a42805d3622cfcb649, type: 3}
-  - {fileID: 21300000, guid: 36bac7b81496f8f47a4919d29803f084, type: 3}
-  - {fileID: 21300000, guid: 9034b3d643c8ffc4593c268609deb231, type: 3}
+  - {fileID: 21300000, guid: cb8835e3954bcac48b3df6a381d5618a, type: 3}
+  - {fileID: 21300000, guid: 9c990ad749959e846934a453e3d02daa, type: 3}
+  - {fileID: 21300000, guid: 97df46c585fe72549851e213b8089836, type: 3}
   - {fileID: 21300000, guid: 05ec5454f1cdac142ae4133d6beb3153, type: 3}
   - {fileID: 21300000, guid: f8195105afb10b64eb255ee67ef30b7e, type: 3}
   - {fileID: 21300000, guid: 0c9171c27eb39d24aa34e733792a9e41, type: 3}
   - {fileID: 21300000, guid: 4ee2adb5a4f10794b845c5a810774c58, type: 3}
   - {fileID: 21300000, guid: 6124b967f5c1e4b4fb86bbe170491850, type: 3}
-  - {fileID: 21300000, guid: 4ab550e7274ade84e88043340f9cce13, type: 3}
+  - {fileID: 21300000, guid: 6b728c43edc252543bd668d4002d3872, type: 3}
   - {fileID: 21300000, guid: 57c74e1e230f475418ef3a59d4393fc5, type: 3}
-  - {fileID: 21300000, guid: dd211b0894dcb484f97bd27f0a6a3a5f, type: 3}
+  - {fileID: 21300000, guid: 3771d720cd36231469813aa90efa0be0, type: 3}
   - {fileID: 21300000, guid: d615df5e73811504b92892e9e8416649, type: 3}
-  - {fileID: 21300000, guid: a92744f06ded5ef4494ab0f45414dfbb, type: 3}
-  - {fileID: 21300000, guid: 65fbf7f4abc2617419b75240b347b05f, type: 3}
-  - {fileID: 21300000, guid: 0d8f440edda9dda4e81dc67d3ce63540, type: 3}
+  - {fileID: 21300000, guid: ad2a5a23c60e44f4c9bb1815456d5888, type: 3}
+  - {fileID: 21300000, guid: fb334bf9b757c144d9968273710bcf49, type: 3}
+  - {fileID: 21300000, guid: f743a478a8b80ba4f9a1082bcd0d2dde, type: 3}
   ItemTooltip:
   - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions

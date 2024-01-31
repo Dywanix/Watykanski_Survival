@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("UI")]
     public TMPro.TextMeshProUGUI healthInfo;
-    public TMPro.TextMeshProUGUI ShieldInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
-    public Image healthBar, dropBar, shieldBar, dischargeBar, taskImage, dashImage, abilityImage, gunImage, damageFlash;
+    public TMPro.TextMeshProUGUI ShieldInfo, ToxicityInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
+    public Image healthBar, dropBar, shieldBar, dischargeBar, posionBar, taskImage, dashImage, abilityImage, gunImage, damageFlash;
     public RectTransform healthBack, healthFill, healthDrop, shieldBack, shieldFill, shieldDrop;
 
     [Header("Objects")]
@@ -39,11 +39,11 @@ public class PlayerController : MonoBehaviour
     public float maxHealth;
     public float dHealth, health, maxShield, dShield, shield, poison,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
-    public int level = 1, dayCount = 1, luck;
+    public int level = 1, dayCount = 1, luck, toxicityLevel;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
-    int tempi, bonusTool;
-    float temp, temp2, temp3, flashA;
+    int tempi, tempi2, bonusTool;
+    float temp, temp2, temp3, temp4, flashA;
     bool greenF;
 
     [Header("Items")]
@@ -335,16 +335,16 @@ public class PlayerController : MonoBehaviour
         temp = 0;
         temp += 0.9f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
         temp += 1.44f * eq.guns[eq.equipped].Accessories[19 + bp.ALibrary.count] * SpeedMultiplyer(1f);
-        tempi = 0;
+        tempi2 = 0;
 
         for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)
         {
-            tempi++;
+            tempi2++;
         }
 
-        for (int i = 0; i < tempi; i++)
+        for (int i = 0; i < tempi2; i++)
         {
-            FireDirection((i * 2 - tempi + 1) * (5f / (1f + 0.05f * tempi)), 0f);
+            FireDirection((i * 2 - tempi2 + 1) * (5f / (1f + 0.05f * tempi2)), 0f);
         }
     }
 
@@ -1068,12 +1068,24 @@ public class PlayerController : MonoBehaviour
     public void GainPoison(float value)
     {
         poison += value;
-        TakeDamage(poison, true);
+        while (poison >= 100f)
+        {
+            poison -= 100f;
+            TakeDamage(toxicityLevel, true);
+            GainToxicity(1);
+        }
+        posionBar.fillAmount = poison / 100f;
         /*poison += value;
 
         if (poison >= value * 3f)
             TakeDamage(value * 3f, true);
         else TakeDamage(poison, true);*/
+    }
+
+    public void GainToxicity(int amount)
+    {
+        toxicityLevel += 1;
+        ToxicityInfo.text = toxicityLevel.ToString("0");
     }
 
     public void RestoreHealth(float value)
