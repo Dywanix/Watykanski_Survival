@@ -10,12 +10,13 @@ public class Room : MonoBehaviour
     public GameObject[] Mobs, Prizes, SndPrizes;
 
     bool fight, ended;
-    public int roundStrength, strengthIncrease, mobsCount, roundsCount;
-    public float countIncrease;
+    public int roundStrength, strengthIncrease, mobsCount, roundsCount, mobsLength;
+    public float countIncrease, positionX, positionY;
     //public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
-    public int[] mobsStrength;
+    public int[] mobsStrength, rolled, fatigue;
     public float[] WidthRange, HeightRange;
     int roll, roll2, strength, count;
+    bool viable;
     //float roundDuration;
 
     public Barrels[] BarrelSpawn;
@@ -92,9 +93,20 @@ public class Room : MonoBehaviour
     void Spawn()
     {
         SpawnPoint.position = new Vector3(transform.position.x + Random.Range(WidthRange[0], WidthRange[1]), transform.position.y + Random.Range(HeightRange[0], HeightRange[1]), 0f);
-        roll = Random.Range(0, Mobs.Length);
+        viable = false;
+        do
+        {
+            roll = Random.Range(0, mobsLength);
+            if (rolled[roll] < fatigue[roll])
+                rolled[roll]++;
+            else
+            {
+                viable = true;
+                rolled[roll] = 0;
+                fatigue[roll]++;
+            }
+        } while (!viable);
         Instantiate(Mobs[roll], SpawnPoint.position, transform.rotation);
-        //spawnTimer += (0.4f + mobsStrength[roll]) / spawnFrequency;
         strength += mobsStrength[roll];
         count++;
     }
