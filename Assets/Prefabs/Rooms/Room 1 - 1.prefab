@@ -12429,6 +12429,14 @@ MonoBehaviour:
   HeightRange:
   - -8.5
   - 8.5
+  eliteChance: 0
+  eliteEncounter: 0
+  EliteMobs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   BarrelSpawn: []
 --- !u!1 &8245504261760234820
 GameObject:

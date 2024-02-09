@@ -91,10 +91,10 @@ public class PlayerController : MonoBehaviour
         Invoke("Tick", 0.8f);
         if (eq.gambler)
         {
-            temp = 40.0f;
+            temp = 37.5f;
             while (temp > 0f)
             {
-                tempi = Random.Range(0, 7);
+                tempi = Random.Range(0, 5);
                 switch (tempi)
                 {
                     case 0:
@@ -114,16 +114,8 @@ public class PlayerController : MonoBehaviour
                         temp -= 1f;
                         break;
                     case 4:
-                        GainGold(3);
-                        temp -= 0.6f;
-                        break;
-                    case 5:
-                        GainTools(1);
-                        temp -= 0.6f;
-                        break;
-                    case 6:
-                        cooldownReduction += 0.004f;
-                        temp -= 0.3f;
+                        cooldownReduction += 0.006f;
+                        temp -= 0.45f;
                         break;
                 }
             }
@@ -573,7 +565,7 @@ public class PlayerController : MonoBehaviour
                 tempi += (2 ^ i) - 1;
         }*/
         if (eq.Items[20])
-            temp = 0.85f - 0.01f * luck;
+            temp = 0.843f - 0.012f * luck;
         else temp = 1f;
 
         temp2 = 1f + eq.guns[eq.equipped].critChance * (0.06f * eq.guns[eq.equipped].Accessories[34]) + (0.096f * eq.guns[eq.equipped].Accessories[34 + bp.ALibrary.count]);

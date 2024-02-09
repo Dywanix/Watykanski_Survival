@@ -29,23 +29,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: health
-      value: 90
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: maxHealth
-      value: 90
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: fireRateBonus
-      value: 1.08
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: movementSpeed
-      value: 412
+      value: 416
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: cooldownReduction
-      value: 1.04
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790375, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: m_Name

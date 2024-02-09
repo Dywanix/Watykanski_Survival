@@ -14,6 +14,10 @@ public class SpawnRoom : MonoBehaviour
     public bool combatRoom;
     public Transform nextSpawnPoint;
 
+    [Header("Elites")]
+    public float eliteChance;
+    public GameObject[] EliteMobs;
+
     void Start()
     {
         Invoke("InstantiateRoom", spawnDelay);
@@ -25,12 +29,18 @@ public class SpawnRoom : MonoBehaviour
         if (combatRoom)
         {
             room = SpawnedRoom.GetComponent(typeof(Room)) as Room;
+            room.eliteChance = eliteChance;
             for (int i = 0; i < Mobs.Length; i++)
             {
                 room.Mobs[i] = Mobs[i];
                 room.mobsStrength[i] = mobsStrength[i];
             }
+            for (int i = 0; i < EliteMobs.Length; i++)
+            {
+                room.EliteMobs[i] = EliteMobs[i];
+            }
             room.mobsLength = Mobs.Length;
+            room.eliteMobsLength = EliteMobs.Length;
             room.roundStrength = waveStrength;
             room.strengthIncrease = strengthGrow;
             room.mobsCount = maxMobsCount;

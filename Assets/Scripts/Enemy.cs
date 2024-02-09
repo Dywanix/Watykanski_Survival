@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     // ----- enemy stats -----
     private int roll, tempi;
     private float temp;
-    public bool rare, boss, dead;
+    public bool elite, boss, dead;
 
     [Header("Health & Resistance")]
     public int weight;

@@ -105,13 +105,13 @@ MonoBehaviour:
   - Increase On-Hit Rate by (20 + 30% Crit Chance)%
   - Chance to spawn bonus Chest
   - Increase Damage by 36%, but also increase Damage Taken by 24%
-  - Increase Chance for Special Bullets by 15%
+  - Increase Chance for Special Bullets by 18%
   - Increase Damage by 6% & Bullets Speed by 28%
   - All Enemies are Cursed
   - Increase Fire Rate by 7,2%. All Guns Have 15% more Max Ammo
   - All Guns have a 17,5% Chance to Fire additional time for free
   - Increase Max Health by 10. Gain +0,32% Damage for the Combat for every 1 HP Lost
-  - Gain 20% More Tools. Gain 2 Tools
+  - Gain 20% More Tools. Gain 5 Tools
   - Reduce Grenade Cooldown by 18%. Grenade gains additional Charge
   - Grenades have 91% Shatter. Grenade gains additional Charge
   - Grenades leave Poison Cloud for 2,5s. Grenade gains additional Charge

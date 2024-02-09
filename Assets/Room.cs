@@ -10,20 +10,29 @@ public class Room : MonoBehaviour
     public GameObject[] Mobs, Prizes, SndPrizes;
 
     bool fight, ended;
-    public int roundStrength, strengthIncrease, mobsCount, roundsCount, mobsLength;
+    public int roundStrength, strengthIncrease, mobsCount, roundsCount, mobsLength, strength;
     public float countIncrease, positionX, positionY;
     //public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
     public int[] mobsStrength, rolled, fatigue;
     public float[] WidthRange, HeightRange;
-    int roll, roll2, strength, count;
+    int roll, roll2, count, tempi;
     bool viable;
     //float roundDuration;
+
+    [Header("Elites")]
+    public int eliteMobsLength;
+    public float eliteChance;
+    public bool eliteEncounter;
+    public GameObject[] EliteMobs;
+    private Enemy enemySpawned;
 
     public Barrels[] BarrelSpawn;
 
     void Start()
     {
         map = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(Map)) as Map;
+        if (Random.Range(0f, 100f) <= eliteChance)
+            eliteEncounter = true;
     }
     
     void Update()
@@ -80,11 +89,21 @@ public class Room : MonoBehaviour
 
     void SpawnWave()
     {
-        strength = 0;
-        count = 0;
-        while (strength < roundStrength && count < mobsCount)
+        if (eliteEncounter)
         {
-            Spawn();
+            tempi = ((roundsCount - 1) * roundsCount) / 2;
+            strength = roundStrength * roundsCount + strengthIncrease * tempi;
+            roundsCount = 1;
+            SpawnElite();
+        }    
+        else
+        {
+            strength = 0;
+            count = 0;
+            while (strength < roundStrength && count < mobsCount)
+            {
+                Spawn();
+            }
         }
 
         Invoke("CheckForClear", 3f);
@@ -111,6 +130,16 @@ public class Room : MonoBehaviour
         count++;
     }
 
+    void SpawnElite()
+    {
+        SpawnPoint.position = new Vector3(transform.position.x + Random.Range(WidthRange[0], WidthRange[1]), transform.position.y + Random.Range(HeightRange[0], HeightRange[1]), 0f);
+
+        roll = Random.Range(0, eliteMobsLength);
+        GameObject elite = Instantiate(EliteMobs[roll], SpawnPoint.position, transform.rotation);
+        enemySpawned = elite.GetComponent(typeof(Enemy)) as Enemy;
+        enemySpawned.weight = strength;
+    }
+
     void IncreaseLimit()
     {
         mobsCount++;
@@ -118,17 +147,6 @@ public class Room : MonoBehaviour
         if (fight)
             Invoke("IncreaseLimit", countIncrease);
     }
-
-    /*void SummonWave()
-    {
-        roll = Random.Range(0, Waves.Length);
-        Instantiate(Waves[roll], transform.position, transform.rotation);
-        roundDuration = (16f + wavesStrength[roll]) / waveFrequency;
-        spawnTimer += (0.8f * wavesStrength[roll]) / waveFrequency;
-        roundTimer = roundDuration;
-        roundsCount--;
-        map.RoundsCount.text = (roundsCount + 1).ToString("0");
-    }*/
 
     void CeaseSpawn()
     {

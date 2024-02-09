@@ -153,7 +153,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainHP(10);
                 break;
             case 26:
-                playerStats.GainTools(2);
+                playerStats.GainTools(5);
                 break;
             case 27:
                 playerStats.grenadeBaseCooldown /= 1.18f;
@@ -381,11 +381,11 @@ public class Equipment : MonoBehaviour
                 knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
 
                 firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
-                firedBullet.damage = (20 + 1.6f * playerStats.dayCount) * playerStats.DamageDealtMultiplyer(1f);
+                firedBullet.damage = (20.4f + 1.8f * playerStats.dayCount) * playerStats.DamageDealtMultiplyer(1.05f);
             }
 
-            temp = 4.2f / (1f + playerStats.SpeedMultiplyer(0.7f));
-            temp /= (1f + playerStats.cooldownReduction * 0.4f);
+            temp = 4.2f / (1f + playerStats.SpeedMultiplyer(0.73f));
+            temp /= (1f + playerStats.cooldownReduction * 0.42f);
             Invoke("KnifeThrow", temp);
         }
     }

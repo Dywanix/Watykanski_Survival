@@ -88,8 +88,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7209404493023973953, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
+      propertyPath: falloff
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209404493023973953, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
       propertyPath: duration
-      value: 1.4
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: 7209404493023973953, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
       propertyPath: penetration
