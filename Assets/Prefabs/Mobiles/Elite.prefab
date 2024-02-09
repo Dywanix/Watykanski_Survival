@@ -204,7 +204,19 @@ MonoBehaviour:
   enemy: {fileID: 3319628276478145744}
   Ability:
   - {fileID: 2717878509751511880, guid: e5bbde6aa4795ca49829067bac2a6462, type: 3}
+  - {fileID: 5342724790809665280, guid: 018d371e7b133334ea4e02089b0cbe99, type: 3}
+  - {fileID: 7538147809147854803, guid: c32c2415be945e64ebbb715ec57bf174, type: 3}
+  - {fileID: 5682746151538870580, guid: 5a2f42b62e0dd694d9730cf43df08436, type: 3}
+  - {fileID: 5682746151538870580, guid: 5a2f42b62e0dd694d9730cf43df08436, type: 3}
   abilityCastTime:
   - 0.98
+  - 0.98
+  - 0.98
+  - 0.22
+  - 0.22
   abilityCooldown:
   - 6.02
+  - 6.08
+  - 6.08
+  - 4
+  - 4

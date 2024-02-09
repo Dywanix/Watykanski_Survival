@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
     [Header("Damage & Attacks")]
     public float attackTimer;
     public float attackDamage, attackPoison, attackSpeed, attackRange;
+    public float cooldownReduction;
     public bool repositioning;
 
     [Header("Ranged Stuff")]
@@ -71,23 +72,21 @@ public class Enemy : MonoBehaviour
         playerBody = Player.GetComponent<Rigidbody2D>();
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
 
-        /*maxHealth *= Random.Range(0.96f, 1.04f);
-        armor *= Random.Range(0.98f, 1.02f);
-        movementSpeed *= Random.Range(0.95f, 1.05f);
-        attackDamage *= Random.Range(0.92f, 1.08f);
-        attackSpeed *= Random.Range(0.92f, 1.08f);*/
+        if (elite)
+        {
+            tempi = weight - 50;
+            maxHealth *= 1f + tempi * 0.02f;
+            shieldCapacity *= 1f + tempi * 0.02f;
+            shieldRechargeRate *= 1f + tempi * 0.02f;
+            attackSpeed /= 1f + tempi * 0.008f;
+            cooldownReduction = 1f + tempi * 0.01f;
+            scrapChance *= 1f + tempi * 0.02f;
+            itemChance *= 1f + tempi * 0.02f;
+        }
 
         if (boss)
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
 
-        /*if (ranged)
-        {
-            attackRange *= Random.Range(0.95f, 1.05f);
-            force *= Random.Range(0.95f, 1.05f);
-        }*/
-
-        /*if (playerStats.eq.Items[20])
-            vulnerable += armor * 0.0032f;*/
         if (playerStats.eq.Items[22])
             curse += (24f + maxHealth * 0.2f) * playerStats.DamageDealtMultiplyer(0.312f);
 

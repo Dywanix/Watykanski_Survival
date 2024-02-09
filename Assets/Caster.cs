@@ -22,6 +22,6 @@ public class Caster : MonoBehaviour
         enemy.GainStun(abilityCastTime[roll]);
         Instantiate(Ability[roll], transform.position, enemy.Sight.rotation);
 
-        Invoke("Cast", abilityCooldown[roll]);
+        Invoke("Cast", abilityCooldown[roll] / enemy.cooldownReduction);
     }
 }
