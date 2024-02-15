@@ -1276,7 +1276,7 @@ public class PlayerController : MonoBehaviour
         health += value;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         if (eq.Items[7])
-            GainDMG(0.0012f * value);
+            GainDMG(0.0013f * value);
         dHealth += value;
         UpdateBars();
         dropBar.fillAmount = dHealth / maxHealth;

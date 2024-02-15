@@ -45,54 +45,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemSprite:
-  - {fileID: 21300000, guid: 871b9c53df0dd0046a289c258c6076b9, type: 3}
-  - {fileID: 21300000, guid: 489fe5473dd118a4e959ae35beffb9ee, type: 3}
-  - {fileID: 21300000, guid: ceddd9d64705c1b4eb26cc30e6387c3d, type: 3}
-  - {fileID: 21300000, guid: 88e59fd25d7416a40a22d450a079cce7, type: 3}
-  - {fileID: 21300000, guid: ba03b508c457c414eb618dc989fd9f87, type: 3}
-  - {fileID: 21300000, guid: a895e4f35df394c4bb618bf14a0519a7, type: 3}
-  - {fileID: 21300000, guid: f696dc1081ff96a42aaf6cc6a01cc869, type: 3}
-  - {fileID: 21300000, guid: 233ea7177936419428de92f710bf8842, type: 3}
-  - {fileID: 21300000, guid: 736559d4fd90ee74f9dc473d050d5e30, type: 3}
-  - {fileID: 21300000, guid: 8232a75c53f6fcf4dab03b5c8aac3b04, type: 3}
-  - {fileID: 21300000, guid: bc323a0c26e6be74dbf86f845eb609d1, type: 3}
-  - {fileID: 21300000, guid: 2a762e2ba1df0534dbbe6f252404bade, type: 3}
-  - {fileID: 21300000, guid: 7c7913220488d274fa7998d8c50d298a, type: 3}
-  - {fileID: 21300000, guid: be669cb27f831b0429b68cdac8fe6c06, type: 3}
-  - {fileID: 21300000, guid: a98aa5ccd421a0e46bcf88dd26ae8fce, type: 3}
-  - {fileID: 21300000, guid: 2fb054a56222f25429ff8ded92aab433, type: 3}
-  - {fileID: 21300000, guid: ce622712653d50d48b1597729dab4bb3, type: 3}
-  - {fileID: 21300000, guid: 11f23192f24e63947995c5210af03eb0, type: 3}
-  - {fileID: 21300000, guid: 4e067868d7020ee40af28f70f2559f18, type: 3}
-  - {fileID: 21300000, guid: 4e629d1f7165fd74cbf8d3c5c3bf0724, type: 3}
-  - {fileID: 21300000, guid: 645aca2ef8a5c014aa661402a8cf9273, type: 3}
-  - {fileID: 21300000, guid: fa7c730795c857a4f993dad26d4ba8fb, type: 3}
-  - {fileID: 21300000, guid: 68c22f89e314b4d41a6bae0b59c02f94, type: 3}
-  - {fileID: 21300000, guid: 686f541f7312fc4429c6184b011885e7, type: 3}
-  - {fileID: 21300000, guid: cb8835e3954bcac48b3df6a381d5618a, type: 3}
-  - {fileID: 21300000, guid: 9c990ad749959e846934a453e3d02daa, type: 3}
-  - {fileID: 21300000, guid: 97df46c585fe72549851e213b8089836, type: 3}
-  - {fileID: 21300000, guid: 05ec5454f1cdac142ae4133d6beb3153, type: 3}
-  - {fileID: 21300000, guid: f8195105afb10b64eb255ee67ef30b7e, type: 3}
-  - {fileID: 21300000, guid: 0c9171c27eb39d24aa34e733792a9e41, type: 3}
-  - {fileID: 21300000, guid: 4ee2adb5a4f10794b845c5a810774c58, type: 3}
-  - {fileID: 21300000, guid: 6124b967f5c1e4b4fb86bbe170491850, type: 3}
-  - {fileID: 21300000, guid: 6b728c43edc252543bd668d4002d3872, type: 3}
-  - {fileID: 21300000, guid: 57c74e1e230f475418ef3a59d4393fc5, type: 3}
-  - {fileID: 21300000, guid: 3771d720cd36231469813aa90efa0be0, type: 3}
-  - {fileID: 21300000, guid: d615df5e73811504b92892e9e8416649, type: 3}
-  - {fileID: 21300000, guid: ad2a5a23c60e44f4c9bb1815456d5888, type: 3}
-  - {fileID: 21300000, guid: fb334bf9b757c144d9968273710bcf49, type: 3}
-  - {fileID: 21300000, guid: f743a478a8b80ba4f9a1082bcd0d2dde, type: 3}
+  - {fileID: 21300000, guid: a917ade47dd2b5948a6f227e0dc4710c, type: 3}
+  - {fileID: 21300000, guid: a7a138dee307e8b429efbefcc0f9657e, type: 3}
+  - {fileID: 21300000, guid: 16838660f8da86c47a9c3ad2eec183f6, type: 3}
+  - {fileID: 21300000, guid: 030c563c59ab16e41b1974e0b15cead2, type: 3}
+  - {fileID: 21300000, guid: 89b5be2999f5dc147906f9dddc6a9724, type: 3}
+  - {fileID: 21300000, guid: 80d55af0fe3ed28478b8e7dafbd4d708, type: 3}
+  - {fileID: 21300000, guid: c35bcedb02794b749b0d3ae41e264af2, type: 3}
+  - {fileID: 21300000, guid: 80754866c50edc04dbd946303aa6bb12, type: 3}
+  - {fileID: 21300000, guid: 676095a7496d9d74ba01a033ce5c0dc2, type: 3}
+  - {fileID: 21300000, guid: 6224e1587b45c454eb72f7719efbc07c, type: 3}
+  - {fileID: 21300000, guid: 934198322209573438bb0e9be48b89f5, type: 3}
+  - {fileID: 21300000, guid: fb65532b596e59245b0514f07402d990, type: 3}
+  - {fileID: 21300000, guid: f62f2b042ae15164381538ecc623ae76, type: 3}
+  - {fileID: 21300000, guid: d08396ec7d8bff140b02f3435101cfc3, type: 3}
+  - {fileID: 21300000, guid: 94062c26c5e9cc0438779c7bd8d25650, type: 3}
+  - {fileID: 21300000, guid: af62ad88b8c31974d8c196385b47da5a, type: 3}
+  - {fileID: 21300000, guid: 025c5f55aef82d2448ff25c477529f67, type: 3}
+  - {fileID: 21300000, guid: 2fdf81586bf3453498ef35a9599a15a2, type: 3}
+  - {fileID: 21300000, guid: d91667b7befa7d84595edb9332530fb7, type: 3}
+  - {fileID: 21300000, guid: cfce595d40cc0104489ee0f1a2f957c8, type: 3}
+  - {fileID: 21300000, guid: c96cd6ae78ca91043a938339bbca87f5, type: 3}
+  - {fileID: 21300000, guid: 807396955f81fcb419fbe7bf9aaef7f1, type: 3}
+  - {fileID: 21300000, guid: 881d8ef20cbca394f88a3f15eaa7138a, type: 3}
+  - {fileID: 21300000, guid: 7bfb0850e2e0c244b9cf29337ae0d7c7, type: 3}
+  - {fileID: 21300000, guid: 1a10d54ee79881b4b982259cebbbb49e, type: 3}
+  - {fileID: 21300000, guid: 21d5fa94a699f764c825ca22e2b94fd2, type: 3}
+  - {fileID: 21300000, guid: fbd7d6d8f426f3d4291faf0a2b3bba78, type: 3}
+  - {fileID: 21300000, guid: c606571ee3500ea41a0c72f9a10ecd74, type: 3}
+  - {fileID: 21300000, guid: acbac502e3298e942b7073ae45714fba, type: 3}
+  - {fileID: 21300000, guid: 7891239f1f6c6384d856f098a94fcd19, type: 3}
+  - {fileID: 21300000, guid: 70a8e2eb955908848a20aecc34ad87e6, type: 3}
+  - {fileID: 21300000, guid: 38150c3aacc66204ba55858d562bff60, type: 3}
+  - {fileID: 21300000, guid: 80fd9a512e7e6e74c833f85396a6a5f6, type: 3}
+  - {fileID: 21300000, guid: b4427101c613a4a489bedc35590452d8, type: 3}
+  - {fileID: 21300000, guid: 30a2662fda2ce264d95241a831efdf08, type: 3}
+  - {fileID: 21300000, guid: 7e93768518c3e8349a4b0a90212c2a44, type: 3}
+  - {fileID: 21300000, guid: 46f4b0c66dd08d0468122e7abddd96e8, type: 3}
+  - {fileID: 21300000, guid: 34782ea6c428ffb45ae416cc8f8f63fc, type: 3}
+  - {fileID: 21300000, guid: 8ce1cd7f80233b6498d1365d732ccddc, type: 3}
   ItemTooltip:
   - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions
   - Fire Eqipped Gun in Random Direstions for free occassionally
   - Increase Max Shield by 20. Gain 45% Lost Health as Shield
-  - Dash gains Second Charge & Reduce Dash Cooldown by 18%
+  - Dash gains Second Charge & Reduce Dash Cooldown by 21%
   - Increase Cooldown Reduction by 12%. Double all Cooldown Reduction.
   - Increase Max Health by 10. Increase healing from Potions by 10% of Max Health
-  - Increase Max Health by 10. Gain +1,2% Damage for every 10 Max Health above 80
+  - Increase Max Health by 10. Gain +1,3% Damage for every 10 Max Health above 80
   - Gain 8 Tools. All Guns have 1 more Accessory Slot
   - Increase Movement Speed by 9%. Using Dash gives Rush for 2,5s
   - Increase Damage by 6%. Gain 4 Gold Every 5th Enemy slained
