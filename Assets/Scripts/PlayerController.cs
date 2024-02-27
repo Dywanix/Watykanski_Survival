@@ -37,8 +37,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Stats")]
     public float maxHealth;
-    public float dHealth, health, maxShield, dShield, shield, poison,
-    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
+    public float dHealth, health, maxShield, dShield, shield, poison, poisonCap,
+    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown,
+    grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
     public int level = 1, dayCount = 1, luck, toxicityLevel;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
@@ -778,7 +779,7 @@ public class PlayerController : MonoBehaviour
             if (eq.Items[6])
                 temp += maxHealth * 0.1f;
             if (eq.Items[37])
-                temp += 5f;
+                temp += 6f;
             if (eq.Items[34])
             {
                 if (temp > maxHealth - health)
@@ -987,13 +988,6 @@ public class PlayerController : MonoBehaviour
                         fireRateBonus -= 0.14f;
                     }
                 }
-                if (eq.Items[12])
-                {
-                    if (value > 8)
-                        value -= 3;
-                    else if (value > 5)
-                        value = 5;
-                }
                 if (pierce)
                 {
                     health -= value;
@@ -1060,13 +1054,13 @@ public class PlayerController : MonoBehaviour
     public void GainPoison(float value)
     {
         poison += value;
-        while (poison >= 100f)
+        while (poison >= poisonCap)
         {
-            poison -= 100f;
+            poison -= poisonCap;
             TakeDamage(toxicityLevel, true);
             GainToxicity(1);
         }
-        posionBar.fillAmount = poison / 100f;
+        posionBar.fillAmount = poison / poisonCap;
         /*poison += value;
 
         if (poison >= value * 3f)

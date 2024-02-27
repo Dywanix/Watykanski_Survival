@@ -123,6 +123,10 @@ public class Equipment : MonoBehaviour
             case 11:
                 playerStats.Item11();
                 break;
+            case 12:
+                playerStats.poisonCap += 60f;
+                playerStats.GainPoison(0);
+                break;
             case 13:
                 playerStats.dashBaseCooldown /= 1.15f;
                 break;

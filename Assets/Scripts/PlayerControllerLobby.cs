@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControllerLobby : MonoBehaviour
 {
+    public PlayerController Player;
+
     [Header("Classes")]
     public int currentClass;
     public Gun[] guns;
     public Sprite[] sprites;
     public GameObject[] classSprites;
-    public GameObject[] classesToSelect;
+    public GameObject[] classesToSelect, classesTab;
 
     public Transform Barrel, Hand, Dude, GunRot, TargetArea;
     public Rigidbody2D Body, Gun;
@@ -34,6 +36,9 @@ public class PlayerControllerLobby : MonoBehaviour
     public int tempi;
     float temp, flashA;
     bool greenF;
+
+    [Header("TAB")]
+    public GameObject TabScreen;
 
     public SpriteRenderer playerSprite, heldGunSprite;
 
@@ -472,6 +477,7 @@ public class PlayerControllerLobby : MonoBehaviour
         Menu.SetActive(true);
         menuOpened = true;
         free = false;
+        Player.free = false;
     }
 
     public void CloseMenu()
@@ -479,13 +485,15 @@ public class PlayerControllerLobby : MonoBehaviour
         Menu.SetActive(false);
         menuOpened = false;
         free = true;
+        Player.free = true;
     }
 
     void OpenTab()
     {
-        //bp.OpenBackpack();
+        TabScreen.SetActive(true);
         tabOpened = true;
         free = false;
+        Player.free = false;
     }
 
     public void ItemTooltipOpen(int which)
@@ -501,9 +509,10 @@ public class PlayerControllerLobby : MonoBehaviour
     public void CloseTab()
     {
         ItemTooltipClose();
-        //bp.CloseBackpack();
+        TabScreen.SetActive(false);
         tabOpened = false;
         free = true;
+        Player.free = true;
     }
 
     public void ReturnToMenu()
@@ -521,6 +530,7 @@ public class PlayerControllerLobby : MonoBehaviour
         classesToSelect[currentClass].SetActive(true);
         classSprites[currentClass].SetActive(false);
         currentClass = which;
+        TabScreen = classesTab[which];
         classSprites[currentClass].SetActive(true);
         //playerSprite.sprite = sprites[which];
         guns[currentClass].bulletsLeft = guns[currentClass].MagazineTotalSize();

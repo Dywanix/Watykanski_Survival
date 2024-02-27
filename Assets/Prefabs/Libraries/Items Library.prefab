@@ -97,7 +97,7 @@ MonoBehaviour:
   - Increase Movement Speed by 9%. Using Dash gives Rush for 2,5s
   - Increase Damage by 6%. Gain 4 Gold Every 5th Enemy slained
   - Decrease Max Shield greatly. Fully recharge Shield at the start of Combat
-  - Reduce Damage Taken by 3, to a minimum of 5
+  - Gain 60% Poison Resistance
   - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine
   - Increase Potion Slots by 2 & fill half of them
   - Reduce Grenade Cooldown by 11%. Gredandes deal 24% more Damage.
@@ -123,5 +123,5 @@ MonoBehaviour:
   - Transform Max Health into Shield. Potions can give Shield instead
   - Every 5 Tools collected gives 6 Shield. Gain 6 Tools
   - Every Potion used increases Max Health by 2. Gain 1 Potion
-  - Increase Potion Slots by 1 & healing from Potions by 5
+  - Increase Potion Slots by 1 & healing from Potions by 6
   - Throw 3 Knives in a small cone every 3s

@@ -201,7 +201,7 @@ public class Room : MonoBehaviour
         Chest.SetActive(true);
         if (map.playerStats.eq.Items[18])
         {
-            if (17 + map.luck >= Random.Range(0, 100))
+            if (17f + map.luck * 1.4f >= Random.Range(0, 100f))
                 BonusChest.SetActive(true);
         }
         /*Prizes[map.PrizeRarity()].SetActive(true);

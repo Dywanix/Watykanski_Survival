@@ -9816,6 +9816,7 @@ GameObject:
   - component: {fileID: 2984539770339126415}
   - component: {fileID: 5576689288945409905}
   - component: {fileID: 7670246782593063834}
+  - component: {fileID: 4559980929677953286}
   m_Layer: 0
   m_Name: Tilemap Walls
   m_TagString: Untagged
@@ -11887,6 +11888,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!114 &4559980929677953286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975491890297788190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab4d775c27ff38479a0c6cdab19872d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7010835086779758501
 GameObject:
   m_ObjectHideFlags: 0
@@ -12417,6 +12430,7 @@ MonoBehaviour:
   mobsCount: 0
   roundsCount: 3
   mobsLength: 0
+  strength: 0
   countIncrease: 0
   positionX: 33
   positionY: 0
@@ -12429,6 +12443,7 @@ MonoBehaviour:
   HeightRange:
   - -8.5
   - 8.5
+  eliteMobsLength: 0
   eliteChance: 0
   eliteEncounter: 0
   EliteMobs:

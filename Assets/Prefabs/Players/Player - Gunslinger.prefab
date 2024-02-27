@@ -3608,6 +3608,7 @@ MonoBehaviour:
   dShield: 0
   shield: 0
   poison: 0
+  poisonCap: 100
   damageBonus: 1.08
   fireRateBonus: 1.08
   movementSpeed: 448
