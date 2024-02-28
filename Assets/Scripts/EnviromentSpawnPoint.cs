@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnviromentSpawnPoint : MonoBehaviour
 {
     public GameObject[] possibleSpawns;
+    public float chanceToSpawn;
 
     void Start()
     {
-        Instantiate(possibleSpawns[Random.Range(0, possibleSpawns.Length)], transform.position, transform.rotation);
+        if (chanceToSpawn > Random.Range(0f, 100f))
+            Instantiate(possibleSpawns[Random.Range(0, possibleSpawns.Length)], transform.position, transform.rotation);
     }
 }
