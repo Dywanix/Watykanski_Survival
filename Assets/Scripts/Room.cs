@@ -6,6 +6,7 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
+    public Transform[] PossibleSpawns;
     public GameObject Fog, LeftDoors, RightDoors, GunPrize, AccessoryPrize, Chest, BonusChest;
     public GameObject[] Mobs, Prizes, SndPrizes;
 
@@ -14,7 +15,6 @@ public class Room : MonoBehaviour
     public float countIncrease, positionX, positionY;
     //public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
     public int[] mobsStrength, rolled, fatigue;
-    public float[] WidthRange, HeightRange;
     int roll, roll2, count, tempi;
     bool viable, started;
     //float roundDuration;
@@ -82,7 +82,8 @@ public class Room : MonoBehaviour
 
     void Spawn()
     {
-        SpawnPoint.position = new Vector3(transform.position.x + Random.Range(WidthRange[0], WidthRange[1]), transform.position.y + Random.Range(HeightRange[0], HeightRange[1]), 0f);
+        roll = Random.Range(0, PossibleSpawns.Length);
+        SpawnPoint.position = new Vector3(PossibleSpawns[roll].position.x + Random.Range(-3f, 3f), PossibleSpawns[roll].position.y + Random.Range(-2f, 2f), 0f);
         viable = false;
         do
         {
@@ -103,7 +104,8 @@ public class Room : MonoBehaviour
 
     void SpawnElite()
     {
-        SpawnPoint.position = new Vector3(transform.position.x + Random.Range(WidthRange[0], WidthRange[1]), transform.position.y + Random.Range(HeightRange[0], HeightRange[1]), 0f);
+        roll = Random.Range(0, PossibleSpawns.Length);
+        SpawnPoint.position = new Vector3(PossibleSpawns[roll].position.x + Random.Range(-3f, 3f), PossibleSpawns[roll].position.y + Random.Range(-2f, 2f), 0f);
 
         roll = Random.Range(0, eliteMobsLength);
         GameObject elite = Instantiate(EliteMobs[roll], SpawnPoint.position, transform.rotation);
