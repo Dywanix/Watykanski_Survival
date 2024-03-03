@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5254902
       objectReference: {fileID: 0}
+    - target: {fileID: 7707649637548954763, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8399459118122761677, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: ExplosionRadius
       value: 
@@ -115,22 +119,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
   m_PrefabInstance: {fileID: 6615403464621676659}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6240034830646363561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4394583628563603210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 163e49b6ac8795b4487d9b7280b43fe7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ThisBullet: {fileID: 3413304064781755838}
-  baseShatter: 0.85
-  procShatter: 0.35
-  pierceEff: 0.16
 --- !u!114 &3593109248791872639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,3 +139,19 @@ MonoBehaviour:
   delay: 1.55
   particleForce: 3
   particleRange: 30
+--- !u!114 &6240034830646363561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394583628563603210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163e49b6ac8795b4487d9b7280b43fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisBullet: {fileID: 3413304064781755838}
+  baseShatter: 0.85
+  procShatter: 0.35
+  pierceEff: 0.16

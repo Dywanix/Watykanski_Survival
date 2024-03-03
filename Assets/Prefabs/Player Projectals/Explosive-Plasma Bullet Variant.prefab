@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 2.7
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Name

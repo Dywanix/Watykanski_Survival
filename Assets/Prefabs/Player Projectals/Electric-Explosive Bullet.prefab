@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9921569
       objectReference: {fileID: 0}
+    - target: {fileID: 283844878038057896, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1023839990212055130, guid: b7c653b34abf189479f16abd13b08a23, type: 3}
       propertyPath: m_Name
       value: Electric-Explosive Bullet

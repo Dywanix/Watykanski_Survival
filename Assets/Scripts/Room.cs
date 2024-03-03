@@ -6,17 +6,17 @@ public class Room : MonoBehaviour
 {
     public Map map;
     public Transform SpawnPoint;
-    public GameObject StartButton, Glow, Player, LeftDoors, RightDoors, GunPrize, AccessoryPrize, Chest, BonusChest;
+    public GameObject Fog, LeftDoors, RightDoors, GunPrize, AccessoryPrize, Chest, BonusChest;
     public GameObject[] Mobs, Prizes, SndPrizes;
 
-    bool fight, ended;
+    bool fight;
     public int roundStrength, strengthIncrease, mobsCount, roundsCount, mobsLength, strength;
     public float countIncrease, positionX, positionY;
     //public float waveFrequency, spawnFrequency, roundTimer, spawnTimer;
     public int[] mobsStrength, rolled, fatigue;
     public float[] WidthRange, HeightRange;
     int roll, roll2, count, tempi;
-    bool viable;
+    bool viable, started;
     //float roundDuration;
 
     [Header("Elites")]
@@ -34,45 +34,18 @@ public class Room : MonoBehaviour
         if (Random.Range(0f, 100f) <= eliteChance)
             eliteEncounter = true;
     }
-    
-    void Update()
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!Player)
-            Player = GameObject.FindGameObjectWithTag("Player");
-
-        if (Vector3.Distance(transform.position, Player.transform.position) <= 2.5f)
-        {
-            Glow.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (!ended)
-                    StartRound();
-            }
-        }
-        else Glow.SetActive(false);
-
-        /*if (fight)
-        {
-            roundTimer -= Time.deltaTime;
-            map.RoundBarFill.fillAmount = roundTimer / roundDuration;
-
-            if (roundTimer <= 0f)
-            {
-                if (roundsCount == 0)
-                    CeaseSpawn();
-                else SummonWave();
-            }
-
-            spawnTimer -= Time.deltaTime;
-            if (spawnTimer <= 0f)
-                Spawn();
-        }*/
+        if (other.transform.tag == "Player" && !started)
+            StartRound();
     }
 
     void StartRound()
     {
-        StartButton.SetActive(false);
+        started = true;
         LeftDoors.SetActive(true);
+        Fog.SetActive(false);
         fight = true;
         map.RoundBar.SetActive(true);
         for (int i = 0; i < BarrelSpawn.Length; i++)
@@ -83,8 +56,6 @@ public class Room : MonoBehaviour
         map.playerStats.Nightfall();
         SpawnWave();
         Invoke("IncreaseLimit", countIncrease);
-        //spawnTimer = 4f;
-        //SummonWave();
     }
 
     void SpawnWave()
@@ -178,7 +149,6 @@ public class Room : MonoBehaviour
         if (roundsCount == 0)
         {
             fight = false;
-            ended = true;
             SpawnPrize();
             RightDoors.SetActive(false);
             map.level++;

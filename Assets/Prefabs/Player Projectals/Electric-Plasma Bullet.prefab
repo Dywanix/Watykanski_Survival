@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.015686275
       objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Name
       value: Electric-Plasma Bullet

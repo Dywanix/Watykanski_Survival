@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.41176474
       objectReference: {fileID: 0}
+    - target: {fileID: 7724660942434134415, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8454469406960353481, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
       propertyPath: ExplosionRadius
       value: 
@@ -103,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisBullet: {fileID: 2132355997348178670}
+  baseDoT: 0
+  procDoT: 0
 --- !u!114 &2410772193856483083
 MonoBehaviour:
   m_ObjectHideFlags: 0
