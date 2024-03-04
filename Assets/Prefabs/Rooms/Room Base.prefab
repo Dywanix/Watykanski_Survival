@@ -9401,7 +9401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4150659630986924338
 Transform:
   m_ObjectHideFlags: 0
@@ -11546,7 +11546,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 6975491890297788190}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 75f4ac6149e969d418bceb714263bcd0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

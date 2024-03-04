@@ -88,7 +88,7 @@ MonoBehaviour:
   - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions
   - Fire Eqipped Gun in Random Direstions for free occassionally
-  - Increase Max Shield by 20. Gain 45% Lost Health as Shield
+  - Increase Max Shield by 20. Gain 50% Lost Health as Shield
   - Dash gains Second Charge & Reduce Dash Cooldown by 21%
   - Increase Cooldown Reduction by 12%. Double all Cooldown Reduction.
   - Increase Max Health by 10. Increase healing from Potions by 10% of Max Health
@@ -108,7 +108,7 @@ MonoBehaviour:
   - Increase Chance for Special Bullets by 18%
   - Increase Damage by 6% & Bullets Speed by 28%
   - All Enemies are Cursed
-  - Increase Fire Rate by 7,2%. All Guns Have 15% more Max Ammo
+  - Increase Fire Rate by 7,2%. All Guns Have 20% more Max Ammo
   - All Guns have a 17,5% Chance to Fire additional time for free
   - Increase Max Health by 10. Gain +0,32% Damage for the Combat for every 1 HP Lost
   - Gain 20% More Tools. Gain 5 Tools
@@ -121,7 +121,7 @@ MonoBehaviour:
     Increase
   - Gain 2 random Accessories & 10 Tools
   - Transform Max Health into Shield. Potions can give Shield instead
-  - Every 5 Tools collected gives 6 Shield. Gain 6 Tools
+  - Every 5 Tools collected gives 7 Shield. Gain 5 Tools
   - Every Potion used increases Max Health by 2. Gain 1 Potion
   - Increase Potion Slots by 1 & healing from Potions by 6
   - Throw 3 Knives in a small cone every 3s

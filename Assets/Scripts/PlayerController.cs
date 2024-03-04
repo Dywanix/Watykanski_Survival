@@ -992,7 +992,7 @@ public class PlayerController : MonoBehaviour
                 {
                     health -= value;
                     if (eq.Items[3])
-                        GainShield(value * 0.45f);
+                        GainShield(value * 0.5f);
                     healthBar.fillAmount = health / maxHealth;
 
                     if (eq.Items[25] && !day)
@@ -1008,7 +1008,7 @@ public class PlayerController : MonoBehaviour
                         shield = 0;
                         health -= value;
                         if (eq.Items[3])
-                            GainShield(value * 0.45f);
+                            GainShield(value * 0.5f);
                         healthBar.fillAmount = health / maxHealth;
 
                         if (eq.Items[25] && !day)
@@ -1249,7 +1249,7 @@ public class PlayerController : MonoBehaviour
                 eq.guns[i].ammo = eq.guns[i].maxAmmo + eq.guns[i].bonusAmmo - eq.guns[i].bulletsLeft;
                 eq.guns[i].bonusAmmo = 0;
                 if (eq.Items[23])
-                    eq.guns[i].ammo += (eq.guns[i].maxAmmo * 3) / 20;
+                    eq.guns[i].ammo += (eq.guns[i].maxAmmo * 1) / 5;
                 if (eq.guns[i].Accessories[18] > 0)
                     eq.guns[i].ammo += (eq.guns[i].maxAmmo * eq.guns[i].Accessories[18]) / 5;
                 if (eq.guns[i].Accessories[18 + bp.ALibrary.count] > 0)
@@ -1343,7 +1343,7 @@ public class PlayerController : MonoBehaviour
             while (builtShield >= 5)
             {
                 builtShield -= 5;
-                GainShield(6);
+                GainShield(7);
             }
         }
 

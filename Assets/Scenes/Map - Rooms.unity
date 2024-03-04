@@ -1092,7 +1092,7 @@ MonoBehaviour:
   positionY: 0
   combatRoom: 1
   nextSpawnPoint: {fileID: 279505811}
-  eliteChance: 0
+  eliteChance: 10
   EliteMobs:
   - {fileID: 6856061814912900793, guid: c27124f06211940439b3ae1a5b3d8f8b, type: 3}
 --- !u!212 &12126836
@@ -2872,20 +2872,32 @@ MonoBehaviour:
   - {fileID: 8998231891502373396, guid: eaca6391690ab8e4c8e32c273f5a5445, type: 3}
   - {fileID: 3545802418993409902, guid: d904ef5a7849f504d99e351ef442d78b, type: 3}
   - {fileID: 4530374500444193583, guid: d91229b3084ac5245b91ebf33860ad77, type: 3}
-  Mobs: []
+  Mobs:
+  - {fileID: 2271998805131779320, guid: bda4d8a05859aaa4a939c75afd60f7a8, type: 3}
+  - {fileID: 7174967640791530049, guid: b61c1cca56dac894c8f83e26b2c25d46, type: 3}
+  - {fileID: 8290596169094493792, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
+  - {fileID: 452549839904584757, guid: 5c1e3bc229c4a8940abcd387bb5275e9, type: 3}
+  - {fileID: 3992786176170026564, guid: c8b589d4905674d49a58ccc44985be9a, type: 3}
+  - {fileID: 1527872337732246289, guid: a1a25699d63b8734398f4b275fc8ed44, type: 3}
+  - {fileID: 4762132699805670846, guid: 256fc115beb7daf45b6908a39cc9cfbb, type: 3}
+  - {fileID: 2908122157879161186, guid: fed6f82640bf8884b99120ea498957ba, type: 3}
+  - {fileID: 4920948948325506094, guid: 24d6e733191520449860ed16527d094c, type: 3}
+  - {fileID: 7006873713803308604, guid: bdc59d8b45ab68c47a80c6f05de640b8, type: 3}
+  - {fileID: 1969047425045948882, guid: bea921b658a361744b291c008b0faf09, type: 3}
+  - {fileID: 1100861158366025180, guid: 05a803fe3a0136143acc9d5092056689, type: 3}
   room: {fileID: 0}
   waveStrength: 89
   strengthGrow: 17
   maxMobsCount: 4
   wavesCount: 2
-  mobsStrength: 
+  mobsStrength: 09000000090000000c0000000f0000000f0000000c0000000c0000000e0000000e000000120000001100000011000000
   CountIncrease: 37
   spawnDelay: 2.1
   positionX: 0
   positionY: 0
   combatRoom: 1
   nextSpawnPoint: {fileID: 191610741}
-  eliteChance: 0
+  eliteChance: 15
   EliteMobs:
   - {fileID: 6856061814912900793, guid: c27124f06211940439b3ae1a5b3d8f8b, type: 3}
 --- !u!212 &64764358
@@ -13142,7 +13154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &197198475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24946,7 +24958,7 @@ MonoBehaviour:
   positionY: 0
   combatRoom: 1
   nextSpawnPoint: {fileID: 1086298796}
-  eliteChance: 100
+  eliteChance: 10
   EliteMobs:
   - {fileID: 6856061814912900793, guid: c27124f06211940439b3ae1a5b3d8f8b, type: 3}
 --- !u!1 &672079101
@@ -37946,7 +37958,7 @@ MonoBehaviour:
   positionY: 0
   combatRoom: 1
   nextSpawnPoint: {fileID: 1314841679}
-  eliteChance: 0
+  eliteChance: 10
   EliteMobs:
   - {fileID: 6856061814912900793, guid: c27124f06211940439b3ae1a5b3d8f8b, type: 3}
 --- !u!212 &1086298795
@@ -47953,20 +47965,34 @@ MonoBehaviour:
   - {fileID: 8998231891502373396, guid: eaca6391690ab8e4c8e32c273f5a5445, type: 3}
   - {fileID: 3545802418993409902, guid: d904ef5a7849f504d99e351ef442d78b, type: 3}
   - {fileID: 4530374500444193583, guid: d91229b3084ac5245b91ebf33860ad77, type: 3}
-  Mobs: []
+  Mobs:
+  - {fileID: 2271998805131779320, guid: bda4d8a05859aaa4a939c75afd60f7a8, type: 3}
+  - {fileID: 7174967640791530049, guid: b61c1cca56dac894c8f83e26b2c25d46, type: 3}
+  - {fileID: 8290596169094493792, guid: 6c7c8f0eaf81f1f4a92957c58e43b148, type: 3}
+  - {fileID: 452549839904584757, guid: 5c1e3bc229c4a8940abcd387bb5275e9, type: 3}
+  - {fileID: 1527872337732246289, guid: a1a25699d63b8734398f4b275fc8ed44, type: 3}
+  - {fileID: 1527872337732246289, guid: a1a25699d63b8734398f4b275fc8ed44, type: 3}
+  - {fileID: 4762132699805670846, guid: 256fc115beb7daf45b6908a39cc9cfbb, type: 3}
+  - {fileID: 1785227626596713186, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
+  - {fileID: 2908122157879161186, guid: fed6f82640bf8884b99120ea498957ba, type: 3}
+  - {fileID: 4920948948325506094, guid: 24d6e733191520449860ed16527d094c, type: 3}
+  - {fileID: 7006873713803308604, guid: bdc59d8b45ab68c47a80c6f05de640b8, type: 3}
+  - {fileID: 78168120246392280, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+  - {fileID: 1969047425045948882, guid: bea921b658a361744b291c008b0faf09, type: 3}
+  - {fileID: 1100861158366025180, guid: 05a803fe3a0136143acc9d5092056689, type: 3}
   room: {fileID: 0}
   waveStrength: 70
   strengthGrow: 7
   maxMobsCount: 4
   wavesCount: 3
-  mobsStrength: 
+  mobsStrength: 09000000090000000c0000000f0000000c0000000c0000000c0000000b0000000e0000000e000000120000000d0000001100000011000000
   CountIncrease: 62
   spawnDelay: 1.8
   positionX: 0
   positionY: 0
   combatRoom: 1
   nextSpawnPoint: {fileID: 64764359}
-  eliteChance: 0
+  eliteChance: 10
   EliteMobs:
   - {fileID: 6856061814912900793, guid: c27124f06211940439b3ae1a5b3d8f8b, type: 3}
 --- !u!212 &1340000321
@@ -69045,7 +69071,7 @@ MonoBehaviour:
   positionY: 0
   combatRoom: 1
   nextSpawnPoint: {fileID: 12126837}
-  eliteChance: 0
+  eliteChance: 10
   EliteMobs:
   - {fileID: 6856061814912900793, guid: c27124f06211940439b3ae1a5b3d8f8b, type: 3}
 --- !u!212 &2091028718
@@ -70792,7 +70818,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 2127628478}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 75f4ac6149e969d418bceb714263bcd0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

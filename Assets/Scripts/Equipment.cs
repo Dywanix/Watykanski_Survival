@@ -185,7 +185,7 @@ public class Equipment : MonoBehaviour
                 playerStats.Item34();
                 break;
             case 35:
-                playerStats.GainTools(6);
+                playerStats.GainTools(5);
                 break;
             case 36:
                 playerStats.GainPotions(1);
