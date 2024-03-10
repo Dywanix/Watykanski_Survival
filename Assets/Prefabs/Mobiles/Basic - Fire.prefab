@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basic - Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 8847792102257715462, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
+      propertyPath: m_Color.b
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 8847792102257715462, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
     - target: {fileID: 8857879497344376483, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: m_IsActive
       value: 1

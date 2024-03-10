@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grenade - Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 1498974709519024822, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498974709519024822, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
     - target: {fileID: 1506810302691521811, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
       propertyPath: m_IsActive
       value: 1

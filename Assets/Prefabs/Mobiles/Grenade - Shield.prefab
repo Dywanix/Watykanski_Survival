@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grenade - Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 1498974709519024822, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498974709519024822, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
     - target: {fileID: 3261106816899934284, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
       propertyPath: m_RootOrder
       value: 0

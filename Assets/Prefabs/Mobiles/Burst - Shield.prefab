@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 319433156669583871, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
+      propertyPath: m_Color.g
+      value: 0.49019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 319433156669583871, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
+      propertyPath: m_Color.r
+      value: 0.49019608
+      objectReference: {fileID: 0}
     - target: {fileID: 1276209952958146193, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
       propertyPath: m_Name
       value: Burst - Shield

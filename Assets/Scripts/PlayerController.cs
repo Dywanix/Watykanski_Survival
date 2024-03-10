@@ -13,9 +13,9 @@ public class PlayerController : MonoBehaviour
     public Map map;
 
     [Header("UI")]
-    public TMPro.TextMeshProUGUI healthInfo;
-    public TMPro.TextMeshProUGUI ShieldInfo, ToxicityInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
-    public Image healthBar, dropBar, shieldBar, dischargeBar, posionBar, taskImage, dashImage, abilityImage, gunImage, damageFlash;
+    public GameObject ReloadBar;
+    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, ToxicityInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
+    public Image healthBar, dropBar, shieldBar, dischargeBar, posionBar, taskImage, reloadImage, dashImage, abilityImage, gunImage, damageFlash;
     public RectTransform healthBack, healthFill, healthDrop, shieldBack, shieldFill, shieldDrop;
 
     [Header("Objects")]
@@ -158,12 +158,14 @@ public class PlayerController : MonoBehaviour
             {
                 task -= Time.deltaTime * SpeedMultiplyer(1f);
                 taskImage.fillAmount = 1 - (task / taskMax);
+                reloadImage.fillAmount = 1 - (task / taskMax);
                 if (Input.GetMouseButtonDown(0) && reloading && eq.guns[eq.equipped].bulletsLeft > 0)
                 {
                     reloading = false;
-                    NewTask(0.1f);
+                    ReloadBar.SetActive(false);
+                    //NewTask(0.1f);
                     Shoot(0f);
-                    task += eq.guns[eq.equipped].fireRate;
+                    NewTask(eq.guns[eq.equipped].fireRate);
                 }
             }
         }
@@ -816,6 +818,7 @@ public class PlayerController : MonoBehaviour
         {
             if (eq.guns[eq.equipped].infiniteAmmo || eq.guns[eq.equipped].ammo > 0)
             {
+                ReloadBar.SetActive(true);
                 reloading = true;
                 NewTask(eq.guns[eq.equipped].reloadTime);
             }
@@ -837,7 +840,10 @@ public class PlayerController : MonoBehaviour
                 if (eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] > 0)
                     eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 4;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].MagazineTotalSize())
+                {
                     reloading = false;
+                    ReloadBar.SetActive(false);
+                }
                 else
                 {
                     NewTask(eq.guns[eq.equipped].reloadTime);
@@ -856,7 +862,10 @@ public class PlayerController : MonoBehaviour
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
                 eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 4;
                 if (eq.guns[eq.equipped].bulletsLeft >= eq.guns[eq.equipped].MagazineTotalSize() || eq.guns[eq.equipped].ammo <= 0)
+                {
                     reloading = false;
+                    ReloadBar.SetActive(false);
+                }
                 else
                 {
                     NewTask(eq.guns[eq.equipped].reloadTime);
@@ -882,7 +891,10 @@ public class PlayerController : MonoBehaviour
             eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].overload;
             eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10] * eq.guns[eq.equipped].MagazineTotalSize() / 6;
             eq.guns[eq.equipped].bulletsLeft += eq.guns[eq.equipped].Accessories[10 + bp.ALibrary.count] * eq.guns[eq.equipped].MagazineTotalSize() / 4;
-            reloading = false;
+            {
+                reloading = false;
+                ReloadBar.SetActive(false);
+            }
         }
         DisplayAmmo();
     }
