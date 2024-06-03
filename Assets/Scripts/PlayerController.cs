@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public float dHealth, health, maxShield, dShield, shield, poison, poisonCap,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown,
     grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
-    public int level = 1, dayCount = 1, luck, toxicityLevel;
+    public int level = 1, experience, dayCount = 1, luck, toxicityLevel;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, tempi2, bonusTool;
@@ -498,7 +498,7 @@ public class PlayerController : MonoBehaviour
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
     }
 
-    public void Fire(float accuracy_change = 0f)
+    public void Fire(float accuracy_change = 0f)//
     {
         if (eq.guns[eq.equipped].targetArea)
         {
@@ -1146,6 +1146,16 @@ public class PlayerController : MonoBehaviour
             GainGold(5);
             Destroy(other.gameObject);
         }
+        else if (other.transform.tag == "Experience")
+        {
+            GainXP(1);
+            Destroy(other.gameObject);
+        }
+        else if (other.transform.tag == "Experience5")
+        {
+            GainXP(5);
+            Destroy(other.gameObject);
+        }
         else if (other.transform.tag == "Tools")
         {
             GainTools(1);
@@ -1328,6 +1338,11 @@ public class PlayerController : MonoBehaviour
 
         gold += amount;
         goldInfo.text = gold.ToString("0");
+    }
+
+    void GainXP(int amount)
+    {
+        experience += amount;
     }
 
     public void SpendGold(float amount)

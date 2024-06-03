@@ -13,7 +13,7 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState CurrentState = EnemyState.Chase;
-    public GameObject Player, Scrap, damageTook, Projectal;
+    public GameObject Player, Scrap, Orb, Orb5, damageTook, Projectal;
     public GameObject[] Items;
     public PlayerController playerStats;
     public Rigidbody2D Body, playerBody, Dir;
@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
     public LeftOver DeathDrop;
     public float scrapChance, itemChance;
     public int scrapCount, itemCount;
+    public int experienceDroped;
 
     [Header("Graficzne")]
     public GameObject Smoke;
@@ -463,13 +464,19 @@ public class Enemy : MonoBehaviour
         {
             dead = true;
 
+            experienceDroped = weight;
             playerStats.EnemySlained();
 
             for (int i = 0; i < scrapCount; i++)
             {
                 if (scrapChance >= Random.Range(0f, 1f))
+                {
                     DropScrap();
+                    experienceDroped -= 1; 
+                }
             }
+
+            DropExperience();
 
             for (int i = 0; i < itemCount; i++)
             {
@@ -514,6 +521,26 @@ public class Enemy : MonoBehaviour
         GameObject scrap = Instantiate(Scrap, Body.position, transform.rotation);
         Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
         scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
+    }
+
+    void DropExperience()
+    {
+        while (experienceDroped >= 5)
+        {
+            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+            GameObject orb = Instantiate(Orb5, Body.position, transform.rotation);
+            Rigidbody2D orb_body = orb.GetComponent<Rigidbody2D>();
+            orb_body.AddForce(Sight.up * Random.Range(1.1f, 4.6f), ForceMode2D.Impulse);
+
+            experienceDroped -= 5;
+        }
+        for (int i = 0; i < experienceDroped; i++)
+        {
+            Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+            GameObject orb = Instantiate(Orb, Body.position, transform.rotation);
+            Rigidbody2D orb_body = orb.GetComponent<Rigidbody2D>();
+            orb_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
+        }
     }
 
     void DropItem()

@@ -1163,6 +1163,8 @@ MonoBehaviour:
   CurrentState: 0
   Player: {fileID: 0}
   Scrap: {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
+  Orb: {fileID: 8704596369079724099, guid: b25f78980a7ecc242b1b70d6d6f8a204, type: 3}
+  Orb5: {fileID: 6759922523893235030, guid: c8e6b4ba47c163c4a9a9eb38edb3e273, type: 3}
   damageTook: {fileID: 4695042375447321633, guid: b72dee5f414d4d1408a77c17d349d58b, type: 3}
   Projectal: {fileID: 6559750192261573265, guid: a4b87a610f6d52c48990c3373114c99d, type: 3}
   Items:
@@ -1173,6 +1175,7 @@ MonoBehaviour:
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 2318759274309051530, guid: 1cd4bd986c5ecae4ebe307483af6d8b0, type: 3}
+  - {fileID: 6759922523893235030, guid: c8e6b4ba47c163c4a9a9eb38edb3e273, type: 3}
   playerStats: {fileID: 0}
   Body: {fileID: 6877427549038543848}
   playerBody: {fileID: 0}
@@ -1223,6 +1226,7 @@ MonoBehaviour:
   itemChance: 0.042
   scrapCount: 1
   itemCount: 1
+  experienceDroped: 0
   Smoke: {fileID: 7152237756065921264}
   FireExplosion: {fileID: 9215768205720018552, guid: 2da69099b82e2c84da291631e6d1ecd5, type: 3}
   CurseBullet: {fileID: 3674245068203054096, guid: c24f5ea2081f85f42b52e95e0055cbac, type: 3}
