@@ -179,7 +179,7 @@ public class Equipment : MonoBehaviour
             case 33:
                 Accessories[Random.Range(0, bp.ALibrary.count)]++;
                 Accessories[Random.Range(0, bp.ALibrary.count)]++;
-                playerStats.GainTools(10);
+                playerStats.GainTools(14);
                 break;
             case 34:
                 playerStats.Item34();
@@ -363,7 +363,7 @@ public class Equipment : MonoBehaviour
             bullet_body.AddForce(Barrel.up * Random.Range(16f, 18.2f), ForceMode2D.Impulse);
 
             firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(1.2f) - 0.16f);
+            firedBullet.damage = damage * (playerStats.DamageDealtMultiplyer(1.27f) - 0.16f);
         }
     }
 

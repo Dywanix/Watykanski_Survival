@@ -14,13 +14,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("UI")]
     public GameObject ReloadBar;
-    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, ToxicityInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
-    public Image healthBar, dropBar, shieldBar, dischargeBar, posionBar, taskImage, reloadImage, dashImage, abilityImage, gunImage, damageFlash;
+    public TMPro.TextMeshProUGUI healthInfo, ShieldInfo, ToxicityInfo, LevelInfo, magazineInfo, ammoInfo, goldInfo, toolsInfo, potionsInfo, DashCharge, GrenadeCharge;
+    public Image healthBar, dropBar, shieldBar, dischargeBar, posionBar, experienceBar, taskImage, reloadImage, dashImage, abilityImage, gunImage, damageFlash;
     public RectTransform healthBack, healthFill, healthDrop, shieldBack, shieldFill, shieldDrop;
 
     [Header("Objects")]
     public Bullet firedBullet;
-    public GameObject Grenade, CurrentBullet, DamageFlash;
+    public GameObject Grenade, CurrentBullet, DamageFlash, SkillPointAviable;
     public GrenadeEffects Effects;
     private EnemyBullet collidedBullet;
 
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public float dHealth, health, maxShield, dShield, shield, poison, poisonCap,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown,
     grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
-    public int level = 1, experience, dayCount = 1, luck, toxicityLevel;
+    public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, tempi2, bonusTool;
@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
         }
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
+        expRequired = 120;
 
         UpdateBars();
     }
@@ -150,6 +151,8 @@ public class PlayerController : MonoBehaviour
                 GrenadeCast();
             if (Input.GetKeyDown(KeyCode.V))
                 DrinkPotion();
+            if (Input.GetKeyDown(KeyCode.P) && skillPoints > 0)
+                LearnPerk();
             if (task <= 0)
             {
                 Action();
@@ -248,12 +251,12 @@ public class PlayerController : MonoBehaviour
 
     void UpdateBars()
     {
-        healthBack.sizeDelta = new Vector2(maxHealth * 3 + 20, 45);
-        healthFill.sizeDelta = new Vector2(maxHealth * 3, 30);
-        healthDrop.sizeDelta = new Vector2(maxHealth * 3, 30);
-        shieldBack.sizeDelta = new Vector2(maxShield * 2 + 20, 30);
-        shieldFill.sizeDelta = new Vector2(maxShield * 2, 15);
-        shieldDrop.sizeDelta = new Vector2(maxShield * 2, 15);
+        healthBack.sizeDelta = new Vector2(maxHealth * 2 + 50, 45);
+        healthFill.sizeDelta = new Vector2(maxHealth * 2 + 30, 30);
+        healthDrop.sizeDelta = new Vector2(maxHealth * 2 + 30, 30);
+        shieldBack.sizeDelta = new Vector2(maxShield + 60, 30);
+        shieldFill.sizeDelta = new Vector2(maxShield + 40, 15);
+        shieldDrop.sizeDelta = new Vector2(maxShield + 40, 15);
     }
 
     void FixedUpdate()
@@ -808,7 +811,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             FireDirection(Random.Range(0f, 360f), 0f);
-            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.62f / SpeedMultiplyer(1.41f));
+            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.49f / SpeedMultiplyer(1.48f));
         }
     }
 
@@ -1129,7 +1132,7 @@ public class PlayerController : MonoBehaviour
         temp = damageBonus;
         temp *= 1f + wrath;
         if (eq.Items[19])
-            temp *= 1.36f;
+            temp *= 1.4f;
         temp *= 1f + (temp - 1f) * efficiency;
         return temp;
     }
@@ -1234,7 +1237,7 @@ public class PlayerController : MonoBehaviour
         dayCount++;
         //RestoreHealth(40 + maxHealth * 0.5f);
         wrath = 0;
-        LevelUp();
+        //LevelUp();
     }
 
     public void Nightfall()
@@ -1284,6 +1287,20 @@ public class PlayerController : MonoBehaviour
     public void LevelUp()
     {
         level++;
+        GainHP(5f);
+        GainDMG(0.005f);
+        GainFR(0.005f);
+        skillPoints++;
+        SkillPointAviable.SetActive(true);
+        LevelInfo.text = level.ToString("0");
+    }
+
+    void LearnPerk()
+    {
+        skillPoints--;
+        if (skillPoints == 0)
+            SkillPointAviable.SetActive(false);
+        map.ChoosePrize(2);
     }
 
     public void GainHP(float value)
@@ -1343,6 +1360,13 @@ public class PlayerController : MonoBehaviour
     void GainXP(int amount)
     {
         experience += amount;
+        if (experience >= expRequired)
+        {
+            experience -= expRequired;
+            LevelUp();
+            expRequired = 40 * (level + 2);
+        }
+        experienceBar.fillAmount = (experience * 1f) / (expRequired * 1f);
     }
 
     public void SpendGold(float amount)

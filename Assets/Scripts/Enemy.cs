@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
     public LeftOver DeathDrop;
     public float scrapChance, itemChance;
     public int scrapCount, itemCount;
-    public int experienceDroped;
+    public int experienceDroped, BigOrbs;
 
     [Header("Graficzne")]
     public GameObject Smoke;
@@ -464,7 +464,7 @@ public class Enemy : MonoBehaviour
         {
             dead = true;
 
-            experienceDroped = weight;
+            experienceDroped = Random.Range(weight * 2 / 5, weight * 3 / 5 + 1);
             playerStats.EnemySlained();
 
             for (int i = 0; i < scrapCount; i++)
@@ -525,13 +525,14 @@ public class Enemy : MonoBehaviour
 
     void DropExperience()
     {
-        while (experienceDroped >= 5)
+        while (experienceDroped >= 5 + BigOrbs)
         {
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject orb = Instantiate(Orb5, Body.position, transform.rotation);
             Rigidbody2D orb_body = orb.GetComponent<Rigidbody2D>();
             orb_body.AddForce(Sight.up * Random.Range(1.1f, 4.6f), ForceMode2D.Impulse);
 
+            BigOrbs++;
             experienceDroped -= 5;
         }
         for (int i = 0; i < experienceDroped; i++)

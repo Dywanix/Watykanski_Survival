@@ -21,6 +21,8 @@ TagManager:
   - Item
   - NeutralProjectal
   - Potion
+  - Experience
+  - Experience5
   layers:
   - Default
   - TransparentFX
