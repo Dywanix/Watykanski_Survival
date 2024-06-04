@@ -6,10 +6,12 @@ public class Arena : MonoBehaviour
 {
     [Header("Scripts")]
     public Map map;
+    public VendingMachine VaningMachineScript;
 
     [Header("Objects")]
     public Transform SpawnPoint;
     public GameObject[] Mobs;
+    public GameObject VendingMachineObject;
 
     [Header("Stats")]
     public int strength;
@@ -19,7 +21,7 @@ public class Arena : MonoBehaviour
     void Start()
     {
         //map = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(Map)) as Map;
-        //map.playerStats.Nightfall();
+        map.playerStats.Nightfall();
         SpawnMobs();
     }
 
@@ -29,6 +31,7 @@ public class Arena : MonoBehaviour
         {
             Spawn();
         }
+        Invoke("CheckForClear", 15f);
     }
 
     void Spawn()
@@ -42,5 +45,24 @@ public class Arena : MonoBehaviour
 
         Instantiate(Mobs[roll], SpawnPoint.position, transform.rotation);
         strength -= mobsStrength[roll];
+    }
+
+    void CheckForClear()
+    {
+        if (GameObject.FindGameObjectWithTag("Enemy") == null)
+            EndRound();
+        else Invoke("CheckForClear", 2f);
+    }
+
+    void EndRound()
+    {
+        //fight = false;
+        //SpawnPrize();
+        //RightDoors.SetActive(false);
+        //map.level++;
+        //map.RoundBar.SetActive(false);
+        map.playerStats.NewDay();
+        VendingMachineObject.SetActive(true);
+        VaningMachineScript.SetCabinet();
     }
 }

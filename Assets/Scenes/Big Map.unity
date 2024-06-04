@@ -2280,6 +2280,11 @@ Transform:
   m_Father: {fileID: 276443172}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!1 &50638922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4771524090323499908, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+  m_PrefabInstance: {fileID: 537729007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &53028909
 GameObject:
   m_ObjectHideFlags: 0
@@ -13363,6 +13368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vending Machine
       objectReference: {fileID: 0}
+    - target: {fileID: 4771524090323499908, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 371af37be919fee44865c3a84ae5107e, type: 3}
 --- !u!1 &547774175
@@ -20873,7 +20882,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -58708,22 +58717,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 1906895912}
+  VaningMachineScript: {fileID: 1906895905}
   SpawnPoint: {fileID: 322027138}
   Mobs:
   - {fileID: 8003306628389879400, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
   - {fileID: 8003306628389879400, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
-  - {fileID: 8003306628389879400, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
+  - {fileID: 1602015650354642528, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
   - {fileID: 2271998805131779320, guid: bda4d8a05859aaa4a939c75afd60f7a8, type: 3}
   - {fileID: 7174967640791530049, guid: b61c1cca56dac894c8f83e26b2c25d46, type: 3}
   - {fileID: 1276209952958146193, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
   - {fileID: 1276209952958146193, guid: 39ca95629adcd294aac0fe10911a07c5, type: 3}
-  - {fileID: 1527872337732246289, guid: a1a25699d63b8734398f4b275fc8ed44, type: 3}
+  - {fileID: 1731861704592116321, guid: 484cb7c9e60f64646875312ec8cf3f44, type: 3}
   - {fileID: 1785227626596713186, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
   - {fileID: 1785227626596713186, guid: 6b09a510cda06ee4c9b07788bc7bcfd9, type: 3}
   - {fileID: 78168120246392280, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
-  - {fileID: 78168120246392280, guid: d5f96ccc14955394cbaac6e58da7b1d3, type: 3}
-  strength: 125
-  mobsStrength: 070000000700000007000000090000000900000009000000090000000c0000000b0000000b0000000d0000000d000000
+  - {fileID: 1602015650354642528, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
+  - {fileID: 1602015650354642528, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
+  - {fileID: 1602015650354642528, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
+  - {fileID: 1602015650354642528, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
+  - {fileID: 1731861704592116321, guid: 484cb7c9e60f64646875312ec8cf3f44, type: 3}
+  - {fileID: 1731861704592116321, guid: 484cb7c9e60f64646875312ec8cf3f44, type: 3}
+  - {fileID: 6069382999117022169, guid: 7a183c700670f95418657522dbd5c0e8, type: 3}
+  - {fileID: 8535217767628965550, guid: b69fc6f00bdc1b9478bfa97f03f6ba0d, type: 3}
+  VendingMachineObject: {fileID: 50638922}
+  strength: 300
+  mobsStrength: 07000000070000000500000009000000090000000900000009000000050000000b0000000b0000000d0000000500000005000000050000000500000005000000050000000f0000000a000000
   roll: 0
 --- !u!1 &1914043909
 GameObject:

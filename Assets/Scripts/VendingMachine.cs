@@ -53,7 +53,7 @@ public class VendingMachine : MonoBehaviour
         UpdateCabinet();
     }
 
-    void SetCabinet()
+    public void SetCabinet()
     {
         for (int i = 0; i < slotFull.Length; i++)
         {
