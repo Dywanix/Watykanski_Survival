@@ -188,6 +188,7 @@ public class PrizeChoice : MonoBehaviour
         else playerStats.eq.Accessories[rolls[choice]]++;
         playerStats.free = true;
         playerStats.menuOpened = false;
+        Time.timeScale = 1f;
         Hud.SetActive(false);
     }
 }

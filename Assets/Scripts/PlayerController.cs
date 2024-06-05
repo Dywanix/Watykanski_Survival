@@ -131,8 +131,8 @@ public class PlayerController : MonoBehaviour
         }
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
-        expRequired = 120;
-
+        //expRequired = 120;
+        expRequired = 5;
         UpdateBars();
     }
 
@@ -1290,8 +1290,10 @@ public class PlayerController : MonoBehaviour
         GainHP(5f);
         GainDMG(0.005f);
         GainFR(0.005f);
-        skillPoints++;
-        SkillPointAviable.SetActive(true);
+        Time.timeScale = 0f;
+        //skillPoints++;
+        //SkillPointAviable.SetActive(true);
+        map.ChoosePrize(2);
         LevelInfo.text = level.ToString("0");
     }
 
