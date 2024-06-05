@@ -16,18 +16,25 @@ public class Arena : MonoBehaviour
     [Header("Stats")]
     public int strength;
     public int[] mobsStrength;
-    public int roll;
+    public int roll, tempi;
 
     void Start()
     {
         //map = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(Map)) as Map;
+        Invoke("NextRound", 5f);
+    }
+
+    void NextRound()
+    {
+        VendingMachineObject.SetActive(false);
         map.playerStats.Nightfall();
         SpawnMobs();
     }
 
     void SpawnMobs()
     {
-        while (strength > 0)
+        tempi = strength;
+        while (tempi > 0)
         {
             Spawn();
         }
@@ -44,7 +51,7 @@ public class Arena : MonoBehaviour
         roll = Random.Range(0, Mobs.Length);
 
         Instantiate(Mobs[roll], SpawnPoint.position, transform.rotation);
-        strength -= mobsStrength[roll];
+        tempi -= mobsStrength[roll];
     }
 
     void CheckForClear()
@@ -64,5 +71,7 @@ public class Arena : MonoBehaviour
         map.playerStats.NewDay();
         VendingMachineObject.SetActive(true);
         VaningMachineScript.SetCabinet();
+        strength += 50 + strength / 10;
+        Invoke("NextRound", 30f);
     }
 }

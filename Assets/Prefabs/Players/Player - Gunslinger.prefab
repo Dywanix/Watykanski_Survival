@@ -3688,9 +3688,6 @@ MonoBehaviour:
   maxHealth: 80
   dHealth: 0
   health: 80
-  maxShield: 100
-  dShield: 0
-  shield: 0
   poison: 0
   poisonCap: 100
   damageBonus: 1.08
@@ -3718,6 +3715,11 @@ MonoBehaviour:
   toxicityLevel: 5
   undamaged: 0
   invulnerable: 0
+  maxShield: 20
+  dShield: 20
+  shield: 20
+  rechargeDelay: 6
+  rechargeTimer: 0
   bloodMoney: 0
   builtShield: 0
   wrath: 0

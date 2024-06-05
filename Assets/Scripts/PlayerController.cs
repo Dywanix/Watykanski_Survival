@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Stats")]
     public float maxHealth;
-    public float dHealth, health, maxShield, dShield, shield, poison, poisonCap,
+    public float dHealth, health, poison, poisonCap,
     damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown,
     grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
     public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel;
@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
     int tempi, tempi2, bonusTool;
     float temp, temp2, temp3, temp4, flashA;
     bool greenF;
+
+    [Header("Shield")]
+    public float maxShield;
+    public float dShield, shield, rechargeDelay, rechargeTimer;
 
     [Header("Items")]
     public int bloodMoney;
@@ -131,8 +135,8 @@ public class PlayerController : MonoBehaviour
         }
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
-        //expRequired = 120;
-        expRequired = 5;
+        expRequired = 80;
+        //expRequired = 5;
         UpdateBars();
     }
 
@@ -147,6 +151,10 @@ public class PlayerController : MonoBehaviour
             move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             Movement();
             Aim();
+            if (rechargeTimer > 0f)
+                rechargeTimer -= Time.deltaTime;
+            else if (shield < maxShield)
+                GainShield(maxShield * 0.12f * Time.deltaTime);
             if (Input.GetMouseButtonDown(1))
                 GrenadeCast();
             if (Input.GetKeyDown(KeyCode.V))
@@ -254,9 +262,9 @@ public class PlayerController : MonoBehaviour
         healthBack.sizeDelta = new Vector2(maxHealth * 2 + 50, 45);
         healthFill.sizeDelta = new Vector2(maxHealth * 2 + 30, 30);
         healthDrop.sizeDelta = new Vector2(maxHealth * 2 + 30, 30);
-        shieldBack.sizeDelta = new Vector2(maxShield + 60, 30);
-        shieldFill.sizeDelta = new Vector2(maxShield + 40, 15);
-        shieldDrop.sizeDelta = new Vector2(maxShield + 40, 15);
+        shieldBack.sizeDelta = new Vector2(maxShield * 2 + 40, 30);
+        shieldFill.sizeDelta = new Vector2(maxShield * 2 + 20, 15);
+        shieldDrop.sizeDelta = new Vector2(maxShield * 2 + 20, 15);
     }
 
     void FixedUpdate()
@@ -1043,6 +1051,7 @@ public class PlayerController : MonoBehaviour
 
     void Damaged()
     {
+        rechargeTimer = rechargeDelay;
         greenF = false;
         invulnerable = true;
         playerSprite.color = new Color(1f, 0f, 0f, 1f);
@@ -1366,7 +1375,7 @@ public class PlayerController : MonoBehaviour
         {
             experience -= expRequired;
             LevelUp();
-            expRequired = 40 * (level + 2);
+            expRequired = 20 + 60 * level;
         }
         experienceBar.fillAmount = (experience * 1f) / (expRequired * 1f);
     }
