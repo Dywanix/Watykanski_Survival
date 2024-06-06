@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: health
-      value: 102
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: ranged
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: weight
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: accuracy
@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: maxHealth
-      value: 102
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: itemChance
-      value: 0.03
+      value: 0.018
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: attackRange
@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: scrapChance
-      value: 0.15
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: attackDamage
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: movementSpeed
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: aimingMovement

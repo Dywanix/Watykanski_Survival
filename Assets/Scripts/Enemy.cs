@@ -106,23 +106,27 @@ public class Enemy : MonoBehaviour
             playerBody = Player.GetComponent<Rigidbody2D>();
             playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         }
-        else if (!agro && Vector3.Distance(transform.position, Player.transform.position) <= 15f + leashRange)
+        /*else if (!agro && Vector3.Distance(transform.position, Player.transform.position) <= 15f + leashRange)
             agro = true;
-        else leashRange += 0.3f * Time.deltaTime;
+        else leashRange += 0.3f * Time.deltaTime;*/
         if (stun <= 0f)
         {
             if (attackTimer >= 0f && !repositioning)
                 attackTimer -= Time.deltaTime * SpeedEfficiency();
             if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange && !repositioning)
                 Attack();
-            if (agro)
+            if (flank)
+                Flank();
+            else if (Vector3.Distance(transform.position, Player.transform.position) >= minRange)
+                Chase();
+            /*if (agro)
             {
                 if (flank)
                     Flank();
                 else if (Vector3.Distance(transform.position, Player.transform.position) >= minRange)
                     Chase();
             }
-            /*switch (CurrentState)
+            switch (CurrentState)
             {
                 case (EnemyState.Chase):
                     Chase();
@@ -470,7 +474,7 @@ public class Enemy : MonoBehaviour
         {
             dead = true;
 
-            experienceDroped = Random.Range(weight * 2 / 4, weight * 7 / 10 + 1);
+            experienceDroped = Random.Range(weight * 3 / 5, weight * 4 / 5 + 1);
             playerStats.EnemySlained();
 
             for (int i = 0; i < scrapCount; i++)

@@ -58733,10 +58733,15 @@ MonoBehaviour:
   - {fileID: 4717215153252785123, guid: 2b11927c68fa0584b9089850626f7c90, type: 3}
   - {fileID: 4717215153252785123, guid: 2b11927c68fa0584b9089850626f7c90, type: 3}
   VendingMachineObject: {fileID: 50638922}
-  strength: 250
+  active: 0
+  strength: 150
   mobsStrength: 05000000050000000500000005000000050000000500000005000000050000000f0000000a0000000700000007000000
   roll: 0
   tempi: 0
+  rest: 0
+  time: 25
+  frequency: 0
+  delay: 0
 --- !u!1 &1914043909
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,9 +14,11 @@ public class Arena : MonoBehaviour
     public GameObject VendingMachineObject;
 
     [Header("Stats")]
+    public bool active;
     public int strength;
     public int[] mobsStrength;
-    public int roll, tempi;
+    public int roll, tempi, rest;
+    public float time, frequency, delay;
 
     void Start()
     {
@@ -24,29 +26,56 @@ public class Arena : MonoBehaviour
         Invoke("NextRound", 5f);
     }
 
+    void Update()
+    {
+        if (active)
+        {
+            delay -= Time.deltaTime;
+            if (delay < 0f)
+            {
+                Spawn();
+                delay += mobsStrength[roll] * frequency;
+                rest -= mobsStrength[roll];
+                if (rest <= 0)
+                {
+                    active = false;
+                    Invoke("CheckForClear", 5f);
+                }
+            }
+        }
+    }
+
     void NextRound()
     {
         VendingMachineObject.SetActive(false);
         map.playerStats.Nightfall();
+        active = true;
         SpawnMobs();
     }
 
     void SpawnMobs()
     {
-        tempi = strength;
+        tempi = strength / 5;
+        rest = strength - tempi;
+
+        frequency = time / rest;
+        delay = frequency * tempi * 0.8f;
+
         while (tempi > 0)
         {
             Spawn();
+            tempi -= mobsStrength[roll];
         }
-        Invoke("CheckForClear", 15f);
+
+        //Invoke("CheckForClear", 15f);
     }
 
     void Spawn()
     {
         do
         {
-            SpawnPoint.position = new Vector3(Random.Range(-42f, 42f), Random.Range(-42f, 42f), 0f);
-        } while (Vector3.Distance(transform.position, SpawnPoint.position) <= 12.5f);
+            SpawnPoint.position = new Vector3(Random.Range(-41f, 41f), Random.Range(-41f, 41f), 0f);
+        } while (Vector3.Distance(transform.position, SpawnPoint.position) <= 13.5f);
 
         roll = Random.Range(0, Mobs.Length);
 
@@ -71,7 +100,8 @@ public class Arena : MonoBehaviour
         map.playerStats.NewDay();
         VendingMachineObject.SetActive(true);
         VaningMachineScript.SetCabinet();
-        strength += 50 + strength / 10;
+        strength += 60 + strength / 10;
+        time += 2f;
         Invoke("NextRound", 30f);
     }
 }
