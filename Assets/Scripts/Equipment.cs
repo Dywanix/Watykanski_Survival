@@ -347,7 +347,7 @@ public class Equipment : MonoBehaviour
         waveBullet = bullet.GetComponent(typeof(MultipleBullets)) as MultipleBullets;
         if (guns[equipped].targetArea && Vector3.Distance(playerStats.transform.position, new Vector2(playerStats.mousePos[0], playerStats.mousePos[1])) <= guns[equipped].range * 24f)
             waveBullet.bulletForce = 20f * Random.Range(1.07f, 1.08f) * Vector3.Distance(playerStats.transform.position, new Vector2(playerStats.mousePos[0], playerStats.mousePos[1])) / (guns[equipped].range * 23f);
-        else waveBullet.bulletForce = 20f * Random.Range(0.95f, 1.05f);
+        else waveBullet.bulletForce = playerStats.firedBullet.force;
         waveBullet.BulletShard = guns[equipped].bulletPrefab[Random.Range(0, guns[equipped].bulletPrefab.Length)];
     }
 

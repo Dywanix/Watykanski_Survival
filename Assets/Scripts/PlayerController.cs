@@ -577,6 +577,7 @@ public class PlayerController : MonoBehaviour
                     waveBullet.BulletShard = SetBulletPrefab();
                     waveBullet.damageEfficiency = (0.94f + 0.26f * eq.Items[12]) / (eq.Items[12] + 1);
                     SetBullet(1f);
+                    waveBullet.bulletForce = firedBullet.force;
                     bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
                 }
                 else
