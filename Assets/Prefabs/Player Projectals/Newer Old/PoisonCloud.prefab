@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 344152450577657277, guid: 59bf7286ae3a4e04ab424b3d4110eb71, type: 3}
       propertyPath: delay
-      value: 0.23
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 344152450577657277, guid: 59bf7286ae3a4e04ab424b3d4110eb71, type: 3}
       propertyPath: frequency
-      value: 0.25
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 344152450577657277, guid: 59bf7286ae3a4e04ab424b3d4110eb71, type: 3}
       propertyPath: BulletTick
@@ -77,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4181359238106528885, guid: 59bf7286ae3a4e04ab424b3d4110eb71, type: 3}
       propertyPath: duration
-      value: 2.5
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 4181359238106528885, guid: 59bf7286ae3a4e04ab424b3d4110eb71, type: 3}
       propertyPath: damageLess

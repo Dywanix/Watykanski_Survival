@@ -7,6 +7,7 @@ public class Equipment : MonoBehaviour
 {
     public PlayerController playerStats;
     public Backpack bp;
+    public Camera playerCamera;
     public bool gambler;
     public GunsLibrary Library;
     public ItemsLibrary ILibrary;
@@ -23,10 +24,15 @@ public class Equipment : MonoBehaviour
     float temp;
     int tempi, roll;
 
-    // On Hit
+    [Header("On Hit")]
     public GameObject Peacemaker, Boomerange, Wave, Laser, Orb;
     public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, laserCharges, orbCharges;
     public MultipleBullets waveBullet;
+
+    [Header("Active Items")]
+    public float itemActivationRate;
+    public GameObject ScissorsProjectal, KnifeProjectal, ImmolateArea;
+    public float scissorsThrowCooldown, knifeThrowCooldown, immolateCooldown;
 
     // -- items
     //public GameObject[] Drones;
@@ -37,7 +43,7 @@ public class Equipment : MonoBehaviour
     public int[] Items;
     public int[] ItemList;
     public int itemsCollected;
-    public GameObject DeflectProjectal, KnifeProjectal;
+    public GameObject DeflectProjectal, DischargeObject;
     public TMPro.TextMeshProUGUI Tooltip;
 
     //public GameObject Saw, Laser;
@@ -48,6 +54,7 @@ public class Equipment : MonoBehaviour
         playerStats.gunImage.sprite = guns[equipped].gunSprite;
         equippedGun.sprite = guns[equipped].holdingSprite;
         playerStats.DisplayAmmo();
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent(typeof(Camera)) as Camera;
         if (gambler)
         {
             tempi = 3;
@@ -72,6 +79,42 @@ public class Equipment : MonoBehaviour
             PickUpItem(i);
         }*/
     }
+
+    void Update()
+    {
+        if (!playerStats.day)
+        {
+            if (Items[33] > 0)
+                scissorsThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.36f) * (1f + playerStats.cooldownReduction * 0.28f);
+            if (scissorsThrowCooldown <= 0f)
+            {
+                ScissorsThrow();
+
+                temp = 4.8f / (0.88f + 0.12f * Items[33]);
+                scissorsThrowCooldown += temp;
+            }
+
+            if (Items[38] > 0)
+                knifeThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.73f) * (1f + playerStats.cooldownReduction * 0.42f);
+            if (knifeThrowCooldown <= 0f)
+            {
+                KnifeThrow();
+
+                temp = 4.2f / (0.78f + 0.22f * Items[38]);
+                knifeThrowCooldown += temp;
+            }
+
+            if (Items[39] > 0)
+                immolateCooldown -= Time.deltaTime * itemActivationRate;
+            if (immolateCooldown <= 0f)
+            {
+                Immolate();
+
+                temp = 0.95f / (0.95f + 0.05f * Items[39]);
+                immolateCooldown += temp;
+            }
+        }
+     }
 
     public void PickUpItem(int which)
     {
@@ -113,6 +156,9 @@ public class Equipment : MonoBehaviour
                 }
                 break;
             case 9:
+                guns[equipped].accuracy /= 1.15f;
+                guns[equipped].range *= 1.15f;
+                playerCamera.orthographicSize++;
                 break;
             case 10:
                 playerStats.GainDMG(0.08f);
@@ -120,10 +166,13 @@ public class Equipment : MonoBehaviour
             case 11:
                 playerStats.GainSC(5);
                 break;
-            case 12:
-                break;
             case 13:
                 playerStats.dashBaseCooldown /= 1.14f;
+                break;
+            case 14:
+                playerStats.GainSC(5);
+                if (Items[14] == 1)
+                    playerStats.emergencyShields = true;
                 break;
             case 15:
                 playerStats.grenadeBaseCooldown /= 1.11f;
@@ -141,10 +190,16 @@ public class Equipment : MonoBehaviour
                 break;
             case 21:
                 playerStats.GainDMG(0.08f);
-                playerStats.forceIncrease += 0.2f;
+                playerStats.forceIncrease += 0.16f;
+                break;
+            case 22:
+                playerStats.additionalCritDamage += 0.12f;
                 break;
             case 25:
                 playerStats.GainHP(10);
+                break;
+            case 26:
+                playerStats.GainSC(5);
                 break;
             case 27:
                 playerStats.grenadeBaseCooldown /= 1.15f;
@@ -349,32 +404,58 @@ public class Equipment : MonoBehaviour
         }
     }
 
+    public void Discharge(float shieldLost)
+    {
+        temp = 5f + Items[11] + shieldLost;
+        temp *= (1f + 0.13f * playerStats.level) * Items[11];
+
+        GameObject bullet = Instantiate(DischargeObject, Barrel.position, Barrel.rotation);
+
+        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        firedBullet.damage = temp * (playerStats.DamageDealtMultiplyer(1.04f));
+    }
+
     public void ActivateItems()
     {
-        if (Items[38] > 0)
-            Invoke("KnifeThrow", 2.1f);
+        /*if (Items[38] > 0)
+            Invoke("KnifeThrow", 2.1f);*/
+    }
+
+    public void ScissorsThrow()
+    {
+        tempi = 4 + Items[33] * 4;
+        for (int i = 0; i < tempi; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, 0f + (360f / tempi) * i);
+            GameObject blade = Instantiate(ScissorsProjectal, Barrel.position, Barrel.rotation);
+            Rigidbody2D blade_body = blade.GetComponent<Rigidbody2D>();
+            blade_body.AddForce(Barrel.up * Random.Range(17.7f, 19.1f), ForceMode2D.Impulse);
+
+            firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = (10 + 1.1f * playerStats.level + (2 + playerStats.level) * Items[33]) * playerStats.DamageDealtMultiplyer(1.04f);
+        }
     }
 
     void KnifeThrow()
     {
-        if (!playerStats.day)
+        for (int i = 0; i < 1 + Items[38] * 2; i++)
         {
-            for (int i = 0; i < 1 + Items[38] * 2; i++)
-            {
-                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 12f * Items[38] + 12f * i);
-                GameObject knife = Instantiate(KnifeProjectal, Barrel.position, Barrel.rotation);
-                Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
-                knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 12f * Items[38] + 12f * i);
+            GameObject knife = Instantiate(KnifeProjectal, Barrel.position, Barrel.rotation);
+            Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
+            knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
 
-                firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
-                firedBullet.damage = (18 + playerStats.level + (2 + playerStats.level) * Items[38]) * playerStats.DamageDealtMultiplyer(1.05f);
-            }
-
-            temp = 4.2f / (0.78f + 0.22f * Items[38]);
-            temp /= (1f + playerStats.SpeedMultiplyer(0.73f));
-            temp /= (1f + playerStats.cooldownReduction * 0.42f);
-            Invoke("KnifeThrow", temp);
+            firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = (18 + playerStats.level + (3 + playerStats.level) * Items[38]) * playerStats.DamageDealtMultiplyer(1.05f);
         }
+    }
+
+    void Immolate()
+    {
+        GameObject fire = Instantiate(ImmolateArea, Barrel.position, Barrel.rotation);
+
+        firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
+        firedBullet.damage = (0.5f + 0.02f * playerStats.level + (6.2f + 0.37f * playerStats.level + 0.03f * playerStats.maxHealth) * Items[39]) * playerStats.DamageDealtMultiplyer(1.08f);
     }
 
     /*void ThrowCaltrops()

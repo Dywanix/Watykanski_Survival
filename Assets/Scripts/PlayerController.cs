@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
     [Header("Stats")]
     public float maxHealth;
     public float dHealth, health, poison, poisonCap,
-    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, dashMaxCharges, dashCharges,
-    grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash, itemActivationRate;
+    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, additionalCritDamage, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, dashMaxCharges, dashCharges,
+    grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
     public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
@@ -54,7 +54,8 @@ public class PlayerController : MonoBehaviour
     [Header("Items")]
     public int adrenalineStacks;
     public int adrenalineCharges, bloodMoney, builtShield;
-    public float wrath, shieldCapacitor;
+    public float wrath, shieldCapacitor, focus;
+    public bool emergencyShields;
 
     [Header("Resources")]
     public float gold;
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
     [Header("Special Bullets")]
     public bool[] effectOn;
     public GameObject[] SpecialBullets;
+    public GameObject[] ParallelBullets;
+    public MultipleBullets waveBullet;
 
     public SpriteRenderer playerSprite;
 
@@ -217,7 +220,7 @@ public class PlayerController : MonoBehaviour
         if (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
-            abilityImage.fillAmount = 1 - (dashCooldown / maxDashCooldown);
+            dashImage.fillAmount = 1 - (dashCooldown / maxDashCooldown);
         }
         else
         {
@@ -300,7 +303,7 @@ public class PlayerController : MonoBehaviour
 
         if (eq.Items[5] > 0)
         {
-            itemActivationRate += 0.1f + 0.3f * eq.Items[5];
+            eq.itemActivationRate += 0.1f + 0.3f * eq.Items[5];
             Invoke("EndStopwatch", 1.5f + 0.5f * eq.Items[5]);
         }
 
@@ -326,6 +329,12 @@ public class PlayerController : MonoBehaviour
             }
             DisplayAmmo();
         }
+
+        if (eq.Items[33] > 0)
+            eq.ScissorsThrow();
+
+        if (eq.Items[37] > 0)
+            GrenadeDrop();
     }
 
     void Dashed()
@@ -356,7 +365,7 @@ public class PlayerController : MonoBehaviour
 
     void EndStopwatch()
     {
-        itemActivationRate -= 0.1f + 0.3f * eq.Items[5];
+        eq.itemActivationRate -= 0.1f + 0.3f * eq.Items[5];
     }
 
     public void NewTask(float duration)
@@ -531,7 +540,7 @@ public class PlayerController : MonoBehaviour
         Cam.Shake((transform.position - Barrel.position).normalized, eq.guns[eq.equipped].cameraShake, eq.guns[eq.equipped].shakeDuration);
     }
 
-    public void Fire(float accuracy_change = 0f)//
+    public void Fire(float accuracy_change = 0f)
     {
         if (eq.guns[eq.equipped].targetArea)
         {
@@ -558,12 +567,27 @@ public class PlayerController : MonoBehaviour
         {
             for (int i = 0; i < eq.guns[eq.equipped].BulletsFired(); i++)
             {
-                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
-                GameObject bullet = Instantiate(SetBulletPrefab(), Barrel.position, Barrel.rotation);
-                Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-                firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-                SetBullet(1f);
-                bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
+                if (eq.Items[12] > 0)
+                {
+                    Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
+                    GameObject bullet = Instantiate(ParallelBullets[eq.Items[12] - 1], Barrel.position, Barrel.rotation);
+                    Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+                    firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+                    waveBullet = bullet.GetComponent(typeof(MultipleBullets)) as MultipleBullets;
+                    waveBullet.BulletShard = SetBulletPrefab();
+                    waveBullet.damageEfficiency = (0.94f + 0.26f * eq.Items[12]) / (eq.Items[12] + 1);
+                    SetBullet(1f);
+                    bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Gun.rotation + Random.Range(-eq.guns[eq.equipped].accuracy - accuracy_change, eq.guns[eq.equipped].accuracy + accuracy_change));
+                    GameObject bullet = Instantiate(SetBulletPrefab(), Barrel.position, Barrel.rotation);
+                    Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+                    firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+                    SetBullet(1f);
+                    bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
+                }
             }
         }
         if (eq.guns[eq.equipped].Accessories[15] * 0.2f + eq.guns[eq.equipped].Accessories[15 + bp.ALibrary.count] * 0.32f >= Random.Range(0f, 1f))
@@ -573,7 +597,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Items[17] > 0)
-            eq.OnHit(1f + (0.2f + 0.25f * (eq.guns[eq.equipped].critChance + additionalCritChance)) * eq.Items[17]);
+            eq.OnHit(1f + (0.2f + 0.25f * (eq.guns[eq.equipped].critChance + additionalCritChance + focus)) * eq.Items[17]);
         else eq.OnHit(1f);
     }
 
@@ -702,6 +726,9 @@ public class PlayerController : MonoBehaviour
         firedBullet.force = eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f);
         firedBullet.mass = eq.guns[eq.equipped].heft;
         firedBullet.damage = eq.guns[eq.equipped].Damage() * DamageDealtMultiplyer(1f);
+        if (effectOn[2] && eq.Items[19] > 0)
+            firedBullet.damage *= 1f + 0.08f * eq.Items[19];
+        //firedBullet.damage *= efficiency;
         if (eq.guns[eq.equipped].Accessories[16] > 0)
             firedBullet.damage *= 1f + (0.004f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16]);
         if (eq.guns[eq.equipped].Accessories[16 + bp.ALibrary.count] > 0)
@@ -711,21 +738,33 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].Accessories[22 + bp.ALibrary.count] > 0)
             firedBullet.damage *= 1f + (0.0128f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[22 + bp.ALibrary.count]);
         firedBullet.DoT = eq.guns[eq.equipped].DoT;
+        if (effectOn[0] && eq.Items[1] > 0)
+            firedBullet.DoT += 0.08f + 0.12f * eq.Items[1];
         firedBullet.shatter = eq.guns[eq.equipped].shatter;
         firedBullet.incendiary = eq.guns[eq.equipped].incendiary;
         firedBullet.curse = eq.guns[eq.equipped].curse;
         firedBullet.damageGain = eq.guns[eq.equipped].damageGain;
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
+        if (effectOn[1] && eq.Items[18] > 0)
+            firedBullet.vulnerableApplied += (0.03f + 0.05f * eq.Items[18]) * firedBullet.damage;
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
+        if (effectOn[0] && eq.Items[1] > 0)
+            firedBullet.slowDuration += (0.02f + 0.02f * eq.Items[1]) * firedBullet.damage;
         firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
         firedBullet.pierce = eq.guns[eq.equipped].pierce;
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
+        if (effectOn[3] && eq.Items[34] > 0)
+        {
+            firedBullet.pierce += eq.Items[34];
+            firedBullet.pierceEfficiency += 0.02f * eq.Items[34];
+        }
         firedBullet.special = eq.guns[eq.equipped].special;
 
-        if (eq.guns[eq.equipped].critChance + additionalCritChance >= Random.Range(0f, 1f))
+        if (eq.guns[eq.equipped].critChance + additionalCritChance + focus >= Random.Range(0f, 1f))
         {
-            firedBullet.damage *= eq.guns[eq.equipped].critDamage;
+            focus = 0f;
+            firedBullet.damage *= eq.guns[eq.equipped].critDamage + additionalCritDamage;
             firedBullet.armorShred *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
             firedBullet.vulnerableApplied *= 0.6f + eq.guns[eq.equipped].critDamage * 0.4f;
             firedBullet.slowDuration *= 0.7f + eq.guns[eq.equipped].critDamage * 0.3f;
@@ -744,6 +783,8 @@ public class PlayerController : MonoBehaviour
                 firedBullet.pierceEfficiency += 0.15f * eq.guns[eq.equipped].Accessories[8 + bp.ALibrary.count];
             }
         }
+        else if (eq.Items[22] > 0)
+            focus += 0.04f * eq.Items[22];
     }
 
     void GrenadeCast()
@@ -784,7 +825,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.falloff = 0.8f / forceIncrease;
-        firedBullet.damage = (32.5f + /*toolsStored * 0.12f +*/ level * 1.5f) * DamageDealtMultiplyer(1.1f);
+        firedBullet.damage = (32.5f + level * 1.5f) * DamageDealtMultiplyer(1.1f);
         if (eq.Items[15] > 0)
             firedBullet.damage *= 1f + 0.24f * eq.Items[15];
         if (eq.Items[28] > 0)
@@ -796,6 +837,33 @@ public class PlayerController : MonoBehaviour
         Effects.small = eq.Items[30];
         if (eq.Items[31] > 0)
             firedBullet.duration /= DamageDealtMultiplyer(0.3f * eq.Items[31]);
+    }
+
+    void GrenadeDrop()
+    {
+        for (int i = 0; i < eq.Items[37]; i++)
+        {
+            TargetArea.position = new Vector2(transform.position.x + Random.Range(-1f, 1f), transform.position.y + Random.Range(-1f, 1f));
+            GameObject bullet = Instantiate(Grenade, Barrel.position, Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            Effects = bullet.GetComponent(typeof(GrenadeEffects)) as GrenadeEffects;
+            firedBullet.TargetedLocation = TargetArea;
+            firedBullet.duration = 0.8f / forceIncrease;
+            firedBullet.falloff = 0.8f / forceIncrease;
+            firedBullet.damage = (32.5f + level * 1.5f) * DamageDealtMultiplyer(1.1f);
+            if (eq.Items[15] > 0)
+                firedBullet.damage *= 1f + 0.24f * eq.Items[15];
+            if (eq.Items[28] > 0)
+            {
+                firedBullet.shatter += 0.5f * eq.Items[28];
+                firedBullet.stunDuration += 0.4f + 0.1f * eq.Items[28];
+            }
+            Effects.venom = eq.Items[29];
+            Effects.small = eq.Items[30];
+            if (eq.Items[31] > 0)
+                firedBullet.duration /= DamageDealtMultiplyer(0.3f * eq.Items[31]);
+        }
     }
 
     float ThrowRange()
@@ -1010,37 +1078,59 @@ public class PlayerController : MonoBehaviour
             else
             {
                 if (pierce)
-                {
-                    health -= value;
-                    healthBar.fillAmount = health / maxHealth;
-
-                    if (eq.Items[25] > 0 && !day)
-                        wrath += value * 0.003f * eq.Items[25];
-                }
+                    LoseHealth(value);
                 else
                 {
-                    shield -= value;
-
-                    if (shield < 0)
+                    if (shield > value)
+                        LoseShield(value);
+                    else
                     {
-                        value = shield * (-1f);
-                        shield = 0;
-                        health -= value;
-                        healthBar.fillAmount = health / maxHealth;
+                        if (shield > 0)
+                        {
+                            value -= shield;
+                            LoseShield(shield);
+                        }
 
-                        if (eq.Items[25] > 0 && !day)
-                            wrath += value * 0.003f * eq.Items[25];
+                        LoseHealth(value);
                     }
-                    shieldBar.fillAmount = shield / maxShield;
                 }
 
                 healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
                 ShieldInfo.text = shield.ToString("0") + "/" + maxShield.ToString("0");
-
-                if (health <= 0f)
-                    ReturnToMenu();
             }
         }
+    }
+
+    void LoseShield(float amount)
+    {
+        shield -= amount;
+        if (eq.Items[11] > 0)
+            eq.Discharge(amount);
+        shieldBar.fillAmount = shield / maxShield;
+    }
+
+    void LoseHealth(float amount)
+    {
+        health -= amount;
+        healthBar.fillAmount = health / maxHealth;
+
+        if (eq.Items[25] > 0 && !day)
+            wrath += amount * 0.003f * eq.Items[25];
+
+        if (emergencyShields)
+        {
+            GainShield((0.3f + 0.12f * eq.Items[14]) * maxShield);
+            Invoke("emergencyCooldown", 25f / (0.85f + 0.15f * eq.Items[14]));
+            emergencyShields = false;
+        }
+
+        if (health <= 0f)
+            ReturnToMenu();
+    }
+
+    void emergencyCooldown()
+    {
+        emergencyShields = true;
     }
 
     void Damaged()
@@ -1123,16 +1213,13 @@ public class PlayerController : MonoBehaviour
 
     public float SpeedMultiplyer(float efficiency)
     {
-        temp = fireRateBonus;
-        temp *= 1f + (temp - 1f) * efficiency;
+        temp = 1f + (fireRateBonus - 1f) * efficiency;
         return temp;
     }
 
     public float DamageDealtMultiplyer(float efficiency)
     {
-        temp = damageBonus;
-        temp *= 1f + wrath;
-        temp *= 1f + (temp - 1f) * efficiency;
+        temp = 1f + ((damageBonus + wrath) - 1f) * efficiency;
         return temp;
     }
 
@@ -1225,14 +1312,16 @@ public class PlayerController : MonoBehaviour
                 GainGold(1);
             }
         }
-        for (int i = 1; i < 3; i++)
+        if (eq.Items[26] > 0)
+            GainShield(1f * eq.Items[26]);
+        /*for (int i = 1; i < 3; i++)
         {
             if (eq.slotFilled[i] && eq.guns[i].ammoRegain > 0)
             {
                 eq.guns[i].ammo += eq.guns[i].ammoRegain;
                 DisplayAmmo();
             }
-        }
+        }*/
     }
 
     public void NewDay()

@@ -286,7 +286,7 @@ public class Enemy : MonoBehaviour
                 GainSlow(collidedBullet.slowDuration * 1.6f / (1f + 0.03f * weight));
             if (collidedBullet.stunDuration > 0)
                 GainStun(collidedBullet.stunDuration * 1.6f / (1f + 0.03f * weight));
-            temp = collidedBullet.damage / DamageTakenMultiplyer();
+            temp = collidedBullet.damage * DamageTakenMultiplyer();
             if (collidedBullet.shatter > 0)
                 ShatterShield(temp * collidedBullet.shatter);
             if (!collidedBullet.damageLess)

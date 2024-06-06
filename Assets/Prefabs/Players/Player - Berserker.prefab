@@ -24,15 +24,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
-      propertyPath: Items.Array.data[23]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: Items.Array.data[24]
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: Items.Array.data[25]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
+      propertyPath: Items.Array.data[36]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}

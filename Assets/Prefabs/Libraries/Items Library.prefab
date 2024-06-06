@@ -86,44 +86,47 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8ce1cd7f80233b6498d1365d732ccddc, type: 3}
   - {fileID: 21300000, guid: fe5d23d762760d04fbeda8fe6df80373, type: 3}
   ItemTooltip:
-  - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
-  - Take 10% Less Damage from Projectals & Deflect them in random directions
+  - Increase Fire Rate & Movement Speed with every enemy slained for the Round
+  - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
   - Fire Eqipped Gun in Random Direstions for free occassionally
-  - Increase Max Shield by 20. Gain 50% Lost Health as Shield
-  - Dash gains Second Charge & Reduce Dash Cooldown by 21%
-  - Increase Cooldown Reduction by 12%. Double all Cooldown Reduction.
-  - Increase Max Health by 10. Increase healing from Potions by 10% of Max Health
-  - Increase Max Health by 10. Gain +1,3% Damage for every 10 Max Health above 80
-  - Gain 8 Tools. All Guns have 1 more Accessory Slot
-  - Increase Movement Speed by 9%. Using Dash gives Rush for 2,5s
-  - Increase Damage by 6%. Gain 4 Gold Every 5th Enemy slained
-  - Decrease Max Shield greatly. Fully recharge Shield at the start of Combat
-  - Gain 60% Poison Resistance
-  - Reduce Dash Cooldown by 15%. Using Dash Reloads 30% Magazine
-  - Increase Potion Slots by 2 & fill half of them
-  - Reduce Grenade Cooldown by 11%. Gredandes deal 24% more Damage.
-  - Gain +10% Crit Chance on all Guns
-  - Increase On-Hit Rate by (20 + 30% Crit Chance)%
-  - Chance to spawn bonus Chest
-  - Increase Damage by 36%, but also increase Damage Taken by 24%
-  - Increase Chance for Special Bullets by 18%
-  - Increase Damage by 6% & Bullets Speed by 28%
-  - All Enemies are Cursed
-  - Increase Fire Rate by 7,2%. All Guns Have 20% more Max Ammo
-  - All Guns have a 17,5% Chance to Fire additional time for free
-  - Increase Max Health by 10. Gain +0,32% Damage for the Combat for every 1 HP Lost
-  - Gain 20% More Tools. Gain 5 Tools
-  - Reduce Grenade Cooldown by 18%. Grenade gains additional Charge
-  - Grenades have 91% Shatter. Grenade gains additional Charge
-  - Grenades leave Poison Cloud for 2,5s. Grenade gains additional Charge
-  - Grenades explode into 3 smaller ones that deal 52% Damage each
-  - Increase Damage by 6%. Increase Grenade range based on Damage Increase
-  - Increase Fire Rate by 7,2%. Gain 1% Cooldown Reduction for every 2,8% Fire Rate
+  - Increase Shield Capacity by 5. Reduce Recharge Delay by 12%
+  - Dash gains additional Charge & Reduce Dash Cooldown by 18%
+  - Increase Cooldown Reduction by 12%. Using Dash speeds up Item activation rate
+    for short time
+  - Increase Max Health by 10. Restore 8% Max Health after Round
+  - Increase Max Health by 10. Gain +1% Damage for every 10 Max Health above 50
+  - Increase Gun Accessory Slot by 1
+  - Increase Gun Accuracy & Range by 15% & Increase Vision Range
+  - Increase Damage by 8%. Gain 1 Gold Every 8th Enemy slained
+  - Increase Shield Capacity by 5.  Losing Shield deals Damage to nearby Enemies
+  - Fire additional parallel Bullet
+  - Reduce Dash Cooldown by 14%. Using Dash Reloads 20% Magazine
+  - Increase Shield Capacity by 5. Losing HP instantly reacharges some Shield (has
+    cooldown)
+  - Reduce Grenade Cooldown by 11%. Gredandes deal 22% more Damage.
+  - Increase Gun Crit Chance by 9%
+  - Increase On-Hit Rate, increased further with higher Crit Chance
+  - Gain chance to fire Plasma Bullet. Increase effectivness of Plasma Bullets
+  - Gain chance to fire Explosive Bullet. Increase effectivness of Explosive Bullets
+  - Increase Chance for Special Bullets
+  - Increase Damage by 8% & Bullets Speed by 16%
+  - Increase Gun Crit Damage by 12%. Every non-crit increaes Chance for next shot
+  - At the start of Round, gain Gold
+  - All Guns have a Chance to Fire additional time
+  - Increase Max Health by 10. Gain +0,3% Damage for the Combat for every 1 HP Lost
+  - Increase Shield Capacity by 5. Enemy Slain gives 1 Shield
+  - Reduce Grenade Cooldown by 15%. Grenade gains additional Charge
+  - Grenades Stuns & have 50% Shatter. Grenade gains additional Charge
+  - Grenades leave Poison Cloud for 2,4s. Grenade gains additional Charge
+  - Grenades explode into smaller ones
+  - Increase Damage by 8%. Increase Grenade range & speed based on Damage Increase
+  - Increase Fire Rate by 10%. Gain 1% Cooldown Reduction for every 4% Fire Rate
     Increase
-  - Gain 2 random Accessories & 10 Tools
-  - Transform Max Health into Shield. Potions can give Shield instead
-  - Every 5 Tools collected gives 7 Shield. Gain 5 Tools
-  - Every Potion used increases Max Health by 2. Gain 1 Potion
-  - Increase Potion Slots by 1 & healing from Potions by 6
-  - Throw 3 Knives in a small cone every 3s
-  - Throw 3 Knives in a small cone every 3s
+  - Throw Blades around you occasionally
+  - Gain chance to fire Electric Bullet. Increase effectivness of Electric Bullets
+  - Increase Shield Capacity by 4 & 1 per level
+  - Ending Round with 50 or more Health restores 20, otherwise Gain 5 Max Health
+    & 1% Damage Increase
+  - Using Dash throws Grenade beneath
+  - Throw Knives in a small cone occasionally
+  - Deal Damage to nearby Enemies every second

@@ -157,7 +157,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Grenade: {fileID: 6374578684429443232}
-  PoisonCloud: {fileID: 9214478453155810032, guid: ff13692e559bf75428a34f2ffc67d384, type: 3}
+  PoisonCloud:
+  - {fileID: 9214478453155810032, guid: ff13692e559bf75428a34f2ffc67d384, type: 3}
+  - {fileID: 3659957063006262020, guid: 4315b09dec4c08c4a8f3a9d7db9694bf, type: 3}
+  - {fileID: 5040097743906813609, guid: 180ad8b42d244f741902ad34d2c22d84, type: 3}
+  - {fileID: 4726041479660609405, guid: c89859efefe506342835daf85efe2710, type: 3}
+  - {fileID: 7621472488779956320, guid: 6525252e3f8989d48922eed68bc28571, type: 3}
   smallGrenades: {fileID: 2566711776871200177}
   venom: 0
   small: 0
@@ -182,7 +187,7 @@ MonoBehaviour:
   bulletForce:
   - 3.3
   damageEfficiency:
-  - 0.52
+  - 0.5
   bonusDuration:
   - 0.11
   delay: 2000
