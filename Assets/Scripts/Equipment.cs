@@ -34,7 +34,7 @@ public class Equipment : MonoBehaviour
     //public float itemsActivationRate = 1f;
 
     [Header("Items")]
-    public bool[] Items;
+    public int[] Items;
     public int[] ItemList;
     public int itemsCollected;
     public GameObject DeflectProjectal, KnifeProjectal;
@@ -54,7 +54,7 @@ public class Equipment : MonoBehaviour
             while (tempi > 0)
             {
                 roll = Random.Range(0, ILibrary.ItemSprite.Length);
-                if (!Items[roll])
+                if (Items[roll] < 5)
                 {
                     PickUpItem(roll);
                     tempi--;
@@ -75,37 +75,35 @@ public class Equipment : MonoBehaviour
 
     public void PickUpItem(int which)
     {
-        Items[which] = true;
+        Items[which]++;
         ItemList[itemsCollected] = which;
         itemsCollected++;
 
         ShowTooltip(which);
         switch (which)
         {
-            case 0:
-                playerStats.undamaged = true;
-                playerStats.movementSpeed += 44f;
-                playerStats.fireRateBonus += 0.14f;
+            case 1:
+                guns[equipped].specialBulletChance[0] += 0.06f;
                 break;
             case 3:
-                playerStats.GainSC(20);
+                playerStats.GainSC(5);
+                playerStats.rechargeDelay /= 1.12f;
                 break;
             case 4:
-                playerStats.dashBaseCooldown /= 1.21f;
+                playerStats.dashBaseCooldown /= 1.18f;
+                playerStats.dashMaxCharges++;
                 break;
             case 5:
-                playerStats.cooldownReduction += playerStats.cooldownReduction - 1f;
                 playerStats.GainCR(0.12f);
                 break;
             case 6:
                 playerStats.GainHP(10);
                 break;
             case 7:
-                playerStats.GainDMG((playerStats.maxHealth - 80) * 0.0013f);
+                playerStats.GainDMG((playerStats.maxHealth - 50) * 0.001f);
                 playerStats.GainHP(10);
                 break;
             case 8:
-                playerStats.GainTools(8);
                 for (int i = 0; i < 3; i++)
                 {
                     if (slotFilled[i])
@@ -115,52 +113,41 @@ public class Equipment : MonoBehaviour
                 }
                 break;
             case 9:
-                playerStats.GainMS(9f);
                 break;
             case 10:
-                playerStats.GainDMG(0.06f);
+                playerStats.GainDMG(0.08f);
                 break;
             case 11:
-                playerStats.Item11();
+                playerStats.GainSC(5);
                 break;
             case 12:
-                playerStats.poisonCap += 60f;
-                playerStats.GainPoison(0);
                 break;
             case 13:
-                playerStats.dashBaseCooldown /= 1.15f;
-                break;
-            case 14:
-                playerStats.GainPotionSlots(2);
-                playerStats.GainPotions(playerStats.maxPotions / 2);
+                playerStats.dashBaseCooldown /= 1.14f;
                 break;
             case 15:
                 playerStats.grenadeBaseCooldown /= 1.11f;
                 break;
             case 16:
-                playerStats.additionalCritChance += 0.1f;
+                playerStats.additionalCritChance += 0.09f;
                 playerStats.luck += 2;
                 playerStats.map.luck += 2;
                 break;
             case 18:
-                playerStats.luck += 2;
-                playerStats.map.luck += 2;
+                guns[equipped].specialBulletChance[1] += 0.07f;
+                break;
+            case 19:
+                guns[equipped].specialBulletChance[2] += 0.06f;
                 break;
             case 21:
-                playerStats.GainDMG(0.06f);
-                playerStats.forceIncrease += 0.28f;
-                break;
-            case 23:
-                playerStats.GainFR(0.072f);
+                playerStats.GainDMG(0.08f);
+                playerStats.forceIncrease += 0.2f;
                 break;
             case 25:
                 playerStats.GainHP(10);
                 break;
-            case 26:
-                playerStats.GainTools(5);
-                break;
             case 27:
-                playerStats.grenadeBaseCooldown /= 1.18f;
+                playerStats.grenadeBaseCooldown /= 1.15f;
                 playerStats.grenadeMaxCharges++;
                 break;
             case 28:
@@ -170,28 +157,23 @@ public class Equipment : MonoBehaviour
                 playerStats.grenadeMaxCharges++;
                 break;
             case 31:
-                playerStats.GainDMG(0.06f);
+                playerStats.GainDMG(0.08f);
                 break;
             case 32:
-                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 2.8f;
-                playerStats.GainFR(0.072f);
+                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 4f;
+                playerStats.GainFR(0.1f);
                 break;
             case 33:
-                Accessories[Random.Range(0, bp.ALibrary.count)]++;
-                Accessories[Random.Range(0, bp.ALibrary.count)]++;
-                playerStats.GainTools(14);
                 break;
             case 34:
-                playerStats.Item34();
+                guns[equipped].specialBulletChance[3] += 0.06f;
                 break;
             case 35:
-                playerStats.GainTools(5);
+                playerStats.GainSC(4 + playerStats.level);
                 break;
-            case 36:
-                playerStats.GainPotions(1);
-                break;
-            case 37:
-                playerStats.GainPotionSlots(1);
+            case 38:
+                if (!playerStats.day)
+                    Invoke("KnifeThrow", 2.1f);
                 break;
         }
     }
@@ -369,7 +351,7 @@ public class Equipment : MonoBehaviour
 
     public void ActivateItems()
     {
-        if (Items[38])
+        if (Items[38] > 0)
             Invoke("KnifeThrow", 2.1f);
     }
 
@@ -377,18 +359,19 @@ public class Equipment : MonoBehaviour
     {
         if (!playerStats.day)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1 + Items[38] * 2; i++)
             {
-                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 20f + 20f * i);
+                Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 12f * Items[38] + 12f * i);
                 GameObject knife = Instantiate(KnifeProjectal, Barrel.position, Barrel.rotation);
                 Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
                 knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
 
                 firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
-                firedBullet.damage = (20.4f + 1.8f * playerStats.dayCount) * playerStats.DamageDealtMultiplyer(1.05f);
+                firedBullet.damage = (18 + playerStats.level + (2 + playerStats.level) * Items[38]) * playerStats.DamageDealtMultiplyer(1.05f);
             }
 
-            temp = 4.2f / (1f + playerStats.SpeedMultiplyer(0.73f));
+            temp = 4.2f / (0.78f + 0.22f * Items[38]);
+            temp /= (1f + playerStats.SpeedMultiplyer(0.73f));
             temp /= (1f + playerStats.cooldownReduction * 0.42f);
             Invoke("KnifeThrow", temp);
         }

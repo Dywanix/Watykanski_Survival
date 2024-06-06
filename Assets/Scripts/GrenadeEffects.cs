@@ -7,13 +7,13 @@ public class GrenadeEffects : MonoBehaviour
 	public Bullet Grenade;
 	public GameObject PoisonCloud;
 	public PulletExplosion smallGrenades;
-	public bool venom, small;
+	public int venom, small;
 
 	void Start()
 	{
-		if (venom)
+		if (venom > 0)
 			Grenade.ExplosionRadius = PoisonCloud;
-		if (small)
+		if (small > 0)
 			Grenade.ShardExplosion = smallGrenades;
 	}
 }

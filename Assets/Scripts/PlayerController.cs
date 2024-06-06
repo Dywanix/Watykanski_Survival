@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
     [Header("Stats")]
     public float maxHealth;
     public float dHealth, health, poison, poisonCap,
-    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown,
-    grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
+    damageBonus, fireRateBonus, movementSpeed, additionalCritChance, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, dashMaxCharges, dashCharges,
+    grenadeMaxCharges, grenadeCharges, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash, itemActivationRate;
     public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
@@ -52,8 +52,8 @@ public class PlayerController : MonoBehaviour
     public float dShield, shield, rechargeDelay, rechargeTimer;
 
     [Header("Items")]
-    public int bloodMoney;
-    public int builtShield;
+    public int adrenalineStacks;
+    public int adrenalineCharges, bloodMoney, builtShield;
     public float wrath, shieldCapacitor;
 
     [Header("Resources")]
@@ -129,8 +129,10 @@ public class PlayerController : MonoBehaviour
         {
             for (int i = 0; i < eq.Items.Length; i++)
             {
-                if (eq.Items[i])
-                    eq.PickUpItem(i);
+                for (int j = 0; j < eq.Items[j]; j++)
+                {
+                    eq.PickUpItem(j);
+                }
             }
         }
         toolsStored = tools;
@@ -212,20 +214,19 @@ public class PlayerController : MonoBehaviour
             else
                 CloseTab();
         }
-
         if (dashCooldown > 0)
         {
             dashCooldown -= Time.deltaTime;
-            dashImage.fillAmount = 1 - (dashCooldown / maxDashCooldown);
+            abilityImage.fillAmount = 1 - (dashCooldown / maxDashCooldown);
         }
-        if (eq.Items[4] && !dashSecondCharge)
+        else
         {
-            if (dashCooldown <= 0)
+            if (dashCharges < dashMaxCharges)
             {
-                dashSecondCharge = true;
+                dashCharges++;
+                DashCharge.text = "+" + dashCharges.ToString("0");
                 maxDashCooldown = dashBaseCooldown / cooldownReduction;
-                dashCooldown += maxDashCooldown;
-                DashCharge.text = "1";
+                dashCooldown = maxDashCooldown;
             }
         }
         if (grenadeCooldown > 0)
@@ -274,10 +275,9 @@ public class PlayerController : MonoBehaviour
 
     void DashCast()
     {
-        if (dashSecondCharge)
+        if (dashCharges > 0)
         {
-            dashSecondCharge = false;
-            DashCharge.text = "";
+            dashCharges--;
             Dash();
         }
         else if (dashCooldown <= 0)
@@ -298,9 +298,15 @@ public class PlayerController : MonoBehaviour
         playerSprite.color = new Color(0.4f, 0.4f, 1f, 1f);
         Invoke("Recovered", 0.2f);
 
-        if (eq.Items[13])
+        if (eq.Items[5] > 0)
         {
-            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * 5) / 20;
+            itemActivationRate += 0.1f + 0.3f * eq.Items[5];
+            Invoke("EndStopwatch", 1.5f + 0.5f * eq.Items[5]);
+        }
+
+        if (eq.Items[13] > 0)
+        {
+            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * eq.Items[13]) / 5;
 
             for (int i = 0; i < tempi; i++)
             {
@@ -328,12 +334,6 @@ public class PlayerController : MonoBehaviour
 
         if (eq.guns[eq.equipped].Accessories[19] > 0 || eq.guns[eq.equipped].Accessories[19 + bp.ALibrary.count] > 0)
             Invoke("DashFire", 0.07f);
-
-        if (eq.Items[9])
-        {
-            movementSpeed += 100f;
-            Invoke("SprintEnd", 2f);
-        }
     }
 
     void DashFire()
@@ -352,6 +352,11 @@ public class PlayerController : MonoBehaviour
         {
             FireDirection((i * 2 - tempi2 + 1) * (5f / (1f + 0.05f * tempi2)), 0f);
         }
+    }
+
+    void EndStopwatch()
+    {
+        itemActivationRate -= 0.1f + 0.3f * eq.Items[5];
     }
 
     public void NewTask(float duration)
@@ -472,8 +477,14 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].bulletsLeft > 0 || eq.guns[eq.equipped].infiniteMagazine)
         {
             Fire();
-            if (eq.Items[24] && Random.Range(0f, 1f) >= 0.825f - 0.007f * luck)
-                Fire();
+            if (eq.Items[24] > 0)
+            {
+                for (int i = 0; i < eq.Items[24]; i++)
+                {
+                    if (Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
+                        Fire();
+                }
+            }
             if (!eq.guns[eq.equipped].infiniteMagazine)
             {
                 if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.32f < Random.Range(0f, 1f))
@@ -486,17 +497,28 @@ public class PlayerController : MonoBehaviour
             if (eq.guns[eq.equipped].Accessories[14] * 0.2f + eq.guns[eq.equipped].Accessories[14 + bp.ALibrary.count] * 0.32f < Random.Range(0f, 1f))
             {
                 Fire();
-                if (eq.Items[24] && Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
-                    Fire();
+                if (eq.Items[24] > 0)
+                {
+                    for (int i = 0; i < eq.Items[24]; i++)
+                    {
+                        if (Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
+                            Fire();
+                    }
+                }
             }
         }
     }
 
     public void Shoot(float accuracy_change = 0f)
     {
-        if (eq.Items[24] && Random.Range(0f, 1f) >= 0.825f - 0.007f * luck)
-            Fire(accuracy_change);
-
+        if (eq.Items[24] > 0)
+        {
+            for (int i = 0; i < eq.Items[24]; i++)
+            {
+                if (Random.Range(0f, 1f) >= 0.83f - 0.005f * luck)
+                    Fire(accuracy_change);
+            }
+        }
         Fire(accuracy_change);
 
         if (!eq.guns[eq.equipped].infiniteMagazine)
@@ -550,8 +572,8 @@ public class PlayerController : MonoBehaviour
             FireDirection(32f, accuracy_change);
         }
 
-        if (eq.Items[17])
-            eq.OnHit(1.2f + 0.3f * (eq.guns[eq.equipped].critChance + additionalCritChance));
+        if (eq.Items[17] > 0)
+            eq.OnHit(1f + (0.2f + 0.25f * (eq.guns[eq.equipped].critChance + additionalCritChance)) * eq.Items[17]);
         else eq.OnHit(1f);
     }
 
@@ -578,8 +600,8 @@ public class PlayerController : MonoBehaviour
             if (eq.guns[eq.equipped].specialBulletChance[i] > Random.Range(0f, 1f))
                 tempi += (2 ^ i) - 1;
         }*/
-        if (eq.Items[20])
-            temp = 0.843f - 0.012f * luck;
+        if (eq.Items[20] > 0)
+            temp = 1f / (1f + (0.14f + 0.01f * luck) * eq.Items[20]);
         else temp = 1f;
 
         temp2 = 1f + eq.guns[eq.equipped].critChance * (0.06f * eq.guns[eq.equipped].Accessories[34]) + (0.096f * eq.guns[eq.equipped].Accessories[34 + bp.ALibrary.count]);
@@ -763,44 +785,31 @@ public class PlayerController : MonoBehaviour
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.falloff = 0.8f / forceIncrease;
         firedBullet.damage = (32.5f + /*toolsStored * 0.12f +*/ level * 1.5f) * DamageDealtMultiplyer(1.1f);
-        if (eq.Items[15])
-            firedBullet.damage *= 1.24f;
-        if (eq.Items[28])
-            firedBullet.shatter += 0.91f;
-        if (eq.Items[29])
-            Effects.venom = true;
-        if (eq.Items[30])
-            Effects.small = true;
-        if (eq.Items[31])
-            firedBullet.duration /= DamageDealtMultiplyer(0.4f);
+        if (eq.Items[15] > 0)
+            firedBullet.damage *= 1f + 0.24f * eq.Items[15];
+        if (eq.Items[28] > 0)
+        {
+            firedBullet.shatter += 0.5f * eq.Items[28];
+            firedBullet.stunDuration += 0.4f + 0.1f * eq.Items[28];
+        }
+        Effects.venom = eq.Items[29];
+        Effects.small = eq.Items[30];
+        if (eq.Items[31] > 0)
+            firedBullet.duration /= DamageDealtMultiplyer(0.3f * eq.Items[31]);
     }
 
     float ThrowRange()
     {
-        if (eq.Items[31])
-            return throwRange * DamageDealtMultiplyer(0.4f);
+        if (eq.Items[31] > 0)
+            return throwRange * DamageDealtMultiplyer(0.3f * eq.Items[31]);
         else return throwRange;
     }
 
     void DrinkPotion()
     {
-        if (potions > 0 && (health < maxHealth || eq.Items[34]))
+        if (potions > 0 && (health < maxHealth))
         {
             temp = 10f;
-            if (eq.Items[36])
-                GainHP(2);
-            if (eq.Items[6])
-                temp += maxHealth * 0.1f;
-            if (eq.Items[37])
-                temp += 6f;
-            if (eq.Items[34])
-            {
-                if (temp > maxHealth - health)
-                {
-                    RestoreHealth(maxHealth - health);
-                    GainShield(temp + health - maxHealth);
-                }
-            }
             RestoreHealth(temp);
             potions--;
             potionsInfo.text = potions.ToString("0") + "/" + maxPotions.ToString("0");
@@ -819,7 +828,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             FireDirection(Random.Range(0f, 360f), 0f);
-            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.49f / SpeedMultiplyer(1.48f));
+            Invoke("Rain", eq.guns[eq.equipped].fireRate * 2.5f / (SpeedMultiplyer(1.40f) * eq.Items[2]));
         }
     }
 
@@ -973,16 +982,16 @@ public class PlayerController : MonoBehaviour
             eq.guns[1] = eq.Library.guns[which];
             eq.slotFilled[1] = true;
             eq.guns[1].parts = toolsStored;
-            if (eq.Items[8])
-                eq.guns[1].MaxSlots++;
+            if (eq.Items[8] > 0)
+                eq.guns[1].MaxSlots += eq.Items[8];
         }
         else if (!eq.slotFilled[2])
         {
             eq.guns[2] = eq.Library.guns[which];
             eq.slotFilled[2] = true;
             eq.guns[2].parts = toolsStored;
-            if (eq.Items[8])
-                eq.guns[2].MaxSlots++;
+            if (eq.Items[8] > 0)
+                eq.guns[2].MaxSlots += eq.Items[8];
         }
     }
 
@@ -1000,26 +1009,13 @@ public class PlayerController : MonoBehaviour
                 protection = false;
             else
             {
-                if (eq.Items[19])
-                    value *= 1.24f;
-                if (eq.Items[0])
-                {
-                    if (undamaged)
-                    {
-                        undamaged = false;
-                        movementSpeed -= 44f;
-                        fireRateBonus -= 0.14f;
-                    }
-                }
                 if (pierce)
                 {
                     health -= value;
-                    if (eq.Items[3])
-                        GainShield(value * 0.5f);
                     healthBar.fillAmount = health / maxHealth;
 
-                    if (eq.Items[25] && !day)
-                        wrath += value * 0.0032f;
+                    if (eq.Items[25] > 0 && !day)
+                        wrath += value * 0.003f * eq.Items[25];
                 }
                 else
                 {
@@ -1030,12 +1026,10 @@ public class PlayerController : MonoBehaviour
                         value = shield * (-1f);
                         shield = 0;
                         health -= value;
-                        if (eq.Items[3])
-                            GainShield(value * 0.5f);
                         healthBar.fillAmount = health / maxHealth;
 
-                        if (eq.Items[25] && !day)
-                            wrath += value * 0.0032f;
+                        if (eq.Items[25] > 0 && !day)
+                            wrath += value * 0.003f * eq.Items[25];
                     }
                     shieldBar.fillAmount = shield / maxShield;
                 }
@@ -1115,8 +1109,6 @@ public class PlayerController : MonoBehaviour
 
     public void GainShield(float value)
     {
-        if (eq.Items[11])
-            ShieldCapacitor(value);
         shield += value;
         if (shield > maxShield)
             shield = maxShield;
@@ -1140,8 +1132,6 @@ public class PlayerController : MonoBehaviour
     {
         temp = damageBonus;
         temp *= 1f + wrath;
-        if (eq.Items[19])
-            temp *= 1.4f;
         temp *= 1f + (temp - 1f) * efficiency;
         return temp;
     }
@@ -1194,18 +1184,13 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.transform.tag == "Item")
         {
-            eq.Items[Random.Range(0, eq.Items.Length)] = true;
+            eq.Items[Random.Range(0, eq.Items.Length)]++;
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "EnemyProjectal")
         {
             collidedBullet = other.GetComponent(typeof(EnemyBullet)) as EnemyBullet;
-            if (eq.Items[1])
-            {
-                TakeDamage(collidedBullet.damage * 0.9f, false);
-                eq.Deflect(collidedBullet.damage);
-            }
-            else TakeDamage(collidedBullet.damage, false);
+            TakeDamage(collidedBullet.damage, false);
             GainPoison(collidedBullet.poison);
             //Destroy(other.gameObject);
         }
@@ -1220,13 +1205,24 @@ public class PlayerController : MonoBehaviour
 
     public void EnemySlained()
     {
-        if (eq.Items[10])
+        if (eq.Items[0] > 0)
         {
-            bloodMoney++;
-            while (bloodMoney >= 5)
+            adrenalineCharges += eq.Items[0];
+            while (adrenalineCharges > adrenalineStacks)
             {
-                bloodMoney -= 5;
-                GainGold(4);
+                adrenalineStacks++;
+                adrenalineCharges -= adrenalineStacks;
+                fireRateBonus += 0.02f;
+                movementSpeed += 4f;
+            }
+        }
+        if (eq.Items[10] > 0)
+        {
+            bloodMoney += eq.Items[10];
+            while (bloodMoney >= 8)
+            {
+                bloodMoney -= 8;
+                GainGold(1);
             }
         }
         for (int i = 1; i < 3; i++)
@@ -1247,6 +1243,25 @@ public class PlayerController : MonoBehaviour
         //RestoreHealth(40 + maxHealth * 0.5f);
         wrath = 0;
         //LevelUp();
+        if (eq.Items[0] > 0)
+        {
+            fireRateBonus -= 0.02f * adrenalineStacks;
+            movementSpeed -= 4f * adrenalineStacks;
+            adrenalineStacks = 0;
+            adrenalineCharges = 0;
+        }
+        if (eq.Items[6] > 0)
+            RestoreHealth(0.08f * maxHealth * eq.Items[6]);
+        if (eq.Items[36] > 0)
+        {
+            if (maxHealth - health >= 50f)
+                RestoreHealth(20f);
+            else
+            {
+                GainHP(5);
+                GainDMG(0.01f);
+            }
+        }
     }
 
     public void Nightfall()
@@ -1254,24 +1269,18 @@ public class PlayerController : MonoBehaviour
         day = false;
         AmmoRefill();
         eq.ActivateItems();
-        if (eq.Items[0])
-        {
-            if (!undamaged)
-            {
-                undamaged = true;
-                movementSpeed += 44f;
-                fireRateBonus += 0.14f;
-            }
-        }
-        if (eq.Items[2])
+        if (eq.Items[2] > 0)
             Invoke("Rain", 0.2f);
-        if (eq.Items[11])
+        if (eq.Items[23] > 0)
         {
-            shield = maxShield;
-            GainShield(0f);
+            temp = 4 + gold / 10f;
+            temp *= eq.Items[23];
+            if (temp > 24f * eq.Items[23])
+                GainGold(24f * eq.Items[23]);
+            else GainGold(temp);
         }
         //if (eq.Items[34])
-            //protection = true;
+        //protection = true;
     }
 
     public void AmmoRefill()
@@ -1282,8 +1291,6 @@ public class PlayerController : MonoBehaviour
             {
                 eq.guns[i].ammo = eq.guns[i].maxAmmo + eq.guns[i].bonusAmmo - eq.guns[i].bulletsLeft;
                 eq.guns[i].bonusAmmo = 0;
-                if (eq.Items[23])
-                    eq.guns[i].ammo += (eq.guns[i].maxAmmo * 1) / 5;
                 if (eq.guns[i].Accessories[18] > 0)
                     eq.guns[i].ammo += (eq.guns[i].maxAmmo * eq.guns[i].Accessories[18]) / 5;
                 if (eq.guns[i].Accessories[18 + bp.ALibrary.count] > 0)
@@ -1304,6 +1311,8 @@ public class PlayerController : MonoBehaviour
         //SkillPointAviable.SetActive(true);
         map.ChoosePrize(2);
         LevelInfo.text = level.ToString("0");
+        if (eq.Items[35] > 0)
+            GainSC(eq.Items[35]);
     }
 
     void LearnPerk()
@@ -1319,8 +1328,8 @@ public class PlayerController : MonoBehaviour
         maxHealth += value;
         health += value;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
-        if (eq.Items[7])
-            GainDMG(0.0013f * value);
+        if (eq.Items[7] > 0)
+            GainDMG(0.001f * value * eq.Items[7]);
         dHealth += value;
         UpdateBars();
         dropBar.fillAmount = dHealth / maxHealth;
@@ -1335,14 +1344,12 @@ public class PlayerController : MonoBehaviour
     public void GainFR(float value)
     {
         fireRateBonus += value;
-        if (eq.Items[32])
-            GainCR(value / 2.8f);
+        if (eq.Items[32] > 0)
+            GainCR(value * eq.Items[32] / 4f);
     }
 
     public void GainCR(float value)
     {
-        if (eq.Items[5])
-            value *= 2;
         cooldownReduction += value;
     }
 
@@ -1353,8 +1360,6 @@ public class PlayerController : MonoBehaviour
 
     public void GainSC(float value)
     {
-        if (eq.Items[11])
-            value *= 0.3f;
         maxShield += value;
         UpdateBars();
         GainShield(value);
@@ -1388,27 +1393,6 @@ public class PlayerController : MonoBehaviour
 
     public void GainTools(int amount)
     {
-        if (eq.Items[26])
-        {
-            tempi = 0;
-            bonusTool += amount;
-            while (bonusTool >= 5)
-            {
-                bonusTool -= 5;
-                tempi++;
-            }
-            amount += tempi;
-        }
-        if (eq.Items[35])
-        {
-            builtShield += amount;
-            while (builtShield >= 5)
-            {
-                builtShield -= 5;
-                GainShield(7);
-            }
-        }
-
         tools += amount;
         toolsStored += amount;
         toolsInfo.text = tools.ToString("0");
@@ -1480,8 +1464,6 @@ public class PlayerController : MonoBehaviour
         {
             temp = maxHealth - 5;
             maxHealth = 5;
-            if (eq.Items[7])
-                GainDMG(-0.0012f * temp);
             maxShield += temp * 1.1f;
         }
 

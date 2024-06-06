@@ -49,12 +49,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a7a138dee307e8b429efbefcc0f9657e, type: 3}
   - {fileID: 21300000, guid: 16838660f8da86c47a9c3ad2eec183f6, type: 3}
   - {fileID: 21300000, guid: 030c563c59ab16e41b1974e0b15cead2, type: 3}
-  - {fileID: 21300000, guid: 89b5be2999f5dc147906f9dddc6a9724, type: 3}
+  - {fileID: 21300000, guid: 6224e1587b45c454eb72f7719efbc07c, type: 3}
   - {fileID: 21300000, guid: 80d55af0fe3ed28478b8e7dafbd4d708, type: 3}
   - {fileID: 21300000, guid: c35bcedb02794b749b0d3ae41e264af2, type: 3}
   - {fileID: 21300000, guid: 80754866c50edc04dbd946303aa6bb12, type: 3}
   - {fileID: 21300000, guid: 676095a7496d9d74ba01a033ce5c0dc2, type: 3}
-  - {fileID: 21300000, guid: 6224e1587b45c454eb72f7719efbc07c, type: 3}
+  - {fileID: 21300000, guid: 89b5be2999f5dc147906f9dddc6a9724, type: 3}
   - {fileID: 21300000, guid: 934198322209573438bb0e9be48b89f5, type: 3}
   - {fileID: 21300000, guid: fb65532b596e59245b0514f07402d990, type: 3}
   - {fileID: 21300000, guid: f62f2b042ae15164381538ecc623ae76, type: 3}
@@ -62,8 +62,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 94062c26c5e9cc0438779c7bd8d25650, type: 3}
   - {fileID: 21300000, guid: af62ad88b8c31974d8c196385b47da5a, type: 3}
   - {fileID: 21300000, guid: 025c5f55aef82d2448ff25c477529f67, type: 3}
-  - {fileID: 21300000, guid: 2fdf81586bf3453498ef35a9599a15a2, type: 3}
   - {fileID: 21300000, guid: d91667b7befa7d84595edb9332530fb7, type: 3}
+  - {fileID: 21300000, guid: 025c5f55aef82d2448ff25c477529f67, type: 3}
   - {fileID: 21300000, guid: cfce595d40cc0104489ee0f1a2f957c8, type: 3}
   - {fileID: 21300000, guid: c96cd6ae78ca91043a938339bbca87f5, type: 3}
   - {fileID: 21300000, guid: 807396955f81fcb419fbe7bf9aaef7f1, type: 3}
@@ -84,6 +84,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 46f4b0c66dd08d0468122e7abddd96e8, type: 3}
   - {fileID: 21300000, guid: 34782ea6c428ffb45ae416cc8f8f63fc, type: 3}
   - {fileID: 21300000, guid: 8ce1cd7f80233b6498d1365d732ccddc, type: 3}
+  - {fileID: 21300000, guid: fe5d23d762760d04fbeda8fe6df80373, type: 3}
   ItemTooltip:
   - Gain +14% Fire Rate & +11% Movement Speed untill getting Hit
   - Take 10% Less Damage from Projectals & Deflect them in random directions
@@ -124,4 +125,5 @@ MonoBehaviour:
   - Every 5 Tools collected gives 7 Shield. Gain 5 Tools
   - Every Potion used increases Max Health by 2. Gain 1 Potion
   - Increase Potion Slots by 1 & healing from Potions by 6
+  - Throw 3 Knives in a small cone every 3s
   - Throw 3 Knives in a small cone every 3s

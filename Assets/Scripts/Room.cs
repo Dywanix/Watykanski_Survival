@@ -171,11 +171,11 @@ public class Room : MonoBehaviour
     void SpawnPrize()
     {
         Chest.SetActive(true);
-        if (map.playerStats.eq.Items[18])
+        /*if (map.playerStats.eq.Items[18])
         {
             if (17f + map.luck * 1.4f >= Random.Range(0, 100f))
                 BonusChest.SetActive(true);
-        }
+        }*/
         /*Prizes[map.PrizeRarity()].SetActive(true);
         roll = Random.Range(0, 9);
         if (roll >= 7)

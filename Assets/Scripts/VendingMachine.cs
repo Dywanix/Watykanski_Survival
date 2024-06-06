@@ -217,7 +217,7 @@ public class VendingMachine : MonoBehaviour
                 {
                     items[roll] = Random.Range(0, Lib.ItemSprite.Length);
                 }
-                while (playerStats.eq.Items[items[roll]]);
+                while (playerStats.eq.Items[items[roll]] > 4);
                 viable = true;
             }
         } while (!viable);

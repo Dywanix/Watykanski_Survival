@@ -161,17 +161,17 @@ public class PrizeChoice : MonoBehaviour
         do
         {
             rolls[0] = Random.Range(0, ItemLib.ItemSprite.Length);
-        } while (playerStats.eq.Items[rolls[0]]);
+        } while (playerStats.eq.Items[rolls[0]] > 4);
 
         do
         {
             rolls[1] = Random.Range(0, ItemLib.ItemSprite.Length);
-        } while (rolls[1] == rolls[0] || playerStats.eq.Items[rolls[1]]);
+        } while (rolls[1] == rolls[0] || playerStats.eq.Items[rolls[1]] > 4);
 
         do
         {
             rolls[2] = Random.Range(0, ItemLib.ItemSprite.Length);
-        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || playerStats.eq.Items[rolls[2]]);
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || playerStats.eq.Items[rolls[2]] > 4);
 
         for (int i = 0; i < 3; i++)
         {

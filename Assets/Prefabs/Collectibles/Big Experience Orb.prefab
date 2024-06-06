@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7520967971674958593, guid: b25f78980a7ecc242b1b70d6d6f8a204, type: 3}
       propertyPath: chaseRange
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7520967971674958593, guid: b25f78980a7ecc242b1b70d6d6f8a204, type: 3}
       propertyPath: chaseSpeed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8704596369079724099, guid: b25f78980a7ecc242b1b70d6d6f8a204, type: 3}
       propertyPath: m_Name
@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8704596369079724127, guid: b25f78980a7ecc242b1b70d6d6f8a204, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8704596369079724127, guid: b25f78980a7ecc242b1b70d6d6f8a204, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 8704596369079724127, guid: b25f78980a7ecc242b1b70d6d6f8a204, type: 3}
       propertyPath: m_LocalPosition.x

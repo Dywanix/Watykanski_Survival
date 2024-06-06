@@ -88,8 +88,8 @@ public class Enemy : MonoBehaviour
         if (boss)
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
 
-        if (playerStats.eq.Items[22])
-            curse += (24f + maxHealth * 0.2f) * playerStats.DamageDealtMultiplyer(0.312f);
+        //if (playerStats.eq.Items[22])
+            //curse += (24f + maxHealth * 0.2f) * playerStats.DamageDealtMultiplyer(0.312f);
 
         health = maxHealth;
         shield = shieldCapacity;
