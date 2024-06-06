@@ -747,7 +747,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
         if (effectOn[1] && eq.Items[18] > 0)
-            firedBullet.vulnerableApplied += (0.03f + 0.05f * eq.Items[18]) * firedBullet.damage;
+            firedBullet.vulnerableApplied += (0.08f + 0.13f * eq.Items[18]) * 0.01f * firedBullet.damage;
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
         if (effectOn[0] && eq.Items[1] > 0)
             firedBullet.slowDuration += (0.02f + 0.02f * eq.Items[1]) * firedBullet.damage;
