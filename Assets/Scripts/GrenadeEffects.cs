@@ -17,7 +17,7 @@ public class GrenadeEffects : MonoBehaviour
         {
 			Grenade.ShardExplosion = smallGrenades;
 			smallGrenades.bulletsCount[0] = 2 + 1 * small;
-			smallGrenades.damageEfficiency[0] = 0.4f + 0.2f * small;
+			smallGrenades.damageEfficiency[0] = 0.4f + 0.15f * small;
 		}
 	}
 }

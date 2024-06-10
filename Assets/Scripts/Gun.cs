@@ -59,7 +59,7 @@ public class Gun : MonoBehaviour
 
     [Header("Multiplikatory Stat")]
     public float damageMultiplier;
-    public int magazineMultiplier = 1;
+    public int magazineMultiplier = 1, magazineMultiplierTenth = 10;
     //public float fireRateMultiplier;
 
     [Header("Pociski")]
@@ -330,6 +330,7 @@ public class Gun : MonoBehaviour
 
     public int MagazineTotalSize()
     {
-        return magazineSize * magazineMultiplier;
+        tempi = (magazineSize * magazineMultiplierTenth) / 10;
+        return tempi * magazineMultiplier;
     }
 }

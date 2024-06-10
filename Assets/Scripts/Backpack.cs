@@ -39,7 +39,7 @@ public class Backpack : MonoBehaviour
     {
         StatsText[0].text = ((player.damageBonus * 100f) - 100f).ToString("0.0") + "%";
         StatsText[1].text = ((player.fireRateBonus * 100f) - 100f).ToString("0.0") + "%";
-        StatsText[2].text = ((player.movementSpeed / 4f) - 100f).ToString("0.0") + "%";
+        StatsText[2].text = ((player.movementSpeed * 100f) - 100f).ToString("0.0") + "%";
         StatsText[3].text = ((player.cooldownReduction * 100f) - 100f).ToString("0.0") + "%";
 
         for (int i = 0; i < 2; i++)

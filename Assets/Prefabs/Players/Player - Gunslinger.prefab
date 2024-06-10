@@ -3692,7 +3692,8 @@ MonoBehaviour:
   poisonCap: 100
   damageBonus: 1.08
   fireRateBonus: 1.08
-  movementSpeed: 448
+  baseMovementSpeed: 300
+  movementSpeed: 1.12
   additionalCritChance: 0
   additionalCritDamage: 0
   cooldownReduction: 1.04
@@ -3704,6 +3705,7 @@ MonoBehaviour:
   dashCharges: 0
   grenadeMaxCharges: 0
   grenadeCharges: 0
+  grenadeDamageMultiplyer: 1
   throwRange: 11.2
   grenadeBaseCooldown: 10
   grenadeMaxCooldown: 0
@@ -3727,6 +3729,8 @@ MonoBehaviour:
   adrenalineCharges: 0
   bloodMoney: 0
   builtShield: 0
+  bloodBagStacks: 0
+  bloodBagCharges: 0
   wrath: 0
   shieldCapacitor: 0
   focus: 0
@@ -3828,14 +3832,33 @@ MonoBehaviour:
   - 0
   waveBullet: {fileID: 0}
   itemActivationRate: 1
-  ScissorsProjectal: {fileID: 1306497001904629045, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
+  BladeProjectal: {fileID: 0}
   KnifeProjectal: {fileID: 2656379347829061941, guid: 1708207ddb1eac94a9c6549b36bdf3b3, type: 3}
   ImmolateArea: {fileID: 4371337197951130450, guid: d64b24dc5a341054882e919372f1e3f4, type: 3}
-  scissorsThrowCooldown: 4.8
+  ImmolateSmallArea: {fileID: 4371337197951130450, guid: d64b24dc5a341054882e919372f1e3f4, type: 3}
+  ImmolateMediumArea: {fileID: 141770274536244214, guid: 2e4d7432f9665f64da2f4493f3b8e3c5, type: 3}
+  bladesThrowMaxCooldown: 0
+  bladesThrowCooldown: 0
+  bladesBaseDamage: 0
+  bladesPierceEff: 0
+  knifeThrowMaxCooldown: 0
   knifeThrowCooldown: 4.2
+  knivesBaseDamage: 0
+  immolateMaxCooldown: 0
   immolateCooldown: 1
+  immolateBaseDamage: 0
+  immolateHPRatio: 0
+  rainCooldown: 0
+  rainFrequency: 0
+  howitzerMaxCooldown: 0
+  howitzerCooldown: 0
+  bladesCount: 0
+  bladesPierce: 0
+  knivesCount: 0
+  grenadeCount: 0
   Items: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   ItemList: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Effects: 0000000000000000000000000000000000000000
   itemsCollected: 0
   DeflectProjectal: {fileID: 3773145563270755769, guid: 465b71bf774779e4dbd2ec57ae0e92dd, type: 3}
   DischargeObject: {fileID: 5935220811731336493, guid: fffa80bf23792324d9102f3d69f204a8, type: 3}

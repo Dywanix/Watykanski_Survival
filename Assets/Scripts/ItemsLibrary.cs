@@ -6,4 +6,6 @@ public class ItemsLibrary : MonoBehaviour
 {
     public Sprite[] ItemSprite;
     public string[] ItemTooltip;
+
+    public EffectItem[] Effects;
 }

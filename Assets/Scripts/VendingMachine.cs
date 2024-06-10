@@ -187,7 +187,7 @@ public class VendingMachine : MonoBehaviour
                         playerStats.GainFR(0.032f);
                         break;
                     case 6:
-                        playerStats.GainMS(4f);
+                        playerStats.GainMS(0.04f);
                         break;
                     case 7:
                         playerStats.GainCR(0.053f);

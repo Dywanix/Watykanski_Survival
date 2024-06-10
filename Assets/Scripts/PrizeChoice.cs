@@ -11,8 +11,8 @@ public class PrizeChoice : MonoBehaviour
     public PlayerController playerStats;
     public GameObject Hud;
     public Image[] ChoicesBackground, Choices;
-    public TMPro.TextMeshProUGUI[] Tooltips;
-    public Sprite BaseBG, RareBG, ItemBG;
+    public TMPro.TextMeshProUGUI[] Tooltips, Levels;
+    public Sprite BaseBG, RareBG, ItemBG, EffectBG;
     //public int accessoryChance;
 
     public int[] rolls; //accessories, items;
@@ -45,6 +45,9 @@ public class PrizeChoice : MonoBehaviour
                 break;
             case 2:
                 SetItems();
+                break;
+            case 3:
+                SetEffects();
                 break;
         }
     }
@@ -131,6 +134,7 @@ public class PrizeChoice : MonoBehaviour
             ChoicesBackground[i].sprite = BaseBG;
             Choices[i].sprite = AccLib.AccessorySprite[rolls[i]];
             Tooltips[i].text = AccLib.AccessoryTooltip[rolls[i]];
+            Levels[i].text = "";
         }
     }
 
@@ -153,6 +157,7 @@ public class PrizeChoice : MonoBehaviour
             ChoicesBackground[i].sprite = RareBG;
             Choices[i].sprite = AccLib.AccessorySprite[rolls[i]];
             Tooltips[i].text = AccLib.AccessoryTooltip[rolls[i]];
+            Levels[i].text = "";
         }
     }
 
@@ -178,6 +183,37 @@ public class PrizeChoice : MonoBehaviour
             ChoicesBackground[i].sprite = ItemBG;
             Choices[i].sprite = ItemLib.ItemSprite[rolls[i]];
             Tooltips[i].text = ItemLib.ItemTooltip[rolls[i]];
+            if (playerStats.eq.Items[rolls[i]] == 0)
+                Levels[i].text = "New";
+            else Levels[i].text = playerStats.eq.Items[rolls[i]].ToString("0");
+        }
+    }
+
+    void SetEffects()
+    {
+        do
+        {
+            rolls[0] = Random.Range(0, ItemLib.Effects.Length);
+        } while (playerStats.eq.Effects[rolls[0]] > 4);
+
+        do
+        {
+            rolls[1] = Random.Range(0, ItemLib.Effects.Length);
+        } while (rolls[1] == rolls[0] || playerStats.eq.Effects[rolls[1]] > 4);
+
+        do
+        {
+            rolls[2] = Random.Range(0, ItemLib.Effects.Length);
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || playerStats.eq.Effects[rolls[2]] > 4);
+
+        for (int i = 0; i < 3; i++)
+        {
+            ChoicesBackground[i].sprite = EffectBG;
+            Choices[i].sprite = ItemLib.Effects[rolls[i]].EffectSprite;
+            Tooltips[i].text = ItemLib.Effects[rolls[i]].EffectTooltips[playerStats.eq.Effects[rolls[i]]];
+            if (playerStats.eq.Effects[rolls[i]] == 0)
+                Levels[i].text = "New";
+            else Levels[i].text = playerStats.eq.Effects[rolls[i]].ToString("0");
         }
     }
 
@@ -185,7 +221,9 @@ public class PrizeChoice : MonoBehaviour
     {
         if (Rarity == 2)
             playerStats.eq.PickUpItem(rolls[choice]);
-        else playerStats.eq.Accessories[rolls[choice]]++;
+        else if (Rarity == 3)
+            playerStats.eq.PickUpEffect(rolls[choice]);
+        playerStats.eq.Accessories[rolls[choice]]++;
         playerStats.free = true;
         playerStats.menuOpened = false;
         Time.timeScale = 1f;

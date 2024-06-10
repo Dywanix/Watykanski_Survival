@@ -31,8 +31,11 @@ public class Equipment : MonoBehaviour
 
     [Header("Active Items")]
     public float itemActivationRate;
-    public GameObject ScissorsProjectal, KnifeProjectal, ImmolateArea;
-    public float scissorsThrowCooldown, knifeThrowCooldown, immolateCooldown;
+    public GameObject BladeProjectal, KnifeProjectal, ImmolateArea;
+    public GameObject ImmolateSmallArea, ImmolateMediumArea;
+    public float bladesThrowMaxCooldown, bladesThrowCooldown, bladesBaseDamage, bladesPierceEff, knifeThrowMaxCooldown, knifeThrowCooldown, knivesBaseDamage, immolateMaxCooldown, immolateCooldown,
+        immolateBaseDamage, immolateHPRatio, rainCooldown, rainFrequency, howitzerMaxCooldown, howitzerCooldown;
+    public int bladesCount, bladesPierce, knivesCount, grenadeCount;
 
     // -- items
     //public GameObject[] Drones;
@@ -42,6 +45,7 @@ public class Equipment : MonoBehaviour
     [Header("Items")]
     public int[] Items;
     public int[] ItemList;
+    public int[] Effects;
     public int itemsCollected;
     public GameObject DeflectProjectal, DischargeObject;
     public TMPro.TextMeshProUGUI Tooltip;
@@ -84,34 +88,35 @@ public class Equipment : MonoBehaviour
     {
         if (!playerStats.day)
         {
-            if (Items[33] > 0)
-                scissorsThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.36f) * (1f + playerStats.cooldownReduction * 0.28f);
-            if (scissorsThrowCooldown <= 0f)
-            {
+            if (Effects[0] > 0)
+                bladesThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.24f) * (1f + playerStats.cooldownReduction * 0.2f);
+            if (bladesThrowCooldown < 0f)
                 ScissorsThrow();
 
-                temp = 4.8f / (0.88f + 0.12f * Items[33]);
-                scissorsThrowCooldown += temp;
-            }
-
-            if (Items[38] > 0)
+            if (Effects[1] > 0)
                 knifeThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.73f) * (1f + playerStats.cooldownReduction * 0.42f);
-            if (knifeThrowCooldown <= 0f)
-            {
+            if (knifeThrowCooldown < 0f)
                 KnifeThrow();
 
-                temp = 4.2f / (0.78f + 0.22f * Items[38]);
-                knifeThrowCooldown += temp;
-            }
-
-            if (Items[39] > 0)
+            if (Effects[2] > 0)
                 immolateCooldown -= Time.deltaTime * itemActivationRate;
-            if (immolateCooldown <= 0f)
-            {
+            if (immolateCooldown < 0f)
                 Immolate();
 
-                temp = 0.95f / (0.95f + 0.05f * Items[39]);
-                immolateCooldown += temp;
+            if (Effects[3] > 0)
+                rainCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(1.2f);
+            if (rainCooldown < 0f)
+                Rain();
+
+            if (Effects[4] > 0)
+                howitzerCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.35f);
+            if (howitzerCooldown < 0f)
+            {
+                for (int i = 0; i < grenadeCount; i++)
+                {
+                    playerStats.GrenadeDrop(10f);
+                }
+                howitzerCooldown += howitzerMaxCooldown;
             }
         }
      }
@@ -126,109 +131,206 @@ public class Equipment : MonoBehaviour
         switch (which)
         {
             case 1:
-                guns[equipped].specialBulletChance[0] += 0.06f;
+                guns[equipped].specialBulletChance[0] += 0.05f;
                 break;
             case 3:
-                playerStats.GainSC(5);
-                playerStats.rechargeDelay /= 1.12f;
+                playerStats.GainSC(4);
+                playerStats.rechargeDelay /= 1.1f;
                 break;
             case 4:
-                playerStats.dashBaseCooldown /= 1.18f;
+                playerStats.dashBaseCooldown *= 0.88f;
                 playerStats.dashMaxCharges++;
                 break;
             case 5:
-                playerStats.GainCR(0.12f);
+                playerStats.GainCR(0.1f);
                 break;
             case 6:
                 playerStats.GainHP(10);
                 break;
             case 7:
-                playerStats.GainDMG((playerStats.maxHealth - 50) * 0.001f);
+                playerStats.GainDMG((playerStats.maxHealth - 50) * 0.0008f);
                 playerStats.GainHP(10);
                 break;
             case 8:
-                for (int i = 0; i < 3; i++)
-                {
-                    if (slotFilled[i])
-                    {
-                        guns[i].MaxSlots++;
-                    }
-                }
+                guns[equipped].MaxSlots++;
                 break;
             case 9:
-                guns[equipped].accuracy /= 1.15f;
-                guns[equipped].range *= 1.15f;
+                guns[equipped].accuracy /= 1.12f;
+                guns[equipped].range *= 1.12f;
                 playerCamera.orthographicSize++;
                 break;
             case 10:
-                playerStats.GainDMG(0.08f);
+                playerStats.GainDMG(0.06f);
                 break;
             case 11:
-                playerStats.GainSC(5);
+                playerStats.GainSC(4);
                 break;
             case 13:
-                playerStats.dashBaseCooldown /= 1.14f;
+                guns[equipped].magazineMultiplierTenth++;
                 break;
             case 14:
-                playerStats.GainSC(5);
+                playerStats.GainSC(4);
                 if (Items[14] == 1)
                     playerStats.emergencyShields = true;
                 break;
             case 15:
-                playerStats.grenadeBaseCooldown /= 1.11f;
+                playerStats.grenadeDamageMultiplyer += 0.18f;
+                playerStats.grenadeBaseCooldown *= 0.91f;
                 break;
             case 16:
-                playerStats.additionalCritChance += 0.09f;
+                playerStats.additionalCritChance += 0.07f;
                 playerStats.luck += 2;
                 playerStats.map.luck += 2;
                 break;
             case 18:
-                guns[equipped].specialBulletChance[1] += 0.07f;
+                guns[equipped].specialBulletChance[1] += 0.06f;
                 break;
             case 19:
-                guns[equipped].specialBulletChance[2] += 0.06f;
+                guns[equipped].specialBulletChance[2] += 0.05f;
                 break;
             case 21:
-                playerStats.GainDMG(0.08f);
-                playerStats.forceIncrease += 0.16f;
+                playerStats.GainDMG(0.06f);
+                playerStats.forceIncrease += 0.12f;
                 break;
             case 22:
-                playerStats.additionalCritDamage += 0.12f;
+                playerStats.additionalCritDamage += 0.1f;
                 break;
             case 25:
                 playerStats.GainHP(10);
                 break;
             case 26:
-                playerStats.GainSC(5);
+                playerStats.GainSC(4);
                 break;
             case 27:
-                playerStats.grenadeBaseCooldown /= 1.15f;
+                playerStats.grenadeBaseCooldown *= 0.9f;
                 playerStats.grenadeMaxCharges++;
                 break;
             case 28:
-                playerStats.grenadeMaxCharges++;
+                playerStats.grenadeBaseCooldown *= 0.92f;
                 break;
             case 29:
                 playerStats.grenadeMaxCharges++;
                 break;
             case 31:
-                playerStats.GainDMG(0.08f);
+                playerStats.GainDMG(0.06f);
                 break;
             case 32:
-                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 4f;
-                playerStats.GainFR(0.1f);
+                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 5f;
+                playerStats.GainFR(0.08f);
                 break;
             case 33:
+                playerStats.GainSC(4 + playerStats.level * 0.5f);
                 break;
             case 34:
-                guns[equipped].specialBulletChance[3] += 0.06f;
+                guns[equipped].specialBulletChance[3] += 0.05f;
                 break;
-            case 35:
-                playerStats.GainSC(4 + playerStats.level);
+        }
+    }
+
+    public void PickUpEffect(int which)
+    {
+        Effects[which]++;
+        //ItemList[itemsCollected] = which;
+        //itemsCollected++;
+
+        //ShowTooltip(which);
+        switch (which, Effects[which])
+        {
+            case (0, 1):
+                bladesThrowMaxCooldown = 5f;
+                bladesThrowCooldown = 5f;
+                bladesCount = 6;
+                bladesBaseDamage = 20f;
+                bladesPierce = 2;
+                bladesPierceEff = 0.8f;
                 break;
-            case 38:
-                if (!playerStats.day)
-                    Invoke("KnifeThrow", 2.1f);
+            case (0, 2):
+                bladesCount += 4;
+                bladesBaseDamage += 2f;
+                break;
+            case (0, 3):
+                bladesBaseDamage += 8f;
+                break;
+            case (0, 4):
+                bladesThrowMaxCooldown *= 0.75f;
+                break;
+            case (0, 5):
+                bladesPierce += 1;
+                bladesPierceEff += 0.1f;
+                break;
+            case (1, 1):
+                knifeThrowMaxCooldown = 4.2f;
+                knifeThrowCooldown = 4.2f;
+                knivesCount = 2;
+                knivesBaseDamage = 27f;
+                break;
+            case (1, 2):
+                knivesCount += 1;
+                knifeThrowMaxCooldown *= 0.9f;
+                break;
+            case (1, 3):
+                knivesBaseDamage += 7f;
+                knifeThrowMaxCooldown *= 0.9f;
+                break;
+            case (1, 4):
+                knivesCount += 2;
+                break;
+            case (1, 5):
+                knifeThrowMaxCooldown *= 0.7f;
+                break;
+            case (2, 1):
+                immolateMaxCooldown = 1f;
+                immolateCooldown = 1f;
+                immolateBaseDamage = 6f;
+                ImmolateArea = ImmolateSmallArea;
+                immolateHPRatio = 0.04f;
+                break;
+            case (2, 2):
+                immolateBaseDamage += 3f;
+                break;
+            case (2, 3):
+                immolateMaxCooldown *= 0.75f;
+                break;
+            case (2, 4):
+                ImmolateArea = ImmolateMediumArea;
+                break;
+            case (2, 5):
+                immolateHPRatio += 0.05f;
+                break;
+            case (3, 1):
+                rainFrequency = 2.4f;
+                break;
+            case (3, 2):
+                rainFrequency *= 0.86f;
+                break;
+            case (3, 3):
+                guns[equipped].damage *= 1.04f;
+                rainFrequency *= 0.92f;
+                break;
+            case (3, 4):
+                rainFrequency *= 0.85f;
+                break;
+            case (3, 5):
+                guns[equipped].damage *= 1.05f;
+                rainFrequency *= 0.93f;
+                break;
+            case (4, 1):
+                howitzerMaxCooldown = 7f;
+                howitzerCooldown = 7f;
+                grenadeCount = 1;
+                break;
+            case (4, 2):
+                howitzerMaxCooldown *= 0.8f;
+                break;
+            case (4, 3):
+                playerStats.grenadeDamageMultiplyer += 0.07f;
+                howitzerMaxCooldown *= 0.93f;
+                break;
+            case (4, 4):
+                grenadeCount++;
+                break;
+            case (4, 5):
+                howitzerMaxCooldown *= 0.78f;
                 break;
         }
     }
@@ -290,12 +392,12 @@ public class Equipment : MonoBehaviour
             laserCharges[equipped] -= 5f;
         }
 
-        //orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * onHitIncrease;
+        /*orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * onHitIncrease;
         if (orbCharges[equipped] >= 5f)
         {
             FireOrb();
             orbCharges[equipped] -= 5f;
-        }
+        }*/
     }
 
     void FirePeacemaker()
@@ -407,12 +509,12 @@ public class Equipment : MonoBehaviour
     public void Discharge(float shieldLost)
     {
         temp = 5f + Items[11] + shieldLost;
-        temp *= (1f + 0.13f * playerStats.level) * Items[11];
+        temp *= (1f + 0.05f * playerStats.level) * Items[11];
 
         GameObject bullet = Instantiate(DischargeObject, Barrel.position, Barrel.rotation);
 
         firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        firedBullet.damage = temp * (playerStats.DamageDealtMultiplyer(1.04f));
+        firedBullet.damage = temp * (playerStats.DamageDealtMultiplyer(1.05f));
     }
 
     public void ActivateItems()
@@ -423,31 +525,34 @@ public class Equipment : MonoBehaviour
 
     public void ScissorsThrow()
     {
-        tempi = 4 + Items[33] * 4;
-        for (int i = 0; i < tempi; i++)
+        for (int i = 0; i < bladesCount; i++)
         {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, 0f + (360f / tempi) * i);
-            GameObject blade = Instantiate(ScissorsProjectal, Barrel.position, Barrel.rotation);
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, 0f + (360f / bladesCount) * i);
+            GameObject blade = Instantiate(BladeProjectal, Barrel.position, Barrel.rotation);
             Rigidbody2D blade_body = blade.GetComponent<Rigidbody2D>();
-            blade_body.AddForce(Barrel.up * Random.Range(17.7f, 19.1f), ForceMode2D.Impulse);
+            blade_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
 
             firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = (10 + 1.1f * playerStats.level + (2 + playerStats.level) * Items[33]) * playerStats.DamageDealtMultiplyer(1.04f);
+            firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1.04f);
+            firedBullet.pierce = bladesPierce;
+            firedBullet.pierceEfficiency = bladesPierceEff;
         }
+        bladesThrowCooldown += bladesThrowMaxCooldown;
     }
 
     void KnifeThrow()
     {
-        for (int i = 0; i < 1 + Items[38] * 2; i++)
+        for (int i = 0; i < knivesCount; i++)
         {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 12f * Items[38] + 12f * i);
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 6f * knivesCount + 6f + 12f * i);
             GameObject knife = Instantiate(KnifeProjectal, Barrel.position, Barrel.rotation);
             Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
-            knife_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
+            knife_body.AddForce(Barrel.up * Random.Range(17.3f, 18.7f), ForceMode2D.Impulse);
 
             firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = (18 + playerStats.level + (3 + playerStats.level) * Items[38]) * playerStats.DamageDealtMultiplyer(1.05f);
+            firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1.07f);
         }
+        knifeThrowCooldown += knifeThrowMaxCooldown;
     }
 
     void Immolate()
@@ -455,7 +560,23 @@ public class Equipment : MonoBehaviour
         GameObject fire = Instantiate(ImmolateArea, Barrel.position, Barrel.rotation);
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
-        firedBullet.damage = (0.5f + 0.02f * playerStats.level + (6.2f + 0.37f * playerStats.level + 0.03f * playerStats.maxHealth) * Items[39]) * playerStats.DamageDealtMultiplyer(1.08f);
+        firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1.1f);
+
+        immolateCooldown += immolateMaxCooldown;
+    }
+
+    void Rain()
+    {
+        if (guns[equipped].burst > 0)
+        {
+            for (int i = 0; i < guns[equipped].burst; i++)
+            {
+                playerStats.FireDirection(Random.Range(0f, 360f), 0f);
+            }
+        }
+        playerStats.FireDirection(Random.Range(0f, 360f), 0f);
+
+        rainCooldown += guns[equipped].fireRate * rainFrequency;
     }
 
     /*void ThrowCaltrops()

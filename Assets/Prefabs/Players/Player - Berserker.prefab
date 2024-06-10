@@ -32,7 +32,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790370, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
-      propertyPath: Items.Array.data[36]
+      propertyPath: Items.Array.data[35]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790371, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: movementSpeed
-      value: 412
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 2129462728280790375, guid: f3fefa7f4259dbd42a606b785bd454b8, type: 3}
       propertyPath: m_Name
