@@ -31,10 +31,10 @@ public class Equipment : MonoBehaviour
 
     [Header("Active Items")]
     public float itemActivationRate;
-    public GameObject BladeProjectal, KnifeProjectal, ImmolateArea;
+    public GameObject BladeProjectal, KnifeProjectal, ImmolateArea, StormCloud;
     public GameObject ImmolateSmallArea, ImmolateMediumArea;
     public float bladesThrowMaxCooldown, bladesThrowCooldown, bladesBaseDamage, bladesPierceEff, knifeThrowMaxCooldown, knifeThrowCooldown, knivesBaseDamage, immolateMaxCooldown, immolateCooldown,
-        immolateBaseDamage, immolateHPRatio, rainCooldown, rainFrequency, howitzerMaxCooldown, howitzerCooldown;
+        immolateBaseDamage, immolateHPRatio, rainCooldown, rainFrequency, howitzerMaxCooldown, howitzerCooldown, cloudMaxCooldown, cloudCooldown, cloudBaseDamage, cloudDuration, cloudSpeed;
     public int bladesCount, bladesPierce, knivesCount, grenadeCount;
 
     // -- items
@@ -118,6 +118,11 @@ public class Equipment : MonoBehaviour
                 }
                 howitzerCooldown += howitzerMaxCooldown;
             }
+
+            if (Effects[5] > 0)
+                cloudCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.21f);
+            if (cloudCooldown < 0f)
+                Storm();
         }
      }
 
@@ -223,6 +228,9 @@ public class Equipment : MonoBehaviour
                 break;
             case 34:
                 guns[equipped].specialBulletChance[3] += 0.05f;
+                break;
+            case 36:
+                itemActivationRate += 0.18f;
                 break;
         }
     }
@@ -331,6 +339,27 @@ public class Equipment : MonoBehaviour
                 break;
             case (4, 5):
                 howitzerMaxCooldown *= 0.78f;
+                break;
+            case (5, 1):
+                cloudMaxCooldown = 20f;
+                cloudCooldown = 20f;
+                cloudDuration = 14f;
+                cloudSpeed = 6f;
+                cloudBaseDamage += 14f;
+                break;
+            case (5, 2):
+                cloudDuration += 4f;
+                cloudSpeed += 1f;
+                break;
+            case (5, 3):
+                cloudBaseDamage += 6f;
+                break;
+            case (5, 4):
+                cloudMaxCooldown *= 0.75f;
+                break;
+            case (5, 5):
+                cloudDuration += 6f;
+                cloudBaseDamage += 2f;
                 break;
         }
     }
@@ -577,6 +606,17 @@ public class Equipment : MonoBehaviour
         playerStats.FireDirection(Random.Range(0f, 360f), 0f);
 
         rainCooldown += guns[equipped].fireRate * rainFrequency;
+    }
+
+    void Storm()
+    {
+        GameObject fire = Instantiate(StormCloud, Barrel.position, Barrel.rotation);
+
+        firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
+        firedBullet.damage = cloudBaseDamage * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1f);
+        firedBullet.duration = cloudDuration;
+
+        cloudCooldown += cloudMaxCooldown;
     }
 
     /*void ThrowCaltrops()

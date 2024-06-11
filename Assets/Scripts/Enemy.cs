@@ -236,6 +236,8 @@ public class Enemy : MonoBehaviour
     void Strike()
     {
         playerStats.TakeDamage(attackDamage, false);
+        if (playerStats.eq.Items[38] > 0)
+            TakeDamage(attackDamage * (0.4f + 0.8f * playerStats.eq.Items[38]), false, true);
         playerStats.GainPoison(attackPoison);
     }
 

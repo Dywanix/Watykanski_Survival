@@ -132,9 +132,10 @@ public class PlayerController : MonoBehaviour
         {
             for (int i = 0; i < eq.Items.Length; i++)
             {
-                for (int j = 0; j < eq.Items[j]; j++)
+                if (eq.Items[i] > 0)
                 {
-                    eq.PickUpItem(j);
+                    eq.PickUpItem(i);
+                    eq.Items[i]--;
                 }
             }
         }
@@ -1066,6 +1067,8 @@ public class PlayerController : MonoBehaviour
                     LoseHealth(value);
                 else
                 {
+                    if (eq.Items[38] > 0)
+                        value /= 1f + eq.Items[38] * 0.1f;
                     if (shield > value)
                         LoseShield(value);
                     else
@@ -1213,11 +1216,15 @@ public class PlayerController : MonoBehaviour
         if (other.transform.tag == "Scrap")
         {
             GainGold(1);
+            if (eq.Items[37] > 0)
+                GainXP(eq.Items[37] * 2);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Scrap5")
         {
             GainGold(5);
+            if (eq.Items[37] > 0)
+                GainXP(eq.Items[37] * 10);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Experience")

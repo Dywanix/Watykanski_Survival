@@ -136,6 +136,7 @@ Transform:
   - {fileID: 4838841719412984262}
   - {fileID: 3580027287559840205}
   - {fileID: 4947830863532549026}
+  - {fileID: 877497541668317632}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -188,6 +189,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7e93768518c3e8349a4b0a90212c2a44, type: 3}
   - {fileID: 21300000, guid: 30a2662fda2ce264d95241a831efdf08, type: 3}
   - {fileID: 21300000, guid: 46f4b0c66dd08d0468122e7abddd96e8, type: 3}
+  - {fileID: 21300000, guid: 1837f8befd7b6204e8fe8e5c4e96b6d7, type: 3}
+  - {fileID: 21300000, guid: e33714bd7b8e92c45b770e5dc02480bd, type: 3}
+  - {fileID: 21300000, guid: 77cf15535347d0e499c5fe6356100f99, type: 3}
   ItemTooltip:
   - Increase Fire Rate & Movement Speed with every enemy slained for the Round
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
@@ -227,12 +231,16 @@ MonoBehaviour:
   - Increase Shield Capacity by 4 & 1 per 2 levels
   - Gain chance to fire Electric Bullet. Increase effectivness of Electric Bullets
   - Increase Max Health with Enemy slained
+  - Speeds up Item activation rate by 18%
+  - Picking up Gold also gives 2XP
+  - Reduce Damage taken by 10% & deal back to melee attackers
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}
   - {fileID: 7303675010387988356}
   - {fileID: 4185776107452987588}
   - {fileID: 8443127016458784972}
+  - {fileID: 1206003873605896130}
 --- !u!1 &6344427247891361874
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,3 +394,54 @@ MonoBehaviour:
   - Increase Gun Damage by 4% & Frequency by 8%
   - Increase Frequency by 15%
   - Increase Gun Damage by 5% & Frequency by 7%
+--- !u!1 &8894815096822500778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877497541668317632}
+  - component: {fileID: 1206003873605896130}
+  m_Layer: 0
+  m_Name: Storm Cloud
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &877497541668317632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8894815096822500778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3380796369291455551}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1206003873605896130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8894815096822500778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a3a3fbed95ba148964ebce23cb2451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectSprite: {fileID: 21300000, guid: 07785dda1d92b5f47898100bc100a57b, type: 3}
+  EffectTooltips:
+  - Summons Storm Cloud that chases Enemies and deals Damage in small area
+  - Increase Cloud Duration by 4s & Movement Speed by 16%
+  - Increase Base Damage by 6
+  - Increase summon Frequency by 25%
+  - Increase Cloud Duration by 6s & Base Damage by 2
