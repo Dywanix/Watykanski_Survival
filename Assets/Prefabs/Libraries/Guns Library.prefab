@@ -167,6 +167,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &546906197202244888
@@ -303,6 +304,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 5893359571365976471, guid: 9402ba422403973408d900d7467d626b, type: 3}
 --- !u!1 &789727245692684235
@@ -439,6 +441,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 5134053063300659841, guid: 2757d264363cb3345bda51a16dcbe9c6, type: 3}
 --- !u!1 &847349847687333187
@@ -575,6 +578,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 7517314691958038469, guid: e7fecd86cdd4466409eccf755f882d59, type: 3}
 --- !u!1 &1093269790366527781
@@ -711,6 +715,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 8202576004139201279, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
   - {fileID: 7551784778215316400, guid: e90ed73e6da1b4c4988dc544ee387667, type: 3}
@@ -848,6 +853,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &1218539877975980926
@@ -984,6 +990,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &1371518073042196905
@@ -1120,6 +1127,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &1392772750735860700
@@ -1256,6 +1264,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 1686795061182180904, guid: 326fd7fd4b73cf042a134f37e07fe219, type: 3}
 --- !u!1 &1522117847618739055
@@ -1400,6 +1409,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &1824568119825048899
@@ -1544,6 +1554,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &1884878402607074324
@@ -1594,10 +1605,10 @@ MonoBehaviour:
   gunSprite: {fileID: 21300000, guid: edca6e13b641e6e48af956fba1824a1f, type: 3}
   holdingSprite: {fileID: 21300000, guid: fa2c3d34c5ef1c540ae827029dc0a12b, type: 3}
   damage: 10.8
-  fireRate: 0.84
+  fireRate: 0.68
   accuracy: 11.3
   critChance: 0.09
-  reloadTime: 0.58
+  reloadTime: 0.46
   range: 0.23
   force: 20
   heft: 0.06
@@ -1688,6 +1699,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &2212724744192666305
@@ -1738,10 +1750,10 @@ MonoBehaviour:
   gunSprite: {fileID: 21300000, guid: 8b440bfff2a1dcf47b5264d9f463b098, type: 3}
   holdingSprite: {fileID: 21300000, guid: 96ae40eec5f3ce644a647c7d51502954, type: 3}
   damage: 14
-  fireRate: 0.42
+  fireRate: 0.34
   accuracy: 5.7
   critChance: 0.17
-  reloadTime: 1.09
+  reloadTime: 0.84
   range: 0.255
   force: 20
   heft: 0.09
@@ -1832,6 +1844,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &2598830977068030122
@@ -1968,6 +1981,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &2636253376700014245
@@ -2104,6 +2118,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 8597203529517308894, guid: 4208bacc7b1daa247ad167802a738b0d, type: 3}
 --- !u!1 &2832839490150293637
@@ -2248,6 +2263,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &2842763502130972339
@@ -2392,6 +2408,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &2918813332727121374
@@ -2442,10 +2459,10 @@ MonoBehaviour:
   gunSprite: {fileID: 21300000, guid: 742fe048c04397c4496548e5cdde103d, type: 3}
   holdingSprite: {fileID: 21300000, guid: 89a04bbdaf7335f40bc3bcec1939828a, type: 3}
   damage: 29.1
-  fireRate: 0.82
+  fireRate: 0.67
   accuracy: 5.8
   critChance: 0.22
-  reloadTime: 1.18
+  reloadTime: 0.88
   range: 0.253
   force: 20
   heft: 0.1
@@ -2536,6 +2553,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &2962044608577098084
@@ -2643,6 +2661,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 6878076962156814887, guid: 4c935674536304d4e99cd188d287eb15, type: 3}
 --- !u!1 &2996079823976944659
@@ -2779,6 +2798,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &3031172152533990842
@@ -2923,6 +2943,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &3556763667949834656
@@ -3067,6 +3088,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &3671352911484681855
@@ -3203,6 +3225,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &3841801961933602629
@@ -3339,6 +3362,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 6728629390179744087, guid: 471a13bc311c8ea4693e414f4a85c3d8, type: 3}
 --- !u!1 &3916744168927295610
@@ -3446,6 +3470,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 8194804281198867657, guid: 7c504783475519040ba022fc07231b17, type: 3}
 --- !u!1 &4000620446799909871
@@ -3590,6 +3615,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &4271480267339545355
@@ -3726,6 +3752,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 9096077774305803365, guid: b93392dc5b53df54782024d90d602952, type: 3}
 --- !u!1 &4734694046563246812
@@ -3862,6 +3889,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
@@ -4009,6 +4037,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &4885709264730667964
@@ -4153,6 +4182,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &5086013156797040371
@@ -4289,6 +4319,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 1649544961230825972, guid: 9e624e420449e254d85951ec2a708af6, type: 3}
 --- !u!1 &5465305710866925543
@@ -4433,6 +4464,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &5506601985173318202
@@ -4483,10 +4515,10 @@ MonoBehaviour:
   gunSprite: {fileID: 21300000, guid: 3dcb3cc1ca294094c8171b0fcc037d2a, type: 3}
   holdingSprite: {fileID: 21300000, guid: 84f465b24bf26cc44becf611352948a0, type: 3}
   damage: 16
-  fireRate: 0.53
+  fireRate: 0.43
   accuracy: 5.6
   critChance: 0.17
-  reloadTime: 1.23
+  reloadTime: 0.92
   range: 0.26
   force: 20
   heft: 0.1
@@ -4577,6 +4609,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &5518898055452544451
@@ -4815,6 +4848,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &5518898056319036724
@@ -4951,6 +4985,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &5518898056424690035
@@ -5087,6 +5122,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 5239690129876251028, guid: ebfed965c846ab040bf68489ccb7570f, type: 3}
 --- !u!1 &5518898057136511715
@@ -5281,6 +5317,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &6200883274023202496
@@ -5425,6 +5462,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &6467301187820218827
@@ -5561,6 +5599,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2134860343154502030, guid: 89859de1707144b47a22ff18bf9547d7, type: 3}
 --- !u!1 &6840493719102897529
@@ -5742,6 +5781,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &7311595906207936656
@@ -5878,6 +5918,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 44334075576541755, guid: fa65429621b029946b6df51ed7e8fa89, type: 3}
 --- !u!1 &7591780788399487648
@@ -5928,7 +5969,7 @@ MonoBehaviour:
   gunSprite: {fileID: 21300000, guid: 7e6dcef9915c3934a9d43bc5d5f213c7, type: 3}
   holdingSprite: {fileID: 21300000, guid: a875112b5cb1a4d46a8c5d4877eff786, type: 3}
   damage: 12.3
-  fireRate: 0.47
+  fireRate: 0.375
   accuracy: 4.5
   critChance: 0.15
   reloadTime: 0
@@ -6022,6 +6063,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 5134053063300659841, guid: 2757d264363cb3345bda51a16dcbe9c6, type: 3}
 --- !u!1 &7663142216741792847
@@ -6166,6 +6208,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &7750337336058958054
@@ -6346,6 +6389,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &7913767698491047275
@@ -6482,6 +6526,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 3399573486116877650, guid: e57881db52ba6e44c979cd353e76ac4d, type: 3}
 --- !u!1 &8225853495550403933
@@ -6618,6 +6663,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 212314408667122038, guid: 1dd521ff223afce4db7525a78d593d49, type: 3}
 --- !u!1 &8722000444462337091
@@ -6754,6 +6800,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 6741737064794144746, guid: 03180a3cfdf1ea648ab6e4e4095d6dda, type: 3}
   - {fileID: 8121341149438534637, guid: 2cdfcb611ac5e3745a1327cb4469ce66, type: 3}
@@ -6891,6 +6938,7 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 3982066536839230301, guid: 1b083aa83d10efd46a5f8535ea27f195, type: 3}
   - {fileID: 1721548041437454189, guid: 18d501873df40dc4ab56dba214283c6a, type: 3}
@@ -7036,6 +7084,7 @@ MonoBehaviour:
   - 0
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
 --- !u!1 &9064302997938864561
@@ -7143,5 +7192,6 @@ MonoBehaviour:
   specialBulletNextChance: []
   damageMultiplier: 1
   magazineMultiplier: 1
+  magazineMultiplierTenth: 10
   bulletPrefab:
   - {fileID: 832351620062877871, guid: 2703742fd8b2c4e4d9675cabcd9a617d, type: 3}

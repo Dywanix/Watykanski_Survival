@@ -245,8 +245,8 @@ public class Equipment : MonoBehaviour
         switch (which, Effects[which])
         {
             case (0, 1):
-                bladesThrowMaxCooldown = 5f;
-                bladesThrowCooldown = 5f;
+                bladesThrowMaxCooldown = 4.5f;
+                bladesThrowCooldown = 1f + bladesThrowMaxCooldown * 0.5f;
                 bladesCount = 6;
                 bladesBaseDamage = 20f;
                 bladesPierce = 2;
@@ -267,8 +267,8 @@ public class Equipment : MonoBehaviour
                 bladesPierceEff += 0.1f;
                 break;
             case (1, 1):
-                knifeThrowMaxCooldown = 4.2f;
-                knifeThrowCooldown = 4.2f;
+                knifeThrowMaxCooldown = 3.8f;
+                knifeThrowCooldown = 1f + knifeThrowMaxCooldown * 0.5f;
                 knivesCount = 2;
                 knivesBaseDamage = 27f;
                 break;
@@ -287,8 +287,8 @@ public class Equipment : MonoBehaviour
                 knifeThrowMaxCooldown *= 0.7f;
                 break;
             case (2, 1):
-                immolateMaxCooldown = 1f;
-                immolateCooldown = 1f;
+                immolateMaxCooldown = 0.9f;
+                immolateCooldown = 1f + immolateMaxCooldown * 0.5f;
                 immolateBaseDamage = 6f;
                 ImmolateArea = ImmolateSmallArea;
                 immolateHPRatio = 0.04f;
@@ -323,8 +323,8 @@ public class Equipment : MonoBehaviour
                 rainFrequency *= 0.93f;
                 break;
             case (4, 1):
-                howitzerMaxCooldown = 7f;
-                howitzerCooldown = 7f;
+                howitzerMaxCooldown = 6.3f;
+                howitzerCooldown = 1f + howitzerMaxCooldown * 0.5f;
                 grenadeCount = 1;
                 break;
             case (4, 2):
@@ -341,8 +341,8 @@ public class Equipment : MonoBehaviour
                 howitzerMaxCooldown *= 0.78f;
                 break;
             case (5, 1):
-                cloudMaxCooldown = 20f;
-                cloudCooldown = 20f;
+                cloudMaxCooldown = 18f;
+                cloudCooldown = 1f + cloudMaxCooldown * 0.5f;
                 cloudDuration = 14f;
                 cloudSpeed = 6f;
                 cloudBaseDamage += 14f;
