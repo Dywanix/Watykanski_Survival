@@ -38,8 +38,11 @@ public class Arena : MonoBehaviour
                 rest -= mobsStrength[roll];
                 if (rest <= 0)
                 {
-                    active = false;
-                    Invoke("CheckForClear", 5f);
+                    time += 1f;
+                    strength += 15 + strength / 12;
+                    NextRound();
+                    //active = false;
+                    //Invoke("CheckForClear", 5f);
                 }
             }
         }

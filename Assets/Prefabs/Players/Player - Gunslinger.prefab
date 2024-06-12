@@ -3692,7 +3692,7 @@ MonoBehaviour:
   poisonCap: 100
   damageBonus: 1.08
   fireRateBonus: 1.08
-  baseMovementSpeed: 300
+  baseMovementSpeed: 200
   movementSpeed: 1.12
   additionalCritChance: 0
   additionalCritDamage: 0
