@@ -100,7 +100,7 @@ public class Arena : MonoBehaviour
         map.playerStats.NewDay();
         VendingMachineObject.SetActive(true);
         VaningMachineScript.SetCabinet();
-        strength += 60 + strength / 10;
+        strength += 60 + strength / 9;
         time += 2f;
         Invoke("NextRound", 30f);
     }
