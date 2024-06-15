@@ -10,14 +10,14 @@ public class Arena : MonoBehaviour
 
     [Header("Objects")]
     public Transform SpawnPoint;
-    public GameObject[] Mobs;
+    public GameObject[] Mobs, Elites;
     public GameObject VendingMachineObject;
 
     [Header("Stats")]
     public bool active;
-    public int strength;
-    public int[] mobsStrength;
-    public int roll, tempi, rest;
+    public int round, strength;
+    public int[] mobsStrength, elitesStrength;
+    public int roll, tempi, rest, elite, amount;
     public float time, frequency, delay;
 
     void Start()
@@ -33,16 +33,26 @@ public class Arena : MonoBehaviour
             delay -= Time.deltaTime;
             if (delay < 0f)
             {
-                Spawn();
-                delay += mobsStrength[roll] * frequency;
-                rest -= mobsStrength[roll];
-                if (rest <= 0)
+                if (GameObject.FindGameObjectsWithTag("Enemy").Length > 50)
                 {
-                    time += 1f;
-                    strength += 15 + strength / 12;
-                    NextRound();
-                    //active = false;
-                    //Invoke("CheckForClear", 5f);
+                    Elite(5);
+                    delay += 2.5f * frequency;
+                    rest--;
+                }
+                else
+                {
+                    Spawn();
+                    Elite(1);
+                    delay += mobsStrength[roll] * frequency;
+                    rest -= mobsStrength[roll];
+                    if (rest <= 0)
+                    {
+                        time += 1f;
+                        strength += 15 + strength / 12;
+                        NextRound();
+                        //active = false;
+                        //Invoke("CheckForClear", 5f);
+                    }
                 }
             }
         }
@@ -53,6 +63,7 @@ public class Arena : MonoBehaviour
         VendingMachineObject.SetActive(false);
         map.playerStats.Nightfall();
         active = true;
+        round++;
         SpawnMobs();
     }
 
@@ -83,7 +94,19 @@ public class Arena : MonoBehaviour
         roll = Random.Range(0, Mobs.Length);
 
         Instantiate(Mobs[roll], SpawnPoint.position, transform.rotation);
-        tempi -= mobsStrength[roll];
+    }
+
+    void Elite(int cooldownReduction)
+    {
+        elite -= cooldownReduction;
+        if (elite <= 0)
+        {
+            roll = Random.Range(0, Elites.Length);
+
+            Instantiate(Elites[roll], SpawnPoint.position, transform.rotation);
+
+            elite += 10 + elitesStrength[roll] * 3;
+        }
     }
 
     void CheckForClear()
