@@ -61,7 +61,7 @@ public class Equipment : MonoBehaviour
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent(typeof(Camera)) as Camera;
         if (gambler)
         {
-            tempi = 3;
+            /*tempi = 3;
             while (tempi > 0)
             {
                 roll = Random.Range(0, ILibrary.ItemSprite.Length);
@@ -70,7 +70,9 @@ public class Equipment : MonoBehaviour
                     PickUpItem(roll);
                     tempi--;
                 }
-            }
+            }*/
+            PickUpItem(Random.Range(0, ILibrary.ItemSprite.Length));
+            PickUpEffect(Random.Range(0, ILibrary.Effects.Length));
         }
         //Invoke("AutoReload", 3f);
         //Invoke("ThrowCaltrops", 8f);
@@ -138,6 +140,9 @@ public class Equipment : MonoBehaviour
         ShowTooltip(which);
         switch (which)
         {
+            case 0:
+                playerStats.adrenalineCharges += playerStats.totalSlained / 2;
+                break;
             case 1:
                 guns[equipped].specialBulletChance[0] += 0.05f;
                 break;
@@ -172,6 +177,7 @@ public class Equipment : MonoBehaviour
                 break;
             case 10:
                 playerStats.GainDMG(0.06f);
+                playerStats.bloodMoney += playerStats.totalSlained / 2;
                 break;
             case 11:
                 playerStats.GainSC(4);
@@ -186,7 +192,7 @@ public class Equipment : MonoBehaviour
                 break;
             case 15:
                 playerStats.grenadeDamageMultiplyer += 0.18f;
-                playerStats.grenadeBaseCooldown *= 0.91f;
+                playerStats.grenadeBaseCooldown *= 0.9f;
                 break;
             case 16:
                 playerStats.additionalCritChance += 0.07f;
@@ -206,8 +212,12 @@ public class Equipment : MonoBehaviour
             case 22:
                 playerStats.additionalCritDamage += 0.15f;
                 break;
+            case 23:
+                playerStats.GainGold(10f);
+                break;
             case 25:
-                playerStats.GainHP(10);
+                playerStats.GainDMG(0.06f);
+                playerStats.GainFR(0.08f);
                 break;
             case 26:
                 playerStats.GainSC(4);
@@ -226,7 +236,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainDMG(0.06f);
                 break;
             case 32:
-                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 5f;
+                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 4.5f;
                 playerStats.GainFR(0.08f);
                 break;
             case 33:
@@ -235,8 +245,29 @@ public class Equipment : MonoBehaviour
             case 34:
                 guns[equipped].specialBulletChance[3] += 0.05f;
                 break;
+            case 35:
+                playerStats.bloodBagCharges += playerStats.totalSlained / 2;
+                break;
             case 36:
                 itemActivationRate += 0.21f;
+                break;
+            case 39:
+                guns[equipped].magazineMultiplierTenth += 1;
+                playerStats.GainFR(0.09f);
+                break;
+            case 40:
+                guns[equipped].peacemaker += 0.6f;
+                break;
+            case 41:
+                guns[equipped].boomerang += 0.6f;
+                break;
+            case 42:
+                guns[equipped].laser += 0.4f;
+                break;
+            case 43:
+                guns[equipped].peacemaker += 0.3f;
+                guns[equipped].boomerang += 0.3f;
+                guns[equipped].laser += 0.3f;
                 break;
         }
     }
@@ -388,45 +419,41 @@ public class Equipment : MonoBehaviour
     {
         //Flash();
         onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.48f * guns[equipped].Accessories[26 + bp.ALibrary.count];
+        onHitIncrease *= 1f + 0.028f * playerStats.adrenalineStacks;
 
-        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20] * onHitIncrease;
-        freeBulletCharges[equipped] += efficiency * guns[equipped].Accessories[20 + bp.ALibrary.count] * onHitIncrease * 1.8f;
+        freeBulletCharges[equipped] += efficiency * guns[equipped].freeBullet * onHitIncrease;
         if (freeBulletCharges[equipped] >= 5f)
         {
             playerStats.FireDirection(0f, 0f);
             freeBulletCharges[equipped] -= 5f;
         }
 
-        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23] * guns[equipped].BulletsFired() * onHitIncrease;
-        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].Accessories[23 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.6f;
+        peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].peacemaker * guns[equipped].BulletsFired() * onHitIncrease;
         if (peacemakerCharges[equipped] >= 11f)
         {
             FirePeacemaker();
             peacemakerCharges[equipped] -= 11f;
         }
 
-        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24] * onHitIncrease;
-        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].Accessories[24 + bp.ALibrary.count] * onHitIncrease * 1.6f;
+        boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].boomerang * onHitIncrease;
         if (boomerangCharges[equipped] >= 10f)
         {
             FireBoomerang();
             boomerangCharges[equipped] -= 10f;
         }
 
-        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25] * guns[equipped].BulletsFired() * onHitIncrease;
-        waveCharges[equipped] += efficiency * guns[equipped].Accessories[25 + bp.ALibrary.count] * guns[equipped].BulletsFired() * onHitIncrease * 1.6f;
+        waveCharges[equipped] += efficiency * guns[equipped].wave * guns[equipped].BulletsFired() * onHitIncrease;
         if (waveCharges[equipped] >= 13f)
         {
             FireWave();
             waveCharges[equipped] -= 13f;
         }
 
-        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27] * onHitIncrease;
-        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].Accessories[27 + bp.ALibrary.count] * onHitIncrease * 1.6f;
-        if (laserCharges[equipped] >= 5f)
+        laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].laser * onHitIncrease;
+        if (laserCharges[equipped] >= 4f)
         {
             FireLaser();
-            laserCharges[equipped] -= 5f;
+            laserCharges[equipped] -= 4f;
         }
 
         /*orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * onHitIncrease;
@@ -450,9 +477,9 @@ public class Equipment : MonoBehaviour
         playerStats.firedBullet.falloff += 0.4f + 0.4f * playerStats.firedBullet.falloff;
         playerStats.firedBullet.duration = 0.4f + 0.4f * playerStats.firedBullet.duration;
 
-        playerStats.firedBullet.damage *= 1.4f + 0.14f * playerStats.firedBullet.pierce;
+        playerStats.firedBullet.damage *= 1.4f + 0.04f * Items[40] + (0.14f + 0.04f * Items[40]) * playerStats.firedBullet.pierce;
         playerStats.firedBullet.pierceEfficiency += 0.16f * playerStats.firedBullet.pierce;
-        playerStats.firedBullet.pierce = 5;
+        playerStats.firedBullet.pierce = 5 + Items[40];
     }
 
     void FireBoomerang()
@@ -470,9 +497,9 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet.falloff = 40f;
             playerStats.firedBullet.duration = 50f;
 
-            playerStats.firedBullet.damage *= 1.1f + 0.06f * playerStats.firedBullet.pierce + 0.35f * playerStats.firedBullet.pierceEfficiency;
-            playerStats.firedBullet.pierce += 7;
-            playerStats.firedBullet.pierceEfficiency = 0.6f + 0.6f * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.damage *= 1.1f + 0.04f * Items[41] + (0.06f + 0.02f * Items[41]) * playerStats.firedBullet.pierce + (0.35f + 0.11f * Items[41]) * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.pierce += 7 + Items[41];
+            playerStats.firedBullet.pierceEfficiency = 0.6f + 0.03f * Items[41] + (0.6f + 0.03f * Items[41]) * playerStats.firedBullet.pierceEfficiency;
         }
     }
 
@@ -505,10 +532,10 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet.falloff = 0.12f;
             playerStats.firedBullet.duration = 0.14f;
 
-            playerStats.firedBullet.damage *= 0.36f + 0.025f * playerStats.firedBullet.pierce + 0.06f * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.damage *= 0.36f + 0.033f * Items[42] + (0.025f + 0.0125f * Items[42]) * playerStats.firedBullet.pierce + (0.06f + 0.03f * Items[42]) * playerStats.firedBullet.pierceEfficiency;
             playerStats.firedBullet.pierce = 10;
             playerStats.firedBullet.pierceEfficiency = 1f;
-            playerStats.firedBullet.shatter += 0.6f + 0.3f * playerStats.firedBullet.shatter;
+            playerStats.firedBullet.shatter += 0.6f + 0.045f * Items[42] + (0.3f + 0.65f * Items[42]) * playerStats.firedBullet.shatter;
         }
     }
 

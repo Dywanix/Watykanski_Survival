@@ -405,7 +405,7 @@ public class Backpack : MonoBehaviour
                 // Dasing fires wave of bullets
                 break;
             case 20:
-                // additional bullets fired every 6 shots
+                eq.guns[currentGun].freeBullet += 1f;
                 break;
             case 21:
                 eq.guns[currentGun].fireRate /= 1.06f;
@@ -416,20 +416,20 @@ public class Backpack : MonoBehaviour
                 // increase damage based on magazine size
                 break;
             case 23:
-                // Peacemaker - On Hit
+                eq.guns[currentGun].peacemaker += 1f;
                 break;
             case 24:
-                // Boomerang - On Hit
+                eq.guns[currentGun].boomerang += 1f;
                 break;
             case 25:
-                // Wave - On Hit
+                eq.guns[currentGun].wave += 1f;
                 break;
             case 26:
                 eq.guns[currentGun].fireRate /= 1.09f;
                 // On Hit Rate Increase
                 break;
             case 27:
-                // Laser - On Hit
+                eq.guns[currentGun].laser += 1f;
                 break;
             case 28:
                 eq.guns[currentGun].DoT += 0.30f;
@@ -561,7 +561,7 @@ public class Backpack : MonoBehaviour
                 // Dasing fires wave of bullets
                 break;
             case 20:
-                // additional bullets fired every 6 shots
+                eq.guns[currentGun].freeBullet -= 1f;
                 break;
             case 21:
                 eq.guns[currentGun].fireRate *= 1.06f;
@@ -572,20 +572,20 @@ public class Backpack : MonoBehaviour
                 // increase damage based on magazine size
                 break;
             case 23:
-                // Peacemaker - On Hit
+                eq.guns[currentGun].peacemaker -= 1f;
                 break;
             case 24:
-                // Boomerang - On Hit
+                eq.guns[currentGun].boomerang -= 1f;
                 break;
             case 25:
-                // Wave - On Hit
+                eq.guns[currentGun].wave -= 1f;
                 break;
             case 26:
                 eq.guns[currentGun].fireRate *= 1.09f;
                 // On Hit Rate Increase
                 break;
             case 27:
-                // Laser - On Hit
+                eq.guns[currentGun].laser -= 1f;
                 break;
             case 28:
                 eq.guns[currentGun].DoT -= 0.30f;
@@ -717,7 +717,7 @@ public class Backpack : MonoBehaviour
                 // Dasing fires wave of bullets
                 break;
             case 20:
-                // additional bullets fired every 3,125 shots - On Hit
+                eq.guns[currentGun].freeBullet += 1.6f;
                 break;
             case 21:
                 eq.guns[currentGun].fireRate /= 1.096f;
@@ -728,20 +728,20 @@ public class Backpack : MonoBehaviour
                 // increase damage based on magazine size
                 break;
             case 23:
-                // Peacemaker - On Hit
+                eq.guns[currentGun].peacemaker += 1.6f;
                 break;
             case 24:
-                // Boomerang - On Hit
+                eq.guns[currentGun].boomerang += 1.6f;
                 break;
             case 25:
-                // Wave - On Hit
+                eq.guns[currentGun].wave += 1.6f;
                 break;
             case 26:
                 eq.guns[currentGun].fireRate /= 1.144f;
                 // On Hit Rate Increase
                 break;
             case 27:
-                // Laser - On Hit
+                eq.guns[currentGun].laser += 1.6f;
                 break;
             case 28:
                 eq.guns[currentGun].DoT += 0.48f;
@@ -873,7 +873,7 @@ public class Backpack : MonoBehaviour
                 // Dasing fires wave of bullets
                 break;
             case 20:
-                // additional bullets fired every 3,125 shots - On Hit
+                eq.guns[currentGun].freeBullet -= 1.6f;
                 break;
             case 21:
                 eq.guns[currentGun].fireRate *= 1.096f;
@@ -884,20 +884,20 @@ public class Backpack : MonoBehaviour
                 // increase damage based on magazine size
                 break;
             case 23:
-                // Peacemaker - On Hit
+                eq.guns[currentGun].peacemaker -= 1.6f;
                 break;
             case 24:
-                // Boomerang - On Hit
+                eq.guns[currentGun].boomerang -= 1.6f;
                 break;
             case 25:
-                // Wave - On Hit
+                eq.guns[currentGun].wave -= 1.6f;
                 break;
             case 26:
                 eq.guns[currentGun].fireRate *= 1.144f;
                 // On Hit Rate Increase
                 break;
             case 27:
-                // Laser - On Hit
+                eq.guns[currentGun].laser -= 1.6f;
                 break;
             case 28:
                 eq.guns[currentGun].DoT -= 0.48f;

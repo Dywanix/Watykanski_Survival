@@ -160,7 +160,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6224e1587b45c454eb72f7719efbc07c, type: 3}
   - {fileID: 21300000, guid: 80d55af0fe3ed28478b8e7dafbd4d708, type: 3}
   - {fileID: 21300000, guid: c35bcedb02794b749b0d3ae41e264af2, type: 3}
-  - {fileID: 21300000, guid: 80754866c50edc04dbd946303aa6bb12, type: 3}
+  - {fileID: 21300000, guid: 21d5fa94a699f764c825ca22e2b94fd2, type: 3}
   - {fileID: 21300000, guid: 676095a7496d9d74ba01a033ce5c0dc2, type: 3}
   - {fileID: 21300000, guid: 89b5be2999f5dc147906f9dddc6a9724, type: 3}
   - {fileID: 21300000, guid: 934198322209573438bb0e9be48b89f5, type: 3}
@@ -178,7 +178,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 881d8ef20cbca394f88a3f15eaa7138a, type: 3}
   - {fileID: 21300000, guid: 7bfb0850e2e0c244b9cf29337ae0d7c7, type: 3}
   - {fileID: 21300000, guid: 1a10d54ee79881b4b982259cebbbb49e, type: 3}
-  - {fileID: 21300000, guid: 21d5fa94a699f764c825ca22e2b94fd2, type: 3}
+  - {fileID: 21300000, guid: 80754866c50edc04dbd946303aa6bb12, type: 3}
   - {fileID: 21300000, guid: fbd7d6d8f426f3d4291faf0a2b3bba78, type: 3}
   - {fileID: 21300000, guid: c606571ee3500ea41a0c72f9a10ecd74, type: 3}
   - {fileID: 21300000, guid: acbac502e3298e942b7073ae45714fba, type: 3}
@@ -192,15 +192,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1837f8befd7b6204e8fe8e5c4e96b6d7, type: 3}
   - {fileID: 21300000, guid: e33714bd7b8e92c45b770e5dc02480bd, type: 3}
   - {fileID: 21300000, guid: 77cf15535347d0e499c5fe6356100f99, type: 3}
+  - {fileID: 21300000, guid: 9c5a294b19d2f3244b11e02d07175d55, type: 3}
+  - {fileID: 21300000, guid: c2c45d087fd24dd4bb75785bd1556e02, type: 3}
+  - {fileID: 21300000, guid: f49ff0d7a4fa99a4b9e6acbf91cf69d9, type: 3}
+  - {fileID: 21300000, guid: 15b1ff9d651efb042a3791601b1fdd11, type: 3}
+  - {fileID: 21300000, guid: 7e3e0f02f42908e4595937a6bc944108, type: 3}
   ItemTooltip:
-  - Increase Fire Rate & Movement Speed with every enemy slained for the Round
+  - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
   - Using Dash throws Grenade near you & Reduce Dash Cooldown by 3%
   - Increase Shield Capacity by 4. Reduce Recharge Delay by 10%
   - Dash gains additional Charge & Reduce Dash Cooldown by 15%
   - Increase Cooldown Reduction by 10%. Using Dash speeds up Item activation rate
     for short time
-  - Increase Max Health by 10. Restore 5% Max Health after Round
+  - Increase Max Health by 10. Restore 1% Max Health every 10s
   - Increase Max Health by 10. Gain +0,8% Damage for every 10 Max Health above 50
   - Increase Gun Accessory Slot by 1
   - Increase Gun Accuracy & Range by 12% & Increase Vision Range
@@ -210,7 +215,7 @@ MonoBehaviour:
   - Increase Magazine Size by 20%. Using Dash Reloads 10% Magazine
   - Increase Shield Capacity by 4. Losing HP instantly reacharges some Shield (has
     cooldown)
-  - Reduce Grenade Cooldown by 9%. Gredandes deal 18% more Damage.
+  - Reduce Grenade Cooldown by 10%. Gredandes deal 20% more Damage.
   - Increase Gun Crit Chance by 7%
   - Increase On-Hit Rate, increased further with higher Crit Chance
   - Gain chance to fire Plasma Bullet. Increase effectivness of Plasma Bullets
@@ -218,22 +223,28 @@ MonoBehaviour:
   - Increase Chance for Special Bullets by 14%
   - Increase Damage by 6% & Bullets Speed by 15%
   - Increase Gun Crit Damage by 15%. Every non-crit increaes Chance for next shot
-  - At the start of Round, gain up to 25 Gold (increased with Gold in Bank)
+  - Increase Gold gained by 10% & Gain 10 Gold
   - All Guns have a 15% Chance to Fire additional time
-  - Increase Max Health by 10. Gain +0,3% Damage for the Combat for every 1 HP Lost
+  - Increase Damage by 6% & Fire Rate by 8%
   - Increase Shield Capacity by 4. Enemy Slain gives 1 Shield
   - Reduce Grenade Cooldown by 12%. Grenade gains additional Charge
   - Grenades Stuns & have 60% Shatter. Reduce Grenade Cooldown by 9%
   - Grenades leave Poison Cloud for 2,4s. Grenade gains additional Charge
   - Grenades explode into smaller ones
   - Increase Damage by 6%. Increase Grenade range & speed based on Damage Increase
-  - Increase Fire Rate by 8%. Gain 1% Cooldown Reduction for every 5% Fire Rate Increase
-  - Increase Shield Capacity by 4 & 1 per 2 levels
+  - Increase Fire Rate by 8%. Gain 1% Cooldown Reduction for every 4,5% Fire Rate
+    Increase
+  - Increase Shield Capacity by 4 & 3 per 5 levels
   - Gain chance to fire Electric Bullet. Increase effectivness of Electric Bullets
   - Increase Max Health with Enemy slained
   - Speeds up Item activation rate by 21%
   - Picking up Gold also gives 5XP
   - Reduce Damage taken by 10% & deal back to melee attackers
+  - Increase Magazine Size by 10% & Fire Rate by 9%
+  - Gain Peacemaker On-hit. Increase effectivness of Peacemaker
+  - Gain Boomerang On-hit. Increase effectivness of Boomerang
+  - Gain Laser On-hit. Increase effectivness of Laser
+  - Gain Peacemaker, Boomerang & Laser On-hit.
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}

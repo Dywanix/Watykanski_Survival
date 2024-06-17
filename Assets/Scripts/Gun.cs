@@ -53,6 +53,9 @@ public class Gun : MonoBehaviour
     float temp;
     int tempi;
 
+    [Header("On-Hit")]
+    public float freeBullet, peacemaker, boomerang, wave, laser;
+
     [Header("Special Bullets")]
     public float[] specialBulletChance;
     public float[] specialBulletNextChance;

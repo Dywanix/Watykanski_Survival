@@ -15,7 +15,7 @@ public class Arena : MonoBehaviour
 
     [Header("Stats")]
     public bool active;
-    public int round, strength;
+    public int round, strength, minSpawn, maxSpawn;
     public int[] mobsStrength, elitesStrength;
     public int roll, tempi, rest, elite, amount;
     public float time, frequency, delay;
@@ -47,8 +47,20 @@ public class Arena : MonoBehaviour
                     rest -= mobsStrength[roll];
                     if (rest <= 0)
                     {
-                        time += 1f;
-                        strength += 15 + strength / 12;
+                        time += 2f;
+                        strength += 18 + strength / 10;
+                        if (round % 2 == 0 && maxSpawn < Mobs.Length)
+                            maxSpawn++;
+                        if (round % 3 == 0 && minSpawn + 1 < Mobs.Length)
+                            minSpawn++;
+                        /*if (maxSpawn < Mobs.Length)
+                        {
+                            if (maxSpawn * 2 > minSpawn * 3 && minSpawn > 2)
+                                minSpawn++;
+                            else maxSpawn++;
+                        }
+                        if (round % 2 == 0 && minSpawn + 1 < Mobs.Length)
+                            minSpawn++;*/
                         NextRound();
                         //active = false;
                         //Invoke("CheckForClear", 5f);
@@ -69,7 +81,7 @@ public class Arena : MonoBehaviour
 
     void SpawnMobs()
     {
-        tempi = strength / 5;
+        tempi = strength / 6;
         rest = strength - tempi;
 
         frequency = time / rest;
@@ -91,7 +103,7 @@ public class Arena : MonoBehaviour
             SpawnPoint.position = new Vector3(Random.Range(-41f, 41f), Random.Range(-41f, 41f), 0f);
         } while (Vector3.Distance(transform.position, SpawnPoint.position) <= 13.5f);
 
-        roll = Random.Range(0, Mobs.Length);
+        roll = Random.Range(minSpawn, maxSpawn);
 
         Instantiate(Mobs[roll], SpawnPoint.position, transform.rotation);
     }

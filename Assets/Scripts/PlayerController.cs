@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     public float dHealth, health, poison, poisonCap,
     damageBonus, fireRateBonus, baseMovementSpeed, movementSpeed, additionalCritChance, additionalCritDamage, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, dashMaxCharges, dashCharges,
     grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
-    public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel;
+    public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel, totalSlained;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, tempi2, bonusTool;
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     [Header("Items")]
     public int adrenalineStacks;
     public int adrenalineCharges, bloodMoney, builtShield, bloodBagStacks, bloodBagCharges;
-    public float wrath, shieldCapacitor, focus;
+    public float shieldCapacitor, focus;
     public bool emergencyShields;
 
     [Header("Resources")]
@@ -96,10 +96,10 @@ public class PlayerController : MonoBehaviour
         GainTools(0);
         //GainKeys(0);
         dash = 0f;
-        Invoke("Tick", 0.8f);
+        Invoke("Tick", 10f);
         if (eq.gambler)
         {
-            temp = 37.5f;
+            temp = 56.8f;
             while (temp > 0f)
             {
                 tempi = Random.Range(0, 5);
@@ -136,6 +136,14 @@ public class PlayerController : MonoBehaviour
                 {
                     eq.Items[i]--;
                     eq.PickUpItem(i);
+                }
+            }
+            for (int i = 0; i < eq.Effects.Length; i++)
+            {
+                if (eq.Effects[i] > 0)
+                {
+                    eq.Effects[i]--;
+                    eq.PickUpEffect(i);
                 }
             }
         }
@@ -382,7 +390,9 @@ public class PlayerController : MonoBehaviour
 
     void Tick()
     {
-        //Invoke("Tick", 1f);
+        if (eq.Items[6] > 0)
+            RestoreHealth(0.01f * maxHealth * eq.Items[6]);
+        Invoke("Tick", 9.5f);
     }
 
     void GetInput()
@@ -1058,7 +1068,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!invulnerable)
         {
-            Damaged();
+            //Damaged();
             if (protection)
                 protection = false;
             else
@@ -1102,13 +1112,10 @@ public class PlayerController : MonoBehaviour
         health -= amount;
         healthBar.fillAmount = health / maxHealth;
 
-        if (eq.Items[25] > 0 && !day)
-            wrath += amount * 0.003f * eq.Items[25];
-
         if (emergencyShields)
         {
             GainShield((0.3f + 0.12f * eq.Items[14]) * maxShield);
-            Invoke("emergencyCooldown", 26f / (0.88f + 0.12f * eq.Items[14]));
+            Invoke("emergencyCooldown", 25f / (0.87f + 0.13f * eq.Items[14]));
             emergencyShields = false;
         }
 
@@ -1172,7 +1179,7 @@ public class PlayerController : MonoBehaviour
 
     public void RestoreHealth(float value)
     {
-        Healed();
+        //Healed();
         health += value;
         if (health > maxHealth)
             health = maxHealth;
@@ -1207,7 +1214,7 @@ public class PlayerController : MonoBehaviour
 
     public float DamageDealtMultiplyer(float efficiency)
     {
-        temp = 1f + ((damageBonus + wrath) - 1f) * efficiency;
+        temp = 1f + (damageBonus - 1f) * efficiency;
         return temp;
     }
 
@@ -1284,15 +1291,15 @@ public class PlayerController : MonoBehaviour
 
     public void EnemySlained()
     {
+        totalSlained++;
         if (eq.Items[0] > 0)
         {
             adrenalineCharges += eq.Items[0];
-            while (adrenalineCharges > 4 + adrenalineStacks)
+            while (adrenalineCharges > 2 + 4 * adrenalineStacks)
             {
-                adrenalineCharges -= 4 + adrenalineStacks;
+                adrenalineCharges -= 2 + 4 * adrenalineStacks;
                 adrenalineStacks++;
-                fireRateBonus += 0.03f;
-                movementSpeed += 0.01f;
+                GainFR(0.022f);
             }
         }
         if (eq.Items[10] > 0)
@@ -1332,17 +1339,7 @@ public class PlayerController : MonoBehaviour
         AmmoRefill();
         dayCount++;
         //RestoreHealth(40 + maxHealth * 0.5f);
-        wrath = 0;
         //LevelUp();
-        if (eq.Items[0] > 0)
-        {
-            fireRateBonus -= 0.03f * adrenalineStacks;
-            movementSpeed -= 0.01f * adrenalineStacks;
-            adrenalineStacks = 0;
-            adrenalineCharges = 0;
-        }
-        if (eq.Items[6] > 0)
-            RestoreHealth(0.05f * maxHealth * eq.Items[6]);
         /*if (eq.Items[36] > 0)
         {
             if (maxHealth - health >= 50f)
@@ -1360,14 +1357,6 @@ public class PlayerController : MonoBehaviour
         day = false;
         AmmoRefill();
         eq.ActivateItems();
-        if (eq.Items[23] > 0)
-        {
-            temp = 5 + gold / 10f;
-            temp *= eq.Items[23];
-            if (temp > 25f * eq.Items[23])
-                GainGold(25f * eq.Items[23]);
-            else GainGold(temp);
-        }
         //if (eq.Items[34])
         //protection = true;
     }
@@ -1398,7 +1387,7 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0f;
         //skillPoints++;
         //SkillPointAviable.SetActive(true);
-        if (level % 3 == 0)
+        if (level % 3 == 0 || level % 10 == 0)
             map.ChoosePrize(3);
         else map.ChoosePrize(2);
         LevelInfo.text = level.ToString("0");
@@ -1436,7 +1425,7 @@ public class PlayerController : MonoBehaviour
     {
         fireRateBonus += value;
         if (eq.Items[32] > 0)
-            GainCR(value * eq.Items[32] / 5f);
+            GainCR(value * eq.Items[32] / 4.5f);
     }
 
     public void GainCR(float value)
@@ -1458,7 +1447,7 @@ public class PlayerController : MonoBehaviour
 
     public void GainGold(float amount)
     {
-        //amount *= 1f + 0.2f * eq.Items[5];
+        amount *= 1f + 0.1f * eq.Items[23];
 
         gold += amount;
         goldInfo.text = gold.ToString("0");
