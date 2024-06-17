@@ -134,8 +134,8 @@ public class PlayerController : MonoBehaviour
             {
                 if (eq.Items[i] > 0)
                 {
-                    eq.PickUpItem(i);
                     eq.Items[i]--;
+                    eq.PickUpItem(i);
                 }
             }
         }
@@ -304,13 +304,13 @@ public class PlayerController : MonoBehaviour
 
         if (eq.Items[5] > 0)
         {
-            eq.itemActivationRate += 0.1f + 0.2f * eq.Items[5];
+            eq.itemActivationRate += 0.12f + 0.24f * eq.Items[5];
             Invoke("EndStopwatch", 1.5f + 0.5f * eq.Items[5]);
         }
 
         if (eq.Items[13] > 0)
         {
-            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * eq.Items[13]) / 5;
+            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * eq.Items[13]) / 10;
 
             for (int i = 0; i < tempi; i++)
             {
@@ -371,7 +371,7 @@ public class PlayerController : MonoBehaviour
 
     void EndStopwatch()
     {
-        eq.itemActivationRate -= 0.1f + 0.2f * eq.Items[5];
+        eq.itemActivationRate -= 0.12f + 0.24f * eq.Items[5];
     }
 
     public void NewTask(float duration)
@@ -581,7 +581,7 @@ public class PlayerController : MonoBehaviour
                     firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
                     waveBullet = bullet.GetComponent(typeof(MultipleBullets)) as MultipleBullets;
                     waveBullet.BulletShard = SetBulletPrefab();
-                    waveBullet.damageEfficiency = (0.96f + 0.24f * eq.Items[12]) / (eq.Items[12] + 1);
+                    waveBullet.damageEfficiency = (0.95f + 0.26f * eq.Items[12]) / (eq.Items[12] + 1);
                     SetBullet(1f);
                     waveBullet.bulletForce = firedBullet.force;
                     bullet_body.AddForce(Barrel.up * firedBullet.force, ForceMode2D.Impulse);
@@ -754,7 +754,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.armorShred = eq.guns[eq.equipped].armorShred;
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
         if (effectOn[1] && eq.Items[18] > 0)
-            firedBullet.vulnerableApplied += (0.07f + 0.12f * eq.Items[18]) * 0.01f * firedBullet.damage;
+            firedBullet.vulnerableApplied += (0.08f + 0.14f * eq.Items[18]) * 0.01f * firedBullet.damage;
         firedBullet.slowDuration = eq.guns[eq.equipped].slowDuration;
         if (effectOn[0] && eq.Items[1] > 0)
             firedBullet.slowDuration += (0.02f + 0.02f * eq.Items[1]) * firedBullet.damage;
@@ -836,7 +836,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.damage *= grenadeDamageMultiplyer;
         if (eq.Items[28] > 0)
         {
-            firedBullet.shatter += 0.5f * eq.Items[28];
+            firedBullet.shatter += 0.6f * eq.Items[28];
             firedBullet.stunDuration += 0.4f + 0.1f * eq.Items[28];
         }
         Effects.venom = eq.Items[29];
@@ -1217,14 +1217,14 @@ public class PlayerController : MonoBehaviour
         {
             GainGold(1);
             if (eq.Items[37] > 0)
-                GainXP(eq.Items[37] * 2);
+                GainXP(eq.Items[37] * 5);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Scrap5")
         {
             GainGold(5);
             if (eq.Items[37] > 0)
-                GainXP(eq.Items[37] * 10);
+                GainXP(eq.Items[37] * 25);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Experience")
@@ -1403,7 +1403,7 @@ public class PlayerController : MonoBehaviour
         else map.ChoosePrize(2);
         LevelInfo.text = level.ToString("0");
         if (eq.Items[35] > 0)
-            GainSC(eq.Items[35] * 0.5f);
+            GainSC(eq.Items[35] * 0.6f);
     }
 
     void LearnPerk()
@@ -1609,9 +1609,11 @@ public class PlayerController : MonoBehaviour
         free = false;
     }
 
-    public void ItemTooltipOpen(int which)
+    public void ItemTooltipOpen(int which, bool effect)
     {
-        eq.Tooltip.text = eq.ILibrary.ItemTooltip[eq.ItemList[which]];
+        if (effect)
+            eq.Tooltip.text = eq.ILibrary.Effects[eq.EffectList[which]].EffectTooltips[0];
+        else eq.Tooltip.text = eq.ILibrary.ItemTooltip[eq.ItemList[which]];
     }
 
     public void ItemTooltipClose()

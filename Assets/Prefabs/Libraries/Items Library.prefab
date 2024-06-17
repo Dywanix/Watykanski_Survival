@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: 025e5b8b471187147a2c6dd85b9ff727, type: 3}
   EffectTooltips:
-  - Throws Grenade at random nearby position every 7s
+  - Throws Grenade at random nearby position every 5,7s
   - Increase Frequency by 20%
   - Increase Grenade Damage by 7% & Frequency by 7%
   - Increase amount of Grenades thrown by 1
@@ -195,9 +195,9 @@ MonoBehaviour:
   ItemTooltip:
   - Increase Fire Rate & Movement Speed with every enemy slained for the Round
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
-  - Using Dash throws Grenade near you
+  - Using Dash throws Grenade near you & Reduce Dash Cooldown by 3%
   - Increase Shield Capacity by 4. Reduce Recharge Delay by 10%
-  - Dash gains additional Charge & Reduce Dash Cooldown by 12%
+  - Dash gains additional Charge & Reduce Dash Cooldown by 15%
   - Increase Cooldown Reduction by 10%. Using Dash speeds up Item activation rate
     for short time
   - Increase Max Health by 10. Restore 5% Max Health after Round
@@ -207,7 +207,7 @@ MonoBehaviour:
   - Increase Damage by 6%. Gain 1 Gold Every 8th Enemy slained
   - Increase Shield Capacity by 4.  Losing Shield deals Damage to nearby Enemies
   - Fire additional parallel Bullet
-  - Increase Magazine Size by 10%. Using Dash Reloads 20% Magazine
+  - Increase Magazine Size by 20%. Using Dash Reloads 10% Magazine
   - Increase Shield Capacity by 4. Losing HP instantly reacharges some Shield (has
     cooldown)
   - Reduce Grenade Cooldown by 9%. Gredandes deal 18% more Damage.
@@ -216,14 +216,14 @@ MonoBehaviour:
   - Gain chance to fire Plasma Bullet. Increase effectivness of Plasma Bullets
   - Gain chance to fire Explosive Bullet. Increase effectivness of Explosive Bullets
   - Increase Chance for Special Bullets by 14%
-  - Increase Damage by 6% & Bullets Speed by 12%
-  - Increase Gun Crit Damage by 10%. Every non-crit increaes Chance for next shot
+  - Increase Damage by 6% & Bullets Speed by 15%
+  - Increase Gun Crit Damage by 15%. Every non-crit increaes Chance for next shot
   - At the start of Round, gain up to 25 Gold (increased with Gold in Bank)
   - All Guns have a 15% Chance to Fire additional time
   - Increase Max Health by 10. Gain +0,3% Damage for the Combat for every 1 HP Lost
   - Increase Shield Capacity by 4. Enemy Slain gives 1 Shield
-  - Reduce Grenade Cooldown by 10%. Grenade gains additional Charge
-  - Grenades Stuns & have 50% Shatter. Reduce Grenade Cooldown by 8%
+  - Reduce Grenade Cooldown by 12%. Grenade gains additional Charge
+  - Grenades Stuns & have 60% Shatter. Reduce Grenade Cooldown by 9%
   - Grenades leave Poison Cloud for 2,4s. Grenade gains additional Charge
   - Grenades explode into smaller ones
   - Increase Damage by 6%. Increase Grenade range & speed based on Damage Increase
@@ -231,8 +231,8 @@ MonoBehaviour:
   - Increase Shield Capacity by 4 & 1 per 2 levels
   - Gain chance to fire Electric Bullet. Increase effectivness of Electric Bullets
   - Increase Max Health with Enemy slained
-  - Speeds up Item activation rate by 18%
-  - Picking up Gold also gives 2XP
+  - Speeds up Item activation rate by 21%
+  - Picking up Gold also gives 5XP
   - Reduce Damage taken by 10% & deal back to melee attackers
   Effects:
   - {fileID: 4683816620030671925}
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: b4427101c613a4a489bedc35590452d8, type: 3}
   EffectTooltips:
-  - Throws 6 Piercing Blades around every 5s & with Dash
+  - Throws 6 Piercing Blades around every 4,5s & with Dash
   - Increase amounts of Blades by 4 & base Damage by 2
   - Increase base Damage by 8
   - Increase Frequency by 25%
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: 8ce1cd7f80233b6498d1365d732ccddc, type: 3}
   EffectTooltips:
-  - Throws 2 Knives in facing direction every 4,2s
+  - Throws 2 Knives in facing direction every 3,6s
   - Increase amounts of Knives by 1 & Frequency by 10%
   - Increase base Damage by 7 & Frequency by 10%
   - Increase amounts of Knives by 2

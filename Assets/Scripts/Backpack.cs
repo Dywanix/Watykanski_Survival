@@ -12,10 +12,11 @@ public class Backpack : MonoBehaviour
     public GameObject Tab, RerollHud, GunHud;
     public TMPro.TextMeshProUGUI ToolsCost;
     public TMPro.TextMeshProUGUI[] StatsText;
-    public GameObject[] Guns, CollectedItems, StoredAccessories, EquippedAccesssories, GunSlots;
+    public GameObject[] Guns, CollectedItems, CollectedEffects, StoredAccessories, EquippedAccesssories, GunSlots;
     public Button WorkbenchButton, RerollButton, UpgradeButton;
     public Button[] GunButton, StoredButton, EquippedButton;
-    public Image[] GunsImage, CollectedImages, StoredImages, EquippedImages, RerolledImages;
+    public Image[] GunsImage, CollectedImages, EffectImages, StoredImages, EquippedImages, RerolledImages;
+    public TMPro.TextMeshProUGUI[] ItemsCount, EffectCount;
     public Image CurrentGunImage;
 
     public int[] StoredAccessory, EquippedAccessory, RerolledAccessory;
@@ -31,6 +32,7 @@ public class Backpack : MonoBehaviour
     public void OpenBackpack()
     {
         Tab.SetActive(true);
+        Time.timeScale = 0f;
 
         UpdateInfo();
     }
@@ -84,7 +86,15 @@ public class Backpack : MonoBehaviour
         for (int i = 0; i < eq.itemsCollected; i++)
         {
             CollectedItems[i].SetActive(true);
+            ItemsCount[i].text = (eq.Items[eq.ItemList[i]]).ToString("0");
             CollectedImages[i].sprite = eq.ILibrary.ItemSprite[eq.ItemList[i]];
+        }
+
+        for (int i = 0; i < eq.effectsCollected; i++)
+        {
+            CollectedEffects[i].SetActive(true);
+            EffectCount[i].text = (eq.Effects[eq.EffectList[i]]).ToString("0");
+            EffectImages[i].sprite = eq.ILibrary.Effects[eq.EffectList[i]].EffectSprite;
         }
 
         UpdateAccessories();
@@ -959,6 +969,7 @@ public class Backpack : MonoBehaviour
     public void CloseBackpack()
     {
         Tab.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void GunInfoClicked()

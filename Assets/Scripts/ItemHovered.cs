@@ -8,10 +8,11 @@ public class ItemHovered : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public PlayerController playerStats;
 
     public int order;
+    public bool effect;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        playerStats.ItemTooltipOpen(order);
+        playerStats.ItemTooltipOpen(order, effect);
     }
 
     public void OnPointerExit(PointerEventData eventData)

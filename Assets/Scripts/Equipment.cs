@@ -44,9 +44,9 @@ public class Equipment : MonoBehaviour
 
     [Header("Items")]
     public int[] Items;
-    public int[] ItemList;
+    public int[] ItemList, EffectList;
     public int[] Effects;
-    public int itemsCollected;
+    public int itemsCollected, effectsCollected;
     public GameObject DeflectProjectal, DischargeObject;
     public TMPro.TextMeshProUGUI Tooltip;
 
@@ -109,7 +109,7 @@ public class Equipment : MonoBehaviour
                 Rain();
 
             if (Effects[4] > 0)
-                howitzerCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.35f);
+                howitzerCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.36f);
             if (howitzerCooldown < 0f)
             {
                 for (int i = 0; i < grenadeCount; i++)
@@ -129,8 +129,11 @@ public class Equipment : MonoBehaviour
     public void PickUpItem(int which)
     {
         Items[which]++;
-        ItemList[itemsCollected] = which;
-        itemsCollected++;
+        if (Items[which] == 1)
+        {
+            ItemList[itemsCollected] = which;
+            itemsCollected++;
+        }
 
         ShowTooltip(which);
         switch (which)
@@ -138,12 +141,15 @@ public class Equipment : MonoBehaviour
             case 1:
                 guns[equipped].specialBulletChance[0] += 0.05f;
                 break;
+            case 2:
+                playerStats.dashBaseCooldown *= 0.97f;
+                break;
             case 3:
                 playerStats.GainSC(4);
                 playerStats.rechargeDelay /= 1.1f;
                 break;
             case 4:
-                playerStats.dashBaseCooldown *= 0.88f;
+                playerStats.dashBaseCooldown *= 0.85f;
                 playerStats.dashMaxCharges++;
                 break;
             case 5:
@@ -171,7 +177,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainSC(4);
                 break;
             case 13:
-                guns[equipped].magazineMultiplierTenth++;
+                guns[equipped].magazineMultiplierTenth += 2;
                 break;
             case 14:
                 playerStats.GainSC(4);
@@ -195,10 +201,10 @@ public class Equipment : MonoBehaviour
                 break;
             case 21:
                 playerStats.GainDMG(0.06f);
-                playerStats.forceIncrease += 0.12f;
+                playerStats.forceIncrease += 0.15f;
                 break;
             case 22:
-                playerStats.additionalCritDamage += 0.1f;
+                playerStats.additionalCritDamage += 0.15f;
                 break;
             case 25:
                 playerStats.GainHP(10);
@@ -207,11 +213,11 @@ public class Equipment : MonoBehaviour
                 playerStats.GainSC(4);
                 break;
             case 27:
-                playerStats.grenadeBaseCooldown *= 0.9f;
+                playerStats.grenadeBaseCooldown *= 0.88f;
                 playerStats.grenadeMaxCharges++;
                 break;
             case 28:
-                playerStats.grenadeBaseCooldown *= 0.92f;
+                playerStats.grenadeBaseCooldown *= 0.91f;
                 break;
             case 29:
                 playerStats.grenadeMaxCharges++;
@@ -224,13 +230,13 @@ public class Equipment : MonoBehaviour
                 playerStats.GainFR(0.08f);
                 break;
             case 33:
-                playerStats.GainSC(4 + playerStats.level * 0.5f);
+                playerStats.GainSC(4 + playerStats.level * 0.6f);
                 break;
             case 34:
                 guns[equipped].specialBulletChance[3] += 0.05f;
                 break;
             case 36:
-                itemActivationRate += 0.18f;
+                itemActivationRate += 0.21f;
                 break;
         }
     }
@@ -238,10 +244,12 @@ public class Equipment : MonoBehaviour
     public void PickUpEffect(int which)
     {
         Effects[which]++;
-        //ItemList[itemsCollected] = which;
-        //itemsCollected++;
+        if (Effects[which] == 1)
+        {
+            EffectList[effectsCollected] = which;
+            effectsCollected++;
+        }
 
-        //ShowTooltip(which);
         switch (which, Effects[which])
         {
             case (0, 1):
@@ -267,7 +275,7 @@ public class Equipment : MonoBehaviour
                 bladesPierceEff += 0.1f;
                 break;
             case (1, 1):
-                knifeThrowMaxCooldown = 3.8f;
+                knifeThrowMaxCooldown = 3.6f;
                 knifeThrowCooldown = 1f + knifeThrowMaxCooldown * 0.5f;
                 knivesCount = 2;
                 knivesBaseDamage = 27f;
@@ -287,7 +295,7 @@ public class Equipment : MonoBehaviour
                 knifeThrowMaxCooldown *= 0.7f;
                 break;
             case (2, 1):
-                immolateMaxCooldown = 0.9f;
+                immolateMaxCooldown = 0.86f;
                 immolateCooldown = 1f + immolateMaxCooldown * 0.5f;
                 immolateBaseDamage = 6f;
                 ImmolateArea = ImmolateSmallArea;
@@ -306,7 +314,7 @@ public class Equipment : MonoBehaviour
                 immolateHPRatio += 0.05f;
                 break;
             case (3, 1):
-                rainFrequency = 2.4f;
+                rainFrequency = 2.28f;
                 break;
             case (3, 2):
                 rainFrequency *= 0.86f;
@@ -323,7 +331,7 @@ public class Equipment : MonoBehaviour
                 rainFrequency *= 0.93f;
                 break;
             case (4, 1):
-                howitzerMaxCooldown = 6.3f;
+                howitzerMaxCooldown = 5.7f;
                 howitzerCooldown = 1f + howitzerMaxCooldown * 0.5f;
                 grenadeCount = 1;
                 break;

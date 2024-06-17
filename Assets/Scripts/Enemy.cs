@@ -476,7 +476,7 @@ public class Enemy : MonoBehaviour
         {
             dead = true;
 
-            experienceDroped = Random.Range(weight * 3 / 5, weight * 4 / 5 + 1);
+            experienceDroped = Random.Range(weight * 8 / 10, weight /* 9 / 10*/ + 1);
             playerStats.EnemySlained();
 
             for (int i = 0; i < scrapCount; i++)
