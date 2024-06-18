@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209404493023973953, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
       propertyPath: pierceEfficiency
-      value: 1
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 7209404493023973953, guid: e6c68883525706f4b8ae5f08270384b6, type: 3}
       propertyPath: vulnerableApplied

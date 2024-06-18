@@ -51,6 +51,7 @@ MonoBehaviour:
   - Increase Frequency by 25%
   - Increase Radius by 25%
   - Increase Base Damage by 5% of Max Health
+  - Every 6th trigger deals Double Damage in larger Area, losing HP reduces timer
 --- !u!1 &3493669897978340050
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,6 +103,7 @@ MonoBehaviour:
   - Increase Grenade Damage by 7% & Frequency by 7%
   - Increase amount of Grenades thrown by 1
   - Increase Frequency by 22%
+  - Increase Frequency by 10%, using Throw reduces timer by 2,5s
 --- !u!1 &5256278042531316336
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,12 +199,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f49ff0d7a4fa99a4b9e6acbf91cf69d9, type: 3}
   - {fileID: 21300000, guid: 15b1ff9d651efb042a3791601b1fdd11, type: 3}
   - {fileID: 21300000, guid: 7e3e0f02f42908e4595937a6bc944108, type: 3}
+  - {fileID: 21300000, guid: c0f660ea6d3af5f47b938eb5df85a598, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
   - Using Dash throws Grenade near you & Reduce Dash Cooldown by 3%
   - Increase Shield Capacity by 4. Reduce Recharge Delay by 10%
-  - Dash gains additional Charge & Reduce Dash Cooldown by 15%
+  - Increase Movement Speed by 5%, Dash gains additional Charge & Reduce Dash Cooldown
+    by 10%
   - Increase Cooldown Reduction by 10%. Using Dash speeds up Item activation rate
     for short time
   - Increase Max Health by 10. Restore 1% Max Health every 10s
@@ -245,6 +249,7 @@ MonoBehaviour:
   - Gain Boomerang On-hit. Increase effectivness of Boomerang
   - Gain Laser On-hit. Increase effectivness of Laser
   - Gain Peacemaker, Boomerang & Laser On-hit.
+  - Increase Damage by 6% & Increase slain effects by 20%
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}
@@ -301,8 +306,9 @@ MonoBehaviour:
   - Throws 6 Piercing Blades around every 4,5s & with Dash
   - Increase amounts of Blades by 4 & base Damage by 2
   - Increase base Damage by 8
-  - Increase Frequency by 25%
+  - Increase Frequency by 25% & Dash throws 3 more Blades
   - Increase Pierce by 1
+  - Cast second time with half the amounts of Blades
 --- !u!1 &7096948572576127643
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +360,7 @@ MonoBehaviour:
   - Increase base Damage by 7 & Frequency by 10%
   - Increase amounts of Knives by 2
   - Increase Frequency by 30%
+  - Knives Pierce 1 target
 --- !u!1 &8159468659302214126
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +412,7 @@ MonoBehaviour:
   - Increase Gun Damage by 4% & Frequency by 8%
   - Increase Frequency by 15%
   - Increase Gun Damage by 5% & Frequency by 7%
+  - Fire second Bullet in opposite Direction, but reduce Frequency by 18%
 --- !u!1 &8894815096822500778
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,3 +464,4 @@ MonoBehaviour:
   - Increase Base Damage by 6
   - Increase summon Frequency by 25%
   - Increase Cloud Duration by 6s & Base Damage by 2
+  - Every 6-8th tick deals Double Damage, has 80% Shatter & Double Area

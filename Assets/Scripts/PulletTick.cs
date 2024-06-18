@@ -10,6 +10,7 @@ public class PulletTick : MonoBehaviour
     public Transform Form;
     public float frequency, delay, frequencyRange, damageEfficiency;
     public int bulletsCount;
+    public float bonusShatter;
 
     void Update()
     {
@@ -34,7 +35,7 @@ public class PulletTick : MonoBehaviour
     {
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;
         BulletsShards.DoT = ThisBullet.DoT;
-        BulletsShards.shatter = ThisBullet.shatter;
+        BulletsShards.shatter = ThisBullet.shatter + bonusShatter;
         BulletsShards.incendiary = ThisBullet.incendiary;
         BulletsShards.curse = ThisBullet.curse;
         BulletsShards.damageGain = ThisBullet.damageGain;

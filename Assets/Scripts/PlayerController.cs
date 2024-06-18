@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Items")]
     public int adrenalineStacks;
-    public int adrenalineCharges, bloodMoney, builtShield, bloodBagStacks, bloodBagCharges;
+    public int adrenalineCharges, bloodMoney, builtShield, bloodBagStacks, bloodBagCharges, scytheCharge;
     public float shieldCapacitor, focus;
     public bool emergencyShields;
 
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour
                 GrenadeCast();
             if (Input.GetKeyDown(KeyCode.V))
                 DrinkPotion();
-            if (Input.GetKeyDown(KeyCode.P) && skillPoints > 0)
+            if (Input.GetKeyDown(KeyCode.P))
                 LearnPerk();
             if (task <= 0)
             {
@@ -340,7 +340,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Effects[0] > 0)
-            eq.ScissorsThrow();
+            eq.ScissorsThrow(eq.bladesCount + eq.dashBlades, eq.secondBladeThrow);
 
         if (eq.Items[2] > 0)
         {
@@ -809,6 +809,8 @@ public class PlayerController : MonoBehaviour
         if (grenadeCooldown <= 0f || grenadeCharges > 0)
         {
             ThrowGrenade();
+            if (eq.Effects[4] >= 6)
+                eq.howitzerCooldown -= 2.5f;
         }
     }
 
@@ -1119,6 +1121,9 @@ public class PlayerController : MonoBehaviour
             emergencyShields = false;
         }
 
+        if (eq.immolateBoom)
+            eq.immolateCooldown -= amount * 0.08f;
+
         if (health <= 0f)
             ReturnToMenu();
     }
@@ -1289,7 +1294,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void EnemySlained()
+    public void EnemySlained(bool scythe = false)
     {
         totalSlained++;
         if (eq.Items[0] > 0)
@@ -1321,6 +1326,15 @@ public class PlayerController : MonoBehaviour
                 bloodBagCharges -= 12 + bloodBagStacks;
                 bloodBagStacks++;
                 GainHP(1f);
+            }
+        }
+        if (eq.Items[44] > 0 && !scythe)
+        {
+            scytheCharge += eq.Items[10];
+            while (scytheCharge >= 5)
+            {
+                scytheCharge -= 5;
+                EnemySlained(true);
             }
         }
         /*for (int i = 1; i < 3; i++)
@@ -1397,10 +1411,8 @@ public class PlayerController : MonoBehaviour
 
     void LearnPerk()
     {
-        skillPoints--;
-        if (skillPoints == 0)
-            SkillPointAviable.SetActive(false);
-        map.ChoosePrize(2);
+        //if (Random.)
+        map.ChoosePrize(3);
     }
 
     public void GainHP(float value)
