@@ -173,7 +173,7 @@ public class Equipment : MonoBehaviour
                 playerStats.dashMaxCharges++;
                 break;
             case 5:
-                playerStats.GainCR(0.1f);
+                playerStats.GainCR(0.08f);
                 break;
             case 6:
                 playerStats.GainHP(8);
@@ -183,7 +183,8 @@ public class Equipment : MonoBehaviour
                 playerStats.GainHP(8);
                 break;
             case 8:
-                guns[equipped].MaxSlots++;
+                playerStats.dashBaseCooldown *= 0.97f;
+                //guns[equipped].MaxSlots++;
                 break;
             case 9:
                 guns[equipped].accuracy /= 1.12f;
@@ -211,9 +212,9 @@ public class Equipment : MonoBehaviour
                 playerStats.grenadeBaseCooldown *= 0.9f;
                 break;
             case 16:
-                playerStats.additionalCritChance += 0.07f;
-                playerStats.luck += 2;
-                playerStats.map.luck += 2;
+                playerStats.additionalCritChance += 0.04f;
+                //playerStats.luck += 2;
+                //playerStats.map.luck += 2;
                 break;
             case 18:
                 guns[equipped].specialBulletChance[1] += 0.06f;
@@ -237,6 +238,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainMS(0.05f);
                 break;
             case 26:
+                playerStats.grenadeDamageMultiplyer += 0.05f + 0.0025f * playerStats.maxShield;
                 playerStats.GainSC(3);
                 break;
             case 27:
@@ -292,6 +294,9 @@ public class Equipment : MonoBehaviour
                 break;
             case 45:
                 playerStats.GainMS(0.05f);
+                break;
+            case 46:
+                guns[equipped].shatter += 0.2f;
                 break;
         }
     }

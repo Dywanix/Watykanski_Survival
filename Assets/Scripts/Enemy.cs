@@ -335,6 +335,27 @@ public class Enemy : MonoBehaviour
             Death();
     }
 
+    void TakePierceDamage(float value, bool crited, bool display)
+    {
+        if (display)
+        {
+            DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
+            GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+            Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
+            damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
+            if (crited) damageDisplay.SetText(value, "red");
+            else damageDisplay.SetText(value, "orange");
+            text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+        }
+
+        health -= value;
+
+        UpdateBars();
+
+        if (health <= 0)
+            Death();
+    }
+
     void TakePoisonDamage(float value)
     {
         DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
@@ -406,22 +427,29 @@ public class Enemy : MonoBehaviour
                 damageDisplay.SetText(shield, "cyan");
                 text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
 
-                shield = 0;
+                LoseShield(shield);
             }
             else
             {
-                shield -= value;
-
                 DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
                 GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
                 Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
                 damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
                 damageDisplay.SetText(value, "cyan");
                 text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+
+                LoseShield(value);
             }
 
             rechargeTimer = shieldRechargeDelay;
         }
+    }
+
+    void LoseShield(float amount)
+    {
+        shield -= amount;
+        if (playerStats.eq.Items[46] > 0)
+            TakePierceDamage(amount * 0.2f * playerStats.eq.Items[46], false, true);
     }
 
     void SetAblaze(float value)

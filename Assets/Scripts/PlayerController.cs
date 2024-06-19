@@ -303,7 +303,7 @@ public class PlayerController : MonoBehaviour
 
     void Dash()
     {
-        dash = (1.8f + 0.7f * movementSpeed) * baseMovementSpeed;
+        dash = (2.05f + 0.75f * movementSpeed) * baseMovementSpeed;
         Invoke("Dashed", 0.12f);
 
         invulnerable = true;
@@ -312,8 +312,8 @@ public class PlayerController : MonoBehaviour
 
         if (eq.Items[5] > 0)
         {
-            eq.itemActivationRate += 0.12f + 0.24f * eq.Items[5];
-            Invoke("EndStopwatch", 1.5f + 0.5f * eq.Items[5]);
+            eq.itemActivationRate += 0.18f + 0.36f * eq.Items[5];
+            Invoke("EndStopwatch", 1.2f + 0.4f * eq.Items[5]);
         }
 
         if (eq.Items[13] > 0)
@@ -355,15 +355,13 @@ public class PlayerController : MonoBehaviour
     {
         dash = 0f;
 
-        if (eq.guns[eq.equipped].Accessories[19] > 0 || eq.guns[eq.equipped].Accessories[19 + bp.ALibrary.count] > 0)
-            Invoke("DashFire", 0.07f);
+        if (eq.Items[8] > 0)
+            Invoke("DashFire", 0.075f);
     }
 
     void DashFire()
     {
-        temp = 0;
-        temp += 0.9f * eq.guns[eq.equipped].Accessories[19] * SpeedMultiplyer(1f);
-        temp += 1.44f * eq.guns[eq.equipped].Accessories[19 + bp.ALibrary.count] * SpeedMultiplyer(1f);
+        temp = 0.2f + 0.5f * eq.Items[8] * SpeedMultiplyer(1f);
         tempi2 = 0;
 
         for (float f = 0; f <= temp; f += eq.guns[eq.equipped].fireRate)
@@ -379,7 +377,7 @@ public class PlayerController : MonoBehaviour
 
     void EndStopwatch()
     {
-        eq.itemActivationRate -= 0.12f + 0.24f * eq.Items[5];
+        eq.itemActivationRate -= 0.18f + 0.36f * eq.Items[5];
     }
 
     public void NewTask(float duration)
@@ -789,10 +787,10 @@ public class PlayerController : MonoBehaviour
             firedBullet.stunDuration *= 0.7f + eq.guns[eq.equipped].critDamage * 0.3f;
             firedBullet.pierceEfficiency *= 1.1f;
             firedBullet.crit = true;
-            if (eq.guns[eq.equipped].Accessories[8] > 0)
+            if (eq.Items[16] > 0)
             {
-                firedBullet.pierce += eq.guns[eq.equipped].Accessories[8];
-                firedBullet.pierceEfficiency += 0.1f * eq.guns[eq.equipped].Accessories[8];
+                firedBullet.pierce += eq.Items[16];
+                firedBullet.pierceEfficiency += 0.08f * eq.Items[16];
             }
             if (eq.guns[eq.equipped].Accessories[8 + bp.ALibrary.count] > 0)
             {
@@ -1507,6 +1505,8 @@ public class PlayerController : MonoBehaviour
     public void GainSC(float value)
     {
         maxShield += value;
+        if (eq.Items[26] > 0)
+            grenadeDamageMultiplyer += 0.0025f * value * eq.Items[26];
         UpdateBars();
         GainShield(value);
     }

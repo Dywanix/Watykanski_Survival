@@ -201,6 +201,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7e3e0f02f42908e4595937a6bc944108, type: 3}
   - {fileID: 21300000, guid: c0f660ea6d3af5f47b938eb5df85a598, type: 3}
   - {fileID: 21300000, guid: 934198322209573438bb0e9be48b89f5, type: 3}
+  - {fileID: 21300000, guid: 4fe4e8812b94d894cb55d8c592b53431, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
@@ -208,11 +209,11 @@ MonoBehaviour:
   - Increase Shield Capacity by 3. Reduce Recharge Delay by 14%
   - Increase Movement Speed by 5%, Dash gains additional Charge & Reduce Dash Cooldown
     by 10%
-  - Increase Cooldown Reduction by 10%. Using Dash speeds up Item activation rate
+  - Increase Cooldown Reduction by 8%. Using Dash speeds up Item activation rate
     for short time
   - Increase Max Health by 8. Restore 1% Max Health every 7,5s
   - Increase Max Health by 8. Gain +1% Damage for every 10 Max Health above 50
-  - Increase Gun Accessory Slot by 1
+  - Reduces Dash Cooldown by 3%. Using Dash fires a wave of Bullets
   - Increase Gun Accuracy & Range by 12% & Increase Vision Range
   - Increase Damage by 5%. Gain 1 Gold Every 7th Enemy slained
   - Increase Shield Capacity by 3. Losing Shield deals Damage to nearby Enemies
@@ -221,7 +222,7 @@ MonoBehaviour:
   - Increase Shield Capacity by 3 & Max Health by 8. Losing HP instantly reacharges
     some Shield (has cooldown)
   - Reduce Grenade Cooldown by 10%. Gredandes deal 20% more Damage.
-  - Increase Gun Crit Chance by 7%
+  - Increase Crit Chance by 4%. Gun Crits gain +1 Pierce
   - Increase On-Hit Rate, increased further with higher Crit Chance
   - Gain chance to fire Plasma Bullet. Increase effectivness of Plasma Bullets
   - Gain chance to fire Explosive Bullet. Increase effectivness of Explosive Bullets
@@ -231,7 +232,8 @@ MonoBehaviour:
   - Increase Gold gained by 10% & Gain 10 Gold
   - Gun has a 15% Chance to Fire additional time
   - Increase Damage, Fire Rate & Movement Speed by 5%
-  - Increase Shield Capacity by 4. Enemy Slain gives 1 Shield
+  - Increase Shield Capacity by 3. Grenades deal (5 + 1/4 Shield Capacity)% more
+    Damage
   - Reduce Grenade Cooldown by 12%. Grenade gains additional Charge
   - Grenades Stuns & have 60% Shatter. Reduce Grenade Cooldown by 9%
   - Grenades leave Poison Cloud for 2,4s. Grenade gains additional Charge
@@ -252,6 +254,7 @@ MonoBehaviour:
   - Gain Peacemaker, Boomerang & Laser On-hit.
   - Increase Damage by 5% & Increase slain effects by 25%
   - Increase Movement Speed by 5% & Pick Up Range by 20%
+  - Your Gun gains 20% Shatter. Shattering Shield also deals 20% as Damage
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}
