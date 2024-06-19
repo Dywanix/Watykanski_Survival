@@ -93,17 +93,17 @@ public class Equipment : MonoBehaviour
         if (!playerStats.day)
         {
             if (Effects[0] > 0)
-                bladesThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.24f) * (1f + playerStats.cooldownReduction * 0.2f);
+                bladesThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.6f) * (1f + playerStats.cooldownReduction * 0.4f);
             if (bladesThrowCooldown < 0f)
                 ScissorsThrow(bladesCount, secondBladeThrow);
 
             if (Effects[1] > 0)
-                knifeThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.73f) * (1f + playerStats.cooldownReduction * 0.42f);
+                knifeThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.8f) * (1f + playerStats.cooldownReduction * 0.2f);
             if (knifeThrowCooldown < 0f)
                 KnifeThrow();
 
             if (Effects[2] > 0)
-                immolateCooldown -= Time.deltaTime * itemActivationRate;
+                immolateCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction);
             if (immolateCooldown < 0f)
             {
                 if (immolateBoom)
@@ -120,12 +120,12 @@ public class Equipment : MonoBehaviour
             }
 
             if (Effects[3] > 0)
-                rainCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(1.2f);
+                rainCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(1f);
             if (rainCooldown < 0f)
                 Rain();
 
             if (Effects[4] > 0)
-                howitzerCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.36f);
+                howitzerCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.3f) * (1f + playerStats.cooldownReduction * 0.7f);
             if (howitzerCooldown < 0f)
             {
                 for (int i = 0; i < grenadeCount; i++)
@@ -136,7 +136,7 @@ public class Equipment : MonoBehaviour
             }
 
             if (Effects[5] > 0)
-                cloudCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.21f);
+                cloudCooldown -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction);
             if (cloudCooldown < 0f)
                 Storm();
         }
@@ -164,8 +164,8 @@ public class Equipment : MonoBehaviour
                 playerStats.dashBaseCooldown *= 0.97f;
                 break;
             case 3:
-                playerStats.GainSC(4);
-                playerStats.rechargeDelay /= 1.1f;
+                playerStats.GainSC(3);
+                playerStats.rechargeDelay *= 0.86f;
                 break;
             case 4:
                 playerStats.GainMS(0.05f);
@@ -176,11 +176,11 @@ public class Equipment : MonoBehaviour
                 playerStats.GainCR(0.1f);
                 break;
             case 6:
-                playerStats.GainHP(10);
+                playerStats.GainHP(8);
                 break;
             case 7:
-                playerStats.GainDMG((playerStats.maxHealth - 50) * 0.0008f);
-                playerStats.GainHP(10);
+                playerStats.GainDMG((playerStats.maxHealth - 50) * 0.001f);
+                playerStats.GainHP(8);
                 break;
             case 8:
                 guns[equipped].MaxSlots++;
@@ -191,17 +191,18 @@ public class Equipment : MonoBehaviour
                 playerCamera.orthographicSize++;
                 break;
             case 10:
-                playerStats.GainDMG(0.06f);
+                playerStats.GainDMG(0.05f);
                 playerStats.bloodMoney += playerStats.totalSlained / 2;
                 break;
             case 11:
-                playerStats.GainSC(4);
+                playerStats.GainSC(3);
                 break;
             case 13:
                 guns[equipped].magazineMultiplierTenth += 2;
                 break;
             case 14:
-                playerStats.GainSC(4);
+                playerStats.GainSC(3);
+                playerStats.GainHP(8);
                 if (Items[14] == 1)
                     playerStats.emergencyShields = true;
                 break;
@@ -221,8 +222,8 @@ public class Equipment : MonoBehaviour
                 guns[equipped].specialBulletChance[2] += 0.05f;
                 break;
             case 21:
-                playerStats.GainDMG(0.06f);
-                playerStats.forceIncrease += 0.15f;
+                playerStats.GainDMG(0.05f);
+                playerStats.forceIncrease += 0.2f;
                 break;
             case 22:
                 playerStats.additionalCritDamage += 0.15f;
@@ -231,11 +232,12 @@ public class Equipment : MonoBehaviour
                 playerStats.GainGold(10f);
                 break;
             case 25:
-                playerStats.GainDMG(0.06f);
-                playerStats.GainFR(0.08f);
+                playerStats.GainDMG(0.05f);
+                playerStats.GainFR(0.05f);
+                playerStats.GainMS(0.05f);
                 break;
             case 26:
-                playerStats.GainSC(4);
+                playerStats.GainSC(3);
                 break;
             case 27:
                 playerStats.grenadeBaseCooldown *= 0.88f;
@@ -248,14 +250,14 @@ public class Equipment : MonoBehaviour
                 playerStats.grenadeMaxCharges++;
                 break;
             case 31:
-                playerStats.GainDMG(0.06f);
+                playerStats.GainDMG(0.05f);
                 break;
             case 32:
-                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 4.5f;
-                playerStats.GainFR(0.08f);
+                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 2.5f;
+                playerStats.GainFR(0.05f);
                 break;
             case 33:
-                playerStats.GainSC(4 + playerStats.level * 0.6f);
+                playerStats.GainSC(3 + playerStats.level * 0.6f);
                 break;
             case 34:
                 guns[equipped].specialBulletChance[3] += 0.05f;
@@ -267,8 +269,8 @@ public class Equipment : MonoBehaviour
                 itemActivationRate += 0.21f;
                 break;
             case 39:
-                guns[equipped].magazineMultiplierTenth += 1;
-                playerStats.GainFR(0.09f);
+                guns[equipped].magazineMultiplierTenth += 2;
+                playerStats.GainFR(0.05f);
                 break;
             case 40:
                 guns[equipped].peacemaker += 0.6f;
@@ -285,8 +287,11 @@ public class Equipment : MonoBehaviour
                 guns[equipped].laser += 0.3f;
                 break;
             case 44:
-                playerStats.GainDMG(0.06f);
+                playerStats.GainDMG(0.05f);
                 playerStats.scytheCharge += playerStats.totalSlained / 3;
+                break;
+            case 45:
+                playerStats.GainMS(0.05f);
                 break;
         }
     }
@@ -376,7 +381,7 @@ public class Equipment : MonoBehaviour
                 immolateBoom = true;
                 break;
             case (3, 1):
-                rainFrequency = 2.28f;
+                rainFrequency = 2.4f;
                 break;
             case (3, 2):
                 rainFrequency *= 0.86f;
@@ -459,7 +464,7 @@ public class Equipment : MonoBehaviour
     {
         //Flash();
         onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.48f * guns[equipped].Accessories[26 + bp.ALibrary.count];
-        onHitIncrease *= 1f + 0.028f * playerStats.adrenalineStacks;
+        onHitIncrease *= 1f + 0.025f * playerStats.adrenalineStacks;
 
         freeBulletCharges[equipped] += efficiency * guns[equipped].freeBullet * onHitIncrease;
         if (freeBulletCharges[equipped] >= 5f)
@@ -613,7 +618,7 @@ public class Equipment : MonoBehaviour
     public void Discharge(float shieldLost)
     {
         temp = 5f + Items[11] + shieldLost;
-        temp *= (1f + 0.05f * playerStats.level) * Items[11];
+        temp *= (1.2f + 0.048f * playerStats.level) * Items[11];
 
         GameObject bullet = Instantiate(DischargeObject, Barrel.position, Barrel.rotation);
 

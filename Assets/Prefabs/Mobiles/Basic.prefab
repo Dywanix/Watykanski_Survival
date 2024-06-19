@@ -1174,7 +1174,7 @@ MonoBehaviour:
   - {fileID: 1345848265138812684, guid: 1531ca71ac08c40478f2437430fc920a, type: 3}
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
   - {fileID: 8835469722892804329, guid: eaec5437b3b8cd4449c1445250a7030c, type: 3}
-  - {fileID: 2318759274309051530, guid: 1cd4bd986c5ecae4ebe307483af6d8b0, type: 3}
+  - {fileID: 6759922523893235030, guid: c8e6b4ba47c163c4a9a9eb38edb3e273, type: 3}
   - {fileID: 6759922523893235030, guid: c8e6b4ba47c163c4a9a9eb38edb3e273, type: 3}
   playerStats: {fileID: 0}
   Body: {fileID: 6877427549038543848}
@@ -1204,7 +1204,9 @@ MonoBehaviour:
   aimingMovement: 0.77
   tenacity: 1
   stun: 0.82
+  leashRange: 0
   flank: 0
+  agro: 0
   attackTimer: 0.5
   attackDamage: 16
   attackPoison: 0
@@ -1227,6 +1229,7 @@ MonoBehaviour:
   scrapCount: 1
   itemCount: 1
   experienceDroped: 0
+  BigOrbs: 0
   Smoke: {fileID: 7152237756065921264}
   FireExplosion: {fileID: 9215768205720018552, guid: 2da69099b82e2c84da291631e6d1ecd5, type: 3}
   CurseBullet: {fileID: 3674245068203054096, guid: c24f5ea2081f85f42b52e95e0055cbac, type: 3}

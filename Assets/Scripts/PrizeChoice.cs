@@ -15,6 +15,10 @@ public class PrizeChoice : MonoBehaviour
     public Sprite BaseBG, RareBG, ItemBG, EffectBG;
     //public int accessoryChance;
 
+    [Header("Stats")]
+    public Sprite[] StatSprites;
+    public string[] StatTooltips;
+
     public int[] rolls; //accessories, items;
     int Rarity;
 
@@ -41,7 +45,8 @@ public class PrizeChoice : MonoBehaviour
                 SetBaseAccessories();
                 break;
             case 1:
-                SetRareAccessories();
+                //SetRareAccessories();
+                SetStats();
                 break;
             case 2:
                 SetItems();
@@ -161,6 +166,29 @@ public class PrizeChoice : MonoBehaviour
         }
     }
 
+    void SetStats()
+    {
+        rolls[0] = Random.Range(0, StatSprites.Length);
+
+        do
+        {
+            rolls[1] = Random.Range(0, StatSprites.Length);
+        } while (rolls[1] == rolls[0]);
+
+        do
+        {
+            rolls[2] = Random.Range(0, StatSprites.Length);
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1]);
+
+        for (int i = 0; i < 3; i++)
+        {
+            ChoicesBackground[i].sprite = BaseBG;
+            Choices[i].sprite = StatSprites[rolls[i]];
+            Tooltips[i].text = StatTooltips[rolls[i]];
+            Levels[i].text = "";
+        }
+    }
+
     void SetItems()
     {
         do
@@ -219,11 +247,13 @@ public class PrizeChoice : MonoBehaviour
 
     public void ChoosePrize(int choice)
     {
-        if (Rarity == 2)
+        if (Rarity == 1)
+            playerStats.PickUpStat(rolls[choice]);
+        else if (Rarity == 2)
             playerStats.eq.PickUpItem(rolls[choice]);
         else if (Rarity == 3)
             playerStats.eq.PickUpEffect(rolls[choice]);
-        playerStats.eq.Accessories[rolls[choice]]++;
+        else playerStats.eq.Accessories[rolls[choice]]++;
         playerStats.free = true;
         playerStats.menuOpened = false;
         Time.timeScale = 1f;

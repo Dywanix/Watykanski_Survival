@@ -58620,6 +58620,22 @@ MonoBehaviour:
   RareBG: {fileID: 21300000, guid: 4a5d3a43968f1a64faab6f67d4b60b13, type: 3}
   ItemBG: {fileID: 21300000, guid: 4a5d3a43968f1a64faab6f67d4b60b13, type: 3}
   EffectBG: {fileID: 21300000, guid: 5fa95b14e86b41e489a96b729c898b53, type: 3}
+  StatSprites:
+  - {fileID: 21300000, guid: b7267669297ba8b448c269e7a097b139, type: 3}
+  - {fileID: 21300000, guid: 355d112a7c0b905429dbe483ddb37166, type: 3}
+  - {fileID: 21300000, guid: 8b9192f298c95514cabec244f72119b8, type: 3}
+  - {fileID: 21300000, guid: a871f26c98baa9a49bdd03d9f78458df, type: 3}
+  - {fileID: 21300000, guid: d8072b1c758871d49ac196d56fb31ac1, type: 3}
+  - {fileID: 21300000, guid: 79ad0e852d913d741adc34a2998fed5d, type: 3}
+  - {fileID: 21300000, guid: 5e0301b67de0732448df3d5b43ba03a7, type: 3}
+  StatTooltips:
+  - Increase Max Health by 8
+  - Increase Damage by 5%
+  - Increase Fire Rate by 5%
+  - Increase Movement Speed by 5%
+  - Increase Cooldown Reduction by 8%
+  - Increase Shield Capacity by 3
+  - Increase Crit Chance & Damage by 3%
   rolls: 000000000000000000000000
 --- !u!114 &1906895909
 MonoBehaviour:
@@ -59011,7 +59027,7 @@ MonoBehaviour:
   VendingMachineObject: {fileID: 50638922}
   active: 0
   round: 0
-  strength: 90
+  strength: 120
   minSpawn: 0
   maxSpawn: 1
   mobsStrength: 03000000040000000500000006000000080000000a000000
@@ -59021,7 +59037,7 @@ MonoBehaviour:
   rest: 0
   elite: 25
   amount: 0
-  time: 30
+  time: 32
   frequency: 0
   delay: 0
 --- !u!1 &1914043909

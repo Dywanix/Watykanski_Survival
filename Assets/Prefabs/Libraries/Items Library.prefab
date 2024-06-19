@@ -165,7 +165,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 21d5fa94a699f764c825ca22e2b94fd2, type: 3}
   - {fileID: 21300000, guid: 676095a7496d9d74ba01a033ce5c0dc2, type: 3}
   - {fileID: 21300000, guid: 89b5be2999f5dc147906f9dddc6a9724, type: 3}
-  - {fileID: 21300000, guid: 934198322209573438bb0e9be48b89f5, type: 3}
+  - {fileID: 21300000, guid: e5215fbecf4c38747b7b1e183f2830a9, type: 3}
   - {fileID: 21300000, guid: fb65532b596e59245b0514f07402d990, type: 3}
   - {fileID: 21300000, guid: f62f2b042ae15164381538ecc623ae76, type: 3}
   - {fileID: 21300000, guid: d08396ec7d8bff140b02f3435101cfc3, type: 3}
@@ -200,56 +200,58 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 15b1ff9d651efb042a3791601b1fdd11, type: 3}
   - {fileID: 21300000, guid: 7e3e0f02f42908e4595937a6bc944108, type: 3}
   - {fileID: 21300000, guid: c0f660ea6d3af5f47b938eb5df85a598, type: 3}
+  - {fileID: 21300000, guid: 934198322209573438bb0e9be48b89f5, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
   - Using Dash throws Grenade near you & Reduce Dash Cooldown by 3%
-  - Increase Shield Capacity by 4. Reduce Recharge Delay by 10%
+  - Increase Shield Capacity by 3. Reduce Recharge Delay by 14%
   - Increase Movement Speed by 5%, Dash gains additional Charge & Reduce Dash Cooldown
     by 10%
   - Increase Cooldown Reduction by 10%. Using Dash speeds up Item activation rate
     for short time
-  - Increase Max Health by 10. Restore 1% Max Health every 10s
-  - Increase Max Health by 10. Gain +0,8% Damage for every 10 Max Health above 50
+  - Increase Max Health by 8. Restore 1% Max Health every 7,5s
+  - Increase Max Health by 8. Gain +1% Damage for every 10 Max Health above 50
   - Increase Gun Accessory Slot by 1
   - Increase Gun Accuracy & Range by 12% & Increase Vision Range
-  - Increase Damage by 6%. Gain 1 Gold Every 8th Enemy slained
-  - Increase Shield Capacity by 4.  Losing Shield deals Damage to nearby Enemies
+  - Increase Damage by 5%. Gain 1 Gold Every 7th Enemy slained
+  - Increase Shield Capacity by 3. Losing Shield deals Damage to nearby Enemies
   - Fire additional parallel Bullet
   - Increase Magazine Size by 20%. Using Dash Reloads 10% Magazine
-  - Increase Shield Capacity by 4. Losing HP instantly reacharges some Shield (has
-    cooldown)
+  - Increase Shield Capacity by 3 & Max Health by 8. Losing HP instantly reacharges
+    some Shield (has cooldown)
   - Reduce Grenade Cooldown by 10%. Gredandes deal 20% more Damage.
   - Increase Gun Crit Chance by 7%
   - Increase On-Hit Rate, increased further with higher Crit Chance
   - Gain chance to fire Plasma Bullet. Increase effectivness of Plasma Bullets
   - Gain chance to fire Explosive Bullet. Increase effectivness of Explosive Bullets
   - Increase Chance for Special Bullets by 14%
-  - Increase Damage by 6% & Bullets Speed by 15%
+  - Increase Damage by 5% & Bullets Speed by 20%
   - Increase Gun Crit Damage by 15%. Every non-crit increaes Chance for next shot
   - Increase Gold gained by 10% & Gain 10 Gold
-  - All Guns have a 15% Chance to Fire additional time
-  - Increase Damage by 6% & Fire Rate by 8%
+  - Gun has a 15% Chance to Fire additional time
+  - Increase Damage, Fire Rate & Movement Speed by 5%
   - Increase Shield Capacity by 4. Enemy Slain gives 1 Shield
   - Reduce Grenade Cooldown by 12%. Grenade gains additional Charge
   - Grenades Stuns & have 60% Shatter. Reduce Grenade Cooldown by 9%
   - Grenades leave Poison Cloud for 2,4s. Grenade gains additional Charge
   - Grenades explode into smaller ones
-  - Increase Damage by 6%. Increase Grenade range & speed based on Damage Increase
-  - Increase Fire Rate by 8%. Gain 1% Cooldown Reduction for every 4,5% Fire Rate
+  - Increase Damage by 5%. Increase Grenade range & speed based on Damage Increase
+  - Increase Fire Rate by 5%. Gain 1% Cooldown Reduction for every 2,5% Fire Rate
     Increase
-  - Increase Shield Capacity by 4 & 3 per 5 levels
+  - Increase Shield Capacity by 3 & 3 per 5 levels
   - Gain chance to fire Electric Bullet. Increase effectivness of Electric Bullets
   - Increase Max Health with Enemy slained
   - Speeds up Item activation rate by 21%
   - Picking up Gold also gives 5XP
   - Reduce Damage taken by 10% & deal back to melee attackers
-  - Increase Magazine Size by 10% & Fire Rate by 9%
+  - Increase Magazine Size by 20% & Fire Rate by 5%
   - Gain Peacemaker On-hit. Increase effectivness of Peacemaker
   - Gain Boomerang On-hit. Increase effectivness of Boomerang
   - Gain Laser On-hit. Increase effectivness of Laser
   - Gain Peacemaker, Boomerang & Laser On-hit.
-  - Increase Damage by 6% & Increase slain effects by 20%
+  - Increase Damage by 5% & Increase slain effects by 25%
+  - Increase Movement Speed by 5% & Pick Up Range by 20%
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}

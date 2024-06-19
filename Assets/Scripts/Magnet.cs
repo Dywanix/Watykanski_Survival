@@ -15,6 +15,8 @@ public class Magnet : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
+        if (playerStats.eq.Items[45] > 0)
+            chaseRange *= 1f + 0.2f * playerStats.eq.Items[45];
         Invoke("Activate", 0.75f);
     }
 

@@ -8,14 +8,14 @@ public class DamageTaken : MonoBehaviour
 
     public void SetText(float damage, string hue)
     {
-        damageText.fontSize = 42 + damage * 0.22f;
+        damageText.fontSize = 40 + damage * 0.18f;
         switch (hue)
         {
             case "orange":
-                damageText.color = new Color(1, 0.5f, 0, 1);
+                damageText.color = new Color(1, 1f, 0.1f, 1); //yellow tbf
                 break;
             case "red":
-                damageText.color = new Color(1, 0, 0, 1);
+                damageText.color = new Color(1, 0.4f, 0, 1); //orange tbf
                 damageText.fontSize += 8f;
                 break;
             case "green":

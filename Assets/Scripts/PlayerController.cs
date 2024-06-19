@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth;
     public float dHealth, health, poison, poisonCap,
     damageBonus, fireRateBonus, baseMovementSpeed, movementSpeed, additionalCritChance, additionalCritDamage, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, dashMaxCharges, dashCharges,
-    grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash;
+    grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash, lootLuck;
     public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel, totalSlained;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
@@ -392,7 +392,7 @@ public class PlayerController : MonoBehaviour
     {
         if (eq.Items[6] > 0)
             RestoreHealth(0.01f * maxHealth * eq.Items[6]);
-        Invoke("Tick", 9.5f);
+        Invoke("Tick", 7.5f);
     }
 
     void GetInput()
@@ -854,7 +854,7 @@ public class PlayerController : MonoBehaviour
         Effects.venom = eq.Items[29];
         Effects.small = eq.Items[30];
         if (eq.Items[31] > 0)
-            firedBullet.duration /= DamageDealtMultiplyer(0.25f * eq.Items[31]);
+            firedBullet.duration /= DamageDealtMultiplyer(0.28f * eq.Items[31]);
     }
 
     public void GrenadeDrop(float range)
@@ -877,13 +877,13 @@ public class PlayerController : MonoBehaviour
         Effects.venom = eq.Items[29];
         Effects.small = eq.Items[30];
         if (eq.Items[31] > 0)
-            firedBullet.duration /= DamageDealtMultiplyer(0.25f * eq.Items[31]);
+            firedBullet.duration /= DamageDealtMultiplyer(0.28f * eq.Items[31]);
     }
 
     float ThrowRange()
     {
         if (eq.Items[31] > 0)
-            return throwRange * DamageDealtMultiplyer(0.25f * eq.Items[31]);
+            return throwRange * DamageDealtMultiplyer(0.28f * eq.Items[31]);
         else return throwRange;
     }
 
@@ -1071,6 +1071,7 @@ public class PlayerController : MonoBehaviour
         if (!invulnerable)
         {
             //Damaged();
+            rechargeTimer = rechargeDelay;
             if (protection)
                 protection = false;
             else
@@ -1116,8 +1117,8 @@ public class PlayerController : MonoBehaviour
 
         if (emergencyShields)
         {
-            GainShield((0.3f + 0.12f * eq.Items[14]) * maxShield);
-            Invoke("emergencyCooldown", 25f / (0.87f + 0.13f * eq.Items[14]));
+            GainShield((0.25f + 0.1f * eq.Items[14]) * maxShield);
+            Invoke("emergencyCooldown", 24f / (0.88f + 0.12f * eq.Items[14]));
             emergencyShields = false;
         }
 
@@ -1300,24 +1301,24 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[0] > 0)
         {
             adrenalineCharges += eq.Items[0];
-            while (adrenalineCharges > 2 + 4 * adrenalineStacks)
+            while (adrenalineCharges > 6 + 3 * adrenalineStacks)
             {
-                adrenalineCharges -= 2 + 4 * adrenalineStacks;
+                adrenalineCharges -= 6 + 3 * adrenalineStacks;
                 adrenalineStacks++;
-                GainFR(0.022f);
+                GainFR(0.02f);
             }
         }
         if (eq.Items[10] > 0)
         {
             bloodMoney += eq.Items[10];
-            while (bloodMoney >= 8)
+            while (bloodMoney >= 7)
             {
-                bloodMoney -= 8;
+                bloodMoney -= 7;
                 GainGold(1);
             }
         }
         if (eq.Items[26] > 0)
-            GainShield(1f * eq.Items[26]);
+            GainShield(1.2f * eq.Items[26]);
         if (eq.Items[35] > 0)
         {
             bloodBagCharges += eq.Items[35];
@@ -1331,9 +1332,9 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[44] > 0 && !scythe)
         {
             scytheCharge += eq.Items[10];
-            while (scytheCharge >= 5)
+            while (scytheCharge >= 4)
             {
-                scytheCharge -= 5;
+                scytheCharge -= 4;
                 EnemySlained(true);
             }
         }
@@ -1392,21 +1393,45 @@ public class PlayerController : MonoBehaviour
         DisplayAmmo();
     }
 
+    void GainXP(int amount)
+    {
+        experience += amount;
+        if (experience >= expRequired)
+        {
+            experience -= expRequired;
+            LevelUp();
+            expRequired = 10 + 20 * level;
+        }
+        experienceBar.fillAmount = (experience * 1f) / (expRequired * 1f);
+    }
+
     public void LevelUp()
     {
         level++;
-        GainDMG(0.005f);
+        /*GainDMG(0.005f);
         GainFR(0.005f);
-        GainMS(0.005f);
+        GainMS(0.005f);*/
         Time.timeScale = 0f;
         //skillPoints++;
         //SkillPointAviable.SetActive(true);
-        if (level % 3 == 0 || level % 10 == 0)
+        if (level % 3 == 0) //if (level % 3 == 0 || level % 10 == 0)
             map.ChoosePrize(3);
-        else map.ChoosePrize(2);
+        else
+        {
+            if (lootLuck >= Random.Range(0f, 25f + lootLuck))
+            {
+                map.ChoosePrize(2);
+                lootLuck = 8f;
+            }
+            else
+            {
+                lootLuck += 6f + lootLuck + luck * 0.5f;
+                map.ChoosePrize(1);
+            }
+        }
         LevelInfo.text = level.ToString("0");
-        if (eq.Items[35] > 0)
-            GainSC(eq.Items[35] * 0.6f);
+        if (eq.Items[33] > 0)
+            GainSC(eq.Items[33] * 0.6f);
     }
 
     void LearnPerk()
@@ -1415,13 +1440,42 @@ public class PlayerController : MonoBehaviour
         map.ChoosePrize(3);
     }
 
+    public void PickUpStat(int which)
+    {
+        switch (which)
+        {
+            case 0:
+                GainHP(8);
+                break;
+            case 1:
+                GainDMG(0.05f);
+                break;
+            case 2:
+                GainFR(0.05f);
+                break;
+            case 3:
+                GainMS(0.05f);
+                break;
+            case 4:
+                GainCR(0.08f);
+                break;
+            case 5:
+                GainSC(3);
+                break;
+            case 6:
+                additionalCritChance += 0.03f;
+                additionalCritDamage += 0.03f;
+                break;
+        }
+    }
+
     public void GainHP(float value)
     {
         maxHealth += value;
         health += value;
         healthInfo.text = health.ToString("0") + "/" + maxHealth.ToString("0");
         if (eq.Items[7] > 0)
-            GainDMG(0.0008f * value * eq.Items[7]);
+            GainDMG(0.001f * value * eq.Items[7]);
         dHealth += value;
         UpdateBars();
         dropBar.fillAmount = dHealth / maxHealth;
@@ -1437,7 +1491,7 @@ public class PlayerController : MonoBehaviour
     {
         fireRateBonus += value;
         if (eq.Items[32] > 0)
-            GainCR(value * eq.Items[32] / 4.5f);
+            GainCR(value * eq.Items[32] / 2.5f);
     }
 
     public void GainCR(float value)
@@ -1463,18 +1517,6 @@ public class PlayerController : MonoBehaviour
 
         gold += amount;
         goldInfo.text = gold.ToString("0");
-    }
-
-    void GainXP(int amount)
-    {
-        experience += amount;
-        if (experience >= expRequired)
-        {
-            experience -= expRequired;
-            LevelUp();
-            expRequired = 5 + 25 * level;
-        }
-        experienceBar.fillAmount = (experience * 1f) / (expRequired * 1f);
     }
 
     public void SpendGold(float amount)
