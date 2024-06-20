@@ -13,7 +13,7 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
     public EnemyState CurrentState = EnemyState.Chase;
-    public GameObject Player, Scrap, Orb, Orb5, damageTook, Projectal;
+    public GameObject Player, Scrap, Orb, Orb5, Item, damageTook, Projectal;
     public GameObject[] Items;
     public PlayerController playerStats;
     public Rigidbody2D Body, playerBody, Dir;
@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
         playerBody = Player.GetComponent<Rigidbody2D>();
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
 
-        if (elite)
+        /*if (elite)
         {
             tempi = weight - 50;
             maxHealth *= 1f + tempi * 0.02f;
@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
             cooldownReduction = 1f + tempi * 0.01f;
             scrapChance *= 1f + tempi * 0.02f;
             itemChance *= 1f + tempi * 0.02f;
-        }
+        }*/
 
         if (boss)
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
@@ -546,6 +546,14 @@ public class Enemy : MonoBehaviour
                 }
             }
 
+            if (elite)
+            {
+                Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+                GameObject scrap = Instantiate(Item, Body.position, transform.rotation);
+                Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
+                scrap_body.AddForce(Sight.up * Random.Range(1.2f, 3.8f), ForceMode2D.Impulse);
+            }
+
             if (boss)
             {
                 day_night.StartDay();
@@ -560,7 +568,7 @@ public class Enemy : MonoBehaviour
         Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
         GameObject scrap = Instantiate(Scrap, Body.position, transform.rotation);
         Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-        scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
+        scrap_body.AddForce(Sight.up * Random.Range(1.2f, 4.6f), ForceMode2D.Impulse);
     }
 
     void DropExperience()
@@ -570,7 +578,7 @@ public class Enemy : MonoBehaviour
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject orb = Instantiate(Orb5, Body.position, transform.rotation);
             Rigidbody2D orb_body = orb.GetComponent<Rigidbody2D>();
-            orb_body.AddForce(Sight.up * Random.Range(1.1f, 4.6f), ForceMode2D.Impulse);
+            orb_body.AddForce(Sight.up * Random.Range(1.1f, 4.2f), ForceMode2D.Impulse);
 
             BigOrbs++;
             experienceDroped -= 5;
@@ -580,7 +588,7 @@ public class Enemy : MonoBehaviour
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject orb = Instantiate(Orb, Body.position, transform.rotation);
             Rigidbody2D orb_body = orb.GetComponent<Rigidbody2D>();
-            orb_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
+            orb_body.AddForce(Sight.up * Random.Range(1.2f, 4.6f), ForceMode2D.Impulse);
         }
     }
 
@@ -589,6 +597,6 @@ public class Enemy : MonoBehaviour
         Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
         GameObject scrap = Instantiate(Items[Random.Range(0, Items.Length)], Dir.position, transform.rotation);
         Rigidbody2D scrap_body = scrap.GetComponent<Rigidbody2D>();
-        scrap_body.AddForce(Sight.up * Random.Range(1.2f, 5.1f), ForceMode2D.Impulse);
+        scrap_body.AddForce(Sight.up * Random.Range(1.2f, 4.6f), ForceMode2D.Impulse);
     }
 }

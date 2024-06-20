@@ -222,17 +222,17 @@ public class PrizeChoice : MonoBehaviour
         do
         {
             rolls[0] = Random.Range(0, ItemLib.Effects.Length);
-        } while (playerStats.eq.Effects[rolls[0]] > 5);
+        } while (playerStats.eq.Effects[rolls[0]] > 6);
 
         do
         {
             rolls[1] = Random.Range(0, ItemLib.Effects.Length);
-        } while (rolls[1] == rolls[0] || playerStats.eq.Effects[rolls[1]] > 5);
+        } while (rolls[1] == rolls[0] || playerStats.eq.Effects[rolls[1]] > 6);
 
         do
         {
             rolls[2] = Random.Range(0, ItemLib.Effects.Length);
-        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || playerStats.eq.Effects[rolls[2]] > 5);
+        } while (rolls[2] == rolls[0] || rolls[2] == rolls[1] || playerStats.eq.Effects[rolls[2]] > 6);
 
         for (int i = 0; i < 3; i++)
         {

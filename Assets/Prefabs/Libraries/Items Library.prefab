@@ -52,6 +52,7 @@ MonoBehaviour:
   - Increase Radius by 25%
   - Increase Base Damage by 5% of Max Health
   - Every 6th trigger deals Double Damage in larger Area, losing HP reduces timer
+  - Increase Base Damage by 4
 --- !u!1 &3493669897978340050
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +105,7 @@ MonoBehaviour:
   - Increase amount of Grenades thrown by 1
   - Increase Frequency by 22%
   - Increase Frequency by 10%, using Throw reduces timer by 2,5s
+  - Increase Grenade Damage by 7% & Frequency by 8%
 --- !u!1 &5256278042531316336
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,7 +315,8 @@ MonoBehaviour:
   - Increase base Damage by 8
   - Increase Frequency by 25% & Dash throws 3 more Blades
   - Increase Pierce by 1
-  - Cast second time with half the amounts of Blades
+  - Also Throw empowered Boomerang Blades
+  - Increase base Damage by 9
 --- !u!1 &7096948572576127643
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +368,8 @@ MonoBehaviour:
   - Increase base Damage by 7 & Frequency by 10%
   - Increase amounts of Knives by 2
   - Increase Frequency by 30%
-  - Knives Pierce 1 target
+  - Cast 2nd time with 2 Knives less
+  - Knives Gain 1 Pierce
 --- !u!1 &8159468659302214126
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +422,7 @@ MonoBehaviour:
   - Increase Frequency by 15%
   - Increase Gun Damage by 5% & Frequency by 7%
   - Fire second Bullet in opposite Direction, but reduce Frequency by 18%
+  - Increase Frequency by 16%
 --- !u!1 &8894815096822500778
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,3 +475,4 @@ MonoBehaviour:
   - Increase summon Frequency by 25%
   - Increase Cloud Duration by 6s & Base Damage by 2
   - Every 6-8th tick deals Double Damage, has 80% Shatter & Double Area
+  - Increase Base Damage by 7

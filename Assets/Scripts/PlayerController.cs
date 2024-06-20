@@ -340,7 +340,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Effects[0] > 0)
-            eq.ScissorsThrow(eq.bladesCount + eq.dashBlades, eq.secondBladeThrow);
+        {
+            eq.ScissorsThrow(eq.bladesCount + eq.dashBlades);
+            if (eq.secondBladeThrow)
+                eq.Invoke("BoomerangeDashThrow", 0.15f);
+        }
 
         if (eq.Items[2] > 0)
         {
@@ -842,7 +846,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.falloff = 0.8f / forceIncrease;
-        firedBullet.damage = 26f * (1f + level * 0.04f) * DamageDealtMultiplyer(1.1f);
+        firedBullet.damage = 26f * (1f + level * 0.02f) * DamageDealtMultiplyer(1.1f);
         firedBullet.damage *= grenadeDamageMultiplyer;
         if (eq.Items[28] > 0)
         {
@@ -1274,8 +1278,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.transform.tag == "Item")
         {
-            eq.Items[Random.Range(0, eq.Items.Length)]++;
+            Time.timeScale = 0f;
             Destroy(other.gameObject);
+            SetReward();
         }
         else if (other.transform.tag == "EnemyProjectal")
         {
@@ -1414,22 +1419,24 @@ public class PlayerController : MonoBehaviour
         //SkillPointAviable.SetActive(true);
         if (level % 3 == 0) //if (level % 3 == 0 || level % 10 == 0)
             map.ChoosePrize(3);
-        else
-        {
-            if (lootLuck >= Random.Range(0f, 25f + lootLuck))
-            {
-                map.ChoosePrize(2);
-                lootLuck = 8f;
-            }
-            else
-            {
-                lootLuck += 6f + lootLuck + luck * 0.5f;
-                map.ChoosePrize(1);
-            }
-        }
+        else SetReward();
         LevelInfo.text = level.ToString("0");
         if (eq.Items[33] > 0)
             GainSC(eq.Items[33] * 0.6f);
+    }
+
+    void SetReward()
+    {
+        if (lootLuck >= Random.Range(0f, 25f + lootLuck))
+        {
+            map.ChoosePrize(2);
+            lootLuck = 8f;
+        }
+        else
+        {
+            lootLuck += 6f + lootLuck + luck * 0.5f;
+            map.ChoosePrize(1);
+        }
     }
 
     void LearnPerk()

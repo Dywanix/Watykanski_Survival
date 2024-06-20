@@ -32,12 +32,12 @@ public class Equipment : MonoBehaviour
 
     [Header("Active Items")]
     public float itemActivationRate;
-    public GameObject BladeProjectal, KnifeProjectal, ImmolateArea, InfernoArea, StormCloud;
+    public GameObject BladeProjectal, BoomerangBladeProjectal, KnifeProjectal, ImmolateArea, InfernoArea, StormCloud;
     public GameObject ImmolateSmallArea, ImmolateMediumArea, MaelstormCloud;
     public float bladesThrowMaxCooldown, bladesThrowCooldown, bladesBaseDamage, bladesPierceEff, knifeThrowMaxCooldown, knifeThrowCooldown, knivesBaseDamage, immolateMaxCooldown, immolateCooldown,
         immolateBaseDamage, immolateHPRatio, rainCooldown, rainFrequency, howitzerMaxCooldown, howitzerCooldown, cloudMaxCooldown, cloudCooldown, cloudBaseDamage, cloudDuration, cloudSpeed;
     public int bladesCount, bladesPierce, dashBlades, knivesCount, knivesPierce, immolateTicks, grenadeCount;
-    public bool secondBladeThrow, immolateBoom;
+    public bool secondBladeThrow, secondKnifeThrow, immolateBoom;
 
     // -- items
     //public GameObject[] Drones;
@@ -95,7 +95,11 @@ public class Equipment : MonoBehaviour
             if (Effects[0] > 0)
                 bladesThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.6f) * (1f + playerStats.cooldownReduction * 0.4f);
             if (bladesThrowCooldown < 0f)
-                ScissorsThrow(bladesCount, secondBladeThrow);
+            {
+                ScissorsThrow(bladesCount);
+                if (secondBladeThrow)
+                    Invoke("BoomerangeThrow", 0.15f);
+            }
 
             if (Effects[1] > 0)
                 knifeThrowCooldown -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.8f) * (1f + playerStats.cooldownReduction * 0.2f);
@@ -317,7 +321,7 @@ public class Equipment : MonoBehaviour
                 bladesThrowCooldown = 1f + bladesThrowMaxCooldown * 0.5f;
                 bladesCount = 6;
                 dashBlades = 1;
-                bladesBaseDamage = 20f;
+                bladesBaseDamage = 22f;
                 bladesPierce = 2;
                 bladesPierceEff = 0.8f;
                 break;
@@ -339,11 +343,14 @@ public class Equipment : MonoBehaviour
             case (0, 6):
                 secondBladeThrow = true;
                 break;
+            case (0, 7):
+                bladesBaseDamage += 9f;
+                break;
             case (1, 1):
                 knifeThrowMaxCooldown = 3.6f;
                 knifeThrowCooldown = 1f + knifeThrowMaxCooldown * 0.5f;
                 knivesCount = 2;
-                knivesBaseDamage = 27f;
+                knivesBaseDamage = 29f;
                 knivesPierce = 1;
                 break;
             case (1, 2):
@@ -361,12 +368,15 @@ public class Equipment : MonoBehaviour
                 knifeThrowMaxCooldown *= 0.7f;
                 break;
             case (1, 6):
-                knivesPierce = 1;
+                secondKnifeThrow = true;
+                break;
+            case (1, 7):
+                knivesPierce += 1;
                 break;
             case (2, 1):
                 immolateMaxCooldown = 0.86f;
                 immolateCooldown = 1f + immolateMaxCooldown * 0.5f;
-                immolateBaseDamage = 6f;
+                immolateBaseDamage = 7f;
                 ImmolateArea = ImmolateSmallArea;
                 immolateHPRatio = 0.04f;
                 break;
@@ -385,8 +395,11 @@ public class Equipment : MonoBehaviour
             case (2, 6):
                 immolateBoom = true;
                 break;
+            case (2, 7):
+                immolateBaseDamage += 3.5f;
+                break;
             case (3, 1):
-                rainFrequency = 2.4f;
+                rainFrequency = 2.25f;
                 break;
             case (3, 2):
                 rainFrequency *= 0.86f;
@@ -405,8 +418,11 @@ public class Equipment : MonoBehaviour
             case (3, 6):
                 rainFrequency *= 1.18f;
                 break;
+            case (3, 7):
+                rainFrequency *= 0.84f;
+                break;
             case (4, 1):
-                howitzerMaxCooldown = 5.7f;
+                howitzerMaxCooldown = 5.4f;
                 howitzerCooldown = 1f + howitzerMaxCooldown * 0.5f;
                 grenadeCount = 1;
                 break;
@@ -426,10 +442,14 @@ public class Equipment : MonoBehaviour
             case (4, 6):
                 howitzerMaxCooldown *= 0.9f;
                 break;
+            case (4, 7):
+                playerStats.grenadeDamageMultiplyer += 0.07f;
+                howitzerMaxCooldown *= 0.92f;
+                break;
             case (5, 1):
                 cloudMaxCooldown = 18f;
                 cloudCooldown = 1f + cloudMaxCooldown * 0.5f;
-                cloudDuration = 14f;
+                cloudDuration = 15f;
                 cloudSpeed = 6f;
                 cloudBaseDamage += 14f;
                 break;
@@ -449,6 +469,9 @@ public class Equipment : MonoBehaviour
                 break;
             case (5, 6):
                 StormCloud = MaelstormCloud;
+                break;
+            case (5, 7):
+                cloudBaseDamage += 7f;
                 break;
         }
     }
@@ -623,7 +646,7 @@ public class Equipment : MonoBehaviour
     public void Discharge(float shieldLost)
     {
         temp = 5f + Items[11] + shieldLost;
-        temp *= (1.2f + 0.048f * playerStats.level) * Items[11];
+        temp *= (1.3f + 0.026f * playerStats.level) * Items[11];
 
         GameObject bullet = Instantiate(DischargeObject, Barrel.position, Barrel.rotation);
 
@@ -637,7 +660,7 @@ public class Equipment : MonoBehaviour
             Invoke("KnifeThrow", 2.1f);*/
     }
 
-    public void ScissorsThrow(int blades, bool repeat = false)
+    public void ScissorsThrow(int blades)
     {
         temp = Random.Range(-15f, 15f);
         for (int i = 0; i < blades; i++)
@@ -648,13 +671,51 @@ public class Equipment : MonoBehaviour
             blade_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
 
             firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1.04f);
+            firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.04f);
             firedBullet.pierce = bladesPierce;
             firedBullet.pierceEfficiency = bladesPierceEff;
         }
         bladesThrowCooldown += bladesThrowMaxCooldown;
-        if (repeat)
-            ScissorsThrow(blades / 2);
+    }
+
+    public void BoomerangeThrow()
+    {
+        temp = Random.Range(-15f, 15f);
+        tempi = (3 + bladesCount) / 4;
+        for (int i = 0; i < tempi; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, temp + (360f / tempi) * i);
+            GameObject blade = Instantiate(BoomerangBladeProjectal, Barrel.position, Barrel.rotation);
+            Rigidbody2D blade_body = blade.GetComponent<Rigidbody2D>();
+            blade_body.AddForce(Barrel.up * Random.Range(17.5f, 18.9f), ForceMode2D.Impulse);
+
+            firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.04f);
+            firedBullet.damage *= 1.25f;
+            firedBullet.pierce = bladesPierce;
+            firedBullet.pierce *= 2;
+            firedBullet.pierceEfficiency = bladesPierceEff;
+        }
+    }
+
+    public void BoomerangeDashThrow()
+    {
+        temp = Random.Range(-15f, 15f);
+        tempi = (3 + bladesCount + dashBlades) / 4;
+        for (int i = 0; i < tempi; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, temp + (360f / tempi) * i);
+            GameObject blade = Instantiate(BoomerangBladeProjectal, Barrel.position, Barrel.rotation);
+            Rigidbody2D blade_body = blade.GetComponent<Rigidbody2D>();
+            blade_body.AddForce(Barrel.up * Random.Range(17.3f, 18.7f), ForceMode2D.Impulse);
+
+            firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.04f);
+            firedBullet.damage *= 1.35f;
+            firedBullet.pierce = bladesPierce;
+            firedBullet.pierce += firedBullet.pierce + 1;
+            firedBullet.pierceEfficiency = bladesPierceEff;
+        }
     }
 
     void KnifeThrow()
@@ -667,10 +728,28 @@ public class Equipment : MonoBehaviour
             knife_body.AddForce(Barrel.up * Random.Range(17.3f, 18.7f), ForceMode2D.Impulse);
 
             firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1.07f);
+            firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.07f);
             firedBullet.pierce = knivesPierce;
         }
         knifeThrowCooldown += knifeThrowMaxCooldown;
+        if (secondKnifeThrow)
+            Invoke("SecondKnifeThrow", 0.3f);
+    }
+
+    void SecondKnifeThrow()
+    {
+        tempi = knivesCount - 2;
+        for (int i = 0; i < tempi; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, playerStats.Gun.rotation - 6f * tempi + 6f + 12f * i);
+            GameObject knife = Instantiate(KnifeProjectal, Barrel.position, Barrel.rotation);
+            Rigidbody2D knife_body = knife.GetComponent<Rigidbody2D>();
+            knife_body.AddForce(Barrel.up * Random.Range(17.3f, 18.7f), ForceMode2D.Impulse);
+
+            firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.07f);
+            firedBullet.pierce = knivesPierce;
+        }
     }
 
     void Immolate()
@@ -678,7 +757,7 @@ public class Equipment : MonoBehaviour
         GameObject fire = Instantiate(ImmolateArea, Barrel.position, Barrel.rotation);
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
-        firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1.1f);
+        firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f);
 
         immolateCooldown += immolateMaxCooldown;
     }
@@ -688,7 +767,7 @@ public class Equipment : MonoBehaviour
         GameObject fire = Instantiate(InfernoArea, Barrel.position, Barrel.rotation);
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
-        firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1.1f);
+        firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f);
         firedBullet.damage *= 2f;
         firedBullet.crit = true;
 
@@ -720,7 +799,7 @@ public class Equipment : MonoBehaviour
         GameObject fire = Instantiate(StormCloud, Barrel.position, Barrel.rotation);
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
-        firedBullet.damage = cloudBaseDamage * (1f + playerStats.level * 0.04f) * playerStats.DamageDealtMultiplyer(1f);
+        firedBullet.damage = cloudBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1f);
         firedBullet.duration = cloudDuration;
 
         cloudCooldown += cloudMaxCooldown;

@@ -59020,10 +59020,7 @@ MonoBehaviour:
   - {fileID: 8138337587393098239, guid: 8ded5f501d9b33b448bf160ef7a4847b, type: 3}
   - {fileID: 5250906388207646138, guid: 6af25eb2c65d5f24b9c804797a294e31, type: 3}
   Elites:
-  - {fileID: 1527872337732246289, guid: a1a25699d63b8734398f4b275fc8ed44, type: 3}
-  - {fileID: 4762132699805670846, guid: 256fc115beb7daf45b6908a39cc9cfbb, type: 3}
-  - {fileID: 2908122157879161186, guid: fed6f82640bf8884b99120ea498957ba, type: 3}
-  - {fileID: 4920948948325506094, guid: 24d6e733191520449860ed16527d094c, type: 3}
+  - {fileID: 7117639114315019336, guid: 24540a62381725941bb6e72ce9f535c4, type: 3}
   VendingMachineObject: {fileID: 50638922}
   active: 0
   round: 0
@@ -59031,7 +59028,7 @@ MonoBehaviour:
   minSpawn: 0
   maxSpawn: 1
   mobsStrength: 03000000040000000500000006000000080000000a000000
-  elitesStrength: 0c0000000c0000000e0000000e000000
+  elitesStrength: 28000000
   roll: 0
   tempi: 0
   rest: 0

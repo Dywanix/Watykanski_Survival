@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   enemyBody: {fileID: 0}
-  movementSpeed: 7
+  movementSpeed: 7.5
 --- !u!114 &4756102971473323467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   frequencyRange: 1.2
   damageEfficiency: 1
   bulletsCount: 1
+  bonusShatter: 0
 --- !u!50 &63646001096214048
 Rigidbody2D:
   serializedVersion: 4
