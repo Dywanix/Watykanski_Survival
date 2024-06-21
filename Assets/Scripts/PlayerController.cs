@@ -340,11 +340,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.Effects[0] > 0)
-        {
             eq.ScissorsThrow(eq.bladesCount + eq.dashBlades);
-            if (eq.secondBladeThrow)
-                eq.Invoke("BoomerangeDashThrow", 0.15f);
-        }
 
         if (eq.Items[2] > 0)
         {
@@ -812,7 +808,7 @@ public class PlayerController : MonoBehaviour
         {
             ThrowGrenade();
             if (eq.Effects[4] >= 6)
-                eq.howitzerCooldown -= 2.5f;
+                eq.effectCooldown[4] -= 2.5f;
         }
     }
 
@@ -1125,7 +1121,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (eq.immolateBoom)
-            eq.immolateCooldown -= amount * 0.08f;
+            eq.effectCooldown[2] -= amount * 0.08f;
 
         if (health <= 0f)
             ReturnToMenu();
@@ -1341,6 +1337,8 @@ public class PlayerController : MonoBehaviour
                 EnemySlained(true);
             }
         }
+        if (eq.Effects[6] >= 6)
+            eq.effectCooldown[6] -= 0.12f;
         /*for (int i = 1; i < 3; i++)
         {
             if (eq.slotFilled[i] && eq.guns[i].ammoRegain > 0)
@@ -1513,7 +1511,7 @@ public class PlayerController : MonoBehaviour
     {
         maxShield += value;
         if (eq.Items[26] > 0)
-            grenadeDamageMultiplyer += 0.0025f * value * eq.Items[26];
+            grenadeDamageMultiplyer += 0.003f * value * eq.Items[26];
         UpdateBars();
         GainShield(value);
     }

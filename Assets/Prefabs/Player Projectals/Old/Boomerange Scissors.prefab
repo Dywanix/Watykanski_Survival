@@ -74,15 +74,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2631863615869697858, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.3794055
       objectReference: {fileID: 0}
     - target: {fileID: 2631863615869697858, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
       propertyPath: m_Color.g
-      value: 0.7347469
+      value: 0.8445664
       objectReference: {fileID: 0}
     - target: {fileID: 2631863615869697858, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9245283
       objectReference: {fileID: 0}
     - target: {fileID: 4545910553982148065, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
       propertyPath: frequencyGain
@@ -94,11 +94,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7117707636373272127, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7117707636373272127, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7117707636373272127, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -173,26 +173,10 @@ MonoBehaviour:
   Body: {fileID: 5214729542260595062}
   playerBody: {fileID: 0}
   Dir: {fileID: 3300289621329945552}
-  movementSpeed: 12
-  accelerationFlat: 0.12
-  accelerationProc: 0.144
+  movementSpeed: 11
+  accelerationFlat: 0.11
+  accelerationProc: 0.121
   active: 0
---- !u!114 &7148275476226851635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8244365624397463589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c8219ab8c3b4a4db74f456a348c0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xAngle: 0
-  yAngle: 0
-  zAngle: 1
-  body: {fileID: 184488848822719279}
 --- !u!114 &8453119776661866446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,4 +190,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chase: {fileID: 1586058207620012799}
-  delay: 1.2
+  delay: 1.1

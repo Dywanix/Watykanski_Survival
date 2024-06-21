@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: fe5d23d762760d04fbeda8fe6df80373, type: 3}
   EffectTooltips:
-  - Deal Damage to nearby Enemies every 1s
+  - Deal Damage to nearby Enemies every 0,82s
   - Increase Base Damage by 3
   - Increase Frequency by 25%
   - Increase Radius by 25%
@@ -99,13 +99,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: 025e5b8b471187147a2c6dd85b9ff727, type: 3}
   EffectTooltips:
-  - Throws Grenade at random nearby position every 5,7s
+  - Throws Grenade at random nearby position every 5,2s
   - Increase Frequency by 20%
   - Increase Grenade Damage by 7% & Frequency by 7%
   - Increase amount of Grenades thrown by 1
   - Increase Frequency by 22%
   - Increase Frequency by 10%, using Throw reduces timer by 2,5s
   - Increase Grenade Damage by 7% & Frequency by 8%
+--- !u!1 &4493847000807918944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571743350778702425}
+  - component: {fileID: 685320073287144932}
+  m_Layer: 0
+  m_Name: Orb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &571743350778702425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493847000807918944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3380796369291455551}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &685320073287144932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4493847000807918944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a3a3fbed95ba148964ebce23cb2451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectSprite: {fileID: 21300000, guid: fefe9b88e9c057e41a398faac2163515, type: 3}
+  EffectTooltips:
+  - Throw Orb every 0,35s in rotating direction
+  - Increase Frequency by 24%
+  - Increase base Damage by 8
+  - Fire second Orb in opposite Direction, but reduce Frequency by 24%
+  - Increase base Damage by 4 & gain 40% Shatter
+  - Every Enemy slain reduces timer by 0,12s. After completing full Rotation also
+    reduce time of Other Items by 0,67s
+  - Fire 3 Orbs in opposite directions
 --- !u!1 &5256278042531316336
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +195,7 @@ Transform:
   - {fileID: 3580027287559840205}
   - {fileID: 4947830863532549026}
   - {fileID: 877497541668317632}
+  - {fileID: 571743350778702425}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -231,10 +286,10 @@ MonoBehaviour:
   - Increase Chance for Special Bullets by 14%
   - Increase Damage by 5% & Bullets Speed by 20%
   - Increase Gun Crit Damage by 15%. Every non-crit increaes Chance for next shot
-  - Increase Gold gained by 10% & Gain 10 Gold
+  - Increase Gold gained by 10% & Gain 14 Gold
   - Gun has a 15% Chance to Fire additional time
-  - Increase Damage, Fire Rate & Movement Speed by 5%
-  - Increase Shield Capacity by 3. Grenades deal (5 + 1/4 Shield Capacity)% more
+  - Increase Damage, Fire Rate & Movement Speed by 6%
+  - Increase Shield Capacity by 3. Grenades deal (5 + 30% Shield Capacity)% more
     Damage
   - Reduce Grenade Cooldown by 12%. Grenade gains additional Charge
   - Grenades Stuns & have 60% Shatter. Reduce Grenade Cooldown by 9%
@@ -249,7 +304,7 @@ MonoBehaviour:
   - Speeds up Item activation rate by 21%
   - Picking up Gold also gives 5XP
   - Reduce Damage taken by 10% & deal back to melee attackers
-  - Increase Magazine Size by 20% & Fire Rate by 5%
+  - Increase Magazine Size by 20% & Fire Rate by 7%
   - Gain Peacemaker On-hit. Increase effectivness of Peacemaker
   - Gain Boomerang On-hit. Increase effectivness of Boomerang
   - Gain Laser On-hit. Increase effectivness of Laser
@@ -264,6 +319,7 @@ MonoBehaviour:
   - {fileID: 4185776107452987588}
   - {fileID: 8443127016458784972}
   - {fileID: 1206003873605896130}
+  - {fileID: 685320073287144932}
 --- !u!1 &6344427247891361874
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +371,7 @@ MonoBehaviour:
   - Increase base Damage by 8
   - Increase Frequency by 25% & Dash throws 3 more Blades
   - Increase Pierce by 1
-  - Also Throw empowered Boomerang Blades
+  - Increase Frequency by 8%, Every 4th Blade is empowered to be Boomerang
   - Increase base Damage by 9
 --- !u!1 &7096948572576127643
 GameObject:
@@ -368,7 +424,7 @@ MonoBehaviour:
   - Increase base Damage by 7 & Frequency by 10%
   - Increase amounts of Knives by 2
   - Increase Frequency by 30%
-  - Cast 2nd time with 2 Knives less
+  - Increase amounts of Knives by 1, Cast 2nd time with 3 less Knives
   - Knives Gain 1 Pierce
 --- !u!1 &8159468659302214126
 GameObject:
@@ -471,8 +527,8 @@ MonoBehaviour:
   EffectTooltips:
   - Summons Storm Cloud that chases Enemies and deals Damage in small area
   - Increase Cloud Duration by 4s & Movement Speed by 16%
-  - Increase Base Damage by 6
+  - Increase Base Damage by 5
   - Increase summon Frequency by 25%
   - Increase Cloud Duration by 6s & Base Damage by 2
   - Every 6-8th tick deals Double Damage, has 80% Shatter & Double Area
-  - Increase Base Damage by 7
+  - Increase Base Damage by 6
