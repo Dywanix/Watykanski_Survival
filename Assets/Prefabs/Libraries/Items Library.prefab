@@ -259,6 +259,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c0f660ea6d3af5f47b938eb5df85a598, type: 3}
   - {fileID: 21300000, guid: 934198322209573438bb0e9be48b89f5, type: 3}
   - {fileID: 21300000, guid: 4fe4e8812b94d894cb55d8c592b53431, type: 3}
+  - {fileID: 21300000, guid: 5b29fbd449b4a1744ad57ba518e32d15, type: 3}
+  - {fileID: 21300000, guid: f81d284d85f9ae04b97085397bdcf65a, type: 3}
+  - {fileID: 21300000, guid: 4c895f25b945c624c8597260932d9c20, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
@@ -312,6 +315,9 @@ MonoBehaviour:
   - Increase Damage by 5% & Increase slain effects by 25%
   - Increase Movement Speed by 5% & Pick Up Range by 20%
   - Your Gun gains 20% Shatter. Shattering Shield also deals 20% as Damage
+  - Damage is randomized between 100-110%
+  - Increase Crit Chance by 4%. Crits gain 25% DoT
+  - Reduce Movement Speed by 12% to Increase Damage by 20% & Shield Capacity by 5
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}
@@ -364,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a3a3fbed95ba148964ebce23cb2451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EffectSprite: {fileID: 21300000, guid: b4427101c613a4a489bedc35590452d8, type: 3}
+  EffectSprite: {fileID: 21300000, guid: abafd7d7201eda147a0cc22db4a68604, type: 3}
   EffectTooltips:
   - Throws 6 Piercing Blades around every 4,5s & with Dash
   - Increase amounts of Blades by 4 & base Damage by 2

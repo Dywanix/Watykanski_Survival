@@ -741,6 +741,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.force = eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f);
         firedBullet.mass = eq.guns[eq.equipped].heft;
         firedBullet.damage = eq.guns[eq.equipped].Damage() * DamageDealtMultiplyer(1f);
+        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * luck) * eq.Items[47]);
         if (effectOn[2] && eq.Items[19] > 0)
             firedBullet.damage *= 1f + 0.07f * eq.Items[19];
         //firedBullet.damage *= efficiency;
@@ -792,11 +793,8 @@ public class PlayerController : MonoBehaviour
                 firedBullet.pierce += eq.Items[16];
                 firedBullet.pierceEfficiency += 0.08f * eq.Items[16];
             }
-            if (eq.guns[eq.equipped].Accessories[8 + bp.ALibrary.count] > 0)
-            {
-                firedBullet.pierce += eq.guns[eq.equipped].Accessories[8 + bp.ALibrary.count];
-                firedBullet.pierceEfficiency += 0.15f * eq.guns[eq.equipped].Accessories[8 + bp.ALibrary.count];
-            }
+            if (eq.Items[48] > 0)
+                firedBullet.DoT += 0.25f * eq.Items[48];
         }
         else if (eq.Items[22] > 0)
             focus += 0.03f * eq.Items[22];
@@ -843,6 +841,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.falloff = 0.8f / forceIncrease;
         firedBullet.damage = 26f * (1f + level * 0.02f) * DamageDealtMultiplyer(1.1f);
+        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * luck) * eq.Items[47]);
         firedBullet.damage *= grenadeDamageMultiplyer;
         if (eq.Items[28] > 0)
         {
@@ -865,7 +864,8 @@ public class PlayerController : MonoBehaviour
         firedBullet.TargetedLocation = TargetArea;
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.falloff = 0.8f / forceIncrease;
-        firedBullet.damage = 26f * (1f + level * 0.04f) * DamageDealtMultiplyer(1.1f);
+        firedBullet.damage = 26f * (1f + level * 0.02f) * DamageDealtMultiplyer(1.1f);
+        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * luck) * eq.Items[47]);
         firedBullet.damage *= grenadeDamageMultiplyer;
         if (eq.Items[28] > 0)
         {
