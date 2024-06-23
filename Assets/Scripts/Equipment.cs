@@ -536,7 +536,7 @@ public class Equipment : MonoBehaviour
     {
         //Flash();
         onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.48f * guns[equipped].Accessories[26 + bp.ALibrary.count];
-        onHitIncrease *= 1f + 0.025f * playerStats.adrenalineStacks;
+        onHitIncrease *= 1f + 0.015f * playerStats.adrenalineStacks;
 
         freeBulletCharges[equipped] += efficiency * guns[equipped].freeBullet * onHitIncrease;
         if (freeBulletCharges[equipped] >= 5f)
@@ -722,7 +722,7 @@ public class Equipment : MonoBehaviour
 
                 firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
                 firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.04f);
-                firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+                firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
                 firedBullet.damage *= 1.4f;
                 firedBullet.pierce = bladesPierce * 2 + 1;
                 firedBullet.pierceEfficiency = bladesPierceEff;
@@ -745,7 +745,7 @@ public class Equipment : MonoBehaviour
 
                 firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
                 firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.04f);
-                firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+                firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
                 firedBullet.pierce = bladesPierce;
                 firedBullet.pierceEfficiency = bladesPierceEff;
 
@@ -772,7 +772,7 @@ public class Equipment : MonoBehaviour
 
             firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.09f);
-            firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+            firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
             firedBullet.pierce = knivesPierce;
 
             if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
@@ -801,7 +801,7 @@ public class Equipment : MonoBehaviour
 
             firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.07f);
-            firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+            firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
             firedBullet.pierce = knivesPierce;
 
             if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
@@ -821,7 +821,7 @@ public class Equipment : MonoBehaviour
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
         firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f);
-        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+        firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
 
         if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
         {
@@ -841,7 +841,7 @@ public class Equipment : MonoBehaviour
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
         firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f);
-        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+        firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
         firedBullet.damage *= 2f;
         //firedBullet.crit = true;
 
@@ -883,7 +883,7 @@ public class Equipment : MonoBehaviour
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
         firedBullet.damage = cloudBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1f);
-        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+        firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
         firedBullet.duration = cloudDuration;
 
         if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
@@ -922,7 +922,7 @@ public class Equipment : MonoBehaviour
 
             firedBullet = orb.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = orbDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.05f);
-            firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * playerStats.luck) * Items[47]);
+            firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
             firedBullet.shatter = orbShatter;
 
             if (playerStats.additionalCritChance >= Random.Range(0f, 1f))

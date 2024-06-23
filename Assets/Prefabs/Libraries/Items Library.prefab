@@ -315,7 +315,7 @@ MonoBehaviour:
   - Increase Damage by 5% & Increase slain effects by 25%
   - Increase Movement Speed by 5% & Pick Up Range by 20%
   - Your Gun gains 20% Shatter. Shattering Shield also deals 20% as Damage
-  - Damage is randomized between 100-110%
+  - Damage is randomized between 95-115%
   - Increase Crit Chance by 4%. Crits gain 25% DoT
   - Reduce Movement Speed by 12% to Increase Damage by 20% & Shield Capacity by 5
   Effects:

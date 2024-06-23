@@ -741,7 +741,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.force = eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f);
         firedBullet.mass = eq.guns[eq.equipped].heft;
         firedBullet.damage = eq.guns[eq.equipped].Damage() * DamageDealtMultiplyer(1f);
-        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * luck) * eq.Items[47]);
+        firedBullet.damage *= Random.Range(1f - 0.05f * eq.Items[47], 1f + (0.13f + 0.01f * luck) * eq.Items[47]);
         if (effectOn[2] && eq.Items[19] > 0)
             firedBullet.damage *= 1f + 0.07f * eq.Items[19];
         //firedBullet.damage *= efficiency;
@@ -841,7 +841,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.falloff = 0.8f / forceIncrease;
         firedBullet.damage = 26f * (1f + level * 0.02f) * DamageDealtMultiplyer(1.1f);
-        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * luck) * eq.Items[47]);
+        firedBullet.damage *= Random.Range(1f - 0.05f * eq.Items[47], 1f + (0.13f + 0.01f * luck) * eq.Items[47]);
         firedBullet.damage *= grenadeDamageMultiplyer;
         if (eq.Items[28] > 0)
         {
@@ -865,7 +865,7 @@ public class PlayerController : MonoBehaviour
         firedBullet.duration = 0.8f / forceIncrease;
         firedBullet.falloff = 0.8f / forceIncrease;
         firedBullet.damage = 26f * (1f + level * 0.02f) * DamageDealtMultiplyer(1.1f);
-        firedBullet.damage *= Random.Range(1f, 1f + (0.08f + 0.01f * luck) * eq.Items[47]);
+        firedBullet.damage *= Random.Range(1f - 0.05f * eq.Items[47], 1f + (0.13f + 0.01f * luck) * eq.Items[47]);
         firedBullet.damage *= grenadeDamageMultiplyer;
         if (eq.Items[28] > 0)
         {
@@ -1300,11 +1300,11 @@ public class PlayerController : MonoBehaviour
         if (eq.Items[0] > 0)
         {
             adrenalineCharges += eq.Items[0];
-            while (adrenalineCharges > 6 + 3 * adrenalineStacks)
+            while (adrenalineCharges > 6 + 4 * adrenalineStacks)
             {
-                adrenalineCharges -= 6 + 3 * adrenalineStacks;
+                adrenalineCharges -= 6 + 4 * adrenalineStacks;
                 adrenalineStacks++;
-                GainFR(0.02f);
+                GainFR(0.01f);
             }
         }
         if (eq.Items[10] > 0)
@@ -1316,8 +1316,6 @@ public class PlayerController : MonoBehaviour
                 GainGold(1);
             }
         }
-        if (eq.Items[26] > 0)
-            GainShield(1.2f * eq.Items[26]);
         if (eq.Items[35] > 0)
         {
             bloodBagCharges += eq.Items[35];
