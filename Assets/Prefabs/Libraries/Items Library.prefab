@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: 025e5b8b471187147a2c6dd85b9ff727, type: 3}
   EffectTooltips:
-  - Throws Grenade at random nearby position every 5,2s
+  - Throws Grenade at random nearby position every 5s
   - Increase Frequency by 20%
   - Increase Grenade Damage by 7% & Frequency by 7%
   - Increase amount of Grenades thrown by 1
@@ -152,13 +152,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: fefe9b88e9c057e41a398faac2163515, type: 3}
   EffectTooltips:
-  - Throw Orb every 0,35s in rotating direction
+  - Throw Orb every 0,34s in rotating direction
   - Increase Frequency by 24%
-  - Increase base Damage by 8
-  - Fire second Orb in opposite Direction, but reduce Frequency by 24%
-  - Increase base Damage by 4 & gain 40% Shatter
-  - Every Enemy slain reduces timer by 0,12s. After completing full Rotation also
-    reduce time of Other Items by 0,67s
+  - Increase base Damage by 9
+  - Fire second Orb in opposite Direction, but reduce Frequency by 25%
+  - Increase base Damage by 5 & gain 50% Shatter
+  - Every Enemy slain reduces timer by 0,11s. After completing full Rotation also
+    reduce time of Other Items by 0,66s
   - Fire 3 Orbs in opposite directions
 --- !u!1 &5256278042531316336
 GameObject:
@@ -220,7 +220,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 80d55af0fe3ed28478b8e7dafbd4d708, type: 3}
   - {fileID: 21300000, guid: c35bcedb02794b749b0d3ae41e264af2, type: 3}
   - {fileID: 21300000, guid: 21d5fa94a699f764c825ca22e2b94fd2, type: 3}
-  - {fileID: 21300000, guid: 676095a7496d9d74ba01a033ce5c0dc2, type: 3}
+  - {fileID: 21300000, guid: 94a2d85e572b6a84d93ef8da21c4bb9e, type: 3}
   - {fileID: 21300000, guid: 89b5be2999f5dc147906f9dddc6a9724, type: 3}
   - {fileID: 21300000, guid: e5215fbecf4c38747b7b1e183f2830a9, type: 3}
   - {fileID: 21300000, guid: fb65532b596e59245b0514f07402d990, type: 3}
@@ -262,6 +262,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5b29fbd449b4a1744ad57ba518e32d15, type: 3}
   - {fileID: 21300000, guid: f81d284d85f9ae04b97085397bdcf65a, type: 3}
   - {fileID: 21300000, guid: 4c895f25b945c624c8597260932d9c20, type: 3}
+  - {fileID: 21300000, guid: 676095a7496d9d74ba01a033ce5c0dc2, type: 3}
+  - {fileID: 21300000, guid: 25eb023d3737bac47ac4926b8ab1c300, type: 3}
+  - {fileID: 21300000, guid: 54e6ab1702714c5439e508ba3c989084, type: 3}
+  - {fileID: 21300000, guid: 6cf07ec0ab88d8e469118d10e7038d0e, type: 3}
+  - {fileID: 21300000, guid: 68634a3a57e877143b730b09d92dc412, type: 3}
+  - {fileID: 21300000, guid: cd8221bb97b39054bb992cce6f50cedf, type: 3}
+  - {fileID: 21300000, guid: b664b88c54f2666489aed88e5d3a59ba, type: 3}
+  - {fileID: 21300000, guid: e14c2e0ccdb8e3b4bbb83b0dcadd184b, type: 3}
+  - {fileID: 21300000, guid: fa20081972dc38d4897014bef725768b, type: 3}
+  - {fileID: 21300000, guid: 73f10b9d1bdd96749a597f00dd76c25c, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
@@ -274,7 +284,7 @@ MonoBehaviour:
   - Increase Max Health by 8. Restore 1% Max Health every 7,5s
   - Increase Max Health by 8. Gain +1% Damage for every 10 Max Health above 50
   - Reduces Dash Cooldown by 3%. Using Dash fires a wave of Bullets
-  - Increase Gun Accuracy & Range by 12% & Increase Vision Range
+  - Increase Gun Accuracy & Range by 15% & Increase Vision Range
   - Increase Damage by 5%. Gain 1 Gold Every 7th Enemy slained
   - Increase Shield Capacity by 3. Losing Shield deals Damage to nearby Enemies
   - Fire additional parallel Bullet
@@ -314,10 +324,20 @@ MonoBehaviour:
   - Gain Peacemaker, Boomerang & Laser On-hit.
   - Increase Damage by 5% & Increase slain effects by 25%
   - Increase Movement Speed by 5% & Pick Up Range by 20%
-  - Your Gun gains 20% Shatter. Shattering Shield also deals 20% as Damage
+  - Your Gun gains 20% Shatter. Shattering Shield also deals 25% as Damage
   - Damage is randomized between 95-115%
   - Increase Crit Chance by 4%. Crits gain 25% DoT
   - Reduce Movement Speed by 12% to Increase Damage by 20% & Shield Capacity by 5
+  - Increase your Gun Damage by 40%, but Reduce its Fire Rate by 26%
+  - Your Gun gains 30% Dot. Gain 5% chance for Poison Bullet
+  - Your Gun gains 10% Fire Rate. Gain 5% chance for Plasma Bullet
+  - Your Gun gains 10% Damage. Gain 5% chance for Explosive Bullet
+  - Your Gun gains 20% Shatter. Gain 5% chance for Electric Bullet
+  - Fire Peacemaker On-Hit
+  - Fire Boomerang On-Hit
+  - Fire Laser On-Hit
+  - Your Gun gains 30% DoT. DoT lasts longer
+  - Your Gun has 20% Chance to Fire additional Bullets in a Cone
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}
@@ -372,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: abafd7d7201eda147a0cc22db4a68604, type: 3}
   EffectTooltips:
-  - Throws 6 Piercing Blades around every 4,5s & with Dash
+  - Throws 7 Piercing Blades around every 4,6s & with Dash
   - Increase amounts of Blades by 4 & base Damage by 2
   - Increase base Damage by 8
   - Increase Frequency by 25% & Dash throws 3 more Blades
@@ -425,9 +445,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: 8ce1cd7f80233b6498d1365d732ccddc, type: 3}
   EffectTooltips:
-  - Throws 2 Knives in facing direction every 3,6s
+  - Throws 2 Knives in facing direction every 3,5s
   - Increase amounts of Knives by 1 & Frequency by 10%
-  - Increase base Damage by 7 & Frequency by 10%
+  - Increase base Damage by 6 & Frequency by 11%
   - Increase amounts of Knives by 2
   - Increase Frequency by 30%
   - Increase amounts of Knives by 1, Cast 2nd time with 3 less Knives

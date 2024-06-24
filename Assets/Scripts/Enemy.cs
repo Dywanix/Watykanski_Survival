@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     public int weight;
     public Image healthFill, DoTFill, ShieldFill;
     public float maxHealth, health, vulnerable;
-    public float shieldCapacity, shield, rechargeTimer, shieldRechargeRate, shieldRechargeDelay;
+    public float shieldCapacity, shield;
 
     [Header("Movement")]
     public float movementSpeed;
@@ -137,16 +137,6 @@ public class Enemy : MonoBehaviour
             }*/
         }
         else stun -= Time.deltaTime;
-
-        if (rechargeTimer > 0f)
-        {
-            rechargeTimer -= Time.deltaTime * SpeedEfficiency();
-        }
-        else if (shield < shieldCapacity)
-        {
-            shield += Time.deltaTime * shieldRechargeRate * SpeedEfficiency();
-            UpdateBars();
-        }
 
         /*if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
         {
@@ -319,7 +309,6 @@ public class Enemy : MonoBehaviour
             text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
         }
 
-        rechargeTimer = shieldRechargeDelay;
         if (shield > 0f)
         {
             shield -= value;
@@ -440,8 +429,6 @@ public class Enemy : MonoBehaviour
 
                 LoseShield(value);
             }
-
-            rechargeTimer = shieldRechargeDelay;
         }
     }
 
@@ -449,7 +436,7 @@ public class Enemy : MonoBehaviour
     {
         shield -= amount;
         if (playerStats.eq.Items[46] > 0)
-            TakePierceDamage(amount * 0.2f * playerStats.eq.Items[46], false, true);
+            TakePierceDamage(amount * 0.25f * playerStats.eq.Items[46], false, true);
     }
 
     void SetAblaze(float value)
@@ -494,7 +481,9 @@ public class Enemy : MonoBehaviour
     void DoTproc()
     {
         temp = 2.2f + DoT * 0.22f;
-        DoT -= temp;
+        if (playerStats.eq.Items[58] > 0)
+            DoT -= temp / (1.08f + 0.12f * playerStats.eq.Items[58]);
+        else DoT -= temp;
         TakePoisonDamage(temp);
     }
 

@@ -605,10 +605,20 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        if (eq.guns[eq.equipped].Accessories[15] * 0.2f + eq.guns[eq.equipped].Accessories[15 + bp.ALibrary.count] * 0.32f >= Random.Range(0f, 1f))
+        if ((eq.Items[59] - eq.Items[59] / 3) * 0.2f >= Random.Range(0f, 1f))
         {
-            FireDirection(-32f, accuracy_change);
-            FireDirection(32f, accuracy_change);
+            if (eq.Items[59] >= 3)
+            {
+                FireDirection(-48f, accuracy_change);
+                FireDirection(-24f, accuracy_change);
+                FireDirection(24f, accuracy_change);
+                FireDirection(48f, accuracy_change);
+            }
+            else
+            {
+                FireDirection(-32f, accuracy_change);
+                FireDirection(32f, accuracy_change);
+            }
         }
 
         if (eq.Items[17] > 0)
@@ -1305,6 +1315,7 @@ public class PlayerController : MonoBehaviour
                 adrenalineCharges -= 6 + 4 * adrenalineStacks;
                 adrenalineStacks++;
                 GainFR(0.01f);
+                eq.onHitBonus += 0.015f;
             }
         }
         if (eq.Items[10] > 0)
@@ -1336,7 +1347,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         if (eq.Effects[6] >= 6)
-            eq.effectCooldown[6] -= 0.12f;
+            eq.effectCooldown[6] -= 0.11f;
         /*for (int i = 1; i < 3; i++)
         {
             if (eq.slotFilled[i] && eq.guns[i].ammoRegain > 0)

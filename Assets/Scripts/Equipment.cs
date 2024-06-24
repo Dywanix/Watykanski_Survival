@@ -20,7 +20,6 @@ public class Equipment : MonoBehaviour
 
     public bool[] slotFilled;
     public int equipped, item;
-    public float onHitIncrease;
     float temp;
     int tempi, roll;
 
@@ -28,6 +27,7 @@ public class Equipment : MonoBehaviour
     public GameObject Peacemaker;
     public GameObject Boomerange, Wave, Laser, Orb;
     public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, laserCharges, orbCharges;
+    public float onHitIncrease, onHitBonus;
     public MultipleBullets waveBullet;
 
     [Header("Active Items")]
@@ -196,8 +196,8 @@ public class Equipment : MonoBehaviour
                 //guns[equipped].MaxSlots++;
                 break;
             case 9:
-                guns[equipped].accuracy /= 1.12f;
-                guns[equipped].range *= 1.12f;
+                guns[equipped].accuracy /= 1.15f;
+                guns[equipped].range *= 1.15f;
                 playerCamera.orthographicSize++;
                 break;
             case 10:
@@ -317,6 +317,56 @@ public class Equipment : MonoBehaviour
                 playerStats.GainDMG(0.2f);
                 playerStats.GainSC(5);
                 break;
+            case 50:
+                guns[equipped].damage *= 1.4f;
+                guns[equipped].fireRate *= 1.26f;
+                break;
+            case 51:
+                guns[equipped].DoT += 0.3f;
+                guns[equipped].specialBulletChance[0] += 0.05f;
+                break;
+            case 52:
+                guns[equipped].fireRate *= 0.9f;
+                guns[equipped].specialBulletChance[1] += 0.05f;
+                break;
+            case 53:
+                guns[equipped].damage *= 1.1f;
+                guns[equipped].specialBulletChance[2] += 0.05f;
+                break;
+            case 54:
+                guns[equipped].shatter += 0.2f;
+                guns[equipped].specialBulletChance[3] += 0.05f;
+                break;
+            case 55:
+                guns[equipped].peacemaker += 0.6f;
+                onHitBonus += 0.05f;
+                if (Items[which] == 1)
+                {
+                    guns[equipped].peacemaker += 0.2f;
+                    onHitBonus -= 0.03f;
+                }
+                break;
+            case 56:
+                guns[equipped].boomerang += 0.6f;
+                onHitBonus += 0.05f;
+                if (Items[which] == 1)
+                {
+                    guns[equipped].boomerang += 0.2f;
+                    onHitBonus -= 0.03f;
+                }
+                break;
+            case 57:
+                guns[equipped].laser += 0.6f;
+                onHitBonus += 0.05f;
+                if (Items[which] == 1)
+                {
+                    guns[equipped].laser += 0.2f;
+                    onHitBonus -= 0.03f;
+                }
+                break;
+            case 58:
+                guns[equipped].DoT += 0.3f;
+                break;
         }
     }
 
@@ -332,9 +382,9 @@ public class Equipment : MonoBehaviour
         switch (which, Effects[which])
         {
             case (0, 1):
-                effectMaxCooldown[0] = 4.5f;
+                effectMaxCooldown[0] = 4.6f;
                 effectCooldown[0] = 1f + effectMaxCooldown[0] * 0.5f;
-                bladesCount = 6;
+                bladesCount = 7;
                 dashBlades = 1;
                 bladesBaseDamage = 22f;
                 bladesPierce = 2;
@@ -363,10 +413,10 @@ public class Equipment : MonoBehaviour
                 bladesBaseDamage += 9f;
                 break;
             case (1, 1):
-                effectMaxCooldown[1] = 3.6f;
+                effectMaxCooldown[1] = 3.5f;
                 effectCooldown[1] = 1f + effectMaxCooldown[1] * 0.5f;
                 knivesCount = 2;
-                knivesBaseDamage = 30f;
+                knivesBaseDamage = 29f;
                 knivesPierce = 1;
                 break;
             case (1, 2):
@@ -374,8 +424,8 @@ public class Equipment : MonoBehaviour
                 effectMaxCooldown[1] *= 0.9f;
                 break;
             case (1, 3):
-                knivesBaseDamage += 7f;
-                effectMaxCooldown[1] *= 0.9f;
+                knivesBaseDamage += 6f;
+                effectMaxCooldown[1] *= 0.89f;
                 break;
             case (1, 4):
                 knivesCount += 2;
@@ -439,7 +489,7 @@ public class Equipment : MonoBehaviour
                 rainFrequency *= 0.84f;
                 break;
             case (4, 1):
-                effectMaxCooldown[4] = 5.2f;
+                effectMaxCooldown[4] = 5f;
                 effectCooldown[4] = 1f + effectMaxCooldown[4] * 0.5f;
                 grenadeCount = 1;
                 break;
@@ -491,9 +541,9 @@ public class Equipment : MonoBehaviour
                 cloudBaseDamage += 6f;
                 break;
             case (6, 1):
-                effectMaxCooldown[6] = 0.35f;
+                effectMaxCooldown[6] = 0.34f;
                 effectCooldown[6] = 1f + effectMaxCooldown[6] * 0.5f;
-                orbDamage = 25f;
+                orbDamage = 26f;
                 orbsFired = 1;
                 orbShatter = 0f;
                 break;
@@ -501,15 +551,15 @@ public class Equipment : MonoBehaviour
                 effectMaxCooldown[6] *= 0.76f;
                 break;
             case (6, 3):
-                orbDamage += 8f;
+                orbDamage += 9f;
                 break;
             case (6, 4):
                 orbsFired++;
-                effectMaxCooldown[6] *= 1.24f;
+                effectMaxCooldown[6] *= 1.25f;
                 break;
             case (6, 5):
-                orbDamage += 4f;
-                orbShatter += 0.4f;
+                orbDamage += 5f;
+                orbShatter += 0.5f;
                 break;
             case (6, 6):
                 // reduces timer on kills
@@ -536,7 +586,7 @@ public class Equipment : MonoBehaviour
     {
         //Flash();
         onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.48f * guns[equipped].Accessories[26 + bp.ALibrary.count];
-        onHitIncrease *= 1f + 0.015f * playerStats.adrenalineStacks;
+        onHitIncrease *= 1f + onHitBonus;
 
         freeBulletCharges[equipped] += efficiency * guns[equipped].freeBullet * onHitIncrease;
         if (freeBulletCharges[equipped] >= 5f)
@@ -786,7 +836,7 @@ public class Equipment : MonoBehaviour
         }
         effectCooldown[1] += effectMaxCooldown[1];
         if (secondKnifeThrow)
-            Invoke("SecondKnifeThrow", 0.3f);
+            Invoke("SecondKnifeThrow", 0.25f);
     }
 
     void SecondKnifeThrow()
@@ -909,7 +959,7 @@ public class Equipment : MonoBehaviour
                 for (int i = 0; i < Effects.Length; i++)
                 {
                     if (Effects[i] > 0)
-                        effectCooldown[i] -= 0.67f;
+                        effectCooldown[i] -= 0.66f;
                 }
             }
         }
