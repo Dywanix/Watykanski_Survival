@@ -9,8 +9,10 @@ public class Plasma : MonoBehaviour
     public Rigidbody2D Dir;
     public Transform Form;
     public float damage, delay, damageEfficiency;
+    public int bulletCount;
 
     public bool explosive;
+    float temp;
 
     void Start()
     {
@@ -27,30 +29,18 @@ public class Plasma : MonoBehaviour
     void Shatter()
     {
         if (explosive)
-        {
             ThisBullet.Explosions();
 
-            for (int i = 0; i < 6; i++)
-            {
-                Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + (-112.5f + 45f * i));
-                GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
-                Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-                bullet_body.AddForce(Form.up * (3 + ThisBullet.force * 0.6f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
-                BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
-                SetBullet();
-            }
-        }
-        else
+        temp = 50f + 10f * bulletCount;
+
+        for (int i = 0; i < bulletCount; i++)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + (-90f + 60f * i));
-                GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
-                Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-                bullet_body.AddForce(Form.up * (3 + ThisBullet.force * 0.6f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
-                BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
-                SetBullet();
-            }
+            Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation - temp + (2f * temp / (bulletCount - 1)) * i);
+            GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(Form.up * (3 + ThisBullet.force * 0.6f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
+            BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            SetBullet();
         }
         Destroy(gameObject);
     }

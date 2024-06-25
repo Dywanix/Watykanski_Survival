@@ -1,39 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6716505141725101424
+--- !u!1001 &5384764423604978712
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2142444475337868027, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: pierceEff
-      value: 0.028
-      objectReference: {fileID: 0}
-    - target: {fileID: 2142444475337868027, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: baseShatter
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 2142444475337868027, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: procShatter
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5465133705701837616, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
       propertyPath: m_Name
-      value: Electric-Poison Explosion Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465133705701837619, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: m_Color.b
-      value: 0.6392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465133705701837619, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8509804
-      objectReference: {fileID: 0}
-    - target: {fileID: 5465133705701837619, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: m_Color.r
-      value: 0.3882353
+      value: 5,2 Electric Explosion
       objectReference: {fileID: 0}
     - target: {fileID: 5465133705701837620, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
       propertyPath: m_RootOrder
@@ -41,11 +17,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5465133705701837620, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.2
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 5465133705701837620, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.2
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 5465133705701837620, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,18 +62,6 @@ PrefabInstance:
     - target: {fileID: 5465133705701837620, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108422390841249691, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: red
-      value: 0.388
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108422390841249691, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: blue
-      value: 0.639
-      objectReference: {fileID: 0}
-    - target: {fileID: 9108422390841249691, guid: a5aabb42048971d48b2977b71db413bf, type: 3}
-      propertyPath: green
-      value: 0.851
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5aabb42048971d48b2977b71db413bf, type: 3}

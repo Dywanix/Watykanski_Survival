@@ -27,7 +27,9 @@ public class Equipment : MonoBehaviour
     public GameObject Peacemaker;
     public GameObject Boomerange, Wave, Laser, Orb;
     public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, laserCharges, orbCharges;
+    public float rainbowCharges;
     public float onHitIncrease, onHitBonus;
+    public int specialBullet;
     public MultipleBullets waveBullet;
 
     [Header("Active Items")]
@@ -367,6 +369,13 @@ public class Equipment : MonoBehaviour
             case 58:
                 guns[equipped].DoT += 0.3f;
                 break;
+            case 60:
+                guns[equipped].rainbow += 0.5f;
+                for (int i = 0; i < 4; i++)
+                {
+                    guns[equipped].specialBulletChance[i] += 0.01f;
+                }
+                break;
         }
     }
 
@@ -623,6 +632,13 @@ public class Equipment : MonoBehaviour
             laserCharges[equipped] -= 4f;
         }
 
+        rainbowCharges += efficiency * guns[equipped].rainbow * onHitIncrease * (1f + guns[equipped].TotalSpecialChance());
+        if (rainbowCharges >= 15f)
+        {
+            FireRainbow();
+            rainbowCharges -= 15f;
+        }
+
         /*orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * onHitIncrease;
         if (orbCharges[equipped] >= 5f)
         {
@@ -639,7 +655,7 @@ public class Equipment : MonoBehaviour
         bullet_body.AddForce(playerStats.Barrel.up * 22f * Random.Range(0.95f, 1.05f), ForceMode2D.Impulse);
 
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        playerStats.SetBullet(1f);
+        playerStats.SetBullet(1f, true);
         playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
         playerStats.firedBullet.falloff += 0.4f + 0.4f * playerStats.firedBullet.falloff;
         playerStats.firedBullet.duration = 0.4f + 0.4f * playerStats.firedBullet.duration;
@@ -659,7 +675,7 @@ public class Equipment : MonoBehaviour
             bullet_body.AddForce(playerStats.Barrel.up * 18f * Random.Range(0.96f, 1.04f), ForceMode2D.Impulse);
 
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            playerStats.SetBullet(1f);
+            playerStats.SetBullet(1f, true);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
             playerStats.firedBullet.falloff = 40f;
             playerStats.firedBullet.duration = 50f;
@@ -676,7 +692,7 @@ public class Equipment : MonoBehaviour
         GameObject bullet = Instantiate(Wave, playerStats.Barrel.position, playerStats.Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        playerStats.SetBullet(1f);
+        playerStats.SetBullet(1f, true);
         waveBullet = bullet.GetComponent(typeof(MultipleBullets)) as MultipleBullets;
         if (guns[equipped].targetArea && Vector3.Distance(playerStats.transform.position, new Vector2(playerStats.mousePos[0], playerStats.mousePos[1])) <= guns[equipped].range * 24f)
             waveBullet.bulletForce = 20f * Random.Range(1.07f, 1.08f) * Vector3.Distance(playerStats.transform.position, new Vector2(playerStats.mousePos[0], playerStats.mousePos[1])) / (guns[equipped].range * 23f);
@@ -694,7 +710,7 @@ public class Equipment : MonoBehaviour
             bullet_body.AddForce(playerStats.Barrel.up * 0f * Random.Range(0.96f, 1.04f), ForceMode2D.Impulse);
 
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            playerStats.SetBullet(1f);
+            playerStats.SetBullet(1f, true);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
             playerStats.firedBullet.falloff = 0.12f;
             playerStats.firedBullet.duration = 0.14f;
@@ -714,13 +730,77 @@ public class Equipment : MonoBehaviour
         bullet_body.AddForce(playerStats.Barrel.up * 18f * Random.Range(0.95f, 1.05f), ForceMode2D.Impulse);
 
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        playerStats.SetBullet(1f);
+        playerStats.SetBullet(1f, true);
         playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
         playerStats.firedBullet.duration = 1.41f;
 
         playerStats.firedBullet.damage *= 0.16f;
         playerStats.firedBullet.DoT *= 3.8f; playerStats.firedBullet.DoT += 1.6f;
         playerStats.firedBullet.curse *= 8.8f; playerStats.firedBullet.curse += 5.4f;
+    }
+
+    void FireRainbow()
+    {
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(guns[equipped].accuracy, guns[equipped].accuracy));
+
+        tempi = 2;
+        for (int i = 0; i < 2; i++)
+        {
+            if (25f + guns[equipped].TotalSpecialChance() >= Random.Range(0f, 200f))
+                tempi++;
+        }
+        playerStats.effectsOn = 0;
+        for (int i = 0; i < 4; i++)
+        {
+            playerStats.effectOn[i] = false;
+        }
+        specialBullet = 0;
+        if (tempi == 4)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                GainEffect(i);
+            }
+        }
+        else
+        {
+            do
+            {
+                roll = Random.Range(0, 4);
+                if (!playerStats.effectOn[roll])
+                {
+                    GainEffect(roll);
+                    tempi--;
+                }
+            } while (tempi > 0);
+        }
+
+        GameObject bullet = Instantiate(playerStats.SpecialBullets[specialBullet], playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * guns[equipped].force * Random.Range(0.99f, 1.01f), ForceMode2D.Impulse);
+        playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        playerStats.SetBullet(1f);
+    }
+
+    void GainEffect(int which)
+    {
+        playerStats.effectOn[which] = true;
+        playerStats.effectsOn++;
+        switch (which)
+        {
+            case 0:
+                specialBullet += 1;
+                break;
+            case 1:
+                specialBullet += 2;
+                break;
+            case 2:
+                specialBullet += 4;
+                break;
+            case 3:
+                specialBullet += 8;
+                break;
+        }
     }
 
     public void Deflect(float damage)

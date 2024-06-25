@@ -155,6 +155,7 @@ MonoBehaviour:
   damage: 1.35
   delay: 0.5
   damageEfficiency: 0.7
+  bulletCount: 4
   explosive: 0
 --- !u!114 &4169633622331885351 stripped
 MonoBehaviour:

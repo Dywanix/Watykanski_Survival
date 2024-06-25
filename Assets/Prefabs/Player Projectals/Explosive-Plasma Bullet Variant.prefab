@@ -12,6 +12,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b22c74edb1fef6c41928a35b968ddcd7, type: 3}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+      propertyPath: delay
+      value: 0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: damage
       value: 1.38
       objectReference: {fileID: 0}
@@ -24,8 +28,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7419258523427994237, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+      propertyPath: bulletCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: damageEfficiency
-      value: 0.66
+      value: 0.73
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Color.b
@@ -62,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 4169633622331885351, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: ExplosionRadius
       value: 
-      objectReference: {fileID: 2021625336800310792, guid: 1830d497b47332b42be026bc5265458a, type: 3}
+      objectReference: {fileID: 7518961542670175736, guid: e784685254790824da5625501071dcab, type: 3}
     - target: {fileID: 6528528114766655129, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_RootOrder
       value: 0

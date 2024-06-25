@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7739803975906210435
+--- !u!1001 &8383158407825505264
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,27 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2021625336800310792, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: m_Name
-      value: Poison Explosion
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021625336800310794, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: falloff
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021625336800310794, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: duration
-      value: 0.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021625336800310795, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.34901962
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021625336800310795, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.854902
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021625336800310795, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.41176474
+      value: 4,8 Explosion Radius
       objectReference: {fileID: 0}
     - target: {fileID: 2021625336800310796, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: m_RootOrder
@@ -82,22 +62,6 @@ PrefabInstance:
     - target: {fileID: 2021625336800310796, guid: 1830d497b47332b42be026bc5265458a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004413640913236643, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: red
-      value: 0.412
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004413640913236643, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: blue
-      value: 0.349
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004413640913236643, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: green
-      value: 0.855
-      objectReference: {fileID: 0}
-    - target: {fileID: 3004413640913236643, guid: 1830d497b47332b42be026bc5265458a, type: 3}
-      propertyPath: duration
-      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1830d497b47332b42be026bc5265458a, type: 3}

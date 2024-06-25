@@ -272,6 +272,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e14c2e0ccdb8e3b4bbb83b0dcadd184b, type: 3}
   - {fileID: 21300000, guid: fa20081972dc38d4897014bef725768b, type: 3}
   - {fileID: 21300000, guid: 73f10b9d1bdd96749a597f00dd76c25c, type: 3}
+  - {fileID: 21300000, guid: 6ff63a8a14860474c985d55598d058f2, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
@@ -338,6 +339,7 @@ MonoBehaviour:
   - Fire Laser On-Hit
   - Your Gun gains 30% DoT. DoT lasts longer
   - Your Gun has 20% Chance to Fire additional Bullets in a Cone
+  - Fire Rainbow Bullet On-Hit & Gain 1% chance for every Special Bullet
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}

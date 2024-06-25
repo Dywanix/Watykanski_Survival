@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] SpecialBullets;
     public GameObject[] ParallelBullets;
     public MultipleBullets waveBullet;
+    public int effectsOn;
 
     public SpriteRenderer playerSprite;
 
@@ -644,6 +645,7 @@ public class PlayerController : MonoBehaviour
     public GameObject SetBulletPrefab()
     {
         tempi = 0;
+        effectsOn = 0;
         /*for (int i = 0; i < 3; i++)
         {
             if (eq.guns[eq.equipped].specialBulletChance[i] > Random.Range(0f, 1f))
@@ -653,89 +655,38 @@ public class PlayerController : MonoBehaviour
             temp = 1f / (1f + (0.12f + 0.01f * luck) * eq.Items[20]);
         else temp = 1f;
 
-        temp2 = 1f + eq.guns[eq.equipped].critChance * (0.06f * eq.guns[eq.equipped].Accessories[34]) + (0.096f * eq.guns[eq.equipped].Accessories[34 + bp.ALibrary.count]);
-
-        if ((eq.guns[eq.equipped].specialBulletChance[0] + eq.guns[eq.equipped].specialBulletNextChance[0]) * temp2 > Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[0] > Random.Range(0f, temp))
         {
             effectOn[0] = true;
             tempi += 1;
-            eq.guns[eq.equipped].specialBulletNextChance[0] = 0f;
+            effectsOn++;
         }
-        else 
-        {
-            effectOn[0] = false;
-            eq.guns[eq.equipped].specialBulletNextChance[0] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
-        }
+        else effectOn[0] = false;
 
-        if ((eq.guns[eq.equipped].specialBulletChance[1] + eq.guns[eq.equipped].specialBulletNextChance[1]) * temp2> Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[1] > Random.Range(0f, temp))
         {
             effectOn[1] = true;
             tempi += 2;
-            eq.guns[eq.equipped].specialBulletNextChance[1] = 0f;
+            effectsOn++;
         }
-        else 
-        {
-            effectOn[1] = false;
-            eq.guns[eq.equipped].specialBulletNextChance[1] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
-        }
+        else effectOn[1] = false;
 
-        if ((eq.guns[eq.equipped].specialBulletChance[2] + eq.guns[eq.equipped].specialBulletNextChance[2]) * temp2> Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[2] > Random.Range(0f, temp))
         {
             effectOn[2] = true;
             tempi += 4;
-            eq.guns[eq.equipped].specialBulletNextChance[2] = 0f;
+            effectsOn++;
         }
-        else 
-        {
-            effectOn[2] = false;
-            eq.guns[eq.equipped].specialBulletNextChance[2] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
-        }
+        else effectOn[2] = false;
 
-        if ((eq.guns[eq.equipped].specialBulletChance[3] + eq.guns[eq.equipped].specialBulletNextChance[3]) * temp2 > Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[3] > Random.Range(0f, temp))
         {
             effectOn[3] = true;
             tempi += 8;
-            eq.guns[eq.equipped].specialBulletNextChance[3] = 0f;
+            effectsOn++;
         }
-        else
-        {
-            effectOn[3] = false;
-            eq.guns[eq.equipped].specialBulletNextChance[3] += 0.05f * eq.guns[eq.equipped].Accessories[35] + 0.08f * eq.guns[eq.equipped].Accessories[35 + bp.ALibrary.count];
-        }
+        else effectOn[3] = false;
 
-        if (eq.guns[eq.equipped].Accessories[36] > 0 || eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count] > 0)
-        {
-            temp3 = 0f;
-            for (int i = 0; i < 3; i++)
-            {
-                if (effectOn[i])
-                    temp3 += eq.guns[eq.equipped].Accessories[36] * 0.2f + eq.guns[eq.equipped].Accessories[36 + bp.ALibrary.count] * 0.32f;
-            }
-
-            if (!effectOn[0])
-            {
-                if (temp3 * temp2 > Random.Range(0f, temp))
-                    tempi += 1;
-            }
-
-            if (!effectOn[1])
-            {
-                if (temp3 * temp2 > Random.Range(0f, temp))
-                    tempi += 2;
-            }
-
-            if (!effectOn[2])
-            {
-                if (temp3 * temp2 > Random.Range(0f, temp))
-                    tempi += 4;
-            }
-
-            if (!effectOn[3])
-            {
-                if (temp3 * temp2 > Random.Range(0f, temp))
-                    tempi += 8;
-            }
-        }
 
         if (tempi > 0)
             CurrentBullet = SpecialBullets[tempi];
@@ -744,8 +695,16 @@ public class PlayerController : MonoBehaviour
         return CurrentBullet;
     }
 
-    public void SetBullet(float efficiency)
+    public void SetBullet(float efficiency, bool on_hit = false)
     {
+        if (on_hit)
+        {
+            effectsOn = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                effectOn[i] = false;
+            }
+        }
         firedBullet.falloff = eq.guns[eq.equipped].range / forceIncrease;
         firedBullet.duration = (0.5f + eq.guns[eq.equipped].range * 2f) / forceIncrease;
         firedBullet.force = eq.guns[eq.equipped].force * forceIncrease * Random.Range(1.02f, 1.08f);
@@ -764,8 +723,12 @@ public class PlayerController : MonoBehaviour
         if (eq.guns[eq.equipped].Accessories[22 + bp.ALibrary.count] > 0)
             firedBullet.damage *= 1f + (0.0128f * eq.guns[eq.equipped].MagazineTotalSize() * eq.guns[eq.equipped].Accessories[22 + bp.ALibrary.count]);
         firedBullet.DoT = eq.guns[eq.equipped].DoT;
-        if (effectOn[0] && eq.Items[1] > 0)
-            firedBullet.DoT += 0.06f + 0.12f * eq.Items[1];
+        if (effectOn[0])
+        {
+            firedBullet.DoT += 1f + 0.2f * effectsOn + firedBullet.DoT * (0.1f + 0.1f * effectsOn);
+            if (eq.Items[1] > 0)
+                firedBullet.DoT += 0.06f + 0.12f * eq.Items[1];
+        }
         firedBullet.shatter = eq.guns[eq.equipped].shatter;
         firedBullet.incendiary = eq.guns[eq.equipped].incendiary;
         firedBullet.curse = eq.guns[eq.equipped].curse;
@@ -780,10 +743,16 @@ public class PlayerController : MonoBehaviour
         firedBullet.stunDuration = eq.guns[eq.equipped].stunDuration;
         firedBullet.pierce = eq.guns[eq.equipped].pierce;
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
-        if (effectOn[3] && eq.Items[34] > 0)
+        if (effectOn[3])
         {
-            firedBullet.pierce += eq.Items[34] / 2;
-            firedBullet.pierceEfficiency += (eq.Items[34] + 1) / 2 * 0.05f;
+            firedBullet.shatter += 0.6f + 0.15f * effectsOn + firedBullet.shatter * (0.05f * 0.1f * effectsOn);
+            firedBullet.pierce++;
+            firedBullet.pierceEfficiency += 0.09f + 0.03f * effectsOn;
+            if (eq.Items[34] > 0)
+            {
+                firedBullet.pierce += eq.Items[34] / 2;
+                firedBullet.pierceEfficiency += (eq.Items[34] + 1) / 2 * 0.05f;
+            }
         }
         firedBullet.special = eq.guns[eq.equipped].special;
 
@@ -1434,14 +1403,14 @@ public class PlayerController : MonoBehaviour
 
     void SetReward()
     {
-        if (lootLuck >= Random.Range(0f, 25f + lootLuck))
+        if (lootLuck >= Random.Range(0f, 24f + lootLuck))
         {
             map.ChoosePrize(2);
             lootLuck = 8f;
         }
         else
         {
-            lootLuck += 6f + lootLuck + luck * 0.5f;
+            lootLuck += 6f + lootLuck + luck * 0.6f;
             map.ChoosePrize(1);
         }
     }

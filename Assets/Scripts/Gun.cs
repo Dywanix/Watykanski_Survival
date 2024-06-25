@@ -54,7 +54,7 @@ public class Gun : MonoBehaviour
     int tempi;
 
     [Header("On-Hit")]
-    public float freeBullet, peacemaker, boomerang, wave, laser;
+    public float freeBullet, peacemaker, boomerang, wave, laser, rainbow;
 
     [Header("Special Bullets")]
     public float[] specialBulletChance;
@@ -335,5 +335,15 @@ public class Gun : MonoBehaviour
     {
         tempi = (magazineSize * magazineMultiplierTenth) / 10;
         return tempi * magazineMultiplier;
+    }
+
+    public float TotalSpecialChance()
+    {
+        temp = 0f;
+        for (int i = 0; i < 4; i++)
+        {
+            temp += specialBulletChance[i];
+        }
+        return temp;
     }
 }
