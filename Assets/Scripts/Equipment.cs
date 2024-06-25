@@ -39,9 +39,10 @@ public class Equipment : MonoBehaviour
     public GameObject BladeProjectal, BoomerangBladeProjectal, KnifeProjectal, ImmolateArea, InfernoArea, StormCloud, OrbProjectal;
     public GameObject ImmolateSmallArea, ImmolateMediumArea, MaelstormCloud;
     public float[] effectMaxCooldown, effectCooldown;
-    public float bladesBaseDamage, bladesPierceEff, knivesBaseDamage, immolateBaseDamage, immolateHPRatio, rainFrequency, cloudBaseDamage, cloudDuration, cloudSpeed, orbDamage, orbRotation, orbShatter;
+    public float bladesBaseDamage, bladesPierceEff, knivesBaseDamage, immolateBaseDamage, immolateHPRatio, rainFrequency, cloudBaseDamage, cloudDuration, cloudSpeed, orbDamage, orbRotation, orbShatter,
+        onHitBase, onHitProc;
     public int bladesCount, bladesPierce, dashBlades, bladesTicks, knivesCount, knivesPierce, immolateTicks, grenadeCount, orbsFired;
-    public bool boomerangeBlades, secondKnifeThrow, immolateBoom;
+    public bool boomerangeBlades, secondKnifeThrow, immolateBoom, rainbowOnHit;
 
     // -- items
     //public GameObject[] Drones;
@@ -151,6 +152,11 @@ public class Equipment : MonoBehaviour
                 effectCooldown[6] -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.7f) * (1f + playerStats.cooldownReduction * 0.3f);
             if (effectCooldown[6] < 0f)
                 OrbThrow();
+
+            if (Effects[7] > 0)
+                effectCooldown[7] -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.75f) * (1f + playerStats.cooldownReduction * 0.25f);
+            if (effectCooldown[7] < 0f)
+                OnHitEffect();
         }
      }
 
@@ -378,10 +384,10 @@ public class Equipment : MonoBehaviour
                 }
                 break;
             case 61:
-                guns[equipped].laser += 0.1f;
+                guns[equipped].laser += 0.12f;
                 if (Items[which] == 1)
                 {
-                    guns[equipped].laser += 0.3f;
+                    guns[equipped].laser += 0.28f;
                     Laser = LingeringLaser;
                 }
                 break;
@@ -587,6 +593,36 @@ public class Equipment : MonoBehaviour
             case (6, 7):
                 orbsFired++;
                 break;
+            case (7, 1):
+                effectMaxCooldown[7] = 0.4f;
+                effectCooldown[7] = 1f + effectMaxCooldown[7] * 0.5f;
+                onHitBase = 0.15f;
+                onHitProc = 0.03f;
+                break;
+            case (7, 2):
+                effectMaxCooldown[7] *= 0.89f;
+                guns[equipped].peacemaker += 0.16f;
+                break;
+            case (7, 3):
+                effectMaxCooldown[7] *= 0.88f;
+                guns[equipped].boomerang += 0.16f;
+                break;
+            case (7, 4):
+                effectMaxCooldown[7] *= 0.87f;
+                guns[equipped].laser += 0.16f;
+                break;
+            case (7, 5):
+                effectMaxCooldown[7] *= 0.86f;
+                onHitBase += 0.06f;
+                break;
+            case (7, 6):
+                rainbowOnHit = true;
+                break;
+            case (7, 7):
+                effectMaxCooldown[7] *= 0.92f;
+                guns[equipped].peacemaker += 0.12f;
+                guns[equipped].boomerang += 0.12f;
+                break;
         }
     }
 
@@ -616,35 +652,35 @@ public class Equipment : MonoBehaviour
         }
 
         peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].peacemaker * guns[equipped].BulletsFired() * onHitIncrease;
-        if (peacemakerCharges[equipped] >= 11f)
+        while (peacemakerCharges[equipped] >= 11f)
         {
             FirePeacemaker();
             peacemakerCharges[equipped] -= 11f;
         }
 
         boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].boomerang * onHitIncrease;
-        if (boomerangCharges[equipped] >= 10f)
+        while (boomerangCharges[equipped] >= 10f)
         {
             FireBoomerang();
             boomerangCharges[equipped] -= 10f;
         }
 
         waveCharges[equipped] += efficiency * guns[equipped].wave * guns[equipped].BulletsFired() * onHitIncrease;
-        if (waveCharges[equipped] >= 13f)
+        while (waveCharges[equipped] >= 13f)
         {
             FireWave();
             waveCharges[equipped] -= 13f;
         }
 
         laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].laser * onHitIncrease;
-        if (laserCharges[equipped] >= 4.2f)
+        while (laserCharges[equipped] >= 4.2f)
         {
             FireLaser();
             laserCharges[equipped] -= 4.2f;
         }
 
         rainbowCharges += efficiency * guns[equipped].rainbow * onHitIncrease * (1f + guns[equipped].TotalSpecialChance());
-        if (rainbowCharges >= 15f)
+        while (rainbowCharges >= 15f)
         {
             FireRainbow();
             rainbowCharges -= 15f;
@@ -728,16 +764,17 @@ public class Equipment : MonoBehaviour
 
             playerStats.firedBullet.damage *= 0.45f + 0.045f * Items[42] + (0.033f + 0.018f * Items[42]) * playerStats.firedBullet.pierce +
                 (0.08f + 0.044f * Items[42]) * playerStats.firedBullet.pierceEfficiency + (0.066f + 0.075f * Items[42]) * playerStats.firedBullet.shatter;
-            playerStats.firedBullet.pierce = 10;
+            playerStats.firedBullet.pierce = 15;
             playerStats.firedBullet.pierceEfficiency = 1f;
             playerStats.firedBullet.shatter += 0.58f + 0.06f * Items[42] + (0.2f + 0.5f * Items[42]) * playerStats.firedBullet.shatter;
 
             if (Items[61] > 0)
             {
-                playerStats.firedBullet.falloff = 0.6f;
-                playerStats.firedBullet.duration = 0.4f;
+                playerStats.firedBullet.pierce += 5 * Items[61];
+                playerStats.firedBullet.falloff = 1.2f;
+                playerStats.firedBullet.duration = 0.8f;
                 LaserTick = bullet.GetComponent(typeof(PulletTick)) as PulletTick;
-                LaserTick.damageEfficiency = (-0.3f + 0.7f * Items[61]) / 4f;
+                LaserTick.damageEfficiency = (-0.26f + 0.78f * Items[61]) / 4f;
             }
         }
     }
@@ -1086,6 +1123,26 @@ public class Equipment : MonoBehaviour
         }
 
         effectCooldown[6] += effectMaxCooldown[6];
+    }
+
+    void OnHitEffect()
+    {
+        temp = onHitBase * (1.5f + 0.8f / guns[equipped].fireRate);
+        onHitIncrease = 1f + onHitBonus;
+
+        peacemakerCharges[equipped] += temp * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].BulletsFired() * onHitIncrease;
+
+        boomerangCharges[equipped] += temp * (1f + 0.12f * guns[equipped].fireRate) * onHitIncrease;
+
+        laserCharges[equipped] += temp * (1f + 0.05f * guns[equipped].fireRate) * onHitIncrease;
+
+        if (rainbowOnHit)
+            rainbowCharges += temp * onHitIncrease * (1f + guns[equipped].TotalSpecialChance());
+
+        temp = onHitProc * (1.2f + 0.8f / guns[equipped].fireRate);
+        OnHit(temp);
+
+        effectCooldown[7] += effectMaxCooldown[7];
     }
 
     /*void ThrowCaltrops()

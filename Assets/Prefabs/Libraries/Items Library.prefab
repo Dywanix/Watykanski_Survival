@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &68684384377480900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335522079170962314}
+  - component: {fileID: 521660929943113855}
+  m_Layer: 0
+  m_Name: On-Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335522079170962314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68684384377480900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3380796369291455551}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &521660929943113855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68684384377480900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a3a3fbed95ba148964ebce23cb2451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectSprite: {fileID: 21300000, guid: 7eafb955d636af149bad899255d6b2cb, type: 3}
+  EffectTooltips:
+  - Fire On-Hit periodically
+  - Increase Frequency by 11% & Gain Peacemaker On-Hit
+  - Increase Frequency by 12% & Gain Boomerang On-Hit
+  - Increase Frequency by 13% & Gain Laser On-Hit
+  - Increase Frequency by 14% & Increase its On-Hit
+  - Also Fire Rainbow Bullets
+  - Increase Frequency by 8% & Gain Peacemaker & Boomerang On-Hit
 --- !u!1 &2471019118524960529
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +249,7 @@ Transform:
   - {fileID: 4947830863532549026}
   - {fileID: 877497541668317632}
   - {fileID: 571743350778702425}
+  - {fileID: 335522079170962314}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -350,6 +404,7 @@ MonoBehaviour:
   - {fileID: 8443127016458784972}
   - {fileID: 1206003873605896130}
   - {fileID: 685320073287144932}
+  - {fileID: 521660929943113855}
 --- !u!1 &6344427247891361874
 GameObject:
   m_ObjectHideFlags: 0

@@ -59024,7 +59024,7 @@ MonoBehaviour:
   VendingMachineObject: {fileID: 50638922}
   active: 0
   round: 0
-  strength: 115
+  strength: 110
   minSpawn: 0
   maxSpawn: 1
   mobsStrength: 03000000040000000500000006000000080000000a000000
@@ -59032,9 +59032,9 @@ MonoBehaviour:
   roll: 0
   tempi: 0
   rest: 0
-  elite: 150
+  elite: 170
   amount: 0
-  time: 33
+  time: 34
   frequency: 0
   delay: 0
 --- !u!1 &1914043909

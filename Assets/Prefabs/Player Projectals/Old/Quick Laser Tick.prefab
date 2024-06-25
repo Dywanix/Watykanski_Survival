@@ -7,9 +7,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8202576003532935325, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202576003532935326, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: red
+      value: 0.612
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202576003532935326, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: blue
+      value: 0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202576003532935326, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: startingFade
+      value: 0.196
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202576003532935327, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202576003532935327, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.81960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202576003532935327, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.035294127
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202576003532935327, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6109316
+      objectReference: {fileID: 0}
     - target: {fileID: 8202576004139201249, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
       propertyPath: duration
-      value: 0.01
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8202576004139201250, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
       propertyPath: m_RootOrder

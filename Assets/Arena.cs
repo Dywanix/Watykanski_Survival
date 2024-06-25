@@ -35,9 +35,9 @@ public class Arena : MonoBehaviour
             {
                 if (GameObject.FindGameObjectsWithTag("Enemy").Length > 50)
                 {
-                    Elite(5);
-                    delay += 2.5f * frequency;
-                    rest--;
+                    Elite(6);
+                    delay += 3.6f * frequency;
+                    rest -= 2;
                 }
                 else
                 {
@@ -49,7 +49,7 @@ public class Arena : MonoBehaviour
                     {
                         time += 2f;
                         strength += round * (round + 1);
-                        strength -= 1;
+                        strength -= 2;
                         strength += strength / 9;
                         if (round % 2 == 0 && maxSpawn < Mobs.Length)
                             maxSpawn++;

@@ -11,6 +11,7 @@ public class PulletTick : MonoBehaviour
     public float frequency, delay, frequencyRange, damageEfficiency;
     public int bulletsCount;
     public float bonusShatter;
+    public bool straight;
 
     void Update()
     {
@@ -23,7 +24,8 @@ public class PulletTick : MonoBehaviour
     {
         for (int i = 0; i < bulletsCount; i++)
         {
-            Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + Random.Range(0f, 360f));
+            if (!straight) //Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation);
+                Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject bullet = Instantiate(BulletTick, Form.position, Form.rotation);
             BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
