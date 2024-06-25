@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 1bc1ab64104f5834c94f32b91766c6d0, type: 3}
     - target: {fileID: 820017709355487298, guid: ca44bc1ce257fc748bd1083798a7f3fb, type: 3}
       propertyPath: delay
-      value: 0.41
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 820017709355487298, guid: ca44bc1ce257fc748bd1083798a7f3fb, type: 3}
       propertyPath: damage

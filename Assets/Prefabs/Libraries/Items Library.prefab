@@ -101,11 +101,11 @@ MonoBehaviour:
   EffectTooltips:
   - Throws Grenade at random nearby position every 5s
   - Increase Frequency by 20%
-  - Increase Grenade Damage by 7% & Frequency by 7%
-  - Increase amount of Grenades thrown by 1
+  - Increase Grenade Damage by 7% & Frequency by 8%
+  - Increase Grenade Damage per Level scaling by 20%
   - Increase Frequency by 22%
   - Increase Frequency by 10%, using Throw reduces timer by 2,5s
-  - Increase Grenade Damage by 7% & Frequency by 8%
+  - Increase Grenade Damage by 8% & Frequency by 8%
 --- !u!1 &4493847000807918944
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,12 +153,12 @@ MonoBehaviour:
   EffectSprite: {fileID: 21300000, guid: fefe9b88e9c057e41a398faac2163515, type: 3}
   EffectTooltips:
   - Throw Orb every 0,34s in rotating direction
-  - Increase Frequency by 24%
-  - Increase base Damage by 9
-  - Fire second Orb in opposite Direction, but reduce Frequency by 25%
-  - Increase base Damage by 5 & gain 50% Shatter
+  - Increase base Damage by 4 & Increase Frequency by 12%
+  - Increase base Damage by 10
+  - Fire second Orb in opposite Direction, but reduce Frequency by 24%
+  - Increase base Damage by 6 & gain 40% Shatter
   - Every Enemy slain reduces timer by 0,11s. After completing full Rotation also
-    reduce time of Other Items by 0,66s
+    reduce time of Other Items by 0,76s
   - Fire 3 Orbs in opposite directions
 --- !u!1 &5256278042531316336
 GameObject:
@@ -273,10 +273,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fa20081972dc38d4897014bef725768b, type: 3}
   - {fileID: 21300000, guid: 73f10b9d1bdd96749a597f00dd76c25c, type: 3}
   - {fileID: 21300000, guid: 6ff63a8a14860474c985d55598d058f2, type: 3}
+  - {fileID: 21300000, guid: 73cff0d7e237c724b9d25c93f772dfe4, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
-  - Using Dash throws Grenade near you & Reduce Dash Cooldown by 3%
+  - Reduce Dash Cooldown by 3% & Using Dash throws Grenade near you
   - Increase Shield Capacity by 3. Reduce Recharge Delay by 14%
   - Increase Movement Speed by 5%, Dash gains additional Charge & Reduce Dash Cooldown
     by 10%
@@ -284,7 +285,7 @@ MonoBehaviour:
     for short time
   - Increase Max Health by 8. Restore 1% Max Health every 7,5s
   - Increase Max Health by 8. Gain +1% Damage for every 10 Max Health above 50
-  - Reduces Dash Cooldown by 3%. Using Dash fires a wave of Bullets
+  - Reduces Dash Cooldown by 4%. Using Dash fires a wave of Bullets
   - Increase Gun Accuracy & Range by 15% & Increase Vision Range
   - Increase Damage by 5%. Gain 1 Gold Every 7th Enemy slained
   - Increase Shield Capacity by 3. Losing Shield deals Damage to nearby Enemies
@@ -340,6 +341,7 @@ MonoBehaviour:
   - Your Gun gains 30% DoT. DoT lasts longer
   - Your Gun has 20% Chance to Fire additional Bullets in a Cone
   - Fire Rainbow Bullet On-Hit & Gain 1% chance for every Special Bullet
+  - Fire Laser On-Hit. Laser lingers for moment, dealing Damage over its duration
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}

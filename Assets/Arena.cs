@@ -48,7 +48,9 @@ public class Arena : MonoBehaviour
                     if (rest <= 0)
                     {
                         time += 2f;
-                        strength += 12 + strength / 8;
+                        strength += round * (round + 1);
+                        strength -= 1;
+                        strength += strength / 9;
                         if (round % 2 == 0 && maxSpawn < Mobs.Length)
                             maxSpawn++;
                         if (round % 3 == 0 && minSpawn + 1 < Mobs.Length)

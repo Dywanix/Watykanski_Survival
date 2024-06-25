@@ -4820,6 +4820,7 @@ MonoBehaviour:
   grenadeMaxCharges: 0
   grenadeCharges: 0
   grenadeDamageMultiplyer: 1
+  grenadeLevelScaling: 0.02
   throwRange: 11.2
   grenadeBaseCooldown: 10
   grenadeMaxCooldown: 0
@@ -4921,6 +4922,7 @@ MonoBehaviour:
   Boomerange: {fileID: 7608570293721976720, guid: 4e39c7dcfe890264983a3356cf95405b, type: 3}
   Wave: {fileID: 5166568421592281273, guid: 9116c8cd7df5950499683757c0779288, type: 3}
   Laser: {fileID: 8202576004139201279, guid: d4ca8a099847ae942b27a6eb9884337a, type: 3}
+  LingeringLaser: {fileID: 7551784778215316400, guid: e90ed73e6da1b4c4988dc544ee387667, type: 3}
   Orb: {fileID: 7626946675666722328, guid: aa760cd493129c14da55ed7be64c288e, type: 3}
   freeBulletCharges:
   - 0
@@ -4946,9 +4948,12 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  rainbowCharges: 0
   onHitIncrease: 0
   onHitBonus: 0
+  specialBullet: 0
   waveBullet: {fileID: 0}
+  LaserTick: {fileID: 0}
   OrbBody: {fileID: 4683537183713782123}
   itemActivationRate: 1
   BladeProjectal: {fileID: 1306497001904629045, guid: fe4eb61cfb9da8a499f4e21fdbd56c68, type: 3}

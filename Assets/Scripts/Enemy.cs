@@ -482,7 +482,7 @@ public class Enemy : MonoBehaviour
     {
         temp = 2.2f + DoT * 0.22f;
         if (playerStats.eq.Items[58] > 0)
-            DoT -= temp / (1.08f + 0.12f * playerStats.eq.Items[58]);
+            DoT -= temp / (1f + 0.13f * playerStats.eq.Items[58] + 0.01f * playerStats.eq.Items[58] * playerStats.eq.Items[58]);
         else DoT -= temp;
         TakePoisonDamage(temp);
     }
