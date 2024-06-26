@@ -8,6 +8,7 @@ public class Defragment : MonoBehaviour
     public Rigidbody2D Dir;
     public Transform FragForm;
     public float frequency, frequencyGain, delay, particleForce, particleRange;
+    public bool distant;
 
     void Update()
     {
@@ -18,6 +19,8 @@ public class Defragment : MonoBehaviour
 
     void Part()
     {
+        if (distant)
+            FragForm.position = transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
         FragForm.rotation = Quaternion.Euler(FragForm.rotation.x, FragForm.rotation.y, Dir.rotation + Random.Range(-particleRange, particleRange));
         GameObject particle = Instantiate(Particle, FragForm.position, FragForm.rotation);
         Rigidbody2D particle_body = particle.GetComponent<Rigidbody2D>();

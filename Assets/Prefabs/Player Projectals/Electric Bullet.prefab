@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: delay
-      value: 0.155
+      value: 0.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: distant
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: Particle
@@ -17,19 +21,19 @@ PrefabInstance:
       objectReference: {fileID: 6943334362748171513, guid: f35b357f125312f4bb3c3dcc77a7aefe, type: 3}
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: frequency
-      value: 0.1
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: frequencyGain
-      value: 1.04
+      value: 1.007
       objectReference: {fileID: 0}
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: particleForce
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1124125506588187931, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: particleRange
-      value: 30
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1443862876075540408, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Sprite
