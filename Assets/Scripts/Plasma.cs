@@ -8,7 +8,7 @@ public class Plasma : MonoBehaviour
     public GameObject BulletShard;
     public Rigidbody2D Dir;
     public Transform Form;
-    public float damage, delay, damageEfficiency;
+    public float delay, damageEfficiency;
     public int bulletCount;
 
     public bool explosive;
@@ -16,7 +16,7 @@ public class Plasma : MonoBehaviour
 
     void Start()
     {
-        ThisBullet.damage *= damage;
+        damageEfficiency = 0.51f + 0.09f * bulletCount;
     }
 
     void Update()
@@ -31,14 +31,14 @@ public class Plasma : MonoBehaviour
         if (explosive)
             ThisBullet.Explosions();
 
-        temp = 50f + 10f * bulletCount;
+        temp = 10f + 5f * bulletCount;
 
         for (int i = 0; i < bulletCount; i++)
         {
             Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation - temp + (2f * temp / (bulletCount - 1)) * i);
             GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(Form.up * (3 + ThisBullet.force * 0.6f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
+            bullet_body.AddForce(Form.up * (2f + ThisBullet.force * 0.8f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
             BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
             SetBullet();
         }

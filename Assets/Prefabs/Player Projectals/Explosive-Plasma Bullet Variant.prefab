@@ -10,10 +10,10 @@ PrefabInstance:
     - target: {fileID: 2078572697108621284, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b22c74edb1fef6c41928a35b968ddcd7, type: 3}
+      objectReference: {fileID: 21300000, guid: ece718faa22c70b49907dc23cb061949, type: 3}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: delay
-      value: 0.45
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: damage
@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: damageEfficiency
-      value: 0.73
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Color.b

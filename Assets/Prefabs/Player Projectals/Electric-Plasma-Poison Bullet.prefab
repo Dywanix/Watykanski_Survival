@@ -90,10 +90,10 @@ PrefabInstance:
     - target: {fileID: 8852583665815253855, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e4152b203b572c24b8f583c4468d68e8, type: 3}
+      objectReference: {fileID: 21300000, guid: b53faf712487ef54487ce89663bca7d1, type: 3}
     - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: delay
-      value: 0.4
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: damage
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 4032849108325752535, guid: db6dcd357c437124aa01590a4e4b5b97, type: 3}
     - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: damageEfficiency
-      value: 0.76
+      value: 1.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}

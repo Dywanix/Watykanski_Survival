@@ -78,10 +78,10 @@ PrefabInstance:
     - target: {fileID: 8852583665815253855, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b6a3a12ea576fab4cadfb75743084223, type: 3}
+      objectReference: {fileID: 21300000, guid: 4382de51ddeddd34199c3767a53808ba, type: 3}
     - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: delay
-      value: 0.45
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: BulletShard

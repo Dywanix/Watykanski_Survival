@@ -163,6 +163,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -300,6 +306,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -437,6 +449,12 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -574,6 +592,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -711,6 +735,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -849,6 +879,12 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 1
   individualReloadCount: 2
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -986,6 +1022,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -1123,6 +1165,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -1260,6 +1308,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -1397,7 +1451,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -1542,7 +1603,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -1687,7 +1755,14 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 1
   individualReloadCount: 2
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -1832,7 +1907,14 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0.05
   - 0.05
   - 0.05
   - 0.05
@@ -1977,6 +2059,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -2114,6 +2202,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -2251,11 +2345,18 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
   - 0
   - 0
   - 0
   - 0.25
+  - 0
   specialBulletNextChance:
   - 0
   - 0
@@ -2396,8 +2497,15 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
   - 0.25
+  - 0
   - 0
   - 0
   - 0
@@ -2541,7 +2649,14 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -2657,6 +2772,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -2794,6 +2915,12 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -2931,7 +3058,14 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -3076,7 +3210,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -3221,6 +3362,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -3358,6 +3505,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -3466,6 +3619,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -3603,7 +3762,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -3748,6 +3914,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 1
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -3885,6 +4057,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -4025,7 +4203,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -4170,7 +4355,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -4315,6 +4507,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -4452,10 +4650,17 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
   - 0
   - 0
   - 0.25
+  - 0
   - 0
   specialBulletNextChance:
   - 0
@@ -4597,7 +4802,14 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -4844,6 +5056,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -4981,6 +5199,12 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -5118,6 +5342,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -5313,6 +5543,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -5450,7 +5686,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -5595,6 +5838,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -5769,7 +6018,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -5914,6 +6170,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -6051,7 +6313,14 @@ MonoBehaviour:
   infiniteAmmo: 1
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -6196,9 +6465,16 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
   - 0
   - 0.25
+  - 0
   - 0
   - 0
   specialBulletNextChance:
@@ -6385,6 +6661,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -6522,6 +6804,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -6659,6 +6947,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -6796,6 +7090,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -6934,6 +7234,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1
@@ -7072,7 +7378,14 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 1
   individualReloadCount: 1
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance:
+  - 0
   - 0
   - 0
   - 0
@@ -7188,6 +7501,12 @@ MonoBehaviour:
   infiniteAmmo: 0
   individualReload: 0
   individualReloadCount: 0
+  freeBullet: 0
+  peacemaker: 0
+  boomerang: 0
+  wave: 0
+  laser: 0
+  rainbow: 0
   specialBulletChance: []
   specialBulletNextChance: []
   damageMultiplier: 1

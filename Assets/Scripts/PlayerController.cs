@@ -687,6 +687,14 @@ public class PlayerController : MonoBehaviour
         }
         else effectOn[3] = false;
 
+        if (eq.guns[eq.equipped].specialBulletChance[4] > Random.Range(0f, temp))
+        {
+            effectOn[4] = true;
+            //tempi += 16;
+            effectsOn += 3;
+        }
+        else effectOn[4] = false;
+
 
         if (tempi > 0)
             CurrentBullet = SpecialBullets[tempi];
@@ -700,7 +708,7 @@ public class PlayerController : MonoBehaviour
         if (on_hit)
         {
             effectsOn = 0;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 effectOn[i] = false;
             }
@@ -713,6 +721,8 @@ public class PlayerController : MonoBehaviour
         firedBullet.damage *= Random.Range(1f - 0.05f * eq.Items[47], 1f + (0.13f + 0.01f * luck) * eq.Items[47]);
         if (effectOn[2] && eq.Items[19] > 0)
             firedBullet.damage *= 1f + 0.07f * eq.Items[19];
+        if (effectOn[4])
+            firedBullet.damage *= 1.18f + 0.04f * effectsOn;
         //firedBullet.damage *= efficiency;
         if (eq.guns[eq.equipped].Accessories[16] > 0)
             firedBullet.damage *= 1f + (0.004f * eq.guns[eq.equipped].Damage() * eq.guns[eq.equipped].Accessories[16]);
@@ -745,14 +755,9 @@ public class PlayerController : MonoBehaviour
         firedBullet.pierceEfficiency = eq.guns[eq.equipped].pierceEfficiency;
         if (effectOn[3])
         {
-            firedBullet.shatter += 0.6f + 0.15f * effectsOn + firedBullet.shatter * (0.05f * 0.1f * effectsOn);
-            firedBullet.pierce++;
-            firedBullet.pierceEfficiency += 0.09f + 0.03f * effectsOn;
-            if (eq.Items[34] > 0)
-            {
-                firedBullet.pierce += eq.Items[34] / 2;
-                firedBullet.pierceEfficiency += (eq.Items[34] + 1) / 2 * 0.05f;
-            }
+            firedBullet.shatter += 0.6f + 0.1f * effectsOn + firedBullet.shatter * (0.05f + 0.05f * effectsOn);
+            firedBullet.pierce += 1 + (effectsOn + eq.Items[34]) / 2;
+            firedBullet.pierceEfficiency += 0.09f + 0.03f * effectsOn + 0.05f * eq.Items[34];
         }
         firedBullet.special = eq.guns[eq.equipped].special;
 

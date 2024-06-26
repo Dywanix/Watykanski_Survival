@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814124740561864753, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: delay
-      value: 0.4
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 5814124740561864753, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: damage
@@ -69,12 +69,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814124740561864753, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: damageEfficiency
-      value: 0.76
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 5878832462636604686, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fa50762b93bf5e1419e601257659c27b, type: 3}
+      objectReference: {fileID: 21300000, guid: 7f6fcf8ffd1e55440a3ef2b086eb80b6, type: 3}
     - target: {fileID: 7436024490727704441, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: m_Name
       value: Electric-Explosive-Plasma Bullet

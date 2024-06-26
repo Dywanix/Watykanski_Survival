@@ -34,7 +34,7 @@ PrefabInstance:
     - target: {fileID: 1443862876075540408, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 17bad96dd537ecf4c882c37911168e06, type: 3}
+      objectReference: {fileID: 21300000, guid: 616e1fa8ab7eefd43b8e3308ce01e34d, type: 3}
     - target: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_Name
       value: Explosive Bullet
@@ -122,6 +122,14 @@ PrefabInstance:
     - target: {fileID: 5929216247034427077, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108692850157317933, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108692850157317933, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}

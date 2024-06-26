@@ -59,10 +59,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3809802046071042207, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3809802046071042207, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5787510672936247306, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 25becc8fc58227d459598bfd4afd603c, type: 3}
+      objectReference: {fileID: 21300000, guid: 0e91b0a35933e4941b1e7aaa7a8c80e6, type: 3}
     - target: {fileID: 7419258523427994237, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
       propertyPath: m_Name
       value: Explosive-Poison Bullet Variant
