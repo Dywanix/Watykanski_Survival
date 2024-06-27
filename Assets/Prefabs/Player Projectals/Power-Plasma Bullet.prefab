@@ -1,47 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7350476205581915323
+--- !u!1001 &1343119477486429077
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 524811507205276999, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+      propertyPath: delay
+      value: 0.047
+      objectReference: {fileID: 0}
+    - target: {fileID: 524811507205276999, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+      propertyPath: frequency
+      value: 0.038
+      objectReference: {fileID: 0}
+    - target: {fileID: 524811507205276999, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+      propertyPath: particleForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 524811507205276999, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
+      propertyPath: particleRange
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2078572697108621284, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9fa02d3f34283654abdb79cb759b5847, type: 3}
+      objectReference: {fileID: 21300000, guid: ef820389c41c71348aafd59ed6bf212b, type: 3}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: delay
-      value: 0.23
+      value: 0.21
       objectReference: {fileID: 0}
-    - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-      propertyPath: damage
-      value: 1.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-      propertyPath: BulletShard
-      value: 
-      objectReference: {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: bulletCount
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2153485355414811355, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: damageEfficiency
-      value: 0.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-      propertyPath: m_Color.b
-      value: 0.15686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-      propertyPath: m_Color.g
-      value: 0.7411765
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Color.r
-      value: 0.40784317
+      value: 0.627451
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Intensity
@@ -57,19 +57,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Name
-      value: Plasma-Poison Bullet
+      value: Power-Plasma Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 6528528114766655129, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528528114766655129, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6528528114766655129, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 6528528114766655129, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_LocalPosition.x
@@ -113,39 +105,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
---- !u!1 &5511684572917836072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3062250661861096851, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  m_PrefabInstance: {fileID: 7350476205581915323}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1291235806562221917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5511684572917836072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce9f80f10eb2e14c92569e4f26b8792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Particle: {fileID: 1932675563400459280, guid: 59798d10f8b25a4468aeae9fb7dccc7a, type: 3}
-  Dir: {fileID: 8523838359625150587}
-  FragForm: {fileID: 8759204766530034225}
-  frequency: 0.1
-  frequencyGain: 1.02
-  delay: 0.155
-  particleForce: 3
-  particleRange: 30
-  distant: 0
---- !u!50 &8523838359625150587 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 1173437265090045120, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  m_PrefabInstance: {fileID: 7350476205581915323}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8759204766530034225 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2273422232560963210, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
-  m_PrefabInstance: {fileID: 7350476205581915323}
-  m_PrefabAsset: {fileID: 0}

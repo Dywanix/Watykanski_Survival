@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: delay
+      value: 0.116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: frequency
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleRange
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,24 +69,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Color.b
-      value: 0.73333335
+      value: 0.7490196
       objectReference: {fileID: 0}
     - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Color.g
-      value: 0.96470594
+      value: 0.9058824
       objectReference: {fileID: 0}
     - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Color.r
-      value: 0.9843138
+      value: 0.19607845
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Name
       value: Electric-Poison Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: delay
+      value: 0.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: distant
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: Particle
       value: 
       objectReference: {fileID: 6943334362748171513, guid: f35b357f125312f4bb3c3dcc77a7aefe, type: 3}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: frequency
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: frequencyGain
+      value: 1.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleForce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleRange
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 8852583665815253855, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_Sprite
       value: 

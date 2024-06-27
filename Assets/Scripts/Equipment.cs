@@ -377,8 +377,8 @@ public class Equipment : MonoBehaviour
                 guns[equipped].DoT += 0.3f;
                 break;
             case 60:
-                guns[equipped].rainbow += 0.5f;
-                for (int i = 0; i < 4; i++)
+                guns[equipped].rainbow += 0.45f;
+                for (int i = 0; i < 5; i++)
                 {
                     guns[equipped].specialBulletChance[i] += 0.01f;
                 }
@@ -390,6 +390,13 @@ public class Equipment : MonoBehaviour
                     guns[equipped].laser += 0.28f;
                     Laser = LingeringLaser;
                 }
+                break;
+            case 62:
+                guns[equipped].gunDamage += 0.12f;
+                guns[equipped].specialBulletChance[4] += 0.05f;
+                break;
+            case 63:
+                guns[equipped].specialBulletChance[4] += 0.05f;
                 break;
         }
     }
@@ -652,10 +659,10 @@ public class Equipment : MonoBehaviour
         }
 
         peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].peacemaker * guns[equipped].BulletsFired() * onHitIncrease;
-        while (peacemakerCharges[equipped] >= 11f)
+        while (peacemakerCharges[equipped] >= 11.2f)
         {
             FirePeacemaker();
-            peacemakerCharges[equipped] -= 11f;
+            peacemakerCharges[equipped] -= 11.2f;
         }
 
         boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].boomerang * onHitIncrease;
@@ -680,10 +687,10 @@ public class Equipment : MonoBehaviour
         }
 
         rainbowCharges += efficiency * guns[equipped].rainbow * onHitIncrease * (1f + guns[equipped].TotalSpecialChance());
-        while (rainbowCharges >= 15f)
+        while (rainbowCharges >= 17.5f)
         {
             FireRainbow();
-            rainbowCharges -= 15f;
+            rainbowCharges -= 17.5f;
         }
 
         /*orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * onHitIncrease;
@@ -709,7 +716,7 @@ public class Equipment : MonoBehaviour
 
         playerStats.firedBullet.damage *= 1.42f + 0.05f * Items[40] + (0.18f + 0.05f * Items[40]) * playerStats.firedBullet.pierce;
         playerStats.firedBullet.pierceEfficiency += 0.14f + 0.16f * playerStats.firedBullet.pierce + 0.02f * Items[40];
-        playerStats.firedBullet.pierce = 5 + Items[40];
+        playerStats.firedBullet.pierce = 6 + Items[40];
     }
 
     void FireBoomerang()
@@ -801,20 +808,20 @@ public class Equipment : MonoBehaviour
         playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(guns[equipped].accuracy, guns[equipped].accuracy));
 
         tempi = 2;
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if (25f + guns[equipped].TotalSpecialChance() >= Random.Range(0f, 200f))
+            if (28f + guns[equipped].TotalSpecialChance() >= Random.Range(0f, 200f))
                 tempi++;
         }
         playerStats.effectsOn = 0;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
             playerStats.effectOn[i] = false;
         }
         specialBullet = 0;
-        if (tempi == 4)
+        if (tempi == 5)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 GainEffect(i);
             }
@@ -823,7 +830,7 @@ public class Equipment : MonoBehaviour
         {
             do
             {
-                roll = Random.Range(0, 4);
+                roll = Random.Range(0, 5);
                 if (!playerStats.effectOn[roll])
                 {
                     GainEffect(roll);

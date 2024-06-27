@@ -1854,7 +1854,7 @@ MonoBehaviour:
   burstDelay: 0
   onHitModifier: 1
   ammoRegain: 0
-  info: Has 5% Chance to fire all kind of Bullets
+  info: Has 4% Chance to fire all kind of Bullets
   level: 0
   LevelCostCharge: 0
   cameraShake: 1.74
@@ -1914,11 +1914,11 @@ MonoBehaviour:
   laser: 0
   rainbow: 0
   specialBulletChance:
-  - 0.05
-  - 0.05
-  - 0.05
-  - 0.05
-  - 0.05
+  - 0.04
+  - 0.04
+  - 0.04
+  - 0.04
+  - 0.04
   specialBulletNextChance:
   - 0
   - 0

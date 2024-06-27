@@ -37,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Color.b
-      value: 0.3254902
+      value: 0.098039225
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Color.g
-      value: 0.24313727
+      value: 0.41176474
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Color.r
-      value: 0.76470596
+      value: 0.854902
       objectReference: {fileID: 0}
     - target: {fileID: 2862686974811532897, guid: c858015333b8bb24baa3fbc7bba52066, type: 3}
       propertyPath: m_Intensity
@@ -155,8 +155,9 @@ MonoBehaviour:
   Particle: {fileID: 2400956534431559294, guid: e69d63f6ea102de4d809c81a4b9e6155, type: 3}
   Dir: {fileID: 6702973461513674282}
   FragForm: {fileID: 5963202796949140576}
-  frequency: 0.1
-  frequencyGain: 1.04
-  delay: 0.155
-  particleForce: 3
-  particleRange: 30
+  frequency: 0.0375
+  frequencyGain: 1
+  delay: 0.0465
+  particleForce: 0
+  particleRange: 0
+  distant: 0

@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth;
     public float dHealth, health, poison, poisonCap,
     damageBonus, fireRateBonus, baseMovementSpeed, movementSpeed, additionalCritChance, additionalCritDamage, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, dashMaxCharges, dashCharges,
-    grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, grenadeLevelScaling, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash, lootLuck;
+    grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, grenadeLevelScaling, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash, lootLuck, bonusSpecialChance;
     public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel, totalSlained;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
@@ -646,6 +646,7 @@ public class PlayerController : MonoBehaviour
     {
         tempi = 0;
         effectsOn = 0;
+        bonusSpecialChance = 0f;
         /*for (int i = 0; i < 3; i++)
         {
             if (eq.guns[eq.equipped].specialBulletChance[i] > Random.Range(0f, 1f))
@@ -655,7 +656,17 @@ public class PlayerController : MonoBehaviour
             temp = 1f / (1f + (0.12f + 0.01f * luck) * eq.Items[20]);
         else temp = 1f;
 
-        if (eq.guns[eq.equipped].specialBulletChance[0] > Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[4] > Random.Range(0f, temp))
+        {
+            effectOn[4] = true;
+            tempi += 16;
+            effectsOn += 3;
+            if (eq.Items[63] > 0)
+                bonusSpecialChance = 0.02f + 0.02f * eq.Items[63];
+        }
+        else effectOn[4] = false;
+
+        if (eq.guns[eq.equipped].specialBulletChance[0] + bonusSpecialChance > Random.Range(0f, temp))
         {
             effectOn[0] = true;
             tempi += 1;
@@ -663,7 +674,7 @@ public class PlayerController : MonoBehaviour
         }
         else effectOn[0] = false;
 
-        if (eq.guns[eq.equipped].specialBulletChance[1] > Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[1] + bonusSpecialChance > Random.Range(0f, temp))
         {
             effectOn[1] = true;
             tempi += 2;
@@ -671,7 +682,7 @@ public class PlayerController : MonoBehaviour
         }
         else effectOn[1] = false;
 
-        if (eq.guns[eq.equipped].specialBulletChance[2] > Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[2] + bonusSpecialChance > Random.Range(0f, temp))
         {
             effectOn[2] = true;
             tempi += 4;
@@ -679,21 +690,13 @@ public class PlayerController : MonoBehaviour
         }
         else effectOn[2] = false;
 
-        if (eq.guns[eq.equipped].specialBulletChance[3] > Random.Range(0f, temp))
+        if (eq.guns[eq.equipped].specialBulletChance[3] + bonusSpecialChance > Random.Range(0f, temp))
         {
             effectOn[3] = true;
             tempi += 8;
             effectsOn++;
         }
         else effectOn[3] = false;
-
-        if (eq.guns[eq.equipped].specialBulletChance[4] > Random.Range(0f, temp))
-        {
-            effectOn[4] = true;
-            //tempi += 16;
-            effectsOn += 3;
-        }
-        else effectOn[4] = false;
 
 
         if (tempi > 0)

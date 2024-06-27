@@ -81,19 +81,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707649637548954763, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: m_Color.b
-      value: 0.7254902
+      value: 0.9058824
       objectReference: {fileID: 0}
     - target: {fileID: 7707649637548954763, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: m_Color.g
-      value: 0.43529415
+      value: 0.47450984
       objectReference: {fileID: 0}
     - target: {fileID: 7707649637548954763, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: m_Color.r
-      value: 0.5254902
+      value: 0.19607845
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707649637548954763, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707649637548954763, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7707649637548954763, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 3.6
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8399459118122761677, guid: f21e98ded10c70047a5d1c4f40ceafd5, type: 3}
       propertyPath: ExplosionRadius
@@ -131,8 +139,9 @@ MonoBehaviour:
   Particle: {fileID: 6943334362748171513, guid: f35b357f125312f4bb3c3dcc77a7aefe, type: 3}
   Dir: {fileID: 489516594432394841}
   FragForm: {fileID: 652792421866613779}
-  frequency: 0.1
-  frequencyGain: 1.04
-  delay: 1.55
-  particleForce: 3
-  particleRange: 30
+  frequency: 0.07
+  frequencyGain: 1.007
+  delay: 0.098
+  particleForce: 0
+  particleRange: 180
+  distant: 1

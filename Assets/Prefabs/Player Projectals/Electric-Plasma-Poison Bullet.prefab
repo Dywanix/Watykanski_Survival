@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: delay
+      value: 0.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: frequency
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -129,11 +137,12 @@ MonoBehaviour:
   Particle: {fileID: 6943334362748171513, guid: f35b357f125312f4bb3c3dcc77a7aefe, type: 3}
   Dir: {fileID: 3325893066700616309}
   FragForm: {fileID: 2442008313525671999}
-  frequency: 0.1
-  frequencyGain: 1.04
-  delay: 0.155
-  particleForce: 3
-  particleRange: 30
+  frequency: 0.084
+  frequencyGain: 1.007
+  delay: 0.123
+  particleForce: 0
+  particleRange: 180
+  distant: 1
 --- !u!4 &2442008313525671999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8759204766530034225, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8067728341084418877
+--- !u!1001 &8903652594969942200
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -53,47 +53,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: m_Name
-      value: Power Bullet
+      value: Power-Poison Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 6892850895423213518, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.027450982
       objectReference: {fileID: 0}
     - target: {fileID: 6892850895423213518, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: m_Color.g
-      value: 0.15686275
+      value: 0.97647065
       objectReference: {fileID: 0}
     - target: {fileID: 6892850895423213518, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: m_Color.r
-      value: 0.6666667
+      value: 0.43137258
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892850895423213518, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+      propertyPath: m_Intensity
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892850895423213518, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892850895423213518, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 7262774744763876939, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7a4032b9403eeb4408051e52186fbaba, type: 3}
+      objectReference: {fileID: 21300000, guid: 55cfcd1b88dd0eb42a62481405bc9e0a, type: 3}
     - target: {fileID: 9176819494048916712, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: delay
-      value: 0.155
+      value: 0.087
       objectReference: {fileID: 0}
-    - target: {fileID: 9176819494048916712, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
-      propertyPath: Particle
-      value: 
-      objectReference: {fileID: 5276993998924839988, guid: bd7f4c7821dc6294985d0d8972b53860, type: 3}
     - target: {fileID: 9176819494048916712, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: frequency
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176819494048916712, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
-      propertyPath: frequencyGain
-      value: 1.04
+      value: 0.064
       objectReference: {fileID: 0}
     - target: {fileID: 9176819494048916712, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: particleForce
-      value: 4
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 9176819494048916712, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: particleRange
-      value: 40
+      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
