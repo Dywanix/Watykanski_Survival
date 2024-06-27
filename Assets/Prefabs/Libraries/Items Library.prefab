@@ -328,6 +328,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 73f10b9d1bdd96749a597f00dd76c25c, type: 3}
   - {fileID: 21300000, guid: 6ff63a8a14860474c985d55598d058f2, type: 3}
   - {fileID: 21300000, guid: 73cff0d7e237c724b9d25c93f772dfe4, type: 3}
+  - {fileID: 21300000, guid: 319e5d7bda6fd5f4b91f4f37957eec52, type: 3}
+  - {fileID: 21300000, guid: 553339d41f47a3a41be887372ad6f13e, type: 3}
+  - {fileID: 21300000, guid: 222d79712b5430c419d02e9cd887b959, type: 3}
+  - {fileID: 21300000, guid: be1b3115b4a89cc4dbe87ccd1143792b, type: 3}
+  - {fileID: 21300000, guid: 25ba826ca17c0cb438513b0a00b3eaac, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
@@ -344,7 +349,7 @@ MonoBehaviour:
   - Increase Damage by 5%. Gain 1 Gold Every 7th Enemy slained
   - Increase Shield Capacity by 3. Losing Shield deals Damage to nearby Enemies
   - Fire additional parallel Bullet
-  - Increase Magazine Size by 20%. Using Dash Reloads 10% Magazine
+  - Increase Magazine Size by 20%. Using Dash Reloads 1/9 Magazine
   - Increase Shield Capacity by 3 & Max Health by 8. Losing HP instantly reacharges
     some Shield (has cooldown)
   - Reduce Grenade Cooldown by 10%. Gredandes deal 20% more Damage.
@@ -396,6 +401,13 @@ MonoBehaviour:
   - Your Gun has 20% Chance to Fire additional Bullets in a Cone
   - Fire Rainbow Bullet On-Hit & Gain 1% chance for every Special Bullet
   - Fire Laser On-Hit. Laser lingers for moment, dealing Damage over its duration
+  - Increase Damage of Active Items by 11%
+  - Increase Pierce of Active Items
+  - Reduce your Gun Fire Rate by 20%, but Increase Damage of Active Items by 15%
+    & Speed up Item activation rate by 15%
+  - Your Gun gains 12% Crit Damage. Gain 5% chance for Power Bullet
+  - Gain 5% chance for Power Bullet, getting Power Effect, gives 3% chance for other
+    4
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}
@@ -611,9 +623,9 @@ MonoBehaviour:
   EffectSprite: {fileID: 21300000, guid: 07785dda1d92b5f47898100bc100a57b, type: 3}
   EffectTooltips:
   - Summons Storm Cloud that chases Enemies and deals Damage in small area
-  - Increase Cloud Duration by 4s & Movement Speed by 16%
+  - Increase Cloud Duration by 4s
   - Increase Base Damage by 5
   - Increase summon Frequency by 25%
-  - Increase Cloud Duration by 6s & Base Damage by 2
+  - Increase Cloud Duration by 5s & Base Damage by 3
   - Every 6-8th tick deals Double Damage, has 80% Shatter & Double Area
   - Increase Base Damage by 6

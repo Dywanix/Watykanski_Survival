@@ -35,7 +35,7 @@ public class Equipment : MonoBehaviour
 
     [Header("Active Items")]
     public Transform OrbBody;
-    public float itemActivationRate;
+    public float itemActivationRate, itemDamageIncrease;
     public GameObject BladeProjectal, BoomerangBladeProjectal, KnifeProjectal, ImmolateArea, InfernoArea, StormCloud, OrbProjectal;
     public GameObject ImmolateSmallArea, ImmolateMediumArea, MaelstormCloud;
     public float[] effectMaxCooldown, effectCooldown;
@@ -392,11 +392,23 @@ public class Equipment : MonoBehaviour
                 }
                 break;
             case 62:
-                guns[equipped].gunDamage += 0.12f;
+                itemDamageIncrease += 0.11f;
+                break;
+            case 64:
+                guns[equipped].fireRate *= 1.2f;
+                itemDamageIncrease += 0.15f;
+                itemActivationRate += 0.15f;
+                break;
+            case 65:
+                guns[equipped].critDamage += 0.12f;
                 guns[equipped].specialBulletChance[4] += 0.05f;
                 break;
-            case 63:
+            case 66:
                 guns[equipped].specialBulletChance[4] += 0.05f;
+                break;
+            case 67:
+                playerStats.GainSC(3);
+                playerStats.dashBaseCooldown *= 0.96f;
                 break;
         }
     }
@@ -548,8 +560,8 @@ public class Equipment : MonoBehaviour
             case (5, 1):
                 effectMaxCooldown[5] = 18f;
                 effectCooldown[5] = 1f + effectMaxCooldown[5] * 0.5f;
-                cloudDuration = 15f;
-                cloudSpeed = 6f;
+                cloudDuration = 12f;
+                cloudSpeed = 8f;
                 cloudBaseDamage += 14f;
                 break;
             case (5, 2):
@@ -563,8 +575,8 @@ public class Equipment : MonoBehaviour
                 effectMaxCooldown[5] *= 0.75f;
                 break;
             case (5, 5):
-                cloudDuration += 6f;
-                cloudBaseDamage += 2f;
+                cloudDuration += 5f;
+                cloudBaseDamage += 3f;
                 break;
             case (5, 6):
                 StormCloud = MaelstormCloud;
@@ -651,13 +663,6 @@ public class Equipment : MonoBehaviour
         onHitIncrease = 1f + 0.3f * guns[equipped].Accessories[26] + 0.48f * guns[equipped].Accessories[26 + bp.ALibrary.count];
         onHitIncrease *= 1f + onHitBonus;
 
-        freeBulletCharges[equipped] += efficiency * guns[equipped].freeBullet * onHitIncrease;
-        if (freeBulletCharges[equipped] >= 5f)
-        {
-            playerStats.FireDirection(0f, 0f);
-            freeBulletCharges[equipped] -= 5f;
-        }
-
         peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].peacemaker * guns[equipped].BulletsFired() * onHitIncrease;
         while (peacemakerCharges[equipped] >= 11.2f)
         {
@@ -672,18 +677,11 @@ public class Equipment : MonoBehaviour
             boomerangCharges[equipped] -= 10f;
         }
 
-        waveCharges[equipped] += efficiency * guns[equipped].wave * guns[equipped].BulletsFired() * onHitIncrease;
-        while (waveCharges[equipped] >= 13f)
-        {
-            FireWave();
-            waveCharges[equipped] -= 13f;
-        }
-
         laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].laser * onHitIncrease;
-        while (laserCharges[equipped] >= 4.2f)
+        while (laserCharges[equipped] >= 4.2f + guns[equipped].laser)
         {
             FireLaser();
-            laserCharges[equipped] -= 4.2f;
+            laserCharges[equipped] -= 4.2f + guns[equipped].laser;
         }
 
         rainbowCharges += efficiency * guns[equipped].rainbow * onHitIncrease * (1f + guns[equipped].TotalSpecialChance());
@@ -692,13 +690,6 @@ public class Equipment : MonoBehaviour
             FireRainbow();
             rainbowCharges -= 17.5f;
         }
-
-        /*orbCharges[equipped] += efficiency * (1f + 0.07f * guns[equipped].fireRate) * guns[equipped].Accessories[29] * onHitIncrease;
-        if (orbCharges[equipped] >= 5f)
-        {
-            FireOrb();
-            orbCharges[equipped] -= 5f;
-        }*/
     }
 
     void FirePeacemaker()
@@ -766,6 +757,7 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             playerStats.SetBullet(1f, true);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+            playerStats.firedBullet.damage *= 1f + 0.25f * guns[equipped].laser;
             playerStats.firedBullet.falloff = 0.13f;
             playerStats.firedBullet.duration = 0.16f;
 
@@ -864,6 +856,9 @@ public class Equipment : MonoBehaviour
             case 3:
                 specialBullet += 8;
                 break;
+            case 4:
+                specialBullet += 16;
+                break;
         }
     }
 
@@ -890,6 +885,7 @@ public class Equipment : MonoBehaviour
 
         firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         firedBullet.damage = temp * (playerStats.DamageDealtMultiplyer(1.05f));
+        firedBullet.damage *= 1f + itemDamageIncrease;
     }
 
     public void ActivateItems()
@@ -916,19 +912,12 @@ public class Equipment : MonoBehaviour
 
                 firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
                 firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.04f);
-                firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+                SetEffect();
                 firedBullet.damage *= 1.4f;
                 firedBullet.pierce = bladesPierce * 2 + 1;
                 firedBullet.pierceEfficiency = bladesPierceEff;
-
-                if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-                {
-                    firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-                    firedBullet.pierceEfficiency *= 1.1f;
-                    firedBullet.crit = true;
-                    if (Items[48] > 0)
-                        firedBullet.DoT += 0.25f * Items[48];
-                }
+                if (Items[65] > 0)
+                    BonusPierce();
             }
             else
             {
@@ -939,18 +928,11 @@ public class Equipment : MonoBehaviour
 
                 firedBullet = blade.GetComponent(typeof(Bullet)) as Bullet;
                 firedBullet.damage = bladesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.04f);
-                firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+                SetEffect();
                 firedBullet.pierce = bladesPierce;
                 firedBullet.pierceEfficiency = bladesPierceEff;
-
-                if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-                {
-                    firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-                    firedBullet.pierceEfficiency *= 1.1f;
-                    firedBullet.crit = true;
-                    if (Items[48] > 0)
-                        firedBullet.DoT += 0.25f * Items[48];
-                }
+                if (Items[65] > 0)
+                    BonusPierce();
             }
         }
     }
@@ -966,17 +948,10 @@ public class Equipment : MonoBehaviour
 
             firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.09f);
-            firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+            SetEffect();
             firedBullet.pierce = knivesPierce;
-
-            if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-            {
-                firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-                firedBullet.pierceEfficiency *= 1.1f;
-                firedBullet.crit = true;
-                if (Items[48] > 0)
-                    firedBullet.DoT += 0.25f * Items[48];
-            }
+            if (Items[65] > 0)
+                BonusPierce();
         }
         effectCooldown[1] += effectMaxCooldown[1];
         if (secondKnifeThrow)
@@ -995,17 +970,10 @@ public class Equipment : MonoBehaviour
 
             firedBullet = knife.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = knivesBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.07f);
-            firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+            SetEffect();
             firedBullet.pierce = knivesPierce;
-
-            if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-            {
-                firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-                firedBullet.pierceEfficiency *= 1.1f;
-                firedBullet.crit = true;
-                if (Items[48] > 0)
-                    firedBullet.DoT += 0.25f * Items[48];
-            }
+            if (Items[65] > 0)
+                BonusPierce();
         }
     }
 
@@ -1015,16 +983,7 @@ public class Equipment : MonoBehaviour
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
         firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f);
-        firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
-
-        if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-        {
-            firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-            firedBullet.pierceEfficiency *= 1.1f;
-            firedBullet.crit = true;
-            if (Items[48] > 0)
-                firedBullet.DoT += 0.25f * Items[48];
-        }
+        SetEffect();
 
         effectCooldown[2] += effectMaxCooldown[2];
     }
@@ -1035,18 +994,8 @@ public class Equipment : MonoBehaviour
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
         firedBullet.damage = (immolateBaseDamage + playerStats.maxHealth * immolateHPRatio) * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f);
-        firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+        SetEffect();
         firedBullet.damage *= 2f;
-        //firedBullet.crit = true;
-
-        if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-        {
-            firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-            firedBullet.pierceEfficiency *= 1.1f;
-            firedBullet.crit = true;
-            if (Items[48] > 0)
-                firedBullet.DoT += 0.25f * Items[48];
-        }
 
         effectCooldown[2] += effectMaxCooldown[2];
     }
@@ -1077,17 +1026,8 @@ public class Equipment : MonoBehaviour
 
         firedBullet = fire.GetComponent(typeof(Bullet)) as Bullet;
         firedBullet.damage = cloudBaseDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1f);
-        firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+        SetEffect();
         firedBullet.duration = cloudDuration;
-
-        if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-        {
-            firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-            firedBullet.pierceEfficiency *= 1.1f;
-            firedBullet.crit = true;
-            if (Items[48] > 0)
-                firedBullet.DoT += 0.25f * Items[48];
-        }
 
         effectCooldown[5] += effectMaxCooldown[5];
     }
@@ -1116,17 +1056,10 @@ public class Equipment : MonoBehaviour
 
             firedBullet = orb.GetComponent(typeof(Bullet)) as Bullet;
             firedBullet.damage = orbDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.05f);
-            firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+            SetEffect();
             firedBullet.shatter = orbShatter;
-
-            if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
-            {
-                firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
-                firedBullet.pierceEfficiency *= 1.1f;
-                firedBullet.crit = true;
-                if (Items[48] > 0)
-                    firedBullet.DoT += 0.25f * Items[48];
-            }
+            if (Items[65] > 0)
+                BonusPierce();
         }
 
         effectCooldown[6] += effectMaxCooldown[6];
@@ -1134,7 +1067,7 @@ public class Equipment : MonoBehaviour
 
     void OnHitEffect()
     {
-        temp = onHitBase * (1.5f + 0.8f / guns[equipped].fireRate);
+        temp = onHitBase * (1.59f + 0.85f / guns[equipped].fireRate);
         onHitIncrease = 1f + onHitBonus;
 
         peacemakerCharges[equipped] += temp * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].BulletsFired() * onHitIncrease;
@@ -1146,10 +1079,45 @@ public class Equipment : MonoBehaviour
         if (rainbowOnHit)
             rainbowCharges += temp * onHitIncrease * (1f + guns[equipped].TotalSpecialChance());
 
-        temp = onHitProc * (1.2f + 0.8f / guns[equipped].fireRate);
+        temp = onHitProc * (1.26f + 0.86f / guns[equipped].fireRate);
         OnHit(temp);
 
         effectCooldown[7] += effectMaxCooldown[7];
+    }
+
+    void SetEffect()
+    {
+        firedBullet.damage *= 1f + itemDamageIncrease;
+        firedBullet.damage *= Random.Range(1f - 0.05f * Items[47], 1f + (0.13f + 0.01f * playerStats.luck) * Items[47]);
+
+        if (playerStats.additionalCritChance >= Random.Range(0f, 1f))
+        {
+            firedBullet.damage *= 1.5f + playerStats.additionalCritDamage;
+            firedBullet.crit = true;
+            if (Items[48] > 0)
+                firedBullet.DoT += 0.25f * Items[48];
+        }
+    }
+
+    void BonusPierce()
+    {
+        temp = (0.25f + 0.35f * firedBullet.pierce) * Items[65];
+        if (temp >= 1f)
+        {
+            tempi = 0;
+            while (temp >= 1f + 0.3f * tempi)
+            {
+                temp -= 1f + 0.3f * tempi;
+                tempi++;
+            }
+            firedBullet.pierce += tempi;
+            firedBullet.pierceEfficiency += temp / 0.06f;
+        }
+        else
+        {
+            firedBullet.pierce++;
+            firedBullet.pierceEfficiency -= (1f - temp) / 0.03f;
+        }
     }
 
     /*void ThrowCaltrops()

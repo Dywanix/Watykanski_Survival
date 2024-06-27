@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   enemyBody: {fileID: 0}
-  movementSpeed: 7.5
+  movementSpeed: 8
 --- !u!114 &4756102971473323467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,12 +190,13 @@ MonoBehaviour:
   BulletTick: {fileID: 6560043642464788730, guid: ac7ede99889c6454ebf80b0b9800ba59, type: 3}
   Dir: {fileID: 63646001096214048}
   Form: {fileID: 1896908956057622630}
-  frequency: 0.25
-  delay: 0.5
-  frequencyRange: 1.2
+  frequency: 0.26
+  delay: 0.52
+  frequencyRange: 1.15
   damageEfficiency: 1
   bulletsCount: 1
   bonusShatter: 0
+  straight: 0
 --- !u!50 &63646001096214048
 Rigidbody2D:
   serializedVersion: 4

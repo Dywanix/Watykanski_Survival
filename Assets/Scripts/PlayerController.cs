@@ -319,7 +319,7 @@ public class PlayerController : MonoBehaviour
 
         if (eq.Items[13] > 0)
         {
-            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * eq.Items[13]) / 10;
+            tempi = (eq.guns[eq.equipped].MagazineTotalSize() * eq.Items[13]) / 9;
 
             for (int i = 0; i < tempi; i++)
             {
@@ -350,6 +350,9 @@ public class PlayerController : MonoBehaviour
                 GrenadeDrop(2f);
             }
         }
+
+        if (eq.Items[67] > 0)
+            GainShield(2.5f * eq.Items[67] + (0.1f + 0.03f * eq.Items[67]) * maxShield);
     }
 
     void Dashed()
@@ -1102,8 +1105,8 @@ public class PlayerController : MonoBehaviour
 
         if (emergencyShields)
         {
-            GainShield((0.25f + 0.1f * eq.Items[14]) * maxShield);
-            Invoke("emergencyCooldown", 24f / (0.88f + 0.12f * eq.Items[14]));
+            GainShield(3 * eq.Items[14] + (0.15f + 0.05f * eq.Items[14]) * maxShield);
+            Invoke("emergencyCooldown", 24f / (0.86f + 0.14f * eq.Items[14]));
             emergencyShields = false;
         }
 

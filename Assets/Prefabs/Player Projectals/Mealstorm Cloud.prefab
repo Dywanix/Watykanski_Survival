@@ -113,12 +113,13 @@ MonoBehaviour:
   BulletTick: {fileID: 8681300590708364517, guid: 30cc9ad29379aaf42b03b852cf7990c3, type: 3}
   Dir: {fileID: 4488803882738447316}
   Form: {fileID: 2664545823318109586}
-  frequency: 1.5
+  frequency: 1.56
   delay: 1.5
-  frequencyRange: 1.8
+  frequencyRange: 1.5333
   damageEfficiency: 2
   bulletsCount: 1
   bonusShatter: 0.8
+  straight: 0
 --- !u!114 &8982535688619216959 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4756102971473323467, guid: 68c9631128a1ad141a80d458873dfa8a, type: 3}
