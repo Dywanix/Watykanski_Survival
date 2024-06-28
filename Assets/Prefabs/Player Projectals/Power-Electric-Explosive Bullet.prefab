@@ -111,5 +111,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power-Electric-Explosive Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 9071259342307120900, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 3369385622576879164, guid: 1e9780fc79d0669458f76b13b323c66a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}

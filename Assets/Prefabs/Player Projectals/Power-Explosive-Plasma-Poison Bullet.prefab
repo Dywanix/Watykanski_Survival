@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: particleRange
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7102101012374367293, guid: 8d36a34f860ab5c41830881d280de907, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 863676827094580248, guid: 38d9e249f11777143b66b6a606888a59, type: 3}
     - target: {fileID: 8155302381655250569, guid: 8d36a34f860ab5c41830881d280de907, type: 3}
       propertyPath: m_Name
       value: Power-Explosive-Plasma-Poison Bullet

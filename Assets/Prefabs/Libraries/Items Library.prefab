@@ -333,6 +333,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 222d79712b5430c419d02e9cd887b959, type: 3}
   - {fileID: 21300000, guid: be1b3115b4a89cc4dbe87ccd1143792b, type: 3}
   - {fileID: 21300000, guid: 25ba826ca17c0cb438513b0a00b3eaac, type: 3}
+  - {fileID: 21300000, guid: 6b8107f2bde64674d91afc58dbf2e838, type: 3}
+  - {fileID: 21300000, guid: 11caa6efb4546984cb0b48e98712bc04, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
@@ -408,6 +410,8 @@ MonoBehaviour:
   - Your Gun gains 12% Crit Damage. Gain 5% chance for Power Bullet
   - Gain 5% chance for Power Bullet, getting Power Effect, gives 3% chance for other
     4
+  - Increase Shield Capacity by 3. Using Dash recharges bit of Shield
+  - Reduce Dash Cooldown by 4%. Dash is more powerful & grants short invulnerable
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}

@@ -123,6 +123,10 @@ PrefabInstance:
       propertyPath: particleRange
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 6436505659469522909, guid: 8f760bad3f1f5c047861cdfa8c1aa082, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 1922268215615502159, guid: 865c50a7b1487cb49a1d04ac867e9425, type: 3}
     - target: {fileID: 7477678741857297853, guid: 8f760bad3f1f5c047861cdfa8c1aa082, type: 3}
       propertyPath: delay
       value: 0.047

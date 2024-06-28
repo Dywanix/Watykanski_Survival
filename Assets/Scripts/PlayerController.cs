@@ -305,11 +305,14 @@ public class PlayerController : MonoBehaviour
     void Dash()
     {
         dash = (2.05f + 0.75f * movementSpeed) * baseMovementSpeed;
+        if (eq.Items[68] > 0)
+        {
+            dash *= 1.2f + 0.28f * eq.Items[68];
+            invulnerable = true;
+            playerSprite.color = new Color(0.4f, 0.4f, 1f, 1f);
+            Invoke("Recovered", 0.12f + 0.16f * eq.Items[68]);
+        }
         Invoke("Dashed", 0.12f);
-
-        invulnerable = true;
-        playerSprite.color = new Color(0.4f, 0.4f, 1f, 1f);
-        Invoke("Recovered", 0.2f);
 
         if (eq.Items[5] > 0)
         {

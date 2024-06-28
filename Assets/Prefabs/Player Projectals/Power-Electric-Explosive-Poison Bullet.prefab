@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 3.8
       objectReference: {fileID: 0}
+    - target: {fileID: 3478182089908942600, guid: b27091673d981c548a7b613df92c5e59, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 4138468135422886868, guid: 0b009ece7aebb7e499343eea1353825d, type: 3}
     - target: {fileID: 5980923403684208310, guid: b27091673d981c548a7b613df92c5e59, type: 3}
       propertyPath: m_RootOrder
       value: 0

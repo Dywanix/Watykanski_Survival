@@ -99,5 +99,9 @@ PrefabInstance:
       propertyPath: m_PointLightOuterRadius
       value: 3.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8454469406960353481, guid: 19306ed76c6cdf8408d74594569dface, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 1471096511466363538, guid: 205f530300c42f3439868c2baed8a713, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19306ed76c6cdf8408d74594569dface, type: 3}

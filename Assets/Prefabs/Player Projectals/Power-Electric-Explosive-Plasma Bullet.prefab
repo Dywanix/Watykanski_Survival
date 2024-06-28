@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: particleRange
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3413304064781755838, guid: ca44bc1ce257fc748bd1083798a7f3fb, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 2968736059913036947, guid: 1bb5f4a82db33a6448110af562777537, type: 3}
     - target: {fileID: 3547060677412637944, guid: ca44bc1ce257fc748bd1083798a7f3fb, type: 3}
       propertyPath: m_Color.b
       value: 0.9960785
