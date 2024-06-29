@@ -1,0 +1,139 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4209614096768249136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: delay
+      value: 0.116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: Particle
+      value: 
+      objectReference: {fileID: 5408650599711456449, guid: 845a6de46552b504a889735a49f7bdd0, type: 3}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: frequency
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleForce
+      value: 3.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291235806562221917, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleRange
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367328978176506402, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8078432
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735655443214154458, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511684572917836072, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_Name
+      value: Power-Plasma-Poison Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: delay
+      value: 0.047
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: Particle
+      value: 
+      objectReference: {fileID: 5219607672858188237, guid: bbf9496814a4ecc4f92303e95a78dd84, type: 3}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: frequency
+      value: 0.038
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010594316555506172, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: particleRange
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8852583665815253855, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 46e56f1aca7fb5f4eb278f8013a781ae, type: 3}
+    - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: delay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: bulletCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926297942888457824, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}
+      propertyPath: damageEfficiency
+      value: 1.23
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1341fb7acdfd4447b9a1a725acd618c, type: 3}

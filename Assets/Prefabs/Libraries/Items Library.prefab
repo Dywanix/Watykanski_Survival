@@ -205,14 +205,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: fefe9b88e9c057e41a398faac2163515, type: 3}
   EffectTooltips:
-  - Throw Orb every 0,34s in rotating direction
-  - Increase base Damage by 4 & Increase Frequency by 12%
+  - Throw Orb every 0,33s in rotating direction
+  - Increase base Damage by 5 & Increase Frequency by 9%
   - Increase base Damage by 10
-  - Fire second Orb in opposite Direction, but reduce Frequency by 24%
-  - Increase base Damage by 6 & gain 40% Shatter
+  - Fire second Orb in opposite Direction, but reduce Frequency by 22%
+  - Increase base Damage by 6 & gain 45% Shatter
   - Every Enemy slain reduces timer by 0,11s. After completing full Rotation also
-    reduce time of Other Items by 0,76s
-  - Fire 3 Orbs in opposite directions
+    reduce time of Other Items by 0,78s
+  - Fire 3rd Orb
 --- !u!1 &5256278042531316336
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,20 +335,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 25ba826ca17c0cb438513b0a00b3eaac, type: 3}
   - {fileID: 21300000, guid: 6b8107f2bde64674d91afc58dbf2e838, type: 3}
   - {fileID: 21300000, guid: 11caa6efb4546984cb0b48e98712bc04, type: 3}
+  - {fileID: 21300000, guid: 4d8acc5b30bbe74429da9176d6dc5c3b, type: 3}
+  - {fileID: 21300000, guid: 97fade7e05bfba142bd7e2d1f7516b53, type: 3}
+  - {fileID: 21300000, guid: d17deec7f27d41248bed6ff19a35e196, type: 3}
   ItemTooltip:
   - Increase Fire Rate & On-hit Rate with Enemy Slained
   - Gain chance to fire Poison Bullet. Increase effectivness of Poison Bullets
   - Reduce Dash Cooldown by 3% & Using Dash throws Grenade near you
   - Increase Shield Capacity by 3. Reduce Recharge Delay by 14%
-  - Increase Movement Speed by 5%, Dash gains additional Charge & Reduce Dash Cooldown
-    by 10%
-  - Increase Cooldown Reduction by 8%. Using Dash speeds up Item activation rate
+  - Increase Movement Speed by 4%, Dash gains additional Charge & Reduce Dash Cooldown
+    by 12%
+  - Increase Cooldown Reduction by 6%. Using Dash speeds up Item activation rate
     for short time
   - Increase Max Health by 8. Restore 1% Max Health every 7,5s
-  - Increase Max Health by 8. Gain +1% Damage for every 10 Max Health above 50
+  - Increase Max Health by 8. Gain +1% Damage for every 8 Max Health above 60
   - Reduces Dash Cooldown by 4%. Using Dash fires a wave of Bullets
   - Increase Gun Accuracy & Range by 15% & Increase Vision Range
-  - Increase Damage by 5%. Gain 1 Gold Every 7th Enemy slained
+  - Increase Damage by 4%. Gain 1 Gold Every 6th Enemy slained
   - Increase Shield Capacity by 3. Losing Shield deals Damage to nearby Enemies
   - Fire additional parallel Bullet
   - Increase Magazine Size by 20%. Using Dash Reloads 1/9 Magazine
@@ -360,7 +363,7 @@ MonoBehaviour:
   - Gain chance to fire Plasma Bullet. Increase effectivness of Plasma Bullets
   - Gain chance to fire Explosive Bullet. Increase effectivness of Explosive Bullets
   - Increase Chance for Special Bullets by 14%
-  - Increase Damage by 5% & Bullets Speed by 20%
+  - Increase Damage by 6% & Bullets Speed by 18%
   - Increase Gun Crit Damage by 15%. Every non-crit increaes Chance for next shot
   - Increase Gold gained by 10% & Gain 14 Gold
   - Gun has a 15% Chance to Fire additional time
@@ -371,13 +374,12 @@ MonoBehaviour:
   - Grenades Stuns & have 60% Shatter. Reduce Grenade Cooldown by 9%
   - Grenades leave Poison Cloud for 2,4s. Grenade gains additional Charge
   - Grenades explode into smaller ones
-  - Increase Damage by 5%. Increase Grenade range & speed based on Damage Increase
-  - Increase Fire Rate by 5%. Gain 1% Cooldown Reduction for every 2,5% Fire Rate
-    Increase
+  - Increase Damage by 6%. Increase Grenade range & speed based on Damage Increase
+  - Increase Fire Rate by 6%. Gain 1% Cooldown Reduction for every 3% Fire Rate Increase
   - Increase Shield Capacity by 3 & 3 per 5 levels
   - Gain chance to fire Electric Bullet. Increase effectivness of Electric Bullets
   - Increase Max Health with Enemy slained
-  - Speeds up Item activation rate by 21%
+  - Speeds up Item activation rate by 18%
   - Picking up Gold also gives 5XP
   - Reduce Damage taken by 10% & deal back to melee attackers
   - Increase Magazine Size by 20% & Fire Rate by 7%
@@ -385,12 +387,12 @@ MonoBehaviour:
   - Gain Boomerang On-hit. Increase effectivness of Boomerang
   - Gain Laser On-hit. Increase effectivness of Laser
   - Gain Peacemaker, Boomerang & Laser On-hit.
-  - Increase Damage by 5% & Increase slain effects by 25%
-  - Increase Movement Speed by 5% & Pick Up Range by 20%
+  - Increase Damage by 5% & Increase slain effects by 30%
+  - Increase Movement Speed by 4% & Pick Up Range by 25%
   - Your Gun gains 20% Shatter. Shattering Shield also deals 25% as Damage
   - Damage is randomized between 95-115%
   - Increase Crit Chance by 4%. Crits gain 25% DoT
-  - Reduce Movement Speed by 12% to Increase Damage by 20% & Shield Capacity by 5
+  - Reduce Movement Speed by 12% to Increase Damage by 20% & Shield Capacity by 6
   - Increase your Gun Damage by 40%, but Reduce its Fire Rate by 26%
   - Your Gun gains 30% Dot. Gain 5% chance for Poison Bullet
   - Your Gun gains 10% Fire Rate. Gain 5% chance for Plasma Bullet
@@ -411,7 +413,12 @@ MonoBehaviour:
   - Gain 5% chance for Power Bullet, getting Power Effect, gives 3% chance for other
     4
   - Increase Shield Capacity by 3. Using Dash recharges bit of Shield
-  - Reduce Dash Cooldown by 4%. Dash is more powerful & grants short invulnerable
+  - Reduce Dash Cooldown by 5%. Dash is more powerful & grants short invulnerable
+  - Gain 3% chance for Plasma Bullet & Laser On-Hit. Laser can be inbued with Plasma
+  - Gain 3% chance for Poison Bullet & Peacemaker On-Hit. Peacemaker can be inbued
+    with Poison
+  - Gain 3% chance for Electric Bullet & Boomerang On-Hit. Boomerang can be inbued
+    with Electric
   Effects:
   - {fileID: 4683816620030671925}
   - {fileID: 2311633756543290748}

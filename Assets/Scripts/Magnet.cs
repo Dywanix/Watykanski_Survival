@@ -16,7 +16,7 @@ public class Magnet : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         if (playerStats.eq.Items[45] > 0)
-            chaseRange *= 1f + 0.2f * playerStats.eq.Items[45];
+            chaseRange *= 1f + 0.25f * playerStats.eq.Items[45];
         Invoke("Activate", 0.75f);
     }
 
@@ -30,7 +30,7 @@ public class Magnet : MonoBehaviour
     {
         if (active)
         {
-            if (playerStats.day)
+            if (playerStats.magnetizing > 0f)
             {
                 if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange * 1.8f)
                     transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((7f + chaseSpeed * 4f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.15f) + chaseSpeed) * Time.deltaTime);

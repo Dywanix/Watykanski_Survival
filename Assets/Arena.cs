@@ -11,7 +11,7 @@ public class Arena : MonoBehaviour
     [Header("Objects")]
     public Transform SpawnPoint;
     public GameObject[] Mobs, Elites;
-    public GameObject VendingMachineObject;
+    public GameObject VendingMachineObject, MagnetObject;
 
     [Header("Stats")]
     public bool active;
@@ -63,6 +63,8 @@ public class Arena : MonoBehaviour
                         }
                         if (round % 2 == 0 && minSpawn + 1 < Mobs.Length)
                             minSpawn++;*/
+                        if (0.6f + 0.02f * round >= Random.Range(0f, 1f + 0.02f * round))
+                            Instantiate(MagnetObject, transform.position, transform.rotation);
                         NextRound();
                         //active = false;
                         //Invoke("CheckForClear", 5f);
@@ -112,7 +114,7 @@ public class Arena : MonoBehaviour
 
     void Elite(int cooldownReduction)
     {
-        elite -= cooldownReduction;
+        //elite -= cooldownReduction;
         if (elite <= 0)
         {
             roll = Random.Range(0, Elites.Length);

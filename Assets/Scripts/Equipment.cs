@@ -25,7 +25,7 @@ public class Equipment : MonoBehaviour
 
     [Header("On Hit")]
     public GameObject Peacemaker;
-    public GameObject Boomerange, Wave, Laser, LingeringLaser, Orb;
+    public GameObject PoisonPeacemaker, CurrentPeacemaker, Boomerange, ElectricBoomerange, CurrentBoomerange, Wave, Laser, LingeringLaser, PlasmaLaser, PlasmaLingeringLaser, CurrentLaser, Orb;
     public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, laserCharges, orbCharges;
     public float rainbowCharges;
     public float onHitIncrease, onHitBonus;
@@ -186,8 +186,8 @@ public class Equipment : MonoBehaviour
                 playerStats.rechargeDelay *= 0.86f;
                 break;
             case 4:
-                playerStats.GainMS(0.05f);
-                playerStats.dashBaseCooldown *= 0.9f;
+                playerStats.GainMS(0.04f);
+                playerStats.dashBaseCooldown *= 0.88f;
                 playerStats.dashMaxCharges++;
                 break;
             case 5:
@@ -197,7 +197,7 @@ public class Equipment : MonoBehaviour
                 playerStats.GainHP(8);
                 break;
             case 7:
-                playerStats.GainDMG((playerStats.maxHealth - 50) * 0.001f);
+                playerStats.GainDMG((playerStats.maxHealth - 60) * 0.00125f);
                 playerStats.GainHP(8);
                 break;
             case 8:
@@ -210,7 +210,7 @@ public class Equipment : MonoBehaviour
                 playerCamera.orthographicSize++;
                 break;
             case 10:
-                playerStats.GainDMG(0.05f);
+                playerStats.GainDMG(0.04f);
                 playerStats.bloodMoney += playerStats.totalSlained / 2;
                 break;
             case 11:
@@ -226,7 +226,7 @@ public class Equipment : MonoBehaviour
                     playerStats.emergencyShields = true;
                 break;
             case 15:
-                playerStats.grenadeDamageMultiplyer += 0.18f;
+                playerStats.grenadeDamageMultiplyer += 0.2f;
                 playerStats.grenadeBaseCooldown *= 0.9f;
                 break;
             case 16:
@@ -239,8 +239,8 @@ public class Equipment : MonoBehaviour
                 guns[equipped].specialBulletChance[2] += 0.05f;
                 break;
             case 21:
-                playerStats.GainDMG(0.05f);
-                playerStats.forceIncrease += 0.2f;
+                playerStats.GainDMG(0.06f);
+                playerStats.forceIncrease += 0.18f;
                 break;
             case 22:
                 playerStats.additionalCritDamage += 0.15f;
@@ -268,11 +268,11 @@ public class Equipment : MonoBehaviour
                 playerStats.grenadeMaxCharges++;
                 break;
             case 31:
-                playerStats.GainDMG(0.05f);
+                playerStats.GainDMG(0.06f);
                 break;
             case 32:
-                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 2.5f;
-                playerStats.GainFR(0.05f);
+                playerStats.cooldownReduction += (playerStats.fireRateBonus - 1f) / 3f;
+                playerStats.GainFR(0.06f);
                 break;
             case 33:
                 playerStats.GainSC(3 + playerStats.level * 0.6f);
@@ -284,7 +284,7 @@ public class Equipment : MonoBehaviour
                 playerStats.bloodBagCharges += playerStats.totalSlained / 2;
                 break;
             case 36:
-                itemActivationRate += 0.21f;
+                itemActivationRate += 0.18f;
                 break;
             case 39:
                 guns[equipped].magazineMultiplierTenth += 2;
@@ -297,7 +297,7 @@ public class Equipment : MonoBehaviour
                 guns[equipped].boomerang += 0.6f;
                 break;
             case 42:
-                guns[equipped].laser += 0.4f;
+                guns[equipped].laser += 0.45f;
                 break;
             case 43:
                 guns[equipped].peacemaker += 0.3f;
@@ -306,10 +306,10 @@ public class Equipment : MonoBehaviour
                 break;
             case 44:
                 playerStats.GainDMG(0.05f);
-                playerStats.scytheCharge += playerStats.totalSlained / 3;
+                playerStats.scytheCharge += (playerStats.totalSlained * 3) / 4;
                 break;
             case 45:
-                playerStats.GainMS(0.05f);
+                playerStats.GainMS(0.04f);
                 break;
             case 46:
                 guns[equipped].shatter += 0.2f;
@@ -324,7 +324,7 @@ public class Equipment : MonoBehaviour
             case 49:
                 playerStats.movementSpeed -= 0.12f;
                 playerStats.GainDMG(0.2f);
-                playerStats.GainSC(5);
+                playerStats.GainSC(6);
                 break;
             case 50:
                 guns[equipped].damage *= 1.4f;
@@ -389,6 +389,7 @@ public class Equipment : MonoBehaviour
                 {
                     guns[equipped].laser += 0.28f;
                     Laser = LingeringLaser;
+                    PlasmaLaser = PlasmaLingeringLaser;
                 }
                 break;
             case 62:
@@ -408,7 +409,27 @@ public class Equipment : MonoBehaviour
                 break;
             case 67:
                 playerStats.GainSC(3);
-                playerStats.dashBaseCooldown *= 0.96f;
+                break;
+            case 68:
+                playerStats.dashBaseCooldown *= 0.95f;
+                break;
+            case 69:
+                guns[equipped].specialBulletChance[1] += 0.03f;
+                guns[equipped].laser += 0.12f;
+                if (Items[which] == 1)
+                    guns[equipped].laser += 0.12f;
+                break;
+            case 70:
+                guns[equipped].specialBulletChance[0] += 0.03f;
+                guns[equipped].peacemaker += 0.12f;
+                if (Items[which] == 1)
+                    guns[equipped].peacemaker += 0.12f;
+                break;
+            case 71:
+                guns[equipped].specialBulletChance[3] += 0.03f;
+                guns[equipped].boomerang += 0.12f;
+                if (Items[which] == 1)
+                    guns[equipped].boomerang += 0.12f;
                 break;
         }
     }
@@ -585,26 +606,26 @@ public class Equipment : MonoBehaviour
                 cloudBaseDamage += 6f;
                 break;
             case (6, 1):
-                effectMaxCooldown[6] = 0.34f;
+                effectMaxCooldown[6] = 0.33f;
                 effectCooldown[6] = 1f + effectMaxCooldown[6] * 0.5f;
                 orbDamage = 26f;
                 orbsFired = 1;
                 orbShatter = 0f;
                 break;
             case (6, 2):
-                orbDamage += 4f;
-                effectMaxCooldown[6] *= 0.88f;
+                orbDamage += 5f;
+                effectMaxCooldown[6] *= 0.91f;
                 break;
             case (6, 3):
                 orbDamage += 10f;
                 break;
             case (6, 4):
                 orbsFired++;
-                effectMaxCooldown[6] *= 1.24f;
+                effectMaxCooldown[6] *= 1.22f;
                 break;
             case (6, 5):
                 orbDamage += 6f;
-                orbShatter += 0.4f;
+                orbShatter += 0.45f;
                 break;
             case (6, 6):
                 // reduces timer on kills
@@ -694,8 +715,11 @@ public class Equipment : MonoBehaviour
 
     void FirePeacemaker()
     {
+        if (Items[70] > 0 & (0.2f + 0.8f * guns[equipped].specialBulletChance[0]) >= Random.Range(0f, 1f))
+            CurrentPeacemaker = PoisonPeacemaker;
+        else CurrentPeacemaker = Peacemaker;
         playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-0.7f * guns[equipped].accuracy, 0.7f * guns[equipped].accuracy));
-        GameObject bullet = Instantiate(Peacemaker, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        GameObject bullet = Instantiate(CurrentPeacemaker, playerStats.Barrel.position, playerStats.Barrel.rotation);
         Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
         bullet_body.AddForce(playerStats.Barrel.up * guns[equipped].force * Random.Range(0.98f, 1.08f), ForceMode2D.Impulse);
 
@@ -714,8 +738,11 @@ public class Equipment : MonoBehaviour
     {
         for (int i = 0; i < guns[equipped].BulletsFired(); i++)
         {
+            if (Items[71] > 0 & (0.2f + 0.8f * guns[equipped].specialBulletChance[3]) >= Random.Range(0f, 1f))
+                CurrentBoomerange = ElectricBoomerange;
+            else CurrentBoomerange = Boomerange;
             playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-0.6f * guns[equipped].accuracy - guns[equipped].BulletsFired() * 1f, 0.6f * guns[equipped].accuracy + guns[equipped].BulletsFired() * 1f));
-            GameObject bullet = Instantiate(Boomerange, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            GameObject bullet = Instantiate(CurrentBoomerange, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(playerStats.Barrel.up * 17.5f * Random.Range(0.97f, 1.03f), ForceMode2D.Impulse);
 
@@ -749,8 +776,11 @@ public class Equipment : MonoBehaviour
     {
         for (int i = 0; i < guns[equipped].BulletsFired(); i++)
         {
+            if (Items[69] > 0 & (0.2f + 0.8f * guns[equipped].specialBulletChance[1]) >= Random.Range(0f, 1f))
+                CurrentLaser = PlasmaLaser;
+            else CurrentLaser = Laser;
             playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-0.6f * guns[equipped].accuracy - guns[equipped].BulletsFired() * 1f, 0.6f * guns[equipped].accuracy + guns[equipped].BulletsFired() * 1f));
-            GameObject bullet = Instantiate(Laser, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            GameObject bullet = Instantiate(CurrentLaser, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(playerStats.Barrel.up * Random.Range(0.01f, 0.04f), ForceMode2D.Impulse);
 
@@ -765,7 +795,7 @@ public class Equipment : MonoBehaviour
                 (0.08f + 0.044f * Items[42]) * playerStats.firedBullet.pierceEfficiency + (0.066f + 0.075f * Items[42]) * playerStats.firedBullet.shatter;
             playerStats.firedBullet.pierce = 15;
             playerStats.firedBullet.pierceEfficiency = 1f;
-            playerStats.firedBullet.shatter += 0.58f + 0.06f * Items[42] + (0.2f + 0.5f * Items[42]) * playerStats.firedBullet.shatter;
+            playerStats.firedBullet.shatter += 0.58f + 0.06f * Items[42] + (0.2f + 0.3f * Items[42]) * playerStats.firedBullet.shatter;
 
             if (Items[61] > 0)
             {
@@ -1043,7 +1073,7 @@ public class Equipment : MonoBehaviour
                 for (int i = 0; i < Effects.Length; i++)
                 {
                     if (Effects[i] > 0)
-                        effectCooldown[i] -= 0.76f;
+                        effectCooldown[i] -= 0.78f;
                 }
             }
         }
@@ -1055,7 +1085,7 @@ public class Equipment : MonoBehaviour
             orb_body.AddForce(Barrel.up * Random.Range(17.3f, 18.7f), ForceMode2D.Impulse);
 
             firedBullet = orb.GetComponent(typeof(Bullet)) as Bullet;
-            firedBullet.damage = orbDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.05f);
+            firedBullet.damage = orbDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.07f);
             SetEffect();
             firedBullet.shatter = orbShatter;
             if (Items[65] > 0)

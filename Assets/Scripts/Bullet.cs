@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public GameObject ExplosionRadius;
     private Bullet Explosion;
+    public BulletPlus BonusEffects;
     public PulletExplosion ShardExplosion;
     public float duration, falloff, force, mass, damage, penetration, armorShred, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, incendiary, damageGain;
     public int pierce, special;
@@ -87,6 +88,9 @@ public class Bullet : MonoBehaviour
         vulnerableApplied *= 0.2f + 0.8f * pierceEfficiency;
         slowDuration *= 0.4f + 0.6f * pierceEfficiency;
         stunDuration *= 0.4f + 0.6f * pierceEfficiency;
+
+        if (BonusEffects)
+            BonusEffects.Struck();
 
         if (pierce <= 0)
             Destroy(gameObject);

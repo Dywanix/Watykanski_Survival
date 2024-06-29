@@ -8,22 +8,31 @@ public class Plasma : MonoBehaviour
     public GameObject BulletShard;
     public Rigidbody2D Dir;
     public Transform Form;
+    public Transform[] Origins;
     public float delay, damageEfficiency;
     public int bulletCount;
 
-    public bool explosive;
+    public bool explosive, laser;
+    public PulletTick ThisTick, BulletTick;
     float temp;
 
     void Start()
     {
-        damageEfficiency = 0.51f + 0.09f * bulletCount;
+        if (laser)
+        {
+            damageEfficiency = 0.8f;
+            ThisBullet.vulnerableApplied = 0.0035f * ThisBullet.damage;
+        }
+        else damageEfficiency = 0.51f + 0.09f * bulletCount;
+
+        Invoke("Shatter", delay);
     }
 
     void Update()
     {
-        delay -= Time.deltaTime;
-        if (delay <= 0)
-            Shatter();
+        //delay -= Time.deltaTime;
+        //if (delay <= 0)
+            //Shatter();
     }
 
     void Shatter()
@@ -32,23 +41,41 @@ public class Plasma : MonoBehaviour
             ThisBullet.Explosions();
 
         temp = 10f + 5f * bulletCount;
-
-        for (int i = 0; i < bulletCount; i++)
+        if (laser)
         {
-            Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation - temp + (2f * temp / (bulletCount - 1)) * i);
-            GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
-            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(Form.up * (2f + ThisBullet.force * 0.8f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
-            BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            SetBullet();
+            for (int i = 0; i < bulletCount; i++)
+            {
+                Form.position = Origins[i].position;
+                GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
+                BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
+                if (ThisTick)
+                    BulletTick = bullet.GetComponent(typeof(PulletTick)) as PulletTick;
+                SetBullet();
+            }
         }
-        Destroy(gameObject);
+        else
+        {
+            for (int i = 0; i < bulletCount; i++)
+            {
+                Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation - temp + (2f * temp / (bulletCount - 1)) * i);
+                GameObject bullet = Instantiate(BulletShard, Form.position, Form.rotation);
+                Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+                bullet_body.AddForce(Form.up * (2f + ThisBullet.force * 0.8f) * Random.Range(0.95f, 1.06f), ForceMode2D.Impulse);
+                BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
+                SetBullet();
+            }
+        }
+        if (!laser)
+            Destroy(gameObject);
     }
 
     void SetBullet()
     {
-        BulletsShards.duration = ThisBullet.duration + 0.25f;
-        BulletsShards.falloff = ThisBullet.falloff + 0.25f;
+        if (!laser)
+        {
+            BulletsShards.duration = ThisBullet.duration + 0.25f;
+            BulletsShards.falloff = ThisBullet.falloff + 0.25f;
+        }
         BulletsShards.force = ThisBullet.force;
         BulletsShards.mass = ThisBullet.mass;
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;
@@ -65,5 +92,7 @@ public class Plasma : MonoBehaviour
         BulletsShards.pierce = ThisBullet.pierce;
         BulletsShards.pierceEfficiency = ThisBullet.pierceEfficiency;
         BulletsShards.crit = ThisBullet.crit;
+        if (ThisTick)
+            BulletTick.damageEfficiency = ThisTick.damageEfficiency;
     }
 }

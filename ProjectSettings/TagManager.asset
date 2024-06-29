@@ -23,6 +23,7 @@ TagManager:
   - Potion
   - Experience
   - Experience5
+  - Magnet
   layers:
   - Default
   - TransparentFX

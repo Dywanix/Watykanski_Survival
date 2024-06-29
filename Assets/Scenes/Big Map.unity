@@ -58630,12 +58630,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5e0301b67de0732448df3d5b43ba03a7, type: 3}
   StatTooltips:
   - Increase Max Health by 8
-  - Increase Damage by 5%
-  - Increase Fire Rate by 5%
-  - Increase Movement Speed by 5%
-  - Increase Cooldown Reduction by 8%
+  - Increase Damage by 4%
+  - Increase Fire Rate by 4%
+  - Increase Movement Speed by 4%
+  - Increase Cooldown Reduction by 6%
   - Increase Shield Capacity by 3
-  - Increase Crit Chance & Damage by 3%
+  - Increase Crit Chance by 2% & Crit Damage by 3%
   rolls: 000000000000000000000000
 --- !u!114 &1906895909
 MonoBehaviour:
@@ -59022,9 +59022,10 @@ MonoBehaviour:
   Elites:
   - {fileID: 7117639114315019336, guid: 24540a62381725941bb6e72ce9f535c4, type: 3}
   VendingMachineObject: {fileID: 50638922}
+  MagnetObject: {fileID: 6200031967086673338, guid: 7288ac361ab3c224cbce74faadfd8d6d, type: 3}
   active: 0
   round: 0
-  strength: 110
+  strength: 111
   minSpawn: 0
   maxSpawn: 1
   mobsStrength: 03000000040000000500000006000000080000000a000000
@@ -59034,7 +59035,7 @@ MonoBehaviour:
   rest: 0
   elite: 170
   amount: 0
-  time: 34
+  time: 35
   frequency: 0
   delay: 0
 --- !u!1 &1914043909

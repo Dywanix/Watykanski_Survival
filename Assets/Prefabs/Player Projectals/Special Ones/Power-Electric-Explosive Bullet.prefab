@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6306242152169636757
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208989522881412794, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684017106017063649, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: delay
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684017106017063649, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: Particle
+      value: 
+      objectReference: {fileID: 8754542859132912165, guid: 5e7a471b35445944fa70fa7a8d81da43, type: 3}
+    - target: {fileID: 4684017106017063649, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: frequency
+      value: 0.056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684017106017063649, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: particleForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861236359214716260, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: delay
+      value: 0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861236359214716260, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: Particle
+      value: 
+      objectReference: {fileID: 449128234099081941, guid: b31f2195cf668064f82d84988fe25895, type: 3}
+    - target: {fileID: 4861236359214716260, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: frequency
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861236359214716260, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: particleForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6405956115377092551, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b52d60c4bedf34046839e2bad6e64a0b, type: 3}
+    - target: {fileID: 7170956964119297602, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.93725497
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170956964119297602, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170956964119297602, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.10588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170956964119297602, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_Intensity
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170956964119297602, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7170956964119297602, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7944729348472942000, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: m_Name
+      value: Power-Electric-Explosive Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 9071259342307120900, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
+      propertyPath: ExplosionRadius
+      value: 
+      objectReference: {fileID: 3369385622576879164, guid: 1e9780fc79d0669458f76b13b323c66a, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9c4be849d90e03c438c1d0ef2eee5e9c, type: 3}
