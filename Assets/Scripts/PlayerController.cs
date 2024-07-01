@@ -293,7 +293,9 @@ public class PlayerController : MonoBehaviour
     {
         if (dashCharges > 0)
         {
-            dashCharges--;
+            if (dashCharges == 0)
+                DashCharge.text = "";
+            else DashCharge.text = "+" + dashCharges.ToString("0");
             Dash();
         }
         else if (dashCooldown <= 0)
@@ -350,11 +352,14 @@ public class PlayerController : MonoBehaviour
         if (eq.Effects[0] > 0)
             eq.ScissorsThrow(eq.bladesCount + eq.dashBlades);
 
+        if (eq.Effects[8] > 6)
+            eq.BigFard();
+
         if (eq.Items[2] > 0)
         {
             for (int i = 0; i < eq.Items[2]; i++)
             {
-                GrenadeDrop(2f);
+                Invoke("GrenadeDrop", i * 0.08f);
             }
         }
 
@@ -803,7 +808,7 @@ public class PlayerController : MonoBehaviour
         {
             ThrowGrenade();
             if (eq.Effects[4] >= 6)
-                eq.effectCooldown[4] -= 2.5f;
+                eq.effectCooldown[4] -= 2.4f;
         }
     }
 
@@ -851,7 +856,7 @@ public class PlayerController : MonoBehaviour
             firedBullet.duration /= DamageDealtMultiplyer(0.24f * eq.Items[31]);
     }
 
-    public void GrenadeDrop(float range)
+    public void GrenadeDrop(float range = 2f)
     {
         TargetArea.position = new Vector2(transform.position.x + Random.Range(-range, range), transform.position.y + Random.Range(-range, range));
         GameObject bullet = Instantiate(Grenade, Barrel.position, Barrel.rotation);

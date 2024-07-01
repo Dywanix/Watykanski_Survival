@@ -36,11 +36,11 @@ public class Equipment : MonoBehaviour
     [Header("Active Items")]
     public Transform OrbBody;
     public float itemActivationRate, itemDamageIncrease;
-    public GameObject BladeProjectal, BoomerangBladeProjectal, KnifeProjectal, ImmolateArea, InfernoArea, StormCloud, OrbProjectal;
-    public GameObject ImmolateSmallArea, ImmolateMediumArea, MaelstormCloud;
+    public GameObject BladeProjectal, BoomerangBladeProjectal, KnifeProjectal, ImmolateArea, InfernoArea, StormCloud, OrbProjectal, ToxicCloud;
+    public GameObject ImmolateSmallArea, ImmolateMediumArea, MaelstormCloud, ToxicSmallArea, ToxicMediumArea;
     public float[] effectMaxCooldown, effectCooldown;
     public float bladesBaseDamage, bladesPierceEff, knivesBaseDamage, immolateBaseDamage, immolateHPRatio, rainFrequency, cloudBaseDamage, cloudDuration, cloudSpeed, orbDamage, orbRotation, orbShatter,
-        onHitBase, onHitProc;
+        onHitBase, onHitProc, toxicDamage, toxicMovementProc, toxicVulnerable;
     public int bladesCount, bladesPierce, dashBlades, bladesTicks, knivesCount, knivesPierce, immolateTicks, grenadeCount, orbsFired;
     public bool boomerangeBlades, secondKnifeThrow, immolateBoom, rainbowOnHit;
 
@@ -138,7 +138,7 @@ public class Equipment : MonoBehaviour
             {
                 for (int i = 0; i < grenadeCount; i++)
                 {
-                    playerStats.GrenadeDrop(10f);
+                    Invoke("GrenadeDrop", i * 0.08f);
                 }
                 effectCooldown[4] += effectMaxCooldown[4];
             }
@@ -157,6 +157,14 @@ public class Equipment : MonoBehaviour
                 effectCooldown[7] -= Time.deltaTime * itemActivationRate * playerStats.SpeedMultiplyer(0.75f) * (1f + playerStats.cooldownReduction * 0.25f);
             if (effectCooldown[7] < 0f)
                 OnHitEffect();
+
+            if (Effects[8] > 0)
+            {
+                effectCooldown[8] -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.25f) * (0.85f + 0.15f * playerStats.movementSpeed) * (Input.GetAxis("Horizontal") * Input.GetAxis("Horizontal") + 0.6f);
+                effectCooldown[8] -= Time.deltaTime * itemActivationRate * (1f + playerStats.cooldownReduction * 0.25f) * (0.85f + 0.15f * playerStats.movementSpeed) * (Input.GetAxis("Vertical") * Input.GetAxis("Vertical") + 0.6f);
+            }
+            if (effectCooldown[8] < 0f)
+                Fard();
         }
      }
 
@@ -553,30 +561,31 @@ public class Equipment : MonoBehaviour
                 rainFrequency *= 0.84f;
                 break;
             case (4, 1):
-                effectMaxCooldown[4] = 5f;
+                effectMaxCooldown[4] = 4.9f;
                 effectCooldown[4] = 1f + effectMaxCooldown[4] * 0.5f;
                 grenadeCount = 1;
                 break;
             case (4, 2):
-                effectMaxCooldown[4] *= 0.8f;
+                effectMaxCooldown[4] *= 0.79f;
                 break;
             case (4, 3):
                 playerStats.grenadeDamageMultiplyer += 0.07f;
-                effectMaxCooldown[4] *= 0.92f;
+                effectMaxCooldown[4] *= 0.91f;
                 break;
             case (4, 4):
-                playerStats.grenadeLevelScaling += 0.004f;
-                //grenadeCount++;
+                //playerStats.grenadeLevelScaling += 0.004f;
+                grenadeCount++;
+                effectMaxCooldown[4] *= 1.18f;
                 break;
             case (4, 5):
-                effectMaxCooldown[4] *= 0.78f;
+                effectMaxCooldown[4] *= 0.76f;
                 break;
             case (4, 6):
-                effectMaxCooldown[4] *= 0.9f;
+                effectMaxCooldown[4] *= 0.89f;
                 break;
             case (4, 7):
                 playerStats.grenadeDamageMultiplyer += 0.08f;
-                effectMaxCooldown[4] *= 0.92f;
+                effectMaxCooldown[4] *= 0.91f;
                 break;
             case (5, 1):
                 effectMaxCooldown[5] = 18f;
@@ -662,6 +671,33 @@ public class Equipment : MonoBehaviour
                 effectMaxCooldown[7] *= 0.92f;
                 guns[equipped].peacemaker += 0.12f;
                 guns[equipped].boomerang += 0.12f;
+                break;
+            case (8, 1):
+                effectMaxCooldown[8] = 0.7f;
+                effectCooldown[8] = 1f + effectMaxCooldown[8] * 0.5f;
+                toxicDamage = 8f;
+                toxicMovementProc = 0.25f;
+                ToxicCloud = ToxicSmallArea;
+                break;
+            case (8, 2):
+                toxicDamage += 2.4f;
+                break;
+            case (8, 3):
+                ToxicCloud = ToxicMediumArea;
+                break;
+            case (8, 4):
+                playerStats.GainMS(0.06f);
+                toxicMovementProc += 0.3f;
+                break;
+            case (8, 5):
+                toxicDamage += 3.2f;
+                break;
+            case (8, 6):
+                effectMaxCooldown[8] *= 0.85f;
+                toxicVulnerable += 0.02f;
+                break;
+            case (8, 7):
+                effectMaxCooldown[8] *= 0.95f;
                 break;
         }
     }
@@ -1050,6 +1086,11 @@ public class Equipment : MonoBehaviour
         effectCooldown[3] += guns[equipped].fireRate * rainFrequency;
     }
 
+    void GrenadeDrop()
+    {
+        playerStats.GrenadeDrop(10f);
+    }
+
     void Storm()
     {
         GameObject fire = Instantiate(StormCloud, Barrel.position, Barrel.rotation);
@@ -1113,6 +1154,36 @@ public class Equipment : MonoBehaviour
         OnHit(temp);
 
         effectCooldown[7] += effectMaxCooldown[7];
+    }
+
+    void Fard()
+    {
+        Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Random.Range(0f, 360f));
+        GameObject cloud = Instantiate(ToxicCloud, Barrel.position, Barrel.rotation);
+        Rigidbody2D cloud_body = cloud.GetComponent<Rigidbody2D>();
+        cloud_body.AddForce(Barrel.up * Random.Range(0.3f, 0.36f), ForceMode2D.Impulse);
+
+        firedBullet = cloud.GetComponent(typeof(Bullet)) as Bullet;
+        firedBullet.damage = toxicDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f) * (1f - toxicMovementProc + toxicMovementProc * playerStats.movementSpeed) * (1f + playerStats.cooldownReduction * 0.25f);
+        SetEffect();
+
+        effectCooldown[8] += effectMaxCooldown[8];
+    }
+
+    public void BigFard()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Random.Range(0f, 20f) + i * 60f);
+            GameObject cloud = Instantiate(ToxicCloud, Barrel.position, Barrel.rotation);
+            Rigidbody2D cloud_body = cloud.GetComponent<Rigidbody2D>();
+            cloud_body.AddForce(Barrel.up * Random.Range(3.6f, 3.84f), ForceMode2D.Impulse);
+
+            firedBullet = cloud.GetComponent(typeof(Bullet)) as Bullet;
+            firedBullet.damage = toxicDamage * (1f + playerStats.level * 0.02f) * playerStats.DamageDealtMultiplyer(1.1f) * (1f - toxicMovementProc + toxicMovementProc * playerStats.movementSpeed) * (1f + playerStats.cooldownReduction * 0.25f);
+            firedBullet.damage *= 1.12f;
+            SetEffect();
+        }
     }
 
     void SetEffect()

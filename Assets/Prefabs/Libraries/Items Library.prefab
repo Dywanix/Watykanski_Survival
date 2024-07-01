@@ -53,6 +53,59 @@ MonoBehaviour:
   - Increase Frequency by 14% & Increase its On-Hit
   - Also Fire Rainbow Bullets
   - Increase Frequency by 8% & Gain Peacemaker & Boomerang On-Hit
+--- !u!1 &1134152446530479535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2998414660401853367}
+  - component: {fileID: 3982932699809188074}
+  m_Layer: 0
+  m_Name: Poison Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2998414660401853367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134152446530479535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3380796369291455551}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3982932699809188074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134152446530479535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a3a3fbed95ba148964ebce23cb2451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectSprite: {fileID: 21300000, guid: 5392c22a6668be24bb7e949f1f76be02, type: 3}
+  EffectTooltips:
+  - Leave Toxic Cloud behind while moving that applies DoT
+  - Increase Base DoT by 2,4
+  - Increase Cloud Area by 30% & Duration by 25%
+  - Increase Movement Speed by 6% & Increase DoT applied with Movement Speed
+  - Increase Base Dot by 3,2
+  - Increase Frequency by 15%, Cloud also applies Vulnerable
+  - Increase Frequency by 5%, using Dash also fires 6 Clouds
 --- !u!1 &2471019118524960529
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,13 +205,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EffectSprite: {fileID: 21300000, guid: 025e5b8b471187147a2c6dd85b9ff727, type: 3}
   EffectTooltips:
-  - Throws Grenade at random nearby position every 5s
-  - Increase Frequency by 20%
-  - Increase Grenade Damage by 7% & Frequency by 8%
-  - Increase Grenade Damage per Level scaling by 20%
-  - Increase Frequency by 22%
-  - Increase Frequency by 10%, using Throw reduces timer by 2,5s
-  - Increase Grenade Damage by 8% & Frequency by 8%
+  - Throws Grenade at random nearby position every 4,9s
+  - Increase Frequency by 21%
+  - Increase Grenade Damage by 7% & Frequency by 9%
+  - Increase amount of Grenades throw by 1, but Reduce Frequency by 18%
+  - Increase Frequency by 24%
+  - Increase Frequency by 11%, using Throw reduces timer by 2,4s
+  - Increase Grenade Damage by 8% & Frequency by 9%
 --- !u!1 &4493847000807918944
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +303,7 @@ Transform:
   - {fileID: 877497541668317632}
   - {fileID: 571743350778702425}
   - {fileID: 335522079170962314}
+  - {fileID: 2998414660401853367}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -428,6 +482,7 @@ MonoBehaviour:
   - {fileID: 1206003873605896130}
   - {fileID: 685320073287144932}
   - {fileID: 521660929943113855}
+  - {fileID: 3982932699809188074}
 --- !u!1 &6344427247891361874
 GameObject:
   m_ObjectHideFlags: 0
