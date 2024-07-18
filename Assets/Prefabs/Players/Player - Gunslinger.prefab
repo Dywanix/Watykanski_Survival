@@ -4791,6 +4791,7 @@ MonoBehaviour:
   DamageFlash: {fileID: 689938538099744625}
   SkillPointAviable: {fileID: 2004096554575437604}
   Effects: {fileID: 0}
+  firedPlasma: {fileID: 0}
   mouseLeft: 0
   reloading: 0
   free: 1
@@ -4806,7 +4807,7 @@ MonoBehaviour:
   poisonCap: 100
   damageBonus: 1.08
   fireRateBonus: 1.08
-  baseMovementSpeed: 180
+  baseMovementSpeed: 160
   movementSpeed: 1.12
   additionalCritChance: 0
   additionalCritDamage: 0
@@ -4976,6 +4977,9 @@ MonoBehaviour:
   rainbowCharges: 0
   onHitIncrease: 0
   onHitBonus: 0
+  peacemakerEff: 0
+  boomerangEff: 0
+  laserEff: 0
   specialBullet: 0
   waveBullet: {fileID: 0}
   LaserTick: {fileID: 0}

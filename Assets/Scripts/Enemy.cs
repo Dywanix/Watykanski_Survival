@@ -45,8 +45,8 @@ public class Enemy : MonoBehaviour
     public bool repositioning;
 
     [Header("Ranged Stuff")]
-    public bool ranged = false;
-    public bool throws = false;
+    public bool ranged;
+    public bool throws;
     public int bulletCount, bulletBurst;
     public float bulletSpread, burstDelay, accuracy, force, minRange;
     float recoil, currentForce;
@@ -227,7 +227,7 @@ public class Enemy : MonoBehaviour
     {
         playerStats.TakeDamage(attackDamage, false);
         if (playerStats.eq.Items[38] > 0)
-            TakeDamage(attackDamage * (0.4f + 0.8f * playerStats.eq.Items[38]), false, true);
+            TakeDamage(attackDamage * (0.42f + 0.84f * playerStats.eq.Items[38]), false, true);
         playerStats.GainPoison(attackPoison);
     }
 
@@ -274,7 +274,7 @@ public class Enemy : MonoBehaviour
         Push.rotation = other.transform.rotation;
         if (!collidedBullet.AoE)
         {   
-            temp = collidedBullet.force * collidedBullet.mass / tenacity;
+            temp = collidedBullet.force * collidedBullet.mass / tenacity; temp *= 0.5f;
             Body.AddForce(Push.up * temp, ForceMode2D.Impulse);
             //armor *= 1 - (collidedBullet.armorShred * 1.6f / (1f + 0.03f * weight));
             vulnerable += collidedBullet.vulnerableApplied * 1.6f / (1f + 0.03f * weight);
@@ -480,9 +480,9 @@ public class Enemy : MonoBehaviour
 
     void DoTproc()
     {
-        temp = 2.2f + DoT * 0.22f;
+        temp = 2.5f + DoT * 0.25f;
         if (playerStats.eq.Items[58] > 0)
-            DoT -= temp / (1f + 0.13f * playerStats.eq.Items[58] + 0.01f * playerStats.eq.Items[58] * playerStats.eq.Items[58]);
+            DoT -= temp / (1f + 0.13f * playerStats.eq.Items[58] + 0.02f * playerStats.eq.Items[58] * playerStats.eq.Items[58]);
         else DoT -= temp;
         TakePoisonDamage(temp);
     }

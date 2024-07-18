@@ -105,7 +105,7 @@ public class Engineer : MonoBehaviour
     {
         if (turretCooldown <= 0f)
         {
-            turretMaxCooldown = turretBaseCooldown / playerStats.cooldownReduction; ;
+            turretMaxCooldown = turretBaseCooldown / playerStats.cooldownReduction;
             turretCooldown = turretMaxCooldown;
 
             turretCount = 0;
@@ -147,11 +147,6 @@ public class Engineer : MonoBehaviour
         {
             bulletFired.damage *= 1f + 0.025f * turretCount;
             turretFireRate /= 1.033f;
-        }
-        if (ability1Perks[2])
-        {
-            bulletFired.penetration += 0.15f;
-            bulletFired.armorShred += 0.012f;
         }
     }
 

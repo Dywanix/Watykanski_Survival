@@ -44,8 +44,6 @@ public class PulletFire : MonoBehaviour
         BulletsShards.incendiary = ThisBullet.incendiary;
         BulletsShards.curse = ThisBullet.curse;
         BulletsShards.damageGain = ThisBullet.damageGain;
-        BulletsShards.penetration = ThisBullet.penetration;
-        BulletsShards.armorShred = ThisBullet.armorShred;
         BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied;
         BulletsShards.slowDuration = ThisBullet.slowDuration;
         BulletsShards.stunDuration = ThisBullet.stunDuration;

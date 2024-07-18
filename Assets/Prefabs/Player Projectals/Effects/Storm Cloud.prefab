@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   enemyBody: {fileID: 0}
-  movementSpeed: 8
+  movementSpeed: 9
 --- !u!114 &4756102971473323467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionRadius: {fileID: 0}
+  BonusEffects: {fileID: 0}
   ShardExplosion: {fileID: 0}
   duration: 14
   falloff: 100

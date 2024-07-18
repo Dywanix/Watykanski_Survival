@@ -29,6 +29,7 @@ public class Equipment : MonoBehaviour
     public float[] freeBulletCharges, peacemakerCharges, boomerangCharges, waveCharges, laserCharges, orbCharges;
     public float rainbowCharges;
     public float onHitIncrease, onHitBonus;
+    public float peacemakerEff, boomerangEff, laserEff;
     public int specialBullet;
     public MultipleBullets waveBullet;
     public PulletTick LaserTick;
@@ -240,11 +241,18 @@ public class Equipment : MonoBehaviour
             case 16:
                 playerStats.additionalCritChance += 0.04f;
                 break;
+            case 17:
+                playerStats.additionalCritChance += 0.04f;
+                break;
             case 18:
-                guns[equipped].specialBulletChance[1] += 0.06f;
+                guns[equipped].specialBulletChance[1] += 0.05f;
                 break;
             case 19:
                 guns[equipped].specialBulletChance[2] += 0.05f;
+                break;
+            case 20:
+                playerStats.luck += 2;
+                playerStats.map.luck += 2;
                 break;
             case 21:
                 playerStats.GainDMG(0.06f);
@@ -255,6 +263,10 @@ public class Equipment : MonoBehaviour
                 break;
             case 23:
                 playerStats.GainGold(14f);
+                break;
+            case 24:
+                playerStats.luck += 1;
+                playerStats.map.luck += 1;
                 break;
             case 25:
                 playerStats.GainDMG(0.06f);
@@ -300,12 +312,15 @@ public class Equipment : MonoBehaviour
                 break;
             case 40:
                 guns[equipped].peacemaker += 0.6f;
+                peacemakerEff += 1f;
                 break;
             case 41:
                 guns[equipped].boomerang += 0.6f;
+                boomerangEff += 1f;
                 break;
             case 42:
                 guns[equipped].laser += 0.45f;
+                laserEff += 1.5f;
                 break;
             case 43:
                 guns[equipped].peacemaker += 0.3f;
@@ -374,10 +389,10 @@ public class Equipment : MonoBehaviour
                 break;
             case 57:
                 guns[equipped].laser += 0.6f;
-                onHitBonus += 0.05f;
+                onHitBonus += 0.06f;
                 if (Items[which] == 1)
                 {
-                    guns[equipped].laser += 0.2f;
+                    guns[equipped].laser += 0.24f;
                     onHitBonus -= 0.03f;
                 }
                 break;
@@ -588,7 +603,7 @@ public class Equipment : MonoBehaviour
                 effectMaxCooldown[4] *= 0.91f;
                 break;
             case (5, 1):
-                effectMaxCooldown[5] = 18f;
+                effectMaxCooldown[5] = 17.5f;
                 effectCooldown[5] = 1f + effectMaxCooldown[5] * 0.5f;
                 cloudDuration = 12f;
                 cloudSpeed = 8f;
@@ -651,14 +666,17 @@ public class Equipment : MonoBehaviour
             case (7, 2):
                 effectMaxCooldown[7] *= 0.89f;
                 guns[equipped].peacemaker += 0.16f;
+                peacemakerEff += 0.08f;
                 break;
             case (7, 3):
                 effectMaxCooldown[7] *= 0.88f;
                 guns[equipped].boomerang += 0.16f;
+                boomerangEff += 0.08f;
                 break;
             case (7, 4):
                 effectMaxCooldown[7] *= 0.87f;
                 guns[equipped].laser += 0.16f;
+                laserEff += 0.08f;
                 break;
             case (7, 5):
                 effectMaxCooldown[7] *= 0.86f;
@@ -670,7 +688,9 @@ public class Equipment : MonoBehaviour
             case (7, 7):
                 effectMaxCooldown[7] *= 0.92f;
                 guns[equipped].peacemaker += 0.12f;
+                peacemakerEff += 0.06f;
                 guns[equipped].boomerang += 0.12f;
+                boomerangEff += 0.06f;
                 break;
             case (8, 1):
                 effectMaxCooldown[8] = 0.7f;
@@ -686,8 +706,8 @@ public class Equipment : MonoBehaviour
                 ToxicCloud = ToxicMediumArea;
                 break;
             case (8, 4):
-                playerStats.GainMS(0.06f);
-                toxicMovementProc += 0.3f;
+                playerStats.GainMS(0.062f);
+                toxicMovementProc += 0.33f;
                 break;
             case (8, 5):
                 toxicDamage += 3.2f;
@@ -721,17 +741,17 @@ public class Equipment : MonoBehaviour
         onHitIncrease *= 1f + onHitBonus;
 
         peacemakerCharges[equipped] += efficiency * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].peacemaker * guns[equipped].BulletsFired() * onHitIncrease;
-        while (peacemakerCharges[equipped] >= 11.2f)
+        while (peacemakerCharges[equipped] >= 11.2f + guns[equipped].peacemaker)
         {
             FirePeacemaker();
-            peacemakerCharges[equipped] -= 11.2f;
+            peacemakerCharges[equipped] -= 11.2f + guns[equipped].peacemaker;
         }
 
         boomerangCharges[equipped] += efficiency * (1f + 0.12f * guns[equipped].fireRate) * guns[equipped].boomerang * onHitIncrease;
-        while (boomerangCharges[equipped] >= 10f)
+        while (boomerangCharges[equipped] >= 10f + guns[equipped].boomerang)
         {
             FireBoomerang();
-            boomerangCharges[equipped] -= 10f;
+            boomerangCharges[equipped] -= 10f + guns[equipped].boomerang;
         }
 
         laserCharges[equipped] += efficiency * (1f + 0.05f * guns[equipped].fireRate) * guns[equipped].laser * onHitIncrease;
@@ -762,12 +782,17 @@ public class Equipment : MonoBehaviour
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         playerStats.SetBullet(1f, true);
         playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+        playerStats.firedBullet.damage *= 1f + 0.06f * guns[equipped].peacemaker;
         playerStats.firedBullet.falloff += 0.4f + 0.4f * playerStats.firedBullet.falloff;
-        playerStats.firedBullet.duration = 0.4f + 0.4f * playerStats.firedBullet.duration;
+        playerStats.firedBullet.duration += 0.4f + 0.4f * playerStats.firedBullet.duration;
 
-        playerStats.firedBullet.damage *= 1.42f + 0.05f * Items[40] + (0.18f + 0.05f * Items[40]) * playerStats.firedBullet.pierce;
-        playerStats.firedBullet.pierceEfficiency += 0.14f + 0.16f * playerStats.firedBullet.pierce + 0.02f * Items[40];
-        playerStats.firedBullet.pierce = 6 + Items[40];
+        playerStats.firedBullet.damage *= 1.42f + 0.05f * peacemakerEff + (0.18f + 0.05f * peacemakerEff) * playerStats.firedBullet.pierce;
+        playerStats.firedBullet.pierceEfficiency += 0.14f + 0.16f * playerStats.firedBullet.pierce + 0.016f * peacemakerEff;
+        playerStats.firedBullet.pierce = 6;
+        for (float i = 0f; i < peacemakerEff * 1.2f + guns[equipped].peacemaker * 0.9f; i += 1f)
+        {
+            playerStats.firedBullet.pierce++;
+        }
     }
 
     void FireBoomerang()
@@ -785,12 +810,17 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
             playerStats.SetBullet(1f, true);
             playerStats.firedBullet.damage *= guns[equipped].onHitModifier;
+            playerStats.firedBullet.damage *= 1f + 0.08f * guns[equipped].boomerang;
             playerStats.firedBullet.falloff = 44f;
             playerStats.firedBullet.duration = 55f;
 
-            playerStats.firedBullet.damage *= 1.12f + 0.05f * Items[41] + (0.07f + 0.03f * Items[41]) * playerStats.firedBullet.pierce + (0.4f + 0.12f * Items[41]) * playerStats.firedBullet.pierceEfficiency;
-            playerStats.firedBullet.pierce += 7 + 2 * Items[41];
-            playerStats.firedBullet.pierceEfficiency = 0.7f + 0.02f * Items[41] + (0.5f + 0.02f * Items[41]) * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.damage *= 1.12f + 0.08f * boomerangEff + (0.07f + 0.03f * boomerangEff) * playerStats.firedBullet.pierce + (0.4f + 0.12f * boomerangEff) * playerStats.firedBullet.pierceEfficiency;
+            playerStats.firedBullet.pierce += 7;
+            for (float j = 0f; j < boomerangEff * 1.6f + guns[equipped].boomerang * 0.6f; j += 1f)
+            {
+                playerStats.firedBullet.pierce++;
+            }
+            playerStats.firedBullet.pierceEfficiency = 0.7f + 0.02f * boomerangEff + (0.5f + 0.02f * boomerangEff) * playerStats.firedBullet.pierceEfficiency;
         }
     }
 
@@ -827,11 +857,11 @@ public class Equipment : MonoBehaviour
             playerStats.firedBullet.falloff = 0.13f;
             playerStats.firedBullet.duration = 0.16f;
 
-            playerStats.firedBullet.damage *= 0.45f + 0.045f * Items[42] + (0.033f + 0.018f * Items[42]) * playerStats.firedBullet.pierce +
-                (0.08f + 0.044f * Items[42]) * playerStats.firedBullet.pierceEfficiency + (0.066f + 0.075f * Items[42]) * playerStats.firedBullet.shatter;
+            playerStats.firedBullet.damage *= 0.45f + 0.03f * laserEff + (0.033f + 0.012f * laserEff) * playerStats.firedBullet.pierce +
+                (0.08f + 0.03f * laserEff) * playerStats.firedBullet.pierceEfficiency + (0.066f + 0.05f * laserEff) * playerStats.firedBullet.shatter;
             playerStats.firedBullet.pierce = 15;
             playerStats.firedBullet.pierceEfficiency = 1f;
-            playerStats.firedBullet.shatter += 0.58f + 0.06f * Items[42] + (0.2f + 0.3f * Items[42]) * playerStats.firedBullet.shatter;
+            playerStats.firedBullet.shatter += 0.58f + 0.04f * laserEff + (0.2f + 0.2f * laserEff) * playerStats.firedBullet.shatter;
 
             if (Items[61] > 0)
             {
@@ -902,6 +932,11 @@ public class Equipment : MonoBehaviour
         bullet_body.AddForce(playerStats.Barrel.up * guns[equipped].force * Random.Range(0.99f, 1.01f), ForceMode2D.Impulse);
         playerStats.firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
         playerStats.SetBullet(1f);
+        if (playerStats.effectOn[1] && Items[18] > 0)
+        {
+            playerStats.firedPlasma = bullet.GetComponent(typeof(Plasma)) as Plasma;
+            playerStats.firedPlasma.bulletCount += Items[18];
+        }
     }
 
     void GainEffect(int which)
@@ -945,7 +980,7 @@ public class Equipment : MonoBehaviour
     public void Discharge(float shieldLost)
     {
         temp = 5f + Items[11] + shieldLost;
-        temp *= (1.3f + 0.026f * playerStats.level) * Items[11];
+        temp *= (1.4f + 0.028f * playerStats.level) * Items[11];
 
         GameObject bullet = Instantiate(DischargeObject, Barrel.position, Barrel.rotation);
 
@@ -1138,7 +1173,7 @@ public class Equipment : MonoBehaviour
 
     void OnHitEffect()
     {
-        temp = onHitBase * (1.59f + 0.85f / guns[equipped].fireRate);
+        temp = onHitBase * (1.66f + 0.93f / guns[equipped].fireRate);
         onHitIncrease = 1f + onHitBonus;
 
         peacemakerCharges[equipped] += temp * (1f + 0.24f * guns[equipped].fireRate) * guns[equipped].BulletsFired() * onHitIncrease;
@@ -1150,7 +1185,7 @@ public class Equipment : MonoBehaviour
         if (rainbowOnHit)
             rainbowCharges += temp * onHitIncrease * (1f + guns[equipped].TotalSpecialChance());
 
-        temp = onHitProc * (1.26f + 0.86f / guns[equipped].fireRate);
+        temp = onHitProc * (1.33f + 0.93f / guns[equipped].fireRate);
         OnHit(temp);
 
         effectCooldown[7] += effectMaxCooldown[7];
@@ -1172,9 +1207,14 @@ public class Equipment : MonoBehaviour
 
     public void BigFard()
     {
-        for (int i = 0; i < 6; i++)
+        tempi = 6;
+        for (float i = 0f; i < playerStats.movementSpeed; i += 0.3f)
         {
-            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Random.Range(0f, 20f) + i * 60f);
+            tempi++;
+        }
+        for (int i = 0; i < tempi; i++)
+        {
+            Barrel.rotation = Quaternion.Euler(Barrel.rotation.x, Barrel.rotation.y, Random.Range(0f, 20f) + i * (360f / tempi));
             GameObject cloud = Instantiate(ToxicCloud, Barrel.position, Barrel.rotation);
             Rigidbody2D cloud_body = cloud.GetComponent<Rigidbody2D>();
             cloud_body.AddForce(Barrel.up * Random.Range(3.6f, 3.84f), ForceMode2D.Impulse);

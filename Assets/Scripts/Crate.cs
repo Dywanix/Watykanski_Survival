@@ -35,7 +35,7 @@ public class Crate : MonoBehaviour
         {
             collidedBullet = other.GetComponent(typeof(Bullet)) as Bullet;
             if (!collidedBullet.AoE)
-                TakeDamage(collidedBullet.damage * (1f + collidedBullet.penetration), collidedBullet.crit);
+                TakeDamage(collidedBullet.damage, collidedBullet.crit);
             collidedBullet.Struck();
         }
     }

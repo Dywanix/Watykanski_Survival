@@ -83,7 +83,7 @@ public class CameraController : MonoBehaviour
 	{ //capture values set for where it's called
 		shaking = true; //to know whether it's shaking
 		shakeVector = direction; //direction to shake towards
-		shakeMag = magnitude; //how far in that direction
-		shakeTimeEnd = Time.time + length; //how long to shake
+		shakeMag = magnitude * 0.8f; //how far in that direction
+		shakeTimeEnd = Time.time + length * 0.75f; //how long to shake
 	}
 }

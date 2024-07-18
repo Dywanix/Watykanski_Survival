@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: health
-      value: 120
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: ranged
@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: maxHealth
-      value: 120
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: itemChance
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: movementSpeed
-      value: 2.4
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 2172242762830156801, guid: e7fb49df0266b0c46a9a915527e35dda, type: 3}
       propertyPath: aimingMovement

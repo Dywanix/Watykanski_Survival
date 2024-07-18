@@ -77,11 +77,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: health
-      value: 69
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
+      propertyPath: weight
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: maxHealth
-      value: 69
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: itemChance
@@ -105,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: movementSpeed
-      value: 2.7
+      value: 2.36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}

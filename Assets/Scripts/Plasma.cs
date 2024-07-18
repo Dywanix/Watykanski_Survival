@@ -23,7 +23,7 @@ public class Plasma : MonoBehaviour
             damageEfficiency = 0.8f;
             ThisBullet.vulnerableApplied = 0.0035f * ThisBullet.damage;
         }
-        else damageEfficiency = 0.51f + 0.09f * bulletCount;
+        //else damageEfficiency = 0.51f + 0.09f * bulletCount;
 
         Invoke("Shatter", delay);
     }
@@ -84,8 +84,6 @@ public class Plasma : MonoBehaviour
         BulletsShards.incendiary = ThisBullet.incendiary;
         BulletsShards.curse = ThisBullet.curse;
         BulletsShards.damageGain = ThisBullet.damageGain;
-        BulletsShards.penetration = ThisBullet.penetration;
-        BulletsShards.armorShred = ThisBullet.armorShred * damageEfficiency;
         BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied * damageEfficiency;
         BulletsShards.slowDuration = ThisBullet.slowDuration * damageEfficiency;
         BulletsShards.stunDuration = ThisBullet.stunDuration;

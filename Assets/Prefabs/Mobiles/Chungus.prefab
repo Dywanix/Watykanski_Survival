@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: health
-      value: 498
+      value: 398
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: weight
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: maxHealth
-      value: 498
+      value: 398
       objectReference: {fileID: 0}
     - target: {fileID: 7426346785319392265, guid: f8047f77519e8a440b5b8d008384dbb9, type: 3}
       propertyPath: itemChance

@@ -324,7 +324,6 @@ public class PlayerControllerLobby : MonoBehaviour
         firedBullet.incendiary = guns[currentClass].incendiary;
         firedBullet.curse = guns[currentClass].curse;
         firedBullet.damageGain = guns[currentClass].damageGain;
-        firedBullet.armorShred = guns[currentClass].armorShred;
         firedBullet.vulnerableApplied = guns[currentClass].vulnerableApplied;
         firedBullet.slowDuration = guns[currentClass].slowDuration;
         firedBullet.stunDuration = guns[currentClass].stunDuration;
@@ -335,7 +334,6 @@ public class PlayerControllerLobby : MonoBehaviour
         if (guns[currentClass].critChance >= Random.Range(0f, 1f))
         {
             firedBullet.damage *= guns[currentClass].critDamage;
-            firedBullet.armorShred *= 0.6f + guns[currentClass].critDamage * 0.4f;
             firedBullet.vulnerableApplied *= 0.6f + guns[currentClass].critDamage * 0.4f;
             firedBullet.slowDuration *= 0.7f + guns[currentClass].critDamage * 0.3f;
             firedBullet.mass *= 0.8f + guns[currentClass].critDamage * 0.5f;

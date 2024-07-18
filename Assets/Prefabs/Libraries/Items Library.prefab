@@ -101,8 +101,8 @@ MonoBehaviour:
   EffectTooltips:
   - Leave Toxic Cloud behind while moving that applies DoT
   - Increase Base DoT by 2,4
-  - Increase Cloud Area by 30% & Duration by 25%
-  - Increase Movement Speed by 6% & Increase DoT applied with Movement Speed
+  - Increase Cloud Area by 32% & Duration by 25%
+  - Increase Movement Speed by 6,2% & Increase DoT applied with Movement Speed
   - Increase Base Dot by 3,2
   - Increase Frequency by 15%, Cloud also applies Vulnerable
   - Increase Frequency by 5%, using Dash also fires 6 Clouds
@@ -405,7 +405,7 @@ MonoBehaviour:
   - Increase Max Health by 8. Gain +1% Damage for every 8 Max Health above 60
   - Reduces Dash Cooldown by 4%. Using Dash fires a wave of Bullets
   - Increase Gun Accuracy & Range by 15% & Increase Vision Range
-  - Increase Damage by 4%. Gain 1 Gold Every 6th Enemy slained
+  - Increase Damage by 4%. Gain 1 Gold Every 5th Enemy slained
   - Increase Shield Capacity by 3. Losing Shield deals Damage to nearby Enemies
   - Fire additional parallel Bullet
   - Increase Magazine Size by 20%. Using Dash Reloads 1/9 Magazine
@@ -413,14 +413,15 @@ MonoBehaviour:
     some Shield (has cooldown)
   - Reduce Grenade Cooldown by 10%. Gredandes deal 20% more Damage.
   - Increase Crit Chance by 4%. Gun Crits gain +1 Pierce
-  - Increase On-Hit Rate, increased further with higher Crit Chance
+  - Increase Crit Chance by 4% & On-Hit Rate, increased further with higher Crit
+    Chance
   - Gain chance to fire Plasma Bullet. Increase effectivness of Plasma Bullets
   - Gain chance to fire Explosive Bullet. Increase effectivness of Explosive Bullets
   - Increase Chance for Special Bullets by 14%
   - Increase Damage by 6% & Bullets Speed by 18%
   - Increase Gun Crit Damage by 15%. Every non-crit increaes Chance for next shot
   - Increase Gold gained by 10% & Gain 14 Gold
-  - Gun has a 15% Chance to Fire additional time
+  - Gun has a 16% Chance to Fire additional time
   - Increase Damage, Fire Rate & Movement Speed by 6%
   - Increase Shield Capacity by 3. Grenades deal (5 + 30% Shield Capacity)% more
     Damage
@@ -435,7 +436,7 @@ MonoBehaviour:
   - Increase Max Health with Enemy slained
   - Speeds up Item activation rate by 18%
   - Picking up Gold also gives 5XP
-  - Reduce Damage taken by 10% & deal back to melee attackers
+  - Reduce Damage taken by 11% & deal back to melee attackers
   - Increase Magazine Size by 20% & Fire Rate by 7%
   - Gain Peacemaker On-hit. Increase effectivness of Peacemaker
   - Gain Boomerang On-hit. Increase effectivness of Boomerang

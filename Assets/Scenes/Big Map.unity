@@ -59025,10 +59025,10 @@ MonoBehaviour:
   MagnetObject: {fileID: 6200031967086673338, guid: 7288ac361ab3c224cbce74faadfd8d6d, type: 3}
   active: 0
   round: 0
-  strength: 111
+  strength: 126
   minSpawn: 0
   maxSpawn: 1
-  mobsStrength: 03000000040000000500000006000000080000000a000000
+  mobsStrength: 02000000040000000500000006000000080000000a000000
   elitesStrength: 28000000
   roll: 0
   tempi: 0
@@ -63722,7 +63722,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 6b04b92d95c1284449ee41b5442989ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

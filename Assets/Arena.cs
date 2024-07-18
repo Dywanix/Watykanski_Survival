@@ -33,11 +33,11 @@ public class Arena : MonoBehaviour
             delay -= Time.deltaTime;
             if (delay < 0f)
             {
-                if (GameObject.FindGameObjectsWithTag("Enemy").Length > 50)
+                if (GameObject.FindGameObjectsWithTag("Enemy").Length > 60)
                 {
-                    Elite(6);
+                    Elite(7);
                     delay += 3.6f * frequency;
-                    rest -= 2;
+                    rest -= 3;
                 }
                 else
                 {
