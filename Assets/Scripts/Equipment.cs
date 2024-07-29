@@ -63,7 +63,7 @@ public class Equipment : MonoBehaviour
 
     void Start()
     {
-        playerStats.gunImage.sprite = guns[equipped].gunSprite;
+        //playerStats.gunImage.sprite = guns[equipped].gunSprite;
         equippedGun.sprite = guns[equipped].holdingSprite;
         playerStats.DisplayAmmo();
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent(typeof(Camera)) as Camera;

@@ -36,11 +36,16 @@ public class PlayerController : MonoBehaviour
     CameraController Cam;
     public float task, taskMax;
 
-    [Header("Stats")]
+    [Header("Core Stats")]
     public float maxHealth;
-    public float dHealth, health, poison, poisonCap,
-    damageBonus, fireRateBonus, baseMovementSpeed, movementSpeed, additionalCritChance, additionalCritDamage, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown, dashCooldown, dashMaxCharges, dashCharges,
-    grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, grenadeLevelScaling, throwRange, grenadeBaseCooldown, grenadeMaxCooldown, grenadeCooldown, dash, lootLuck, bonusSpecialChance, magnetizing;
+    public float damageBonus, fireRateBonus, movementSpeed, healthRegen, areaSizeBonus, durationBonus, experienceBonus, pickUpRadiusBonus, CritChance, CritDamage;
+    public int projectileCountBonus, armor;
+
+    [Header("Stats")]
+    public float dHealth;
+    public float health, poison, poisonCap, baseMovementSpeed, additionalCritChance, additionalCritDamage, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown,
+    dashCooldown, dashMaxCharges, dashCharges, grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, grenadeLevelScaling, throwRange, grenadeBaseCooldown, grenadeMaxCooldown,
+    grenadeCooldown, dash, lootLuck, bonusSpecialChance, magnetizing;
     public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel, totalSlained;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
@@ -183,7 +188,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                task -= Time.deltaTime * SpeedMultiplyer(1f);
+                /*task -= Time.deltaTime * SpeedMultiplyer(1f);
                 taskImage.fillAmount = 1 - (task / taskMax);
                 reloadImage.fillAmount = 1 - (task / taskMax);
                 if (Input.GetMouseButtonDown(0) && reloading && eq.guns[eq.equipped].bulletsLeft > 0)
@@ -193,7 +198,7 @@ public class PlayerController : MonoBehaviour
                     //NewTask(0.1f);
                     Shoot(0f);
                     NewTask(eq.guns[eq.equipped].fireRate);
-                }
+                }*/
             }
         }
         else move = new Vector2(0, 0);

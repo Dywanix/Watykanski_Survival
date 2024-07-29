@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
             travelX = (TargetedLocation.position.x - transform.position.x) / duration;
             travelY = (TargetedLocation.position.y - transform.position.y) / duration;
         }
-        Invoke("Fall", falloff);
+        //Invoke("Fall", falloff);
         Invoke("End", duration);
     }
 
