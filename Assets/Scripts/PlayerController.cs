@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public Backpack bp;
+    public Gear ge;
     public Map map;
 
     [Header("UI")]
@@ -103,8 +104,8 @@ public class PlayerController : MonoBehaviour
         GainTools(0);
         //GainKeys(0);
         dash = 0f;
-        Invoke("Tick", 10f);
-        if (eq.gambler)
+        Invoke("Tick", 0.5f);
+        /*if (eq.gambler)
         {
             temp = 56.8f;
             while (temp > 0f)
@@ -153,7 +154,7 @@ public class PlayerController : MonoBehaviour
                     eq.PickUpEffect(i);
                 }
             }
-        }
+        }*/
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
         expRequired = 30;
@@ -412,7 +413,8 @@ public class PlayerController : MonoBehaviour
     {
         if (eq.Items[6] > 0)
             RestoreHealth(0.01f * maxHealth * eq.Items[6]);
-        Invoke("Tick", 7.5f);
+        RestoreHealth(healthRegen * 0.5f);
+        Invoke("Tick", 0.5f);
     }
 
     void GetInput()
@@ -1439,9 +1441,10 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0f;
         //skillPoints++;
         //SkillPointAviable.SetActive(true);
-        if (level % 3 == 0) //if (level % 3 == 0 || level % 10 == 0)
-            map.ChoosePrize(3);
-        else SetReward();
+        //if (level % 3 == 0) //if (level % 3 == 0 || level % 10 == 0)
+        //map.ChoosePrize(3);
+        //else SetReward();
+        map.SetReward();
         LevelInfo.text = level.ToString("0");
         if (eq.Items[33] > 0)
             GainSC(eq.Items[33] * 0.6f);
@@ -1472,26 +1475,41 @@ public class PlayerController : MonoBehaviour
         switch (which)
         {
             case 0:
-                GainHP(8);
+                GainHP(20);
                 break;
             case 1:
-                GainDMG(0.04f);
+                GainDMG(0.1f);
                 break;
             case 2:
-                GainFR(0.04f);
+                GainFR(0.1f);
                 break;
             case 3:
-                GainMS(0.04f);
+                GainMS(0.1f);
                 break;
             case 4:
-                GainCR(0.06f);
+                projectileCountBonus++;
                 break;
             case 5:
-                GainSC(3);
+                healthRegen += 0.5f;
                 break;
             case 6:
-                additionalCritChance += 0.02f;
-                additionalCritDamage += 0.03f;
+                areaSizeBonus += 0.11f;
+                break;
+            case 7:
+                durationBonus += 0.12f;
+                break;
+            case 8:
+                armor += 4;
+                break;
+            case 9:
+                experienceBonus += 0.1f;
+                break;
+            case 10:
+                pickUpRadiusBonus += 0.25f;
+                break;
+            case 11:
+                CritChance += 0.06f;
+                CritDamage += 0.06f;
                 break;
         }
     }

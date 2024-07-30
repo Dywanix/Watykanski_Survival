@@ -67,9 +67,9 @@ public class Equipment : MonoBehaviour
         equippedGun.sprite = guns[equipped].holdingSprite;
         playerStats.DisplayAmmo();
         playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent(typeof(Camera)) as Camera;
-        if (gambler)
+        /*if (gambler)
         {
-            /*tempi = 3;
+            tempi = 3;
             while (tempi > 0)
             {
                 roll = Random.Range(0, ILibrary.ItemSprite.Length);
@@ -78,10 +78,10 @@ public class Equipment : MonoBehaviour
                     PickUpItem(roll);
                     tempi--;
                 }
-            }*/
+            }
             PickUpItem(Random.Range(0, ILibrary.ItemSprite.Length));
             PickUpEffect(Random.Range(0, ILibrary.Effects.Length));
-        }
+        }*/
         //Invoke("AutoReload", 3f);
         //Invoke("ThrowCaltrops", 8f);
         //Invoke("KnifeThrow", 2.85f);

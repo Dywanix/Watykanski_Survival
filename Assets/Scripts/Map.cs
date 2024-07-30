@@ -76,6 +76,11 @@ public class Map : MonoBehaviour
         Prizes.Open(rarity);
     }
 
+    public void SetReward()
+    {
+        Prizes.SetRewards();
+    }
+
     public void GunPrize()
     {
         playerStats.free = false;

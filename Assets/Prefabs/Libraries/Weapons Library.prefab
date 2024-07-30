@@ -1,5 +1,72 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &122958652034049857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5558306439834921740}
+  - component: {fileID: 508092388873687557}
+  m_Layer: 0
+  m_Name: Shotgun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5558306439834921740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122958652034049857}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193775814922914142}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &508092388873687557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122958652034049857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc5e017b048ea44981d89fb06133da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSprite: {fileID: 21300000, guid: 753dcdecfc22b6847a0ed7855a87f485, type: 3}
+  Tooltip1:
+  - 
+  - 'Fire Rate: 2.65s >> 2.2s'
+  - 'Damage: 32 >> 39'
+  - 'Damage: 39 >> 44'
+  - 'Damage: 4 >> 46'
+  - 
+  Tooltip2:
+  - Fire wave of Bullets
+  - 'Projectile Count: 3 >> 4'
+  - 'Fire Rate: 2.2s >> 2s'
+  - 'Projectile Count: 4 >> 5'
+  - 'Fire Rate: 2s >> 1.4s'
+  - Fire 2nd time with -1 Projectile Count
+  Tooltip3:
+  - 
+  - 'Ammo: 12 >> 13'
+  - 'Reload Time: 0.22s/1 >> 0.18s/1'
+  - 'Ammo: 13 >> 14'
+  - 'Reload Time: 0.18s/1 >> 0.18s/2'
+  - 
+  ammoless: 0
 --- !u!1 &1488303164413694082
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +97,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 436145830484434517}
+  - {fileID: 1193775814922914142}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,9 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81dc600cad4d2b24ca61fab14f958b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseWeapons:
+  Weapons:
   - {fileID: 3534380680576368770}
-  Weapons: []
+  - {fileID: 508092388873687557}
+  possibleToCollect: 01000000
 --- !u!1 &3790812077637957187
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,19 +195,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponSprite: {fileID: 21300000, guid: 742fe048c04397c4496548e5cdde103d, type: 3}
   Tooltip1:
-  - Fire Bullets in cursor Direction with increased chance for Crit and its Damage
+  - 
   - 'Damage: 29 >> 36'
   - 'Fire Rate: 0.72s >> 0.54s'
   - 'Projectile Count: 1 >> 2'
   - 'Damage: 36 >> 46'
-  - Crits now Gain +2 Pierce with 66% Pass-through Damage
-  Tooltip2:
   - 
+  Tooltip2:
+  - Fire Bullets in cursor Direction with increased chance for Crit and its Damage
   - 'Crit Damage: +10% >> +15%'
   - 'Crit Chance: +10% >> +15%'
   - 'Ammo: 6 >> 7'
   - 'Fire Rate: 0.54s >> 0.49s'
-  - 
+  - Crits now Gain +2 Pierce with 66% Pass-through Damage
   Tooltip3:
   - 
   - 
@@ -146,3 +215,36 @@ MonoBehaviour:
   - 'Reload Time: 0.5s >> 0.4s'
   - 'Crit Damage: +15% >> +20%'
   - 
+  ammoless: 0
+--- !u!1 &7516651053137476393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193775814922914142}
+  m_Layer: 0
+  m_Name: Collectible Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1193775814922914142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7516651053137476393}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5558306439834921740}
+  m_Father: {fileID: 5655256963641278598}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

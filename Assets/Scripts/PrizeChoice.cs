@@ -5,27 +5,139 @@ using UnityEngine.UI;
 
 public class PrizeChoice : MonoBehaviour
 {
+    [Header("Scripts")]
     public Map map;
     public AccessoryLibrary AccLib;
     public ItemsLibrary ItemLib;
     public PlayerController playerStats;
+    public WeaponsLibrary WeaponLib;
+
+    [Header("UI")]
     public GameObject Hud;
     public Image[] ChoicesBackground, Choices;
-    public TMPro.TextMeshProUGUI[] Tooltips, Levels;
+    public TMPro.TextMeshProUGUI[] Tooltips, Tooltips2, Tooltips3, Levels;
     public Sprite BaseBG, RareBG, ItemBG, EffectBG;
     //public int accessoryChance;
 
     [Header("Stats")]
     public Sprite[] StatSprites;
     public string[] StatTooltips;
+    public float statWeight, weaponWeight, totalWeight;
 
     public int[] rolls; //accessories, items;
+    public int roll;
+    public bool[] stats;
+    private bool viable;
     int Rarity;
+
+    void Start()
+    {
+        totalWeight = statWeight + weaponWeight;
+    }
 
     void Update()
     {
         if (!playerStats)
             playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(PlayerController)) as PlayerController;
+    }
+
+    public void SetRewards()
+    {
+        playerStats.free = false;
+        playerStats.menuOpened = true;
+        Hud.SetActive(true);
+
+        for (int i = 0; i < 3; i++)
+        {
+            SetReward(i);
+        }
+
+        DisplayRewards();
+    }
+
+    void SetReward(int which)
+    {
+        viable = false;
+        do
+        {
+            if (statWeight > Random.Range(0, totalWeight))
+            {
+                stats[which] = true;
+                rolls[which] = Random.Range(0, StatSprites.Length);
+                if (which == 1)
+                {
+                    if (stats[0] && rolls[0] == rolls[which])
+                        viable = false;
+                    else viable = true;
+                }
+                else if (which == 2)
+                {
+                    if ((stats[0] && rolls[0] == rolls[which]) || (stats[1] && rolls[1] == rolls[which]))
+                        viable = false;
+                    else viable = true;
+                }
+                else viable = true;
+            }
+            else
+            {
+                stats[which] = false;
+                roll = Random.Range(0, WeaponLib.possibleToCollect.Length + 1);
+                if (roll == WeaponLib.possibleToCollect.Length)
+                    rolls[which] = playerStats.ge.startingWeapon;
+                else rolls[which] = WeaponLib.possibleToCollect[roll];
+                if (which == 0)
+                {
+                    if (playerStats.ge.Weapons[rolls[which]] < 6)
+                        viable = true;
+                    else viable = false;
+                }
+                else if (which == 1)
+                {
+                    if (playerStats.ge.Weapons[rolls[which]] < 6)
+                    {
+                        if (!stats[0] && rolls[0] == rolls[which])
+                            viable = false;
+                        else viable = true;
+                    }
+                    else viable = false;
+                }
+                else if (which == 2)
+                {
+                    if (playerStats.ge.Weapons[rolls[which]] < 6)
+                    {
+                        if ((!stats[0] && rolls[0] == rolls[which]) || (!stats[1] && rolls[1] == rolls[which]))
+                            viable = false;
+                        else viable = true;
+                    }
+                    else viable = false;
+                }
+            }
+        } while (!viable);
+    }
+
+    void DisplayRewards()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (stats[i])
+            {
+                ChoicesBackground[i].sprite = BaseBG;
+                Choices[i].sprite = StatSprites[rolls[i]];
+                Levels[i].text = "";
+                Tooltips[i].text = "";
+                Tooltips2[i].text = StatTooltips[rolls[i]];
+                Tooltips3[i].text = "";
+            }
+            else
+            {
+                ChoicesBackground[i].sprite = RareBG;
+                Choices[i].sprite = WeaponLib.Weapons[rolls[i]].WeaponSprite;
+                Levels[i].text = playerStats.ge.Weapons[rolls[i]].ToString("0") + " >> " + (playerStats.ge.Weapons[rolls[i]] + 1).ToString("0");
+                Tooltips[i].text = WeaponLib.Weapons[rolls[i]].Tooltip1[playerStats.ge.Weapons[rolls[i]]];
+                Tooltips2[i].text = WeaponLib.Weapons[rolls[i]].Tooltip2[playerStats.ge.Weapons[rolls[i]]];
+                Tooltips3[i].text = WeaponLib.Weapons[rolls[i]].Tooltip3[playerStats.ge.Weapons[rolls[i]]];
+            }
+        }
     }
 
     public void Open(int rarity)
@@ -247,13 +359,16 @@ public class PrizeChoice : MonoBehaviour
 
     public void ChoosePrize(int choice)
     {
-        if (Rarity == 1)
+        /*if (Rarity == 1)
             playerStats.PickUpStat(rolls[choice]);
         else if (Rarity == 2)
             playerStats.eq.PickUpItem(rolls[choice]);
         else if (Rarity == 3)
             playerStats.eq.PickUpEffect(rolls[choice]);
-        else playerStats.eq.Accessories[rolls[choice]]++;
+        else playerStats.eq.Accessories[rolls[choice]]++;*/
+        if (stats[choice])
+            playerStats.PickUpStat(rolls[choice]);
+        else playerStats.ge.CollectWeapon(rolls[choice]);
         playerStats.free = true;
         playerStats.menuOpened = false;
         Time.timeScale = 1f;

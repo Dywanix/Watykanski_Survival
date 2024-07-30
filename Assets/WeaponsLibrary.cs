@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class WeaponsLibrary : MonoBehaviour
 {
-    public Weapon[] BaseWeapons, Weapons;
+    public Weapon[] Weapons;
+    public int[] possibleToCollect;
 }
