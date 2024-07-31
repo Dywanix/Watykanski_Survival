@@ -42,6 +42,20 @@ public class Gear : MonoBehaviour
     private bool shotgunUpgrade;
     private Bullet shotgunFired;
 
+    [Header("Rail Spike")]
+    public GameObject RailSpikeBullet;
+    private float railSpikeDamage, railSpikeDamageRatio, railSpikeFireRate, railSpikePierceDamage, railSpikeReloadTime, railSpikeAim;
+    private int railSpikePierce;
+    private bool railSpikeUpgrade;
+    private Bullet railSpikeFired;
+
+    [Header("Immolation")]
+    public GameObject ImmolationObject;
+    public GameObject ImmolationAoE;
+    private float immolationDamage, immolationHealthRatio;
+    public float immolationAreaSize;
+    private Bullet immolationTick;
+
     void Start()
     {
         CollectWeapon(startingWeapon);
@@ -71,7 +85,7 @@ public class Gear : MonoBehaviour
                 break;
             case (0, 3):
                 revolverFireRate = 0.54f;
-                revolverCritDamageBonus = 0.15f;
+                revolverCritChanceBonus = 0.15f;
                 break;
             case (0, 4):
                 revolverProjectileCount = 2;
@@ -85,6 +99,9 @@ public class Gear : MonoBehaviour
                 revolverCritDamageBonus = 0.2f;
                 break;
             case (0, 6):
+                revolverDamage = 48f;
+                revolverFireRate = 0.47f;
+                revolverCritChanceBonus = 0.18f;
                 revolverUpgrade = true;
                 break;
             case (1, 1):
@@ -102,7 +119,7 @@ public class Gear : MonoBehaviour
                 shotgunProjectileCount = 4;
                 MagazineSize[1] = 13;
                 Ammo[1]++;
-                WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[0].ToString("0");
+                WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[1].ToString("0");
                 break;
             case (1, 3):
                 shotgunDamage = 39f;
@@ -114,7 +131,7 @@ public class Gear : MonoBehaviour
                 shotgunProjectileCount = 5;
                 MagazineSize[1] = 14;
                 Ammo[1]++;
-                WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[0].ToString("0");
+                WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[1].ToString("0");
                 break;
             case (1, 5):
                 shotgunDamage = 46f;
@@ -122,7 +139,81 @@ public class Gear : MonoBehaviour
                 shotgunReloadCount = 2;
                 break;
             case (1, 6):
+                shotgunDamage = 48f;
+                shotgunFireRate = 1.33f;
+                shotgunReloadTime = 0.16f;
                 shotgunUpgrade = true;
+                break;
+            case (2, 1):
+                railSpikeDamage = 50f;
+                railSpikeDamageRatio = 1.04f;
+                railSpikeFireRate = 1.11f;
+                railSpikePierce = 3;
+                railSpikePierceDamage = 0.75f;
+                MagazineSize[2] = 3;
+                Ammo[2] = 3;
+                railSpikeReloadTime = 0.79f;
+                Invoke("RailSpikeCast", railSpikeFireRate / playerStats.SpeedMultiplyer(1f));
+                break;
+            case (2, 2):
+                railSpikeDamageRatio = 1.06f;
+                railSpikeFireRate = 0.98f;
+                railSpikePierceDamage = 0.8f;
+                break;
+            case (2, 3):
+                railSpikeDamage = 69f;
+                railSpikePierce = 4;
+                break;
+            case (2, 4):
+                railSpikeDamageRatio = 1.08f;
+                railSpikePierceDamage = 0.85f;
+                MagazineSize[2] = 5;
+                Ammo[2] += 2;
+                WeaponAmmo[AmmoList[2]].text = Ammo[2].ToString("0") + "/" + MagazineSize[2].ToString("0");
+                break;
+            case (2, 5):
+                railSpikeDamage = 86f;
+                railSpikeFireRate = 0.91f;
+                railSpikePierceDamage = 0.9f;
+                break;
+            case (2, 6):
+                railSpikeDamage = 90f;
+                railSpikeFireRate = 0.86f;
+                railSpikePierce = 5;
+                railSpikeReloadTime = 0.74f;
+                railSpikeUpgrade = true;
+                break;
+            case (3, 1):
+                ImmolationObject.SetActive(true);
+                immolationDamage = 1.5f;
+                immolationHealthRatio = 0.04f;
+                immolationAreaSize = 0.8f;
+                ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
+                Invoke("ImmolateCast", 0.4f);
+                break;
+            case (3, 2):
+                immolationDamage = 3f;
+                immolationAreaSize = 0.9f;
+                ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
+                break;
+            case (3, 3):
+                immolationDamage = 4f;
+                immolationHealthRatio = 0.05f;
+                break;
+            case (3, 4):
+                immolationDamage = 6f;
+                immolationAreaSize = 1f;
+                ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
+                break;
+            case (3, 5):
+                immolationHealthRatio = 0.06f;
+                immolationAreaSize = 1.15f;
+                ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
+                break;
+            case (3, 6):
+                immolationDamage = 8f;
+                immolationAreaSize = 1.25f;
+                ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
                 break;
         }
 
@@ -221,6 +312,7 @@ public class Gear : MonoBehaviour
             shotgunFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
             shotgunFired.duration = 1.4f * playerStats.durationBonus;
             shotgunFired.damage = shotgunDamage * playerStats.DamageDealtMultiplyer(1f);
+            shotgunFired.damage *= 1f + 0.08f * playerStats.projectileCountBonus;
 
             if (playerStats.CritChance > Random.Range(0f, 1f))
             {
@@ -262,5 +354,61 @@ public class Gear : MonoBehaviour
         if (Ammo[1] < MagazineSize[1])
             Invoke("ShotgunReload", shotgunReloadTime);
         else ShotgunCast();
+    }
+
+    void RailSpikeCast()
+    {
+        if (Ammo[2] > 0)
+        {
+            railSpikeAim = Random.Range(0f, 360f);
+            RailSpikeFire();
+            Ammo[2]--;
+            WeaponAmmo[AmmoList[2]].text = Ammo[2].ToString("0") + "/" + MagazineSize[2].ToString("0");
+            Invoke("RailSpikeCast", railSpikeFireRate / playerStats.SpeedMultiplyer(1f));
+        }
+        else
+            Invoke("RailSpikeReload", railSpikeReloadTime);
+    }
+
+    void RailSpikeFire()
+    {
+        tempi = 1 + playerStats.projectileCountBonus;
+        for (int i = 0; i < tempi; i++)
+        {
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + railSpikeAim + i * (360f / tempi));
+            GameObject bullet = Instantiate(RailSpikeBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * 15f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
+
+            railSpikeFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            railSpikeFired.duration = 1.75f * playerStats.durationBonus;
+            railSpikeFired.damage = railSpikeDamage * playerStats.DamageDealtMultiplyer(railSpikeDamageRatio);
+            railSpikeFired.pierce = railSpikePierce;
+            railSpikeFired.pierceEfficiency = railSpikePierceDamage;
+
+            if (playerStats.CritChance > Random.Range(0f, 1f))
+            {
+                railSpikeFired.damage *= playerStats.CritDamage;
+                railSpikeFired.crit = true;
+            }
+        }
+    }
+
+    void RailSpikeReload()
+    {
+        Ammo[2] = MagazineSize[2];
+        WeaponAmmo[AmmoList[2]].text = Ammo[2].ToString("0") + "/" + MagazineSize[2].ToString("0");
+        RailSpikeCast();
+    }
+
+    void ImmolateCast()
+    {
+        GameObject tick = Instantiate(ImmolationAoE, transform.position, transform.rotation);
+
+        immolationTick = tick.GetComponent(typeof(Bullet)) as Bullet;
+        immolationTick.damage = (immolationDamage + immolationHealthRatio * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1f);
+        tick.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
+
+        Invoke("ImmolateCast", 0.4f);
     }
 }

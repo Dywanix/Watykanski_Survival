@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Movement")]
     public float movementSpeed;
-    public float aimingMovement, tenacity, stun, leashRange;
+    public float movementSpeedEnrage, aimingMovement, tenacity, stun, leashRange;
     public bool flank, agro;
 
     [Header("Damage & Attacks")]
@@ -87,6 +87,11 @@ public class Enemy : MonoBehaviour
 
         if (boss)
             day_night = GameObject.FindGameObjectWithTag("Cycle").GetComponent(typeof(Day_Night_Cycle)) as Day_Night_Cycle;
+        else
+        {
+            movementSpeedEnrage = movementSpeed * 0.05f;
+            Invoke("Enrage", 20f);
+        }
 
         //if (playerStats.eq.Items[22])
             //curse += (24f + maxHealth * 0.2f) * playerStats.DamageDealtMultiplyer(0.312f);
@@ -476,6 +481,14 @@ public class Enemy : MonoBehaviour
         //RestoreHealth(regen * 0.5f);
 
         Invoke("Tick", 0.5f);
+    }
+
+    void Enrage()
+    {
+        movementSpeed += movementSpeedEnrage;
+        vulnerable += 0.06f;
+
+        Invoke("Enrage", 12f);
     }
 
     void DoTproc()

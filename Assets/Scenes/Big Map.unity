@@ -59138,11 +59138,12 @@ MonoBehaviour:
   - +12% Duration
   - +4 Armor
   - +10% Experience
-  - +25% Pick Up Radius
+  - +26% Pick Up Radius
   - +6% Crit Chance & Crit Damage
   statWeight: 8
-  weaponWeight: 3
+  weaponWeight: 5
   totalWeight: 0
+  projectalPicked: 0
   rolls: 000000000000000000000000
   roll: 0
   stats: 000000
@@ -59534,7 +59535,7 @@ MonoBehaviour:
   MagnetObject: {fileID: 6200031967086673338, guid: 7288ac361ab3c224cbce74faadfd8d6d, type: 3}
   active: 0
   round: 0
-  strength: 126
+  strength: 109
   minSpawn: 0
   maxSpawn: 1
   mobsStrength: 02000000040000000500000006000000080000000a000000
@@ -59544,7 +59545,7 @@ MonoBehaviour:
   rest: 0
   elite: 170
   amount: 0
-  time: 35
+  time: 37
   frequency: 0
   delay: 0
 --- !u!1 &1914043909

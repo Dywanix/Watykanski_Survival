@@ -23,6 +23,7 @@ public class PrizeChoice : MonoBehaviour
     public Sprite[] StatSprites;
     public string[] StatTooltips;
     public float statWeight, weaponWeight, totalWeight;
+    public int projectalPicked;
 
     public int[] rolls; //accessories, items;
     public int roll;
@@ -125,7 +126,9 @@ public class PrizeChoice : MonoBehaviour
                 Choices[i].sprite = StatSprites[rolls[i]];
                 Levels[i].text = "";
                 Tooltips[i].text = "";
-                Tooltips2[i].text = StatTooltips[rolls[i]];
+                if (rolls[i] == 4 && projectalPicked % 2 == 1)
+                    Tooltips2[i].text = "+0 Projectile Count";
+                else Tooltips2[i].text = StatTooltips[rolls[i]];
                 Tooltips3[i].text = "";
             }
             else
@@ -367,7 +370,15 @@ public class PrizeChoice : MonoBehaviour
             playerStats.eq.PickUpEffect(rolls[choice]);
         else playerStats.eq.Accessories[rolls[choice]]++;*/
         if (stats[choice])
-            playerStats.PickUpStat(rolls[choice]);
+        {
+            if (rolls[choice] == 4)
+            {
+                if (projectalPicked % 2 == 0)
+                    playerStats.PickUpStat(rolls[choice]);
+                projectalPicked++;
+            }
+            else playerStats.PickUpStat(rolls[choice]);
+        }
         else playerStats.ge.CollectWeapon(rolls[choice]);
         playerStats.free = true;
         playerStats.menuOpened = false;

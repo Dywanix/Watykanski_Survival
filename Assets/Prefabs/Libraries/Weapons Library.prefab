@@ -116,7 +116,9 @@ MonoBehaviour:
   Weapons:
   - {fileID: 3534380680576368770}
   - {fileID: 508092388873687557}
-  possibleToCollect: 01000000
+  - {fileID: 5480398352771879451}
+  - {fileID: 8296212909139711919}
+  possibleToCollect: 010000000200000003000000
 --- !u!1 &3790812077637957187
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +151,140 @@ Transform:
   m_Father: {fileID: 5655256963641278598}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4156204569016784567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837496361705277877}
+  - component: {fileID: 5480398352771879451}
+  m_Layer: 0
+  m_Name: Rail Spike
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1837496361705277877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156204569016784567}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193775814922914142}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5480398352771879451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4156204569016784567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc5e017b048ea44981d89fb06133da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSprite: {fileID: 21300000, guid: b1672a4fa0d52e64aac51325e42751c1, type: 3}
+  Tooltip1:
+  - 
+  - 'Damage Ratio: 104% >> 106%'
+  - 'Damage: 50 >> 69'
+  - 'Damage Ratio: 106% >> 108%'
+  - 'Damage: 69 >> 86'
+  - 
+  Tooltip2:
+  - Fires Piercing Spike
+  - 'Fire Rate: 1.11s >> 0.98s'
+  - 'Pierce: 3 >> 4'
+  - 'Pass Damage: 80% >> 85%'
+  - 'Fire Rate: 0.98s >> 0.91s'
+  - Comes Back?
+  Tooltip3:
+  - 
+  - 'Pass Damage: 75% >> 80%'
+  - 
+  - 'Ammo: 3 >> 5'
+  - 'Pass Damage: 85% >> 90%'
+  - 
+  ammoless: 0
+--- !u!1 &5247707063410646819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7060169975296403766}
+  - component: {fileID: 8296212909139711919}
+  m_Layer: 0
+  m_Name: Immolation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7060169975296403766
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5247707063410646819}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193775814922914142}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8296212909139711919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5247707063410646819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc5e017b048ea44981d89fb06133da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSprite: {fileID: 21300000, guid: 919549fa719cd914a8a043f3e09070e4, type: 3}
+  Tooltip1:
+  - 
+  - 'Damage: 1.5 >> 3'
+  - 'Damage: 3 >> 4'
+  - 'Damage: 4 >> 6'
+  - 'Health Ratio: 5% >> 6%'
+  - 
+  Tooltip2:
+  - Deals Damage to nearby Enemies, scales with Health
+  - 'Area Size: 0.8 >> 0.9'
+  - 'Health Ratio: 4% >> 5%'
+  - 'Area Size: 0.9 >> 1'
+  - 'Area Size: 1 >> 1.15'
+  - ???
+  Tooltip3:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  ammoless: 1
 --- !u!1 &7353096729941749759
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +381,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5558306439834921740}
+  - {fileID: 1837496361705277877}
+  - {fileID: 7060169975296403766}
   m_Father: {fileID: 5655256963641278598}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

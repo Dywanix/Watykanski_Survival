@@ -24,6 +24,7 @@ TagManager:
   - Experience
   - Experience5
   - Magnet
+  - PickUp
   layers:
   - Default
   - TransparentFX

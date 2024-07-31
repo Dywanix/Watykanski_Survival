@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform Barrel, Hand, Dude, GunRot, TargetArea;
+    [Header("Scripts")]
+    public Transform Barrel;
+    public Transform Hand, Dude, GunRot, TargetArea;
     public Rigidbody2D Body, Gun;
     public Equipment eq;
     public Backpack bp;
     public Gear ge;
     public Map map;
+    public CircleCollider2D PickUpCollider;
 
     [Header("UI")]
     public GameObject ReloadBar;
@@ -46,8 +49,8 @@ public class PlayerController : MonoBehaviour
     public float dHealth;
     public float health, poison, poisonCap, baseMovementSpeed, additionalCritChance, additionalCritDamage, cooldownReduction, forceIncrease, dashBaseCooldown, maxDashCooldown,
     dashCooldown, dashMaxCharges, dashCharges, grenadeMaxCharges, grenadeCharges, grenadeDamageMultiplyer, grenadeLevelScaling, throwRange, grenadeBaseCooldown, grenadeMaxCooldown,
-    grenadeCooldown, dash, lootLuck, bonusSpecialChance, magnetizing;
-    public int level = 1, experience, expRequired, skillPoints, dayCount = 1, luck, toxicityLevel, totalSlained;
+    grenadeCooldown, dash, lootLuck, bonusSpecialChance, magnetizing, experience, expRequired;
+    public int level = 1, skillPoints, dayCount = 1, luck, toxicityLevel, totalSlained;
     public bool undamaged, invulnerable;
     bool dashSecondCharge, protection;
     int tempi, tempi2, bonusTool;
@@ -157,7 +160,7 @@ public class PlayerController : MonoBehaviour
         }*/
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
-        expRequired = 30;
+        expRequired = 28f - 6f;
         //expRequired = 5;
         UpdateBars();
     }
@@ -1089,6 +1092,7 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float value, bool pierce)
     {
+        value /= 1f + armor * 0.02f;
         if (!invulnerable)
         {
             //Damaged();
@@ -1263,12 +1267,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.transform.tag == "Experience")
         {
-            GainXP(1);
+            GainXP(1f);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Experience5")
         {
-            GainXP(5);
+            GainXP(5f);
             Destroy(other.gameObject);
         }
         else if (other.transform.tag == "Tools")
@@ -1420,16 +1424,17 @@ public class PlayerController : MonoBehaviour
         DisplayAmmo();
     }
 
-    void GainXP(int amount)
+    void GainXP(float amount)
     {
+        amount *= experienceBonus;
         experience += amount;
         if (experience >= expRequired)
         {
             experience -= expRequired;
             LevelUp();
-            expRequired = 5 + 25 * level;
+            expRequired = 3f + 24f * level;
         }
-        experienceBar.fillAmount = (experience * 1f) / (expRequired * 1f);
+        experienceBar.fillAmount = experience / expRequired;
     }
 
     public void LevelUp()
@@ -1493,7 +1498,7 @@ public class PlayerController : MonoBehaviour
                 healthRegen += 0.5f;
                 break;
             case 6:
-                areaSizeBonus += 0.11f;
+                GainAS(0.11f);
                 break;
             case 7:
                 durationBonus += 0.12f;
@@ -1505,7 +1510,7 @@ public class PlayerController : MonoBehaviour
                 experienceBonus += 0.1f;
                 break;
             case 10:
-                pickUpRadiusBonus += 0.25f;
+                GainPUR(0.26f);
                 break;
             case 11:
                 CritChance += 0.06f;
@@ -1547,6 +1552,19 @@ public class PlayerController : MonoBehaviour
     public void GainMS(float value)
     {
         movementSpeed += value;  
+    }
+
+    public void GainAS(float value)
+    {
+        areaSizeBonus += 0.11f;
+        if (ge.Weapons[3] > 0)
+            ge.ImmolationObject.transform.localScale = new Vector3(ge.immolationAreaSize * areaSizeBonus, ge.immolationAreaSize * areaSizeBonus, 1f);
+    }
+
+    public void GainPUR(float value)
+    {
+        pickUpRadiusBonus += 0.25f;
+        PickUpCollider.radius = pickUpRadiusBonus;
     }
 
     public void GainSC(float value)

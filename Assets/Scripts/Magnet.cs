@@ -9,7 +9,7 @@ public class Magnet : MonoBehaviour
     public PlayerController playerStats;
 
     public float chaseSpeed, chaseRange;
-    bool active;
+    bool active, chasing;
 
     void Start()
     {
@@ -30,8 +30,14 @@ public class Magnet : MonoBehaviour
     {
         if (active)
         {
-            if (playerStats.magnetizing > 0f)
+            if (playerStats.magnetizing > 0f && !chasing)
+                chasing = true;
+            if (chasing)
             {
+                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, (chaseSpeed + (1f + chaseSpeed) / (Vector3.Distance(transform.position, Player.transform.position) + 0.25f)) * Time.deltaTime);
+                chaseSpeed *= 1f + (0.25f * Time.deltaTime);
+            }
+            /*{
                 if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange * 1.8f)
                     transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((7f + chaseSpeed * 4f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.15f) + chaseSpeed) * Time.deltaTime);
                 else transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, chaseSpeed * Time.deltaTime);
@@ -39,7 +45,13 @@ public class Magnet : MonoBehaviour
                 chaseRange *= 1f + (0.05f * Time.deltaTime);
             }
             else if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange)
-                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((3f + chaseSpeed * 2.5f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.3f) + chaseSpeed * 0.1f) * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, ((3f + chaseSpeed * 2.5f) / (Vector3.Distance(transform.position, Player.transform.position) + 0.3f) + chaseSpeed * 0.1f) * Time.deltaTime);*/
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.transform.tag == "PickUp")
+            chasing = true;
     }
 }
