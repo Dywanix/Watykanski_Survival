@@ -118,7 +118,8 @@ MonoBehaviour:
   - {fileID: 508092388873687557}
   - {fileID: 5480398352771879451}
   - {fileID: 8296212909139711919}
-  possibleToCollect: 010000000200000003000000
+  - {fileID: 8510252639711691754}
+  possibleToCollect: 01000000020000000300000004000000
 --- !u!1 &3790812077637957187
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +384,74 @@ Transform:
   - {fileID: 5558306439834921740}
   - {fileID: 1837496361705277877}
   - {fileID: 7060169975296403766}
+  - {fileID: 94276005582718289}
   m_Father: {fileID: 5655256963641278598}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8673989294568146432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94276005582718289}
+  - component: {fileID: 8510252639711691754}
+  m_Layer: 0
+  m_Name: Napalm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &94276005582718289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8673989294568146432}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193775814922914142}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8510252639711691754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8673989294568146432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc5e017b048ea44981d89fb06133da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSprite: {fileID: 21300000, guid: 1b8f3f509920ca84bbd0dbb060088705, type: 3}
+  Tooltip1:
+  - 
+  - 'Damage: 12 >> 14'
+  - 'Fire Rate: 3.2s >> 2.75s'
+  - 'Damage: 14 >> 17'
+  - 'Damage: 17 >> 20'
+  - 
+  Tooltip2:
+  - Launches a Napalm Grenade
+  - 'Projectile Count: 2 >> 3'
+  - 'Area Size: 0.5 >> 0.6'
+  - 'Projectile Count: 3 >> 4'
+  - 'Fire Rate: 2.75s >> 2.55s'
+  - Scorched Ground Damage increases over Time
+  Tooltip3:
+  - 
+  - 'Reload Time: 4.2s >> 4s'
+  - 
+  - Duration 3.5s >> 3.8s
+  - 'Area Size: 0.6 >> 0.7'
+  - 
+  ammoless: 0

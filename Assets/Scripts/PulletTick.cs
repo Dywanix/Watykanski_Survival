@@ -11,7 +11,7 @@ public class PulletTick : MonoBehaviour
     public float frequency, delay, frequencyRange, damageEfficiency;
     public int bulletsCount;
     public float bonusShatter;
-    public bool straight;
+    public bool straight, scaleWithAreaSize;
 
     void Update()
     {
@@ -28,6 +28,8 @@ public class PulletTick : MonoBehaviour
                 Form.rotation = Quaternion.Euler(Form.rotation.x, Form.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject bullet = Instantiate(BulletTick, Form.position, Form.rotation);
             BulletsShards = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            if (scaleWithAreaSize)
+                bullet.transform.localScale = new Vector3(ThisBullet.areaSize, ThisBullet.areaSize, 1f);
             SetBullet();
         }
         delay += frequency * Random.Range(1f, 1f + frequencyRange);

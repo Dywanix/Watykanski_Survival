@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.V))
                 DrinkPotion();
             if (Input.GetKeyDown(KeyCode.P))
-                LearnPerk();
+                GainXP(25f);
             if (task <= 0)
             {
                 Action();

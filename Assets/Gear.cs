@@ -56,10 +56,17 @@ public class Gear : MonoBehaviour
     public float immolationAreaSize;
     private Bullet immolationTick;
 
+    [Header("Napalm")]
+    public GameObject NapalmGrenade;
+    public Transform NapalmRotation, NapalmDistance;
+    private float napalmDamage, napalmFireRate, napalmAreaSize, napalmDuration, napalmReloadTime;
+    private int napalmProjectileCount;
+    private Bullet NapalmFired;
+
     void Start()
     {
         CollectWeapon(startingWeapon);
-        //CollectWeapon(1);
+        //CollectWeapon(4);
     }
 
     public void CollectWeapon(int which)
@@ -215,6 +222,43 @@ public class Gear : MonoBehaviour
                 immolationAreaSize = 1.25f;
                 ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
                 break;
+            case (4, 1):
+                napalmDamage = 12f;
+                napalmFireRate = 3.2f;
+                napalmProjectileCount = 2;
+                napalmAreaSize = 0.5f;
+                napalmDuration = 3.5f;
+                napalmReloadTime = 4.2f;
+                MagazineSize[4] = 6;
+                Ammo[4] = 6;
+                Invoke("NapalmCast", napalmFireRate / playerStats.SpeedMultiplyer(1f));
+                break;
+            case (4, 2):
+                napalmDamage = 14f;
+                napalmProjectileCount = 3;
+                napalmReloadTime = 4f;
+                break;
+            case (4, 3):
+                napalmFireRate = 2.75f;
+                napalmAreaSize = 0.6f;
+                break;
+            case (4, 4):
+                napalmDamage = 17f;
+                napalmProjectileCount = 4;
+                napalmDuration = 3.8f;
+                break;
+            case (4, 5):
+                napalmDamage = 20f;
+                napalmFireRate = 2.55f;
+                napalmAreaSize = 0.7f;
+                break;
+            case (4, 6):
+                napalmDamage = 21f;
+                napalmFireRate = 2.45f;
+                napalmAreaSize = 0.75f;
+                napalmDuration = 4f;
+                napalmReloadTime = 3.8f;
+                break;
         }
 
         if (Weapons[which] == 1)
@@ -227,11 +271,13 @@ public class Gear : MonoBehaviour
             {
                 AmmoList[which] = weaponsCollected;
                 AmmoObject[weaponsCollected].SetActive(true);
-                WeaponAmmo[WeaponList[weaponsCollected]].text = MagazineSize[WeaponList[weaponsCollected]].ToString("0") + "/" + Ammo[WeaponList[weaponsCollected]].ToString("0");
+                WeaponAmmo[weaponsCollected].text = MagazineSize[WeaponList[weaponsCollected]].ToString("0") + "/" + Ammo[WeaponList[weaponsCollected]].ToString("0");
             }
             weaponsCollected++;
             //ammosDisplays++;
         }
+        else
+            WeaponLevel[WeaponList[which]].text = Weapons[which].ToString("0");
     }
 
     void RevolverCast()
@@ -375,8 +421,8 @@ public class Gear : MonoBehaviour
         tempi = 1 + playerStats.projectileCountBonus;
         for (int i = 0; i < tempi; i++)
         {
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + railSpikeAim + i * (360f / tempi));
-            GameObject bullet = Instantiate(RailSpikeBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            NapalmRotation.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+            GameObject bullet = Instantiate(NapalmGrenade, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(playerStats.Barrel.up * 15f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
 
@@ -410,5 +456,51 @@ public class Gear : MonoBehaviour
         tick.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
 
         Invoke("ImmolateCast", 0.4f);
+    }
+
+    void NapalmCast()
+    {
+        if (Ammo[4] > 0)
+        {
+            //revolverAccuracy = 4f;
+            for (int i = 0; i < napalmProjectileCount + playerStats.projectileCountBonus; i++)
+            {
+                Invoke("NapalmFire", i * 0.16f);
+            }
+            Ammo[4]--;
+            WeaponAmmo[AmmoList[4]].text = Ammo[4].ToString("0") + "/" + MagazineSize[4].ToString("0");
+            Invoke("NapalmCast", napalmFireRate / playerStats.SpeedMultiplyer(1f));
+        }
+        else
+            Invoke("NapalmReload", napalmReloadTime);
+    }
+
+    void NapalmFire()
+    {
+        NapalmDistance.position = new Vector2(0f + NapalmRotation.position.x, Random.Range(4f, 7f + playerStats.areaSizeBonus) + NapalmRotation.position.y);
+        NapalmRotation.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+        GameObject bullet = Instantiate(NapalmGrenade, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+
+        NapalmFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        NapalmFired.TargetedLocation = NapalmDistance;
+        NapalmFired.damage = napalmDamage;
+        NapalmFired.areaSize = napalmAreaSize * playerStats.areaSizeBonus;
+        NapalmFired.durationValue = napalmDuration * playerStats.durationBonus;
+
+        if (playerStats.CritChance > Random.Range(0f, 1f))
+        {
+            NapalmFired.damage *= playerStats.CritDamage;
+            revolverFired.crit = true;
+        }
+
+        revolverAccuracy += 4f;
+    }
+
+    void NapalmReload()
+    {
+        Ammo[4] = MagazineSize[4];
+        WeaponAmmo[AmmoList[4]].text = Ammo[4].ToString("0") + "/" + MagazineSize[4].ToString("0");
+        NapalmCast();
     }
 }

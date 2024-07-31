@@ -19,11 +19,16 @@ public class Bullet : MonoBehaviour
     public FallingObject fall;
     float travelX, travelY;
 
+    [Header("Additional Stats")]
+    public float areaSize, durationValue;
+    public bool napalm;
+
     void Start()
     {
         if (TargetedLocation)
         {
-            Instantiate(HitArea, TargetedLocation.position, TargetedLocation.rotation);
+            if (HitArea)
+                Instantiate(HitArea, TargetedLocation.position, TargetedLocation.rotation);
             fall.duration = duration;
             duration += 0.01f;
             travelX = (TargetedLocation.position.x - transform.position.x) / duration;
@@ -106,6 +111,12 @@ public class Bullet : MonoBehaviour
             Explosion.slowDuration = slowDuration;
             Explosion.stunDuration = stunDuration;
             Explosion.crit = crit;
+            if (napalm)
+            {
+                Explosion.duration = durationValue;
+                Explosion.areaSize = areaSize;
+                bullet.transform.localScale = new Vector3(areaSize, areaSize, 1f);
+            }
         }
         if (ShardExplosion)
             ShardExplosion.Shatter();
