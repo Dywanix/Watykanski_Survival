@@ -39,11 +39,21 @@ public class Backpack : MonoBehaviour
 
     void UpdateInfo()
     {
-        StatsText[0].text = ((player.damageBonus * 100f) - 100f).ToString("0.0") + "%";
-        StatsText[1].text = ((player.fireRateBonus * 100f) - 100f).ToString("0.0") + "%";
-        StatsText[2].text = ((player.movementSpeed * 100f) - 100f).ToString("0.0") + "%";
-        StatsText[3].text = ((player.cooldownReduction * 100f) - 100f).ToString("0.0") + "%";
-
+        StatsText[0].text = player.maxHealth.ToString("0");
+        StatsText[1].text = (player.damageBonus * 100f).ToString("0") + "%";
+        StatsText[2].text = (player.fireRateBonus * 100f).ToString("0") + "%";
+        StatsText[3].text = (player.movementSpeed * 100f).ToString("0") + "%";
+        StatsText[4].text = "+" + player.projectileCountBonus.ToString("0");
+        StatsText[5].text = player.healthRegen.ToString("0.0");
+        StatsText[6].text = (player.areaSizeBonus * 100f).ToString("0") + "%";
+        StatsText[7].text = (player.durationBonus * 100f).ToString("0") + "%";
+        StatsText[8].text = player.armor.ToString("0");
+        StatsText[9].text = (player.experienceBonus * 100f).ToString("0") + "%";
+        StatsText[10].text = (player.pickUpRadiusBonus * 100f).ToString("0") + "%";
+        StatsText[11].text = (player.CritChance * 100f).ToString("0") + "%";
+        StatsText[12].text = (player.CritDamage * 100f).ToString("0") + "%";
+        // 13. +ammo?
+        /*
         for (int i = 0; i < 2; i++)
         {
             if (eq.slotFilled[i + 1])
@@ -97,7 +107,7 @@ public class Backpack : MonoBehaviour
             EffectImages[i].sprite = eq.ILibrary.Effects[eq.EffectList[i]].EffectSprite;
         }
 
-        UpdateAccessories();
+        UpdateAccessories();*/
     }
 
     void UpdateAccessories()

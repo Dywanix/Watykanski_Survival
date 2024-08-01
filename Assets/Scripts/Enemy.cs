@@ -63,8 +63,9 @@ public class Enemy : MonoBehaviour
     [Header("Status")]
     public GameObject FireExplosion;
     public GameObject CurseBullet;
-    public bool burning, slowed;
-    public float slow, DoT, ablaze, curse;
+    public bool slowed;
+    public float slow, DoT, curse;
+    public int ablaze, burnCharges;
 
     void Start()
     {
@@ -291,11 +292,17 @@ public class Enemy : MonoBehaviour
             if (collidedBullet.shatter > 0)
                 ShatterShield(temp * collidedBullet.shatter);
             if (!collidedBullet.damageLess)
-                TakeDamage(temp, collidedBullet.crit, true);
+            {
+                if (collidedBullet.burn > 0 && ablaze > 0)
+                    TakeBurnDamage(temp, collidedBullet.crit, true, collidedBullet.burn);
+                else TakeDamage(temp, collidedBullet.crit, true);
+            }
+            if (collidedBullet.burn > 0)
+                SetAblaze(collidedBullet.burn);
             if (collidedBullet.DoT > 0)
-                GainDoT(temp * collidedBullet.DoT);
-            if (collidedBullet.incendiary > 0)
-                SetAblaze(temp * collidedBullet.incendiary);
+            {
+                GainDoT(collidedBullet.DoT, collidedBullet.durationValue);
+            }
             curse += collidedBullet.curse;
         }
         collidedBullet.Struck();
@@ -305,13 +312,13 @@ public class Enemy : MonoBehaviour
     {
         if (display)
         {
-            DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
-            GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+            DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-15f, 15f));
+            GameObject text = Instantiate(damageTook, Body.position, transform.rotation);
             Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
             damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
-            if (crited) damageDisplay.SetText(value, "red");
-            else damageDisplay.SetText(value, "orange");
-            text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+            if (crited) damageDisplay.SetText(value, "baseCrit");
+            else damageDisplay.SetText(value, "base");
+            text_body.AddForce(DamageOrigin.up * Random.Range(3.4f, 3.9f), ForceMode2D.Impulse);
         }
 
         if (shield > 0f)
@@ -333,13 +340,13 @@ public class Enemy : MonoBehaviour
     {
         if (display)
         {
-            DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
-            GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+            DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-15f, 15f));
+            GameObject text = Instantiate(damageTook, Body.position, transform.rotation);
             Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
             damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
-            if (crited) damageDisplay.SetText(value, "red");
-            else damageDisplay.SetText(value, "orange");
-            text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+            if (crited) damageDisplay.SetText(value, "baseCrit");
+            else damageDisplay.SetText(value, "base");
+            text_body.AddForce(DamageOrigin.up * Random.Range(3.4f, 3.9f), ForceMode2D.Impulse);
         }
 
         health -= value;
@@ -352,14 +359,43 @@ public class Enemy : MonoBehaviour
 
     void TakePoisonDamage(float value)
     {
-        DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
-        GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+        DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-15f, 15f));
+        GameObject text = Instantiate(damageTook, Body.position, transform.rotation);
         Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
         damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
         damageDisplay.SetText(value, "green");
-        text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+        text_body.AddForce(DamageOrigin.up * Random.Range(3.4f, 3.9f), ForceMode2D.Impulse);
 
         health -= value;
+
+        UpdateBars();
+
+        if (health <= 0)
+            Death();
+    }
+
+    void TakeBurnDamage(float value, bool crited, bool display, int burn)
+    {
+        value *= 1f + (0.05f + 0.02f * burn) * ablaze;
+        if (display)
+        {
+            DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-15f, 15f));
+            GameObject text = Instantiate(damageTook, Body.position, transform.rotation);
+            Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
+            damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
+            if (crited) damageDisplay.SetText(value, "burnCrit");
+            else damageDisplay.SetText(value, "burn");
+            text_body.AddForce(DamageOrigin.up * Random.Range(3.4f, 3.9f), ForceMode2D.Impulse);
+        }
+
+        if (shield > 0f)
+        {
+            shield -= value;
+
+            if (shield < 0f)
+                health += shield;
+        }
+        else health -= value;
 
         UpdateBars();
 
@@ -402,10 +438,25 @@ public class Enemy : MonoBehaviour
         stun += duration;
     }
 
-    void GainDoT(float value)
+    void GainDoT(float value, float duration)
     {
-        DoT += value;
+        for (float i = 0; i < duration; i += 0.3f)
+        {
+            StartCoroutine(DoTproc(value * 0.3f, i));
+            DoT += value * 0.3f;
+        }
         UpdateBars();
+    }
+
+    IEnumerator DoTproc(float amount, float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        /*temp = 2.5f + DoT * 0.25f;
+        if (playerStats.eq.Items[58] > 0)
+            DoT -= temp / (1f + 0.13f * playerStats.eq.Items[58] + 0.02f * playerStats.eq.Items[58] * playerStats.eq.Items[58]);
+        else DoT -= temp;*/
+        DoT -= amount;
+        TakePoisonDamage(amount);
     }
 
     void ShatterShield(float value)
@@ -414,23 +465,23 @@ public class Enemy : MonoBehaviour
         {
             if (value > shield)
             {
-                DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
-                GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+                DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-15f, 15f));
+                GameObject text = Instantiate(damageTook, Body.position, transform.rotation);
                 Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
                 damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
                 damageDisplay.SetText(shield, "cyan");
-                text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+                text_body.AddForce(DamageOrigin.up * Random.Range(3.4f, 3.9f), ForceMode2D.Impulse);
 
                 LoseShield(shield);
             }
             else
             {
-                DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-12f, 12f));
-                GameObject text = Instantiate(damageTook, Body.position, DamageOrigin.rotation);
+                DamageOrigin.rotation = Quaternion.Euler(DamageOrigin.rotation.x, DamageOrigin.rotation.y, Body.rotation + Random.Range(-15f, 15f));
+                GameObject text = Instantiate(damageTook, Body.position, transform.rotation);
                 Rigidbody2D text_body = text.GetComponent<Rigidbody2D>();
                 damageDisplay = text.GetComponent(typeof(DamageTaken)) as DamageTaken;
                 damageDisplay.SetText(value, "cyan");
-                text_body.AddForce(DamageOrigin.up * 3.6f, ForceMode2D.Impulse);
+                text_body.AddForce(DamageOrigin.up * Random.Range(3.4f, 3.9f), ForceMode2D.Impulse);
 
                 LoseShield(value);
             }
@@ -444,26 +495,14 @@ public class Enemy : MonoBehaviour
             TakePierceDamage(amount * 0.25f * playerStats.eq.Items[46], false, true);
     }
 
-    void SetAblaze(float value)
+    void SetAblaze(int value)
     {
-        ablaze += value;
-        if (ablaze >= 20f && !burning)
+        burnCharges += value;
+        while (burnCharges >= 1 + ablaze)
         {
-            burning = true;
-            Invoke("Conflagration", 0.5f);
+            burnCharges -= 1 + ablaze;
+            ablaze++;
         }
-    }
-
-    void Conflagration()
-    {
-        ablaze -= 20f;
-        GameObject bullet = Instantiate(FireExplosion, Body.position, transform.rotation);
-        firedBullet = bullet.GetComponent(typeof(Bullet)) as Bullet;
-        firedBullet.damage = 20f;
-        if (ablaze >= 20f)
-            Invoke("Conflagration", 0.5f);
-        else burning = false;
-        SetAblaze(0f);
     }
 
     float DamageTakenMultiplyer()
@@ -475,8 +514,8 @@ public class Enemy : MonoBehaviour
 
     void Tick()
     {
-        if (DoT > 0)
-            DoTproc();
+        /*if (DoT > 0)
+            DoTproc();*/
 
         //RestoreHealth(regen * 0.5f);
 
@@ -491,22 +530,13 @@ public class Enemy : MonoBehaviour
         Invoke("Enrage", 12f);
     }
 
-    void DoTproc()
-    {
-        temp = 2.5f + DoT * 0.25f;
-        if (playerStats.eq.Items[58] > 0)
-            DoT -= temp / (1f + 0.13f * playerStats.eq.Items[58] + 0.02f * playerStats.eq.Items[58] * playerStats.eq.Items[58]);
-        else DoT -= temp;
-        TakePoisonDamage(temp);
-    }
-
     void Death()
     {
         if (!dead)
         {
             dead = true;
 
-            experienceDroped = Random.Range(weight * 8 / 10, weight /* 9 / 10*/ + 1);
+            experienceDroped = Random.Range((weight + 2) * 8 / 18, (weight + 2) / 2 + 1);
             playerStats.EnemySlained();
 
             for (int i = 0; i < scrapCount; i++)
@@ -580,7 +610,7 @@ public class Enemy : MonoBehaviour
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject orb = Instantiate(Orb5, Body.position, transform.rotation);
             Rigidbody2D orb_body = orb.GetComponent<Rigidbody2D>();
-            orb_body.AddForce(Sight.up * Random.Range(1.1f, 4.2f), ForceMode2D.Impulse);
+            orb_body.AddForce(Sight.up * Random.Range(1.2f, 3.8f), ForceMode2D.Impulse);
 
             BigOrbs++;
             experienceDroped -= 5;
@@ -590,7 +620,7 @@ public class Enemy : MonoBehaviour
             Sight.rotation = Quaternion.Euler(Sight.rotation.x, Sight.rotation.y, Dir.rotation + Random.Range(0f, 360f));
             GameObject orb = Instantiate(Orb, Body.position, transform.rotation);
             Rigidbody2D orb_body = orb.GetComponent<Rigidbody2D>();
-            orb_body.AddForce(Sight.up * Random.Range(1.2f, 4.6f), ForceMode2D.Impulse);
+            orb_body.AddForce(Sight.up * Random.Range(1.3f, 4.2f), ForceMode2D.Impulse);
         }
     }
 

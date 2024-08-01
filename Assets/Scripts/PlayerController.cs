@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
         }*/
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
-        expRequired = 28f - 6f;
+        expRequired = 28f - 7f;
         //expRequired = 5;
         UpdateBars();
     }
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.V))
                 DrinkPotion();
             if (Input.GetKeyDown(KeyCode.P))
-                GainXP(25f);
+                GainXP(25f + level * 1f);
             if (task <= 0)
             {
                 Action();
@@ -784,7 +784,7 @@ public class PlayerController : MonoBehaviour
                 firedBullet.DoT += 0.06f + 0.12f * eq.Items[1];
         }
         firedBullet.shatter = eq.guns[eq.equipped].shatter;
-        firedBullet.incendiary = eq.guns[eq.equipped].incendiary;
+        //firedBullet.burn = eq.guns[eq.equipped].incendiary;
         firedBullet.curse = eq.guns[eq.equipped].curse;
         firedBullet.damageGain = eq.guns[eq.equipped].damageGain;
         firedBullet.vulnerableApplied = eq.guns[eq.equipped].vulnerableApplied;
@@ -1432,7 +1432,7 @@ public class PlayerController : MonoBehaviour
         {
             experience -= expRequired;
             LevelUp();
-            expRequired = 3f + 24f * level;
+            expRequired = 5f + 23f * level;
         }
         experienceBar.fillAmount = experience / expRequired;
     }
@@ -1556,14 +1556,14 @@ public class PlayerController : MonoBehaviour
 
     public void GainAS(float value)
     {
-        areaSizeBonus += 0.11f;
+        areaSizeBonus += value;
         if (ge.Weapons[3] > 0)
             ge.ImmolationObject.transform.localScale = new Vector3(ge.immolationAreaSize * areaSizeBonus, ge.immolationAreaSize * areaSizeBonus, 1f);
     }
 
     public void GainPUR(float value)
     {
-        pickUpRadiusBonus += 0.25f;
+        pickUpRadiusBonus += value;
         PickUpCollider.radius = pickUpRadiusBonus;
     }
 

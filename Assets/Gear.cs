@@ -14,10 +14,11 @@ public class Gear : MonoBehaviour
     public GameObject[] AmmoObject;
     public Image[] WeaponImage;
     public TMPro.TextMeshProUGUI[] WeaponLevel, WeaponAmmo;
-    private int weaponsCollected; //ammosDisplays;
+    public int weaponsCollected; //ammosDisplays;
 
     [Header("Stats")]
     public int tempi;
+    public float temp;
 
     [Header("Ammos")]
     public int[] AmmoList;
@@ -32,27 +33,25 @@ public class Gear : MonoBehaviour
     public GameObject RevolverBullet;
     private float revolverDamage, revolverFireRate, revolverCritDamageBonus, revolverCritChanceBonus, revolverReloadTime, revolverAccuracy;
     private int revolverProjectileCount;
-    private bool revolverUpgrade;
     private Bullet revolverFired;
 
     [Header("Shotgun")]
     public GameObject ShotgunBullet;
     private float shotgunDamage, shotgunFireRate, shotgunReloadTime, shotgunAim;
     private int shotgunProjectileCount, shotgunReloadCount;
-    private bool shotgunUpgrade;
     private Bullet shotgunFired;
 
     [Header("Rail Spike")]
     public GameObject RailSpikeBullet;
     private float railSpikeDamage, railSpikeDamageRatio, railSpikeFireRate, railSpikePierceDamage, railSpikeReloadTime, railSpikeAim;
     private int railSpikePierce;
-    private bool railSpikeUpgrade;
     private Bullet railSpikeFired;
+    private BounceBack railSpikeBounce;
 
     [Header("Immolation")]
     public GameObject ImmolationObject;
     public GameObject ImmolationAoE;
-    private float immolationDamage, immolationHealthRatio;
+    private float immolationDamage, immolationHealthRatio, immolationTickRate;
     public float immolationAreaSize;
     private Bullet immolationTick;
 
@@ -63,10 +62,22 @@ public class Gear : MonoBehaviour
     private int napalmProjectileCount;
     private Bullet NapalmFired;
 
+    [Header("Poison Nova")]
+    public GameObject PoisonNovaAoE;
+    private float poisonNovaDoT, poisonNovaDoTDuration, poisonNovaFireRate, poisonNovaAreaSize, poisonNovaDuration;
+    private Bullet poisonNovaFired;
+    private Grow poisonNovaGrow;
+
+    [Header("Flamethrower")]
+    public GameObject FlamethrowerBullet;
+    private float flamethrowerDamage, flamethrowerFireRate, flamethrowerReloadTime;
+    private int flamethrowerProjectileCount, flamethrowerBurn;
+    private Bullet flamethrowerFired;
+
     void Start()
     {
         CollectWeapon(startingWeapon);
-        //CollectWeapon(4);
+        //CollectWeapon(6);
     }
 
     public void CollectWeapon(int which)
@@ -109,7 +120,6 @@ public class Gear : MonoBehaviour
                 revolverDamage = 48f;
                 revolverFireRate = 0.47f;
                 revolverCritChanceBonus = 0.18f;
-                revolverUpgrade = true;
                 break;
             case (1, 1):
                 shotgunDamage = 32f;
@@ -149,54 +159,55 @@ public class Gear : MonoBehaviour
                 shotgunDamage = 48f;
                 shotgunFireRate = 1.33f;
                 shotgunReloadTime = 0.16f;
-                shotgunUpgrade = true;
                 break;
             case (2, 1):
-                railSpikeDamage = 50f;
+                railSpikeDamage = 52f;
                 railSpikeDamageRatio = 1.04f;
-                railSpikeFireRate = 1.11f;
+                railSpikeFireRate = 1.1f;
                 railSpikePierce = 3;
-                railSpikePierceDamage = 0.75f;
+                railSpikePierceDamage = 0.7f;
                 MagazineSize[2] = 3;
                 Ammo[2] = 3;
-                railSpikeReloadTime = 0.79f;
+                railSpikeReloadTime = 0.77f;
                 Invoke("RailSpikeCast", railSpikeFireRate / playerStats.SpeedMultiplyer(1f));
                 break;
             case (2, 2):
                 railSpikeDamageRatio = 1.06f;
-                railSpikeFireRate = 0.98f;
-                railSpikePierceDamage = 0.8f;
+                railSpikeFireRate = 0.97f;
+                railSpikePierceDamage = 0.75f;
                 break;
             case (2, 3):
-                railSpikeDamage = 69f;
+                railSpikeDamage = 72f;
                 railSpikePierce = 4;
                 break;
             case (2, 4):
                 railSpikeDamageRatio = 1.08f;
-                railSpikePierceDamage = 0.85f;
+                railSpikePierceDamage = 0.8f;
                 MagazineSize[2] = 5;
                 Ammo[2] += 2;
                 WeaponAmmo[AmmoList[2]].text = Ammo[2].ToString("0") + "/" + MagazineSize[2].ToString("0");
                 break;
             case (2, 5):
-                railSpikeDamage = 86f;
-                railSpikeFireRate = 0.91f;
-                railSpikePierceDamage = 0.9f;
+                railSpikeDamage = 90f;
+                railSpikeFireRate = 0.9f;
+                railSpikePierceDamage = 0.85f;
                 break;
             case (2, 6):
-                railSpikeDamage = 90f;
-                railSpikeFireRate = 0.86f;
+                railSpikeDamage = 95f;
+                railSpikeFireRate = 0.85f;
                 railSpikePierce = 5;
-                railSpikeReloadTime = 0.74f;
-                railSpikeUpgrade = true;
+                railSpikePierceDamage = 0.9f;
+                railSpikeReloadTime = 0.72f;
+                //railSpikeUpgrade = true;
                 break;
             case (3, 1):
                 ImmolationObject.SetActive(true);
                 immolationDamage = 1.5f;
                 immolationHealthRatio = 0.04f;
+                immolationTickRate = 0.4f;
                 immolationAreaSize = 0.8f;
                 ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
-                Invoke("ImmolateCast", 0.4f);
+                Invoke("ImmolateCast", immolationTickRate);
                 break;
             case (3, 2):
                 immolationDamage = 3f;
@@ -219,6 +230,7 @@ public class Gear : MonoBehaviour
                 break;
             case (3, 6):
                 immolationDamage = 8f;
+                immolationTickRate = 0.38f;
                 immolationAreaSize = 1.25f;
                 ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
                 break;
@@ -259,6 +271,74 @@ public class Gear : MonoBehaviour
                 napalmDuration = 4f;
                 napalmReloadTime = 3.8f;
                 break;
+            case (5, 1):
+                poisonNovaDoT = 20f;
+                poisonNovaDoTDuration = 1.7f;
+                poisonNovaFireRate = 4f;
+                poisonNovaAreaSize = 0.34f;
+                poisonNovaDuration = 1.83f;
+                Invoke("PoisonNovaCast", poisonNovaFireRate / playerStats.SpeedMultiplyer(1f));
+                break;
+            case (5, 2):
+                poisonNovaDoT = 25f;
+                poisonNovaAreaSize = 0.38f;
+                break;
+            case (5, 3):
+                poisonNovaDoT = 30f;
+                poisonNovaDoTDuration = 1.85f;
+                break;
+            case (5, 4):
+                poisonNovaDoT = 35f;
+                poisonNovaDuration = 2f;
+                break;
+            case (5, 5):
+                poisonNovaDoT = 40f;
+                poisonNovaDoTDuration = 1.9f;
+                poisonNovaAreaSize = 0.42f;
+                break;
+            case (5, 6):
+                poisonNovaDoT = 42f;
+                poisonNovaDoTDuration = 2f;
+                poisonNovaAreaSize = 0.45f;
+                poisonNovaDuration = 2.15f;
+                break;
+            case (6, 1):
+                flamethrowerDamage = 9f;
+                flamethrowerFireRate = 0.37f;
+                flamethrowerProjectileCount = 2;
+                flamethrowerBurn = 1;
+                flamethrowerReloadTime = 6.6f;
+                MagazineSize[6] = 80;
+                Ammo[6] = 100;
+                Invoke("FlamethrowerCast", flamethrowerFireRate / playerStats.SpeedMultiplyer(1f));
+                break;
+            case (6, 2):
+                flamethrowerDamage = 11f;
+                flamethrowerFireRate = 0.345f;
+                break;
+            case (6, 3):
+                flamethrowerDamage = 12f;
+                flamethrowerProjectileCount = 3;
+                MagazineSize[6] = 100;
+                Ammo[6] += 20;
+                WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
+                break;
+            case (6, 4):
+                flamethrowerDamage = 14f;
+                flamethrowerBurn = 2;
+                break;
+            case (6, 5):
+                flamethrowerDamage = 16f;
+                flamethrowerFireRate = 0.315f;
+                break;
+            case (6, 6):
+                flamethrowerDamage = 17f;
+                flamethrowerFireRate = 0.295f;
+                flamethrowerReloadTime = 6.3f;
+                MagazineSize[6] = 110;
+                Ammo[6] += 10;
+                WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
+                break;
         }
 
         if (Weapons[which] == 1)
@@ -266,7 +346,7 @@ public class Gear : MonoBehaviour
             WeaponObject[weaponsCollected].SetActive(true);
             WeaponImage[weaponsCollected].sprite = WLibrary.Weapons[which].WeaponSprite;
             WeaponLevel[weaponsCollected].text = "1";
-            WeaponList[weaponsCollected] = which;
+            WeaponList[which] = weaponsCollected;
             if (!WLibrary.Weapons[which].ammoless)
             {
                 AmmoList[which] = weaponsCollected;
@@ -312,7 +392,7 @@ public class Gear : MonoBehaviour
         {
             revolverFired.damage *= playerStats.CritDamage + revolverCritDamageBonus;
             revolverFired.crit = true;
-            if (revolverUpgrade)
+            if (Weapons[0] > 5)
             {
                 revolverFired.pierce += 2;
                 revolverFired.pierceEfficiency = 0.66f;
@@ -335,7 +415,7 @@ public class Gear : MonoBehaviour
         {
             shotgunAim = Random.Range(0f, 360f);
             ShotgunFire();
-            if (shotgunUpgrade)
+            if (Weapons[1] > 5)
                 Invoke("Shotgun2ndFire", 0.12f);
             Ammo[1]--;
             WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[1].ToString("0");
@@ -421,8 +501,8 @@ public class Gear : MonoBehaviour
         tempi = 1 + playerStats.projectileCountBonus;
         for (int i = 0; i < tempi; i++)
         {
-            NapalmRotation.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-            GameObject bullet = Instantiate(NapalmGrenade, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + railSpikeAim + i * (360f / tempi));
+            GameObject bullet = Instantiate(RailSpikeBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(playerStats.Barrel.up * 15f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
 
@@ -431,6 +511,13 @@ public class Gear : MonoBehaviour
             railSpikeFired.damage = railSpikeDamage * playerStats.DamageDealtMultiplyer(railSpikeDamageRatio);
             railSpikeFired.pierce = railSpikePierce;
             railSpikeFired.pierceEfficiency = railSpikePierceDamage;
+
+            if (Weapons[2] > 5)
+            {
+                railSpikeFired.duration *= 2f;
+                railSpikeBounce = bullet.GetComponent(typeof(BounceBack)) as BounceBack;
+                railSpikeBounce.bounceTimer = 1.75f;
+            }
 
             if (playerStats.CritChance > Random.Range(0f, 1f))
             {
@@ -454,8 +541,9 @@ public class Gear : MonoBehaviour
         immolationTick = tick.GetComponent(typeof(Bullet)) as Bullet;
         immolationTick.damage = (immolationDamage + immolationHealthRatio * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1f);
         tick.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
-
-        Invoke("ImmolateCast", 0.4f);
+        if (Weapons[3] > 5)
+            immolationTick.burn = 1;
+        Invoke("ImmolateCast", immolationTickRate);
     }
 
     void NapalmCast()
@@ -484,17 +572,20 @@ public class Gear : MonoBehaviour
 
         NapalmFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
         NapalmFired.TargetedLocation = NapalmDistance;
-        NapalmFired.damage = napalmDamage;
+        NapalmFired.damage = napalmDamage * playerStats.DamageDealtMultiplyer(1f);
         NapalmFired.areaSize = napalmAreaSize * playerStats.areaSizeBonus;
-        NapalmFired.durationValue = napalmDuration * playerStats.durationBonus;
+        if (Weapons[4] > 5)
+        {
+            NapalmFired.durationValue = napalmDuration * (playerStats.durationBonus * 1.1f - 0.1f);
+            NapalmFired.damageGain = 0.18f * NapalmFired.damage;
+        }
+        else NapalmFired.durationValue = napalmDuration * playerStats.durationBonus;
 
         if (playerStats.CritChance > Random.Range(0f, 1f))
         {
             NapalmFired.damage *= playerStats.CritDamage;
-            revolverFired.crit = true;
+            NapalmFired.crit = true;
         }
-
-        revolverAccuracy += 4f;
     }
 
     void NapalmReload()
@@ -502,5 +593,72 @@ public class Gear : MonoBehaviour
         Ammo[4] = MagazineSize[4];
         WeaponAmmo[AmmoList[4]].text = Ammo[4].ToString("0") + "/" + MagazineSize[4].ToString("0");
         NapalmCast();
+    }
+
+    void PoisonNovaCast()
+    {
+        GameObject nova = Instantiate(PoisonNovaAoE, transform.position, transform.rotation);
+
+        poisonNovaFired = nova.GetComponent(typeof(Bullet)) as Bullet;
+        poisonNovaGrow = nova.GetComponent(typeof(Grow)) as Grow;
+
+        poisonNovaFired.DoT = poisonNovaDoT * playerStats.DamageDealtMultiplyer(1f);
+        poisonNovaFired.durationValue = poisonNovaDoTDuration * playerStats.durationBonus;
+        nova.transform.localScale = new Vector3(poisonNovaAreaSize * playerStats.areaSizeBonus, poisonNovaAreaSize * playerStats.areaSizeBonus, 1f);
+        poisonNovaFired.duration = poisonNovaDuration * playerStats.durationBonus;
+        temp = 0.1f + 0.7f * poisonNovaAreaSize * playerStats.areaSizeBonus;
+        poisonNovaGrow.scaleChange.x = temp;
+        poisonNovaGrow.scaleChange.y = temp;
+
+        if (Weapons[5] > 5)
+            poisonNovaFired.novaDetonation = true;
+
+        Invoke("PoisonNovaCast", poisonNovaFireRate / playerStats.SpeedMultiplyer(1f));
+    }
+
+    void FlamethrowerCast()
+    {
+        if (Ammo[6] > 0)
+        {
+            FlamethrowerFire();
+            Ammo[6]--;
+            WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
+            Invoke("FlamethrowerCast", temp / playerStats.SpeedMultiplyer(1f));
+        }
+        else
+            Invoke("FlamethrowerReload", flamethrowerReloadTime);
+    }
+
+    void FlamethrowerFire()
+    {
+        temp = flamethrowerFireRate / (1f + 0.48f * (flamethrowerProjectileCount + playerStats.projectileCountBonus));
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + Random.Range(-12f - 2f / temp, 12f + 2f / temp));
+        GameObject bullet = Instantiate(FlamethrowerBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * 11.6f * Random.Range(1f, 1.06f), ForceMode2D.Impulse);
+
+        flamethrowerFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        flamethrowerFired.duration = 1.1f * playerStats.durationBonus;
+        flamethrowerFired.damage = flamethrowerDamage * playerStats.DamageDealtMultiplyer(1f);
+        flamethrowerFired.burn = flamethrowerBurn;
+
+        if (Weapons[4] > 5)
+            flamethrowerFired.pierce++;
+
+        if (playerStats.CritChance > Random.Range(0f, 1f))
+        {
+            flamethrowerFired.damage *= playerStats.CritDamage;
+            flamethrowerFired.crit = true;
+            if (Weapons[6] > 3)
+                flamethrowerFired.burn++;
+        }
+        flamethrowerFired.burn += (flamethrowerFired.burn * (flamethrowerProjectileCount + playerStats.projectileCountBonus)) / 5;
+    }
+
+    void FlamethrowerReload()
+    {
+        Ammo[6] = MagazineSize[6];
+        WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
+        FlamethrowerCast();
     }
 }

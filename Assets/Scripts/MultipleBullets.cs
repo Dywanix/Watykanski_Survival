@@ -32,7 +32,7 @@ public class MultipleBullets : MonoBehaviour
         BulletsShards.damage = ThisBullet.damage * damageEfficiency;
         BulletsShards.DoT = ThisBullet.DoT;
         BulletsShards.shatter = ThisBullet.shatter;
-        BulletsShards.incendiary = ThisBullet.incendiary;
+        BulletsShards.burn = ThisBullet.burn;
         BulletsShards.curse = ThisBullet.curse;
         BulletsShards.damageGain = ThisBullet.damageGain;
         BulletsShards.vulnerableApplied = ThisBullet.vulnerableApplied * damageEfficiency;

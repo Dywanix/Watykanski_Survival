@@ -197,7 +197,7 @@ public class SteamGolem : MonoBehaviour
 
             playerStats.SetBullet(1f);
             playerStats.firedBullet.slowDuration += 0.44f;
-            playerStats.firedBullet.incendiary = playerStats.eq.guns[2].damage * 0.07f;
+            playerStats.firedBullet.burn = 3;
         }
     }
 }

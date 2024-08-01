@@ -59140,8 +59140,8 @@ MonoBehaviour:
   - +10% Experience
   - +26% Pick Up Radius
   - +6% Crit Chance & Crit Damage
-  statWeight: 8
-  weaponWeight: 5
+  statWeight: 9
+  weaponWeight: 7
   totalWeight: 0
   projectalPicked: 0
   rolls: 000000000000000000000000

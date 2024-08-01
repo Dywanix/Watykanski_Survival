@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: chaseSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -8445968070005688979, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
+      propertyPath: activationTimer
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1899054540941211183, guid: e9771b1c48bd73b4ab3a8fe036c5b669, type: 3}
       propertyPath: m_Name
       value: Experience Orb

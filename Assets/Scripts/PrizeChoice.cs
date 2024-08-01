@@ -88,13 +88,13 @@ public class PrizeChoice : MonoBehaviour
                 else rolls[which] = WeaponLib.possibleToCollect[roll];
                 if (which == 0)
                 {
-                    if (playerStats.ge.Weapons[rolls[which]] < 6)
+                    if (playerStats.ge.Weapons[rolls[which]] < 6 && !(playerStats.ge.Weapons[rolls[which]] == 0 && playerStats.ge.weaponsCollected == 4))
                         viable = true;
                     else viable = false;
                 }
                 else if (which == 1)
                 {
-                    if (playerStats.ge.Weapons[rolls[which]] < 6)
+                    if (playerStats.ge.Weapons[rolls[which]] < 6 && !(playerStats.ge.Weapons[rolls[which]] == 0 && playerStats.ge.weaponsCollected == 4))
                     {
                         if (!stats[0] && rolls[0] == rolls[which])
                             viable = false;
@@ -104,7 +104,7 @@ public class PrizeChoice : MonoBehaviour
                 }
                 else if (which == 2)
                 {
-                    if (playerStats.ge.Weapons[rolls[which]] < 6)
+                    if (playerStats.ge.Weapons[rolls[which]] < 6 && !(playerStats.ge.Weapons[rolls[which]] == 0 && playerStats.ge.weaponsCollected == 4))
                     {
                         if ((!stats[0] && rolls[0] == rolls[which]) || (!stats[1] && rolls[1] == rolls[which]))
                             viable = false;

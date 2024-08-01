@@ -8,8 +8,8 @@ public class Bullet : MonoBehaviour
     private Bullet Explosion;
     public BulletPlus BonusEffects;
     public PulletExplosion ShardExplosion;
-    public float duration, falloff, force, mass, damage, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, incendiary, damageGain;
-    public int pierce, special;
+    public float duration, falloff, force, mass, damage, vulnerableApplied, slowDuration, stunDuration, pierceEfficiency, DoT, shatter, curse, damageGain;
+    public int pierce, special, burn;
     public bool crit, AoE, damageLess;
     bool fallen;
 
@@ -21,10 +21,12 @@ public class Bullet : MonoBehaviour
 
     [Header("Additional Stats")]
     public float areaSize, durationValue;
-    public bool napalm;
+    public bool napalm, novaDetonation;
 
     void Start()
     {
+        if (damageGain != 0f)
+            Invoke("Gain", 0.5f);
         if (TargetedLocation)
         {
             if (HitArea)
@@ -41,7 +43,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         //duration -= Time.deltaTime;
-        damage *= 1f + damageGain * Time.deltaTime;
+        //damage *= 1f + damageGain * Time.deltaTime;
         /*if (duration <= 0)
         {
             Explosions();
@@ -54,6 +56,12 @@ public class Bullet : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x + travelX * Time.deltaTime, transform.position.y + travelY * Time.deltaTime, 0);
         }
+    }
+
+    void Gain()
+    {
+        damage += damageGain;
+        Invoke("Gain", 0.5f);
     }
 
     void Fall()
@@ -69,6 +77,13 @@ public class Bullet : MonoBehaviour
     void End()
     {
         Explosions();
+        if (novaDetonation)
+        {
+            GameObject bullet = Instantiate(ExplosionRadius, transform.position, transform.rotation);
+            Explosion = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            Explosion.damage = 0.66f * DoT * (durationValue - 0.5f);
+            bullet.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1f);
+        }
         Destroy(gameObject);
     }
 
@@ -106,7 +121,7 @@ public class Bullet : MonoBehaviour
         {
             GameObject bullet = Instantiate(ExplosionRadius, transform.position, transform.rotation);
             Explosion = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            Explosion.damage = damage; Explosion.DoT = DoT; Explosion.shatter = shatter; Explosion.incendiary = incendiary; Explosion.curse = curse;
+            Explosion.damage = damage; Explosion.DoT = DoT; Explosion.shatter = shatter; Explosion.burn = burn; Explosion.curse = curse;
             Explosion.vulnerableApplied = vulnerableApplied;
             Explosion.slowDuration = slowDuration;
             Explosion.stunDuration = stunDuration;

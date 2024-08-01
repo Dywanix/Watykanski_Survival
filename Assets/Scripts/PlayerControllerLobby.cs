@@ -321,7 +321,7 @@ public class PlayerControllerLobby : MonoBehaviour
         firedBullet.damage = guns[currentClass].Damage() * DamageDealtMultiplyer(1f);
         firedBullet.DoT = guns[currentClass].DoT;
         firedBullet.shatter = guns[currentClass].shatter;
-        firedBullet.incendiary = guns[currentClass].incendiary;
+        //firedBullet.burn = guns[currentClass].incendiary;
         firedBullet.curse = guns[currentClass].curse;
         firedBullet.damageGain = guns[currentClass].damageGain;
         firedBullet.vulnerableApplied = guns[currentClass].vulnerableApplied;

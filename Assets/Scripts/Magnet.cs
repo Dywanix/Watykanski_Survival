@@ -8,7 +8,7 @@ public class Magnet : MonoBehaviour
     public Collider2D coll;
     public PlayerController playerStats;
 
-    public float chaseSpeed, chaseRange;
+    public float chaseSpeed, chaseRange, activationTimer = 0.75f;
     bool active, chasing;
 
     void Start()
@@ -17,7 +17,7 @@ public class Magnet : MonoBehaviour
         playerStats = Player.GetComponent(typeof(PlayerController)) as PlayerController;
         if (playerStats.eq.Items[45] > 0)
             chaseRange *= 1f + 0.25f * playerStats.eq.Items[45];
-        Invoke("Activate", 0.75f);
+        Invoke("Activate", activationTimer);
     }
 
     void Activate()
