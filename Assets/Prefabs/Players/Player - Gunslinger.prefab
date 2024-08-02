@@ -5861,6 +5861,8 @@ MonoBehaviour:
   NapalmDistance: {fileID: 4486166102849819511}
   PoisonNovaAoE: {fileID: 1454031926560877813, guid: eff96208236323c40b05c0d884088074, type: 3}
   FlamethrowerBullet: {fileID: 2334523620414872676, guid: 9ca96ede95deef1429a8105c652c1a2f, type: 3}
+  BoomerangBullet: {fileID: 8510435169936936885, guid: 05cd17a31feb4404184b947ba0ee8c1f, type: 3}
+  BoomerangBulletv2: {fileID: 8521905661583466587, guid: 0c00eb9d6b3bd954eb229c75ea1df76f, type: 3}
 --- !u!1 &2129462728456948370
 GameObject:
   m_ObjectHideFlags: 0

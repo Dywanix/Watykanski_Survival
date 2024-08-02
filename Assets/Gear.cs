@@ -74,10 +74,17 @@ public class Gear : MonoBehaviour
     private int flamethrowerProjectileCount, flamethrowerBurn;
     private Bullet flamethrowerFired;
 
+    [Header("Boomerang")]
+    public GameObject BoomerangBullet;
+    public GameObject BoomerangBulletv2;
+    private float boomerangDamage, boomerangFireRate, boomerangDuration, boomerangPierceDamage, boomerangAim;
+    private int boomerangProjectileCount, boomerangPierce;
+    private Bullet boomerangFired;
+
     void Start()
     {
         CollectWeapon(startingWeapon);
-        //CollectWeapon(6);
+        CollectWeapon(7);
     }
 
     public void CollectWeapon(int which)
@@ -338,6 +345,41 @@ public class Gear : MonoBehaviour
                 MagazineSize[6] = 110;
                 Ammo[6] += 10;
                 WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
+                break; //     private float boomerangDamage, boomerangFireRate, boomerangPierceDamage;
+    // private int boomerangProjectileCount, boomerangPierce;
+            case (7, 1):
+                boomerangDamage = 32f;
+                boomerangFireRate = 2.5f;
+                boomerangProjectileCount = 2;
+                boomerangDuration = 4f;
+                boomerangPierce = 4;
+                boomerangPierceDamage = 0.8f;
+                Invoke("BoomerangCast", boomerangFireRate / playerStats.SpeedMultiplyer(1f));
+                break;
+            case (7, 2):
+                boomerangDamage = 38f;
+                boomerangProjectileCount = 3;
+                break;
+            case (7, 3):
+                boomerangFireRate = 2.2f;
+                boomerangPierce = 5;
+                boomerangPierceDamage = 0.85f;
+                break;
+            case (7, 4):
+                boomerangDamage = 44f;
+                boomerangProjectileCount = 4;
+                break;
+            case (7, 5):
+                boomerangDamage = 50f;
+                boomerangFireRate = 2f;
+                boomerangPierce = 6;
+                break;
+            case (7, 6):
+                boomerangDamage = 53f;
+                boomerangFireRate = 1.9f;
+                boomerangDuration = 6.1f;
+                boomerangPierceDamage = 0.9f;
+                BoomerangBullet = BoomerangBulletv2;
                 break;
         }
 
@@ -430,7 +472,7 @@ public class Gear : MonoBehaviour
         tempi = shotgunProjectileCount + playerStats.projectileCountBonus;
         for (int i = 0; i < tempi; i++)
         {
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + shotgunAim - (tempi - 1) * 6f + i * 12f);
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Body.rotation + shotgunAim - (tempi - 1) * 6f + i * 12f);
             GameObject bullet = Instantiate(ShotgunBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(playerStats.Barrel.up * 16f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
@@ -453,7 +495,7 @@ public class Gear : MonoBehaviour
         tempi = shotgunProjectileCount + playerStats.projectileCountBonus - 1;
         for (int i = 0; i < tempi; i++)
         {
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + shotgunAim - (tempi - 1) * 6f + i * 12f);
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Body.rotation + shotgunAim - (tempi - 1) * 6f + i * 12f);
             GameObject bullet = Instantiate(ShotgunBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(playerStats.Barrel.up * 16f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
@@ -660,5 +702,37 @@ public class Gear : MonoBehaviour
         Ammo[6] = MagazineSize[6];
         WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
         FlamethrowerCast();
+    }
+
+    void BoomerangCast()
+    {
+        boomerangAim = Random.Range(0f, 360f);
+        for (int i = 0; i < boomerangProjectileCount + playerStats.projectileCountBonus; i++)
+        {
+            Invoke("BoomerangFire", i * 0.09f);
+        }
+        Invoke("BoomerangCast", boomerangFireRate / playerStats.SpeedMultiplyer(1f));
+    }
+
+    void BoomerangFire()
+    {
+        playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Body.rotation + boomerangAim);
+        GameObject bullet = Instantiate(BoomerangBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * 14.8f * Random.Range(1f, 1.03f), ForceMode2D.Impulse);
+
+        boomerangFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        boomerangFired.duration = boomerangDuration * playerStats.durationBonus;
+        boomerangFired.damage = boomerangDamage * playerStats.DamageDealtMultiplyer(1f);
+        boomerangFired.pierce = boomerangPierce;
+        boomerangFired.pierceEfficiency = boomerangPierceDamage;
+
+        if (playerStats.CritChance > Random.Range(0f, 1f))
+        {
+            boomerangFired.damage *= playerStats.CritDamage;
+            boomerangFired.crit = true;
+        }
+
+        boomerangAim -= 15.3f;
     }
 }
