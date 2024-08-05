@@ -19,6 +19,10 @@ public class Gear : MonoBehaviour
     [Header("Stats")]
     public int tempi;
     public float temp;
+    public GameObject[] Enemies;
+    private int enemyCount, target;
+    private bool targeted;
+    private Rigidbody2D TargedBody;
 
     [Header("Ammos")]
     public int[] AmmoList;
@@ -90,7 +94,7 @@ public class Gear : MonoBehaviour
     void Start()
     {
         CollectWeapon(startingWeapon);
-        //CollectWeapon(8);
+        CollectWeapon(2);
     }
 
     public void CollectWeapon(int which)
@@ -387,14 +391,14 @@ public class Gear : MonoBehaviour
                 BoomerangBullet = BoomerangBulletv2;
                 break;
             case (8, 1):
-                singularityDamage = 13f;
+                singularityDamage = 12f;
                 singularityFireRate = 5.2f;
                 singularityAreaSize = 0.68f;
                 singularityDuration = 4f;
                 Invoke("SingularityCast", singularityFireRate / playerStats.SpeedMultiplyer(1f));
                 break;
             case (8, 2):
-                singularityDamage = 18f;
+                singularityDamage = 16f;
                 singularityAreaSize = 0.72f;
                 break;
             case (8, 3):
@@ -402,18 +406,19 @@ public class Gear : MonoBehaviour
                 singularityDuration = 4.2f;
                 break;
             case (8, 4):
-                singularityDamage = 22f;
+                singularityDamage = 20f;
                 singularityAreaSize = 0.76f;
                 break;
             case (8, 5):
-                singularityDamage = 26f;
+                singularityDamage = 23f;
                 singularityFireRate = 4.75f;
                 singularityDuration = 4.4f;
                 break;
             case (8, 6):
-                singularityDamage = 28f;
+                singularityDamage = 24f;
                 singularityFireRate = 4.5f;
-                singularityAreaSize = 0.87f;
+                singularityAreaSize = 0.88f;
+                singularityDuration = 4.45f;
                 SingularityBullet = EmpoweredSingularityBullet;
                 break;
         }
@@ -563,7 +568,7 @@ public class Gear : MonoBehaviour
     {
         if (Ammo[2] > 0)
         {
-            railSpikeAim = Random.Range(0f, 360f);
+            RailSpikeTakeAim();
             RailSpikeFire();
             Ammo[2]--;
             WeaponAmmo[AmmoList[2]].text = Ammo[2].ToString("0") + "/" + MagazineSize[2].ToString("0");
@@ -573,12 +578,41 @@ public class Gear : MonoBehaviour
             Invoke("RailSpikeReload", railSpikeReloadTime);
     }
 
+    void RailSpikeTakeAim()
+    {
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        targeted = false;
+        Debug.Log("enemies = " + enemyCount);
+        if (enemyCount > 0)
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                //Enemies[i] = GameObject[Random.Range(0, enemyCount)].FindGameObjectsWithTag("Enemy");
+                Enemies[i] = GameObject.FindGameObjectWithTag("Enemy");
+                Debug.Log("enemy " + i + " dist. " + Vector3.Distance(transform.position, Enemies[i].transform.position));
+                if (Vector3.Distance(transform.position, Enemies[i].transform.position) <= 15f && !targeted)
+                {
+                    target = i;
+                    targeted = true;
+                    Debug.Log("targeted enemy = " + i);
+                }
+            }
+        }
+        if (targeted)
+        {
+            TargedBody = Enemies[target].GetComponent(typeof(Rigidbody2D)) as Rigidbody2D;
+            Vector2 lookDir = TargedBody.position - playerStats.Body.position;
+            railSpikeAim = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        }
+        else railSpikeAim = Random.Range(0f, 360f);
+    }
+
     void RailSpikeFire()
     {
         tempi = 1 + playerStats.projectileCountBonus;
         for (int i = 0; i < tempi; i++)
         {
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation + railSpikeAim + i * (360f / tempi));
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, railSpikeAim + i * (360f / tempi));
             GameObject bullet = Instantiate(RailSpikeBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
             bullet_body.AddForce(playerStats.Barrel.up * 15f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);

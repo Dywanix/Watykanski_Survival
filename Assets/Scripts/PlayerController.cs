@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
         }*/
         toolsStored = tools;
         eq.guns[eq.equipped].parts = toolsStored;
-        expRequired = 28f - 7f;
+        expRequired = 29f - 9f;
         //expRequired = 5;
         UpdateBars();
     }
@@ -1432,7 +1432,7 @@ public class PlayerController : MonoBehaviour
         {
             experience -= expRequired;
             LevelUp();
-            expRequired = 5f + 23f * level;
+            expRequired = 7f + 22f * level;
         }
         experienceBar.fillAmount = experience / expRequired;
     }

@@ -5844,6 +5844,10 @@ MonoBehaviour:
   weaponsCollected: 0
   tempi: 0
   temp: 0
+  Enemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   AmmoList: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   MagazineSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   Ammo: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -5853,6 +5857,7 @@ MonoBehaviour:
   RevolverBullet: {fileID: 2499075274093127119, guid: 18455524d775bf4479b95de35d63d7d3, type: 3}
   ShotgunBullet: {fileID: 4439147435263471361, guid: f66006d5c9a69b5478d292372c3a7d06, type: 3}
   RailSpikeBullet: {fileID: 4261009339933418045, guid: 0a7cea40919768f4898f2d719effe4eb, type: 3}
+  railSpikeBody: {fileID: 4596324570306271699}
   ImmolationObject: {fileID: 2319207589413171251}
   ImmolationAoE: {fileID: 3361120088236187938, guid: 7c095ce63d9467e4592bafb5c3367123, type: 3}
   immolationAreaSize: 0
@@ -6560,6 +6565,7 @@ Transform:
   m_Children:
   - {fileID: 1283220306739473161}
   - {fileID: 5780744643842513164}
+  - {fileID: 2886326008837523781}
   m_Father: {fileID: 2129462728280790381}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29412,6 +29418,59 @@ MonoBehaviour:
   order: 24
   equipped: 0
   rerolled: 0
+--- !u!1 &9156448276294937251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2886326008837523781}
+  - component: {fileID: 4596324570306271699}
+  m_Layer: 0
+  m_Name: Targeting Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2886326008837523781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9156448276294937251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2129462729641926353}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &4596324570306271699
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9156448276294937251}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &9179632989579959953
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class Arena : MonoBehaviour
     void Start()
     {
         //map = GameObject.FindGameObjectWithTag("Map").GetComponent(typeof(Map)) as Map;
-        Invoke("NextRound", 5f);
+        Invoke("NextRound", 2.5f);
     }
 
     void Update()

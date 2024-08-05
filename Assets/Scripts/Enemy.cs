@@ -442,7 +442,7 @@ public class Enemy : MonoBehaviour
     {
         for (float i = 0; i < duration; i += 0.3f)
         {
-            StartCoroutine(DoTproc(value * 0.3f, i));
+            StartCoroutine(DoTproc(value * 0.3f, i + 0.1f));
             DoT += value * 0.3f;
         }
         UpdateBars();

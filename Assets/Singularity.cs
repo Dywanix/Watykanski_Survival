@@ -24,12 +24,12 @@ public class Singularity : MonoBehaviour
         if (empowered)
         {
             grow = 0.048f * (ThisBullet.playerAreaBonus * 0.3f + 0.7f);
-            additionalArea = 0.36f * (ThisBullet.playerAreaBonus * 0.2f + 0.8f);
+            additionalArea = 0.35f * (ThisBullet.playerAreaBonus * 0.18f + 0.82f);
         }
         else
         {
             grow = 0.032f * (ThisBullet.playerAreaBonus * 0.28f + 0.72f);
-            additionalArea = 0.45f * (ThisBullet.playerAreaBonus * 0.22f + 0.78f);
+            additionalArea = 0.44f * (ThisBullet.playerAreaBonus * 0.2f + 0.8f);
         }
         areas = 1;
         DisplayAreas();
@@ -45,7 +45,7 @@ public class Singularity : MonoBehaviour
     void Tick()
     {
         count = 0;
-        for (float i = ThisBullet.areaSize; i >= 0.28f; i -= additionalArea)
+        for (float i = ThisBullet.areaSize; i >= 0.26f; i -= additionalArea)
         {
             if (count < AreaObject.Length + 1)
             {
@@ -79,7 +79,7 @@ public class Singularity : MonoBehaviour
 
     void DisplayAreas()
     {
-        while (ThisBullet.areaSize - additionalArea * areas >= 0.28f && areas < AreaObject.Length + 1)
+        while (ThisBullet.areaSize - additionalArea * areas >= 0.26f && areas < AreaObject.Length + 1)
         {
             AreaObject[areas - 1].SetActive(true);
             areas++;

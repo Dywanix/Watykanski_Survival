@@ -577,17 +577,17 @@ MonoBehaviour:
   WeaponSprite: {fileID: 21300000, guid: e4065aca616bbd44d83bbe7a7c2543ba, type: 3}
   Tooltip1:
   - 
-  - 'Damage: 15 >> 20'
-  - 'Fire Rate: 5s >> 4.75s'
-  - 'Damage: 20 >> 25'
-  - 'Damage: 25 >> 29'
+  - 'Damage: 12 >> 16'
+  - 'Fire Rate: 5.2s >> 4.95s'
+  - 'Damage: 16 >> 20'
+  - 'Damage: 20 >> 23'
   - 
   Tooltip2:
   - Creates Singularity
-  - 'Area Size: 0.64 >> 0.68'
-  - 'Duration: 4s >> 4.2s'
   - 'Area Size: 0.68 >> 0.72'
-  - 'Fire Rate: 4.75s >> 4.55s'
+  - 'Duration: 4s >> 4.2s'
+  - 'Area Size: 0.72 >> 0.76'
+  - 'Fire Rate: 4.95s >> 4.75s'
   - Empowers Singularity
   Tooltip3:
   - 
