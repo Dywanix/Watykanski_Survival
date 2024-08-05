@@ -14,7 +14,7 @@ public class Gear : MonoBehaviour
     public GameObject[] AmmoObject;
     public Image[] WeaponImage;
     public TMPro.TextMeshProUGUI[] WeaponLevel, WeaponAmmo;
-    public int weaponsCollected; //ammosDisplays;
+    public int weaponsCollected;
 
     [Header("Stats")]
     public int tempi;
@@ -81,10 +81,16 @@ public class Gear : MonoBehaviour
     private int boomerangProjectileCount, boomerangPierce;
     private Bullet boomerangFired;
 
+    [Header("Singularity")]
+    public GameObject SingularityBullet;
+    public GameObject EmpoweredSingularityBullet;
+    private float singularityDamage, singularityFireRate, singularityAreaSize, singularityDuration;
+    private Bullet singularityFired;
+
     void Start()
     {
         CollectWeapon(startingWeapon);
-        CollectWeapon(7);
+        //CollectWeapon(8);
     }
 
     public void CollectWeapon(int which)
@@ -345,8 +351,7 @@ public class Gear : MonoBehaviour
                 MagazineSize[6] = 110;
                 Ammo[6] += 10;
                 WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
-                break; //     private float boomerangDamage, boomerangFireRate, boomerangPierceDamage;
-    // private int boomerangProjectileCount, boomerangPierce;
+                break;
             case (7, 1):
                 boomerangDamage = 32f;
                 boomerangFireRate = 2.5f;
@@ -380,6 +385,36 @@ public class Gear : MonoBehaviour
                 boomerangDuration = 6.1f;
                 boomerangPierceDamage = 0.9f;
                 BoomerangBullet = BoomerangBulletv2;
+                break;
+            case (8, 1):
+                singularityDamage = 13f;
+                singularityFireRate = 5.2f;
+                singularityAreaSize = 0.68f;
+                singularityDuration = 4f;
+                Invoke("SingularityCast", singularityFireRate / playerStats.SpeedMultiplyer(1f));
+                break;
+            case (8, 2):
+                singularityDamage = 18f;
+                singularityAreaSize = 0.72f;
+                break;
+            case (8, 3):
+                singularityFireRate = 4.95f;
+                singularityDuration = 4.2f;
+                break;
+            case (8, 4):
+                singularityDamage = 22f;
+                singularityAreaSize = 0.76f;
+                break;
+            case (8, 5):
+                singularityDamage = 26f;
+                singularityFireRate = 4.75f;
+                singularityDuration = 4.4f;
+                break;
+            case (8, 6):
+                singularityDamage = 28f;
+                singularityFireRate = 4.5f;
+                singularityAreaSize = 0.87f;
+                SingularityBullet = EmpoweredSingularityBullet;
                 break;
         }
 
@@ -684,7 +719,7 @@ public class Gear : MonoBehaviour
         flamethrowerFired.damage = flamethrowerDamage * playerStats.DamageDealtMultiplyer(1f);
         flamethrowerFired.burn = flamethrowerBurn;
 
-        if (Weapons[4] > 5)
+        if (Weapons[6] > 5)
             flamethrowerFired.pierce++;
 
         if (playerStats.CritChance > Random.Range(0f, 1f))
@@ -734,5 +769,25 @@ public class Gear : MonoBehaviour
         }
 
         boomerangAim -= 15.3f;
+    }
+
+    void SingularityCast()
+    {
+        SingularityFire();
+        Invoke("SingularityCast", singularityFireRate / playerStats.SpeedMultiplyer(1f));
+    }
+
+    void SingularityFire()
+    {
+        //playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation);
+        GameObject bullet = Instantiate(SingularityBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
+        Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+        bullet_body.AddForce(playerStats.Barrel.up * 11.9f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
+
+        singularityFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
+        singularityFired.damage = singularityDamage * playerStats.DamageDealtMultiplyer(1f);
+        singularityFired.areaSize = singularityAreaSize * playerStats.areaSizeBonus;
+        singularityFired.durationValue = singularityDuration * playerStats.durationBonus;
+        singularityFired.playerAreaBonus = playerStats.areaSizeBonus;
     }
 }

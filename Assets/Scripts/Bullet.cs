@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     float travelX, travelY;
 
     [Header("Additional Stats")]
-    public float areaSize, durationValue;
+    public float areaSize, playerAreaBonus, durationValue;
     public bool napalm, novaDetonation;
 
     void Start()
@@ -131,6 +131,7 @@ public class Bullet : MonoBehaviour
                 Explosion.duration = durationValue;
                 Explosion.areaSize = areaSize;
                 bullet.transform.localScale = new Vector3(areaSize, areaSize, 1f);
+                Explosion.playerAreaBonus = playerAreaBonus;
             }
         }
         if (ShardExplosion)

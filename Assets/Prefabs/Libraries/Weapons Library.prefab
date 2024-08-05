@@ -122,7 +122,8 @@ MonoBehaviour:
   - {fileID: 5067238933667576084}
   - {fileID: 5400446506205484473}
   - {fileID: 5658606143843400992}
-  possibleToCollect: 01000000020000000300000004000000050000000600000007000000
+  - {fileID: 5874559633282612859}
+  possibleToCollect: 0100000002000000030000000400000005000000060000000700000008000000
 --- !u!1 &3790812077637957187
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,9 +526,77 @@ Transform:
   - {fileID: 1469705497437067051}
   - {fileID: 8681721993358369491}
   - {fileID: 5484892662357167558}
+  - {fileID: 5203651507412571874}
   m_Father: {fileID: 5655256963641278598}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8056254872480504421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5203651507412571874}
+  - component: {fileID: 5874559633282612859}
+  m_Layer: 0
+  m_Name: Singularity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5203651507412571874
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056254872480504421}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1193775814922914142}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5874559633282612859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8056254872480504421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc5e017b048ea44981d89fb06133da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSprite: {fileID: 21300000, guid: e4065aca616bbd44d83bbe7a7c2543ba, type: 3}
+  Tooltip1:
+  - 
+  - 'Damage: 15 >> 20'
+  - 'Fire Rate: 5s >> 4.75s'
+  - 'Damage: 20 >> 25'
+  - 'Damage: 25 >> 29'
+  - 
+  Tooltip2:
+  - Creates Singularity
+  - 'Area Size: 0.64 >> 0.68'
+  - 'Duration: 4s >> 4.2s'
+  - 'Area Size: 0.68 >> 0.72'
+  - 'Fire Rate: 4.75s >> 4.55s'
+  - Empowers Singularity
+  Tooltip3:
+  - 
+  - 
+  - 
+  - 
+  - 'Duration: 4.2s >> 4.4s'
+  - 
+  ammoless: 1
 --- !u!1 &8673989294568146432
 GameObject:
   m_ObjectHideFlags: 0
