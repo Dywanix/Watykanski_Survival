@@ -52,6 +52,8 @@ public class Backpack : MonoBehaviour
         StatsText[10].text = (player.pickUpRadiusBonus * 100f).ToString("0") + "%";
         StatsText[11].text = (player.CritChance * 100f).ToString("0") + "%";
         StatsText[12].text = (player.CritDamage * 100f).ToString("0") + "%";
+        StatsText[13].text = "+" + player.bonusAmmo.ToString("0");
+        StatsText[14].text = (player.reloadTimeBonus * 100f).ToString("0") + "%";
         // 13. +ammo?
         /*
         for (int i = 0; i < 2; i++)

@@ -91,10 +91,16 @@ public class Gear : MonoBehaviour
     private float singularityDamage, singularityFireRate, singularityAreaSize, singularityDuration;
     private Bullet singularityFired;
 
+    [Header("Shreder")]
+    public GameObject ShrederBullet;
+    private float shrederDamage, shrederFireRate, shrederDamageIncrease, shrederReloadTime;
+    private int shrederProjectileCount, shrederProjectileIncrease, shrederProjectileIncreasePer, shrederCharge;
+    private Bullet shrederFired;
+
     void Start()
     {
         CollectWeapon(startingWeapon);
-        CollectWeapon(2);
+        CollectWeapon(9);
     }
 
     public void CollectWeapon(int which)
@@ -110,8 +116,8 @@ public class Gear : MonoBehaviour
                 revolverCritChanceBonus = 0.1f;
                 revolverReloadTime = 0.5f;
                 revolverProjectileCount = 1;
-                MagazineSize[0] = 6;
-                Ammo[0] = 6;
+                MagazineSize[0] = 6 + playerStats.bonusAmmo;
+                Ammo[0] = MagazineSize[0];
                 Invoke("RevolverCast", revolverFireRate / playerStats.SpeedMultiplyer(1f));
                 break;
             case (0, 2):
@@ -124,8 +130,8 @@ public class Gear : MonoBehaviour
                 break;
             case (0, 4):
                 revolverProjectileCount = 2;
-                MagazineSize[0] = 7;
-                Ammo[0]++;
+                MagazineSize[0] += 1;
+                Ammo[0] += 1;
                 WeaponAmmo[AmmoList[0]].text = Ammo[0].ToString("0") + "/" + MagazineSize[0].ToString("0");
                 break;
             case (0, 5):
@@ -144,15 +150,15 @@ public class Gear : MonoBehaviour
                 shotgunReloadTime = 0.22f;
                 shotgunProjectileCount = 3;
                 shotgunReloadCount = 1;
-                MagazineSize[1] = 12;
-                Ammo[1] = 12;
+                MagazineSize[1] = 12 + playerStats.bonusAmmo;
+                Ammo[1] = MagazineSize[1];
                 Invoke("ShotgunCast", shotgunFireRate / playerStats.SpeedMultiplyer(1f));
                 break;
             case (1, 2):
                 shotgunFireRate = 2.2f;
                 shotgunProjectileCount = 4;
-                MagazineSize[1] = 13;
-                Ammo[1]++;
+                MagazineSize[1] += 1;
+                Ammo[1] += 1;
                 WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[1].ToString("0");
                 break;
             case (1, 3):
@@ -163,8 +169,8 @@ public class Gear : MonoBehaviour
             case (1, 4):
                 shotgunDamage = 44f;
                 shotgunProjectileCount = 5;
-                MagazineSize[1] = 14;
-                Ammo[1]++;
+                MagazineSize[1] += 1;
+                Ammo[1] += 1;
                 WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[1].ToString("0");
                 break;
             case (1, 5):
@@ -183,8 +189,8 @@ public class Gear : MonoBehaviour
                 railSpikeFireRate = 1.1f;
                 railSpikePierce = 3;
                 railSpikePierceDamage = 0.7f;
-                MagazineSize[2] = 3;
-                Ammo[2] = 3;
+                MagazineSize[2] = 3 + playerStats.bonusAmmo;
+                Ammo[2] = MagazineSize[2];
                 railSpikeReloadTime = 0.77f;
                 Invoke("RailSpikeCast", railSpikeFireRate / playerStats.SpeedMultiplyer(1f));
                 break;
@@ -200,7 +206,7 @@ public class Gear : MonoBehaviour
             case (2, 4):
                 railSpikeDamageRatio = 1.08f;
                 railSpikePierceDamage = 0.8f;
-                MagazineSize[2] = 5;
+                MagazineSize[2] += 2;
                 Ammo[2] += 2;
                 WeaponAmmo[AmmoList[2]].text = Ammo[2].ToString("0") + "/" + MagazineSize[2].ToString("0");
                 break;
@@ -258,8 +264,8 @@ public class Gear : MonoBehaviour
                 napalmAreaSize = 0.5f;
                 napalmDuration = 3.5f;
                 napalmReloadTime = 4.2f;
-                MagazineSize[4] = 6;
-                Ammo[4] = 6;
+                MagazineSize[4] = 6 + playerStats.bonusAmmo;
+                Ammo[4] = MagazineSize[4];
                 Invoke("NapalmCast", napalmFireRate / playerStats.SpeedMultiplyer(1f));
                 break;
             case (4, 2):
@@ -325,8 +331,8 @@ public class Gear : MonoBehaviour
                 flamethrowerProjectileCount = 2;
                 flamethrowerBurn = 1;
                 flamethrowerReloadTime = 6.6f;
-                MagazineSize[6] = 80;
-                Ammo[6] = 100;
+                MagazineSize[6] = 80 + playerStats.bonusAmmo;
+                Ammo[6] = MagazineSize[6];
                 Invoke("FlamethrowerCast", flamethrowerFireRate / playerStats.SpeedMultiplyer(1f));
                 break;
             case (6, 2):
@@ -336,7 +342,7 @@ public class Gear : MonoBehaviour
             case (6, 3):
                 flamethrowerDamage = 12f;
                 flamethrowerProjectileCount = 3;
-                MagazineSize[6] = 100;
+                MagazineSize[6] += 20;
                 Ammo[6] += 20;
                 WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
                 break;
@@ -352,7 +358,7 @@ public class Gear : MonoBehaviour
                 flamethrowerDamage = 17f;
                 flamethrowerFireRate = 0.295f;
                 flamethrowerReloadTime = 6.3f;
-                MagazineSize[6] = 110;
+                MagazineSize[6] += 10;
                 Ammo[6] += 10;
                 WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
                 break;
@@ -421,6 +427,55 @@ public class Gear : MonoBehaviour
                 singularityDuration = 4.45f;
                 SingularityBullet = EmpoweredSingularityBullet;
                 break;
+            case (9, 1):
+                shrederDamage = 16f;
+                shrederFireRate = 0.94f;
+                shrederDamageIncrease = 0.025f;
+                shrederProjectileCount = 2;
+                shrederProjectileIncrease = 3;
+                shrederProjectileIncreasePer = 10;
+                shrederReloadTime = 1.43f;
+                MagazineSize[9] = 8 + playerStats.bonusAmmo;
+                Ammo[9] = MagazineSize[9];
+                Invoke("ShrederCast", shrederFireRate / playerStats.SpeedMultiplyer(1f));
+                shrederCharge = playerStats.projectileCountBonus;
+                break;
+            case (9, 2):
+                shrederDamage = 19f;
+                shrederDamageIncrease = 0.03f;
+                shrederProjectileIncrease = 6;
+                shrederProjectileIncreasePer = 19;
+                MagazineSize[9] += 1;
+                Ammo[9] += 1;
+                WeaponAmmo[AmmoList[9]].text = Ammo[9].ToString("0") + "/" + MagazineSize[9].ToString("0");
+                break;
+            case (9, 3):
+                shrederDamage = 23f;
+                shrederFireRate = 0.78f;
+                shrederProjectileIncrease = 10;
+                shrederProjectileIncreasePer = 31;
+                break;
+            case (9, 4):
+                shrederProjectileCount = 3;
+                MagazineSize[9] += 1;
+                Ammo[9] += 1;
+                WeaponAmmo[AmmoList[9]].text = Ammo[9].ToString("0") + "/" + MagazineSize[9].ToString("0");
+                break;
+            case (9, 5):
+                shrederDamageIncrease = 0.035f;
+                shrederProjectileIncrease = 1;
+                shrederProjectileIncreasePer = 3;
+                break;
+            case (9, 6):
+                shrederDamage = 24f;
+                shrederFireRate = 0.74f;
+                shrederProjectileIncrease = 7;
+                shrederProjectileIncreasePer = 19;
+                shrederReloadTime = 1.36f;
+                MagazineSize[9] += 1;
+                Ammo[9] += 1;
+                WeaponAmmo[AmmoList[9]].text = Ammo[9].ToString("0") + "/" + MagazineSize[9].ToString("0");
+                break;
         }
 
         if (Weapons[which] == 1)
@@ -442,6 +497,19 @@ public class Gear : MonoBehaviour
             WeaponLevel[WeaponList[which]].text = Weapons[which].ToString("0");
     }
 
+    public void UpdateAmmo(int increase)
+    {
+        for (int i = 0; i < Weapons.Length; i++)
+        {
+            if (Weapons[i] > 0 && !WLibrary.Weapons[i].ammoless)
+            {
+                MagazineSize[i] += increase;
+                Ammo[i] += increase;
+                WeaponAmmo[AmmoList[i]].text = Ammo[i].ToString("0") + "/" + MagazineSize[i].ToString("0");
+            }
+        }
+    }
+
     void RevolverCast()
     {
         if (Ammo[0] > 0)
@@ -456,7 +524,7 @@ public class Gear : MonoBehaviour
             Invoke("RevolverCast", revolverFireRate / playerStats.SpeedMultiplyer(1f));
         }
         else
-            Invoke("RevolverReload", revolverReloadTime);
+            Invoke("RevolverReload", revolverReloadTime / playerStats.reloadTimeBonus);
     }
 
     void RevolverFire()
@@ -504,7 +572,7 @@ public class Gear : MonoBehaviour
             Invoke("ShotgunCast", shotgunFireRate / playerStats.SpeedMultiplyer(1f));
         }
         else
-            Invoke("ShotgunReload", shotgunReloadTime);
+            Invoke("ShotgunReload", shotgunReloadTime / playerStats.reloadTimeBonus);
     }
 
     void ShotgunFire()
@@ -560,7 +628,7 @@ public class Gear : MonoBehaviour
         WeaponAmmo[AmmoList[1]].text = Ammo[1].ToString("0") + "/" + MagazineSize[1].ToString("0");
 
         if (Ammo[1] < MagazineSize[1])
-            Invoke("ShotgunReload", shotgunReloadTime);
+            Invoke("ShotgunReload", shotgunReloadTime / playerStats.reloadTimeBonus);
         else ShotgunCast();
     }
 
@@ -575,7 +643,7 @@ public class Gear : MonoBehaviour
             Invoke("RailSpikeCast", railSpikeFireRate / playerStats.SpeedMultiplyer(1f));
         }
         else
-            Invoke("RailSpikeReload", railSpikeReloadTime);
+            Invoke("RailSpikeReload", railSpikeReloadTime / playerStats.reloadTimeBonus);
     }
 
     void RailSpikeTakeAim()
@@ -653,7 +721,12 @@ public class Gear : MonoBehaviour
         immolationTick.damage = (immolationDamage + immolationHealthRatio * playerStats.maxHealth) * playerStats.DamageDealtMultiplyer(1f);
         tick.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
         if (Weapons[3] > 5)
-            immolationTick.burn = 1;
+        {
+            for (float i = 100f; i < 40f + playerStats.maxHealth; i += 100f)
+            {
+                immolationTick.burn++;
+            }
+        }
         Invoke("ImmolateCast", immolationTickRate);
     }
 
@@ -671,7 +744,7 @@ public class Gear : MonoBehaviour
             Invoke("NapalmCast", napalmFireRate / playerStats.SpeedMultiplyer(1f));
         }
         else
-            Invoke("NapalmReload", napalmReloadTime);
+            Invoke("NapalmReload", napalmReloadTime / playerStats.reloadTimeBonus);
     }
 
     void NapalmFire()
@@ -737,7 +810,7 @@ public class Gear : MonoBehaviour
             Invoke("FlamethrowerCast", temp / playerStats.SpeedMultiplyer(1f));
         }
         else
-            Invoke("FlamethrowerReload", flamethrowerReloadTime);
+            Invoke("FlamethrowerReload", flamethrowerReloadTime / playerStats.reloadTimeBonus);
     }
 
     void FlamethrowerFire()
@@ -823,5 +896,57 @@ public class Gear : MonoBehaviour
         singularityFired.areaSize = singularityAreaSize * playerStats.areaSizeBonus;
         singularityFired.durationValue = singularityDuration * playerStats.durationBonus;
         singularityFired.playerAreaBonus = playerStats.areaSizeBonus;
+    }
+
+    void ShrederCast()
+    {
+        if (Ammo[9] > 0)
+        {
+            ShrederFire();
+            Invoke("ShrederCast", shrederFireRate / playerStats.SpeedMultiplyer(1f));
+            Ammo[9]--;
+            WeaponAmmo[AmmoList[9]].text = Ammo[9].ToString("0") + "/" + MagazineSize[9].ToString("0");
+        }
+        else
+            Invoke("ShrederReload", shrederReloadTime / playerStats.reloadTimeBonus);
+    }
+
+    void ShrederFire()
+    {
+        tempi = shrederProjectileCount + playerStats.projectileCountBonus + (shrederProjectileIncrease * shrederCharge) / shrederProjectileIncreasePer;
+        for (int i = 0; i < tempi; i++)
+        {
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation - (tempi - 1) * 4.8f + i * 9.6f);
+            GameObject bullet = Instantiate(ShrederBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
+            Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
+            bullet_body.AddForce(playerStats.Barrel.up * 14.8f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
+
+            shrederFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
+            shrederFired.duration = 1.48f * playerStats.durationBonus;
+            shrederFired.damage = shrederDamage * playerStats.DamageDealtMultiplyer(1f);
+            shrederFired.damage *= 1f + (shrederDamageIncrease * shrederCharge);
+
+            if (playerStats.CritChance > Random.Range(0f, 1f))
+            {
+                shrederFired.damage *= playerStats.CritDamage;
+                shrederFired.crit = true;
+                if (Weapons[9] > 5 && 0.23f > Random.Range(0f, 100f))
+                    Ammo[9]++;
+            }
+            else
+            {
+                if (Weapons[9] > 5 && 0.15f > Random.Range(0f, 100f))
+                    Ammo[9]++;
+            }
+        }
+        shrederCharge++;
+    }
+
+    void ShrederReload()
+    {
+        Ammo[9] = MagazineSize[9];
+        WeaponAmmo[AmmoList[9]].text = Ammo[9].ToString("0") + "/" + MagazineSize[9].ToString("0");
+        shrederCharge = playerStats.projectileCountBonus;
+        ShrederCast();
     }
 }

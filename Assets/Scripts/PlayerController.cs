@@ -42,8 +42,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Core Stats")]
     public float maxHealth;
-    public float damageBonus, fireRateBonus, movementSpeed, healthRegen, areaSizeBonus, durationBonus, experienceBonus, pickUpRadiusBonus, CritChance, CritDamage;
-    public int projectileCountBonus, armor;
+    public float damageBonus, fireRateBonus, movementSpeed, healthRegen, areaSizeBonus, durationBonus, experienceBonus, pickUpRadiusBonus, CritChance, CritDamage, reloadTimeBonus;
+    public int projectileCountBonus, armor, bonusAmmo;
 
     [Header("Stats")]
     public float dHealth;
@@ -1516,6 +1516,10 @@ public class PlayerController : MonoBehaviour
                 CritChance += 0.06f;
                 CritDamage += 0.06f;
                 break;
+            case 12:
+                GainAmmo(4);
+                reloadTimeBonus += 0.08f;
+                break;
         }
     }
 
@@ -1565,6 +1569,12 @@ public class PlayerController : MonoBehaviour
     {
         pickUpRadiusBonus += value;
         PickUpCollider.radius = pickUpRadiusBonus;
+    }
+
+    public void GainAmmo(int value)
+    {
+        bonusAmmo += value;
+        ge.UpdateAmmo(value);
     }
 
     public void GainSC(float value)
