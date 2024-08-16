@@ -93,14 +93,14 @@ public class Gear : MonoBehaviour
 
     [Header("Shreder")]
     public GameObject ShrederBullet;
-    private float shrederDamage, shrederFireRate, shrederDamageIncrease, shrederReloadTime;
+    private float shrederDamage, shrederFireRate, shrederDamageIncrease, shrederReloadTime, shrederCritChanceBonus;
     private int shrederProjectileCount, shrederProjectileIncrease, shrederProjectileIncreasePer, shrederCharge;
     private Bullet shrederFired;
 
     void Start()
     {
         CollectWeapon(startingWeapon);
-        CollectWeapon(9);
+        //CollectWeapon(9);
     }
 
     public void CollectWeapon(int which)
@@ -130,19 +130,19 @@ public class Gear : MonoBehaviour
                 break;
             case (0, 4):
                 revolverProjectileCount = 2;
-                MagazineSize[0] += 1;
-                Ammo[0] += 1;
+                MagazineSize[0] += 2;
+                Ammo[0] += 2;
                 WeaponAmmo[AmmoList[0]].text = Ammo[0].ToString("0") + "/" + MagazineSize[0].ToString("0");
                 break;
             case (0, 5):
-                revolverDamage = 46f;
-                revolverFireRate = 0.49f;
-                revolverCritDamageBonus = 0.2f;
+                revolverDamage = 47f;
+                revolverFireRate = 0.486f;
+                revolverCritDamageBonus = 0.22f;
                 break;
             case (0, 6):
-                revolverDamage = 48f;
-                revolverFireRate = 0.47f;
-                revolverCritChanceBonus = 0.18f;
+                revolverDamage = 49f;
+                revolverFireRate = 0.462f;
+                revolverCritChanceBonus = 0.2f;
                 break;
             case (1, 1):
                 shotgunDamage = 32f;
@@ -180,7 +180,7 @@ public class Gear : MonoBehaviour
                 break;
             case (1, 6):
                 shotgunDamage = 48f;
-                shotgunFireRate = 1.33f;
+                shotgunFireRate = 1.2f;
                 shotgunReloadTime = 0.16f;
                 break;
             case (2, 1):
@@ -197,35 +197,36 @@ public class Gear : MonoBehaviour
             case (2, 2):
                 railSpikeDamageRatio = 1.06f;
                 railSpikeFireRate = 0.97f;
-                railSpikePierceDamage = 0.75f;
+                railSpikePierceDamage = 0.76f;
                 break;
             case (2, 3):
                 railSpikeDamage = 72f;
+                railSpikeFireRate = 0.87f;
                 railSpikePierce = 4;
                 break;
             case (2, 4):
                 railSpikeDamageRatio = 1.08f;
-                railSpikePierceDamage = 0.8f;
-                MagazineSize[2] += 2;
-                Ammo[2] += 2;
+                railSpikePierceDamage = 0.82f;
+                MagazineSize[2] += 3;
+                Ammo[2] += 3;
                 WeaponAmmo[AmmoList[2]].text = Ammo[2].ToString("0") + "/" + MagazineSize[2].ToString("0");
                 break;
             case (2, 5):
-                railSpikeDamage = 90f;
-                railSpikeFireRate = 0.9f;
-                railSpikePierceDamage = 0.85f;
+                railSpikeDamage = 99f;
+                railSpikeFireRate = 0.81f;
+                railSpikePierceDamage = 0.88f;
                 break;
             case (2, 6):
-                railSpikeDamage = 95f;
-                railSpikeFireRate = 0.85f;
+                railSpikeDamage = 108f;
+                railSpikeFireRate = 0.74f;
                 railSpikePierce = 5;
-                railSpikePierceDamage = 0.9f;
-                railSpikeReloadTime = 0.72f;
+                railSpikePierceDamage = 0.92f;
+                railSpikeReloadTime = 0.7f;
                 //railSpikeUpgrade = true;
                 break;
             case (3, 1):
                 ImmolationObject.SetActive(true);
-                immolationDamage = 1.5f;
+                immolationDamage = 1.6f;
                 immolationHealthRatio = 0.04f;
                 immolationTickRate = 0.4f;
                 immolationAreaSize = 0.8f;
@@ -233,16 +234,16 @@ public class Gear : MonoBehaviour
                 Invoke("ImmolateCast", immolationTickRate);
                 break;
             case (3, 2):
-                immolationDamage = 3f;
+                immolationDamage = 3.2f;
                 immolationAreaSize = 0.9f;
                 ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
                 break;
             case (3, 3):
-                immolationDamage = 4f;
+                immolationDamage = 4.3f;
                 immolationHealthRatio = 0.05f;
                 break;
             case (3, 4):
-                immolationDamage = 6f;
+                immolationDamage = 6.4f;
                 immolationAreaSize = 1f;
                 ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
                 break;
@@ -252,7 +253,7 @@ public class Gear : MonoBehaviour
                 ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
                 break;
             case (3, 6):
-                immolationDamage = 8f;
+                immolationDamage = 8.5f;
                 immolationTickRate = 0.38f;
                 immolationAreaSize = 1.25f;
                 ImmolationObject.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
@@ -275,22 +276,22 @@ public class Gear : MonoBehaviour
                 break;
             case (4, 3):
                 napalmFireRate = 2.75f;
-                napalmAreaSize = 0.6f;
+                napalmAreaSize = 0.67f;
                 break;
             case (4, 4):
-                napalmDamage = 17f;
+                napalmDamage = 18f;
                 napalmProjectileCount = 4;
                 napalmDuration = 3.8f;
                 break;
             case (4, 5):
-                napalmDamage = 20f;
+                napalmDamage = 21f;
                 napalmFireRate = 2.55f;
-                napalmAreaSize = 0.7f;
+                napalmAreaSize = 0.83f;
                 break;
             case (4, 6):
-                napalmDamage = 21f;
+                napalmDamage = 22f;
                 napalmFireRate = 2.45f;
-                napalmAreaSize = 0.75f;
+                napalmAreaSize = 0.88f;
                 napalmDuration = 4f;
                 napalmReloadTime = 3.8f;
                 break;
@@ -308,22 +309,22 @@ public class Gear : MonoBehaviour
                 break;
             case (5, 3):
                 poisonNovaDoT = 30f;
-                poisonNovaDoTDuration = 1.85f;
+                poisonNovaDoTDuration = 2.05f;
                 break;
             case (5, 4):
-                poisonNovaDoT = 35f;
-                poisonNovaDuration = 2f;
+                poisonNovaDoT = 37f;
+                poisonNovaDuration = 2.1f;
                 break;
             case (5, 5):
-                poisonNovaDoT = 40f;
-                poisonNovaDoTDuration = 1.9f;
+                poisonNovaDoT = 47f;
+                poisonNovaDoTDuration = 2.1f;
                 poisonNovaAreaSize = 0.42f;
                 break;
             case (5, 6):
-                poisonNovaDoT = 42f;
-                poisonNovaDoTDuration = 2f;
+                poisonNovaDoT = 49f;
+                poisonNovaDoTDuration = 2.22f;
                 poisonNovaAreaSize = 0.45f;
-                poisonNovaDuration = 2.15f;
+                poisonNovaDuration = 2.26f;
                 break;
             case (6, 1):
                 flamethrowerDamage = 9f;
@@ -342,22 +343,23 @@ public class Gear : MonoBehaviour
             case (6, 3):
                 flamethrowerDamage = 12f;
                 flamethrowerProjectileCount = 3;
-                MagazineSize[6] += 20;
-                Ammo[6] += 20;
+                MagazineSize[6] += 30;
+                Ammo[6] += 30;
                 WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
                 break;
             case (6, 4):
                 flamethrowerDamage = 14f;
                 flamethrowerBurn = 2;
+                flamethrowerReloadTime = 5.7f;
                 break;
             case (6, 5):
                 flamethrowerDamage = 16f;
-                flamethrowerFireRate = 0.315f;
+                flamethrowerFireRate = 0.285f;
                 break;
             case (6, 6):
                 flamethrowerDamage = 17f;
-                flamethrowerFireRate = 0.295f;
-                flamethrowerReloadTime = 6.3f;
+                flamethrowerFireRate = 0.254f;
+                flamethrowerReloadTime = 5.4f;
                 MagazineSize[6] += 10;
                 Ammo[6] += 10;
                 WeaponAmmo[AmmoList[6]].text = Ammo[6].ToString("0") + "/" + MagazineSize[6].ToString("0");
@@ -386,13 +388,14 @@ public class Gear : MonoBehaviour
                 break;
             case (7, 5):
                 boomerangDamage = 50f;
-                boomerangFireRate = 2f;
+                boomerangFireRate = 1.92f;
                 boomerangPierce = 6;
                 break;
             case (7, 6):
                 boomerangDamage = 53f;
-                boomerangFireRate = 1.9f;
+                boomerangFireRate = 1.82f;
                 boomerangDuration = 6.1f;
+                boomerangPierce = 7;
                 boomerangPierceDamage = 0.9f;
                 BoomerangBullet = BoomerangBulletv2;
                 break;
@@ -416,12 +419,12 @@ public class Gear : MonoBehaviour
                 singularityAreaSize = 0.76f;
                 break;
             case (8, 5):
-                singularityDamage = 23f;
+                singularityDamage = 24f;
                 singularityFireRate = 4.75f;
                 singularityDuration = 4.4f;
                 break;
             case (8, 6):
-                singularityDamage = 24f;
+                singularityDamage = 25f;
                 singularityFireRate = 4.5f;
                 singularityAreaSize = 0.88f;
                 singularityDuration = 4.45f;
@@ -457,20 +460,24 @@ public class Gear : MonoBehaviour
                 break;
             case (9, 4):
                 shrederProjectileCount = 3;
-                MagazineSize[9] += 1;
-                Ammo[9] += 1;
+                MagazineSize[9] += 2;
+                Ammo[9] += 2;
                 WeaponAmmo[AmmoList[9]].text = Ammo[9].ToString("0") + "/" + MagazineSize[9].ToString("0");
                 break;
             case (9, 5):
                 shrederDamageIncrease = 0.035f;
-                shrederProjectileIncrease = 1;
-                shrederProjectileIncreasePer = 3;
+                shrederProjectileIncrease = 12;
+                shrederProjectileIncreasePer = 35;
+                MagazineSize[9] += 1;
+                Ammo[9] += 1;
+                WeaponAmmo[AmmoList[9]].text = Ammo[9].ToString("0") + "/" + MagazineSize[9].ToString("0");
                 break;
             case (9, 6):
                 shrederDamage = 24f;
                 shrederFireRate = 0.74f;
-                shrederProjectileIncrease = 7;
-                shrederProjectileIncreasePer = 19;
+                shrederCritChanceBonus = 0.04f;
+                shrederProjectileIncrease = 3;
+                shrederProjectileIncreasePer = 8;
                 shrederReloadTime = 1.36f;
                 MagazineSize[9] += 1;
                 Ammo[9] += 1;
@@ -545,7 +552,7 @@ public class Gear : MonoBehaviour
             if (Weapons[0] > 5)
             {
                 revolverFired.pierce += 2;
-                revolverFired.pierceEfficiency = 0.66f;
+                revolverFired.pierceEfficiency = 0.68f;
             }
         }
 
@@ -588,7 +595,7 @@ public class Gear : MonoBehaviour
             shotgunFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
             shotgunFired.duration = 1.4f * playerStats.durationBonus;
             shotgunFired.damage = shotgunDamage * playerStats.DamageDealtMultiplyer(1f);
-            shotgunFired.damage *= 1f + 0.08f * playerStats.projectileCountBonus;
+            shotgunFired.damage *= 1f + 0.09f * playerStats.projectileCountBonus;
 
             if (playerStats.CritChance > Random.Range(0f, 1f))
             {
@@ -611,6 +618,7 @@ public class Gear : MonoBehaviour
             shotgunFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
             shotgunFired.duration = 1.4f * playerStats.durationBonus;
             shotgunFired.damage = shotgunDamage * playerStats.DamageDealtMultiplyer(1f);
+            shotgunFired.damage *= 1f + 0.09f * playerStats.projectileCountBonus;
 
             if (playerStats.CritChance > Random.Range(0f, 1f))
             {
@@ -722,7 +730,7 @@ public class Gear : MonoBehaviour
         tick.transform.localScale = new Vector3(immolationAreaSize * playerStats.areaSizeBonus, immolationAreaSize * playerStats.areaSizeBonus, 1f);
         if (Weapons[3] > 5)
         {
-            for (float i = 100f; i < 40f + playerStats.maxHealth; i += 100f)
+            for (float i = 90f; i < 40f + playerStats.maxHealth; i += 90f)
             {
                 immolationTick.burn++;
             }
@@ -758,18 +766,19 @@ public class Gear : MonoBehaviour
         NapalmFired.TargetedLocation = NapalmDistance;
         NapalmFired.damage = napalmDamage * playerStats.DamageDealtMultiplyer(1f);
         NapalmFired.areaSize = napalmAreaSize * playerStats.areaSizeBonus;
-        if (Weapons[4] > 5)
-        {
-            NapalmFired.durationValue = napalmDuration * (playerStats.durationBonus * 1.1f - 0.1f);
-            NapalmFired.damageGain = 0.18f * NapalmFired.damage;
-        }
-        else NapalmFired.durationValue = napalmDuration * playerStats.durationBonus;
 
         if (playerStats.CritChance > Random.Range(0f, 1f))
         {
             NapalmFired.damage *= playerStats.CritDamage;
             NapalmFired.crit = true;
         }
+
+        if (Weapons[4] > 5)
+        {
+            NapalmFired.durationValue = napalmDuration * (playerStats.durationBonus * 1.11f - 0.11f);
+            NapalmFired.damageGain = 0.2f * NapalmFired.damage;
+        }
+        else NapalmFired.durationValue = napalmDuration * playerStats.durationBonus;
     }
 
     void NapalmReload()
@@ -836,7 +845,9 @@ public class Gear : MonoBehaviour
             if (Weapons[6] > 3)
                 flamethrowerFired.burn++;
         }
-        flamethrowerFired.burn += (flamethrowerFired.burn * (flamethrowerProjectileCount + playerStats.projectileCountBonus)) / 5;
+        if (Weapons[6] > 1)
+            flamethrowerFired.burn += (flamethrowerFired.burn * (flamethrowerProjectileCount + playerStats.projectileCountBonus)) / 4;
+        else flamethrowerFired.burn += (flamethrowerFired.burn * (flamethrowerProjectileCount + playerStats.projectileCountBonus)) / 5;
     }
 
     void FlamethrowerReload()
@@ -916,26 +927,26 @@ public class Gear : MonoBehaviour
         tempi = shrederProjectileCount + playerStats.projectileCountBonus + (shrederProjectileIncrease * shrederCharge) / shrederProjectileIncreasePer;
         for (int i = 0; i < tempi; i++)
         {
-            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation - (tempi - 1) * 4.8f + i * 9.6f);
+            playerStats.Barrel.rotation = Quaternion.Euler(playerStats.Barrel.rotation.x, playerStats.Barrel.rotation.y, playerStats.Gun.rotation - (tempi - 1) * 4.4f + i * 8.8f);
             GameObject bullet = Instantiate(ShrederBullet, playerStats.Barrel.position, playerStats.Barrel.rotation);
             Rigidbody2D bullet_body = bullet.GetComponent<Rigidbody2D>();
-            bullet_body.AddForce(playerStats.Barrel.up * 14.8f * Random.Range(1f, 1.02f), ForceMode2D.Impulse);
+            bullet_body.AddForce(playerStats.Barrel.up * 14.4f * Random.Range(1f, 1.044f), ForceMode2D.Impulse);
 
             shrederFired = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            shrederFired.duration = 1.48f * playerStats.durationBonus;
+            shrederFired.duration = 1.44f * playerStats.durationBonus;
             shrederFired.damage = shrederDamage * playerStats.DamageDealtMultiplyer(1f);
             shrederFired.damage *= 1f + (shrederDamageIncrease * shrederCharge);
 
-            if (playerStats.CritChance > Random.Range(0f, 1f))
+            if (playerStats.CritChance + shrederCritChanceBonus > Random.Range(0f, 1f))
             {
                 shrederFired.damage *= playerStats.CritDamage;
                 shrederFired.crit = true;
-                if (Weapons[9] > 5 && 0.23f > Random.Range(0f, 100f))
+                if (Weapons[9] > 5 && 0.24f > Random.Range(0f, 100f))
                     Ammo[9]++;
             }
             else
             {
-                if (Weapons[9] > 5 && 0.15f > Random.Range(0f, 100f))
+                if (Weapons[9] > 5 && 0.16f > Random.Range(0f, 100f))
                     Ammo[9]++;
             }
         }

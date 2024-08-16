@@ -24,7 +24,7 @@ public class Singularity : MonoBehaviour
         if (empowered)
         {
             grow = 0.048f * (ThisBullet.playerAreaBonus * 0.3f + 0.7f);
-            additionalArea = 0.35f * (ThisBullet.playerAreaBonus * 0.18f + 0.82f);
+            additionalArea = 0.33f * (ThisBullet.playerAreaBonus * 0.18f + 0.82f);
         }
         else
         {

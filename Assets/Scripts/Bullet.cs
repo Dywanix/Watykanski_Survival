@@ -81,7 +81,7 @@ public class Bullet : MonoBehaviour
         {
             GameObject bullet = Instantiate(ExplosionRadius, transform.position, transform.rotation);
             Explosion = bullet.GetComponent(typeof(Bullet)) as Bullet;
-            Explosion.damage = 0.66f * DoT * (durationValue - 0.5f);
+            Explosion.damage = 0.73f * DoT * (durationValue - 0.5f);
             bullet.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, 1f);
         }
         Destroy(gameObject);

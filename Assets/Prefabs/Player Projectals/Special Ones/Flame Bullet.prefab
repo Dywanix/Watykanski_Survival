@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4742182983731406472, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: pierceEfficiency
-      value: 0.75
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 5939492805381921852, guid: ef7982de27806734b8e9bcc78e44497c, type: 3}
       propertyPath: m_Name

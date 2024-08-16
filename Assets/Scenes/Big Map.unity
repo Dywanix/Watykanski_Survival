@@ -59537,7 +59537,7 @@ MonoBehaviour:
   MagnetObject: {fileID: 6200031967086673338, guid: 7288ac361ab3c224cbce74faadfd8d6d, type: 3}
   active: 0
   round: 0
-  strength: 109
+  strength: 106
   minSpawn: 0
   maxSpawn: 1
   mobsStrength: 02000000040000000500000006000000080000000a000000
