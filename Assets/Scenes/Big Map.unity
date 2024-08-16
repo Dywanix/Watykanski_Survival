@@ -59127,6 +59127,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e66982cb798a9b24cbdb9cd7b973068b, type: 3}
   - {fileID: 21300000, guid: e80fafc229346034094956e144138e89, type: 3}
   - {fileID: 21300000, guid: 97b8612e3f73e6e47bd61faee257be34, type: 3}
+  - {fileID: 21300000, guid: 4d1fe961a3a119a4899aefd80e9bb9c3, type: 3}
   StatTooltips:
   - +20 Max Health
   - +10% Damage
@@ -59140,6 +59141,7 @@ MonoBehaviour:
   - +10% Experience
   - +26% Pick Up Radius
   - +6% Crit Chance & Crit Damage
+  - +4 Magazine SIze & -8% Reload Time
   statWeight: 9
   weaponWeight: 7
   totalWeight: 0
